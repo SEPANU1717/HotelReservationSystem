@@ -1,0 +1,14 @@
+# Ignore Visual Studio temporary files, build results, etc.
+.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.cache
+*.log
+*.ncb
+*.DS_Store
+*.db
+*.db-shm
+*.db-wal
