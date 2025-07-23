@@ -8,24 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace HotelReservationSystem.UserControls
+namespace HotelReservationSystem
 {
-    public partial class UCDashboard : UserControl
+    public partial class Login : Form
     {
-        public UCDashboard()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void sataBarChart1_Load(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void UCDashboard_Load(object sender, EventArgs e)
-        {
-
+            ReservationSystem reservation = new ReservationSystem();
+            reservation.Show();
+            Hide();
         }
     }
 }

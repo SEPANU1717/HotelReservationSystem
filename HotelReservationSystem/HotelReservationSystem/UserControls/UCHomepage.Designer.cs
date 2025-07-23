@@ -1,6 +1,6 @@
 ﻿namespace HotelReservationSystem.UserControls
 {
-    partial class UCCustomers
+    partial class UCHomepage
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,15 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCustomers));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCHomepage));
+            this.TopHomePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.TopHomePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // TopHomePanel
+            // 
+            this.TopHomePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.TopHomePanel.Controls.Add(this.panel2);
+            this.TopHomePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TopHomePanel.Location = new System.Drawing.Point(0, 0);
+            this.TopHomePanel.Name = "TopHomePanel";
+            this.TopHomePanel.Size = new System.Drawing.Size(1477, 800);
+            this.TopHomePanel.TabIndex = 3;
             // 
             // panel2
             // 
@@ -98,19 +110,18 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(27, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 25);
+            this.label5.Size = new System.Drawing.Size(127, 25);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Customers";
+            this.label5.Text = "Homepage";
             // 
-            // UCCustomers
+            // UCHomepage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "UCCustomers";
+            this.Controls.Add(this.TopHomePanel);
+            this.Name = "UCHomepage";
             this.Size = new System.Drawing.Size(1477, 800);
+            this.TopHomePanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).EndInit();
@@ -120,6 +131,7 @@
 
         #endregion
 
+        private System.Windows.Forms.Panel TopHomePanel;
         private System.Windows.Forms.Panel panel2;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox1;
         private System.Windows.Forms.Label label3;

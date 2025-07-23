@@ -8,24 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace HotelReservationSystem.UserControls
 {
-    public partial class UCDashboard : UserControl
+    public partial class UCHomepage : UserControl
     {
-        public UCDashboard()
+        public UCHomepage()
         {
             InitializeComponent();
-        }
-
-        private void sataBarChart1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UCDashboard_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -24,12 +24,34 @@ namespace HotelReservationSystem
             TopHomePanel.Controls.Add(control);
         }
 
+
         private void sataButton1_Click(object sender, EventArgs e) => LoadUserControl(new UCDashboard());
         private void sataButton2_Click(object sender, EventArgs e) => LoadUserControl(new UCReservation());
         private void sataButton3_Click(object sender, EventArgs e) => LoadUserControl(new UCRooms());
         private void sataButton4_Click(object sender, EventArgs e) => LoadUserControl(new UCCustomers());
         private void sataButton5_Click(object sender, EventArgs e) => LoadUserControl(new UCBilling());
         private void sataButton6_Click(object sender, EventArgs e) => LoadUserControl(new UCSettings());
-        private void sataButton8_Click(object sender, EventArgs e) => LoadUserControl(new UCDashboard());
+        private void pictureBox1_Click(object sender, EventArgs e) => LoadUserControl(new UCHomepage());
+        private void sataButton8_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sataPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
