@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius8 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.btnLogin = new FrameworkTest.SATAButton();
@@ -187,7 +187,7 @@
             this.materialCheckBox1.AutoSize = true;
             this.materialCheckBox1.BackColor = System.Drawing.Color.Transparent;
             this.materialCheckBox1.Depth = 0;
-            this.materialCheckBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialCheckBox1.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialCheckBox1.Location = new System.Drawing.Point(924, 516);
             this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -227,11 +227,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.IndianRed;
             this.sataPanel1.BackColor2 = System.Drawing.Color.Transparent;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius8.BottomLeft = 10;
-            borderRadius8.BottomRight = 10;
-            borderRadius8.TopLeft = 10;
-            borderRadius8.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius8;
+            borderRadius1.BottomLeft = 10;
+            borderRadius1.BottomRight = 10;
+            borderRadius1.TopLeft = 10;
+            borderRadius1.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius1;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.pictureBox1);
             this.sataPanel1.Location = new System.Drawing.Point(12, 12);
