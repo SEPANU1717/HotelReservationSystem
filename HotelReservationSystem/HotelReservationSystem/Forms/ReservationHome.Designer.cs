@@ -63,10 +63,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.sataButton8);
-            this.panel1.Controls.Add(this.sataButton4);
             this.panel1.Controls.Add(this.sataButton7);
             this.panel1.Controls.Add(this.sataButton6);
             this.panel1.Controls.Add(this.sataButton5);
+            this.panel1.Controls.Add(this.sataButton4);
             this.panel1.Controls.Add(this.sataButton3);
             this.panel1.Controls.Add(this.sataButton2);
             this.panel1.Controls.Add(this.sataButton1);
@@ -260,7 +260,7 @@
             this.sataButton4.ImageTint = System.Drawing.Color.White;
             this.sataButton4.IsToggleButton = false;
             this.sataButton4.IsToggled = false;
-            this.sataButton4.Location = new System.Drawing.Point(6, 180);
+            this.sataButton4.Location = new System.Drawing.Point(6, 300);
             this.sataButton4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.sataButton4.Name = "sataButton4";
             this.sataButton4.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
@@ -340,7 +340,7 @@
             this.sataButton2.ImageTint = System.Drawing.Color.White;
             this.sataButton2.IsToggleButton = false;
             this.sataButton2.IsToggled = false;
-            this.sataButton2.Location = new System.Drawing.Point(6, 300);
+            this.sataButton2.Location = new System.Drawing.Point(6, 180);
             this.sataButton2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.sataButton2.Name = "sataButton2";
             this.sataButton2.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));

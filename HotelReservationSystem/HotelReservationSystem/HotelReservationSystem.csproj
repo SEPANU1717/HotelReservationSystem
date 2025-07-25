@@ -120,22 +120,33 @@
     <Compile Include="Forms\ReservationHome.Designer.cs">
       <DependentUpon>ReservationHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interface\ICustomerRepository.cs" />
-    <Compile Include="Interface\ICustomerView.cs" />
+    <Compile Include="Interface\Customer\ICustomerRepository.cs" />
+    <Compile Include="Interface\Customer\ICustomerView.cs" />
     <Compile Include="Interface\IMainView.cs" />
+    <Compile Include="Interface\Rooms\IRoomRepository.cs" />
+    <Compile Include="Interface\Rooms\IRoomView.cs" />
     <Compile Include="Model\Customer\CustomerModel.cs" />
+    <Compile Include="Model\Rooms\RoomModel.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
-    <Compile Include="Presenter\CustomerPresenter.cs" />
+    <Compile Include="Presenter\Customer\CustomerPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="Presenter\Rooms\RoomPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
-    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\Customer\CustomerRepository.cs" />
+    <Compile Include="Repositories\Rooms\RoomRepository.cs" />
     <Compile Include="UserControls\UCBilling.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCBilling.Designer.cs">
       <DependentUpon>UCBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCReservation.Designer.cs">
+      <DependentUpon>UCReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCCustomers.cs">
       <SubType>UserControl</SubType>
@@ -154,12 +165,6 @@
     </Compile>
     <Compile Include="UserControls\UCHomepage.Designer.cs">
       <DependentUpon>UCHomepage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UCReservation.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCReservation.Designer.cs">
-      <DependentUpon>UCReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCRooms.cs">
       <SubType>UserControl</SubType>

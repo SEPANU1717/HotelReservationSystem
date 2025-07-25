@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.btnLogin = new FrameworkTest.SATAButton();
             this.sataTextBox3 = new SATATextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.sataTextBox1 = new SATATextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,7 +74,7 @@
             this.btnLogin.ImageTint = System.Drawing.Color.White;
             this.btnLogin.IsToggleButton = false;
             this.btnLogin.IsToggled = false;
-            this.btnLogin.Location = new System.Drawing.Point(929, 567);
+            this.btnLogin.Location = new System.Drawing.Point(929, 533);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
@@ -105,7 +103,7 @@
             this.sataTextBox3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sataTextBox3.Icon = null;
             this.sataTextBox3.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox3.Location = new System.Drawing.Point(929, 357);
+            this.sataTextBox3.Location = new System.Drawing.Point(929, 338);
             this.sataTextBox3.Multiline = false;
             this.sataTextBox3.Name = "sataTextBox3";
             this.sataTextBox3.PasswordChar = false;
@@ -121,22 +119,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(1173, 520);
+            this.label1.Location = new System.Drawing.Point(1173, 469);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Forgot your password?";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(925, 323);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Username";
             // 
             // sataTextBox1
             // 
@@ -149,7 +136,7 @@
             this.sataTextBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sataTextBox1.Icon = null;
             this.sataTextBox1.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox1.Location = new System.Drawing.Point(929, 460);
+            this.sataTextBox1.Location = new System.Drawing.Point(929, 407);
             this.sataTextBox1.Multiline = false;
             this.sataTextBox1.Name = "sataTextBox1";
             this.sataTextBox1.PasswordChar = false;
@@ -160,23 +147,12 @@
             this.sataTextBox1.Texts = "";
             this.sataTextBox1.UnderlinedStyle = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(925, 426);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Password";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(952, 520);
+            this.label4.Location = new System.Drawing.Point(952, 469);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 20);
             this.label4.TabIndex = 3;
@@ -188,7 +164,7 @@
             this.materialCheckBox1.BackColor = System.Drawing.Color.Transparent;
             this.materialCheckBox1.Depth = 0;
             this.materialCheckBox1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox1.Location = new System.Drawing.Point(924, 516);
+            this.materialCheckBox1.Location = new System.Drawing.Point(924, 465);
             this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -203,7 +179,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(954, 191);
+            this.label5.Location = new System.Drawing.Point(954, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(357, 65);
             this.label5.TabIndex = 3;
@@ -215,7 +191,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(944, 259);
+            this.label6.Location = new System.Drawing.Point(944, 281);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(372, 17);
             this.label6.TabIndex = 3;
@@ -227,11 +203,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.IndianRed;
             this.sataPanel1.BackColor2 = System.Drawing.Color.Transparent;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius1.BottomLeft = 10;
-            borderRadius1.BottomRight = 10;
-            borderRadius1.TopLeft = 10;
-            borderRadius1.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius1;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius2;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.pictureBox1);
             this.sataPanel1.Location = new System.Drawing.Point(12, 12);
@@ -282,10 +258,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.materialCheckBox1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sataTextBox1);
@@ -311,8 +285,6 @@
         private FrameworkTest.SATAButton btnLogin;
         private SATATextBox sataTextBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private SATATextBox sataTextBox1;
         private System.Windows.Forms.Label label4;
         private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;

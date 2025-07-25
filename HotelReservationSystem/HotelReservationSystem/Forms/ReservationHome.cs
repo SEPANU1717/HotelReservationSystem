@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface;
+using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Presenter;
 using HotelReservationSystem.Repositories;
 using HotelReservationSystem.UserControls;
@@ -26,6 +27,7 @@ namespace HotelReservationSystem
         }
 
         public event EventHandler ShowCustomerView;
+        public event EventHandler ShowRoomView;
 
         public void LoadUserControl(UserControl control)
         {
@@ -36,7 +38,7 @@ namespace HotelReservationSystem
 
         private void sataButton1_Click(object sender, EventArgs e) => LoadUserControl(new UCDashboard());
         private void sataButton2_Click(object sender, EventArgs e) => LoadUserControl(new UCReservation());
-        private void sataButton3_Click(object sender, EventArgs e) => LoadUserControl(new UCRooms());
+        private void sataButton3_Click(object sender, EventArgs e) => ShowRoomView?.Invoke(this, EventArgs.Empty);
         private void sataButton4_Click(object sender, EventArgs e)
         {
 
@@ -52,6 +54,7 @@ namespace HotelReservationSystem
 
             // Cleanup
             UCCustomers.ResetInstance();
+            UCRooms.ResetInstance();
             this.Hide();
         }
 

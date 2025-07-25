@@ -56,7 +56,6 @@ namespace HotelReservationSystem.Repositories
                 command.CommandText = @"UPDATE Customers 
                                         SET Name = @name, IDType = @type, Contact = @contact, Address = @address 
                                         where CustomerID = @id";
-                command.Parameters.Add("@id", SqlDbType.Int).Value = customer.CustomerID;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = customer.IDType;
                 command.Parameters.Add("@contact", SqlDbType.NVarChar).Value = customer.Contact;

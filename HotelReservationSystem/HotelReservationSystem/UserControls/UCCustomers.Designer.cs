@@ -58,6 +58,7 @@
             this.btnEdit = new FrameworkTest.SATAButton();
             this.btnSearch = new FrameworkTest.SATAButton();
             this.txtSearch = new SATATextBox();
+            this.sataComboBox1 = new SATAComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -233,6 +234,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.tabPage2.Controls.Add(this.sataComboBox1);
             this.tabPage2.Controls.Add(this.btnCancel);
             this.tabPage2.Controls.Add(this.btnSave);
             this.tabPage2.Controls.Add(this.txtAddress);
@@ -618,6 +620,26 @@
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
             // 
+            // sataComboBox1
+            // 
+            this.sataComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.sataComboBox1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataComboBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.sataComboBox1.BorderThickness = 1;
+            this.sataComboBox1.CornerRadius = 5;
+            this.sataComboBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataComboBox1.Items = null;
+            this.sataComboBox1.Keys = null;
+            this.sataComboBox1.Location = new System.Drawing.Point(378, 128);
+            this.sataComboBox1.Name = "sataComboBox1";
+            this.sataComboBox1.SelectedIndex = -1;
+            this.sataComboBox1.Size = new System.Drawing.Size(273, 59);
+            this.sataComboBox1.TabIndex = 6;
+            this.sataComboBox1.Text = "sataComboBox1";
+            this.sataComboBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.sataComboBox1.TextOffset = new System.Windows.Forms.Padding(0);
+            this.sataComboBox1.Click += new System.EventHandler(this.sataComboBox1_Click);
+            // 
             // UCCustomers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -670,5 +692,6 @@
         private SATATextBox txtIdType;
         private SATATextBox txtName;
         private SATATextBox txtCusId;
+        private SATAComboBox sataComboBox1;
     }
 }

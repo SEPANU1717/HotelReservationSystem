@@ -133,5 +133,9 @@ namespace HotelReservationSystem.UserControls
             return _instance;
         }
 
+        private void sataComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

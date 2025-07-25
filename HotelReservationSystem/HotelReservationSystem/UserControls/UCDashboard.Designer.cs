@@ -41,7 +41,7 @@
             this.sataPanel9 = new SATAUiFramework.SATAPanel();
             this.sataPictureBox2 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblTotalRoom = new System.Windows.Forms.Label();
             this.sataPanel11 = new SATAUiFramework.SATAPanel();
             this.sataPictureBox4 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -143,7 +143,7 @@
             this.sataPanel9.BorderThickness = 0;
             this.sataPanel9.Controls.Add(this.sataPictureBox2);
             this.sataPanel9.Controls.Add(this.label12);
-            this.sataPanel9.Controls.Add(this.label13);
+            this.sataPanel9.Controls.Add(this.lblTotalRoom);
             this.sataPanel9.Location = new System.Drawing.Point(32, 107);
             this.sataPanel9.Name = "sataPanel9";
             this.sataPanel9.Size = new System.Drawing.Size(280, 161);
@@ -177,17 +177,17 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Total Room";
             // 
-            // label13
+            // lblTotalRoom
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(22, 75);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 65);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "50";
+            this.lblTotalRoom.AutoSize = true;
+            this.lblTotalRoom.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalRoom.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.lblTotalRoom.Location = new System.Drawing.Point(22, 75);
+            this.lblTotalRoom.Name = "lblTotalRoom";
+            this.lblTotalRoom.Size = new System.Drawing.Size(84, 65);
+            this.lblTotalRoom.TabIndex = 1;
+            this.lblTotalRoom.Text = "50";
             // 
             // sataPanel11
             // 
@@ -408,7 +408,7 @@
         private System.Windows.Forms.Label label5;
         private SATAUiFramework.SATAPanel sataPanel9;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblTotalRoom;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox2;
         private SATAUiFramework.SATAPanel sataPanel11;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox4;
