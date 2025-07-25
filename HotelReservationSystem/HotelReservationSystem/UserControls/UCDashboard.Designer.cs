@@ -39,9 +39,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.sataPanel9 = new SATAUiFramework.SATAPanel();
+            this.sataPictureBox2 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.sataPictureBox2 = new SATAUiFramework.Controls.SATAPictureBox();
             this.sataPanel11 = new SATAUiFramework.SATAPanel();
             this.sataPictureBox4 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -144,10 +144,27 @@
             this.sataPanel9.Controls.Add(this.sataPictureBox2);
             this.sataPanel9.Controls.Add(this.label12);
             this.sataPanel9.Controls.Add(this.label13);
-            this.sataPanel9.Location = new System.Drawing.Point(32, 119);
+            this.sataPanel9.Location = new System.Drawing.Point(32, 107);
             this.sataPanel9.Name = "sataPanel9";
             this.sataPanel9.Size = new System.Drawing.Size(280, 161);
             this.sataPanel9.TabIndex = 6;
+            // 
+            // sataPictureBox2
+            // 
+            this.sataPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.sataPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox2.BorderColor = System.Drawing.Color.Gray;
+            this.sataPictureBox2.BorderColor2 = System.Drawing.Color.Gray;
+            this.sataPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox2.BorderSize = 1;
+            this.sataPictureBox2.GradientAngle = 50F;
+            this.sataPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox2.Image")));
+            this.sataPictureBox2.Location = new System.Drawing.Point(200, 30);
+            this.sataPictureBox2.Name = "sataPictureBox2";
+            this.sataPictureBox2.Size = new System.Drawing.Size(44, 44);
+            this.sataPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.sataPictureBox2.TabIndex = 8;
+            this.sataPictureBox2.TabStop = false;
             // 
             // label12
             // 
@@ -172,23 +189,6 @@
             this.label13.TabIndex = 1;
             this.label13.Text = "50";
             // 
-            // sataPictureBox2
-            // 
-            this.sataPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.sataPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox2.BorderColor = System.Drawing.Color.Gray;
-            this.sataPictureBox2.BorderColor2 = System.Drawing.Color.Gray;
-            this.sataPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox2.BorderSize = 1;
-            this.sataPictureBox2.GradientAngle = 50F;
-            this.sataPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox2.Image")));
-            this.sataPictureBox2.Location = new System.Drawing.Point(200, 30);
-            this.sataPictureBox2.Name = "sataPictureBox2";
-            this.sataPictureBox2.Size = new System.Drawing.Size(44, 44);
-            this.sataPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.sataPictureBox2.TabIndex = 8;
-            this.sataPictureBox2.TabStop = false;
-            // 
             // sataPanel11
             // 
             this.sataPanel11.BackColor = System.Drawing.Color.White;
@@ -203,7 +203,7 @@
             this.sataPanel11.Controls.Add(this.sataPictureBox4);
             this.sataPanel11.Controls.Add(this.label16);
             this.sataPanel11.Controls.Add(this.label17);
-            this.sataPanel11.Location = new System.Drawing.Point(648, 119);
+            this.sataPanel11.Location = new System.Drawing.Point(648, 107);
             this.sataPanel11.Name = "sataPanel11";
             this.sataPanel11.Size = new System.Drawing.Size(280, 161);
             this.sataPanel11.TabIndex = 6;
@@ -262,7 +262,7 @@
             this.sataPanel12.Controls.Add(this.sataPictureBox5);
             this.sataPanel12.Controls.Add(this.label18);
             this.sataPanel12.Controls.Add(this.label19);
-            this.sataPanel12.Location = new System.Drawing.Point(954, 119);
+            this.sataPanel12.Location = new System.Drawing.Point(954, 107);
             this.sataPanel12.Name = "sataPanel12";
             this.sataPanel12.Size = new System.Drawing.Size(280, 161);
             this.sataPanel12.TabIndex = 6;
@@ -321,7 +321,7 @@
             this.sataPanel10.Controls.Add(this.sataPictureBox3);
             this.sataPanel10.Controls.Add(this.label14);
             this.sataPanel10.Controls.Add(this.label15);
-            this.sataPanel10.Location = new System.Drawing.Point(342, 119);
+            this.sataPanel10.Location = new System.Drawing.Point(342, 107);
             this.sataPanel10.Name = "sataPanel10";
             this.sataPanel10.Size = new System.Drawing.Size(280, 161);
             this.sataPanel10.TabIndex = 6;

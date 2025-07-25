@@ -52,7 +52,7 @@ namespace HotelReservationSystem
 
             // Cleanup
             UCCustomers.ResetInstance();
-            this.Hide(); // or this.Hide();
+            this.Hide();
         }
 
         private void label3_Click(object sender, EventArgs e)

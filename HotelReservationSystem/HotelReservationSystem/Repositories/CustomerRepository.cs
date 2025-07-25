@@ -56,10 +56,12 @@ namespace HotelReservationSystem.Repositories
                 command.CommandText = @"UPDATE Customers 
                                         SET Name = @name, IDType = @type, Contact = @contact, Address = @address 
                                         where CustomerID = @id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = customer.CustomerID;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = customer.IDType;
                 command.Parameters.Add("@contact", SqlDbType.NVarChar).Value = customer.Contact;
                 command.Parameters.Add("@address", SqlDbType.NVarChar).Value = customer.Address;
+
                 command.ExecuteNonQuery();
             }
         }
@@ -97,7 +99,7 @@ namespace HotelReservationSystem.Repositories
         {
             var customerList = new List<CustomerModel>();
             int customerId = int.TryParse(value, out _) ? Convert.ToInt32(value) : 0;
-            
+
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
@@ -106,7 +108,6 @@ namespace HotelReservationSystem.Repositories
                 command.CommandText = "SELECT * FROM Customers WHERE CustomerID = @id OR Name LIKE @name ORDER BY CustomerID DESC";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = customerId;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = $"%{value}%";
-
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -123,8 +124,8 @@ namespace HotelReservationSystem.Repositories
                     }
                 }
             }
-
             return customerList;
         }
+
     }
 }

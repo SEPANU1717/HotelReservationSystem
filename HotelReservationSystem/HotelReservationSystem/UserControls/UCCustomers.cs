@@ -14,6 +14,7 @@ namespace HotelReservationSystem.UserControls
 {
     public partial class UCCustomers : UserControl, ICustomerView
     {
+
         public UCCustomers()
         {
             InitializeComponent();
@@ -39,17 +40,54 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.Text = "Add new customer";
             };
 
+            btnEdit.Click += delegate
+            {
+                EditEvent?.Invoke(this, EventArgs.Empty);
+                materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Add(tabPage2);
+                materialTabControl1.Text = "Edit Customer";
+            };
+
+            btnSave.Click += delegate
+            {
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+                if (isSuccessful)
+                {
+                    materialTabControl1.TabPages.Remove(tabPage2);
+                    materialTabControl1.TabPages.Add(tabPage1);
+                }
+                MessageBox.Show(Message);
+            };
+
+            btnCancel.Click += delegate
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+                materialTabControl1.TabPages.Remove(tabPage2);
+                materialTabControl1.TabPages.Add(tabPage1);
+            };
+
+            btnDelete.Click += delegate
+            {
+                var result = MessageBox.Show("Are you sure you want to delete the selected customer?", "Warning",
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
         }
 
 
 
         //Properties
-        public string CustomerID { get => txtCusId.Text; set => txtCusId.Text = value; }
-        public string CustomerName { get => txtName.Text; set => txtName.Text = value; }
-        public string CustomerIdType { get => txtIdType.Text; set => txtIdType.Text = value; }
-        public string CustomerContact { get => txtContact.Text; set => txtContact.Text = value; }
-        public string CustomerAddress { get => txtAddress.Text; set => txtAddress.Text = value; }
-        public string SearchValue { get => txtSearch.Text; set => txtSearch.Text = value; }
+        public string CustomerID { get => txtCusId.Texts; set => txtCusId.Texts = value; }
+        public string CustomerName { get => txtName.Texts; set => txtName.Texts = value; }
+        public string CustomerIdType { get => txtIdType.Texts; set => txtIdType.Texts = value; }
+        public string CustomerContact { get => txtContact.Texts; set => txtContact.Texts = value; }
+        public string CustomerAddress { get => txtAddress.Texts; set => txtAddress.Texts = value; }
+        public string SearchValue { get => txtSearch.Texts; set => txtSearch.Texts = value; }
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }

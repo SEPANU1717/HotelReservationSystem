@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface;
 using HotelReservationSystem.Model.Customer;
+using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.Presenter
 {
@@ -27,7 +28,6 @@ namespace HotelReservationSystem.Presenter
             this.customerView.DeleteEvent += DeleteCustomer;
             this.customerView.SaveEvent += SaveCustomer;
             this.customerView.CancelEvent += CancelAction;
-            this.customerView.UpdateEvent += UpdateCustomer;
 
             this.customerView.SetCustomerListBindingSource(CustomerBindingSource);
             LoadAllCustomerList();
@@ -38,6 +38,7 @@ namespace HotelReservationSystem.Presenter
         {
             customerList = repository.GetAll();
             CustomerBindingSource.DataSource = customerList;
+            CustomerBindingSource.ResetBindings(false);
         }
 
         private void SearchCustomer(object sender, EventArgs e)
@@ -50,17 +51,72 @@ namespace HotelReservationSystem.Presenter
 
             CustomerBindingSource.DataSource = customerList;
             CustomerBindingSource.ResetBindings(false);
-
-
-
-
         }
 
         private void AddNewCustomer(object sender, EventArgs e) => customerView.isEdit = false;
-        private void EditCustomer(object sender, EventArgs e) => throw new NotImplementedException();
-        private void DeleteCustomer(object sender, EventArgs e) => throw new NotImplementedException();
-        private void SaveCustomer(object sender, EventArgs e) => throw new NotImplementedException();
-        private void UpdateCustomer(object sender, EventArgs e) => throw new NotImplementedException();
+        private void EditCustomer(object sender, EventArgs e)
+        {
+            var customer = (CustomerModel)CustomerBindingSource.Current;
+            customerView.CustomerID = customer.CustomerID.ToString();
+            customerView.CustomerName = customer.Name;
+            customerView.CustomerIdType = customer.IDType;
+            customerView.CustomerContact = customer.Contact;
+            customerView.CustomerAddress = customer.Address;
+
+            customerView.isEdit = true;
+        }
+        private void DeleteCustomer(object sender, EventArgs e) 
+        {
+            try
+            {
+                var pet = (CustomerModel)CustomerBindingSource.Current;
+                repository.Delete(pet.CustomerID);
+                customerView.isSuccessful = true;
+                customerView.Message = "Customer deleted succesfully";
+                LoadAllCustomerList();
+            }
+            catch
+            {
+                customerView.isSuccessful = false;
+                customerView.Message = "An error ocurred, could not delete pet";
+            }
+        }
+        private void SaveCustomer(object sender, EventArgs e)
+        {
+            var model = new CustomerModel();
+            model.CustomerID = int.Parse(customerView.CustomerID);
+            model.Name = customerView.CustomerName;
+            model.IDType = customerView.CustomerIdType;
+            model.Contact = customerView.CustomerContact;
+            model.Address = customerView.CustomerAddress;
+
+            try
+            {
+                new ModelDataValidation().Validate(model);
+
+                if (customerView.isEdit)
+                {
+                    repository.Edit(model);
+                    customerView.Message = "Customer edited successfully";
+                }
+                else
+                {
+                    repository.Add(model);
+                    customerView.Message = "Customer added Successfully";
+                }
+                customerView.isSuccessful = true;
+                LoadAllCustomerList();
+                CleanviewFields();
+
+            }
+            catch(Exception ex) 
+            {
+                customerView.isSuccessful = false;
+                customerView.Message = ex.Message;
+            }
+            
+            
+        }
         private void CancelAction(object sender, EventArgs e) => CleanviewFields();
 
         private void CleanviewFields()
