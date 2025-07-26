@@ -21,7 +21,6 @@ namespace HotelReservationSystem.Interface
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
-        event EventHandler UpdateEvent;
 
         void SetCustomerListBindingSource(BindingSource customerList);
         void Show();

@@ -163,6 +163,7 @@
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 0);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
             this.materialTabControl1.Size = new System.Drawing.Size(1182, 611);
@@ -233,7 +234,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.sataComboBox1);
             this.tabPage2.Controls.Add(this.btnCancel);
             this.tabPage2.Controls.Add(this.btnSave);
@@ -327,14 +328,14 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtAddress.BackColor = System.Drawing.Color.White;
             this.txtAddress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.txtAddress.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtAddress.BorderFocusColor = System.Drawing.Color.White;
+            this.txtAddress.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtAddress.BorderRadius = 3;
             this.txtAddress.BorderSize = 1;
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.ForeColor = System.Drawing.Color.White;
+            this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtAddress.Icon = null;
             this.txtAddress.IconSize = new System.Drawing.Size(20, 20);
             this.txtAddress.Location = new System.Drawing.Point(378, 279);
@@ -350,14 +351,14 @@
             // 
             // txtContact
             // 
-            this.txtContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtContact.BackColor = System.Drawing.Color.White;
             this.txtContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.txtContact.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtContact.BorderFocusColor = System.Drawing.Color.White;
+            this.txtContact.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtContact.BorderRadius = 3;
             this.txtContact.BorderSize = 1;
             this.txtContact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.ForeColor = System.Drawing.Color.White;
+            this.txtContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtContact.Icon = null;
             this.txtContact.IconSize = new System.Drawing.Size(20, 20);
             this.txtContact.Location = new System.Drawing.Point(80, 279);
@@ -373,14 +374,14 @@
             // 
             // txtIdType
             // 
-            this.txtIdType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtIdType.BackColor = System.Drawing.Color.White;
             this.txtIdType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.txtIdType.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtIdType.BorderFocusColor = System.Drawing.Color.White;
+            this.txtIdType.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtIdType.BorderRadius = 3;
             this.txtIdType.BorderSize = 1;
             this.txtIdType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdType.ForeColor = System.Drawing.Color.White;
+            this.txtIdType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtIdType.Icon = null;
             this.txtIdType.IconSize = new System.Drawing.Size(20, 20);
             this.txtIdType.Location = new System.Drawing.Point(378, 213);
@@ -396,14 +397,14 @@
             // 
             // txtName
             // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.txtName.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtName.BorderFocusColor = System.Drawing.Color.White;
+            this.txtName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtName.BorderRadius = 3;
             this.txtName.BorderSize = 1;
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.White;
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtName.Icon = null;
             this.txtName.IconSize = new System.Drawing.Size(20, 20);
             this.txtName.Location = new System.Drawing.Point(80, 213);
@@ -419,17 +420,17 @@
             // 
             // txtCusId
             // 
-            this.txtCusId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCusId.BackColor = System.Drawing.Color.White;
             this.txtCusId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.txtCusId.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtCusId.BorderFocusColor = System.Drawing.Color.White;
+            this.txtCusId.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtCusId.BorderRadius = 3;
             this.txtCusId.BorderSize = 1;
             this.txtCusId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusId.ForeColor = System.Drawing.Color.White;
+            this.txtCusId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtCusId.Icon = null;
             this.txtCusId.IconSize = new System.Drawing.Size(20, 20);
-            this.txtCusId.Location = new System.Drawing.Point(80, 142);
+            this.txtCusId.Location = new System.Drawing.Point(80, 137);
             this.txtCusId.Multiline = false;
             this.txtCusId.Name = "txtCusId";
             this.txtCusId.PasswordChar = false;
@@ -623,22 +624,21 @@
             // sataComboBox1
             // 
             this.sataComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.sataComboBox1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataComboBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.sataComboBox1.BackgroundColor = System.Drawing.Color.White;
+            this.sataComboBox1.BorderColor = System.Drawing.Color.Gainsboro;
             this.sataComboBox1.BorderThickness = 1;
-            this.sataComboBox1.CornerRadius = 5;
-            this.sataComboBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataComboBox1.CornerRadius = 3;
+            this.sataComboBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sataComboBox1.Items = null;
             this.sataComboBox1.Keys = null;
-            this.sataComboBox1.Location = new System.Drawing.Point(378, 128);
+            this.sataComboBox1.Location = new System.Drawing.Point(378, 137);
             this.sataComboBox1.Name = "sataComboBox1";
             this.sataComboBox1.SelectedIndex = -1;
-            this.sataComboBox1.Size = new System.Drawing.Size(273, 59);
+            this.sataComboBox1.Size = new System.Drawing.Size(263, 35);
             this.sataComboBox1.TabIndex = 6;
             this.sataComboBox1.Text = "sataComboBox1";
             this.sataComboBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.sataComboBox1.TextOffset = new System.Windows.Forms.Padding(0);
-            this.sataComboBox1.Click += new System.EventHandler(this.sataComboBox1_Click);
             // 
             // UCCustomers
             // 

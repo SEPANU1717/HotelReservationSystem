@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.sataTextBox1 = new SATATextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.materialCheckBox1 = new MaterialSkin.Controls.MaterialCheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
@@ -160,19 +159,6 @@
             // 
             // materialCheckBox1
             // 
-            this.materialCheckBox1.AutoSize = true;
-            this.materialCheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.materialCheckBox1.Depth = 0;
-            this.materialCheckBox1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialCheckBox1.Location = new System.Drawing.Point(924, 465);
-            this.materialCheckBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckBox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckBox1.Name = "materialCheckBox1";
-            this.materialCheckBox1.Ripple = true;
-            this.materialCheckBox1.Size = new System.Drawing.Size(26, 30);
-            this.materialCheckBox1.TabIndex = 3;
-            this.materialCheckBox1.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -257,7 +243,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.sataPanel1);
-            this.Controls.Add(this.materialCheckBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -287,7 +272,6 @@
         private System.Windows.Forms.Label label1;
         private SATATextBox sataTextBox1;
         private System.Windows.Forms.Label label4;
-        private MaterialSkin.Controls.MaterialCheckBox materialCheckBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private SATAUiFramework.SATAPanel sataPanel1;

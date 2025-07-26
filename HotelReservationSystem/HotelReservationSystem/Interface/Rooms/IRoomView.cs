@@ -31,7 +31,6 @@ namespace HotelReservationSystem.Interface.Rooms
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
-        event EventHandler UpdateEvent;
 
         void SetRoomListBindingSource(BindingSource roomList);
         void Show();

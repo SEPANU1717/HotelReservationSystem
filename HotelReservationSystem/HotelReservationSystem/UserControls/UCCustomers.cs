@@ -14,13 +14,26 @@ namespace HotelReservationSystem.UserControls
 {
     public partial class UCCustomers : UserControl, ICustomerView
     {
-
+        // Constructor  
         public UCCustomers()
         {
             InitializeComponent();
             AssociateAndraiseViewEvents();
+            InitializeComboBox();
             materialTabControl1.TabPages.Remove(tabPage2);
+        }
 
+        private List<string> comboItems;
+        private void InitializeComboBox()
+        {
+            comboItems = new List<string>()
+           {
+               "Passport",
+               "Driver's License",
+               "National ID"
+           };
+
+            sataComboBox1.Items = comboItems.ToArray();
         }
 
         private void AssociateAndraiseViewEvents()
@@ -30,7 +43,7 @@ namespace HotelReservationSystem.UserControls
             {
                 if (e.KeyCode == Keys.Enter)
                     SearchEvent?.Invoke(this, EventArgs.Empty);
-                };
+            };
 
             btnAddNew.Click += delegate
             {
@@ -79,9 +92,7 @@ namespace HotelReservationSystem.UserControls
             };
         }
 
-
-
-        //Properties
+        // Properties  
         public string CustomerID { get => txtCusId.Texts; set => txtCusId.Texts = value; }
         public string CustomerName { get => txtName.Texts; set => txtName.Texts = value; }
         public string CustomerIdType { get => txtIdType.Texts; set => txtIdType.Texts = value; }
@@ -92,19 +103,15 @@ namespace HotelReservationSystem.UserControls
         public bool isEdit { get; set; }
         public string Message { get; set; }
 
-
-        //Events
+        // Events  
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
         public event EventHandler EditEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
-        public event EventHandler UpdateEvent;
         public event EventHandler CancelEvent;
 
-
-
-        //Methods
+        // Methods  
         public static void ResetInstance()
         {
             if (_instance != null)
@@ -114,11 +121,9 @@ namespace HotelReservationSystem.UserControls
             }
         }
 
-
         public void SetCustomerListBindingSource(BindingSource customerList)
         {
             dataGridView1.DataSource = customerList;
-
         }
 
         private static UCCustomers _instance;

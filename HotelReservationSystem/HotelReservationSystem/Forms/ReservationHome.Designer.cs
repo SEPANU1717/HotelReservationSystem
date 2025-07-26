@@ -112,7 +112,7 @@
             this.sataButton8.PressedImageTint = System.Drawing.Color.White;
             this.sataButton8.PressedOutline = System.Drawing.Color.Empty;
             this.sataButton8.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton8.Size = new System.Drawing.Size(181, 54);
+            this.sataButton8.Size = new System.Drawing.Size(196, 54);
             this.sataButton8.TabIndex = 1;
             this.sataButton8.TextAutoCenter = false;
             this.sataButton8.TextOffset = new System.Drawing.Point(15, 0);
@@ -152,7 +152,7 @@
             this.sataButton7.PressedImageTint = System.Drawing.Color.White;
             this.sataButton7.PressedOutline = System.Drawing.Color.Empty;
             this.sataButton7.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton7.Size = new System.Drawing.Size(181, 54);
+            this.sataButton7.Size = new System.Drawing.Size(196, 54);
             this.sataButton7.TabIndex = 1;
             this.sataButton7.TextAutoCenter = false;
             this.sataButton7.TextOffset = new System.Drawing.Point(15, 0);
@@ -192,7 +192,7 @@
             this.sataButton6.PressedImageTint = System.Drawing.Color.White;
             this.sataButton6.PressedOutline = System.Drawing.Color.Empty;
             this.sataButton6.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton6.Size = new System.Drawing.Size(181, 54);
+            this.sataButton6.Size = new System.Drawing.Size(196, 54);
             this.sataButton6.TabIndex = 1;
             this.sataButton6.TextAutoCenter = false;
             this.sataButton6.TextOffset = new System.Drawing.Point(15, 0);
@@ -232,7 +232,7 @@
             this.sataButton5.PressedImageTint = System.Drawing.Color.White;
             this.sataButton5.PressedOutline = System.Drawing.Color.Empty;
             this.sataButton5.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton5.Size = new System.Drawing.Size(181, 54);
+            this.sataButton5.Size = new System.Drawing.Size(196, 54);
             this.sataButton5.TabIndex = 1;
             this.sataButton5.TextAutoCenter = false;
             this.sataButton5.TextOffset = new System.Drawing.Point(15, 0);
@@ -272,7 +272,7 @@
             this.sataButton4.PressedImageTint = System.Drawing.Color.White;
             this.sataButton4.PressedOutline = System.Drawing.Color.Empty;
             this.sataButton4.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton4.Size = new System.Drawing.Size(181, 54);
+            this.sataButton4.Size = new System.Drawing.Size(196, 54);
             this.sataButton4.TabIndex = 1;
             this.sataButton4.TextAutoCenter = false;
             this.sataButton4.TextOffset = new System.Drawing.Point(15, 0);
@@ -312,7 +312,7 @@
             this.sataButton3.PressedImageTint = System.Drawing.Color.White;
             this.sataButton3.PressedOutline = System.Drawing.Color.Empty;
             this.sataButton3.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton3.Size = new System.Drawing.Size(181, 54);
+            this.sataButton3.Size = new System.Drawing.Size(196, 54);
             this.sataButton3.TabIndex = 1;
             this.sataButton3.TextAutoCenter = false;
             this.sataButton3.TextOffset = new System.Drawing.Point(15, 0);
@@ -352,7 +352,7 @@
             this.sataButton2.PressedImageTint = System.Drawing.Color.White;
             this.sataButton2.PressedOutline = System.Drawing.Color.Empty;
             this.sataButton2.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton2.Size = new System.Drawing.Size(181, 54);
+            this.sataButton2.Size = new System.Drawing.Size(196, 54);
             this.sataButton2.TabIndex = 1;
             this.sataButton2.TextAutoCenter = false;
             this.sataButton2.TextOffset = new System.Drawing.Point(15, 0);
@@ -392,7 +392,7 @@
             this.sataButton1.PressedImageTint = System.Drawing.Color.White;
             this.sataButton1.PressedOutline = System.Drawing.Color.Empty;
             this.sataButton1.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton1.Size = new System.Drawing.Size(181, 54);
+            this.sataButton1.Size = new System.Drawing.Size(196, 54);
             this.sataButton1.TabIndex = 1;
             this.sataButton1.TextAutoCenter = false;
             this.sataButton1.TextOffset = new System.Drawing.Point(15, 0);

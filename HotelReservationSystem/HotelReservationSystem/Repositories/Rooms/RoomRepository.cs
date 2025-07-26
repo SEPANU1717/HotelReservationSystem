@@ -44,8 +44,12 @@ namespace HotelReservationSystem.Repositories.Rooms
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO Rooms values(@id, @number, @type, @status, @price, @bed, @guest, description)";
-                command.Parameters.Add("@id", SqlDbType.Int).Value = room.RoomId;
+                command.CommandText = @"INSERT INTO Rooms 
+            (RoomNumber, RoomType, RoomStatus, RoomPrice, BedCount, MaxGuests, RoomDescription) 
+            VALUES 
+            (@number, @type, @status, @price, @bed, @guest, @description)";
+
+
                 command.Parameters.Add("@number", SqlDbType.NVarChar).Value = room.RoomNumber;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = room.RoomType;
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = room.RoomStatus;
@@ -86,8 +90,8 @@ namespace HotelReservationSystem.Repositories.Rooms
                                         MaxGuests = @guest,
                                         RoomDescription = @description
                                         WHERE RoomId = @id";
-    
 
+                command.Parameters.Add("@id", SqlDbType.Int).Value = room.RoomId;
                 command.Parameters.Add("@number", SqlDbType.NVarChar).Value = room.RoomNumber;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = room.RoomType;
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = room.RoomStatus;
