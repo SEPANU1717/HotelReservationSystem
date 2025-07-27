@@ -111,14 +111,9 @@ namespace HotelReservationSystem.UserControls
             set
             {
                 int index = Array.IndexOf(cboRoomStatus.Items, value);
-                if (index >= 0)
-                {
-                    cboRoomStatus.SelectedIndex = index;
-                }
+                if (index >= 0) cboRoomStatus.SelectedIndex = index;
             }
         }
-
-
 
 
         public event EventHandler SearchEvent;

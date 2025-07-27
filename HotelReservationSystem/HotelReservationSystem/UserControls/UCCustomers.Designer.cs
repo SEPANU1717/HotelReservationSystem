@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,19 +47,26 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.sataComboBox1 = new SATAComboBox();
-            this.btnCancel = new FrameworkTest.SATAButton();
             this.btnSave = new FrameworkTest.SATAButton();
             this.txtAddress = new SATATextBox();
             this.txtContact = new SATATextBox();
-            this.txtIdType = new SATATextBox();
-            this.txtName = new SATATextBox();
+            this.txtLName = new SATATextBox();
+            this.txtFName = new SATATextBox();
             this.txtCusId = new SATATextBox();
             this.btnAddNew = new FrameworkTest.SATAButton();
             this.btnDelete = new FrameworkTest.SATAButton();
             this.btnEdit = new FrameworkTest.SATAButton();
             this.btnSearch = new FrameworkTest.SATAButton();
             this.txtSearch = new SATATextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnCancel = new FrameworkTest.SATAButton();
+            this.cbType = new SATAComboBox();
+            this.sataPanel2 = new SATAUiFramework.SATAPanel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -235,13 +243,20 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.sataComboBox1);
+            this.tabPage2.Controls.Add(this.sataPanel2);
+            this.tabPage2.Controls.Add(this.cbType);
             this.tabPage2.Controls.Add(this.btnCancel);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.label36);
             this.tabPage2.Controls.Add(this.btnSave);
             this.tabPage2.Controls.Add(this.txtAddress);
             this.tabPage2.Controls.Add(this.txtContact);
-            this.tabPage2.Controls.Add(this.txtIdType);
-            this.tabPage2.Controls.Add(this.txtName);
+            this.tabPage2.Controls.Add(this.txtLName);
+            this.tabPage2.Controls.Add(this.txtFName);
             this.tabPage2.Controls.Add(this.txtCusId);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -249,63 +264,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1174, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
-            // 
-            // sataComboBox1
-            // 
-            this.sataComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.sataComboBox1.BackgroundColor = System.Drawing.Color.White;
-            this.sataComboBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataComboBox1.BorderThickness = 1;
-            this.sataComboBox1.CornerRadius = 3;
-            this.sataComboBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataComboBox1.Items = null;
-            this.sataComboBox1.Keys = null;
-            this.sataComboBox1.Location = new System.Drawing.Point(378, 137);
-            this.sataComboBox1.Name = "sataComboBox1";
-            this.sataComboBox1.SelectedIndex = -1;
-            this.sataComboBox1.Size = new System.Drawing.Size(263, 35);
-            this.sataComboBox1.TabIndex = 6;
-            this.sataComboBox1.Text = "sataComboBox1";
-            this.sataComboBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.sataComboBox1.TextOffset = new System.Windows.Forms.Padding(0);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.ButtonText = "Cancel";
-            this.btnCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
-            this.btnCancel.CheckedImageTint = System.Drawing.Color.White;
-            this.btnCancel.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnCancel.HoverForeColor = System.Drawing.Color.White;
-            this.btnCancel.HoverImage = null;
-            this.btnCancel.HoverImageTint = System.Drawing.Color.White;
-            this.btnCancel.HoverOutline = System.Drawing.Color.Empty;
-            this.btnCancel.Image = null;
-            this.btnCancel.ImageAutoCenter = true;
-            this.btnCancel.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnCancel.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnCancel.ImageTint = System.Drawing.Color.White;
-            this.btnCancel.IsToggleButton = false;
-            this.btnCancel.IsToggled = false;
-            this.btnCancel.Location = new System.Drawing.Point(343, 389);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.NormalForeColor = System.Drawing.Color.White;
-            this.btnCancel.NormalOutline = System.Drawing.Color.Empty;
-            this.btnCancel.OutlineThickness = 2F;
-            this.btnCancel.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.PressedForeColor = System.Drawing.Color.White;
-            this.btnCancel.PressedImageTint = System.Drawing.Color.White;
-            this.btnCancel.PressedOutline = System.Drawing.Color.Empty;
-            this.btnCancel.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnCancel.Size = new System.Drawing.Size(163, 35);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.TextAutoCenter = true;
-            this.btnCancel.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // btnSave
             // 
@@ -328,7 +286,7 @@
             this.btnSave.ImageTint = System.Drawing.Color.White;
             this.btnSave.IsToggleButton = false;
             this.btnSave.IsToggled = false;
-            this.btnSave.Location = new System.Drawing.Point(154, 389);
+            this.btnSave.Location = new System.Drawing.Point(458, 471);
             this.btnSave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -357,13 +315,13 @@
             this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtAddress.Icon = null;
             this.txtAddress.IconSize = new System.Drawing.Size(20, 20);
-            this.txtAddress.Location = new System.Drawing.Point(378, 279);
-            this.txtAddress.Multiline = false;
+            this.txtAddress.Location = new System.Drawing.Point(47, 363);
+            this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = false;
             this.txtAddress.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtAddress.PlaceholderText = "";
-            this.txtAddress.Size = new System.Drawing.Size(263, 35);
+            this.txtAddress.Size = new System.Drawing.Size(574, 82);
             this.txtAddress.TabIndex = 3;
             this.txtAddress.Texts = "";
             this.txtAddress.UnderlinedStyle = false;
@@ -380,7 +338,7 @@
             this.txtContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtContact.Icon = null;
             this.txtContact.IconSize = new System.Drawing.Size(20, 20);
-            this.txtContact.Location = new System.Drawing.Point(80, 279);
+            this.txtContact.Location = new System.Drawing.Point(52, 287);
             this.txtContact.Multiline = false;
             this.txtContact.Name = "txtContact";
             this.txtContact.PasswordChar = false;
@@ -391,51 +349,51 @@
             this.txtContact.Texts = "";
             this.txtContact.UnderlinedStyle = false;
             // 
-            // txtIdType
+            // txtLName
             // 
-            this.txtIdType.BackColor = System.Drawing.Color.White;
-            this.txtIdType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtIdType.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtIdType.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtIdType.BorderRadius = 3;
-            this.txtIdType.BorderSize = 1;
-            this.txtIdType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtIdType.Icon = null;
-            this.txtIdType.IconSize = new System.Drawing.Size(20, 20);
-            this.txtIdType.Location = new System.Drawing.Point(378, 213);
-            this.txtIdType.Multiline = false;
-            this.txtIdType.Name = "txtIdType";
-            this.txtIdType.PasswordChar = false;
-            this.txtIdType.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtIdType.PlaceholderText = "";
-            this.txtIdType.Size = new System.Drawing.Size(263, 35);
-            this.txtIdType.TabIndex = 3;
-            this.txtIdType.Texts = "";
-            this.txtIdType.UnderlinedStyle = false;
+            this.txtLName.BackColor = System.Drawing.Color.White;
+            this.txtLName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtLName.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtLName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtLName.BorderRadius = 3;
+            this.txtLName.BorderSize = 1;
+            this.txtLName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtLName.Icon = null;
+            this.txtLName.IconSize = new System.Drawing.Size(20, 20);
+            this.txtLName.Location = new System.Drawing.Point(358, 210);
+            this.txtLName.Multiline = false;
+            this.txtLName.Name = "txtLName";
+            this.txtLName.PasswordChar = false;
+            this.txtLName.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtLName.PlaceholderText = "";
+            this.txtLName.Size = new System.Drawing.Size(263, 35);
+            this.txtLName.TabIndex = 3;
+            this.txtLName.Texts = "";
+            this.txtLName.UnderlinedStyle = false;
             // 
-            // txtName
+            // txtFName
             // 
-            this.txtName.BackColor = System.Drawing.Color.White;
-            this.txtName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtName.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtName.BorderRadius = 3;
-            this.txtName.BorderSize = 1;
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtName.Icon = null;
-            this.txtName.IconSize = new System.Drawing.Size(20, 20);
-            this.txtName.Location = new System.Drawing.Point(80, 213);
-            this.txtName.Multiline = false;
-            this.txtName.Name = "txtName";
-            this.txtName.PasswordChar = false;
-            this.txtName.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtName.PlaceholderText = "";
-            this.txtName.Size = new System.Drawing.Size(263, 35);
-            this.txtName.TabIndex = 3;
-            this.txtName.Texts = "";
-            this.txtName.UnderlinedStyle = false;
+            this.txtFName.BackColor = System.Drawing.Color.White;
+            this.txtFName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtFName.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtFName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtFName.BorderRadius = 3;
+            this.txtFName.BorderSize = 1;
+            this.txtFName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtFName.Icon = null;
+            this.txtFName.IconSize = new System.Drawing.Size(20, 20);
+            this.txtFName.Location = new System.Drawing.Point(52, 210);
+            this.txtFName.Multiline = false;
+            this.txtFName.Name = "txtFName";
+            this.txtFName.PasswordChar = false;
+            this.txtFName.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtFName.PlaceholderText = "";
+            this.txtFName.Size = new System.Drawing.Size(263, 35);
+            this.txtFName.TabIndex = 3;
+            this.txtFName.Texts = "";
+            this.txtFName.UnderlinedStyle = false;
             // 
             // txtCusId
             // 
@@ -450,7 +408,7 @@
             this.txtCusId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtCusId.Icon = null;
             this.txtCusId.IconSize = new System.Drawing.Size(20, 20);
-            this.txtCusId.Location = new System.Drawing.Point(80, 137);
+            this.txtCusId.Location = new System.Drawing.Point(52, 134);
             this.txtCusId.Multiline = false;
             this.txtCusId.Name = "txtCusId";
             this.txtCusId.PasswordChar = false;
@@ -641,6 +599,147 @@
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.DimGray;
+            this.label36.Location = new System.Drawing.Point(48, 105);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(73, 21);
+            this.label36.TabIndex = 10;
+            this.label36.Text = "Room Id";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(48, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 21);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "First Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(354, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 21);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Last Name";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(48, 258);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 21);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Contact";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(354, 258);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "ID Type";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(43, 334);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 21);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Address";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.ButtonText = "Cancel";
+            this.btnCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.HoverBackground = System.Drawing.Color.White;
+            this.btnCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.HoverImage = null;
+            this.btnCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAutoCenter = true;
+            this.btnCancel.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCancel.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCancel.ImageTint = System.Drawing.Color.White;
+            this.btnCancel.IsToggleButton = false;
+            this.btnCancel.IsToggled = false;
+            this.btnCancel.Location = new System.Drawing.Point(30, 23);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.NormalBackground = System.Drawing.Color.Transparent;
+            this.btnCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCancel.OutlineThickness = 2F;
+            this.btnCancel.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCancel.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCancel.Size = new System.Drawing.Size(115, 35);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.TextAutoCenter = true;
+            this.btnCancel.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // cbType
+            // 
+            this.cbType.BackColor = System.Drawing.Color.Transparent;
+            this.cbType.BackgroundColor = System.Drawing.Color.White;
+            this.cbType.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cbType.BorderThickness = 1;
+            this.cbType.CornerRadius = 3;
+            this.cbType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbType.Items = null;
+            this.cbType.Keys = null;
+            this.cbType.Location = new System.Drawing.Point(358, 287);
+            this.cbType.Name = "cbType";
+            this.cbType.SelectedIndex = -1;
+            this.cbType.Size = new System.Drawing.Size(263, 35);
+            this.cbType.TabIndex = 13;
+            this.cbType.Text = "sataComboBox1";
+            this.cbType.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cbType.TextOffset = new System.Windows.Forms.Padding(0);
+            // 
+            // sataPanel2
+            // 
+            this.sataPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.sataPanel2.BackColor2 = System.Drawing.Color.White;
+            this.sataPanel2.BorderColor = System.Drawing.Color.Black;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.sataPanel2.BorderRadius = borderRadius2;
+            this.sataPanel2.BorderThickness = 0;
+            this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sataPanel2.Location = new System.Drawing.Point(673, 3);
+            this.sataPanel2.Name = "sataPanel2";
+            this.sataPanel2.Size = new System.Drawing.Size(498, 576);
+            this.sataPanel2.TabIndex = 14;
+            // 
             // UCCustomers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -664,6 +763,7 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -686,13 +786,20 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private SATATextBox txtSearch;
         private System.Windows.Forms.TabPage tabPage2;
-        private FrameworkTest.SATAButton btnCancel;
         private FrameworkTest.SATAButton btnSave;
         private SATATextBox txtAddress;
         private SATATextBox txtContact;
-        private SATATextBox txtIdType;
-        private SATATextBox txtName;
+        private SATATextBox txtLName;
+        private SATATextBox txtFName;
         private SATATextBox txtCusId;
-        private SATAComboBox sataComboBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label36;
+        private FrameworkTest.SATAButton btnCancel;
+        private SATAComboBox cbType;
+        private SATAUiFramework.SATAPanel sataPanel2;
     }
 }

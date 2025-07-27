@@ -58,7 +58,8 @@ namespace HotelReservationSystem.Presenter
         {
             var customer = (CustomerModel)CustomerBindingSource.Current;
             customerView.CustomerID = customer.CustomerID.ToString();
-            customerView.CustomerName = customer.Name;
+            customerView.CustomerFirstName = customer.FirstName;
+            customerView.CustomerLastName = customer.LastName;
             customerView.CustomerIdType = customer.IDType;
             customerView.CustomerContact = customer.Contact;
             customerView.CustomerAddress = customer.Address;
@@ -85,7 +86,8 @@ namespace HotelReservationSystem.Presenter
         {
             var model = new CustomerModel();
             model.CustomerID = int.Parse(customerView.CustomerID);
-            model.Name = customerView.CustomerName;
+            model.FirstName = customerView.CustomerFirstName;
+            model.LastName = customerView.CustomerLastName;
             model.IDType = customerView.CustomerIdType;
             model.Contact = customerView.CustomerContact;
             model.Address = customerView.CustomerAddress;
@@ -122,7 +124,8 @@ namespace HotelReservationSystem.Presenter
         private void CleanviewFields()
         {
             customerView.CustomerID = "0";
-            customerView.CustomerName = "";
+            customerView.CustomerFirstName = "";
+            customerView.CustomerLastName = "";
             customerView.CustomerIdType = "";
             customerView.CustomerContact = "";
             customerView.CustomerAddress = "";

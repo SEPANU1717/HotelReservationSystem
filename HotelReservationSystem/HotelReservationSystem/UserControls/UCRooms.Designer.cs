@@ -53,6 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.sataPanel2 = new SATAUiFramework.SATAPanel();
             this.sataPanel7 = new SATAUiFramework.SATAPanel();
@@ -128,7 +129,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label36 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             this.sataPanel7.SuspendLayout();
@@ -376,7 +376,7 @@
             // 
             this.cboRoomStatus.BackColor = System.Drawing.Color.Transparent;
             this.cboRoomStatus.BackgroundColor = System.Drawing.Color.White;
-            this.cboRoomStatus.BorderColor = System.Drawing.Color.Silver;
+            this.cboRoomStatus.BorderColor = System.Drawing.Color.Gainsboro;
             this.cboRoomStatus.BorderThickness = 1;
             this.cboRoomStatus.CornerRadius = 3;
             this.cboRoomStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -457,6 +457,17 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Room Status";
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.DimGray;
+            this.label36.Location = new System.Drawing.Point(52, 87);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(73, 21);
+            this.label36.TabIndex = 9;
+            this.label36.Text = "Room Id";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -511,7 +522,7 @@
             this.sataPanel7.Controls.Add(this.pictureBox19);
             this.sataPanel7.Controls.Add(this.pictureBox18);
             this.sataPanel7.Controls.Add(this.label29);
-            this.sataPanel7.Location = new System.Drawing.Point(22, 467);
+            this.sataPanel7.Location = new System.Drawing.Point(22, 480);
             this.sataPanel7.Name = "sataPanel7";
             this.sataPanel7.Size = new System.Drawing.Size(464, 105);
             this.sataPanel7.TabIndex = 0;
@@ -584,7 +595,7 @@
             this.btnSingleRoom.ImageTint = System.Drawing.Color.White;
             this.btnSingleRoom.IsToggleButton = false;
             this.btnSingleRoom.IsToggled = false;
-            this.btnSingleRoom.Location = new System.Drawing.Point(415, 3);
+            this.btnSingleRoom.Location = new System.Drawing.Point(414, 6);
             this.btnSingleRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnSingleRoom.Name = "btnSingleRoom";
             this.btnSingleRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -679,7 +690,7 @@
             this.sataPanel6.Controls.Add(this.label25);
             this.sataPanel6.Controls.Add(this.pictureBox15);
             this.sataPanel6.Controls.Add(this.label26);
-            this.sataPanel6.Location = new System.Drawing.Point(22, 356);
+            this.sataPanel6.Location = new System.Drawing.Point(22, 367);
             this.sataPanel6.Name = "sataPanel6";
             this.sataPanel6.Size = new System.Drawing.Size(464, 105);
             this.sataPanel6.TabIndex = 0;
@@ -752,7 +763,7 @@
             this.btnfamilyRoom.ImageTint = System.Drawing.Color.White;
             this.btnfamilyRoom.IsToggleButton = false;
             this.btnfamilyRoom.IsToggled = false;
-            this.btnfamilyRoom.Location = new System.Drawing.Point(415, 0);
+            this.btnfamilyRoom.Location = new System.Drawing.Point(414, 6);
             this.btnfamilyRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnfamilyRoom.Name = "btnfamilyRoom";
             this.btnfamilyRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -847,7 +858,7 @@
             this.sataPanel5.Controls.Add(this.label22);
             this.sataPanel5.Controls.Add(this.pictureBox12);
             this.sataPanel5.Controls.Add(this.label23);
-            this.sataPanel5.Location = new System.Drawing.Point(22, 245);
+            this.sataPanel5.Location = new System.Drawing.Point(22, 253);
             this.sataPanel5.Name = "sataPanel5";
             this.sataPanel5.Size = new System.Drawing.Size(464, 105);
             this.sataPanel5.TabIndex = 0;
@@ -918,7 +929,7 @@
             this.btnSuiteRoom.ImageTint = System.Drawing.Color.White;
             this.btnSuiteRoom.IsToggleButton = false;
             this.btnSuiteRoom.IsToggled = false;
-            this.btnSuiteRoom.Location = new System.Drawing.Point(415, 3);
+            this.btnSuiteRoom.Location = new System.Drawing.Point(414, 6);
             this.btnSuiteRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnSuiteRoom.Name = "btnSuiteRoom";
             this.btnSuiteRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -1015,7 +1026,7 @@
             this.sataPanel4.Controls.Add(this.label20);
             this.sataPanel4.Controls.Add(this.label21);
             this.sataPanel4.Controls.Add(this.label19);
-            this.sataPanel4.Location = new System.Drawing.Point(22, 133);
+            this.sataPanel4.Location = new System.Drawing.Point(22, 137);
             this.sataPanel4.Name = "sataPanel4";
             this.sataPanel4.Size = new System.Drawing.Size(464, 105);
             this.sataPanel4.TabIndex = 0;
@@ -1086,7 +1097,7 @@
             this.btnDeluxeRoom.ImageTint = System.Drawing.Color.White;
             this.btnDeluxeRoom.IsToggleButton = false;
             this.btnDeluxeRoom.IsToggled = false;
-            this.btnDeluxeRoom.Location = new System.Drawing.Point(415, 3);
+            this.btnDeluxeRoom.Location = new System.Drawing.Point(414, 6);
             this.btnDeluxeRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnDeluxeRoom.Name = "btnDeluxeRoom";
             this.btnDeluxeRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -1253,7 +1264,7 @@
             this.btnStandardRoom.ImageTint = System.Drawing.Color.White;
             this.btnStandardRoom.IsToggleButton = false;
             this.btnStandardRoom.IsToggled = false;
-            this.btnStandardRoom.Location = new System.Drawing.Point(415, 3);
+            this.btnStandardRoom.Location = new System.Drawing.Point(414, 6);
             this.btnStandardRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnStandardRoom.Name = "btnStandardRoom";
             this.btnStandardRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -1734,21 +1745,10 @@
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 12;
             // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.DimGray;
-            this.label36.Location = new System.Drawing.Point(52, 87);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(73, 21);
-            this.label36.TabIndex = 9;
-            this.label36.Text = "Room Id";
-            // 
             // UCRooms
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.Controls.Add(this.btnRoomSearch);
             this.Controls.Add(this.txtRoomSearch);
             this.Controls.Add(this.btnRoomDelete);

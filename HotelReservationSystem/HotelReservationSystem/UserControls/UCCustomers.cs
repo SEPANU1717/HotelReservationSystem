@@ -40,7 +40,7 @@ namespace HotelReservationSystem.UserControls
                "National ID"
            };
 
-            sataComboBox1.Items = comboItems.ToArray();
+            cbType.Items = comboItems.ToArray();
         }
 
         private void AssociateAndraiseViewEvents()
@@ -103,8 +103,17 @@ namespace HotelReservationSystem.UserControls
 
         // Properties  
         public string CustomerID { get => txtCusId.Texts; set => txtCusId.Texts = value; }
-        public string CustomerName { get => txtName.Texts; set => txtName.Texts = value; }
-        public string CustomerIdType { get => txtIdType.Texts; set => txtIdType.Texts = value; }
+        public string CustomerFirstName { get => txtFName.Texts; set => txtFName.Texts = value; }
+        public string CustomerLastName { get => txtLName.Texts; set => txtLName.Texts = value; }
+        public string CustomerIdType
+        {
+            get => cbType.SelectedItem;
+            set
+            {
+                int index = Array.IndexOf(cbType.Items, value);
+                if (index >= 0) cbType.SelectedIndex = index;
+            }
+        }
         public string CustomerContact { get => txtContact.Texts; set => txtContact.Texts = value; }
         public string CustomerAddress { get => txtAddress.Texts; set => txtAddress.Texts = value; }
         public string SearchValue { get => txtSearch.Texts; set => txtSearch.Texts = value; }

@@ -6,7 +6,8 @@ namespace HotelReservationSystem.Interface
     public interface ICustomerView
     {
         string CustomerID { get; set; }
-        string CustomerName { get; set; }
+        string CustomerFirstName { get; set; }
+        string CustomerLastName { get; set; }
         string CustomerIdType { get; set; }
         string CustomerContact { get; set; }
         string CustomerAddress { get; set; }

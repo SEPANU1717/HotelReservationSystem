@@ -20,18 +20,26 @@ namespace HotelReservationSystem.Repositories
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = connection.CreateCommand())
+            using (var insertCommand = connection.CreateCommand())
             {
                 connection.Open();
-                command.Connection = connection;
-                command.CommandText = @"INSERT INTO Customers 
-                                        (Name, IDType, Contact, Address)
-                                        VALUES (@name, @idType, @contact, @address)";
+                command.CommandText = "SELECT COUNT(*) FROM Customers WHERE LastName = @lname";
+                command.Parameters.Add("@lname", SqlDbType.NVarChar).Value = customer.LastName;
 
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
-                command.Parameters.Add("@idType", SqlDbType.NVarChar).Value = customer.IDType;
-                command.Parameters.Add("@contact", SqlDbType.NVarChar).Value = customer.Contact;
-                command.Parameters.Add("@address", SqlDbType.NVarChar).Value = customer.Address;
-                command.ExecuteNonQuery();
+                int count = (int)command.ExecuteScalar();
+                if (count > 0) throw new Exception($"Customer last name '{customer.LastName}' already exists.");
+
+                insertCommand.Connection = connection;
+                insertCommand.CommandText = @"INSERT INTO Customers 
+                                        (FirstName, LastName, IDType, Contact, Address)
+                                        VALUES (@fname, @lname, @idType, @contact, @address)";
+
+                insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = customer.FirstName;
+                insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = customer.LastName;
+                insertCommand.Parameters.Add("@idType", SqlDbType.NVarChar).Value = customer.IDType;
+                insertCommand.Parameters.Add("@contact", SqlDbType.NVarChar).Value = customer.Contact;
+                insertCommand.Parameters.Add("@address", SqlDbType.NVarChar).Value = customer.Address;
+                insertCommand.ExecuteNonQuery();
             }
         }
 
@@ -59,11 +67,12 @@ namespace HotelReservationSystem.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"UPDATE Customers 
-                                        SET Name = @name, IDType = @type, Contact = @contact, Address = @address 
+                                        SET FirstName = @fname, Lastname = @lname, IDType = @type, Contact = @contact, Address = @address 
                                         where CustomerID = @id";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = customer.CustomerID;
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
+                command.Parameters.Add("@fname", SqlDbType.NVarChar).Value = customer.FirstName;
+                command.Parameters.Add("@lname", SqlDbType.NVarChar).Value = customer.LastName;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = customer.IDType;
                 command.Parameters.Add("@contact", SqlDbType.NVarChar).Value = customer.Contact;
                 command.Parameters.Add("@address", SqlDbType.NVarChar).Value = customer.Address;
@@ -91,10 +100,11 @@ namespace HotelReservationSystem.Repositories
                     {
                         var customerModel = new CustomerModel();
                         customerModel.CustomerID = (int)(reader[0]);
-                        customerModel.Name = reader[1].ToString();
-                        customerModel.IDType = reader[2].ToString();
-                        customerModel.Contact = reader[3].ToString();
-                        customerModel.Address = reader[4].ToString();
+                        customerModel.FirstName = reader[1].ToString();
+                        customerModel.LastName = reader[2].ToString();
+                        customerModel.IDType = reader[3].ToString();
+                        customerModel.Contact = reader[4].ToString();
+                        customerModel.Address = reader[5].ToString();
                         customerList.Add(customerModel);
                     }
                 }
@@ -115,10 +125,10 @@ namespace HotelReservationSystem.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM Customers WHERE CustomerID = @id OR Name LIKE @name ORDER BY CustomerID DESC";
+                command.CommandText = "SELECT * FROM Customers WHERE CustomerID = @id OR LastName LIKE @lname ORDER BY CustomerID DESC";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = customerId;
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = $"%{value}%";
+                command.Parameters.Add("@lname", SqlDbType.NVarChar).Value = $"%{value}%";
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -127,10 +137,11 @@ namespace HotelReservationSystem.Repositories
                         customerList.Add(new CustomerModel
                         {
                             CustomerID = Convert.ToInt32(reader[0]),
-                            Name = reader[1].ToString(),
-                            IDType = reader[2].ToString(),
-                            Contact = reader[3].ToString(),
-                            Address = reader[4].ToString()
+                            FirstName = reader[1].ToString(),
+                            LastName = reader[2].ToString(),
+                            IDType = reader[3].ToString(),
+                            Contact = reader[4].ToString(),
+                            Address = reader[5].ToString()
                         });
                     }
                 }
