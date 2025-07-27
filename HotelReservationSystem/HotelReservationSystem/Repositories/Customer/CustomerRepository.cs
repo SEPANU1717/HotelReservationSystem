@@ -12,11 +12,10 @@ namespace HotelReservationSystem.Repositories
 {
     public class CustomerRepository : BaseRepository, ICustomerRepository
     {
-        public CustomerRepository(string connectionString)
-        {
-            this.connectionString = connectionString;   
-        }
+        public CustomerRepository(string connectionString) : base(connectionString) { }
 
+
+        //<-----------------------Add Customer--------------------------/>
         public void Add(CustomerModel customer)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -24,7 +23,10 @@ namespace HotelReservationSystem.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO Customers values(@name, @idType, @contact, @address)";
+                command.CommandText = @"INSERT INTO Customers 
+                                        (Name, IDType, Contact, Address)
+                                        VALUES (@name, @idType, @contact, @address)";
+
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
                 command.Parameters.Add("@idType", SqlDbType.NVarChar).Value = customer.IDType;
                 command.Parameters.Add("@contact", SqlDbType.NVarChar).Value = customer.Contact;
@@ -33,6 +35,7 @@ namespace HotelReservationSystem.Repositories
             }
         }
 
+        //<-----------------------Delete Curstomer--------------------------/>
         public void Delete(int id)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -46,6 +49,8 @@ namespace HotelReservationSystem.Repositories
             }
         }
 
+        //<-----------------------Edit Customer--------------------------/>
+
         public void Edit(CustomerModel customer)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -56,6 +61,8 @@ namespace HotelReservationSystem.Repositories
                 command.CommandText = @"UPDATE Customers 
                                         SET Name = @name, IDType = @type, Contact = @contact, Address = @address 
                                         where CustomerID = @id";
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = customer.CustomerID;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = customer.Name;
                 command.Parameters.Add("@type", SqlDbType.NVarChar).Value = customer.IDType;
                 command.Parameters.Add("@contact", SqlDbType.NVarChar).Value = customer.Contact;
@@ -64,6 +71,8 @@ namespace HotelReservationSystem.Repositories
                 command.ExecuteNonQuery();
             }
         }
+
+        //<-----------------------Get All Customer--------------------------/>
 
         public IEnumerable<CustomerModel> GetAll()
         {
@@ -94,6 +103,8 @@ namespace HotelReservationSystem.Repositories
             return customerList;
         }
 
+        //<-----------------------Get By Value--------------------------/>
+
         public IEnumerable<CustomerModel> GetByValue(string value)
         {
             var customerList = new List<CustomerModel>();
@@ -105,6 +116,7 @@ namespace HotelReservationSystem.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = "SELECT * FROM Customers WHERE CustomerID = @id OR Name LIKE @name ORDER BY CustomerID DESC";
+
                 command.Parameters.Add("@id", SqlDbType.Int).Value = customerId;
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = $"%{value}%";
 
@@ -114,11 +126,11 @@ namespace HotelReservationSystem.Repositories
                     {
                         customerList.Add(new CustomerModel
                         {
-                            CustomerID = Convert.ToInt32(reader["CustomerID"]),
-                            Name = reader["Name"].ToString(),
-                            IDType = reader["IDType"].ToString(),
-                            Contact = reader["Contact"].ToString(),
-                            Address = reader["Address"].ToString()
+                            CustomerID = Convert.ToInt32(reader[0]),
+                            Name = reader[1].ToString(),
+                            IDType = reader[2].ToString(),
+                            Contact = reader[3].ToString(),
+                            Address = reader[4].ToString()
                         });
                     }
                 }
@@ -126,5 +138,17 @@ namespace HotelReservationSystem.Repositories
             return customerList;
         }
 
+
+        //<-----------------------Get Next Customer Id--------------------------/>
+
+        public int GetNextCustomerId()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand("SELECT ISNULL(MAX(CustomerID), 0) + 1 FROM Customers", connection))
+            {
+                connection.Open();
+                return (int)command.ExecuteScalar();
+            }
+        }
     }
 }

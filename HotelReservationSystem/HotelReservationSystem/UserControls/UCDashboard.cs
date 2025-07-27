@@ -9,12 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Repositories.Rooms;
+using HotelReservationSystem.Repositories.Dashboard;
 
 
 namespace HotelReservationSystem.UserControls
 {
     public partial class UCDashboard : UserControl
     {
+        string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
         public UCDashboard()
         {
             InitializeComponent();
@@ -27,11 +29,17 @@ namespace HotelReservationSystem.UserControls
 
         private void UCDashboard_Load(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
+            DasboardRepository repository = new DasboardRepository(connectionString);
+            var totalRooms = repository.GetRoomCount();
+            var totalAvailableRooms = repository.GetAvailableRoomCount();
+            var totalOccupiedRooms = repository.GetOccupiedRoomCount();
+            var totalGuestToday = repository.GetTotalGuest();
 
-            RoomRepository repository = new RoomRepository(connectionString);
-            int totalRooms = repository.GetRoomCount();
             lblTotalRoom.Text = totalRooms.ToString();
+            lblAvailRoom.Text = totalAvailableRooms.ToString();
+            lblOccuRooms.Text = totalOccupiedRooms.ToString();
+            lblTotalGuests.Text = totalGuestToday.ToString();
+
         }
     }
 }

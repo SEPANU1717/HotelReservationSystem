@@ -45,15 +45,15 @@
             this.sataPanel11 = new SATAUiFramework.SATAPanel();
             this.sataPictureBox4 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblOccuRooms = new System.Windows.Forms.Label();
             this.sataPanel12 = new SATAUiFramework.SATAPanel();
             this.sataPictureBox5 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblTotalGuests = new System.Windows.Forms.Label();
             this.sataPanel10 = new SATAUiFramework.SATAPanel();
             this.sataPictureBox3 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblAvailRoom = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel9.SuspendLayout();
@@ -202,7 +202,7 @@
             this.sataPanel11.BorderThickness = 0;
             this.sataPanel11.Controls.Add(this.sataPictureBox4);
             this.sataPanel11.Controls.Add(this.label16);
-            this.sataPanel11.Controls.Add(this.label17);
+            this.sataPanel11.Controls.Add(this.lblOccuRooms);
             this.sataPanel11.Location = new System.Drawing.Point(648, 107);
             this.sataPanel11.Name = "sataPanel11";
             this.sataPanel11.Size = new System.Drawing.Size(280, 161);
@@ -236,17 +236,17 @@
             this.label16.TabIndex = 1;
             this.label16.Text = "Occupied Room";
             // 
-            // label17
+            // lblOccuRooms
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(22, 75);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 65);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "15";
+            this.lblOccuRooms.AutoSize = true;
+            this.lblOccuRooms.BackColor = System.Drawing.Color.Transparent;
+            this.lblOccuRooms.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOccuRooms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.lblOccuRooms.Location = new System.Drawing.Point(22, 75);
+            this.lblOccuRooms.Name = "lblOccuRooms";
+            this.lblOccuRooms.Size = new System.Drawing.Size(84, 65);
+            this.lblOccuRooms.TabIndex = 1;
+            this.lblOccuRooms.Text = "15";
             // 
             // sataPanel12
             // 
@@ -261,7 +261,7 @@
             this.sataPanel12.BorderThickness = 0;
             this.sataPanel12.Controls.Add(this.sataPictureBox5);
             this.sataPanel12.Controls.Add(this.label18);
-            this.sataPanel12.Controls.Add(this.label19);
+            this.sataPanel12.Controls.Add(this.lblTotalGuests);
             this.sataPanel12.Location = new System.Drawing.Point(954, 107);
             this.sataPanel12.Name = "sataPanel12";
             this.sataPanel12.Size = new System.Drawing.Size(280, 161);
@@ -295,17 +295,17 @@
             this.label18.TabIndex = 1;
             this.label18.Text = "Guests Today";
             // 
-            // label19
+            // lblTotalGuests
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label19.Location = new System.Drawing.Point(22, 75);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(84, 65);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "25";
+            this.lblTotalGuests.AutoSize = true;
+            this.lblTotalGuests.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalGuests.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGuests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.lblTotalGuests.Location = new System.Drawing.Point(22, 75);
+            this.lblTotalGuests.Name = "lblTotalGuests";
+            this.lblTotalGuests.Size = new System.Drawing.Size(84, 65);
+            this.lblTotalGuests.TabIndex = 1;
+            this.lblTotalGuests.Text = "25";
             // 
             // sataPanel10
             // 
@@ -320,7 +320,7 @@
             this.sataPanel10.BorderThickness = 0;
             this.sataPanel10.Controls.Add(this.sataPictureBox3);
             this.sataPanel10.Controls.Add(this.label14);
-            this.sataPanel10.Controls.Add(this.label15);
+            this.sataPanel10.Controls.Add(this.lblAvailRoom);
             this.sataPanel10.Location = new System.Drawing.Point(342, 107);
             this.sataPanel10.Name = "sataPanel10";
             this.sataPanel10.Size = new System.Drawing.Size(280, 161);
@@ -354,17 +354,17 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Available Room";
             // 
-            // label15
+            // lblAvailRoom
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(22, 75);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 65);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "35";
+            this.lblAvailRoom.AutoSize = true;
+            this.lblAvailRoom.BackColor = System.Drawing.Color.Transparent;
+            this.lblAvailRoom.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvailRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.lblAvailRoom.Location = new System.Drawing.Point(22, 75);
+            this.lblAvailRoom.Name = "lblAvailRoom";
+            this.lblAvailRoom.Size = new System.Drawing.Size(84, 65);
+            this.lblAvailRoom.TabIndex = 1;
+            this.lblAvailRoom.Text = "35";
             // 
             // UCDashboard
             // 
@@ -413,14 +413,14 @@
         private SATAUiFramework.SATAPanel sataPanel11;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox4;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblOccuRooms;
         private SATAUiFramework.SATAPanel sataPanel12;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox5;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblTotalGuests;
         private SATAUiFramework.SATAPanel sataPanel10;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox3;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblAvailRoom;
     }
 }

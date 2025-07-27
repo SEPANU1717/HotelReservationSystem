@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,12 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface;
+using HotelReservationSystem.Repositories;
+using HotelReservationSystem.Repositories.Rooms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HotelReservationSystem.UserControls
 {
     public partial class UCCustomers : UserControl, ICustomerView
     {
+
+        CustomerRepository customerRepo;
         // Constructor  
         public UCCustomers()
         {
@@ -21,6 +26,8 @@ namespace HotelReservationSystem.UserControls
             AssociateAndraiseViewEvents();
             InitializeComboBox();
             materialTabControl1.TabPages.Remove(tabPage2);
+            string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
+            customerRepo = new CustomerRepository(connectionString);
         }
 
         private List<string> comboItems;
@@ -47,6 +54,8 @@ namespace HotelReservationSystem.UserControls
 
             btnAddNew.Click += delegate
             {
+
+                txtCusId.Texts = customerRepo.GetNextCustomerId().ToString();
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);

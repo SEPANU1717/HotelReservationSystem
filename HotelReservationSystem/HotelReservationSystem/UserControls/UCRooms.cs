@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,12 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface.Rooms;
+using HotelReservationSystem.Repositories.Rooms;
 
 namespace HotelReservationSystem.UserControls
 {
     public partial class UCRooms : UserControl, IRoomView
     {
         private List<string> comboItems;
+
+        RoomRepository roomRepo;
         public UCRooms()
         {
             InitializeComponent();
@@ -21,6 +25,8 @@ namespace HotelReservationSystem.UserControls
             materialTabControl1.TabPages.Remove(tabPage2);
             btnStandardRoom.Click += btnStandardRoom_Click;
             InitializeComboBox();
+            string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
+            roomRepo = new RoomRepository(connectionString);
 
         }
 
@@ -35,6 +41,8 @@ namespace HotelReservationSystem.UserControls
 
             btnRoomAddNew.Click += delegate
             {
+                ClearRoomFields();
+                txtRoomId.Texts = roomRepo.GetNextRoomId().ToString();
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
@@ -51,9 +59,12 @@ namespace HotelReservationSystem.UserControls
 
             btnRoomSave.Click += delegate
             {
+                
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
+                    ClearRoomFields();
+                    isEdit = false;
                     materialTabControl1.TabPages.Remove(tabPage2);
                     materialTabControl1.TabPages.Add(tabPage1);
                 }
@@ -161,12 +172,29 @@ namespace HotelReservationSystem.UserControls
             return _instance;
         }
 
+        private void ClearRoomFields()
+        {
+            txtRoomId.Texts = "";
+            txtRoomNumber.Texts = "";
+            txtRoomType.Texts = "";
+            txtRoomPrice.Texts = "";
+            txtBedCount.Texts = "";
+            txtRoomGuests.Texts = "";
+            txtDescription.Texts = "";
+            cboRoomStatus.SelectedIndex = -1;
+        }
+
+
         private void btnStandardRoom_Click(object sender, EventArgs e)
         {
             txtRoomType.Texts = "Standard";
             txtDescription.Texts = "Comfortable room with essential amenities.";
             txtRoomGuests.Texts = "2";
             txtBedCount.Texts = "1";
+            txtRoomPrice.Texts = "2499";
+
+
+
         }
 
         private void btnDeluxeRoom_Click(object sender, EventArgs e)
@@ -175,6 +203,7 @@ namespace HotelReservationSystem.UserControls
             txtDescription.Texts = "Room B";
             txtRoomGuests.Texts = "2";
             txtBedCount.Texts = "1";
+            txtRoomPrice.Texts = "5999"; 
 
         }
 
@@ -184,6 +213,7 @@ namespace HotelReservationSystem.UserControls
             txtDescription.Texts = "Room C";
             txtRoomGuests.Texts = "4";
             txtBedCount.Texts = "2";
+            txtRoomPrice.Texts = "7999";
         }
 
         private void btnfamilyRoom_Click(object sender, EventArgs e)
@@ -192,6 +222,7 @@ namespace HotelReservationSystem.UserControls
             txtDescription.Texts = "Room D";
             txtRoomGuests.Texts = "6";
             txtBedCount.Texts = "3";
+            txtRoomPrice.Texts = "4999";
         }
 
         private void btnSingleRoom_Click(object sender, EventArgs e)
@@ -200,6 +231,12 @@ namespace HotelReservationSystem.UserControls
             txtDescription.Texts = "Room E";
             txtRoomGuests.Texts = "1";
             txtBedCount.Texts = "1";
+            txtRoomPrice.Texts = "1999";
+        }
+
+        private void dataGridRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

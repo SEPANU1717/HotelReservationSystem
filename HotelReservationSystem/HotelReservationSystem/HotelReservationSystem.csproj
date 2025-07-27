@@ -143,6 +143,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerRepository.cs" />
+    <Compile Include="Repositories\Dashboard\DasboardRepository.cs" />
     <Compile Include="Repositories\Rooms\RoomRepository.cs" />
     <Compile Include="UserControls\UCBilling.cs">
       <SubType>UserControl</SubType>

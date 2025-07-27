@@ -14,53 +14,42 @@ namespace HotelReservationSystem.Repositories.Rooms
 {
     public class RoomRepository : BaseRepository, IRoomRepository
     {
+        
+        public RoomRepository(string connectionString) : base(connectionString) { }
 
-        public RoomRepository(string connectionString)
-        {
-            this.connectionString = connectionString;
-        }
-
-        public int GetRoomCount()
-        {
-            int count = 0;
-            
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "SELECT COUNT(*) FROM Rooms";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    count = Convert.ToInt32(command.ExecuteScalar());
-                }
-            }
-
-            return count;
-        }
-
+        //<-----------------------Add Room--------------------------/>
         public void Add(RoomModel room)
         {
             using (var connection = new SqlConnection(connectionString))
-            using (var command = connection.CreateCommand())
+            using (var checkCommand = connection.CreateCommand())
+            using (var insertCommand = connection.CreateCommand())
             {
                 connection.Open();
-                command.Connection = connection;
-                command.CommandText = @"INSERT INTO Rooms 
-            (RoomNumber, RoomType, RoomStatus, RoomPrice, BedCount, MaxGuests, RoomDescription) 
-            VALUES 
-            (@number, @type, @status, @price, @bed, @guest, @description)";
+                checkCommand.CommandText = "SELECT COUNT(*) FROM Rooms WHERE RoomNumber = @number";
+                checkCommand.Parameters.Add("@number", SqlDbType.NVarChar).Value = room.RoomNumber;
+
+                int count = (int)checkCommand.ExecuteScalar();
+
+                if (count > 0) throw new Exception($"Room number '{room.RoomNumber}' already exists.");
+
+                insertCommand.Connection = connection;
+                insertCommand.CommandText = @"INSERT INTO Rooms 
+                                            (RoomNumber, RoomType, RoomStatus, RoomPrice, BedCount, MaxGuests, RoomDescription)  
+                                            VALUES (@number, @type, @status, @price, @bed, @guest, @description)";
 
 
-                command.Parameters.Add("@number", SqlDbType.NVarChar).Value = room.RoomNumber;
-                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = room.RoomType;
-                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = room.RoomStatus;
-                command.Parameters.Add("@price", SqlDbType.NVarChar).Value = room.RoomPrice;
-                command.Parameters.Add("@bed", SqlDbType.NVarChar).Value = room.BedCount;
-                command.Parameters.Add("@guest", SqlDbType.NVarChar).Value = room.RoomGuests;
-                command.Parameters.Add("@description", SqlDbType.NVarChar).Value = room.RoomDescription;
-                command.ExecuteNonQuery();
-            }
+                insertCommand.Parameters.Add("@number", SqlDbType.NVarChar).Value = room.RoomNumber;
+                insertCommand.Parameters.Add("@type", SqlDbType.NVarChar).Value = room.RoomType;
+                insertCommand.Parameters.Add("@status", SqlDbType.NVarChar).Value = room.RoomStatus;
+                insertCommand.Parameters.Add("@price", SqlDbType.NVarChar).Value = room.RoomPrice;
+                insertCommand.Parameters.Add("@bed", SqlDbType.NVarChar).Value = room.BedCount;
+                insertCommand.Parameters.Add("@guest", SqlDbType.NVarChar).Value = room.RoomGuests;
+                insertCommand.Parameters.Add("@description", SqlDbType.NVarChar).Value = room.RoomDescription;
+                insertCommand.ExecuteNonQuery();
+            } 
         }
 
+        //<-----------------------Delete Room--------------------------/>
         public void Delete(int id)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -69,11 +58,13 @@ namespace HotelReservationSystem.Repositories.Rooms
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = "DELETE FROM Rooms WHERE RoomId = @id";
+
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.ExecuteNonQuery();
             }
         }
 
+        //<-----------------------Edit Room--------------------------/>
         public void Edit(RoomModel room)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -104,6 +95,8 @@ namespace HotelReservationSystem.Repositories.Rooms
             }
         }
 
+        //<-----------------------Get All Room--------------------------/>
+
         public IEnumerable<RoomModel> GetAll()
         {
             var roomList = new List<RoomModel>();
@@ -120,7 +113,6 @@ namespace HotelReservationSystem.Repositories.Rooms
                     while (reader.Read())
                     {
                         var roomModel = new RoomModel();
-
                         roomModel.RoomId = (int)(reader[0]);
                         roomModel.RoomNumber = reader[1].ToString();
                         roomModel.RoomType = reader[2].ToString();
@@ -138,6 +130,9 @@ namespace HotelReservationSystem.Repositories.Rooms
             return roomList;
         }
 
+
+        //<-----------------------Get by Value--------------------------/>
+
         public IEnumerable<RoomModel> GetByValue(string value)
         {
             var roomList = new List<RoomModel>();
@@ -148,9 +143,8 @@ namespace HotelReservationSystem.Repositories.Rooms
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT * FROM Rooms 
-                                WHERE RoomId = @id OR RoomNumber LIKE @number 
-                                ORDER BY RoomId DESC";
+                command.CommandText = @"SELECT * FROM Rooms WHERE RoomId = @id OR RoomNumber LIKE @number
+                                      ORDER BY RoomId DESC";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = roomId;
                 command.Parameters.Add("@number", SqlDbType.NVarChar).Value = $"%{value}%";
@@ -161,20 +155,32 @@ namespace HotelReservationSystem.Repositories.Rooms
                     {
                         roomList.Add(new RoomModel
                         {
-                            RoomId = Convert.ToInt32(reader["RoomId"]),
-                            RoomNumber = reader["RoomNumber"].ToString(),
-                            RoomType = reader["RoomType"].ToString(),
-                            RoomStatus = reader["RoomStatus"].ToString(),
-                            RoomPrice = reader["RoomPrice"].ToString(),
-                            BedCount = reader["BedCount"].ToString(),
-                            RoomGuests = reader["MaxGuests"].ToString(),
-                            RoomDescription = reader["RoomDescription"].ToString()
+                            RoomId = Convert.ToInt32(reader[0]),
+                            RoomNumber = reader[1].ToString(),
+                            RoomType = reader[2].ToString(),
+                            RoomStatus = reader[3].ToString(),
+                            RoomPrice = reader[4].ToString(),
+                            BedCount = reader[5].ToString(),
+                            RoomGuests = reader[6].ToString(),
+                            RoomDescription = reader[7].ToString()
                         });
                     }
                 }
             }
 
             return roomList;
+        }
+
+        //<-----------------------Get Next Room Id--------------------------/>
+
+        public int GetNextRoomId()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand("SELECT ISNULL(MAX(RoomId), 0) + 1 FROM Rooms", connection))
+            {
+                connection.Open();
+                return (int)command.ExecuteScalar();
+            }
         }
     }
 }

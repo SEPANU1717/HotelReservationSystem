@@ -46,6 +46,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.sataComboBox1 = new SATAComboBox();
             this.btnCancel = new FrameworkTest.SATAButton();
             this.btnSave = new FrameworkTest.SATAButton();
             this.txtAddress = new SATATextBox();
@@ -58,7 +59,6 @@
             this.btnEdit = new FrameworkTest.SATAButton();
             this.btnSearch = new FrameworkTest.SATAButton();
             this.txtSearch = new SATATextBox();
-            this.sataComboBox1 = new SATAComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -191,7 +191,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
@@ -249,6 +249,25 @@
             this.tabPage2.Size = new System.Drawing.Size(1174, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
+            // 
+            // sataComboBox1
+            // 
+            this.sataComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.sataComboBox1.BackgroundColor = System.Drawing.Color.White;
+            this.sataComboBox1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataComboBox1.BorderThickness = 1;
+            this.sataComboBox1.CornerRadius = 3;
+            this.sataComboBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataComboBox1.Items = null;
+            this.sataComboBox1.Keys = null;
+            this.sataComboBox1.Location = new System.Drawing.Point(378, 137);
+            this.sataComboBox1.Name = "sataComboBox1";
+            this.sataComboBox1.SelectedIndex = -1;
+            this.sataComboBox1.Size = new System.Drawing.Size(263, 35);
+            this.sataComboBox1.TabIndex = 6;
+            this.sataComboBox1.Text = "sataComboBox1";
+            this.sataComboBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.sataComboBox1.TextOffset = new System.Windows.Forms.Padding(0);
             // 
             // btnCancel
             // 
@@ -426,6 +445,7 @@
             this.txtCusId.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtCusId.BorderRadius = 3;
             this.txtCusId.BorderSize = 1;
+            this.txtCusId.Enabled = false;
             this.txtCusId.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCusId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtCusId.Icon = null;
@@ -620,25 +640,6 @@
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
-            // 
-            // sataComboBox1
-            // 
-            this.sataComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.sataComboBox1.BackgroundColor = System.Drawing.Color.White;
-            this.sataComboBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataComboBox1.BorderThickness = 1;
-            this.sataComboBox1.CornerRadius = 3;
-            this.sataComboBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataComboBox1.Items = null;
-            this.sataComboBox1.Keys = null;
-            this.sataComboBox1.Location = new System.Drawing.Point(378, 137);
-            this.sataComboBox1.Name = "sataComboBox1";
-            this.sataComboBox1.SelectedIndex = -1;
-            this.sataComboBox1.Size = new System.Drawing.Size(263, 35);
-            this.sataComboBox1.TabIndex = 6;
-            this.sataComboBox1.Text = "sataComboBox1";
-            this.sataComboBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.sataComboBox1.TextOffset = new System.Windows.Forms.Padding(0);
             // 
             // UCCustomers
             // 
