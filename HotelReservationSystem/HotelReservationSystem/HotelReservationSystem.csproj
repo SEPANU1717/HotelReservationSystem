@@ -134,6 +134,7 @@
     <Compile Include="Interface\Rooms\IRoomRepository.cs" />
     <Compile Include="Interface\Rooms\IRoomView.cs" />
     <Compile Include="Model\Customer\CustomerModel.cs" />
+    <Compile Include="Model\Reservation\ReservationModel.cs" />
     <Compile Include="Model\Rooms\RoomModel.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
     <Compile Include="Presenter\Customer\CustomerPresenter.cs" />
@@ -239,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Authentication\" />
+    <Folder Include="Interface\Reservation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

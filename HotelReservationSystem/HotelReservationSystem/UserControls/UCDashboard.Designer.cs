@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCDashboard));
-            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius6 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius7 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius8 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius9 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius10 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,6 +59,12 @@
             this.sataPictureBox3 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.lblAvailRoom = new System.Windows.Forms.Label();
+            this.sataPanel1 = new SATAUiFramework.SATAPanel();
+            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridReservationDash = new System.Windows.Forms.DataGridView();
+            this.label41 = new System.Windows.Forms.Label();
+            this.btnAddNew = new FrameworkTest.SATAButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel9.SuspendLayout();
@@ -64,6 +75,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox5)).BeginInit();
             this.sataPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).BeginInit();
+            this.sataPanel1.SuspendLayout();
+            this.materialTabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridReservationDash)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -135,11 +150,11 @@
             this.sataPanel9.BackColor = System.Drawing.Color.White;
             this.sataPanel9.BackColor2 = System.Drawing.Color.White;
             this.sataPanel9.BorderColor = System.Drawing.Color.Black;
-            borderRadius1.BottomLeft = 10;
-            borderRadius1.BottomRight = 10;
-            borderRadius1.TopLeft = 10;
-            borderRadius1.TopRight = 10;
-            this.sataPanel9.BorderRadius = borderRadius1;
+            borderRadius6.BottomLeft = 10;
+            borderRadius6.BottomRight = 10;
+            borderRadius6.TopLeft = 10;
+            borderRadius6.TopRight = 10;
+            this.sataPanel9.BorderRadius = borderRadius6;
             this.sataPanel9.BorderThickness = 0;
             this.sataPanel9.Controls.Add(this.sataPictureBox2);
             this.sataPanel9.Controls.Add(this.label12);
@@ -194,11 +209,11 @@
             this.sataPanel11.BackColor = System.Drawing.Color.White;
             this.sataPanel11.BackColor2 = System.Drawing.Color.White;
             this.sataPanel11.BorderColor = System.Drawing.Color.Black;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.sataPanel11.BorderRadius = borderRadius2;
+            borderRadius7.BottomLeft = 10;
+            borderRadius7.BottomRight = 10;
+            borderRadius7.TopLeft = 10;
+            borderRadius7.TopRight = 10;
+            this.sataPanel11.BorderRadius = borderRadius7;
             this.sataPanel11.BorderThickness = 0;
             this.sataPanel11.Controls.Add(this.sataPictureBox4);
             this.sataPanel11.Controls.Add(this.label16);
@@ -253,11 +268,11 @@
             this.sataPanel12.BackColor = System.Drawing.Color.White;
             this.sataPanel12.BackColor2 = System.Drawing.Color.White;
             this.sataPanel12.BorderColor = System.Drawing.Color.Black;
-            borderRadius3.BottomLeft = 10;
-            borderRadius3.BottomRight = 10;
-            borderRadius3.TopLeft = 10;
-            borderRadius3.TopRight = 10;
-            this.sataPanel12.BorderRadius = borderRadius3;
+            borderRadius8.BottomLeft = 10;
+            borderRadius8.BottomRight = 10;
+            borderRadius8.TopLeft = 10;
+            borderRadius8.TopRight = 10;
+            this.sataPanel12.BorderRadius = borderRadius8;
             this.sataPanel12.BorderThickness = 0;
             this.sataPanel12.Controls.Add(this.sataPictureBox5);
             this.sataPanel12.Controls.Add(this.label18);
@@ -312,11 +327,11 @@
             this.sataPanel10.BackColor = System.Drawing.Color.White;
             this.sataPanel10.BackColor2 = System.Drawing.Color.White;
             this.sataPanel10.BorderColor = System.Drawing.Color.Black;
-            borderRadius4.BottomLeft = 10;
-            borderRadius4.BottomRight = 10;
-            borderRadius4.TopLeft = 10;
-            borderRadius4.TopRight = 10;
-            this.sataPanel10.BorderRadius = borderRadius4;
+            borderRadius9.BottomLeft = 10;
+            borderRadius9.BottomRight = 10;
+            borderRadius9.TopLeft = 10;
+            borderRadius9.TopRight = 10;
+            this.sataPanel10.BorderRadius = borderRadius9;
             this.sataPanel10.BorderThickness = 0;
             this.sataPanel10.Controls.Add(this.sataPictureBox3);
             this.sataPanel10.Controls.Add(this.label14);
@@ -366,12 +381,158 @@
             this.lblAvailRoom.TabIndex = 1;
             this.lblAvailRoom.Text = "35";
             // 
+            // sataPanel1
+            // 
+            this.sataPanel1.BackColor = System.Drawing.Color.White;
+            this.sataPanel1.BackColor2 = System.Drawing.Color.White;
+            this.sataPanel1.BorderColor = System.Drawing.Color.Black;
+            borderRadius10.BottomLeft = 10;
+            borderRadius10.BottomRight = 10;
+            borderRadius10.TopLeft = 10;
+            borderRadius10.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius10;
+            this.sataPanel1.BorderThickness = 0;
+            this.sataPanel1.Controls.Add(this.materialTabControl1);
+            this.sataPanel1.Location = new System.Drawing.Point(32, 347);
+            this.sataPanel1.Name = "sataPanel1";
+            this.sataPanel1.Size = new System.Drawing.Size(1205, 424);
+            this.sataPanel1.TabIndex = 14;
+            // 
+            // materialTabControl1
+            // 
+            this.materialTabControl1.Controls.Add(this.tabPage1);
+            this.materialTabControl1.Depth = 0;
+            this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabControl1.Multiline = true;
+            this.materialTabControl1.Name = "materialTabControl1";
+            this.materialTabControl1.SelectedIndex = 0;
+            this.materialTabControl1.Size = new System.Drawing.Size(1205, 424);
+            this.materialTabControl1.TabIndex = 8;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.dataGridReservationDash);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1197, 395);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Customer List";
+            // 
+            // dataGridReservationDash
+            // 
+            this.dataGridReservationDash.AllowUserToAddRows = false;
+            this.dataGridReservationDash.AllowUserToDeleteRows = false;
+            this.dataGridReservationDash.AllowUserToResizeColumns = false;
+            this.dataGridReservationDash.AllowUserToResizeRows = false;
+            this.dataGridReservationDash.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridReservationDash.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridReservationDash.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridReservationDash.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridReservationDash.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservationDash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridReservationDash.ColumnHeadersHeight = 33;
+            this.dataGridReservationDash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReservationDash.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridReservationDash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridReservationDash.EnableHeadersVisualStyles = false;
+            this.dataGridReservationDash.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridReservationDash.Location = new System.Drawing.Point(3, 3);
+            this.dataGridReservationDash.MultiSelect = false;
+            this.dataGridReservationDash.Name = "dataGridReservationDash";
+            this.dataGridReservationDash.ReadOnly = true;
+            this.dataGridReservationDash.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservationDash.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridReservationDash.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridReservationDash.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridReservationDash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridReservationDash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridReservationDash.Size = new System.Drawing.Size(1191, 389);
+            this.dataGridReservationDash.TabIndex = 3;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label41.Location = new System.Drawing.Point(27, 304);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(211, 25);
+            this.label41.TabIndex = 1;
+            this.label41.Text = "Today\'s Reservation";
+            // 
+            // btnAddNew
+            // 
+            this.btnAddNew.ButtonText = "All Status";
+            this.btnAddNew.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnAddNew.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddNew.CheckedImageTint = System.Drawing.Color.White;
+            this.btnAddNew.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAddNew.HoverForeColor = System.Drawing.Color.White;
+            this.btnAddNew.HoverImage = null;
+            this.btnAddNew.HoverImageTint = System.Drawing.Color.White;
+            this.btnAddNew.HoverOutline = System.Drawing.Color.Transparent;
+            this.btnAddNew.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNew.Image")));
+            this.btnAddNew.ImageAutoCenter = true;
+            this.btnAddNew.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnAddNew.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAddNew.ImageTint = System.Drawing.Color.White;
+            this.btnAddNew.IsToggleButton = false;
+            this.btnAddNew.IsToggled = false;
+            this.btnAddNew.Location = new System.Drawing.Point(1108, 290);
+            this.btnAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAddNew.NormalForeColor = System.Drawing.Color.White;
+            this.btnAddNew.NormalOutline = System.Drawing.Color.Empty;
+            this.btnAddNew.OutlineThickness = 2F;
+            this.btnAddNew.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAddNew.PressedForeColor = System.Drawing.Color.White;
+            this.btnAddNew.PressedImageTint = System.Drawing.Color.White;
+            this.btnAddNew.PressedOutline = System.Drawing.Color.Empty;
+            this.btnAddNew.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnAddNew.Size = new System.Drawing.Size(122, 39);
+            this.btnAddNew.TabIndex = 15;
+            this.btnAddNew.TextAutoCenter = true;
+            this.btnAddNew.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // UCDashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.Controls.Add(this.btnAddNew);
+            this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.sataPanel12);
             this.Controls.Add(this.sataPanel11);
+            this.Controls.Add(this.label41);
             this.Controls.Add(this.sataPanel10);
             this.Controls.Add(this.sataPanel9);
             this.Controls.Add(this.panel2);
@@ -395,7 +556,12 @@
             this.sataPanel10.ResumeLayout(false);
             this.sataPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).EndInit();
+            this.sataPanel1.ResumeLayout(false);
+            this.materialTabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridReservationDash)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -422,5 +588,11 @@
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblAvailRoom;
+        private SATAUiFramework.SATAPanel sataPanel1;
+        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridReservationDash;
+        private System.Windows.Forms.Label label41;
+        private FrameworkTest.SATAButton btnAddNew;
     }
 }

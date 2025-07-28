@@ -22,31 +22,39 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCustomers));
-            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.sataPanel2 = new SATAUiFramework.SATAPanel();
+            this.cbType = new SATAComboBox();
+            this.btnCancel = new FrameworkTest.SATAButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.btnSave = new FrameworkTest.SATAButton();
             this.txtAddress = new SATATextBox();
             this.txtContact = new SATATextBox();
@@ -58,15 +66,8 @@
             this.btnEdit = new FrameworkTest.SATAButton();
             this.btnSearch = new FrameworkTest.SATAButton();
             this.txtSearch = new SATATextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnCancel = new FrameworkTest.SATAButton();
-            this.cbType = new SATAComboBox();
-            this.sataPanel2 = new SATAUiFramework.SATAPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -74,6 +75,8 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.sataPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -129,18 +132,6 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Admin";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(27, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 25);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Customers";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -151,11 +142,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.White;
             this.sataPanel1.BackColor2 = System.Drawing.Color.White;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius1.BottomLeft = 10;
-            borderRadius1.BottomRight = 10;
-            borderRadius1.TopLeft = 10;
-            borderRadius1.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius1;
+            borderRadius3.BottomLeft = 10;
+            borderRadius3.BottomRight = 10;
+            borderRadius3.TopLeft = 10;
+            borderRadius3.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius3;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 156);
@@ -199,24 +190,24 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 33;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
@@ -225,16 +216,16 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1168, 576);
@@ -264,6 +255,148 @@
             this.tabPage2.Size = new System.Drawing.Size(1174, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
+            // 
+            // sataPanel2
+            // 
+            this.sataPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.sataPanel2.BackColor2 = System.Drawing.Color.White;
+            this.sataPanel2.BorderColor = System.Drawing.Color.Black;
+            borderRadius4.BottomLeft = 10;
+            borderRadius4.BottomRight = 10;
+            borderRadius4.TopLeft = 10;
+            borderRadius4.TopRight = 10;
+            this.sataPanel2.BorderRadius = borderRadius4;
+            this.sataPanel2.BorderThickness = 0;
+            this.sataPanel2.Controls.Add(this.pictureBox1);
+            this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sataPanel2.Location = new System.Drawing.Point(673, 3);
+            this.sataPanel2.Name = "sataPanel2";
+            this.sataPanel2.Size = new System.Drawing.Size(498, 576);
+            this.sataPanel2.TabIndex = 14;
+            // 
+            // cbType
+            // 
+            this.cbType.BackColor = System.Drawing.Color.Transparent;
+            this.cbType.BackgroundColor = System.Drawing.Color.White;
+            this.cbType.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cbType.BorderThickness = 1;
+            this.cbType.CornerRadius = 3;
+            this.cbType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbType.Items = null;
+            this.cbType.Keys = null;
+            this.cbType.Location = new System.Drawing.Point(358, 287);
+            this.cbType.Name = "cbType";
+            this.cbType.SelectedIndex = -1;
+            this.cbType.Size = new System.Drawing.Size(263, 35);
+            this.cbType.TabIndex = 13;
+            this.cbType.Text = "sataComboBox1";
+            this.cbType.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cbType.TextOffset = new System.Windows.Forms.Padding(0);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.ButtonText = "Cancel";
+            this.btnCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.HoverBackground = System.Drawing.Color.White;
+            this.btnCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.HoverImage = null;
+            this.btnCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAutoCenter = true;
+            this.btnCancel.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCancel.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCancel.ImageTint = System.Drawing.Color.White;
+            this.btnCancel.IsToggleButton = false;
+            this.btnCancel.IsToggled = false;
+            this.btnCancel.Location = new System.Drawing.Point(30, 23);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.NormalBackground = System.Drawing.Color.Transparent;
+            this.btnCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCancel.OutlineThickness = 2F;
+            this.btnCancel.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancel.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCancel.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCancel.Size = new System.Drawing.Size(115, 35);
+            this.btnCancel.TabIndex = 12;
+            this.btnCancel.TextAutoCenter = true;
+            this.btnCancel.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(354, 258);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "ID Type";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(43, 334);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 21);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Address";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(48, 258);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 21);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Contact";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(354, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 21);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Last Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(48, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 21);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "First Name";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.DimGray;
+            this.label36.Location = new System.Drawing.Point(48, 105);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(73, 21);
+            this.label36.TabIndex = 10;
+            this.label36.Text = "Room Id";
             // 
             // btnSave
             // 
@@ -599,146 +732,28 @@
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
             // 
-            // label36
+            // pictureBox1
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.DimGray;
-            this.label36.Location = new System.Drawing.Point(48, 105);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(73, 21);
-            this.label36.TabIndex = 10;
-            this.label36.Text = "Room Id";
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(498, 576);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(48, 181);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "First Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(354, 181);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 21);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Last Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(48, 258);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Contact";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(354, 258);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 21);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "ID Type";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(43, 334);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 21);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Address";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.ButtonText = "Cancel";
-            this.btnCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
-            this.btnCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.HoverBackground = System.Drawing.Color.White;
-            this.btnCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.HoverImage = null;
-            this.btnCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.HoverOutline = System.Drawing.Color.Empty;
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageAutoCenter = true;
-            this.btnCancel.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnCancel.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnCancel.ImageTint = System.Drawing.Color.White;
-            this.btnCancel.IsToggleButton = false;
-            this.btnCancel.IsToggled = false;
-            this.btnCancel.Location = new System.Drawing.Point(30, 23);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.NormalBackground = System.Drawing.Color.Transparent;
-            this.btnCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.NormalOutline = System.Drawing.Color.Empty;
-            this.btnCancel.OutlineThickness = 2F;
-            this.btnCancel.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.PressedOutline = System.Drawing.Color.Empty;
-            this.btnCancel.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnCancel.Size = new System.Drawing.Size(115, 35);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.TextAutoCenter = true;
-            this.btnCancel.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // cbType
-            // 
-            this.cbType.BackColor = System.Drawing.Color.Transparent;
-            this.cbType.BackgroundColor = System.Drawing.Color.White;
-            this.cbType.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cbType.BorderThickness = 1;
-            this.cbType.CornerRadius = 3;
-            this.cbType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbType.Items = null;
-            this.cbType.Keys = null;
-            this.cbType.Location = new System.Drawing.Point(358, 287);
-            this.cbType.Name = "cbType";
-            this.cbType.SelectedIndex = -1;
-            this.cbType.Size = new System.Drawing.Size(263, 35);
-            this.cbType.TabIndex = 13;
-            this.cbType.Text = "sataComboBox1";
-            this.cbType.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.cbType.TextOffset = new System.Windows.Forms.Padding(0);
-            // 
-            // sataPanel2
-            // 
-            this.sataPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.sataPanel2.BackColor2 = System.Drawing.Color.White;
-            this.sataPanel2.BorderColor = System.Drawing.Color.Black;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.sataPanel2.BorderRadius = borderRadius2;
-            this.sataPanel2.BorderThickness = 0;
-            this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sataPanel2.Location = new System.Drawing.Point(673, 3);
-            this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(498, 576);
-            this.sataPanel2.TabIndex = 14;
+            this.label5.AutoSize = true;
+            this.label5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(27, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Customers";
             // 
             // UCCustomers
             // 
@@ -764,6 +779,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.sataPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -774,7 +791,6 @@
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private SATAUiFramework.SATAPanel sataPanel1;
         private FrameworkTest.SATAButton btnAddNew;
@@ -801,5 +817,7 @@
         private FrameworkTest.SATAButton btnCancel;
         private SATAComboBox cbType;
         private SATAUiFramework.SATAPanel sataPanel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

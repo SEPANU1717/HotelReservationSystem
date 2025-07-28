@@ -23,7 +23,7 @@ namespace HotelReservationSystem.UserControls
         public UCCustomers()
         {
             InitializeComponent();
-            AssociateAndraiseViewEvents();
+            AssociateAndRaiseViewEvents();
             InitializeComboBox();
             materialTabControl1.TabPages.Remove(tabPage2);
             string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
@@ -43,7 +43,7 @@ namespace HotelReservationSystem.UserControls
             cbType.Items = comboItems.ToArray();
         }
 
-        private void AssociateAndraiseViewEvents()
+        private void AssociateAndRaiseViewEvents()
         {
             btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
