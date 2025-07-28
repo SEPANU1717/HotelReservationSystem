@@ -1636,7 +1636,6 @@
             this.dataGridRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridRoom.Size = new System.Drawing.Size(1168, 576);
             this.dataGridRoom.TabIndex = 3;
-            this.dataGridRoom.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRoom_CellContentClick);
             // 
             // tabPage1
             // 

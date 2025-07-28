@@ -36,6 +36,9 @@ namespace HotelReservationSystem.Model.Reservation
             [DisplayName("Reservation Status")]
             [Required(ErrorMessage = "Status is required")]
             public string ReservationStatus { get; set; }
-        }
+
+        [DisplayName("Date Created")]
+        public DateTime CreatedAt { get; set; }
+    }
     }
 

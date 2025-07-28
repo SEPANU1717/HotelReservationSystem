@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface;
+using HotelReservationSystem.Interface.Reservation;
 using HotelReservationSystem.Interface.Rooms;
+using HotelReservationSystem.Presenter.Reservation;
 using HotelReservationSystem.Presenter.Rooms;
 using HotelReservationSystem.Repositories;
 using HotelReservationSystem.Repositories.Rooms;
@@ -22,7 +24,25 @@ namespace HotelReservationSystem.Presenter
             // Event subscriptions
             this.mainView.ShowCustomerView += ShowCustomerView;
             this.mainView.ShowRoomView += ShowRoomView;
+            this.mainView.ShowReservationView += ShowReservationView;
         }
+
+        private void ShowReservationView(object sender, EventArgs e)
+        {
+            var reservationControl = UCReservation.GetInstance((Form)mainView);
+            var reservationRepo = new ReservationRepository(sqlConnectionString);
+            var presenter = new ReservationPresenter(reservationControl, reservationRepo);
+
+            if (reservationControl is IReservationView reservatiomView)
+            {
+                mainView.LoadUserControl(reservationControl);
+            }
+            else
+            {
+                throw new InvalidCastException("Unable to cast UCCustomers to ICustomerView.");
+            }
+        }
+        
 
         private void ShowCustomerView(object sender, EventArgs e)
         {

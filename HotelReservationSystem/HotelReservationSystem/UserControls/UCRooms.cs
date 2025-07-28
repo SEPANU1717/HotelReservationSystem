@@ -228,10 +228,6 @@ namespace HotelReservationSystem.UserControls
             txtBedCount.Texts = "1";
             txtRoomPrice.Texts = "1999";
         }
-
-        private void dataGridRoom_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
+
