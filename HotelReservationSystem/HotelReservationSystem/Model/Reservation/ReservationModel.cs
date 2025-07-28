@@ -31,7 +31,7 @@ namespace HotelReservationSystem.Model.Reservation
 
             [DisplayName("Total Amount")]
             [Required(ErrorMessage = "Total amount is required")]
-            public decimal TotalAmount { get; set; }
+            public decimal TotalPrice { get; set; }
 
             [DisplayName("Reservation Status")]
             [Required(ErrorMessage = "Status is required")]
