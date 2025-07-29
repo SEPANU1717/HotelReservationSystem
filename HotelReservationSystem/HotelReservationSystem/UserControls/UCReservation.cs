@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -98,14 +98,25 @@ namespace HotelReservationSystem.UserControls
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
-                    // Update room status to "Occupied"
+                    // Update room status based on reservation status
                     string selectedRoomNumber = cbNumber.SelectedItem as string;
+                    string reservationStatus = cbStatus.SelectedItem as string;
+                    
                     if (!string.IsNullOrEmpty(selectedRoomNumber))
                     {
                         var room = roomRepo.GetAll().FirstOrDefault(r => r.RoomNumber == selectedRoomNumber);
                         if (room != null)
                         {
-                            room.RoomStatus = "Occupied";
+                            // Only set room to "Occupied" if reservation status is "Reserved"
+                            // Keep room "Available" if reservation status is "Pending"
+                            if (reservationStatus == "Reserved")
+                            {
+                                room.RoomStatus = "Occupied";
+                            }
+                            else if (reservationStatus == "Pending")
+                            {
+                                room.RoomStatus = "Available";
+                            }
                             roomRepo.Edit(room);
                         }
                     }
@@ -248,22 +259,6 @@ namespace HotelReservationSystem.UserControls
             "Reserved",
             "Pending"
             });
-        }
-        private void btnReservationSave_Click(object sender, EventArgs e)
-        {
-            if (isSuccessful)
-            {
-                string selectedRoomNumber = cbNumber.SelectedItem as string;
-                if (!string.IsNullOrEmpty(selectedRoomNumber))
-                {
-                    var room = roomRepo.GetAll().FirstOrDefault(r => r.RoomNumber == selectedRoomNumber);
-                    if (room != null)
-                    {
-                        room.RoomStatus = "Occupied";
-                        roomRepo.Edit(room);
-                    }
-                }
-            }
         }
 
         private void DateOrRoomChanged(object sender, EventArgs e)
