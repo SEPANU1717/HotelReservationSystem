@@ -65,7 +65,7 @@ namespace HotelReservationSystem.UserControls
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
-                materialTabControl1.Text = "Add new room";
+                materialTabControl1.Text = "Add new reservation";
             };
 
             btnReservationEdit.Click += delegate
@@ -73,17 +73,11 @@ namespace HotelReservationSystem.UserControls
                 if (dataGridReservation.SelectedRows.Count > 0)
                 {
                     int reservationId = Convert.ToInt32(dataGridReservation.SelectedRows[0].Cells["ReservationId"].Value);
-                    // Duplicate block
-                    if (dataGridReservation.SelectedRows.Count > 0)
-                    {
-                        int ReservationId = Convert.ToInt32(dataGridReservation.SelectedRows[0].Cells["ReservationId"].Value);
-                        LoadReservationForEdit(reservationId);
-                    }
                     LoadReservationForEdit(reservationId);
                     EditEvent?.Invoke(this, EventArgs.Empty);
                     materialTabControl1.TabPages.Remove(tabPage1);
                     materialTabControl1.TabPages.Add(tabPage2);
-                    materialTabControl1.Text = "Edit room";
+                    materialTabControl1.Text = "Edit reservation";
                 }
                 else
                 {
