@@ -143,53 +143,16 @@ namespace HotelReservationSystem.UserControls
         public string Guests { get => txtRoomGuests.Texts; set => txtRoomGuests.Texts = value; }
         public DateTime CheckInDate { get => dtCheckIn.Value; set => dtCheckIn.Value = value; }
         public DateTime CheckOutDate { get => dtCheckOut.Value; set => dtCheckOut.Value = value; }
+        public string CustomerName { get => cbCusName.SelectedItem as string; set => cbCusName.SelectedItem = value; }
+        public string RoomNumber { get => cbNumber.SelectedItem as string; set => cbNumber.SelectedItem = value; }
+        public string RoomType { get => cbType.SelectedItem as string; set => cbType.SelectedItem = value; }
+        public string TotalPrice { get => txtPrice.Texts; set => txtPrice.Texts = value; }
+        public string ReservationStatus { get => cbStatus.SelectedItem as string; set => cbStatus.SelectedItem = value; }
         public string SearchValue { get => txtReservationSearch.Texts; set => txtReservationSearch.Texts = value; }
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
-        public string CustomerName
-        {
-            get => cbCusName.SelectedItem as string;
-            set
-            {
-                int index = cbCusName.Items.Cast<object>().ToList().IndexOf(value);
-                if (index >= 0) cbCusName.SelectedIndex = index;
-            }
-        }
-        public string RoomNumber
-        {
-            get => cbNumber.SelectedItem as string;
-            set
-            {
-                if (cbNumber.Items != null)
-                {
-                    int index = cbNumber.Items.Cast<object>().ToList().IndexOf(value);
-                    if (index >= 0) cbNumber.SelectedIndex = index;
-                }
-            }
-        }
-        public string RoomType
-        {
-            get => cbType.SelectedItem as string;
-            set
-            {
-                int index = cbType.Items.Cast<object>().ToList().IndexOf(value);
-                if (index >= 0) cbType.SelectedIndex = index;
-            }
-        }
-        public string TotalPrice { get => txtPrice.Texts; set => txtPrice.Texts = value; }
-        public string ReservationStatus
-        {
-            get => cbStatus.SelectedItem as string;
-            set
-            {
-                if (cbStatus.Items != null)
-                {
-                    int index = cbStatus.Items.Cast<object>().ToList().IndexOf(value);
-                    if (index >= 0) cbStatus.SelectedIndex = index;
-                }
-            }
-        }
+
 
 
 
