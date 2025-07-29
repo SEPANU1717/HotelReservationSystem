@@ -18,28 +18,39 @@ namespace HotelReservationSystem.Repositories
         //<-----------------------Add Customer--------------------------/>
         public void Add(CustomerModel customer)
         {
-            using (var connection = new SqlConnection(connectionString))
-            using (var command = connection.CreateCommand())
-            using (var insertCommand = connection.CreateCommand())
+            try
             {
-                connection.Open();
-                command.CommandText = "SELECT COUNT(*) FROM Customers WHERE LastName = @lname";
-                command.Parameters.Add("@lname", SqlDbType.NVarChar).Value = customer.LastName;
+                using (var connection = new SqlConnection(connectionString))
+                using (var command = connection.CreateCommand())
+                using (var insertCommand = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = "SELECT COUNT(*) FROM Customers WHERE LastName = @lname";
+                    command.Parameters.Add("@lname", SqlDbType.NVarChar).Value = customer.LastName;
 
-                int count = (int)command.ExecuteScalar();
-                if (count > 0) throw new Exception($"Customer last name '{customer.LastName}' already exists.");
+                    int count = (int)command.ExecuteScalar();
+                    if (count > 0) throw new Exception($"Customer last name '{customer.LastName}' already exists.");
 
-                insertCommand.Connection = connection;
-                insertCommand.CommandText = @"INSERT INTO Customers 
-                                        (FirstName, LastName, IDType, Contact, Address)
-                                        VALUES (@fname, @lname, @idType, @contact, @address)";
+                    insertCommand.Connection = connection;
+                    insertCommand.CommandText = @"INSERT INTO Customers 
+                                            (FirstName, LastName, IDType, Contact, Address)
+                                            VALUES (@fname, @lname, @idType, @contact, @address)";
 
-                insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = customer.FirstName;
-                insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = customer.LastName;
-                insertCommand.Parameters.Add("@idType", SqlDbType.NVarChar).Value = customer.IDType;
-                insertCommand.Parameters.Add("@contact", SqlDbType.NVarChar).Value = customer.Contact;
-                insertCommand.Parameters.Add("@address", SqlDbType.NVarChar).Value = customer.Address;
-                insertCommand.ExecuteNonQuery();
+                    insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = customer.FirstName;
+                    insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = customer.LastName;
+                    insertCommand.Parameters.Add("@idType", SqlDbType.NVarChar).Value = customer.IDType;
+                    insertCommand.Parameters.Add("@contact", SqlDbType.NVarChar).Value = customer.Contact;
+                    insertCommand.Parameters.Add("@address", SqlDbType.NVarChar).Value = customer.Address;
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Database error occurred while adding a customer.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
 
@@ -160,6 +171,24 @@ namespace HotelReservationSystem.Repositories
                 connection.Open();
                 return (int)command.ExecuteScalar();
             }
+        }
+
+        public IEnumerable<string> GetAllCustomerNames()
+        {
+            var names = new List<string>();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand("SELECT LastName FROM Customers", connection))
+            {
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        names.Add(reader.GetString(0));
+                    }
+                }
+            }
+            return names;
         }
     }
 }

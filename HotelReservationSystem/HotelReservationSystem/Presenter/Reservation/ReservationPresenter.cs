@@ -50,15 +50,21 @@ namespace HotelReservationSystem.Presenter.Reservation
             try
             {
                 var reserve = (ReservationModel)ReservationBindingSource.Current;
+                if (reserve == null)
+                {
+                    reservationView.isSuccessful = false;
+                    reservationView.Message = "No reservation selected for deletion.";
+                    return;
+                }
                 repository.Delete(reserve.ReservationId);
                 reservationView.isSuccessful = true;
                 reservationView.Message = "Reservation deleted successfully";
                 LoadAllReservationList();
             }
-            catch
+            catch (Exception ex)
             {
                 reservationView.isSuccessful = false;
-                reservationView.Message = "An error ocurred, could not delete room";
+                reservationView.Message = "An error occurred, could not delete reservation: " + ex.Message;
             }
         }
 
@@ -68,8 +74,7 @@ namespace HotelReservationSystem.Presenter.Reservation
         {
             var model = new ReservationModel();
             model.ReservationId = int.Parse(reservationView.ReservationId);
-            model.CustomerId = int.Parse(reservationView.ReservationId);
-            model.RoomId = int.Parse(reservationView.RoomId);
+            model.CustomerName = reservationView.CustomerName;
             model.CheckInDate = reservationView.CheckInDate;
             model.CheckOutDate = reservationView.CheckOutDate;
             model.TotalPrice = decimal.Parse(reservationView.TotalPrice);
@@ -102,8 +107,7 @@ namespace HotelReservationSystem.Presenter.Reservation
         {
             var reserve = (ReservationModel)ReservationBindingSource.Current;
             reservationView.ReservationId = reserve.ReservationId.ToString();
-            reservationView.CustomerName = reserve.CustomerId.ToString();
-            reservationView.RoomId = reserve.RoomId.ToString();
+            reservationView.CustomerName = reserve.CustomerName.ToString();
             reservationView.CheckInDate = reserve.CheckInDate;
             reservationView.CheckOutDate = reserve.CheckOutDate;
             reservationView.TotalPrice = reserve.TotalPrice.ToString();
@@ -130,13 +134,11 @@ namespace HotelReservationSystem.Presenter.Reservation
         {
             reservationView.ReservationId = "";
             reservationView.CustomerName = "";
-            reservationView.RoomId = "";
             reservationView.RoomNumber = "";
             reservationView.RoomType = "";
             reservationView.Guests = "";
             reservationView.CheckInDate = DateTime.Now;
             reservationView.CheckOutDate = DateTime.Now;
-            reservationView.ReservedDate = DateTime.Now;
             reservationView.TotalPrice = "";
         }
     }

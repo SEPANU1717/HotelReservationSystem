@@ -13,13 +13,9 @@ namespace HotelReservationSystem.Model.Reservation
             [DisplayName("Reservation ID")]
             public int ReservationId { get; set; }
 
-            [DisplayName("Customer ID")]
+            [DisplayName("Customer Name")]
             [Required(ErrorMessage = "Customer ID is required")]
-            public int CustomerId { get; set; }
-
-            [DisplayName("Room ID")]
-            [Required(ErrorMessage = "Room ID is required")]
-            public int RoomId { get; set; }
+            public string CustomerName { get; set; }
 
             [DisplayName("Check-In Date")]
             [Required(ErrorMessage = "Check-in date is required")]

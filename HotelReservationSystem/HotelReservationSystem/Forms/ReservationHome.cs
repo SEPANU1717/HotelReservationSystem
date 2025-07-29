@@ -29,7 +29,7 @@ namespace HotelReservationSystem
         public event EventHandler ShowCustomerView;
         public event EventHandler ShowRoomView;
         public event EventHandler ShowReservationView;
-
+        public event EventHandler ShowLoginView;
 
         public void LoadUserControl(UserControl control)
         {

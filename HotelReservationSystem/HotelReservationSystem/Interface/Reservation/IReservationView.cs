@@ -12,13 +12,11 @@ namespace HotelReservationSystem.Interface.Reservation
         // Reservation details
         string ReservationId { get; set; }
         string CustomerName { get; set; }
-        string RoomId { get; set; }
         string RoomNumber { get; set; }
         string RoomType { get; set; }
         string Guests { get; set; }
         DateTime CheckInDate { get; set; }
         DateTime CheckOutDate { get; set; }
-        DateTime ReservedDate { get; set; }
         string TotalPrice { get; set; }
         string ReservationStatus { get; set; }
 
@@ -41,5 +39,6 @@ namespace HotelReservationSystem.Interface.Reservation
         // Load data to DataGridView
         void SetReservationListBindingSource(BindingSource reservationList);
         void Show();
+
     }
 }

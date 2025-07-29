@@ -182,5 +182,37 @@ namespace HotelReservationSystem.Repositories.Rooms
                 return (int)command.ExecuteScalar();
             }
         }
+
+        public IEnumerable<RoomModel> GetAvailableRoomsByType(string roomType)
+        {
+            var list = new List<RoomModel>();
+            using (var conn = new SqlConnection(connectionString))
+            using (var cmd = new SqlCommand("SELECT * FROM Rooms WHERE RoomType = @type AND RoomStatus = 'Available'", conn))
+            {
+                conn.Open();
+                cmd.Parameters.AddWithValue("@type", roomType);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new RoomModel
+                        {
+                            RoomId = (int)reader["RoomId"],
+                            RoomNumber = reader["RoomNumber"].ToString(),
+                            RoomType = reader["RoomType"].ToString(),
+                            RoomStatus = reader["RoomStatus"].ToString(),
+                            RoomPrice = reader["RoomPrice"].ToString(),
+                            BedCount = reader["BedCount"].ToString(),
+                            RoomGuests = reader["MaxGuests"].ToString(),
+                            RoomDescription = reader["RoomDescription"].ToString()
+                        });
+                    }
+                }
+            }
+            return list;
+        }
+
+
+
     }
 }

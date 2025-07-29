@@ -20,24 +20,22 @@ namespace HotelReservationSystem.Repositories
         public void Add(ReservationModel reservation)
         {
             using (var connection = new SqlConnection(connectionString))
-            using(var checkCommand = connection.CreateCommand())
-            using(var insertCommand = connection.CreateCommand())
+            using (var checkCommand = connection.CreateCommand())
+            using (var insertCommand = connection.CreateCommand())
             {
                 connection.Open();
-                checkCommand.CommandText = "SELECT COUNT (*) FROM Reservations WHERE CustomerId = @cId";
-                checkCommand.Parameters.Add("@cId", SqlDbType.Int).Value = reservation.CustomerId;
+                checkCommand.CommandText = "SELECT COUNT(*) FROM Reservations WHERE CustomerName = @cName";
+                checkCommand.Parameters.Add("@cName", SqlDbType.VarChar).Value = reservation.CustomerName;
 
                 int count = (int)checkCommand.ExecuteScalar();
-                if (count > 0) throw new Exception($"Customer id '{reservation.CustomerId}' already exists.");
+                if (count > 0) throw new Exception($"Customer name '{reservation.CustomerName}' already exists.");
 
                 insertCommand.Connection = connection;
                 insertCommand.CommandText = @"
-                    INSERT INTO Reservations (ReservationId, CustomerId, RoomId, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus) 
-                    VALUES (@ReservationId, @CustomerId, @RoomId, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus)";
+                    INSERT INTO Reservations (CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus) 
+                    VALUES (@CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus)";
 
-                insertCommand.Parameters.Add("@ReservationId", SqlDbType.Int).Value = reservation.ReservationId;
-                insertCommand.Parameters.Add("@CustomerId", SqlDbType.Int).Value = reservation.CustomerId;
-                insertCommand.Parameters.Add("@RoomId", SqlDbType.Int).Value = reservation.RoomId;
+                insertCommand.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = reservation.CustomerName;
                 insertCommand.Parameters.Add("@CheckInDate", SqlDbType.DateTime).Value = reservation.CheckInDate;
                 insertCommand.Parameters.Add("@CheckOutDate", SqlDbType.DateTime).Value = reservation.CheckOutDate;
                 insertCommand.Parameters.Add("@TotalAmount", SqlDbType.Decimal).Value = reservation.TotalPrice;
@@ -55,7 +53,7 @@ namespace HotelReservationSystem.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "DELETE FROM Reservations WHERE ReservatioId = @id";
+                command.CommandText = "DELETE FROM Reservations WHERE ReservationId = @id";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.ExecuteNonQuery();
@@ -72,16 +70,14 @@ namespace HotelReservationSystem.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"UPDATE Reservations
-                                        SET CustomerId = @customerid,
-                                        RoomId = roomId,
+                                        SET CustomerName = @CustomerName,
                                         CheckInDate = @inDate,
                                         CheckOutDate = @outDate,
                                         TotalAmount = @amount,
                                         ReservationStatus = @status
                                         WHERE Reservationid = @reserveId";
 
-                command.Parameters.Add("@customerId", SqlDbType.Int).Value = reservation.CustomerId;
-                command.Parameters.Add("@roomId", SqlDbType.Int).Value = reservation.RoomId;
+                command.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = reservation.CustomerName;
                 command.Parameters.Add("@inDate", SqlDbType.DateTime).Value = reservation.CheckInDate;
                 command.Parameters.Add("@outDate", SqlDbType.DateTime).Value = reservation.CheckOutDate;
                 command.Parameters.Add("@amount", SqlDbType.Decimal).Value = reservation.TotalPrice;
@@ -110,13 +106,12 @@ namespace HotelReservationSystem.Repositories
                     {
                         var reservation = new ReservationModel();
                         reservation.ReservationId = (int)(reader[0]);
-                        reservation.CustomerId = (int)(reader[1]);
-                        reservation.RoomId = (int)(reader[2]);
-                        reservation.CheckInDate = (DateTime)(reader[3]);
-                        reservation.CheckOutDate = (DateTime)(reader[4]);
-                        reservation.TotalPrice = Convert.ToDecimal(reader[5]);
-                        reservation.ReservationStatus = reader[6].ToString();
-                        reservation.CreatedAt = Convert.ToDateTime(reader[7]);
+                        reservation.CustomerName = reader[1].ToString();
+                        reservation.CheckInDate = (DateTime)(reader[2]);
+                        reservation.CheckOutDate = (DateTime)(reader[3]);
+                        reservation.TotalPrice = Convert.ToDecimal(reader[4]);
+                        reservation.ReservationStatus = reader[5].ToString();
+                        reservation.CreatedAt = Convert.ToDateTime(reader[6]);
 
                         reservationList.Add(reservation);
                     }
@@ -138,11 +133,11 @@ namespace HotelReservationSystem.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"SELECT * FROM Reservations 
-                                WHERE ReservationId = @id OR ReservationStatus LIKE @status 
+                                WHERE ReservationId = @id OR CustomerName LIKE @cid 
                                 ORDER BY ReservationId DESC";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = reservationId;
-                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = $"%{value}%";
+                command.Parameters.Add("@cid", SqlDbType.VarChar).Value = $"%{value}%";
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -151,12 +146,11 @@ namespace HotelReservationSystem.Repositories
                         reservationList.Add(new ReservationModel
                         {
                             ReservationId = Convert.ToInt32(reader[0]),
-                            CustomerId = Convert.ToInt32(reader[1]),
-                            RoomId = Convert.ToInt32(reader[2]),
-                            CheckInDate = Convert.ToDateTime(reader[3]),
-                            CheckOutDate = Convert.ToDateTime(reader[4]),
-                            TotalPrice = Convert.ToDecimal(reader[5]),
-                            ReservationStatus = reader[6].ToString()
+                            CustomerName = reader[1].ToString(),
+                            CheckInDate = Convert.ToDateTime(reader[2]),
+                            CheckOutDate = Convert.ToDateTime(reader[3]),
+                            TotalPrice = Convert.ToDecimal(reader[4]),
+                            ReservationStatus = reader[5].ToString()
                         });
                     }
                 }
@@ -165,5 +159,43 @@ namespace HotelReservationSystem.Repositories
             return reservationList;
         }
 
+        //<-----------------------Get Next Reservation Id--------------------------/>
+
+        public int GetNextReservationId()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand("SELECT ISNULL(MAX(ReservationId), 0) + 1 FROM Reservations", connection))
+            {
+                connection.Open();
+                return (int)command.ExecuteScalar();
+            }
+        }
+        public ReservationModel GetById(int reservationId)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                connection.Open();
+                command.CommandText = "SELECT * FROM Reservations WHERE ReservationId = @id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = reservationId;
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new ReservationModel
+                        {
+                            ReservationId = Convert.ToInt32(reader["ReservationId"]),
+                            CustomerName = reader["CustomerName"].ToString(),
+                            CheckInDate = Convert.ToDateTime(reader["CheckInDate"]),
+                            CheckOutDate = Convert.ToDateTime(reader["CheckOutDate"]),
+                            TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
+                            ReservationStatus = reader["ReservationStatus"].ToString(),
+                        };
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

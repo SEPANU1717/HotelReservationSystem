@@ -8,6 +8,7 @@ namespace HotelReservationSystem.Interface
         event EventHandler ShowCustomerView;
         event EventHandler ShowRoomView;
         event EventHandler ShowReservationView;
+        event EventHandler ShowLoginView;
         void LoadUserControl(UserControl control);
     }
 }

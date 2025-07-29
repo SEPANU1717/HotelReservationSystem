@@ -47,11 +47,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TopHomePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // sataEllipseControl1
@@ -424,6 +426,7 @@
             // TopHomePanel
             // 
             this.TopHomePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.TopHomePanel.Controls.Add(this.pictureBox2);
             this.TopHomePanel.Controls.Add(this.panel2);
             this.TopHomePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TopHomePanel.Location = new System.Drawing.Point(192, 0);
@@ -498,6 +501,16 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Homepage";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-118, 65);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1416, 691);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
             // ReservationSystem
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -517,6 +530,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -541,6 +555,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private FrameworkTest.SATAButton sataButton7;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

@@ -10,8 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface;
 using HotelReservationSystem.Repositories;
-using HotelReservationSystem.Repositories.Rooms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -107,11 +105,18 @@ namespace HotelReservationSystem.UserControls
         public string CustomerLastName { get => txtLName.Texts; set => txtLName.Texts = value; }
         public string CustomerIdType
         {
-            get => cbType.SelectedItem;
+            get
+            {
+                // Prefer SelectedItem, fallback to Text if null
+                return cbType.SelectedItem ?? cbType.Text;
+            }
             set
             {
                 int index = Array.IndexOf(cbType.Items, value);
-                if (index >= 0) cbType.SelectedIndex = index;
+                if (index >= 0)
+                    cbType.SelectedIndex = index;
+                else
+                    cbType.Text = value;
             }
         }
         public string CustomerContact { get => txtContact.Texts; set => txtContact.Texts = value; }
