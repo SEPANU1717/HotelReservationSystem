@@ -532,6 +532,7 @@
             this.cbReservationId.Name = "cbReservationId";
             this.cbReservationId.Size = new System.Drawing.Size(206, 29);
             this.cbReservationId.TabIndex = 36;
+            this.cbReservationId.SelectedIndexChanged += new System.EventHandler(this.cbReservationId_SelectedIndexChanged);
             // 
             // txtRoomNumber
             // 

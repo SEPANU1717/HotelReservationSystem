@@ -38,7 +38,6 @@ namespace HotelReservationSystem.UserControls
             dtCheckIn.ValueChanged += DateOrRoomChanged;
             dtCheckOut.ValueChanged += DateOrRoomChanged;
             cbNumber.SelectedIndexChanged += DateOrRoomChanged;
-
         }
 
         public event EventHandler SearchEvent;
@@ -71,12 +70,6 @@ namespace HotelReservationSystem.UserControls
                 if (dataGridReservation.SelectedRows.Count > 0)
                 {
                     int reservationId = Convert.ToInt32(dataGridReservation.SelectedRows[0].Cells["ReservationId"].Value);
-                    
-                    if (dataGridReservation.SelectedRows.Count > 0)
-                    {
-                        int ReservationId = Convert.ToInt32(dataGridReservation.SelectedRows[0].Cells["ReservationId"].Value);
-                        LoadReservationForEdit(reservationId);
-                    }
                     LoadReservationForEdit(reservationId);
                     EditEvent?.Invoke(this, EventArgs.Empty);
                     materialTabControl1.TabPages.Remove(tabPage1);
@@ -89,43 +82,24 @@ namespace HotelReservationSystem.UserControls
                 }
             };
 
-
-
             btnReservationSave.Click += delegate
             {
+                string selectedRoomNumber = cbNumber.SelectedItem as string;
+                RoomNumber = selectedRoomNumber;
+
                 SaveEvent?.Invoke(this, EventArgs.Empty);
+
                 if (isSuccessful)
                 {
-                    // Update room status to "Occupied"
-                    string selectedRoomNumber = cbNumber.SelectedItem as string;
-                    string reservationStatus = cbStatus.SelectedItem as string;
-                    if (!string.IsNullOrEmpty(selectedRoomNumber))
-                    {
-                        var room = roomRepo.GetAll().FirstOrDefault(r => r.RoomNumber == selectedRoomNumber);
-                        if (room != null)
-                        {
-                            if (reservationStatus == "Reserved")
-                            {
-                                room.RoomStatus = "Occupied";
-                            }
-                            else if
-                                (reservationStatus == "Pending") {
-                                room.RoomStatus = "Available";
-                        }
 
-                        roomRepo.Edit(room);
-                    }
+
+                    isEdit = false;
+                    materialTabControl1.TabPages.Remove(tabPage2);
+                    materialTabControl1.TabPages.Add(tabPage1);
+                    cbType_SelectedIndexChanged(null, null);
                 }
-
-
-                isEdit = false;
-                materialTabControl1.TabPages.Remove(tabPage2);
-                materialTabControl1.TabPages.Add(tabPage1);
-                cbType_SelectedIndexChanged(null, null);
-            }
                 MessageBox.Show(Message);
-        };
-
+            };
 
             btnReservationCancel.Click += delegate
             {
@@ -160,9 +134,6 @@ namespace HotelReservationSystem.UserControls
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
-
-
-
 
         private static UCReservation _instance;
         public static void ResetInstance()
@@ -218,7 +189,7 @@ namespace HotelReservationSystem.UserControls
                 cbNumber.Items.Clear();
                 cbNumber.Items.AddRange(availableRooms.Select(r => r.RoomNumber).ToArray());
                 cbNumber.SelectedIndex = -1;
-                txtRoomGuests.Texts = string.Empty; 
+                txtRoomGuests.Texts = string.Empty;
             }
             else
             {
@@ -248,30 +219,15 @@ namespace HotelReservationSystem.UserControls
                 txtRoomGuests.Texts = string.Empty;
             }
         }
+
         private void InitializeRoomStatusComboBox()
         {
             cbStatus.Items.Clear();
             cbStatus.Items.AddRange(new string[]
             {
-            "Reserved",
-            "Pending"
+                    "Reserved",
+                    "Pending"
             });
-        }
-        private void btnReservationSave_Click(object sender, EventArgs e)
-        {
-            if (isSuccessful)
-            {
-                string selectedRoomNumber = cbNumber.SelectedItem as string;
-                if (!string.IsNullOrEmpty(selectedRoomNumber))
-                {
-                    var room = roomRepo.GetAll().FirstOrDefault(r => r.RoomNumber == selectedRoomNumber);
-                    if (room != null)
-                    {
-                        room.RoomStatus = "Occupied";
-                        roomRepo.Edit(room);
-                    }
-                }
-            }
         }
 
         private void DateOrRoomChanged(object sender, EventArgs e)
@@ -285,7 +241,7 @@ namespace HotelReservationSystem.UserControls
                 decimal.TryParse(selectedRoom.RoomPrice, out pricePerNight);
 
                 int nights = (int)(dtCheckOut.Value.Date - dtCheckIn.Value.Date).TotalDays;
-                if (nights < 1) nights = 1; 
+                if (nights < 1) nights = 1;
 
                 decimal total = pricePerNight * nights;
                 txtPrice.Texts = total.ToString("0.00");
@@ -295,6 +251,7 @@ namespace HotelReservationSystem.UserControls
                 txtPrice.Texts = "0.00";
             }
         }
+
         public void LoadReservationForEdit(int reservationId)
         {
             var reservation = reserveRepo.GetById(reservationId);
@@ -307,10 +264,24 @@ namespace HotelReservationSystem.UserControls
                 TotalPrice = reservation.TotalPrice.ToString("0.00");
                 ReservationStatus = reservation.ReservationStatus;
 
-
-
+                if (!string.IsNullOrEmpty(reservation.RoomNumber))
+                {
+                    var room = roomRepo.GetByNumber(reservation.RoomNumber);
+                    if (room != null)
+                    {
+                        RoomType = room.RoomType;
+                        RoomNumber = reservation.RoomNumber;
+                        if (cbNumber.SelectedItem == null && !string.IsNullOrEmpty(reservation.RoomNumber))
+                        {
+                            cbNumber.Items.Add(reservation.RoomNumber);
+                            cbNumber.SelectedItem = reservation.RoomNumber;
+                        }
+                    }
                 }
+            }
+
             }
         }
     }
+    
 

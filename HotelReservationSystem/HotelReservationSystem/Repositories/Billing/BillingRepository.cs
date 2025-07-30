@@ -26,11 +26,11 @@ namespace HotelReservationSystem.Repositories.Billing
                         VALUES (@ReservationId, @CustomerName, @RoomType, @RoomNumber, @TotalAmount, @PaymentStatus, @DateBilled)";
 
                 command.Parameters.Add("@ReservationId", SqlDbType.Int).Value = billing.ReservationId;
-                command.Parameters.Add("@CustomerName", SqlDbType.NVarChar, 100).Value = billing.CustomerName;
-                command.Parameters.Add("@RoomType", SqlDbType.NVarChar, 50).Value = (object)billing.RoomType ?? DBNull.Value;
-                command.Parameters.Add("@RoomNumber", SqlDbType.NVarChar, 20).Value = billing.RoomNumber;
+                command.Parameters.Add("@CustomerName", SqlDbType.NVarChar).Value = billing.CustomerName;
+                command.Parameters.Add("@RoomType", SqlDbType.NVarChar).Value = (object)billing.RoomType ?? DBNull.Value;
+                command.Parameters.Add("@RoomNumber", SqlDbType.NVarChar).Value = billing.RoomNumber;
                 command.Parameters.Add("@TotalAmount", SqlDbType.Decimal).Value = billing.TotalAmount;
-                command.Parameters.Add("@PaymentStatus", SqlDbType.NVarChar, 20).Value = (object)billing.PaymentStatus ?? DBNull.Value;
+                command.Parameters.Add("@PaymentStatus", SqlDbType.NVarChar).Value = (object)billing.PaymentStatus ?? DBNull.Value;
                 command.Parameters.Add("@DateBilled", SqlDbType.DateTime).Value = billing.DateBilled;
 
                 command.ExecuteNonQuery();
@@ -70,10 +70,10 @@ namespace HotelReservationSystem.Repositories.Billing
 
                 command.Parameters.Add("@ReservationId", SqlDbType.Int).Value = billing.ReservationId;
                 command.Parameters.Add("@CustomerName", SqlDbType.NVarChar, 100).Value = billing.CustomerName;
-                command.Parameters.Add("@RoomType", SqlDbType.NVarChar, 50).Value = (object)billing.RoomType ?? DBNull.Value;
-                command.Parameters.Add("@RoomNumber", SqlDbType.NVarChar, 20).Value = billing.RoomNumber;
+                command.Parameters.Add("@RoomType", SqlDbType.NVarChar).Value = (object)billing.RoomType ?? DBNull.Value;
+                command.Parameters.Add("@RoomNumber", SqlDbType.NVarChar).Value = billing.RoomNumber;
                 command.Parameters.Add("@TotalAmount", SqlDbType.Decimal).Value = billing.TotalAmount;
-                command.Parameters.Add("@PaymentStatus", SqlDbType.NVarChar, 20).Value = (object)billing.PaymentStatus ?? DBNull.Value;
+                command.Parameters.Add("@PaymentStatus", SqlDbType.NVarChar).Value = (object)billing.PaymentStatus ?? DBNull.Value;
                 command.Parameters.Add("@DateBilled", SqlDbType.DateTime).Value = billing.DateBilled;
                 command.Parameters.Add("@BillId", SqlDbType.Int).Value = billing.BillId;
 
@@ -127,7 +127,7 @@ namespace HotelReservationSystem.Repositories.Billing
                         ORDER BY BillId DESC";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = billId;
-                command.Parameters.Add("@name", SqlDbType.NVarChar, 100).Value = $"%{value}%";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = $"%{value}%";
 
                 using (var reader = command.ExecuteReader())
                 {

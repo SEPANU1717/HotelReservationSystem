@@ -17,9 +17,11 @@ namespace HotelReservationSystem.UserControls
     public partial class UCDashboard : UserControl
     {
         string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
+        private RoomRepository roomRepo;
         public UCDashboard()
         {
             InitializeComponent();
+            roomRepo = new RoomRepository(connectionString);
         }
 
         private void sataBarChart1_Load(object sender, EventArgs e)
@@ -40,6 +42,8 @@ namespace HotelReservationSystem.UserControls
             lblOccuRooms.Text = totalOccupiedRooms.ToString();
             lblTotalGuests.Text = totalGuestToday.ToString();
 
+
         }
+
     }
 }

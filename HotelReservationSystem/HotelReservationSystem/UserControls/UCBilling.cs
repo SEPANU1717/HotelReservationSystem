@@ -9,13 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface.Billing;
+using HotelReservationSystem.Model.Reservation;
+using HotelReservationSystem.Repositories;
 using HotelReservationSystem.Repositories.Billing;
+using HotelReservationSystem.Repositories.Rooms;
 
 namespace HotelReservationSystem.UserControls
 {
     public partial class UCBilling : UserControl, IBillingView
     {
         BillingRepository billRepo;
+        ReservationRepository reserveRepo;
+        RoomRepository roomRepo;
+
         public UCBilling()
         {
             InitializeComponent();
@@ -23,6 +29,20 @@ namespace HotelReservationSystem.UserControls
             materialTabControl1.TabPages.Remove(tabPage2);
             string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
             billRepo = new BillingRepository(connectionString);
+            reserveRepo = new ReservationRepository(connectionString);
+            roomRepo = new RoomRepository(connectionString);
+            cbReservationId.SelectedIndexChanged += cbReservationId_SelectedIndexChanged;
+            InitializeRoomTypeComboBox();
+            LoadReservationIds();
+        }
+
+        private void LoadReservationIds()
+        {
+            var reservations = reserveRepo.GetAll().ToList();
+            cbReservationId.DataSource = reservations;
+            cbReservationId.DisplayMember = "ReservationId";
+            cbReservationId.ValueMember = "ReservationId";  
+            cbReservationId.SelectedIndex = -1; 
         }
 
         private void AssociateAndraiseViewEvents()
@@ -54,10 +74,40 @@ namespace HotelReservationSystem.UserControls
 
             btnReservationPay.Click += delegate
             {
-
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
+                    string billingStatus = cbStatus.SelectedItem as string;
+                    string selectedReservationId = cbReservationId.SelectedValue?.ToString();
+                    int reservationId;
+                    if (int.TryParse(selectedReservationId, out reservationId))
+                    {
+                        var reservation = reserveRepo.GetById(reservationId);
+                        if (reservation != null)
+                        {
+                            if (billingStatus == "Completed")
+                                reservation.ReservationStatus = "Reserved";
+                            else if (billingStatus == "Pending")
+                                reservation.ReservationStatus = "Pending";
+
+                            reserveRepo.Edit(reservation);
+
+                            // Update room status 
+                            if (!string.IsNullOrEmpty(reservation.RoomNumber))
+                            {
+                                var room = roomRepo.GetByNumber(reservation.RoomNumber);
+                                if (room != null)
+                                {
+                                    if (billingStatus == "Completed")
+                                        room.RoomStatus = "Occupied";
+                                    else if (billingStatus == "Pending")
+                                        room.RoomStatus = "Available";
+                                    roomRepo.Edit(room);
+                                }
+                            }
+                        }
+                    }
+
                     ClearFields();
                     isEdit = false;
                     materialTabControl1.TabPages.Remove(tabPage2);
@@ -65,6 +115,7 @@ namespace HotelReservationSystem.UserControls
                 }
                 MessageBox.Show(Message);
             };
+
 
             btnBillingCancel.Click += delegate
             {
@@ -87,13 +138,17 @@ namespace HotelReservationSystem.UserControls
         }
 
         public string BillId { get => txtBillingId.Texts; set => txtBillingId.Texts = value; }
-        public string ReservationId { get => cbReservationId.SelectedItem as string; set => cbReservationId.SelectedItem = value; }
+        public string ReservationId
+        {
+            get => cbReservationId.SelectedValue?.ToString();
+            set => cbReservationId.SelectedValue = value;
+        }
         public string CustomerName { get => txtCusName.Texts; set => txtCusName.Texts = value; }
         public string RoomType { get => txtRoomType.Texts; set => txtRoomType.Texts = value; }
         public string RoomNumber { get => txtRoomNumber.Texts; set => txtRoomNumber.Texts = value; }
         public string TotalAmount { get => txtTotalAmount.Texts; set => txtTotalAmount.Texts = value; }
         public string PaymentStatus { get => cbStatus.SelectedItem as string; set => cbStatus.SelectedItem = value; }
-        public string SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string SearchValue { get => txtBillingSearch.Texts; set => txtBillingSearch.Texts = value; }
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
@@ -139,5 +194,41 @@ namespace HotelReservationSystem.UserControls
             TotalAmount = "";
             PaymentStatus = "";
         }
+
+        private void InitializeRoomTypeComboBox()
+        {
+            cbStatus.Items.Clear();
+            cbStatus.Items.AddRange(new string[]
+            {
+                    "Completed",
+                    "Pending"
+            });
+        }
+
+        private void cbReservationId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbReservationId.SelectedItem is ReservationModel reservation)
+            {
+                CustomerName = reservation.CustomerName ?? "";
+                RoomNumber = reservation.RoomNumber?.Trim() ?? "";
+                RoomType = ""; 
+                TotalAmount = reservation.TotalPrice.ToString("F2");
+
+                if (!string.IsNullOrEmpty(RoomNumber))
+                {
+                    var room = roomRepo.GetByNumber(RoomNumber);
+
+                    if (room == null) MessageBox.Show($"Room not found for number: {RoomNumber}", "Room Lookup Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else RoomType = room.RoomType ?? "";
+                    
+                }
+                else
+                {
+                    MessageBox.Show("RoomNumber is empty in reservation data.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+        }
+
     }
 }

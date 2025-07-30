@@ -79,6 +79,7 @@ namespace HotelReservationSystem.Presenter.Reservation
             model.CheckOutDate = reservationView.CheckOutDate;
             model.TotalPrice = decimal.Parse(reservationView.TotalPrice);
             model.ReservationStatus = reservationView.ReservationStatus;
+            model.RoomNumber = reservationView.RoomNumber;
 
             try
             {
@@ -112,6 +113,7 @@ namespace HotelReservationSystem.Presenter.Reservation
             reservationView.CheckOutDate = reserve.CheckOutDate;
             reservationView.TotalPrice = reserve.TotalPrice.ToString();
             reservationView.ReservationStatus = reserve.ReservationStatus;
+            reservationView.RoomNumber = reserve.RoomNumber;
 
 
             reservationView.isEdit = true;
@@ -140,6 +142,7 @@ namespace HotelReservationSystem.Presenter.Reservation
             reservationView.CheckInDate = DateTime.Now;
             reservationView.CheckOutDate = DateTime.Now;
             reservationView.TotalPrice = "";
+            reservationView.RoomNumber = "";
         }
     }
 }
