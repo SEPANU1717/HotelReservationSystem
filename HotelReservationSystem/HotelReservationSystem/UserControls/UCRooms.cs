@@ -187,6 +187,7 @@ namespace HotelReservationSystem.UserControls
             txtRoomGuests.Texts = "2";
             txtBedCount.Texts = "1";
             txtRoomPrice.Texts = "2499";
+            txtRoomNumber.Texts = "STD";
 
 
 
@@ -198,7 +199,8 @@ namespace HotelReservationSystem.UserControls
             txtDescription.Texts = "Room B";
             txtRoomGuests.Texts = "2";
             txtBedCount.Texts = "1";
-            txtRoomPrice.Texts = "5999"; 
+            txtRoomPrice.Texts = "5999";
+            txtRoomNumber.Texts = "DLX";
 
         }
 
@@ -209,6 +211,7 @@ namespace HotelReservationSystem.UserControls
             txtRoomGuests.Texts = "4";
             txtBedCount.Texts = "2";
             txtRoomPrice.Texts = "7999";
+            txtRoomNumber.Texts = "ST";
         }
 
         private void btnfamilyRoom_Click(object sender, EventArgs e)
@@ -218,6 +221,7 @@ namespace HotelReservationSystem.UserControls
             txtRoomGuests.Texts = "6";
             txtBedCount.Texts = "3";
             txtRoomPrice.Texts = "4999";
+            txtRoomNumber.Texts = "FML";
         }
 
         private void btnSingleRoom_Click(object sender, EventArgs e)
@@ -227,6 +231,7 @@ namespace HotelReservationSystem.UserControls
             txtRoomGuests.Texts = "1";
             txtBedCount.Texts = "1";
             txtRoomPrice.Texts = "1999";
+            txtRoomNumber.Texts = "SGL";
         }
     }
 }

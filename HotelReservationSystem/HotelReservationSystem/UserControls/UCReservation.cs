@@ -39,7 +39,7 @@ namespace HotelReservationSystem.UserControls
             cbType.SelectedIndexChanged += cbType_SelectedIndexChanged;
             dtCheckIn.ValueChanged += DateOrRoomChanged;
             dtCheckOut.ValueChanged += DateOrRoomChanged;
-            cbNumber.SelectedIndexChanged += DateOrRoomChanged; 
+            cbNumber.SelectedIndexChanged += DateOrRoomChanged;
 
         }
 
@@ -100,23 +100,33 @@ namespace HotelReservationSystem.UserControls
                 {
                     // Update room status to "Occupied"
                     string selectedRoomNumber = cbNumber.SelectedItem as string;
+                    string reservationStatus = cbStatus.SelectedItem as string;
                     if (!string.IsNullOrEmpty(selectedRoomNumber))
                     {
                         var room = roomRepo.GetAll().FirstOrDefault(r => r.RoomNumber == selectedRoomNumber);
                         if (room != null)
                         {
-                            room.RoomStatus = "Occupied";
-                            roomRepo.Edit(room);
+                            if (reservationStatus == "Reserved")
+                            {
+                                room.RoomStatus = "Occupied";
+                            }
+                            else if
+                                (reservationStatus == "Pending") {
+                                room.RoomStatus = "Available";
                         }
-                    }
 
-                    isEdit = false;
-                    materialTabControl1.TabPages.Remove(tabPage2);
-                    materialTabControl1.TabPages.Add(tabPage1);
-                    cbType_SelectedIndexChanged(null, null);
+                        roomRepo.Edit(room);
+                    }
                 }
+
+
+                isEdit = false;
+                materialTabControl1.TabPages.Remove(tabPage2);
+                materialTabControl1.TabPages.Add(tabPage1);
+                cbType_SelectedIndexChanged(null, null);
+            }
                 MessageBox.Show(Message);
-            };
+        };
 
 
             btnReservationCancel.Click += delegate

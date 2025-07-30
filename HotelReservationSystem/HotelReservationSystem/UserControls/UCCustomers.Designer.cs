@@ -417,9 +417,9 @@
             this.label36.ForeColor = System.Drawing.Color.DimGray;
             this.label36.Location = new System.Drawing.Point(48, 105);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(73, 21);
+            this.label36.Size = new System.Drawing.Size(100, 21);
             this.label36.TabIndex = 10;
-            this.label36.Text = "Room Id";
+            this.label36.Text = "Customer Id";
             // 
             // btnSave
             // 

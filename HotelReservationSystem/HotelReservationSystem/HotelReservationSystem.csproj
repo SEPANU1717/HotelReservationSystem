@@ -128,6 +128,8 @@
     <Compile Include="Forms\ReservationHome.Designer.cs">
       <DependentUpon>ReservationHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\Billing\IBillingRepository.cs" />
+    <Compile Include="Interface\Billing\IBillingView.cs" />
     <Compile Include="Interface\Customer\ICustomerRepository.cs" />
     <Compile Include="Interface\Customer\ICustomerView.cs" />
     <Compile Include="Interface\IMainView.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="Interface\Reservation\IReservationView.cs" />
     <Compile Include="Interface\Rooms\IRoomRepository.cs" />
     <Compile Include="Interface\Rooms\IRoomView.cs" />
+    <Compile Include="Model\Billing\BillingModel.cs" />
     <Compile Include="Model\Customer\CustomerModel.cs" />
     <Compile Include="Model\Reservation\ReservationModel.cs" />
     <Compile Include="Model\Rooms\RoomModel.cs" />
@@ -146,6 +149,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\Billing\BillingRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerRepository.cs" />
     <Compile Include="Repositories\Dashboard\DasboardRepository.cs" />
     <Compile Include="Repositories\Reservation\ReservationRepository.cs" />

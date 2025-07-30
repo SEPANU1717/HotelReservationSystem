@@ -143,11 +143,11 @@ namespace HotelReservationSystem.Repositories.Rooms
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT * FROM Rooms WHERE RoomId = @id OR RoomNumber LIKE @number
+                command.CommandText = @"SELECT * FROM Rooms WHERE RoomId = @id OR RoomStatus LIKE @status
                                       ORDER BY RoomId DESC";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = roomId;
-                command.Parameters.Add("@number", SqlDbType.NVarChar).Value = $"%{value}%";
+                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = $"%{value}%";
 
                 using (var reader = command.ExecuteReader())
                 {
