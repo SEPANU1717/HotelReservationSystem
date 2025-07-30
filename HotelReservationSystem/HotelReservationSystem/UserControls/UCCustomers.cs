@@ -107,7 +107,6 @@ namespace HotelReservationSystem.UserControls
         {
             get
             {
-                // Prefer SelectedItem, fallback to Text if null
                 return cbType.SelectedItem ?? cbType.Text;
             }
             set

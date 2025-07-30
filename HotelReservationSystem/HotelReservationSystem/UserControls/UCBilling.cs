@@ -21,6 +21,7 @@ namespace HotelReservationSystem.UserControls
         BillingRepository billRepo;
         ReservationRepository reserveRepo;
         RoomRepository roomRepo;
+        private bool isInEditMode = false;
 
         public UCBilling()
         {
@@ -33,7 +34,6 @@ namespace HotelReservationSystem.UserControls
             roomRepo = new RoomRepository(connectionString);
             cbReservationId.SelectedIndexChanged += cbReservationId_SelectedIndexChanged;
             InitializeRoomTypeComboBox();
-            LoadReservationIds();
         }
 
         private void LoadReservationIds()
@@ -41,8 +41,8 @@ namespace HotelReservationSystem.UserControls
             var reservations = reserveRepo.GetAll().ToList();
             cbReservationId.DataSource = reservations;
             cbReservationId.DisplayMember = "ReservationId";
-            cbReservationId.ValueMember = "ReservationId";  
-            cbReservationId.SelectedIndex = -1; 
+            cbReservationId.ValueMember = "ReservationId";
+            cbReservationId.SelectedIndex = -1;
         }
 
         private void AssociateAndraiseViewEvents()
@@ -56,20 +56,24 @@ namespace HotelReservationSystem.UserControls
 
             btnBillingAddNew.Click += delegate
             {
-                ClearFields();
+                isInEditMode = false;
+                cbReservationId.Enabled = true;
                 txtBillingId.Texts = billRepo.GetNextBillingId().ToString();
+                LoadReservationIds();
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
-                materialTabControl1.Text = "Add new room";
+                materialTabControl1.Text = "Add new billing";
             };
 
             btnBillingEdit.Click += delegate
             {
+                isInEditMode = true;
                 EditEvent?.Invoke(this, EventArgs.Empty);
+                SetEditModeReservationId();
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
-                materialTabControl1.Text = "Edit room";
+                materialTabControl1.Text = "Edit billing";
             };
 
             btnReservationPay.Click += delegate
@@ -92,7 +96,6 @@ namespace HotelReservationSystem.UserControls
 
                             reserveRepo.Edit(reservation);
 
-                            // Update room status 
                             if (!string.IsNullOrEmpty(reservation.RoomNumber))
                             {
                                 var room = roomRepo.GetByNumber(reservation.RoomNumber);
@@ -108,25 +111,27 @@ namespace HotelReservationSystem.UserControls
                         }
                     }
 
-                    ClearFields();
                     isEdit = false;
+                    isInEditMode = false;
+                    cbReservationId.Enabled = true;
                     materialTabControl1.TabPages.Remove(tabPage2);
                     materialTabControl1.TabPages.Add(tabPage1);
                 }
                 MessageBox.Show(Message);
             };
 
-
             btnBillingCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
+                isInEditMode = false;
+                cbReservationId.Enabled = true;
                 materialTabControl1.TabPages.Remove(tabPage2);
                 materialTabControl1.TabPages.Add(tabPage1);
             };
 
             btnDeleteDelete.Click += delegate
             {
-                var result = MessageBox.Show("Are you sure you want to delete the selected room?", "Warning",
+                var result = MessageBox.Show("Are you sure you want to delete the selected billing?", "Warning",
                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
@@ -135,6 +140,71 @@ namespace HotelReservationSystem.UserControls
                     MessageBox.Show(Message);
                 }
             };
+        }
+
+        private void SetEditModeReservationId()
+        {
+            string currentReservationId = ReservationId;
+
+            if (string.IsNullOrEmpty(currentReservationId))
+            {
+                if (dataGridBilling.CurrentRow != null)
+                {
+                    var selectedRow = dataGridBilling.CurrentRow;
+                    currentReservationId = selectedRow.Cells["ReservationId"]?.Value?.ToString();
+                }
+            }
+
+            if (!string.IsNullOrEmpty(currentReservationId))
+            {
+                int reservationId;
+                if (int.TryParse(currentReservationId, out reservationId))
+                {
+                    var currentReservation = reserveRepo.GetById(reservationId);
+                    if (currentReservation != null)
+                    {
+                        var reservationList = new List<ReservationModel> { currentReservation };
+                        cbReservationId.DataSource = reservationList;
+                        cbReservationId.DisplayMember = "ReservationId";
+                        cbReservationId.ValueMember = "ReservationId";
+                        cbReservationId.SelectedValue = reservationId;
+
+                        cbReservationId.Enabled = false;
+                    }
+                    else
+                    {
+                        cbReservationId.DataSource = null;
+                        cbReservationId.Items.Clear();
+                        cbReservationId.Text = currentReservationId;
+                        cbReservationId.Enabled = false;
+                        MessageBox.Show($"Reservation with ID {currentReservationId} not found.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            else
+            {
+                cbReservationId.DataSource = null;
+                cbReservationId.Items.Clear();
+                cbReservationId.Text = "";
+                cbReservationId.Enabled = false;
+                MessageBox.Show("No reservation ID found for this billing record.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void LoadBillingForEdit(int billId, int reservationId, string customerName, string roomType, string roomNumber, string totalAmount, string paymentStatus)
+        {
+            BillId = billId.ToString();
+
+            cbReservationId.DataSource = null;
+            cbReservationId.Items.Clear();
+            cbReservationId.Items.Add(reservationId.ToString());
+            cbReservationId.Text = reservationId.ToString();
+
+            CustomerName = customerName ?? "";
+            RoomType = roomType ?? "";
+            RoomNumber = roomNumber ?? "";
+            TotalAmount = totalAmount ?? "";
+            PaymentStatus = paymentStatus ?? "";
         }
 
         public string BillId { get => txtBillingId.Texts; set => txtBillingId.Texts = value; }
@@ -176,6 +246,7 @@ namespace HotelReservationSystem.UserControls
             _instance.Dock = DockStyle.Fill;
             return _instance;
         }
+
         public static void ResetInstance()
         {
             if (_instance != null)
@@ -183,16 +254,6 @@ namespace HotelReservationSystem.UserControls
                 _instance.Dispose();
                 _instance = null;
             }
-        }
-        private void ClearFields()
-        {
-            BillId = "";
-            ReservationId = "";
-            CustomerName = "";
-            RoomType = "";
-            RoomNumber = "";
-            TotalAmount = "";
-            PaymentStatus = "";
         }
 
         private void InitializeRoomTypeComboBox()
@@ -207,28 +268,27 @@ namespace HotelReservationSystem.UserControls
 
         private void cbReservationId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbReservationId.SelectedItem is ReservationModel reservation)
+            if (!isInEditMode && cbReservationId.SelectedItem is ReservationModel reservation)
             {
                 CustomerName = reservation.CustomerName ?? "";
                 RoomNumber = reservation.RoomNumber?.Trim() ?? "";
-                RoomType = ""; 
+                RoomType = "";
                 TotalAmount = reservation.TotalPrice.ToString("F2");
 
                 if (!string.IsNullOrEmpty(RoomNumber))
                 {
                     var room = roomRepo.GetByNumber(RoomNumber);
 
-                    if (room == null) MessageBox.Show($"Room not found for number: {RoomNumber}", "Room Lookup Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    else RoomType = room.RoomType ?? "";
-                    
+                    if (room == null)
+                        MessageBox.Show($"Room not found for number: {RoomNumber}", "Room Lookup Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else
+                        RoomType = room.RoomType ?? "";
                 }
                 else
                 {
                     MessageBox.Show("RoomNumber is empty in reservation data.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-
         }
-
     }
 }
