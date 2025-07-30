@@ -15,12 +15,10 @@ namespace HotelReservationSystem.UserControls
 {
     public partial class UCReservation : UserControl, IReservationView
     {
-        private List<string> comboItems;
         private ReservationRepository reserveRepo;
         private RoomRepository roomRepo;
         private CustomerRepository customerRepo;
 
-        // Store only the available rooms for the selected type
         private List<RoomModel> availableRooms = new List<RoomModel>();
 
         public UCReservation()
@@ -73,7 +71,7 @@ namespace HotelReservationSystem.UserControls
                 if (dataGridReservation.SelectedRows.Count > 0)
                 {
                     int reservationId = Convert.ToInt32(dataGridReservation.SelectedRows[0].Cells["ReservationId"].Value);
-                    // Duplicate block
+                    
                     if (dataGridReservation.SelectedRows.Count > 0)
                     {
                         int ReservationId = Convert.ToInt32(dataGridReservation.SelectedRows[0].Cells["ReservationId"].Value);

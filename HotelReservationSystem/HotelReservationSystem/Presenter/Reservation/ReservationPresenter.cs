@@ -49,7 +49,7 @@ namespace HotelReservationSystem.Presenter.Reservation
         {
             try
             {
-                var reserve = (ReservationModel)ReservationBindingSource.Current;
+                var reserve = ReservationBindingSource.Current as ReservationModel;
                 if (reserve == null)
                 {
                     reservationView.isSuccessful = false;

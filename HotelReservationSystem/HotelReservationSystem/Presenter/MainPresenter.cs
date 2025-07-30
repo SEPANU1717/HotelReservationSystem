@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface;
+using HotelReservationSystem.Interface.Billing;
 using HotelReservationSystem.Interface.Reservation;
 using HotelReservationSystem.Interface.Rooms;
+using HotelReservationSystem.Presenter.Billing;
 using HotelReservationSystem.Presenter.Reservation;
 using HotelReservationSystem.Presenter.Rooms;
 using HotelReservationSystem.Repositories;
+using HotelReservationSystem.Repositories.Billing;
 using HotelReservationSystem.Repositories.Rooms;
 using HotelReservationSystem.UserControls;
 
@@ -25,6 +28,23 @@ namespace HotelReservationSystem.Presenter
             this.mainView.ShowCustomerView += ShowCustomerView;
             this.mainView.ShowRoomView += ShowRoomView;
             this.mainView.ShowReservationView += ShowReservationView;
+            this.mainView.ShowBillingView += ShowBillingView;
+        }
+
+        private void ShowBillingView(object sender, EventArgs e)
+        {
+            var billingControl = UCBilling.GetInstance((Form)mainView);
+            var billingRepo = new BillingRepository(sqlConnectionString);
+            var presenter = new BillingPresenter(billingControl, billingRepo);
+
+            if (billingControl is IBillingView)
+            {
+                mainView.LoadUserControl(billingControl);
+            }
+            else
+            {
+                throw new InvalidCastException("Unable to cast UCBilling to IBillingView.");
+            }
         }
 
         private void ShowReservationView(object sender, EventArgs e)
@@ -33,16 +53,15 @@ namespace HotelReservationSystem.Presenter
             var reservationRepo = new ReservationRepository(sqlConnectionString);
             var presenter = new ReservationPresenter(reservationControl, reservationRepo);
 
-            if (reservationControl is IReservationView reservatiomView)
+            if (reservationControl is IReservationView)
             {
                 mainView.LoadUserControl(reservationControl);
             }
             else
             {
-                throw new InvalidCastException("Unable to cast UCCustomers to ICustomerView.");
+                throw new InvalidCastException("Unable to cast UCReservation to IReservationView.");
             }
         }
-        
 
         private void ShowCustomerView(object sender, EventArgs e)
         {
@@ -50,7 +69,7 @@ namespace HotelReservationSystem.Presenter
             var customerRepo = new CustomerRepository(sqlConnectionString);
             var presenter = new CustomerPresenter(customerControl, customerRepo);
 
-            if (customerControl is ICustomerView customerView)
+            if (customerControl is ICustomerView)
             {
                 mainView.LoadUserControl(customerControl);
             }
@@ -66,7 +85,7 @@ namespace HotelReservationSystem.Presenter
             var roomRepo = new RoomRepository(sqlConnectionString);
             var presenter = new RoomPresenter(roomControl, roomRepo);
 
-            if (roomControl is IRoomView roomView)
+            if (roomControl is IRoomView)
             {
                 mainView.LoadUserControl(roomControl);
             }

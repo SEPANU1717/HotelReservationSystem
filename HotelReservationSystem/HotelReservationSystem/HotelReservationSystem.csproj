@@ -141,6 +141,7 @@
     <Compile Include="Model\Customer\CustomerModel.cs" />
     <Compile Include="Model\Reservation\ReservationModel.cs" />
     <Compile Include="Model\Rooms\RoomModel.cs" />
+    <Compile Include="Presenter\Billing\BillingPresenter.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
     <Compile Include="Presenter\Customer\CustomerPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />

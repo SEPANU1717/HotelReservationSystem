@@ -23,7 +23,6 @@ namespace HotelReservationSystem.UserControls
             InitializeComponent();
             AssociateAndraiseViewEvents();
             materialTabControl1.TabPages.Remove(tabPage2);
-            btnStandardRoom.Click += btnStandardRoom_Click;
             InitializeComboBox();
             string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
             roomRepo = new RoomRepository(connectionString);
