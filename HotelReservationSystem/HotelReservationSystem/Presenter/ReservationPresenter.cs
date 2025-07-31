@@ -72,14 +72,16 @@ namespace HotelReservationSystem.Presenter.Reservation
 
         private void SaveReserve(object sender, EventArgs e)
         {
-            var model = new ReservationModel();
-            model.ReservationId = int.Parse(reservationView.ReservationId);
-            model.CustomerName = reservationView.CustomerName;
-            model.CheckInDate = reservationView.CheckInDate;
-            model.CheckOutDate = reservationView.CheckOutDate;
-            model.TotalPrice = decimal.Parse(reservationView.TotalPrice);
-            model.ReservationStatus = reservationView.ReservationStatus;
-            model.RoomNumber = reservationView.RoomNumber;
+            var model = new ReservationModel
+            {
+                ReservationId = int.Parse(reservationView.ReservationId),
+                CustomerName = reservationView.CustomerName,
+                CheckInDate = reservationView.CheckInDate,
+                CheckOutDate = reservationView.CheckOutDate,
+                TotalPrice = decimal.Parse(reservationView.TotalPrice),
+                ReservationStatus = reservationView.ReservationStatus,
+                RoomNumber = reservationView.RoomNumber
+            };
 
             try
             {
@@ -108,13 +110,12 @@ namespace HotelReservationSystem.Presenter.Reservation
         {
             var reserve = (ReservationModel)ReservationBindingSource.Current;
             reservationView.ReservationId = reserve.ReservationId.ToString();
-            reservationView.CustomerName = reserve.CustomerName.ToString();
+            reservationView.CustomerName = reserve.CustomerName;
             reservationView.CheckInDate = reserve.CheckInDate;
             reservationView.CheckOutDate = reserve.CheckOutDate;
             reservationView.TotalPrice = reserve.TotalPrice.ToString();
             reservationView.ReservationStatus = reserve.ReservationStatus;
             reservationView.RoomNumber = reserve.RoomNumber;
-
 
             reservationView.isEdit = true;
         }

@@ -105,10 +105,7 @@ namespace HotelReservationSystem.UserControls
         public string CustomerLastName { get => txtLName.Texts; set => txtLName.Texts = value; }
         public string CustomerIdType
         {
-            get
-            {
-                return cbType.SelectedItem ?? cbType.Text;
-            }
+            get => cbType.SelectedItem ?? cbType.Text;
             set
             {
                 int index = Array.IndexOf(cbType.Items, value);

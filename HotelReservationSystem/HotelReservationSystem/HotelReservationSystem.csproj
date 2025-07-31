@@ -137,24 +137,24 @@
     <Compile Include="Interface\Reservation\IReservationView.cs" />
     <Compile Include="Interface\Rooms\IRoomRepository.cs" />
     <Compile Include="Interface\Rooms\IRoomView.cs" />
-    <Compile Include="Model\Billing\BillingModel.cs" />
-    <Compile Include="Model\Customer\CustomerModel.cs" />
-    <Compile Include="Model\Reservation\ReservationModel.cs" />
-    <Compile Include="Model\Rooms\RoomModel.cs" />
-    <Compile Include="Presenter\Billing\BillingPresenter.cs" />
+    <Compile Include="Model\BillingModel.cs" />
+    <Compile Include="Model\CustomerModel.cs" />
+    <Compile Include="Model\ReservationModel.cs" />
+    <Compile Include="Model\RoomModel.cs" />
+    <Compile Include="Presenter\BillingPresenter.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
-    <Compile Include="Presenter\Customer\CustomerPresenter.cs" />
+    <Compile Include="Presenter\CustomerPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
-    <Compile Include="Presenter\Reservation\ReservationPresenter.cs" />
-    <Compile Include="Presenter\Rooms\RoomPresenter.cs" />
+    <Compile Include="Presenter\ReservationPresenter.cs" />
+    <Compile Include="Presenter\RoomPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
-    <Compile Include="Repositories\Billing\BillingRepository.cs" />
-    <Compile Include="Repositories\Customer\CustomerRepository.cs" />
-    <Compile Include="Repositories\Dashboard\DasboardRepository.cs" />
-    <Compile Include="Repositories\Reservation\ReservationRepository.cs" />
-    <Compile Include="Repositories\Rooms\RoomRepository.cs" />
+    <Compile Include="Repositories\BillingRepository.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\DasboardRepository.cs" />
+    <Compile Include="Repositories\ReservationRepository.cs" />
+    <Compile Include="Repositories\RoomRepository.cs" />
     <Compile Include="UserControls\UCBilling.cs">
       <SubType>UserControl</SubType>
     </Compile>
