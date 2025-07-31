@@ -63,6 +63,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
                 materialTabControl1.Text = "Add new room";
+
+                cbStatus.SelectedItem = "Pending";
+                cbStatus.Enabled = false;
             };
 
             btnReservationEdit.Click += delegate
@@ -75,6 +78,10 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.TabPages.Remove(tabPage1);
                     materialTabControl1.TabPages.Add(tabPage2);
                     materialTabControl1.Text = "Edit room";
+                    cbStatus.Enabled = true;
+                    cbCusName.Enabled = false;
+                    cbType.Enabled = false;
+                    cbNumber.Enabled = false;
                 }
                 else
                 {
@@ -89,10 +96,20 @@ namespace HotelReservationSystem.UserControls
 
                 SaveEvent?.Invoke(this, EventArgs.Empty);
 
+                // If reservation was successfully saved and status is "Canceled", update room status
+                if (isSuccessful && ReservationStatus == "Canceled" && !string.IsNullOrEmpty(RoomNumber))
+                {
+                    // Get the room by number, update its status, and save
+                    var room = roomRepo.GetByNumber(RoomNumber);
+                    if (room != null)
+                    {
+                        room.RoomStatus = "Available";
+                        roomRepo.Edit(room);
+                    }
+                }
+
                 if (isSuccessful)
                 {
-
-
                     isEdit = false;
                     materialTabControl1.TabPages.Remove(tabPage2);
                     materialTabControl1.TabPages.Add(tabPage1);
@@ -226,7 +243,8 @@ namespace HotelReservationSystem.UserControls
             cbStatus.Items.AddRange(new string[]
             {
                     "Reserved",
-                    "Pending"
+                    "Pending",
+                    "Canceled"
             });
         }
 
@@ -280,7 +298,7 @@ namespace HotelReservationSystem.UserControls
                 }
             }
 
-            }
+        }
         }
     }
     

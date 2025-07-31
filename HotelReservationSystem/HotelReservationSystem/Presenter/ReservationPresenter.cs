@@ -117,6 +117,11 @@ namespace HotelReservationSystem.Presenter.Reservation
             reservationView.ReservationStatus = reserve.ReservationStatus;
             reservationView.RoomNumber = reserve.RoomNumber;
 
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
+            var roomRepo = new HotelReservationSystem.Repositories.Rooms.RoomRepository(connectionString);
+            var room = roomRepo.GetByNumber(reserve.RoomNumber);
+            reservationView.Guests = room != null ? room.RoomGuests : "";
+
             reservationView.isEdit = true;
         }
 

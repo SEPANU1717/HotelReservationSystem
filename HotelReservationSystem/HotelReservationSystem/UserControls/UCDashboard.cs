@@ -42,7 +42,9 @@ namespace HotelReservationSystem.UserControls
             lblOccuRooms.Text = totalOccupiedRooms.ToString();
             lblTotalGuests.Text = totalGuestToday.ToString();
 
-
+            
+            var reservations = repository.GetAll().ToList();
+            dataGridReservationDash.DataSource = reservations;
         }
 
     }

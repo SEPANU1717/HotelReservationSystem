@@ -4,11 +4,44 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HotelReservationSystem.Model.Reservation;
 
 namespace HotelReservationSystem.Repositories.Dashboard
 {
     internal class DasboardRepository : BaseRepository
     {
+
+            //<-----------------------Get All Reservation--------------------------/>
+            public IEnumerable<ReservationModel> GetAll()
+            {
+                var reservationList = new List<ReservationModel>();
+                using (var connection = new SqlConnection(connectionString))
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.Connection = connection;
+                command.CommandText = "SELECT * FROM Reservations WHERE ReservationStatus = 'Reserved' order by ReservationId desc";
+
+                using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var reservation = new ReservationModel();
+                            reservation.ReservationId = (int)(reader["ReservationId"]);
+                            reservation.CustomerName = reader["CustomerName"].ToString();
+                            reservation.CheckInDate = (DateTime)(reader["CheckInDate"]);
+                            reservation.CheckOutDate = (DateTime)(reader["CheckOutDate"]);
+                            reservation.TotalPrice = Convert.ToDecimal(reader["TotalAmount"]);
+                            reservation.ReservationStatus = reader["ReservationStatus"].ToString();
+                            reservation.CreatedAt = Convert.ToDateTime(reader["CreatedAt"]);
+                            reservation.RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString();
+
+                            reservationList.Add(reservation);
+                        }
+                    }
+                }
+                return reservationList;
+            }
         public DasboardRepository(string connectionString) : base(connectionString)
         { }
         
