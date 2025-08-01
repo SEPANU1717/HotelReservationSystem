@@ -70,6 +70,13 @@ namespace HotelReservationSystem.UserControls
 
             btnSave.Click += delegate
             {
+                if (string.IsNullOrWhiteSpace(CustomerIdType) ||
+                    !comboItems.Contains(CustomerIdType))
+                {
+                    MessageBox.Show("Id type is required");
+                    return;
+                }
+
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {

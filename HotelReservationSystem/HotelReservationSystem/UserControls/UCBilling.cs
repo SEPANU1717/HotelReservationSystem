@@ -290,5 +290,10 @@ namespace HotelReservationSystem.UserControls
                 }
             }
         }
+
+        private void btnBillingAddNew_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
