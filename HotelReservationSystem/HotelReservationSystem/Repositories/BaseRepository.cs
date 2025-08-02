@@ -8,7 +8,6 @@ namespace HotelReservationSystem.Repositories
 {
     public class BaseRepository
     {
-
         protected readonly string connectionString;
         public BaseRepository(string connectionString)
         {

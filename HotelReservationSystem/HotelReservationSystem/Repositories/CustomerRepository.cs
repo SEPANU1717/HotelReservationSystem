@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HotelReservationSystem.Interface;
-using HotelReservationSystem.Model.Customer;
+using HotelReservationSystem.Model;
 
 namespace HotelReservationSystem.Repositories
 {

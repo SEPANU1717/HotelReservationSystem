@@ -166,7 +166,7 @@
             this.btnReservationDelete.ImageTint = System.Drawing.Color.White;
             this.btnReservationDelete.IsToggleButton = false;
             this.btnReservationDelete.IsToggled = false;
-            this.btnReservationDelete.Location = new System.Drawing.Point(1170, 100);
+            this.btnReservationDelete.Location = new System.Drawing.Point(1190, 100);
             this.btnReservationDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationDelete.Name = "btnReservationDelete";
             this.btnReservationDelete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(104)))), ((int)(((byte)(107)))));
@@ -205,7 +205,7 @@
             this.btnReservationAddNew.ImageTint = System.Drawing.Color.White;
             this.btnReservationAddNew.IsToggleButton = false;
             this.btnReservationAddNew.IsToggled = false;
-            this.btnReservationAddNew.Location = new System.Drawing.Point(984, 100);
+            this.btnReservationAddNew.Location = new System.Drawing.Point(1004, 100);
             this.btnReservationAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationAddNew.Name = "btnReservationAddNew";
             this.btnReservationAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -244,7 +244,7 @@
             this.btnReservationEdit.ImageTint = System.Drawing.Color.White;
             this.btnReservationEdit.IsToggleButton = false;
             this.btnReservationEdit.IsToggled = false;
-            this.btnReservationEdit.Location = new System.Drawing.Point(1116, 100);
+            this.btnReservationEdit.Location = new System.Drawing.Point(1136, 100);
             this.btnReservationEdit.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationEdit.Name = "btnReservationEdit";
             this.btnReservationEdit.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -310,7 +310,7 @@
             this.dataGridReservation.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridReservation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridReservation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridReservation.Size = new System.Drawing.Size(1168, 576);
+            this.dataGridReservation.Size = new System.Drawing.Size(1188, 576);
             this.dataGridReservation.TabIndex = 3;
             // 
             // tabPage1
@@ -320,7 +320,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1174, 582);
+            this.tabPage1.Size = new System.Drawing.Size(1194, 582);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer List";
             // 
@@ -338,7 +338,7 @@
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 156);
             this.sataPanel1.Name = "sataPanel1";
-            this.sataPanel1.Size = new System.Drawing.Size(1182, 611);
+            this.sataPanel1.Size = new System.Drawing.Size(1202, 611);
             this.sataPanel1.TabIndex = 13;
             // 
             // materialTabControl1
@@ -352,7 +352,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1182, 611);
+            this.materialTabControl1.Size = new System.Drawing.Size(1202, 611);
             this.materialTabControl1.TabIndex = 8;
             // 
             // tabPage2
@@ -382,7 +382,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1174, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -731,7 +731,7 @@
             this.sataPictureBox1.BorderSize = 1;
             this.sataPictureBox1.GradientAngle = 50F;
             this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
-            this.sataPictureBox1.Location = new System.Drawing.Point(1068, 16);
+            this.sataPictureBox1.Location = new System.Drawing.Point(1088, 16);
             this.sataPictureBox1.Name = "sataPictureBox1";
             this.sataPictureBox1.Size = new System.Drawing.Size(43, 43);
             this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -744,7 +744,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1119, 27);
+            this.label3.Location = new System.Drawing.Point(1139, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 1;
@@ -756,7 +756,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1121, 44);
+            this.label4.Location = new System.Drawing.Point(1141, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 1;

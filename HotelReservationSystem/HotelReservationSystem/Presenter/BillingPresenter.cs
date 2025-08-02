@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface.Billing;
-using HotelReservationSystem.Model.Billing;
+using HotelReservationSystem.Model;
 using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.Presenter.Billing

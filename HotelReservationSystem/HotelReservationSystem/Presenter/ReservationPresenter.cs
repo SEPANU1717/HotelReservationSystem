@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface.Reservation;
 using HotelReservationSystem.Interface.Rooms;
-using HotelReservationSystem.Model.Reservation;
+using HotelReservationSystem.Model;
 using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.Presenter.Reservation

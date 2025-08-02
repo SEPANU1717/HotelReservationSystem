@@ -248,7 +248,7 @@
             this.btnRoomDelete.ImageTint = System.Drawing.Color.White;
             this.btnRoomDelete.IsToggleButton = false;
             this.btnRoomDelete.IsToggled = false;
-            this.btnRoomDelete.Location = new System.Drawing.Point(1170, 100);
+            this.btnRoomDelete.Location = new System.Drawing.Point(1190, 100);
             this.btnRoomDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnRoomDelete.Name = "btnRoomDelete";
             this.btnRoomDelete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(104)))), ((int)(((byte)(107)))));
@@ -287,7 +287,7 @@
             this.btnRoomAddNew.ImageTint = System.Drawing.Color.White;
             this.btnRoomAddNew.IsToggleButton = false;
             this.btnRoomAddNew.IsToggled = false;
-            this.btnRoomAddNew.Location = new System.Drawing.Point(984, 100);
+            this.btnRoomAddNew.Location = new System.Drawing.Point(1004, 100);
             this.btnRoomAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnRoomAddNew.Name = "btnRoomAddNew";
             this.btnRoomAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -326,7 +326,7 @@
             this.btnRoomEdit.ImageTint = System.Drawing.Color.White;
             this.btnRoomEdit.IsToggleButton = false;
             this.btnRoomEdit.IsToggled = false;
-            this.btnRoomEdit.Location = new System.Drawing.Point(1116, 100);
+            this.btnRoomEdit.Location = new System.Drawing.Point(1136, 100);
             this.btnRoomEdit.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnRoomEdit.Name = "btnRoomEdit";
             this.btnRoomEdit.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -368,7 +368,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1174, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -496,7 +496,7 @@
             this.sataPanel2.Controls.Add(this.sataPanel4);
             this.sataPanel2.Controls.Add(this.sataPanel3);
             this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sataPanel2.Location = new System.Drawing.Point(663, 3);
+            this.sataPanel2.Location = new System.Drawing.Point(683, 3);
             this.sataPanel2.Name = "sataPanel2";
             this.sataPanel2.Size = new System.Drawing.Size(508, 576);
             this.sataPanel2.TabIndex = 8;
@@ -595,7 +595,7 @@
             this.btnSingleRoom.ImageTint = System.Drawing.Color.White;
             this.btnSingleRoom.IsToggleButton = false;
             this.btnSingleRoom.IsToggled = false;
-            this.btnSingleRoom.Location = new System.Drawing.Point(414, 6);
+            this.btnSingleRoom.Location = new System.Drawing.Point(410, 49);
             this.btnSingleRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnSingleRoom.Name = "btnSingleRoom";
             this.btnSingleRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -763,7 +763,7 @@
             this.btnfamilyRoom.ImageTint = System.Drawing.Color.White;
             this.btnfamilyRoom.IsToggleButton = false;
             this.btnfamilyRoom.IsToggled = false;
-            this.btnfamilyRoom.Location = new System.Drawing.Point(414, 6);
+            this.btnfamilyRoom.Location = new System.Drawing.Point(410, 58);
             this.btnfamilyRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnfamilyRoom.Name = "btnfamilyRoom";
             this.btnfamilyRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -929,7 +929,7 @@
             this.btnSuiteRoom.ImageTint = System.Drawing.Color.White;
             this.btnSuiteRoom.IsToggleButton = false;
             this.btnSuiteRoom.IsToggled = false;
-            this.btnSuiteRoom.Location = new System.Drawing.Point(414, 6);
+            this.btnSuiteRoom.Location = new System.Drawing.Point(410, 58);
             this.btnSuiteRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnSuiteRoom.Name = "btnSuiteRoom";
             this.btnSuiteRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -1097,7 +1097,7 @@
             this.btnDeluxeRoom.ImageTint = System.Drawing.Color.White;
             this.btnDeluxeRoom.IsToggleButton = false;
             this.btnDeluxeRoom.IsToggled = false;
-            this.btnDeluxeRoom.Location = new System.Drawing.Point(414, 6);
+            this.btnDeluxeRoom.Location = new System.Drawing.Point(410, 58);
             this.btnDeluxeRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnDeluxeRoom.Name = "btnDeluxeRoom";
             this.btnDeluxeRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -1264,7 +1264,7 @@
             this.btnStandardRoom.ImageTint = System.Drawing.Color.White;
             this.btnStandardRoom.IsToggleButton = false;
             this.btnStandardRoom.IsToggled = false;
-            this.btnStandardRoom.Location = new System.Drawing.Point(414, 6);
+            this.btnStandardRoom.Location = new System.Drawing.Point(410, 58);
             this.btnStandardRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnStandardRoom.Name = "btnStandardRoom";
             this.btnStandardRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
@@ -1634,7 +1634,7 @@
             this.dataGridRoom.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridRoom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridRoom.Size = new System.Drawing.Size(1168, 576);
+            this.dataGridRoom.Size = new System.Drawing.Size(1188, 576);
             this.dataGridRoom.TabIndex = 3;
             // 
             // tabPage1
@@ -1644,7 +1644,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1174, 582);
+            this.tabPage1.Size = new System.Drawing.Size(1194, 582);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer List";
             // 
@@ -1662,7 +1662,7 @@
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 156);
             this.sataPanel1.Name = "sataPanel1";
-            this.sataPanel1.Size = new System.Drawing.Size(1182, 611);
+            this.sataPanel1.Size = new System.Drawing.Size(1202, 611);
             this.sataPanel1.TabIndex = 13;
             // 
             // materialTabControl1
@@ -1676,7 +1676,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1182, 611);
+            this.materialTabControl1.Size = new System.Drawing.Size(1202, 611);
             this.materialTabControl1.TabIndex = 8;
             // 
             // label5
@@ -1700,7 +1700,7 @@
             this.sataPictureBox1.BorderSize = 1;
             this.sataPictureBox1.GradientAngle = 50F;
             this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
-            this.sataPictureBox1.Location = new System.Drawing.Point(1068, 16);
+            this.sataPictureBox1.Location = new System.Drawing.Point(1088, 16);
             this.sataPictureBox1.Name = "sataPictureBox1";
             this.sataPictureBox1.Size = new System.Drawing.Size(43, 43);
             this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1713,7 +1713,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1119, 27);
+            this.label3.Location = new System.Drawing.Point(1139, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 1;
@@ -1725,7 +1725,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1121, 44);
+            this.label4.Location = new System.Drawing.Point(1141, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 1;

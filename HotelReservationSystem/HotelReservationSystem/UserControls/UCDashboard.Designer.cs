@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCDashboard));
-            SATAUiFramework.BorderRadius borderRadius6 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius7 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius8 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius9 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius10 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius5 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -63,6 +67,8 @@
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridReservationDash = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridCheckInDash = new System.Windows.Forms.DataGridView();
             this.label41 = new System.Windows.Forms.Label();
             this.btnAddNew = new FrameworkTest.SATAButton();
             this.panel2.SuspendLayout();
@@ -79,6 +85,8 @@
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservationDash)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInDash)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -103,7 +111,7 @@
             this.sataPictureBox1.BorderSize = 1;
             this.sataPictureBox1.GradientAngle = 50F;
             this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
-            this.sataPictureBox1.Location = new System.Drawing.Point(1091, 16);
+            this.sataPictureBox1.Location = new System.Drawing.Point(1088, 16);
             this.sataPictureBox1.Name = "sataPictureBox1";
             this.sataPictureBox1.Size = new System.Drawing.Size(43, 43);
             this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -116,7 +124,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1142, 27);
+            this.label3.Location = new System.Drawing.Point(1139, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 1;
@@ -128,7 +136,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1144, 44);
+            this.label4.Location = new System.Drawing.Point(1141, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 1;
@@ -150,11 +158,11 @@
             this.sataPanel9.BackColor = System.Drawing.Color.White;
             this.sataPanel9.BackColor2 = System.Drawing.Color.White;
             this.sataPanel9.BorderColor = System.Drawing.Color.Black;
-            borderRadius6.BottomLeft = 10;
-            borderRadius6.BottomRight = 10;
-            borderRadius6.TopLeft = 10;
-            borderRadius6.TopRight = 10;
-            this.sataPanel9.BorderRadius = borderRadius6;
+            borderRadius1.BottomLeft = 10;
+            borderRadius1.BottomRight = 10;
+            borderRadius1.TopLeft = 10;
+            borderRadius1.TopRight = 10;
+            this.sataPanel9.BorderRadius = borderRadius1;
             this.sataPanel9.BorderThickness = 0;
             this.sataPanel9.Controls.Add(this.sataPictureBox2);
             this.sataPanel9.Controls.Add(this.label12);
@@ -209,16 +217,16 @@
             this.sataPanel11.BackColor = System.Drawing.Color.White;
             this.sataPanel11.BackColor2 = System.Drawing.Color.White;
             this.sataPanel11.BorderColor = System.Drawing.Color.Black;
-            borderRadius7.BottomLeft = 10;
-            borderRadius7.BottomRight = 10;
-            borderRadius7.TopLeft = 10;
-            borderRadius7.TopRight = 10;
-            this.sataPanel11.BorderRadius = borderRadius7;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.sataPanel11.BorderRadius = borderRadius2;
             this.sataPanel11.BorderThickness = 0;
             this.sataPanel11.Controls.Add(this.sataPictureBox4);
             this.sataPanel11.Controls.Add(this.label16);
             this.sataPanel11.Controls.Add(this.lblOccuRooms);
-            this.sataPanel11.Location = new System.Drawing.Point(648, 107);
+            this.sataPanel11.Location = new System.Drawing.Point(647, 107);
             this.sataPanel11.Name = "sataPanel11";
             this.sataPanel11.Size = new System.Drawing.Size(280, 161);
             this.sataPanel11.TabIndex = 6;
@@ -268,11 +276,11 @@
             this.sataPanel12.BackColor = System.Drawing.Color.White;
             this.sataPanel12.BackColor2 = System.Drawing.Color.White;
             this.sataPanel12.BorderColor = System.Drawing.Color.Black;
-            borderRadius8.BottomLeft = 10;
-            borderRadius8.BottomRight = 10;
-            borderRadius8.TopLeft = 10;
-            borderRadius8.TopRight = 10;
-            this.sataPanel12.BorderRadius = borderRadius8;
+            borderRadius3.BottomLeft = 10;
+            borderRadius3.BottomRight = 10;
+            borderRadius3.TopLeft = 10;
+            borderRadius3.TopRight = 10;
+            this.sataPanel12.BorderRadius = borderRadius3;
             this.sataPanel12.BorderThickness = 0;
             this.sataPanel12.Controls.Add(this.sataPictureBox5);
             this.sataPanel12.Controls.Add(this.label18);
@@ -327,16 +335,16 @@
             this.sataPanel10.BackColor = System.Drawing.Color.White;
             this.sataPanel10.BackColor2 = System.Drawing.Color.White;
             this.sataPanel10.BorderColor = System.Drawing.Color.Black;
-            borderRadius9.BottomLeft = 10;
-            borderRadius9.BottomRight = 10;
-            borderRadius9.TopLeft = 10;
-            borderRadius9.TopRight = 10;
-            this.sataPanel10.BorderRadius = borderRadius9;
+            borderRadius4.BottomLeft = 10;
+            borderRadius4.BottomRight = 10;
+            borderRadius4.TopLeft = 10;
+            borderRadius4.TopRight = 10;
+            this.sataPanel10.BorderRadius = borderRadius4;
             this.sataPanel10.BorderThickness = 0;
             this.sataPanel10.Controls.Add(this.sataPictureBox3);
             this.sataPanel10.Controls.Add(this.label14);
             this.sataPanel10.Controls.Add(this.lblAvailRoom);
-            this.sataPanel10.Location = new System.Drawing.Point(342, 107);
+            this.sataPanel10.Location = new System.Drawing.Point(339, 107);
             this.sataPanel10.Name = "sataPanel10";
             this.sataPanel10.Size = new System.Drawing.Size(280, 161);
             this.sataPanel10.TabIndex = 6;
@@ -386,21 +394,22 @@
             this.sataPanel1.BackColor = System.Drawing.Color.White;
             this.sataPanel1.BackColor2 = System.Drawing.Color.White;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius10.BottomLeft = 10;
-            borderRadius10.BottomRight = 10;
-            borderRadius10.TopLeft = 10;
-            borderRadius10.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius10;
+            borderRadius5.BottomLeft = 10;
+            borderRadius5.BottomRight = 10;
+            borderRadius5.TopLeft = 10;
+            borderRadius5.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius5;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 347);
             this.sataPanel1.Name = "sataPanel1";
-            this.sataPanel1.Size = new System.Drawing.Size(1205, 424);
+            this.sataPanel1.Size = new System.Drawing.Size(1202, 424);
             this.sataPanel1.TabIndex = 14;
             // 
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
+            this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 0);
@@ -408,7 +417,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1205, 424);
+            this.materialTabControl1.Size = new System.Drawing.Size(1202, 424);
             this.materialTabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -418,7 +427,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1197, 395);
+            this.tabPage1.Size = new System.Drawing.Size(1194, 395);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer List";
             // 
@@ -433,24 +442,24 @@
             this.dataGridReservationDash.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridReservationDash.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridReservationDash.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservationDash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservationDash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridReservationDash.ColumnHeadersHeight = 33;
             this.dataGridReservationDash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridReservationDash.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReservationDash.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridReservationDash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridReservationDash.EnableHeadersVisualStyles = false;
             this.dataGridReservationDash.GridColor = System.Drawing.Color.Gainsboro;
@@ -459,20 +468,83 @@
             this.dataGridReservationDash.Name = "dataGridReservationDash";
             this.dataGridReservationDash.ReadOnly = true;
             this.dataGridReservationDash.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservationDash.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridReservationDash.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridReservationDash.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridReservationDash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridReservationDash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridReservationDash.Size = new System.Drawing.Size(1188, 389);
+            this.dataGridReservationDash.TabIndex = 3;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridCheckInDash);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 398);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridCheckInDash
+            // 
+            this.dataGridCheckInDash.AllowUserToAddRows = false;
+            this.dataGridCheckInDash.AllowUserToDeleteRows = false;
+            this.dataGridCheckInDash.AllowUserToResizeColumns = false;
+            this.dataGridCheckInDash.AllowUserToResizeRows = false;
+            this.dataGridCheckInDash.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridCheckInDash.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridCheckInDash.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridCheckInDash.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridCheckInDash.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCheckInDash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridCheckInDash.ColumnHeadersHeight = 33;
+            this.dataGridCheckInDash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridCheckInDash.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridCheckInDash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridCheckInDash.EnableHeadersVisualStyles = false;
+            this.dataGridCheckInDash.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridCheckInDash.Location = new System.Drawing.Point(3, 3);
+            this.dataGridCheckInDash.MultiSelect = false;
+            this.dataGridCheckInDash.Name = "dataGridCheckInDash";
+            this.dataGridCheckInDash.ReadOnly = true;
+            this.dataGridCheckInDash.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservationDash.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridReservationDash.RowHeadersVisible = false;
+            this.dataGridCheckInDash.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridCheckInDash.RowHeadersVisible = false;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridReservationDash.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridReservationDash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridReservationDash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridReservationDash.Size = new System.Drawing.Size(1191, 389);
-            this.dataGridReservationDash.TabIndex = 3;
+            this.dataGridCheckInDash.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridCheckInDash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridCheckInDash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridCheckInDash.Size = new System.Drawing.Size(1188, 392);
+            this.dataGridCheckInDash.TabIndex = 4;
             // 
             // label41
             // 
@@ -507,7 +579,7 @@
             this.btnAddNew.ImageTint = System.Drawing.Color.White;
             this.btnAddNew.IsToggleButton = false;
             this.btnAddNew.IsToggled = false;
-            this.btnAddNew.Location = new System.Drawing.Point(1108, 290);
+            this.btnAddNew.Location = new System.Drawing.Point(1112, 290);
             this.btnAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -560,6 +632,8 @@
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservationDash)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInDash)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -594,5 +668,7 @@
         private System.Windows.Forms.DataGridView dataGridReservationDash;
         private System.Windows.Forms.Label label41;
         private FrameworkTest.SATAButton btnAddNew;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dataGridCheckInDash;
     }
 }

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CuoreUI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CuoreUI.Winforms.2025.7.18\lib\net472\CuoreUI.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net48\MaterialSkin.dll</HintPath>
     </Reference>
@@ -128,8 +131,11 @@
     <Compile Include="Forms\ReservationHome.Designer.cs">
       <DependentUpon>ReservationHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\DbConfig.cs" />
     <Compile Include="Interface\Billing\IBillingRepository.cs" />
     <Compile Include="Interface\Billing\IBillingView.cs" />
+    <Compile Include="Interface\CheckInOut\ICheckInOutRepository.cs" />
+    <Compile Include="Interface\CheckInOut\ICheckInOutView.cs" />
     <Compile Include="Interface\Customer\ICustomerRepository.cs" />
     <Compile Include="Interface\Customer\ICustomerView.cs" />
     <Compile Include="Interface\IMainView.cs" />
@@ -137,29 +143,49 @@
     <Compile Include="Interface\Reservation\IReservationView.cs" />
     <Compile Include="Interface\Rooms\IRoomRepository.cs" />
     <Compile Include="Interface\Rooms\IRoomView.cs" />
+    <Compile Include="Interface\Service\Food\IFoodStockRepository.cs" />
+    <Compile Include="Interface\Service\Food\IFoodStockVIew.cs" />
+    <Compile Include="Interface\Service\IServiceRepository.cs" />
+    <Compile Include="Interface\Service\IServiceView.cs" />
     <Compile Include="Model\BillingModel.cs" />
+    <Compile Include="Model\CheckInOutModel.cs" />
     <Compile Include="Model\CustomerModel.cs" />
     <Compile Include="Model\ReservationModel.cs" />
     <Compile Include="Model\RoomModel.cs" />
+    <Compile Include="Model\Service\FoodServiceModel.cs" />
+    <Compile Include="Model\Service\Food\FoodOrderModel.cs" />
+    <Compile Include="Model\Service\Food\FoodStockModel.cs" />
+    <Compile Include="Model\Service\LaundryServiceModel.cs" />
     <Compile Include="Presenter\BillingPresenter.cs" />
+    <Compile Include="Presenter\CheckInOutPresenter.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
     <Compile Include="Presenter\CustomerPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="Presenter\ReservationPresenter.cs" />
     <Compile Include="Presenter\RoomPresenter.cs" />
+    <Compile Include="Presenter\ServicePresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\BillingRepository.cs" />
+    <Compile Include="Repositories\CheckInOutRepository.cs" />
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\DasboardRepository.cs" />
     <Compile Include="Repositories\ReservationRepository.cs" />
     <Compile Include="Repositories\RoomRepository.cs" />
+    <Compile Include="Repositories\ServiceRepository.cs" />
+    <Compile Include="Repositories\Service\Food\FoodRepository.cs" />
     <Compile Include="UserControls\UCBilling.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCBilling.Designer.cs">
       <DependentUpon>UCBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCINOUT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCINOUT.Designer.cs">
+      <DependentUpon>UCINOUT.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCReservation.cs">
       <SubType>UserControl</SubType>
@@ -190,6 +216,12 @@
     </Compile>
     <Compile Include="UserControls\UCRooms.Designer.cs">
       <DependentUpon>UCRooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCService.Designer.cs">
+      <DependentUpon>UCService.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCSettings.cs">
       <SubType>UserControl</SubType>
@@ -224,11 +256,17 @@
     <EmbeddedResource Include="UserControls\UCHomepage.resx">
       <DependentUpon>UCHomepage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCINOUT.resx">
+      <DependentUpon>UCINOUT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCReservation.resx">
       <DependentUpon>UCReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCRooms.resx">
       <DependentUpon>UCRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCService.resx">
+      <DependentUpon>UCService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCSettings.resx">
       <DependentUpon>UCSettings.cs</DependentUpon>
@@ -249,6 +287,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Authentication\" />
+    <Folder Include="Presenter\Service\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

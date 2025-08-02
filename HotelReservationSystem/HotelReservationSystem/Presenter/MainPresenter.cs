@@ -4,12 +4,15 @@ using HotelReservationSystem.Interface;
 using HotelReservationSystem.Interface.Billing;
 using HotelReservationSystem.Interface.Reservation;
 using HotelReservationSystem.Interface.Rooms;
+using HotelReservationSystem.Interface.Service.Food;
 using HotelReservationSystem.Presenter.Billing;
 using HotelReservationSystem.Presenter.Reservation;
 using HotelReservationSystem.Presenter.Rooms;
 using HotelReservationSystem.Repositories;
 using HotelReservationSystem.Repositories.Billing;
 using HotelReservationSystem.Repositories.Rooms;
+using HotelReservationSystem.Repositories.Service.Food;
+using HotelReservationSystem.ServiceComponents;
 using HotelReservationSystem.UserControls;
 
 namespace HotelReservationSystem.Presenter
@@ -29,6 +32,23 @@ namespace HotelReservationSystem.Presenter
             this.mainView.ShowRoomView += ShowRoomView;
             this.mainView.ShowReservationView += ShowReservationView;
             this.mainView.ShowBillingView += ShowBillingView;
+            this.mainView.ShowServiceView += ShowServiceView;
+        }
+
+        private void ShowServiceView(object sender, EventArgs e)
+        {
+            var serviceControl = UCService.GetInstance((Form)mainView);
+            var serviceRepo = new FoodRepository(sqlConnectionString);
+            var presenter = new ServicePresenter(serviceControl, serviceRepo);
+
+            if (serviceControl is IFoodStockVIew)
+            {
+                mainView.LoadUserControl(serviceControl);
+            }
+            else
+            {
+                throw new InvalidCastException("Unable to cast UCService to IFoodStockView.");
+            }
         }
 
         private void ShowBillingView(object sender, EventArgs e)

@@ -8,20 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelReservationSystem.Repositories.Rooms;
+using HotelReservationSystem.Helper;
 using HotelReservationSystem.Repositories.Dashboard;
+using HotelReservationSystem.Repositories.Rooms;
 
 
 namespace HotelReservationSystem.UserControls
 {
     public partial class UCDashboard : UserControl
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
         private RoomRepository roomRepo;
         public UCDashboard()
         {
             InitializeComponent();
-            roomRepo = new RoomRepository(connectionString);
+            roomRepo = new RoomRepository(DbConfig.GetConnectionString());
         }
 
         private void sataBarChart1_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace HotelReservationSystem.UserControls
 
         private void UCDashboard_Load(object sender, EventArgs e)
         {
-            DasboardRepository repository = new DasboardRepository(connectionString);
+            DasboardRepository repository = new DasboardRepository(DbConfig.GetConnectionString());
             var totalRooms = repository.GetRoomCount();
             var totalAvailableRooms = repository.GetAvailableRoomCount();
             var totalOccupiedRooms = repository.GetOccupiedRoomCount();

@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HotelReservationSystem.Interface.Rooms;
-using HotelReservationSystem.Model.Customer;
-using HotelReservationSystem.Model.Rooms;
+using HotelReservationSystem.Model;
+using HotelReservationSystem.Model;
+using HotelReservationSystem.Model;
 
 namespace HotelReservationSystem.Repositories.Rooms
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface;
-using HotelReservationSystem.Model.Customer;
+using HotelReservationSystem.Model;
 using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.Presenter

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HotelReservationSystem.Interface;
-using HotelReservationSystem.Model.Customer;
+using HotelReservationSystem.Model;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface.Rooms;
-using HotelReservationSystem.Model.Rooms;
+using HotelReservationSystem.Model;
 using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.Presenter.Rooms

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface;
 using HotelReservationSystem.Repositories;
 
@@ -24,8 +25,7 @@ namespace HotelReservationSystem.UserControls
             AssociateAndRaiseViewEvents();
             InitializeComboBox();
             materialTabControl1.TabPages.Remove(tabPage2);
-            string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
-            customerRepo = new CustomerRepository(connectionString);
+            customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
         }
 
         private List<string> comboItems;

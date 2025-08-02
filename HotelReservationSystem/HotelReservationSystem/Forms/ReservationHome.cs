@@ -31,6 +31,7 @@ namespace HotelReservationSystem
         public event EventHandler ShowReservationView;
         public event EventHandler ShowLoginView;
         public event EventHandler ShowBillingView;
+        public event EventHandler ShowServiceView;
 
         public void LoadUserControl(UserControl control)
         {
@@ -60,6 +61,7 @@ namespace HotelReservationSystem
             UCReservation.ResetInstance();
             UCCustomers.ResetInstance();
             UCRooms.ResetInstance();
+            UCService.ResetInstance();
             this.Hide();
         }
 
@@ -74,5 +76,9 @@ namespace HotelReservationSystem
         private void sataPictureBox1_Click(object sender, EventArgs e)
         {
         }
+
+        private void sataButton9_Click(object sender, EventArgs e) => ShowServiceView?.Invoke(this, EventArgs.Empty);
+
+        private void sataButton7_Click(object sender, EventArgs e) => LoadUserControl(new UCINOUT());
     }
 }

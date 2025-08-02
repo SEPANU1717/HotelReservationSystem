@@ -5,9 +5,10 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Reservation;
 using HotelReservationSystem.Interface.Rooms;
-using HotelReservationSystem.Model.Rooms;
+using HotelReservationSystem.Model;
 using HotelReservationSystem.Repositories;
 using HotelReservationSystem.Repositories.Rooms;
 
@@ -26,10 +27,9 @@ namespace HotelReservationSystem.UserControls
             InitializeComponent();
             materialTabControl1.TabPages.Remove(tabPage2);
             AssociateAndraiseViewEvents();
-            string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
-            customerRepo = new CustomerRepository(connectionString);
-            reserveRepo = new ReservationRepository(connectionString);
-            roomRepo = new RoomRepository(connectionString);
+            customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+            reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
+            roomRepo = new RoomRepository(DbConfig.GetConnectionString());
             InitializeCustomerComboBox();
             InitializeRoomTypeComboBox();
             InitializeRoomStatusComboBox();

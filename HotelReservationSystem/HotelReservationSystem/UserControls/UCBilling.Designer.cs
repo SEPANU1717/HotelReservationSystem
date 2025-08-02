@@ -65,6 +65,9 @@
             this.txtBillingId = new SATATextBox();
             this.btnReservationPay = new FrameworkTest.SATAButton();
             this.btnBillingCancel = new FrameworkTest.SATAButton();
+            this.sataButton1 = new FrameworkTest.SATAButton();
+            this.btnFood = new FrameworkTest.SATAButton();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -96,7 +99,7 @@
             this.sataPictureBox1.BorderSize = 1;
             this.sataPictureBox1.GradientAngle = 50F;
             this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
-            this.sataPictureBox1.Location = new System.Drawing.Point(1068, 16);
+            this.sataPictureBox1.Location = new System.Drawing.Point(1088, 16);
             this.sataPictureBox1.Name = "sataPictureBox1";
             this.sataPictureBox1.Size = new System.Drawing.Size(43, 43);
             this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -109,7 +112,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1119, 27);
+            this.label3.Location = new System.Drawing.Point(1139, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 1;
@@ -121,7 +124,7 @@
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1121, 44);
+            this.label4.Location = new System.Drawing.Point(1141, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 1;
@@ -222,7 +225,7 @@
             this.btnDeleteDelete.ImageTint = System.Drawing.Color.White;
             this.btnDeleteDelete.IsToggleButton = false;
             this.btnDeleteDelete.IsToggled = false;
-            this.btnDeleteDelete.Location = new System.Drawing.Point(1170, 100);
+            this.btnDeleteDelete.Location = new System.Drawing.Point(1190, 100);
             this.btnDeleteDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnDeleteDelete.Name = "btnDeleteDelete";
             this.btnDeleteDelete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(104)))), ((int)(((byte)(107)))));
@@ -261,7 +264,7 @@
             this.btnBillingAddNew.ImageTint = System.Drawing.Color.White;
             this.btnBillingAddNew.IsToggleButton = false;
             this.btnBillingAddNew.IsToggled = false;
-            this.btnBillingAddNew.Location = new System.Drawing.Point(984, 100);
+            this.btnBillingAddNew.Location = new System.Drawing.Point(950, 100);
             this.btnBillingAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnBillingAddNew.Name = "btnBillingAddNew";
             this.btnBillingAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -301,7 +304,7 @@
             this.btnBillingEdit.ImageTint = System.Drawing.Color.White;
             this.btnBillingEdit.IsToggleButton = false;
             this.btnBillingEdit.IsToggled = false;
-            this.btnBillingEdit.Location = new System.Drawing.Point(1116, 100);
+            this.btnBillingEdit.Location = new System.Drawing.Point(1082, 100);
             this.btnBillingEdit.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnBillingEdit.Name = "btnBillingEdit";
             this.btnBillingEdit.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -332,13 +335,14 @@
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 156);
             this.sataPanel1.Name = "sataPanel1";
-            this.sataPanel1.Size = new System.Drawing.Size(1182, 611);
+            this.sataPanel1.Size = new System.Drawing.Size(1202, 611);
             this.sataPanel1.TabIndex = 19;
             // 
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
+            this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 0);
@@ -346,7 +350,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1182, 611);
+            this.materialTabControl1.Size = new System.Drawing.Size(1202, 611);
             this.materialTabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -356,7 +360,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1174, 582);
+            this.tabPage1.Size = new System.Drawing.Size(1194, 582);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer List";
             // 
@@ -409,7 +413,7 @@
             this.dataGridBilling.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridBilling.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridBilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridBilling.Size = new System.Drawing.Size(1168, 576);
+            this.dataGridBilling.Size = new System.Drawing.Size(1188, 576);
             this.dataGridBilling.TabIndex = 3;
             // 
             // tabPage2
@@ -431,12 +435,12 @@
             this.tabPage2.Controls.Add(this.txtBillingId);
             this.tabPage2.Controls.Add(this.btnReservationPay);
             this.tabPage2.Controls.Add(this.btnBillingCancel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1174, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Customer Details";
+            this.tabPage2.Text = "Reservation Billing";
             // 
             // label10
             // 
@@ -737,6 +741,95 @@
             this.btnBillingCancel.TextAutoCenter = true;
             this.btnBillingCancel.TextOffset = new System.Drawing.Point(0, 0);
             // 
+            // sataButton1
+            // 
+            this.sataButton1.ButtonText = "";
+            this.sataButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.sataButton1.CheckedImageTint = System.Drawing.Color.White;
+            this.sataButton1.CheckedOutline = System.Drawing.Color.Transparent;
+            this.sataButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sataButton1.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.sataButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataButton1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.sataButton1.HoverForeColor = System.Drawing.Color.White;
+            this.sataButton1.HoverImage = null;
+            this.sataButton1.HoverImageTint = System.Drawing.Color.White;
+            this.sataButton1.HoverOutline = System.Drawing.Color.Empty;
+            this.sataButton1.Image = ((System.Drawing.Image)(resources.GetObject("sataButton1.Image")));
+            this.sataButton1.ImageAutoCenter = true;
+            this.sataButton1.ImageExpand = new System.Drawing.Point(0, 0);
+            this.sataButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.sataButton1.ImageTint = System.Drawing.Color.White;
+            this.sataButton1.IsToggleButton = false;
+            this.sataButton1.IsToggled = false;
+            this.sataButton1.Location = new System.Drawing.Point(1136, 100);
+            this.sataButton1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.sataButton1.Name = "sataButton1";
+            this.sataButton1.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.sataButton1.NormalForeColor = System.Drawing.Color.White;
+            this.sataButton1.NormalOutline = System.Drawing.Color.Empty;
+            this.sataButton1.OutlineThickness = 2F;
+            this.sataButton1.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.sataButton1.PressedForeColor = System.Drawing.Color.White;
+            this.sataButton1.PressedImageTint = System.Drawing.Color.White;
+            this.sataButton1.PressedOutline = System.Drawing.Color.Empty;
+            this.sataButton1.Rounding = new System.Windows.Forms.Padding(5);
+            this.sataButton1.Size = new System.Drawing.Size(44, 39);
+            this.sataButton1.TabIndex = 18;
+            this.sataButton1.TextAutoCenter = false;
+            this.sataButton1.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // btnFood
+            // 
+            this.btnFood.ButtonText = "Food";
+            this.btnFood.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnFood.CheckedForeColor = System.Drawing.Color.White;
+            this.btnFood.CheckedImageTint = System.Drawing.Color.White;
+            this.btnFood.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnFood.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFood.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnFood.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFood.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnFood.HoverForeColor = System.Drawing.Color.White;
+            this.btnFood.HoverImage = null;
+            this.btnFood.HoverImageTint = System.Drawing.Color.White;
+            this.btnFood.HoverOutline = System.Drawing.Color.Empty;
+            this.btnFood.Image = ((System.Drawing.Image)(resources.GetObject("btnFood.Image")));
+            this.btnFood.ImageAutoCenter = true;
+            this.btnFood.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnFood.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnFood.ImageTint = System.Drawing.Color.White;
+            this.btnFood.IsToggleButton = false;
+            this.btnFood.IsToggled = false;
+            this.btnFood.Location = new System.Drawing.Point(818, 100);
+            this.btnFood.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnFood.Name = "btnFood";
+            this.btnFood.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnFood.NormalForeColor = System.Drawing.Color.White;
+            this.btnFood.NormalOutline = System.Drawing.Color.Empty;
+            this.btnFood.OutlineThickness = 2F;
+            this.btnFood.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnFood.PressedForeColor = System.Drawing.Color.White;
+            this.btnFood.PressedImageTint = System.Drawing.Color.White;
+            this.btnFood.PressedOutline = System.Drawing.Color.Empty;
+            this.btnFood.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnFood.Size = new System.Drawing.Size(122, 39);
+            this.btnFood.TabIndex = 20;
+            this.btnFood.TextAutoCenter = true;
+            this.btnFood.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood.Click += new System.EventHandler(this.btnBillingAddNew_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Food Billing";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // UCBilling
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -744,7 +837,9 @@
             this.Controls.Add(this.btnBillingSearch);
             this.Controls.Add(this.txtBillingSearch);
             this.Controls.Add(this.btnDeleteDelete);
+            this.Controls.Add(this.btnFood);
             this.Controls.Add(this.btnBillingAddNew);
+            this.Controls.Add(this.sataButton1);
             this.Controls.Add(this.btnBillingEdit);
             this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.panel2);
@@ -797,5 +892,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label36;
+        private FrameworkTest.SATAButton sataButton1;
+        private FrameworkTest.SATAButton sataButton2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private FrameworkTest.SATAButton btnFood;
     }
 }

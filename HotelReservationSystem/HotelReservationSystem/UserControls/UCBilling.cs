@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Billing;
-using HotelReservationSystem.Model.Reservation;
+using HotelReservationSystem.Model;
 using HotelReservationSystem.Repositories;
 using HotelReservationSystem.Repositories.Billing;
 using HotelReservationSystem.Repositories.Rooms;
@@ -28,10 +29,9 @@ namespace HotelReservationSystem.UserControls
             InitializeComponent();
             AssociateAndraiseViewEvents();
             materialTabControl1.TabPages.Remove(tabPage2);
-            string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
-            billRepo = new BillingRepository(connectionString);
-            reserveRepo = new ReservationRepository(connectionString);
-            roomRepo = new RoomRepository(connectionString);
+            billRepo = new BillingRepository(DbConfig.GetConnectionString());
+            reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
+            roomRepo = new RoomRepository(DbConfig.GetConnectionString());
             cbReservationId.SelectedIndexChanged += cbReservationId_SelectedIndexChanged;
             InitializeRoomTypeComboBox();
         }
@@ -295,5 +295,7 @@ namespace HotelReservationSystem.UserControls
         {
 
         }
+
+        private void sataButton2_Click(object sender, EventArgs e){}
     }
 }

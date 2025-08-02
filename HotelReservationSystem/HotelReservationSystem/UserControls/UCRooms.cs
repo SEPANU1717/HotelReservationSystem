@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Repositories.Rooms;
 
@@ -24,8 +25,7 @@ namespace HotelReservationSystem.UserControls
             AssociateAndraiseViewEvents();
             materialTabControl1.TabPages.Remove(tabPage2);
             InitializeComboBox();
-            string connectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
-            roomRepo = new RoomRepository(connectionString);
+            roomRepo = new RoomRepository(DbConfig.GetConnectionString());
 
         }
 
@@ -187,7 +187,7 @@ namespace HotelReservationSystem.UserControls
             txtBedCount.Texts = "1";
             txtRoomPrice.Texts = "2499";
             txtRoomNumber.Texts = "STD";
-
+            cboRoomStatus.SelectedIndex = 0;
 
 
         }
@@ -200,6 +200,7 @@ namespace HotelReservationSystem.UserControls
             txtBedCount.Texts = "1";
             txtRoomPrice.Texts = "5999";
             txtRoomNumber.Texts = "DLX";
+            cboRoomStatus.SelectedIndex = 0;
 
         }
 
@@ -211,6 +212,7 @@ namespace HotelReservationSystem.UserControls
             txtBedCount.Texts = "2";
             txtRoomPrice.Texts = "7999";
             txtRoomNumber.Texts = "ST";
+            cboRoomStatus.SelectedIndex = 0;
         }
 
         private void btnfamilyRoom_Click(object sender, EventArgs e)
@@ -221,6 +223,7 @@ namespace HotelReservationSystem.UserControls
             txtBedCount.Texts = "3";
             txtRoomPrice.Texts = "4999";
             txtRoomNumber.Texts = "FML";
+            cboRoomStatus.SelectedIndex = 0;
         }
 
         private void btnSingleRoom_Click(object sender, EventArgs e)
@@ -231,6 +234,7 @@ namespace HotelReservationSystem.UserControls
             txtBedCount.Texts = "1";
             txtRoomPrice.Texts = "1999";
             txtRoomNumber.Texts = "SGL";
+            cboRoomStatus.SelectedIndex = 0;
         }
     }
 }

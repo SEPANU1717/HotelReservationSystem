@@ -6,7 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HotelReservationSystem.Interface.Billing;
-using HotelReservationSystem.Model.Billing;
+using HotelReservationSystem.Model;
+using HotelReservationSystem.Model;
 
 namespace HotelReservationSystem.Repositories.Billing
 {
@@ -14,7 +15,7 @@ namespace HotelReservationSystem.Repositories.Billing
     {
         public BillingRepository(string connectionString) : base(connectionString) { }
 
-        // Add Billing
+        //<-----------------------Add Billing--------------------------/>
         public void Add(BillingModel billing)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -37,7 +38,7 @@ namespace HotelReservationSystem.Repositories.Billing
             }
         }
 
-        // Delete Billing
+        //<-----------------------Delete Billing--------------------------/>
         public void Delete(int id)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -50,7 +51,7 @@ namespace HotelReservationSystem.Repositories.Billing
             }
         }
 
-        // Edit Billing
+        //<-----------------------Delete Billing--------------------------/>
         public void Edit(BillingModel billing)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -81,7 +82,7 @@ namespace HotelReservationSystem.Repositories.Billing
             }
         }
 
-        // Get All Billing
+        //<-----------------------Get All Biling--------------------------/>
         public IEnumerable<BillingModel> GetAll()
         {
             var billingList = new List<BillingModel>();
@@ -111,7 +112,7 @@ namespace HotelReservationSystem.Repositories.Billing
             return billingList;
         }
 
-        // Get By Value Billing
+        //<-----------------------Get By Value Billing--------------------------/>
         public IEnumerable<BillingModel> GetByValue(string value)
         {
             var billingList = new List<BillingModel>();
@@ -150,6 +151,7 @@ namespace HotelReservationSystem.Repositories.Billing
             return billingList;
         }
 
+        //<-----------------------Get Next Billing Id--------------------------/>
         public int GetNextBillingId()
         {
             using (var connection = new SqlConnection(connectionString))
