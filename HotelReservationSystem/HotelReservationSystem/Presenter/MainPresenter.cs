@@ -12,7 +12,6 @@ using HotelReservationSystem.Repositories;
 using HotelReservationSystem.Repositories.Billing;
 using HotelReservationSystem.Repositories.Rooms;
 using HotelReservationSystem.Repositories.Service.Food;
-using HotelReservationSystem.ServiceComponents;
 using HotelReservationSystem.UserControls;
 
 namespace HotelReservationSystem.Presenter
