@@ -151,6 +151,8 @@
             this.txtFoodId = new SATATextBox();
             this.sataButton12 = new FrameworkTest.SATAButton();
             this.btnAddFood = new FrameworkTest.SATAButton();
+            this.txtCategory = new SATATextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -600,6 +602,7 @@
             this.btnFood12.TabIndex = 12;
             this.btnFood12.TextAutoCenter = false;
             this.btnFood12.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood12.Click += new System.EventHandler(this.btnFood12_Click);
             // 
             // txtPrice
             // 
@@ -617,9 +620,9 @@
             this.txtFood12.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.txtFood12.Location = new System.Drawing.Point(116, 14);
             this.txtFood12.Name = "txtFood12";
-            this.txtFood12.Size = new System.Drawing.Size(93, 26);
+            this.txtFood12.Size = new System.Drawing.Size(80, 13);
             this.txtFood12.TabIndex = 1;
-            this.txtFood12.Text = "Salted Pasta with\r\nmushroom sauce\r\n";
+            this.txtFood12.Text = "Melon Medley";
             // 
             // panel13
             // 
@@ -706,6 +709,7 @@
             this.btnFood9.TabIndex = 12;
             this.btnFood9.TextAutoCenter = false;
             this.btnFood9.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood9.Click += new System.EventHandler(this.btnFood9_Click);
             // 
             // txtPrice9
             // 
@@ -723,9 +727,9 @@
             this.txtFood9.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.txtFood9.Location = new System.Drawing.Point(116, 14);
             this.txtFood9.Name = "txtFood9";
-            this.txtFood9.Size = new System.Drawing.Size(93, 26);
+            this.txtFood9.Size = new System.Drawing.Size(96, 13);
             this.txtFood9.TabIndex = 1;
-            this.txtFood9.Text = "Salted Pasta with\r\nmushroom sauce\r\n";
+            this.txtFood9.Text = "Berry Fizz Delight";
             // 
             // panel10
             // 
@@ -749,7 +753,7 @@
             this.sataPictureBox10.Location = new System.Drawing.Point(0, 5);
             this.sataPictureBox10.Name = "sataPictureBox10";
             this.sataPictureBox10.Size = new System.Drawing.Size(107, 107);
-            this.sataPictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.sataPictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sataPictureBox10.TabIndex = 5;
             this.sataPictureBox10.TabStop = false;
             // 
@@ -1026,6 +1030,7 @@
             this.btnFood11.TabIndex = 12;
             this.btnFood11.TextAutoCenter = false;
             this.btnFood11.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood11.Click += new System.EventHandler(this.btnFood11_Click);
             // 
             // txtPrice11
             // 
@@ -1043,9 +1048,9 @@
             this.txtFood11.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.txtFood11.Location = new System.Drawing.Point(116, 14);
             this.txtFood11.Name = "txtFood11";
-            this.txtFood11.Size = new System.Drawing.Size(93, 26);
+            this.txtFood11.Size = new System.Drawing.Size(73, 13);
             this.txtFood11.TabIndex = 1;
-            this.txtFood11.Text = "Salted Pasta with\r\nmushroom sauce\r\n";
+            this.txtFood11.Text = "Citrus Cooler";
             // 
             // panel12
             // 
@@ -1069,7 +1074,7 @@
             this.sataPictureBox12.Location = new System.Drawing.Point(0, 5);
             this.sataPictureBox12.Name = "sataPictureBox12";
             this.sataPictureBox12.Size = new System.Drawing.Size(107, 107);
-            this.sataPictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.sataPictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sataPictureBox12.TabIndex = 5;
             this.sataPictureBox12.TabStop = false;
             // 
@@ -1132,6 +1137,7 @@
             this.btnFood8.TabIndex = 12;
             this.btnFood8.TextAutoCenter = false;
             this.btnFood8.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood8.Click += new System.EventHandler(this.btnFood8_Click);
             // 
             // txtPrice8
             // 
@@ -1149,9 +1155,9 @@
             this.txtFood8.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.txtFood8.Location = new System.Drawing.Point(116, 14);
             this.txtFood8.Name = "txtFood8";
-            this.txtFood8.Size = new System.Drawing.Size(93, 26);
+            this.txtFood8.Size = new System.Drawing.Size(81, 13);
             this.txtFood8.TabIndex = 1;
-            this.txtFood8.Text = "Salted Pasta with\r\nmushroom sauce\r\n";
+            this.txtFood8.Text = "Sunset Sparkle";
             // 
             // panel9
             // 
@@ -1452,6 +1458,7 @@
             this.btnFood10.TabIndex = 12;
             this.btnFood10.TextAutoCenter = false;
             this.btnFood10.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood10.Click += new System.EventHandler(this.btnFood10_Click);
             // 
             // txtPrice10
             // 
@@ -1469,9 +1476,9 @@
             this.txtFood10.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.txtFood10.Location = new System.Drawing.Point(116, 14);
             this.txtFood10.Name = "txtFood10";
-            this.txtFood10.Size = new System.Drawing.Size(93, 26);
+            this.txtFood10.Size = new System.Drawing.Size(76, 13);
             this.txtFood10.TabIndex = 1;
-            this.txtFood10.Text = "Salted Pasta with\r\nmushroom sauce\r\n";
+            this.txtFood10.Text = "Cherry Splash";
             // 
             // panel11
             // 
@@ -1558,6 +1565,7 @@
             this.btnFood7.TabIndex = 12;
             this.btnFood7.TextAutoCenter = false;
             this.btnFood7.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood7.Click += new System.EventHandler(this.btnFood7_Click);
             // 
             // txtPrice7
             // 
@@ -1575,9 +1583,9 @@
             this.txtFood7.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             this.txtFood7.Location = new System.Drawing.Point(116, 14);
             this.txtFood7.Name = "txtFood7";
-            this.txtFood7.Size = new System.Drawing.Size(93, 26);
+            this.txtFood7.Size = new System.Drawing.Size(73, 13);
             this.txtFood7.TabIndex = 1;
-            this.txtFood7.Text = "Salted Pasta with\r\nmushroom sauce\r\n";
+            this.txtFood7.Text = "Tropical Bliss";
             // 
             // panel8
             // 
@@ -1601,7 +1609,7 @@
             this.sataPictureBox8.Location = new System.Drawing.Point(0, 5);
             this.sataPictureBox8.Name = "sataPictureBox8";
             this.sataPictureBox8.Size = new System.Drawing.Size(107, 107);
-            this.sataPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.sataPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sataPictureBox8.TabIndex = 5;
             this.sataPictureBox8.TabStop = false;
             // 
@@ -1841,12 +1849,14 @@
             this.panel16.Controls.Add(this.btnFoodCancel);
             this.panel16.Controls.Add(this.label7);
             this.panel16.Controls.Add(this.label6);
+            this.panel16.Controls.Add(this.label9);
             this.panel16.Controls.Add(this.label2);
             this.panel16.Controls.Add(this.label8);
             this.panel16.Controls.Add(this.label1);
             this.panel16.Controls.Add(this.label36);
             this.panel16.Controls.Add(this.txtDescription);
             this.panel16.Controls.Add(this.txtFoodPrice);
+            this.panel16.Controls.Add(this.txtCategory);
             this.panel16.Controls.Add(this.txtStock);
             this.panel16.Controls.Add(this.txtFoodName);
             this.panel16.Controls.Add(this.txtFoodId);
@@ -1950,7 +1960,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(10, 302);
+            this.label6.Location = new System.Drawing.Point(178, 303);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 11;
@@ -1961,7 +1971,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(10, 220);
+            this.label2.Location = new System.Drawing.Point(10, 303);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 20);
             this.label2.TabIndex = 11;
@@ -2036,13 +2046,13 @@
             this.txtFoodPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtFoodPrice.Icon = null;
             this.txtFoodPrice.IconSize = new System.Drawing.Size(20, 20);
-            this.txtFoodPrice.Location = new System.Drawing.Point(14, 331);
+            this.txtFoodPrice.Location = new System.Drawing.Point(182, 332);
             this.txtFoodPrice.Multiline = false;
             this.txtFoodPrice.Name = "txtFoodPrice";
             this.txtFoodPrice.PasswordChar = false;
             this.txtFoodPrice.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtFoodPrice.PlaceholderText = "";
-            this.txtFoodPrice.Size = new System.Drawing.Size(323, 35);
+            this.txtFoodPrice.Size = new System.Drawing.Size(155, 35);
             this.txtFoodPrice.TabIndex = 10;
             this.txtFoodPrice.Text = "0";
             this.txtFoodPrice.Texts = "";
@@ -2060,13 +2070,13 @@
             this.txtStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtStock.Icon = null;
             this.txtStock.IconSize = new System.Drawing.Size(20, 20);
-            this.txtStock.Location = new System.Drawing.Point(14, 249);
+            this.txtStock.Location = new System.Drawing.Point(14, 332);
             this.txtStock.Multiline = false;
             this.txtStock.Name = "txtStock";
             this.txtStock.PasswordChar = false;
             this.txtStock.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtStock.PlaceholderText = "";
-            this.txtStock.Size = new System.Drawing.Size(323, 35);
+            this.txtStock.Size = new System.Drawing.Size(155, 35);
             this.txtStock.TabIndex = 10;
             this.txtStock.Text = "0";
             this.txtStock.Texts = "";
@@ -2198,6 +2208,41 @@
             this.btnAddFood.TabIndex = 18;
             this.btnAddFood.TextAutoCenter = false;
             this.btnAddFood.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // txtCategory
+            // 
+            this.txtCategory.BackColor = System.Drawing.Color.White;
+            this.txtCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCategory.BorderColor = System.Drawing.Color.Silver;
+            this.txtCategory.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCategory.BorderRadius = 3;
+            this.txtCategory.BorderSize = 1;
+            this.txtCategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCategory.Icon = null;
+            this.txtCategory.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCategory.Location = new System.Drawing.Point(14, 249);
+            this.txtCategory.Multiline = false;
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.PasswordChar = false;
+            this.txtCategory.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCategory.PlaceholderText = "";
+            this.txtCategory.Size = new System.Drawing.Size(323, 35);
+            this.txtCategory.TabIndex = 10;
+            this.txtCategory.Text = "0";
+            this.txtCategory.Texts = "";
+            this.txtCategory.UnderlinedStyle = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(10, 220);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 20);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Category";
             // 
             // UCService
             // 
@@ -2388,5 +2433,7 @@
         private System.Windows.Forms.DataGridView dataGridFoodService;
         private FrameworkTest.SATAButton btnFoodAdd;
         private FrameworkTest.SATAButton btnFoodCancel;
+        private System.Windows.Forms.Label label9;
+        private SATATextBox txtCategory;
     }
 }

@@ -53,5 +53,48 @@ namespace HotelReservationSystem.Helper
             foodInstance.Description = "Spicy instant noodle with special omelette";
         }
 
+        public static void Drink7(UCService drinkInstance)
+        {
+            drinkInstance.FoodName = "Tropical Bliss";
+            drinkInstance.Price = "129.99";
+            drinkInstance.Stock = "1";
+            drinkInstance.Description = "Tropical fruits and sweetness over ice.";
+        }
+        public static void Drink8(UCService drinkInstance)
+        {
+            drinkInstance.FoodName = "Sunset Sparkler";
+            drinkInstance.Price = "129.99";
+            drinkInstance.Stock = "1";
+            drinkInstance.Description = "Fizzy orange drink, summer sunset essence.";
+        }
+        public static void Drink9(UCService drinkInstance)
+        {
+            drinkInstance.FoodName = "Berry Fizz Delight";
+            drinkInstance.Price = "149.99";
+            drinkInstance.Stock = "1";
+            drinkInstance.Description = "Fresh berries mixed with sparkling soda.";
+        }
+        public static void Drink10(UCService drinkInstance)
+        {
+            drinkInstance.FoodName = "Cherry Splash";
+            drinkInstance.Price = "149.99";
+            drinkInstance.Stock = "1";
+            drinkInstance.Description = "Colorful cherry blend, sweet and tart.";
+        }
+        public static void Drink11(UCService drinkInstance)
+        {
+            drinkInstance.FoodName = "Citrus Cooler";
+            drinkInstance.Price = "149.99";
+            drinkInstance.Stock = "1";
+            drinkInstance.Description = "Sharp citrus and sweetness, refreshingly revitalizing.";
+        }
+        public static void Drink12(UCService drinkInstance)
+        {
+            drinkInstance.FoodName = "Melon Medley";
+            drinkInstance.Price = "169.99";
+            drinkInstance.Stock = "1";
+            drinkInstance.Description = "Refreshing melon blend with mint garnish.";
+        }
+
     }
 }

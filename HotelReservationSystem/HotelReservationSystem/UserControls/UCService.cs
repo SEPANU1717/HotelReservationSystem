@@ -169,5 +169,11 @@ namespace HotelReservationSystem.UserControls
         private void btnFood4_Click(object sender, EventArgs e) => ServiceHelper.Food4(this);
         private void btnFood5_Click(object sender, EventArgs e) => ServiceHelper.Food5(this);
         private void btnFood6_Click(object sender, EventArgs e) => ServiceHelper.Food6(this);
+        private void btnFood7_Click(object sender, EventArgs e) => ServiceHelper.Drink7(this);
+        private void btnFood8_Click(object sender, EventArgs e) => ServiceHelper.Drink8(this);
+        private void btnFood9_Click(object sender, EventArgs e) => ServiceHelper.Drink9(this);
+        private void btnFood10_Click(object sender, EventArgs e) => ServiceHelper.Drink10(this);
+        private void btnFood11_Click(object sender, EventArgs e) => ServiceHelper.Drink11(this);
+        private void btnFood12_Click(object sender, EventArgs e) => ServiceHelper.Drink12(this);
     }
 }
