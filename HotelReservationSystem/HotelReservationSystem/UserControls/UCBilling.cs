@@ -34,11 +34,14 @@ namespace HotelReservationSystem.UserControls
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
             cbReservationId.SelectedIndexChanged += cbReservationId_SelectedIndexChanged;
             InitializeRoomTypeComboBox();
+
         }
 
         private void LoadReservationIds()
         {
-            var reservations = reserveRepo.GetAll().ToList();
+            var reservations = reserveRepo.GetAll()
+                .Where(r => r.ReservationStatus != "Reserve")
+                .ToList();
             cbReservationId.DataSource = reservations;
             cbReservationId.DisplayMember = "ReservationId";
             cbReservationId.ValueMember = "ReservationId";

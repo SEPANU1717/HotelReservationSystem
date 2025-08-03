@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Rooms;
+using HotelReservationSystem.Repositories;
 using HotelReservationSystem.Repositories.Rooms;
 
 namespace HotelReservationSystem.UserControls
@@ -26,7 +27,6 @@ namespace HotelReservationSystem.UserControls
             materialTabControl1.TabPages.Remove(tabPage2);
             InitializeComboBox();
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
-
         }
 
         private void AssociateAndraiseViewEvents()
@@ -68,7 +68,6 @@ namespace HotelReservationSystem.UserControls
 
             btnRoomSave.Click += delegate
             {
-                
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
@@ -98,17 +97,17 @@ namespace HotelReservationSystem.UserControls
                     MessageBox.Show(Message);
                 }
             };
+
+            btnRefresh.Click += (s, e) => SyncRoomStatuses();
         }
-
-
 
         public string RoomId { get => txtRoomId.Texts; set => txtRoomId.Texts = value; }
         public string RoomNumber { get => txtRoomNumber.Texts; set => txtRoomNumber.Texts = value; }
         public string RoomType { get => txtRoomType.Texts; set => txtRoomType.Texts = value; }
-        public string RoomPrice { get => txtRoomPrice.Texts; set => txtRoomPrice.Texts = value ; }
-        public string BedCount { get => txtBedCount.Texts ; set => txtBedCount.Texts = value ; }
+        public string RoomPrice { get => txtRoomPrice.Texts; set => txtRoomPrice.Texts = value; }
+        public string BedCount { get => txtBedCount.Texts; set => txtBedCount.Texts = value; }
         public string RoomGuests { get => txtRoomGuests.Texts; set => txtRoomGuests.Texts = value; }
-        public string RoomDescription { get => txtDescription.Texts ; set => txtDescription.Texts =  value ; }
+        public string RoomDescription { get => txtDescription.Texts; set => txtDescription.Texts = value; }
         public string SearchValue { get => txtRoomSearch.Texts; set => txtRoomSearch.Texts = value; }
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
@@ -124,15 +123,12 @@ namespace HotelReservationSystem.UserControls
             }
         }
 
-
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
         public event EventHandler EditEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
-
-
 
         //Methods
         public static void ResetInstance()
@@ -144,7 +140,6 @@ namespace HotelReservationSystem.UserControls
             }
         }
 
-        
         private void InitializeComboBox()
         {
             comboItems = new List<string>()
@@ -157,11 +152,9 @@ namespace HotelReservationSystem.UserControls
             cboRoomStatus.Items = comboItems.ToArray();
         }
 
-
         public void SetRoomListBindingSource(BindingSource customerList)
         {
             dataGridRoom.DataSource = customerList;
-
         }
 
         private static UCRooms _instance;
@@ -188,6 +181,16 @@ namespace HotelReservationSystem.UserControls
             cboRoomStatus.SelectedIndex = -1;
         }
 
+        private void SyncRoomStatuses()
+        {
+            var reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
+            foreach (var room in roomRepo.GetAll())
+            {
+                roomRepo.SyncRoomStatusesWithReservations(room.RoomNumber, reserveRepo);
+            }
+            MessageBox.Show("Room statuses have been synchronized with reservations.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public void btnStandardRoom_Click(object sender, EventArgs e) => RoomHelper.StandardRoom(this);
 
         private void btnDeluxeRoom_Click(object sender, EventArgs e) => RoomHelper.DeluxeRoom(this);
@@ -199,4 +202,3 @@ namespace HotelReservationSystem.UserControls
         private void btnSingleRoom_Click(object sender, EventArgs e) => RoomHelper.SingleRoom(this);
     }
 }
-

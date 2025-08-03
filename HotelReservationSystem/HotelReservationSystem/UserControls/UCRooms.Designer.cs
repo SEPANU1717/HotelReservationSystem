@@ -129,6 +129,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new FrameworkTest.SATAButton();
             this.tabPage2.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             this.sataPanel7.SuspendLayout();
@@ -287,7 +288,7 @@
             this.btnRoomAddNew.ImageTint = System.Drawing.Color.White;
             this.btnRoomAddNew.IsToggleButton = false;
             this.btnRoomAddNew.IsToggled = false;
-            this.btnRoomAddNew.Location = new System.Drawing.Point(1004, 100);
+            this.btnRoomAddNew.Location = new System.Drawing.Point(950, 100);
             this.btnRoomAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnRoomAddNew.Name = "btnRoomAddNew";
             this.btnRoomAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -365,10 +366,10 @@
             this.tabPage2.Controls.Add(this.txtRoomType);
             this.tabPage2.Controls.Add(this.txtRoomId);
             this.tabPage2.Controls.Add(this.txtRoomNumber);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -498,7 +499,7 @@
             this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.sataPanel2.Location = new System.Drawing.Point(683, 3);
             this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(508, 576);
+            this.sataPanel2.Size = new System.Drawing.Size(508, 579);
             this.sataPanel2.TabIndex = 8;
             // 
             // sataPanel7
@@ -1744,6 +1745,45 @@
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 12;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.ButtonText = "";
+            this.btnRefresh.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnRefresh.CheckedForeColor = System.Drawing.Color.White;
+            this.btnRefresh.CheckedImageTint = System.Drawing.Color.White;
+            this.btnRefresh.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnRefresh.HoverForeColor = System.Drawing.Color.White;
+            this.btnRefresh.HoverImage = null;
+            this.btnRefresh.HoverImageTint = System.Drawing.Color.White;
+            this.btnRefresh.HoverOutline = System.Drawing.Color.Empty;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.ImageAutoCenter = true;
+            this.btnRefresh.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnRefresh.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnRefresh.ImageTint = System.Drawing.Color.White;
+            this.btnRefresh.IsToggleButton = false;
+            this.btnRefresh.IsToggled = false;
+            this.btnRefresh.Location = new System.Drawing.Point(1082, 100);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRefresh.NormalForeColor = System.Drawing.Color.White;
+            this.btnRefresh.NormalOutline = System.Drawing.Color.Empty;
+            this.btnRefresh.OutlineThickness = 2F;
+            this.btnRefresh.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRefresh.PressedForeColor = System.Drawing.Color.White;
+            this.btnRefresh.PressedImageTint = System.Drawing.Color.White;
+            this.btnRefresh.PressedOutline = System.Drawing.Color.Empty;
+            this.btnRefresh.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnRefresh.Size = new System.Drawing.Size(44, 39);
+            this.btnRefresh.TabIndex = 11;
+            this.btnRefresh.TextAutoCenter = false;
+            this.btnRefresh.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // UCRooms
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1752,6 +1792,7 @@
             this.Controls.Add(this.txtRoomSearch);
             this.Controls.Add(this.btnRoomDelete);
             this.Controls.Add(this.btnRoomAddNew);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnRoomEdit);
             this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.panel2);
@@ -1894,5 +1935,6 @@
         private SATAComboBox cboRoomStatus;
         private SATATextBox txtRoomId;
         private System.Windows.Forms.Label label36;
+        private FrameworkTest.SATAButton btnRefresh;
     }
 }

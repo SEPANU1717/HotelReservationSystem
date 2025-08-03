@@ -20,20 +20,11 @@ namespace HotelReservationSystem.Repositories
         public void Add(ReservationModel reservation)
         {
             using (var connection = new SqlConnection(connectionString))
-            using (var checkCommand = connection.CreateCommand())
             using (var insertCommand = connection.CreateCommand())
             {
                 connection.Open();
-                checkCommand.CommandText = "SELECT COUNT(*) FROM Reservations WHERE CustomerName = @cName";
-                checkCommand.Parameters.Add("@cName", SqlDbType.VarChar).Value = reservation.CustomerName;
-
-                int count = (int)checkCommand.ExecuteScalar();
-                if (count > 0) throw new Exception($"Customer name '{reservation.CustomerName}' already exists.");
-
-                insertCommand.Connection = connection;
-                insertCommand.CommandText = @"
-                        INSERT INTO Reservations (CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber) 
-                        VALUES (@CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber)";
+                insertCommand.CommandText = @" INSERT INTO Reservations (CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber) 
+                                               VALUES (@CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber)";
 
                 insertCommand.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = reservation.CustomerName;
                 insertCommand.Parameters.Add("@CheckInDate", SqlDbType.DateTime).Value = reservation.CheckInDate;

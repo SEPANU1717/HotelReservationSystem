@@ -18,5 +18,6 @@ namespace HotelReservationSystem.Model
         [DisplayName("Bed Count")][Required(ErrorMessage = "Bed count is required")] public string BedCount { get; set; }
         [DisplayName("Max Guests")][Required(ErrorMessage = "guests count is required")] public string RoomGuests { get; set; }
         [DisplayName("Description")] public string RoomDescription { get; set; }
+
     }
 }

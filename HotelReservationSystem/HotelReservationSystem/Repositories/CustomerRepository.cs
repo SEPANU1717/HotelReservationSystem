@@ -173,13 +173,17 @@ namespace HotelReservationSystem.Repositories
             }
         }
 
-        public IEnumerable<string> GetAllCustomerNames()
+        public IEnumerable<string> GetCustomerNamesWithoutReservation()
         {
             var names = new List<string>();
             using (var connection = new SqlConnection(connectionString))
-            using (var command = new SqlCommand("SELECT LastName FROM Customers", connection))
+            using (var command = new SqlCommand())
             {
                 connection.Open();
+                command.Connection = connection;
+                command.CommandText = @" SELECT DISTINCT (FirstName + ' ' + LastName) AS FullName
+                                         FROM Customers WHERE (FirstName + ' ' + LastName) NOT IN (
+                                         SELECT CustomerName FROM Reservations WHERE ReservationStatus = 'Reserved')";
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())

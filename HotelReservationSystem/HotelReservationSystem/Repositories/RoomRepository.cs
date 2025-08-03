@@ -224,5 +224,36 @@ namespace HotelReservationSystem.Repositories.Rooms
             }
             return null;
         }
+
+        public void SyncRoomStatusesWithReservations(string roomNumber, ReservationRepository reserveRepo)
+        {
+            var now = DateTime.Now;
+            var reservations = reserveRepo.GetAll()
+                .Where(r => r.RoomNumber == roomNumber && r.ReservationStatus == "Reserved")
+                .OrderByDescending(r => r.CheckOutDate)
+                .ToList();
+
+            var room = GetByNumber(roomNumber);
+            if (room == null) return;
+
+            if (reservations.Count == 0 || reservations[0].CheckOutDate < now)
+            {
+                if (room.RoomStatus != "Available")
+                {
+                    room.RoomStatus = "Available";
+                    Edit(room);
+                }
+            }
+            else
+            {
+                bool isOccupied = reservations.Any(r => r.CheckInDate <= now && r.CheckOutDate >= now);
+                string newStatus = isOccupied ? "Occupied" : "Reserved";
+                if (room.RoomStatus != newStatus)
+                {
+                    room.RoomStatus = newStatus;
+                    Edit(room);
+                }
+            }
+        }
     }
 }
