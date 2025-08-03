@@ -56,6 +56,11 @@ namespace HotelReservationSystem.UserControls
 
             btnBillingAddNew.Click += delegate
             {
+                if (materialTabControl1.SelectedTab == tabPage2)
+                {
+                    MessageBox.Show("You are already in the Add Billing menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 isInEditMode = false;
                 cbReservationId.Enabled = true;
                 txtBillingId.Texts = billRepo.GetNextBillingId().ToString();
@@ -68,6 +73,11 @@ namespace HotelReservationSystem.UserControls
 
             btnBillingEdit.Click += delegate
             {
+                if (materialTabControl1.SelectedTab == tabPage2)
+                {
+                    MessageBox.Show("You are already in the Edit Billing menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 isInEditMode = true;
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 SetEditModeReservationId();

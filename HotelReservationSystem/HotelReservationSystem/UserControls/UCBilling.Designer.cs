@@ -67,7 +67,6 @@
             this.btnBillingCancel = new FrameworkTest.SATAButton();
             this.sataButton1 = new FrameworkTest.SATAButton();
             this.btnFood = new FrameworkTest.SATAButton();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -342,7 +341,6 @@
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
-            this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 0);
@@ -820,16 +818,6 @@
             this.btnFood.TextOffset = new System.Drawing.Point(0, 0);
             this.btnFood.Click += new System.EventHandler(this.btnBillingAddNew_Click);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1194, 582);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Food Billing";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
             // UCBilling
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -894,7 +882,6 @@
         private System.Windows.Forms.Label label36;
         private FrameworkTest.SATAButton sataButton1;
         private FrameworkTest.SATAButton sataButton2;
-        private System.Windows.Forms.TabPage tabPage3;
         private FrameworkTest.SATAButton btnFood;
     }
 }

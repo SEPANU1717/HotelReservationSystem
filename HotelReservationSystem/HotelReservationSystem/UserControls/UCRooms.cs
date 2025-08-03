@@ -40,6 +40,11 @@ namespace HotelReservationSystem.UserControls
 
             btnRoomAddNew.Click += delegate
             {
+                if (materialTabControl1.SelectedTab == tabPage2)
+                {
+                    MessageBox.Show("You are already in the Add Room menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 ClearRoomFields();
                 txtRoomId.Texts = roomRepo.GetNextRoomId().ToString();
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
@@ -50,6 +55,11 @@ namespace HotelReservationSystem.UserControls
 
             btnRoomEdit.Click += delegate
             {
+                if (materialTabControl1.SelectedTab == tabPage2)
+                {
+                    MessageBox.Show("You are already in the Edit Room menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
@@ -178,64 +188,15 @@ namespace HotelReservationSystem.UserControls
             cboRoomStatus.SelectedIndex = -1;
         }
 
+        public void btnStandardRoom_Click(object sender, EventArgs e) => RoomHelper.StandardRoom(this);
 
-        private void btnStandardRoom_Click(object sender, EventArgs e)
-        {
-            txtRoomType.Texts = "Standard";
-            txtDescription.Texts = "Comfortable room with essential amenities.";
-            txtRoomGuests.Texts = "2";
-            txtBedCount.Texts = "1";
-            txtRoomPrice.Texts = "2499";
-            txtRoomNumber.Texts = "STD";
-            cboRoomStatus.SelectedIndex = 0;
+        private void btnDeluxeRoom_Click(object sender, EventArgs e) => RoomHelper.DeluxeRoom(this);
 
+        private void btnSuiteRoom_Click(object sender, EventArgs e) => RoomHelper.SuiteRoom(this);
 
-        }
+        private void btnfamilyRoom_Click(object sender, EventArgs e) => RoomHelper.FamilyRoom(this);
 
-        private void btnDeluxeRoom_Click(object sender, EventArgs e)
-        {
-            txtRoomType.Texts = "Deluxe";
-            txtDescription.Texts = "Room B";
-            txtRoomGuests.Texts = "2";
-            txtBedCount.Texts = "1";
-            txtRoomPrice.Texts = "5999";
-            txtRoomNumber.Texts = "DLX";
-            cboRoomStatus.SelectedIndex = 0;
-
-        }
-
-        private void btnSuiteRoom_Click(object sender, EventArgs e)
-        {
-            txtRoomType.Texts = "Suite";
-            txtDescription.Texts = "Room C";
-            txtRoomGuests.Texts = "4";
-            txtBedCount.Texts = "2";
-            txtRoomPrice.Texts = "7999";
-            txtRoomNumber.Texts = "ST";
-            cboRoomStatus.SelectedIndex = 0;
-        }
-
-        private void btnfamilyRoom_Click(object sender, EventArgs e)
-        {
-            txtRoomType.Texts = "Family";
-            txtDescription.Texts = "Room D";
-            txtRoomGuests.Texts = "6";
-            txtBedCount.Texts = "3";
-            txtRoomPrice.Texts = "4999";
-            txtRoomNumber.Texts = "FML";
-            cboRoomStatus.SelectedIndex = 0;
-        }
-
-        private void btnSingleRoom_Click(object sender, EventArgs e)
-        {
-            txtRoomType.Texts = "Single";
-            txtDescription.Texts = "Room E";
-            txtRoomGuests.Texts = "1";
-            txtBedCount.Texts = "1";
-            txtRoomPrice.Texts = "1999";
-            txtRoomNumber.Texts = "SGL";
-            cboRoomStatus.SelectedIndex = 0;
-        }
+        private void btnSingleRoom_Click(object sender, EventArgs e) => RoomHelper.SingleRoom(this);
     }
 }
 

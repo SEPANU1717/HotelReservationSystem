@@ -163,13 +163,11 @@ namespace HotelReservationSystem.UserControls
 
         }
 
-        private void btnFood1_Click(object sender, EventArgs e)
-        {
-            txtFoodName.Texts = "Salted Pasta";
-            txtFoodPrice.Texts = "249.99";
-            txtStock.Texts = "1";
-            txtDescription.Texts = "Salted Pasta with mushroom sauce";
-
-        }
+        private void btnFood1_Click(object sender, EventArgs e) => ServiceHelper.Food1(this);
+        private void btnFood2_Click(object sender, EventArgs e) => ServiceHelper.Food2(this);
+        private void btnFood3_Click(object sender, EventArgs e) => ServiceHelper.Food3(this);
+        private void btnFood4_Click(object sender, EventArgs e) => ServiceHelper.Food4(this);
+        private void btnFood5_Click(object sender, EventArgs e) => ServiceHelper.Food5(this);
+        private void btnFood6_Click(object sender, EventArgs e) => ServiceHelper.Food6(this);
     }
 }

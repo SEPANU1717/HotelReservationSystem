@@ -812,6 +812,7 @@
             this.btnFood6.TabIndex = 12;
             this.btnFood6.TextAutoCenter = false;
             this.btnFood6.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood6.Click += new System.EventHandler(this.btnFood6_Click);
             // 
             // txtPrice6
             // 
@@ -918,6 +919,7 @@
             this.btnFood3.TabIndex = 12;
             this.btnFood3.TextAutoCenter = false;
             this.btnFood3.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood3.Click += new System.EventHandler(this.btnFood3_Click);
             // 
             // txtPrice3
             // 
@@ -1236,6 +1238,7 @@
             this.btnFood5.TabIndex = 12;
             this.btnFood5.TextAutoCenter = false;
             this.btnFood5.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood5.Click += new System.EventHandler(this.btnFood5_Click);
             // 
             // txtPrice5
             // 
@@ -1342,6 +1345,7 @@
             this.btnFood2.TabIndex = 12;
             this.btnFood2.TextAutoCenter = false;
             this.btnFood2.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood2.Click += new System.EventHandler(this.btnFood2_Click);
             // 
             // txtPrice2
             // 
@@ -1660,6 +1664,7 @@
             this.btnFood4.TabIndex = 12;
             this.btnFood4.TextAutoCenter = false;
             this.btnFood4.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnFood4.Click += new System.EventHandler(this.btnFood4_Click);
             // 
             // txtPrice4
             // 

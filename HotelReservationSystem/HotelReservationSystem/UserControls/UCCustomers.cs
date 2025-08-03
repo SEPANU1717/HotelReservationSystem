@@ -52,7 +52,11 @@ namespace HotelReservationSystem.UserControls
 
             btnAddNew.Click += delegate
             {
-
+                if (materialTabControl1.SelectedTab == tabPage2)
+                {
+                    MessageBox.Show("You are already in the Add Customer menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 txtCusId.Texts = customerRepo.GetNextCustomerId().ToString();
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
@@ -62,6 +66,11 @@ namespace HotelReservationSystem.UserControls
 
             btnEdit.Click += delegate
             {
+                if (materialTabControl1.SelectedTab == tabPage2)
+                {
+                    MessageBox.Show("You are already in the Edit Customer menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
