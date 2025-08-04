@@ -24,6 +24,7 @@ namespace HotelReservationSystem.UserControls
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             materialTabControl1.TabPages.Remove(Food);
+            materialTabControl1.TabPages.Remove(Laundry);
             foodRepo = new FoodRepository(DbConfig.GetConnectionString());
 
         }
@@ -39,7 +40,7 @@ namespace HotelReservationSystem.UserControls
 
             btnAddFood.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == Food)
+                if (materialTabControl1.SelectedTab == Food || materialTabControl1.SelectedTab == Laundry)
                 {
                     MessageBox.Show("You are already in the Add Food menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -49,20 +50,22 @@ namespace HotelReservationSystem.UserControls
                 txtFoodId.Texts = foodRepo.GetNextFoodId().ToString();
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Add(Food);
-                materialTabControl1.SelectedTab = Food; 
+                materialTabControl1.SelectedTab = Food;
                 materialTabControl1.Text = "Add new food";
             };
 
             btnFoodEdit.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == Food)
+                if (materialTabControl1.SelectedTab == Food || materialTabControl1.SelectedTab == Laundry)
                 {
                     MessageBox.Show("You are already in the Edit Food menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Add(Food);
                 materialTabControl1.Text = "Edit food";
             };
@@ -75,6 +78,7 @@ namespace HotelReservationSystem.UserControls
                     ClearFoodFields();
                     isEdit = false;
                     materialTabControl1.TabPages.Remove(Food);
+                    materialTabControl1.TabPages.Remove(Laundry);
                     materialTabControl1.TabPages.Add(tabPage1);
                 }
                 MessageBox.Show(Message);
@@ -84,12 +88,13 @@ namespace HotelReservationSystem.UserControls
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(Food);
+                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Add(tabPage1);
             };
 
             btnFoodDelete.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == Food)
+                if (materialTabControl1.SelectedTab == Food || materialTabControl1.SelectedTab == Laundry)
                 {
                     MessageBox.Show("Return service table to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -102,6 +107,17 @@ namespace HotelReservationSystem.UserControls
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
                     MessageBox.Show(Message);
                 }
+            };
+            btnLaundry.Click += delegate
+            {
+                if (materialTabControl1.SelectedTab == Laundry || materialTabControl1.SelectedTab == Food)
+                {
+                    MessageBox.Show("You are already in the Laundry menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Remove(Food);
+                materialTabControl1.TabPages.Add(Laundry);
             };
         }
 
@@ -175,5 +191,30 @@ namespace HotelReservationSystem.UserControls
         private void btnFood10_Click(object sender, EventArgs e) => ServiceHelper.Drink10(this);
         private void btnFood11_Click(object sender, EventArgs e) => ServiceHelper.Drink11(this);
         private void btnFood12_Click(object sender, EventArgs e) => ServiceHelper.Drink12(this);
+
+        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sataPictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sataPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void sataPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void sataPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

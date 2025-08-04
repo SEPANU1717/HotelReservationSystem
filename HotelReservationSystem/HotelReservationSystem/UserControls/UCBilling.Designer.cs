@@ -29,11 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCBilling));
-            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,7 +74,12 @@
             this.btnReservationPay = new FrameworkTest.SATAButton();
             this.btnBillingCancel = new FrameworkTest.SATAButton();
             this.sataButton1 = new FrameworkTest.SATAButton();
-            this.btnFood = new FrameworkTest.SATAButton();
+            this.btnServices = new FrameworkTest.SATAButton();
+            this.Services = new System.Windows.Forms.TabPage();
+            this.btnCheckIn = new FrameworkTest.SATAButton();
+            this.CheckIn = new System.Windows.Forms.TabPage();
+            this.dataGridServices = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -74,6 +87,10 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBilling)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.Services.SuspendLayout();
+            this.CheckIn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridServices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -243,7 +260,7 @@
             // 
             // btnBillingAddNew
             // 
-            this.btnBillingAddNew.ButtonText = "Add New";
+            this.btnBillingAddNew.ButtonText = "Reservation";
             this.btnBillingAddNew.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.btnBillingAddNew.CheckedForeColor = System.Drawing.Color.White;
             this.btnBillingAddNew.CheckedImageTint = System.Drawing.Color.White;
@@ -325,11 +342,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.White;
             this.sataPanel1.BackColor2 = System.Drawing.Color.White;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius2;
+            borderRadius1.BottomLeft = 10;
+            borderRadius1.BottomRight = 10;
+            borderRadius1.TopLeft = 10;
+            borderRadius1.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius1;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 156);
@@ -341,6 +358,8 @@
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
+            this.materialTabControl1.Controls.Add(this.Services);
+            this.materialTabControl1.Controls.Add(this.CheckIn);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 0);
@@ -373,24 +392,24 @@
             this.dataGridBilling.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridBilling.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridBilling.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridBilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridBilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridBilling.ColumnHeadersHeight = 33;
             this.dataGridBilling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridBilling.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridBilling.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridBilling.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridBilling.EnableHeadersVisualStyles = false;
             this.dataGridBilling.GridColor = System.Drawing.Color.Gainsboro;
@@ -399,16 +418,16 @@
             this.dataGridBilling.Name = "dataGridBilling";
             this.dataGridBilling.ReadOnly = true;
             this.dataGridBilling.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridBilling.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridBilling.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridBilling.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridBilling.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridBilling.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridBilling.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridBilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridBilling.Size = new System.Drawing.Size(1188, 576);
@@ -433,10 +452,10 @@
             this.tabPage2.Controls.Add(this.txtBillingId);
             this.tabPage2.Controls.Add(this.btnReservationPay);
             this.tabPage2.Controls.Add(this.btnBillingCancel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Reservation Billing";
             // 
@@ -778,45 +797,211 @@
             this.sataButton1.TextAutoCenter = false;
             this.sataButton1.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // btnFood
+            // btnServices
             // 
-            this.btnFood.ButtonText = "Food";
-            this.btnFood.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnFood.CheckedForeColor = System.Drawing.Color.White;
-            this.btnFood.CheckedImageTint = System.Drawing.Color.White;
-            this.btnFood.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnFood.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFood.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnFood.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFood.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnFood.HoverForeColor = System.Drawing.Color.White;
-            this.btnFood.HoverImage = null;
-            this.btnFood.HoverImageTint = System.Drawing.Color.White;
-            this.btnFood.HoverOutline = System.Drawing.Color.Empty;
-            this.btnFood.Image = ((System.Drawing.Image)(resources.GetObject("btnFood.Image")));
-            this.btnFood.ImageAutoCenter = true;
-            this.btnFood.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnFood.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnFood.ImageTint = System.Drawing.Color.White;
-            this.btnFood.IsToggleButton = false;
-            this.btnFood.IsToggled = false;
-            this.btnFood.Location = new System.Drawing.Point(818, 100);
-            this.btnFood.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnFood.Name = "btnFood";
-            this.btnFood.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnFood.NormalForeColor = System.Drawing.Color.White;
-            this.btnFood.NormalOutline = System.Drawing.Color.Empty;
-            this.btnFood.OutlineThickness = 2F;
-            this.btnFood.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnFood.PressedForeColor = System.Drawing.Color.White;
-            this.btnFood.PressedImageTint = System.Drawing.Color.White;
-            this.btnFood.PressedOutline = System.Drawing.Color.Empty;
-            this.btnFood.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnFood.Size = new System.Drawing.Size(122, 39);
-            this.btnFood.TabIndex = 20;
-            this.btnFood.TextAutoCenter = true;
-            this.btnFood.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnFood.Click += new System.EventHandler(this.btnBillingAddNew_Click);
+            this.btnServices.ButtonText = "Services";
+            this.btnServices.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnServices.CheckedForeColor = System.Drawing.Color.White;
+            this.btnServices.CheckedImageTint = System.Drawing.Color.White;
+            this.btnServices.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnServices.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnServices.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnServices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServices.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnServices.HoverForeColor = System.Drawing.Color.White;
+            this.btnServices.HoverImage = null;
+            this.btnServices.HoverImageTint = System.Drawing.Color.White;
+            this.btnServices.HoverOutline = System.Drawing.Color.Empty;
+            this.btnServices.Image = ((System.Drawing.Image)(resources.GetObject("btnServices.Image")));
+            this.btnServices.ImageAutoCenter = true;
+            this.btnServices.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnServices.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnServices.ImageTint = System.Drawing.Color.White;
+            this.btnServices.IsToggleButton = false;
+            this.btnServices.IsToggled = false;
+            this.btnServices.Location = new System.Drawing.Point(818, 100);
+            this.btnServices.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnServices.Name = "btnServices";
+            this.btnServices.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnServices.NormalForeColor = System.Drawing.Color.White;
+            this.btnServices.NormalOutline = System.Drawing.Color.Empty;
+            this.btnServices.OutlineThickness = 2F;
+            this.btnServices.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnServices.PressedForeColor = System.Drawing.Color.White;
+            this.btnServices.PressedImageTint = System.Drawing.Color.White;
+            this.btnServices.PressedOutline = System.Drawing.Color.Empty;
+            this.btnServices.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnServices.Size = new System.Drawing.Size(122, 39);
+            this.btnServices.TabIndex = 20;
+            this.btnServices.TextAutoCenter = true;
+            this.btnServices.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnServices.Click += new System.EventHandler(this.btnBillingAddNew_Click);
+            // 
+            // Services
+            // 
+            this.Services.Controls.Add(this.dataGridServices);
+            this.Services.Location = new System.Drawing.Point(4, 25);
+            this.Services.Name = "Services";
+            this.Services.Padding = new System.Windows.Forms.Padding(3);
+            this.Services.Size = new System.Drawing.Size(1194, 582);
+            this.Services.TabIndex = 2;
+            this.Services.Text = "tabPage3";
+            this.Services.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckIn
+            // 
+            this.btnCheckIn.ButtonText = "Check-In";
+            this.btnCheckIn.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCheckIn.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCheckIn.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckIn.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCheckIn.HoverForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.HoverImage = null;
+            this.btnCheckIn.HoverImageTint = System.Drawing.Color.White;
+            this.btnCheckIn.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCheckIn.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckIn.Image")));
+            this.btnCheckIn.ImageAutoCenter = true;
+            this.btnCheckIn.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCheckIn.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCheckIn.ImageTint = System.Drawing.Color.White;
+            this.btnCheckIn.IsToggleButton = false;
+            this.btnCheckIn.IsToggled = false;
+            this.btnCheckIn.Location = new System.Drawing.Point(686, 100);
+            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCheckIn.NormalForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCheckIn.OutlineThickness = 2F;
+            this.btnCheckIn.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCheckIn.PressedForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.PressedImageTint = System.Drawing.Color.White;
+            this.btnCheckIn.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCheckIn.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCheckIn.Size = new System.Drawing.Size(122, 39);
+            this.btnCheckIn.TabIndex = 20;
+            this.btnCheckIn.TextAutoCenter = true;
+            this.btnCheckIn.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnCheckIn.Click += new System.EventHandler(this.btnBillingAddNew_Click);
+            // 
+            // CheckIn
+            // 
+            this.CheckIn.Controls.Add(this.dataGridView1);
+            this.CheckIn.Location = new System.Drawing.Point(4, 25);
+            this.CheckIn.Name = "CheckIn";
+            this.CheckIn.Padding = new System.Windows.Forms.Padding(3);
+            this.CheckIn.Size = new System.Drawing.Size(1194, 582);
+            this.CheckIn.TabIndex = 3;
+            this.CheckIn.Text = "CheckIn";
+            this.CheckIn.UseVisualStyleBackColor = true;
+            // 
+            // dataGridServices
+            // 
+            this.dataGridServices.AllowUserToAddRows = false;
+            this.dataGridServices.AllowUserToDeleteRows = false;
+            this.dataGridServices.AllowUserToResizeColumns = false;
+            this.dataGridServices.AllowUserToResizeRows = false;
+            this.dataGridServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridServices.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridServices.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridServices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridServices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridServices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridServices.ColumnHeadersHeight = 33;
+            this.dataGridServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridServices.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridServices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridServices.EnableHeadersVisualStyles = false;
+            this.dataGridServices.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridServices.Location = new System.Drawing.Point(3, 3);
+            this.dataGridServices.MultiSelect = false;
+            this.dataGridServices.Name = "dataGridServices";
+            this.dataGridServices.ReadOnly = true;
+            this.dataGridServices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridServices.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridServices.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridServices.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridServices.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridServices.Size = new System.Drawing.Size(1188, 576);
+            this.dataGridServices.TabIndex = 4;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView1.ColumnHeadersHeight = 33;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1188, 576);
+            this.dataGridView1.TabIndex = 5;
             // 
             // UCBilling
             // 
@@ -825,7 +1010,8 @@
             this.Controls.Add(this.btnBillingSearch);
             this.Controls.Add(this.txtBillingSearch);
             this.Controls.Add(this.btnDeleteDelete);
-            this.Controls.Add(this.btnFood);
+            this.Controls.Add(this.btnServices);
+            this.Controls.Add(this.btnCheckIn);
             this.Controls.Add(this.btnBillingAddNew);
             this.Controls.Add(this.sataButton1);
             this.Controls.Add(this.btnBillingEdit);
@@ -843,6 +1029,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBilling)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.Services.ResumeLayout(false);
+            this.CheckIn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridServices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -882,6 +1072,11 @@
         private System.Windows.Forms.Label label36;
         private FrameworkTest.SATAButton sataButton1;
         private FrameworkTest.SATAButton sataButton2;
-        private FrameworkTest.SATAButton btnFood;
+        private FrameworkTest.SATAButton btnServices;
+        private System.Windows.Forms.TabPage Services;
+        private System.Windows.Forms.DataGridView dataGridServices;
+        private System.Windows.Forms.TabPage CheckIn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private FrameworkTest.SATAButton btnCheckIn;
     }
 }
