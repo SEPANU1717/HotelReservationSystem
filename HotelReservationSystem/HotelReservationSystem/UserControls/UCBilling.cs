@@ -29,8 +29,6 @@ namespace HotelReservationSystem.UserControls
             InitializeComponent();
             AssociateAndraiseViewEvents();
             materialTabControl1.TabPages.Remove(tabPage2);
-            materialTabControl1.TabPages.Remove(Services);
-            materialTabControl1.TabPages.Remove(CheckIn);
             billRepo = new BillingRepository(DbConfig.GetConnectionString());
             reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
@@ -72,8 +70,6 @@ namespace HotelReservationSystem.UserControls
                 LoadReservationIds();
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Remove(CheckIn);
-                materialTabControl1.TabPages.Remove(Services);
                 materialTabControl1.TabPages.Add(tabPage2);
                 materialTabControl1.Text = "Add new billing";
             };
@@ -132,8 +128,6 @@ namespace HotelReservationSystem.UserControls
                     isInEditMode = false;
                     cbReservationId.Enabled = true;
                     materialTabControl1.TabPages.Remove(tabPage2);
-                    materialTabControl1.TabPages.Remove(CheckIn);
-                    materialTabControl1.TabPages.Remove(Services);
                     materialTabControl1.TabPages.Add(tabPage1);
                 }
                 MessageBox.Show(Message);
@@ -162,28 +156,14 @@ namespace HotelReservationSystem.UserControls
 
             btnServices.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == Services)
-                {
-                    MessageBox.Show("You are currently in Services menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(tabPage2);
-                materialTabControl1.TabPages.Remove(CheckIn);
-                materialTabControl1.TabPages.Add(Services);
             };
 
             btnCheckIn.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == CheckIn)
-                {
-                    MessageBox.Show("You are currently in CheckIn menu", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(tabPage2);
-                materialTabControl1.TabPages.Remove(Services);
-                materialTabControl1.TabPages.Add(CheckIn);
 
             };
         }

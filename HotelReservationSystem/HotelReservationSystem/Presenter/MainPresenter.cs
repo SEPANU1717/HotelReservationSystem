@@ -5,6 +5,7 @@ using HotelReservationSystem.Interface.Billing;
 using HotelReservationSystem.Interface.Reservation;
 using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Interface.Service.Food;
+using HotelReservationSystem.Interface.Service.Laundry;
 using HotelReservationSystem.Presenter.Billing;
 using HotelReservationSystem.Presenter.Reservation;
 using HotelReservationSystem.Presenter.Rooms;
@@ -36,17 +37,22 @@ namespace HotelReservationSystem.Presenter
 
         private void ShowServiceView(object sender, EventArgs e)
         {
-            var serviceControl = UCService.GetInstance((Form)mainView);
-            var serviceRepo = new FoodRepository(sqlConnectionString);
-            var presenter = new ServicePresenter(serviceControl, serviceRepo);
-
-            if (serviceControl is IFoodStockVIew)
+            try
             {
+                var serviceControl = UCService.GetInstance((Form)mainView);
+
+                var foodRepo = new FoodRepository(sqlConnectionString);
+                var foodPresenter = new ServicePresenter(serviceControl, foodRepo);
+
+                var laundryRepo = new LaundryRepository(sqlConnectionString);
+                var laundryPresenter = new LaundryPresenter(serviceControl, laundryRepo);
+
                 mainView.LoadUserControl(serviceControl);
             }
-            else
+            catch (Exception ex)
             {
-                throw new InvalidCastException("Unable to cast UCService to IFoodStockView.");
+                MessageBox.Show($"Error loading service view: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

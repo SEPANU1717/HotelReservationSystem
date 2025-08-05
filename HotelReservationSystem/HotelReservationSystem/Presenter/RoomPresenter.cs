@@ -95,7 +95,7 @@ namespace HotelReservationSystem.Presenter.Rooms
             roomView.RoomGuests = room.RoomGuests.ToString();
             roomView.BedCount = room.BedCount.ToString();
 
-            roomView.isEdit = true;
+            roomView.isEdit = true; 
         }
 
         private void AddNewRoom(object sender, EventArgs e)

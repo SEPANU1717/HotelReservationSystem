@@ -147,21 +147,21 @@
     <Compile Include="Interface\Rooms\IRoomView.cs" />
     <Compile Include="Interface\Service\Food\IFoodStockRepository.cs" />
     <Compile Include="Interface\Service\Food\IFoodStockVIew.cs" />
-    <Compile Include="Interface\Service\IServiceRepository.cs" />
-    <Compile Include="Interface\Service\IServiceView.cs" />
+    <Compile Include="Interface\Service\Laundry\ILaundryRepository.cs" />
+    <Compile Include="Interface\Service\Laundry\ILaundryView.cs" />
     <Compile Include="Model\BillingModel.cs" />
     <Compile Include="Model\CheckInOutModel.cs" />
     <Compile Include="Model\CustomerModel.cs" />
     <Compile Include="Model\ReservationModel.cs" />
     <Compile Include="Model\RoomModel.cs" />
-    <Compile Include="Model\Service\FoodServiceModel.cs" />
     <Compile Include="Model\Service\Food\FoodOrderModel.cs" />
     <Compile Include="Model\Service\Food\FoodStockModel.cs" />
-    <Compile Include="Model\Service\LaundryServiceModel.cs" />
+    <Compile Include="Model\Service\Laundry\LaundryServiceModel.cs" />
     <Compile Include="Presenter\BillingPresenter.cs" />
     <Compile Include="Presenter\CheckInOutPresenter.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
     <Compile Include="Presenter\CustomerPresenter.cs" />
+    <Compile Include="Presenter\LaundryPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="Presenter\ReservationPresenter.cs" />
     <Compile Include="Presenter\RoomPresenter.cs" />
@@ -175,8 +175,8 @@
     <Compile Include="Repositories\DasboardRepository.cs" />
     <Compile Include="Repositories\ReservationRepository.cs" />
     <Compile Include="Repositories\RoomRepository.cs" />
-    <Compile Include="Repositories\ServiceRepository.cs" />
-    <Compile Include="Repositories\Service\Food\FoodRepository.cs" />
+    <Compile Include="Repositories\Service\FoodRepository.cs" />
+    <Compile Include="Repositories\Service\LaundryRepository.cs" />
     <Compile Include="UserControls\UCBilling.cs">
       <SubType>UserControl</SubType>
     </Compile>

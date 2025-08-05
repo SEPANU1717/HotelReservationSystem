@@ -95,6 +95,35 @@ namespace HotelReservationSystem.Helper
             drinkInstance.Stock = "1";
             drinkInstance.Description = "Refreshing melon blend with mint garnish.";
         }
-
+        
+        public static void LaundryBlouse(UCService laundryInstance)
+        {
+            laundryInstance.LaundryName = "Blouse/Skirt";
+            laundryInstance.LPrice = "99.99";
+        }
+        
+        public static void FormalAttire(UCService laundryInstance)
+        {
+            laundryInstance.LaundryName = "Formal Attire/Suit";
+            laundryInstance.LPrice = "199.99";
+        }
+        
+        public static void PantsTrouser(UCService laundryInstance)
+        {
+            laundryInstance.LaundryName = "Pants/Trouser";
+            laundryInstance.LPrice = "109.99";
+        }
+        
+        public static void Socks(UCService laundryInstance)
+        {
+            laundryInstance.LaundryName = "Socks/Underwear";
+            laundryInstance.LPrice = "39.99";
+        }
+        
+        public static void Sensitive(UCService laundryInstance)
+        {
+            laundryInstance.LaundryName = "Sensitive Fabrics";
+            laundryInstance.LPrice = "249.99";
+        }
     }
 }

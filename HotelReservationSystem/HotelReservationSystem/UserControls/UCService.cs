@@ -11,14 +11,18 @@ using System.Windows.Forms;
 using CuoreUI.Controls;
 using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Service.Food;
+using HotelReservationSystem.Interface.Service.Laundry;
+using HotelReservationSystem.Model.Service;
 using HotelReservationSystem.Model.Service.Food;
 using HotelReservationSystem.Repositories.Service.Food;
 
 namespace HotelReservationSystem.UserControls
 {
-    public partial class UCService : UserControl, IFoodStockVIew
+    public partial class UCService : UserControl, IFoodStockVIew, ILaundryView
     {
         private FoodRepository foodRepo;
+        private LaundryRepository laundryRepo;
+
         public UCService()
         {
             InitializeComponent();
@@ -26,7 +30,7 @@ namespace HotelReservationSystem.UserControls
             materialTabControl1.TabPages.Remove(Food);
             materialTabControl1.TabPages.Remove(Laundry);
             foodRepo = new FoodRepository(DbConfig.GetConnectionString());
-
+            laundryRepo = new  LaundryRepository(DbConfig.GetConnectionString());
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -42,7 +46,8 @@ namespace HotelReservationSystem.UserControls
             {
                 if (materialTabControl1.SelectedTab == Food || materialTabControl1.SelectedTab == Laundry)
                 {
-                    MessageBox.Show("You are already in the Add Food menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("You are already in the Add Food menu.", "Warning", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -60,9 +65,11 @@ namespace HotelReservationSystem.UserControls
             {
                 if (materialTabControl1.SelectedTab == Food || materialTabControl1.SelectedTab == Laundry)
                 {
-                    MessageBox.Show("You are already in the Edit Food menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("You are already in the Edit Food menu.", "Warning", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                     return;
                 }
+
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(Laundry);
@@ -81,6 +88,7 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.TabPages.Remove(Laundry);
                     materialTabControl1.TabPages.Add(tabPage1);
                 }
+
                 MessageBox.Show(Message);
             };
 
@@ -96,11 +104,13 @@ namespace HotelReservationSystem.UserControls
             {
                 if (materialTabControl1.SelectedTab == Food || materialTabControl1.SelectedTab == Laundry)
                 {
-                    MessageBox.Show("Return service table to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Return service table to delete", "Warning", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                     return;
                 }
+
                 var result = MessageBox.Show("Are you sure you want to delete the selected food item?", "Warning",
-                      MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
@@ -110,23 +120,90 @@ namespace HotelReservationSystem.UserControls
             };
             btnLaundry.Click += delegate
             {
+                //txtLId.Texts = laundryRepo.GetNextReservationId().ToString();
                 if (materialTabControl1.SelectedTab == Laundry || materialTabControl1.SelectedTab == Food)
                 {
-                    MessageBox.Show("You are already in the Laundry menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("You are already in the Laundry menu.", "Warning", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                     return;
                 }
+
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(Food);
                 materialTabControl1.TabPages.Add(Laundry);
             };
+
+            btnBillingCancel.Click += delegate
+            {
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+                materialTabControl1.TabPages.Add(tabPage1);
+                materialTabControl1.TabPages.Remove(Food);
+                materialTabControl1.TabPages.Remove(Laundry);
+            };
+            btnLAdd.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
+
+
+                btnLComplete.Click += delegate { CompleteEvent?.Invoke(this, EventArgs.Empty); };
+
+            btnLClear.Click += delegate
+            {
+                ClearEvent?.Invoke(this, EventArgs.Empty);
+            };
         }
 
-        public string FoodId { get => txtFoodId.Texts; set => txtFoodId.Texts = value; }
-        public string FoodName { get => txtFoodName.Texts; set => txtFoodName.Texts = value; }
-        public string Description { get => txtDescription.Texts; set => txtDescription.Texts = value; }
-        public string Price { get => txtFoodPrice.Texts; set => txtFoodPrice.Texts = value; }
-        public string Stock { get => txtStock.Texts; set => txtStock.Texts = value; }
-        public string SearchValue { get => txtFoodSearch.Texts; set => txtFoodSearch.Texts = value; }
+        public string FoodId
+        {
+            get => txtFoodId.Texts;
+            set => txtFoodId.Texts = value;
+        }
+
+        public string FoodName
+        {
+            get => txtFoodName.Texts;
+            set => txtFoodName.Texts = value;
+        }
+
+        public string Description
+        {
+            get => txtDescription.Texts;
+            set => txtDescription.Texts = value;
+        }
+
+        public string LaundryId
+        {
+            get /*=> txtLId.Texts*/;
+            set /*=> txtLId.Texts = value*/;
+        }
+        public string LaundryName { get => txtLName.Texts; set => txtLName.Texts = value; }
+        public string Quantity
+        {
+            get => txtLQuantity.Texts;
+            set => txtLQuantity.Texts = value;
+        }
+        public string LPrice { get => txtLPrice.Texts; set => txtLPrice.Texts = value; }
+
+        public string Price
+        {
+            get => txtFoodPrice.Texts;
+            set => txtFoodPrice.Texts = value;
+        }
+
+        public event EventHandler AddEvent;
+        public event EventHandler ClearEvent;
+        public event EventHandler CompleteEvent;
+
+        public string Stock
+        {
+            get => txtStock.Texts;
+            set => txtStock.Texts = value;
+        }
+
+        public string SearchValue
+        {
+            get => txtFoodSearch.Texts;
+            set => txtFoodSearch.Texts = value;
+        }
+
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
@@ -137,6 +214,10 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public void SetLaundryListBindingSource(BindingSource laundryList)
+        {
+            dataGridLaundry.DataSource = laundryList;
+        }
 
 
         public void SetFoodListBindingSource(BindingSource foodList)
@@ -145,6 +226,7 @@ namespace HotelReservationSystem.UserControls
         }
 
         private static UCService _instance;
+
         public static UCService GetInstance(Form parentContainer)
         {
             if (_instance == null || _instance.IsDisposed || _instance.Parent == null)
@@ -192,29 +274,11 @@ namespace HotelReservationSystem.UserControls
         private void btnFood11_Click(object sender, EventArgs e) => ServiceHelper.Drink11(this);
         private void btnFood12_Click(object sender, EventArgs e) => ServiceHelper.Drink12(this);
 
-        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void sataPictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sataPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void sataPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void sataPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        private void sataButton1_Click(object sender, EventArgs e) => ServiceHelper.LaundryBlouse(this);
+        private void sataButton2_Click(object sender, EventArgs e) => ServiceHelper.FormalAttire(this);
+        private void sataButton4_Click(object sender, EventArgs e) => ServiceHelper.Socks(this);
+        private void sataButton3_Click_1(object sender, EventArgs e)=> ServiceHelper.PantsTrouser(this);
+        private void sataButton5_Click_1(object sender, EventArgs e)=> ServiceHelper.Sensitive(this);
     }
 }
