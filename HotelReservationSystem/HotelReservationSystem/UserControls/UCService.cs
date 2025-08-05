@@ -29,6 +29,9 @@ namespace HotelReservationSystem.UserControls
             AssociateAndRaiseViewEvents();
             materialTabControl1.TabPages.Remove(Food);
             materialTabControl1.TabPages.Remove(Laundry);
+            materialTabControl1.TabPages.Remove(OrderFood);
+            materialTabControl1.TabPages.Remove(tabPage1);
+            materialTabControl1.TabPages.Remove(ConfirmOrder);
             foodRepo = new FoodRepository(DbConfig.GetConnectionString());
             laundryRepo = new  LaundryRepository(DbConfig.GetConnectionString());
         }
@@ -57,6 +60,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Add(Food);
+                materialTabControl1.TabPages.Remove(OrderFood);
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(OrderList);
                 materialTabControl1.SelectedTab = Food;
                 materialTabControl1.Text = "Add new food";
             };
@@ -74,6 +80,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Add(Food);
+                materialTabControl1.TabPages.Remove(OrderFood);
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(OrderList);
                 materialTabControl1.Text = "Edit food";
             };
 
@@ -87,6 +96,9 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.TabPages.Remove(Food);
                     materialTabControl1.TabPages.Remove(Laundry);
                     materialTabControl1.TabPages.Add(tabPage1);
+                    materialTabControl1.TabPages.Remove(OrderFood);
+                    materialTabControl1.TabPages.Remove(ConfirmOrder);
+                    materialTabControl1.TabPages.Remove(OrderList);
                 }
 
                 MessageBox.Show(Message);
@@ -98,6 +110,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(Food);
                 materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Add(tabPage1);
+                materialTabControl1.TabPages.Remove(OrderFood);
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(OrderList);
             };
 
             btnFoodDelete.Click += delegate
@@ -131,6 +146,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(Food);
                 materialTabControl1.TabPages.Add(Laundry);
+                materialTabControl1.TabPages.Remove(OrderFood);
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(OrderList);
             };
 
             btnBillingCancel.Click += delegate
@@ -139,6 +157,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Add(tabPage1);
                 materialTabControl1.TabPages.Remove(Food);
                 materialTabControl1.TabPages.Remove(Laundry);
+                materialTabControl1.TabPages.Remove(OrderFood);
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(OrderList);
             };
             btnLAdd.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
 
@@ -148,6 +169,53 @@ namespace HotelReservationSystem.UserControls
             btnLClear.Click += delegate
             {
                 ClearEvent?.Invoke(this, EventArgs.Empty);
+            };
+            btnFoodStock.Click += delegate
+            {
+                if (materialTabControl1.SelectedTab == tabPage1)
+                {
+                    MessageBox.Show("You are already in the Food Stock menu.", "Warning", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                materialTabControl1.TabPages.Add(tabPage1);
+                materialTabControl1.TabPages.Remove(Food);
+                materialTabControl1.TabPages.Remove(Laundry);
+                materialTabControl1.TabPages.Remove(OrderFood);
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(OrderList);
+
+            };
+
+            btnOrderFood.Click += delegate
+            {
+                materialTabControl1.TabPages.Add(OrderFood);
+                materialTabControl1.TabPages.Remove(Food);
+                materialTabControl1.TabPages.Remove(Laundry);
+                materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(OrderList);
+            };
+
+            btnConfirmOrder.Click += delegate
+            {
+                materialTabControl1.TabPages.Add(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(Food);
+                materialTabControl1.TabPages.Remove(Laundry);
+                materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(OrderFood);
+            };
+
+            btnOrderList.Click += delegate
+            {
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(Food);
+                materialTabControl1.TabPages.Remove(Laundry);
+                materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Add(OrderList);
+                materialTabControl1.TabPages.Remove(OrderFood);
             };
         }
 
@@ -280,5 +348,10 @@ namespace HotelReservationSystem.UserControls
         private void sataButton4_Click(object sender, EventArgs e) => ServiceHelper.Socks(this);
         private void sataButton3_Click_1(object sender, EventArgs e)=> ServiceHelper.PantsTrouser(this);
         private void sataButton5_Click_1(object sender, EventArgs e)=> ServiceHelper.Sensitive(this);
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
