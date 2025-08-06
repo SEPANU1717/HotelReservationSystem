@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CuoreUI.Controls;
+using HotelReservationSystem.DataInitializer;
 using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Service.Food;
 using HotelReservationSystem.Interface.Service.Laundry;
@@ -32,6 +33,7 @@ namespace HotelReservationSystem.UserControls
             materialTabControl1.TabPages.Remove(OrderFood);
             materialTabControl1.TabPages.Remove(tabPage1);
             materialTabControl1.TabPages.Remove(ConfirmOrder);
+            materialTabControl1.TabPages.Remove(ConfirmLaundry);
             foodRepo = new FoodRepository(DbConfig.GetConnectionString());
             laundryRepo = new  LaundryRepository(DbConfig.GetConnectionString());
         }
@@ -63,6 +65,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(ConfirmLaundry);
                 materialTabControl1.SelectedTab = Food;
                 materialTabControl1.Text = "Add new food";
             };
@@ -83,6 +86,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(ConfirmLaundry);
                 materialTabControl1.Text = "Edit food";
             };
 
@@ -99,6 +103,7 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.TabPages.Remove(OrderFood);
                     materialTabControl1.TabPages.Remove(ConfirmOrder);
                     materialTabControl1.TabPages.Remove(OrderList);
+                    materialTabControl1.TabPages.Remove(ConfirmLaundry);
                 }
 
                 MessageBox.Show(Message);
@@ -113,6 +118,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(ConfirmLaundry);
             };
 
             btnFoodDelete.Click += delegate
@@ -149,6 +155,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(ConfirmLaundry);
             };
 
             btnBillingCancel.Click += delegate
@@ -160,6 +167,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(ConfirmLaundry);
             };
             btnLAdd.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
 
@@ -185,6 +193,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(ConfirmLaundry);
 
             };
 
@@ -196,6 +205,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(ConfirmLaundry);
             };
 
             btnConfirmOrder.Click += delegate
@@ -206,6 +216,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(OrderList);
                 materialTabControl1.TabPages.Remove(OrderFood);
+                materialTabControl1.TabPages.Remove(ConfirmLaundry);
             };
 
             btnOrderList.Click += delegate
@@ -216,6 +227,18 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(OrderList);
                 materialTabControl1.TabPages.Remove(OrderFood);
+                materialTabControl1.TabPages.Remove(ConfirmLaundry);
+            };
+
+            btnConfirmLaundry.Click += delegate
+            {
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(Food);
+                materialTabControl1.TabPages.Remove(Laundry);
+                materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(OrderFood);
+                materialTabControl1.TabPages.Add(ConfirmLaundry);
             };
         }
 
@@ -329,25 +352,25 @@ namespace HotelReservationSystem.UserControls
 
         }
 
-        private void btnFood1_Click(object sender, EventArgs e) => ServiceHelper.Food1(this);
-        private void btnFood2_Click(object sender, EventArgs e) => ServiceHelper.Food2(this);
-        private void btnFood3_Click(object sender, EventArgs e) => ServiceHelper.Food3(this);
-        private void btnFood4_Click(object sender, EventArgs e) => ServiceHelper.Food4(this);
-        private void btnFood5_Click(object sender, EventArgs e) => ServiceHelper.Food5(this);
-        private void btnFood6_Click(object sender, EventArgs e) => ServiceHelper.Food6(this);
-        private void btnFood7_Click(object sender, EventArgs e) => ServiceHelper.Drink7(this);
-        private void btnFood8_Click(object sender, EventArgs e) => ServiceHelper.Drink8(this);
-        private void btnFood9_Click(object sender, EventArgs e) => ServiceHelper.Drink9(this);
-        private void btnFood10_Click(object sender, EventArgs e) => ServiceHelper.Drink10(this);
-        private void btnFood11_Click(object sender, EventArgs e) => ServiceHelper.Drink11(this);
-        private void btnFood12_Click(object sender, EventArgs e) => ServiceHelper.Drink12(this);
+        private void btnFood1_Click(object sender, EventArgs e) => ServiceInitializer.Food1(this);
+        private void btnFood2_Click(object sender, EventArgs e) => ServiceInitializer.Food2(this);
+        private void btnFood3_Click(object sender, EventArgs e) => ServiceInitializer.Food3(this);
+        private void btnFood4_Click(object sender, EventArgs e) => ServiceInitializer.Food4(this);
+        private void btnFood5_Click(object sender, EventArgs e) => ServiceInitializer.Food5(this);
+        private void btnFood6_Click(object sender, EventArgs e) => ServiceInitializer.Food6(this);
+        private void btnFood7_Click(object sender, EventArgs e) => ServiceInitializer.Drink7(this);
+        private void btnFood8_Click(object sender, EventArgs e) => ServiceInitializer.Drink8(this);
+        private void btnFood9_Click(object sender, EventArgs e) => ServiceInitializer.Drink9(this);
+        private void btnFood10_Click(object sender, EventArgs e) => ServiceInitializer.Drink10(this);
+        private void btnFood11_Click(object sender, EventArgs e) => ServiceInitializer.Drink11(this);
+        private void btnFood12_Click(object sender, EventArgs e) => ServiceInitializer.Drink12(this);
 
 
-        private void sataButton1_Click(object sender, EventArgs e) => ServiceHelper.LaundryBlouse(this);
-        private void sataButton2_Click(object sender, EventArgs e) => ServiceHelper.FormalAttire(this);
-        private void sataButton4_Click(object sender, EventArgs e) => ServiceHelper.Socks(this);
-        private void sataButton3_Click_1(object sender, EventArgs e)=> ServiceHelper.PantsTrouser(this);
-        private void sataButton5_Click_1(object sender, EventArgs e)=> ServiceHelper.Sensitive(this);
+        private void sataButton1_Click(object sender, EventArgs e) => ServiceInitializer.LaundryBlouse(this);
+        private void sataButton2_Click(object sender, EventArgs e) => ServiceInitializer.FormalAttire(this);
+        private void sataButton4_Click(object sender, EventArgs e) => ServiceInitializer.Socks(this);
+        private void sataButton3_Click_1(object sender, EventArgs e)=> ServiceInitializer.PantsTrouser(this);
+        private void sataButton5_Click_1(object sender, EventArgs e)=> ServiceInitializer.Sensitive(this);
 
         private void tabPage2_Click(object sender, EventArgs e)
         {

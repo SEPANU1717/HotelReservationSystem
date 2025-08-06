@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HotelReservationSystem.Interface.Rooms;
-using HotelReservationSystem.Model;
-using HotelReservationSystem.UserControls;
+﻿using HotelReservationSystem.UserControls;
 
-namespace HotelReservationSystem.Helper
+namespace HotelReservationSystem.DataInitializer
 {
-    public class RoomHelper
+    public class RoomInitializer
     {
 
         public static void StandardRoom(UCRooms ucRoomsInstance)

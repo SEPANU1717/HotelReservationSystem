@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelReservationSystem.DataInitializer;
 using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Repositories;
@@ -191,14 +192,14 @@ namespace HotelReservationSystem.UserControls
             MessageBox.Show("Room statuses have been synchronized with reservations.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void btnStandardRoom_Click(object sender, EventArgs e) => RoomHelper.StandardRoom(this);
+        public void btnStandardRoom_Click(object sender, EventArgs e) => RoomInitializer.StandardRoom(this);
 
-        private void btnDeluxeRoom_Click(object sender, EventArgs e) => RoomHelper.DeluxeRoom(this);
+        private void btnDeluxeRoom_Click(object sender, EventArgs e) => RoomInitializer.DeluxeRoom(this);
 
-        private void btnSuiteRoom_Click(object sender, EventArgs e) => RoomHelper.SuiteRoom(this);
+        private void btnSuiteRoom_Click(object sender, EventArgs e) => RoomInitializer.SuiteRoom(this);
 
-        private void btnfamilyRoom_Click(object sender, EventArgs e) => RoomHelper.FamilyRoom(this);
+        private void btnfamilyRoom_Click(object sender, EventArgs e) => RoomInitializer.FamilyRoom(this);
 
-        private void btnSingleRoom_Click(object sender, EventArgs e) => RoomHelper.SingleRoom(this);
+        private void btnSingleRoom_Click(object sender, EventArgs e) => RoomInitializer.SingleRoom(this);
     }
 }

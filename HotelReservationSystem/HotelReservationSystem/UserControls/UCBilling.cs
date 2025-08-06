@@ -27,8 +27,9 @@ namespace HotelReservationSystem.UserControls
         public UCBilling()
         {
             InitializeComponent();
-            AssociateAndraiseViewEvents();
-            materialTabControl1.TabPages.Remove(tabPage2);
+            AssociateAndRaiseViewEvents();
+            materialTabControl1.TabPages.Remove(ReservationBillingForm);
+            materialTabControl1.TabPages.Remove(tabPage1);
             billRepo = new BillingRepository(DbConfig.GetConnectionString());
             reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
@@ -48,7 +49,7 @@ namespace HotelReservationSystem.UserControls
             cbReservationId.SelectedIndex = -1;
         }
 
-        private void AssociateAndraiseViewEvents()
+        private void AssociateAndRaiseViewEvents()
         {
             btnBillingSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtBillingSearch.KeyDown += (s, e) =>
@@ -59,7 +60,7 @@ namespace HotelReservationSystem.UserControls
 
             btnBillingAddNew.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == tabPage2)
+                if (materialTabControl1.SelectedTab == ReservationBillingForm)
                 {
                     MessageBox.Show("You are already in the Add Billing menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -70,13 +71,14 @@ namespace HotelReservationSystem.UserControls
                 LoadReservationIds();
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Add(tabPage2);
+                materialTabControl1.TabPages.Remove(MainFormBilling);
+                materialTabControl1.TabPages.Add(ReservationBillingForm);
                 materialTabControl1.Text = "Add new billing";
             };
 
             btnBillingEdit.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == tabPage2)
+                if (materialTabControl1.SelectedTab == ReservationBillingForm)
                 {
                     MessageBox.Show("You are already in the Edit Billing menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -85,7 +87,7 @@ namespace HotelReservationSystem.UserControls
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 SetEditModeReservationId();
                 materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Add(tabPage2);
+                materialTabControl1.TabPages.Add(ReservationBillingForm);
                 materialTabControl1.Text = "Edit billing";
             };
 
@@ -127,7 +129,7 @@ namespace HotelReservationSystem.UserControls
                     isEdit = false;
                     isInEditMode = false;
                     cbReservationId.Enabled = true;
-                    materialTabControl1.TabPages.Remove(tabPage2);
+                    materialTabControl1.TabPages.Remove(ReservationBillingForm);
                     materialTabControl1.TabPages.Add(tabPage1);
                 }
                 MessageBox.Show(Message);
@@ -138,7 +140,7 @@ namespace HotelReservationSystem.UserControls
                 CancelEvent?.Invoke(this, EventArgs.Empty);
                 isInEditMode = false;
                 cbReservationId.Enabled = true;
-                materialTabControl1.TabPages.Remove(tabPage2);
+                materialTabControl1.TabPages.Remove(ReservationBillingForm);
                 materialTabControl1.TabPages.Add(tabPage1);
             };
 
@@ -157,14 +159,37 @@ namespace HotelReservationSystem.UserControls
             btnServices.Click += delegate
             {
                 materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Remove(tabPage2);
+                materialTabControl1.TabPages.Remove(ReservationBillingForm);
+                materialTabControl1.TabPages.Remove(MainFormBilling);
             };
 
             btnCheckIn.Click += delegate
             {
                 materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Remove(tabPage2);
+                materialTabControl1.TabPages.Remove(ReservationBillingForm);
+                materialTabControl1.TabPages.Remove(MainFormBilling);
 
+            };
+
+            btnBillingList.Click += delegate
+            {
+                materialTabControl1.TabPages.Add(tabPage1);
+                materialTabControl1.TabPages.Remove(ReservationBillingForm);
+                materialTabControl1.TabPages.Remove(MainFormBilling);
+            };
+
+            btnBillingCancel.Click += delegate
+            {
+                materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Remove(ReservationBillingForm);
+                materialTabControl1.TabPages.Add(MainFormBilling);
+            };
+
+            btnBackRReservationHome.Click += delegate
+            {
+                materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Remove(ReservationBillingForm);
+                materialTabControl1.TabPages.Add(MainFormBilling);
             };
         }
 

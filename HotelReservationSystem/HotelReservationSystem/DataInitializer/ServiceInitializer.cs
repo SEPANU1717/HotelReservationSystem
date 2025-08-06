@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HotelReservationSystem.UserControls;
+﻿using HotelReservationSystem.UserControls;
 
-namespace HotelReservationSystem.Helper
+namespace HotelReservationSystem.DataInitializer
 {
-    public class ServiceHelper
+    public class ServiceInitializer
     {
         public static void Food1(UCService foodInstance)
         {

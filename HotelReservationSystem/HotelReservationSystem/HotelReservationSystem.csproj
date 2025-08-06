@@ -131,9 +131,9 @@
     <Compile Include="Forms\ReservationHome.Designer.cs">
       <DependentUpon>ReservationHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\DbHelper\DbConfig.cs" />
-    <Compile Include="Helper\RoomHelper.cs" />
-    <Compile Include="Helper\ServiceHelper.cs" />
+    <Compile Include="DataInitializer\DbInitializer\DbConfig.cs" />
+    <Compile Include="DataInitializer\RoomInitializer.cs" />
+    <Compile Include="DataInitializer\ServiceInitializer.cs" />
     <Compile Include="Interface\Billing\IBillingRepository.cs" />
     <Compile Include="Interface\Billing\IBillingView.cs" />
     <Compile Include="Interface\CheckInOut\ICheckInOutRepository.cs" />

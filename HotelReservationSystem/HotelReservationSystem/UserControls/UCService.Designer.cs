@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCService));
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
@@ -48,10 +52,6 @@
             SATAUiFramework.BorderRadius borderRadius17 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius18 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius19 = new SATAUiFramework.BorderRadius();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             SATAUiFramework.BorderRadius borderRadius20 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius21 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius22 = new SATAUiFramework.BorderRadius();
@@ -64,10 +64,10 @@
             SATAUiFramework.BorderRadius borderRadius29 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius30 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius31 = new SATAUiFramework.BorderRadius();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,6 +78,8 @@
             this.btnFoodEdit = new FrameworkTest.SATAButton();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridFoodService = new System.Windows.Forms.DataGridView();
             this.Food = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.sataPanel13 = new SATAUiFramework.SATAPanel();
@@ -158,14 +160,12 @@
             this.btnFoodCancel = new FrameworkTest.SATAButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.txtDescription = new SATATextBox();
             this.txtFoodPrice = new SATATextBox();
-            this.txtCategory = new SATATextBox();
             this.txtStock = new SATATextBox();
             this.txtFoodName = new SATATextBox();
             this.txtFoodId = new SATATextBox();
@@ -204,17 +204,12 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.sataPictureBox14 = new SATAUiFramework.Controls.SATAPictureBox();
             this.btnLAdd = new FrameworkTest.SATAButton();
-            this.btnLClear = new FrameworkTest.SATAButton();
-            this.btnLComplete = new FrameworkTest.SATAButton();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtLPrice = new SATATextBox();
             this.txtLQuantity = new SATATextBox();
             this.txtLName = new SATATextBox();
-            this.dataGridLaundry = new System.Windows.Forms.DataGridView();
-            this.btnLaundry = new FrameworkTest.SATAButton();
-            this.btnAddFood = new FrameworkTest.SATAButton();
             this.OrderFood = new System.Windows.Forms.TabPage();
             this.panel20 = new System.Windows.Forms.Panel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -290,33 +285,43 @@
             this.label48 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
             this.sataPictureBox30 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.btnCancelAddOrder = new FrameworkTest.SATAButton();
+            this.btnAddItem = new FrameworkTest.SATAButton();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.txtAddOrderPrice = new SATATextBox();
+            this.txtAddOrderQuantity = new SATATextBox();
+            this.txtAddOrderStock = new SATATextBox();
             this.txtAddOrderItemName = new SATATextBox();
+            this.btnConfirmOrder = new FrameworkTest.SATAButton();
+            this.ConfirmOrder = new System.Windows.Forms.TabPage();
+            this.label55 = new System.Windows.Forms.Label();
+            this.OrderList = new System.Windows.Forms.TabPage();
+            this.label56 = new System.Windows.Forms.Label();
+            this.ConfirmLaundry = new System.Windows.Forms.TabPage();
+            this.label57 = new System.Windows.Forms.Label();
+            this.btnLaundry = new FrameworkTest.SATAButton();
+            this.btnAddFood = new FrameworkTest.SATAButton();
             this.btnOrderList = new FrameworkTest.SATAButton();
-            this.dataGridFoodService = new System.Windows.Forms.DataGridView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnFoodSearch = new FrameworkTest.SATAButton();
             this.btnFoodStock = new FrameworkTest.SATAButton();
             this.btnOrderFood = new FrameworkTest.SATAButton();
-            this.ConfirmOrder = new System.Windows.Forms.TabPage();
-            this.btnConfirmOrder = new FrameworkTest.SATAButton();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.OrderList = new System.Windows.Forms.TabPage();
-            this.label49 = new System.Windows.Forms.Label();
-            this.txtAddOrderStock = new SATATextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.txtAddOrderQuantity = new SATATextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txtAddOrderPrice = new SATATextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.btnAddItem = new FrameworkTest.SATAButton();
-            this.btnCancelAddOrder = new FrameworkTest.SATAButton();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
+            this.dataGridLaundry = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.btnConfirmLaundry = new FrameworkTest.SATAButton();
+            this.btnLClear = new FrameworkTest.SATAButton();
+            this.btnLComplete = new FrameworkTest.SATAButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFoodService)).BeginInit();
             this.Food.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -380,7 +385,6 @@
             this.sataPanel15.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridLaundry)).BeginInit();
             this.OrderFood.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
@@ -423,10 +427,10 @@
             this.sataPanel31.SuspendLayout();
             this.panel32.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridFoodService)).BeginInit();
-            this.tabPage1.SuspendLayout();
             this.ConfirmOrder.SuspendLayout();
             this.OrderList.SuspendLayout();
+            this.ConfirmLaundry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLaundry)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -619,6 +623,7 @@
             this.materialTabControl1.Controls.Add(this.OrderFood);
             this.materialTabControl1.Controls.Add(this.ConfirmOrder);
             this.materialTabControl1.Controls.Add(this.OrderList);
+            this.materialTabControl1.Controls.Add(this.ConfirmLaundry);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 0);
@@ -628,6 +633,69 @@
             this.materialTabControl1.SelectedIndex = 0;
             this.materialTabControl1.Size = new System.Drawing.Size(1202, 611);
             this.materialTabControl1.TabIndex = 8;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.dataGridFoodService);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Customer List";
+            // 
+            // dataGridFoodService
+            // 
+            this.dataGridFoodService.AllowUserToAddRows = false;
+            this.dataGridFoodService.AllowUserToDeleteRows = false;
+            this.dataGridFoodService.AllowUserToResizeColumns = false;
+            this.dataGridFoodService.AllowUserToResizeRows = false;
+            this.dataGridFoodService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridFoodService.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridFoodService.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridFoodService.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridFoodService.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridFoodService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridFoodService.ColumnHeadersHeight = 33;
+            this.dataGridFoodService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridFoodService.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridFoodService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridFoodService.EnableHeadersVisualStyles = false;
+            this.dataGridFoodService.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridFoodService.Location = new System.Drawing.Point(3, 3);
+            this.dataGridFoodService.MultiSelect = false;
+            this.dataGridFoodService.Name = "dataGridFoodService";
+            this.dataGridFoodService.ReadOnly = true;
+            this.dataGridFoodService.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridFoodService.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridFoodService.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridFoodService.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridFoodService.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridFoodService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridFoodService.Size = new System.Drawing.Size(1188, 576);
+            this.dataGridFoodService.TabIndex = 4;
             // 
             // Food
             // 
@@ -1976,14 +2044,12 @@
             this.panel16.Controls.Add(this.btnFoodCancel);
             this.panel16.Controls.Add(this.label7);
             this.panel16.Controls.Add(this.label6);
-            this.panel16.Controls.Add(this.label9);
             this.panel16.Controls.Add(this.label2);
             this.panel16.Controls.Add(this.label8);
             this.panel16.Controls.Add(this.label1);
             this.panel16.Controls.Add(this.label36);
             this.panel16.Controls.Add(this.txtDescription);
             this.panel16.Controls.Add(this.txtFoodPrice);
-            this.panel16.Controls.Add(this.txtCategory);
             this.panel16.Controls.Add(this.txtStock);
             this.panel16.Controls.Add(this.txtFoodName);
             this.panel16.Controls.Add(this.txtFoodId);
@@ -2087,22 +2153,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(178, 303);
+            this.label6.Location = new System.Drawing.Point(10, 220);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "Price";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(10, 220);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 20);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Category";
             // 
             // label2
             // 
@@ -2184,41 +2239,17 @@
             this.txtFoodPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtFoodPrice.Icon = null;
             this.txtFoodPrice.IconSize = new System.Drawing.Size(20, 20);
-            this.txtFoodPrice.Location = new System.Drawing.Point(182, 332);
+            this.txtFoodPrice.Location = new System.Drawing.Point(14, 249);
             this.txtFoodPrice.Multiline = false;
             this.txtFoodPrice.Name = "txtFoodPrice";
             this.txtFoodPrice.PasswordChar = false;
             this.txtFoodPrice.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtFoodPrice.PlaceholderText = "";
-            this.txtFoodPrice.Size = new System.Drawing.Size(155, 35);
+            this.txtFoodPrice.Size = new System.Drawing.Size(323, 35);
             this.txtFoodPrice.TabIndex = 10;
             this.txtFoodPrice.Text = "0";
             this.txtFoodPrice.Texts = "";
             this.txtFoodPrice.UnderlinedStyle = false;
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.BackColor = System.Drawing.Color.White;
-            this.txtCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtCategory.BorderColor = System.Drawing.Color.Silver;
-            this.txtCategory.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtCategory.BorderRadius = 3;
-            this.txtCategory.BorderSize = 1;
-            this.txtCategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtCategory.Icon = null;
-            this.txtCategory.IconSize = new System.Drawing.Size(20, 20);
-            this.txtCategory.Location = new System.Drawing.Point(14, 249);
-            this.txtCategory.Multiline = false;
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.PasswordChar = false;
-            this.txtCategory.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtCategory.PlaceholderText = "";
-            this.txtCategory.Size = new System.Drawing.Size(323, 35);
-            this.txtCategory.TabIndex = 10;
-            this.txtCategory.Text = "0";
-            this.txtCategory.Texts = "";
-            this.txtCategory.UnderlinedStyle = false;
             // 
             // txtStock
             // 
@@ -2238,7 +2269,7 @@
             this.txtStock.PasswordChar = false;
             this.txtStock.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtStock.PlaceholderText = "";
-            this.txtStock.Size = new System.Drawing.Size(155, 35);
+            this.txtStock.Size = new System.Drawing.Size(323, 35);
             this.txtStock.TabIndex = 10;
             this.txtStock.Text = "0";
             this.txtStock.Texts = "";
@@ -2324,18 +2355,18 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.White;
+            this.splitContainer2.Panel2.Controls.Add(this.label9);
+            this.splitContainer2.Panel2.Controls.Add(this.label58);
+            this.splitContainer2.Panel2.Controls.Add(this.btnConfirmLaundry);
             this.splitContainer2.Panel2.Controls.Add(this.btnLAdd);
-            this.splitContainer2.Panel2.Controls.Add(this.btnLClear);
-            this.splitContainer2.Panel2.Controls.Add(this.btnLComplete);
             this.splitContainer2.Panel2.Controls.Add(this.label23);
             this.splitContainer2.Panel2.Controls.Add(this.label22);
             this.splitContainer2.Panel2.Controls.Add(this.label21);
             this.splitContainer2.Panel2.Controls.Add(this.txtLPrice);
             this.splitContainer2.Panel2.Controls.Add(this.txtLQuantity);
             this.splitContainer2.Panel2.Controls.Add(this.txtLName);
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridLaundry);
             this.splitContainer2.Size = new System.Drawing.Size(1188, 576);
-            this.splitContainer2.SplitterDistance = 614;
+            this.splitContainer2.SplitterDistance = 751;
             this.splitContainer2.TabIndex = 0;
             // 
             // btnBillingCancel
@@ -2392,7 +2423,7 @@
             this.sataPanel19.Controls.Add(this.label18);
             this.sataPanel19.Controls.Add(this.label19);
             this.sataPanel19.Controls.Add(this.panel19);
-            this.sataPanel19.Location = new System.Drawing.Point(49, 432);
+            this.sataPanel19.Location = new System.Drawing.Point(82, 430);
             this.sataPanel19.Name = "sataPanel19";
             this.sataPanel19.Size = new System.Drawing.Size(243, 119);
             this.sataPanel19.TabIndex = 1;
@@ -2499,7 +2530,7 @@
             this.sataPanel18.Controls.Add(this.label16);
             this.sataPanel18.Controls.Add(this.label17);
             this.sataPanel18.Controls.Add(this.panel18);
-            this.sataPanel18.Location = new System.Drawing.Point(323, 282);
+            this.sataPanel18.Location = new System.Drawing.Point(408, 273);
             this.sataPanel18.Name = "sataPanel18";
             this.sataPanel18.Size = new System.Drawing.Size(243, 119);
             this.sataPanel18.TabIndex = 1;
@@ -2596,7 +2627,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(44, 82);
+            this.label20.Location = new System.Drawing.Point(77, 82);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(141, 30);
             this.label20.TabIndex = 1;
@@ -2617,7 +2648,7 @@
             this.sataPanel17.Controls.Add(this.label14);
             this.sataPanel17.Controls.Add(this.label15);
             this.sataPanel17.Controls.Add(this.panel17);
-            this.sataPanel17.Location = new System.Drawing.Point(49, 282);
+            this.sataPanel17.Location = new System.Drawing.Point(82, 280);
             this.sataPanel17.Name = "sataPanel17";
             this.sataPanel17.Size = new System.Drawing.Size(243, 119);
             this.sataPanel17.TabIndex = 1;
@@ -2724,7 +2755,7 @@
             this.sataPanel16.Controls.Add(this.label12);
             this.sataPanel16.Controls.Add(this.label13);
             this.sataPanel16.Controls.Add(this.panel15);
-            this.sataPanel16.Location = new System.Drawing.Point(323, 132);
+            this.sataPanel16.Location = new System.Drawing.Point(408, 130);
             this.sataPanel16.Name = "sataPanel16";
             this.sataPanel16.Size = new System.Drawing.Size(243, 119);
             this.sataPanel16.TabIndex = 1;
@@ -2831,7 +2862,7 @@
             this.sataPanel15.Controls.Add(this.label10);
             this.sataPanel15.Controls.Add(this.label11);
             this.sataPanel15.Controls.Add(this.panel14);
-            this.sataPanel15.Location = new System.Drawing.Point(49, 132);
+            this.sataPanel15.Location = new System.Drawing.Point(82, 130);
             this.sataPanel15.Name = "sataPanel15";
             this.sataPanel15.Size = new System.Drawing.Size(243, 119);
             this.sataPanel15.TabIndex = 1;
@@ -2945,7 +2976,7 @@
             this.btnLAdd.ImageTint = System.Drawing.Color.White;
             this.btnLAdd.IsToggleButton = false;
             this.btnLAdd.IsToggled = false;
-            this.btnLAdd.Location = new System.Drawing.Point(209, 512);
+            this.btnLAdd.Location = new System.Drawing.Point(48, 402);
             this.btnLAdd.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnLAdd.Name = "btnLAdd";
             this.btnLAdd.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -2957,95 +2988,17 @@
             this.btnLAdd.PressedImageTint = System.Drawing.Color.White;
             this.btnLAdd.PressedOutline = System.Drawing.Color.Empty;
             this.btnLAdd.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnLAdd.Size = new System.Drawing.Size(155, 39);
+            this.btnLAdd.Size = new System.Drawing.Size(338, 39);
             this.btnLAdd.TabIndex = 17;
             this.btnLAdd.TextAutoCenter = true;
             this.btnLAdd.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // btnLClear
-            // 
-            this.btnLClear.ButtonText = "Clear All";
-            this.btnLClear.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnLClear.CheckedForeColor = System.Drawing.Color.White;
-            this.btnLClear.CheckedImageTint = System.Drawing.Color.White;
-            this.btnLClear.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnLClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLClear.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLClear.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnLClear.HoverForeColor = System.Drawing.Color.White;
-            this.btnLClear.HoverImage = null;
-            this.btnLClear.HoverImageTint = System.Drawing.Color.White;
-            this.btnLClear.HoverOutline = System.Drawing.Color.Empty;
-            this.btnLClear.Image = null;
-            this.btnLClear.ImageAutoCenter = true;
-            this.btnLClear.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnLClear.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLClear.ImageTint = System.Drawing.Color.White;
-            this.btnLClear.IsToggleButton = false;
-            this.btnLClear.IsToggled = false;
-            this.btnLClear.Location = new System.Drawing.Point(31, 512);
-            this.btnLClear.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnLClear.Name = "btnLClear";
-            this.btnLClear.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLClear.NormalForeColor = System.Drawing.Color.White;
-            this.btnLClear.NormalOutline = System.Drawing.Color.Empty;
-            this.btnLClear.OutlineThickness = 2F;
-            this.btnLClear.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLClear.PressedForeColor = System.Drawing.Color.White;
-            this.btnLClear.PressedImageTint = System.Drawing.Color.White;
-            this.btnLClear.PressedOutline = System.Drawing.Color.Empty;
-            this.btnLClear.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnLClear.Size = new System.Drawing.Size(155, 39);
-            this.btnLClear.TabIndex = 17;
-            this.btnLClear.TextAutoCenter = true;
-            this.btnLClear.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // btnLComplete
-            // 
-            this.btnLComplete.ButtonText = "Complete";
-            this.btnLComplete.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnLComplete.CheckedForeColor = System.Drawing.Color.White;
-            this.btnLComplete.CheckedImageTint = System.Drawing.Color.White;
-            this.btnLComplete.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnLComplete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLComplete.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLComplete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLComplete.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnLComplete.HoverForeColor = System.Drawing.Color.White;
-            this.btnLComplete.HoverImage = null;
-            this.btnLComplete.HoverImageTint = System.Drawing.Color.White;
-            this.btnLComplete.HoverOutline = System.Drawing.Color.Empty;
-            this.btnLComplete.Image = null;
-            this.btnLComplete.ImageAutoCenter = true;
-            this.btnLComplete.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnLComplete.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLComplete.ImageTint = System.Drawing.Color.White;
-            this.btnLComplete.IsToggleButton = false;
-            this.btnLComplete.IsToggled = false;
-            this.btnLComplete.Location = new System.Drawing.Point(383, 512);
-            this.btnLComplete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnLComplete.Name = "btnLComplete";
-            this.btnLComplete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLComplete.NormalForeColor = System.Drawing.Color.White;
-            this.btnLComplete.NormalOutline = System.Drawing.Color.Empty;
-            this.btnLComplete.OutlineThickness = 2F;
-            this.btnLComplete.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLComplete.PressedForeColor = System.Drawing.Color.White;
-            this.btnLComplete.PressedImageTint = System.Drawing.Color.White;
-            this.btnLComplete.PressedOutline = System.Drawing.Color.Empty;
-            this.btnLComplete.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnLComplete.Size = new System.Drawing.Size(155, 39);
-            this.btnLComplete.TabIndex = 17;
-            this.btnLComplete.TextAutoCenter = true;
-            this.btnLComplete.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.Color.DimGray;
-            this.label23.Location = new System.Drawing.Point(27, 402);
+            this.label23.Location = new System.Drawing.Point(44, 304);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(43, 20);
             this.label23.TabIndex = 13;
@@ -3056,7 +3009,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label22.ForeColor = System.Drawing.Color.DimGray;
-            this.label22.Location = new System.Drawing.Point(305, 314);
+            this.label22.Location = new System.Drawing.Point(44, 217);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(68, 20);
             this.label22.TabIndex = 13;
@@ -3067,7 +3020,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label21.ForeColor = System.Drawing.Color.DimGray;
-            this.label21.Location = new System.Drawing.Point(27, 314);
+            this.label21.Location = new System.Drawing.Point(44, 131);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(84, 20);
             this.label21.TabIndex = 13;
@@ -3085,13 +3038,13 @@
             this.txtLPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtLPrice.Icon = null;
             this.txtLPrice.IconSize = new System.Drawing.Size(20, 20);
-            this.txtLPrice.Location = new System.Drawing.Point(31, 430);
+            this.txtLPrice.Location = new System.Drawing.Point(48, 332);
             this.txtLPrice.Multiline = false;
             this.txtLPrice.Name = "txtLPrice";
             this.txtLPrice.PasswordChar = false;
             this.txtLPrice.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtLPrice.PlaceholderText = "";
-            this.txtLPrice.Size = new System.Drawing.Size(229, 35);
+            this.txtLPrice.Size = new System.Drawing.Size(338, 35);
             this.txtLPrice.TabIndex = 12;
             this.txtLPrice.Text = "0";
             this.txtLPrice.Texts = "";
@@ -3109,13 +3062,13 @@
             this.txtLQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtLQuantity.Icon = null;
             this.txtLQuantity.IconSize = new System.Drawing.Size(20, 20);
-            this.txtLQuantity.Location = new System.Drawing.Point(309, 342);
+            this.txtLQuantity.Location = new System.Drawing.Point(48, 245);
             this.txtLQuantity.Multiline = false;
             this.txtLQuantity.Name = "txtLQuantity";
             this.txtLQuantity.PasswordChar = false;
             this.txtLQuantity.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtLQuantity.PlaceholderText = "";
-            this.txtLQuantity.Size = new System.Drawing.Size(229, 35);
+            this.txtLQuantity.Size = new System.Drawing.Size(338, 35);
             this.txtLQuantity.TabIndex = 12;
             this.txtLQuantity.Text = "0";
             this.txtLQuantity.Texts = "";
@@ -3133,147 +3086,17 @@
             this.txtLName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtLName.Icon = null;
             this.txtLName.IconSize = new System.Drawing.Size(20, 20);
-            this.txtLName.Location = new System.Drawing.Point(31, 342);
+            this.txtLName.Location = new System.Drawing.Point(48, 159);
             this.txtLName.Multiline = false;
             this.txtLName.Name = "txtLName";
             this.txtLName.PasswordChar = false;
             this.txtLName.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtLName.PlaceholderText = "";
-            this.txtLName.Size = new System.Drawing.Size(229, 35);
+            this.txtLName.Size = new System.Drawing.Size(338, 35);
             this.txtLName.TabIndex = 12;
             this.txtLName.Text = "0";
             this.txtLName.Texts = "";
             this.txtLName.UnderlinedStyle = false;
-            // 
-            // dataGridLaundry
-            // 
-            this.dataGridLaundry.AllowUserToAddRows = false;
-            this.dataGridLaundry.AllowUserToDeleteRows = false;
-            this.dataGridLaundry.AllowUserToResizeColumns = false;
-            this.dataGridLaundry.AllowUserToResizeRows = false;
-            this.dataGridLaundry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridLaundry.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridLaundry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridLaundry.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridLaundry.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridLaundry.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridLaundry.ColumnHeadersHeight = 33;
-            this.dataGridLaundry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridLaundry.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridLaundry.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridLaundry.EnableHeadersVisualStyles = false;
-            this.dataGridLaundry.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridLaundry.Location = new System.Drawing.Point(0, 0);
-            this.dataGridLaundry.MultiSelect = false;
-            this.dataGridLaundry.Name = "dataGridLaundry";
-            this.dataGridLaundry.ReadOnly = true;
-            this.dataGridLaundry.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridLaundry.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridLaundry.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridLaundry.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridLaundry.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridLaundry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridLaundry.Size = new System.Drawing.Size(570, 289);
-            this.dataGridLaundry.TabIndex = 4;
-            // 
-            // btnLaundry
-            // 
-            this.btnLaundry.ButtonText = "";
-            this.btnLaundry.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnLaundry.CheckedForeColor = System.Drawing.Color.White;
-            this.btnLaundry.CheckedImageTint = System.Drawing.Color.White;
-            this.btnLaundry.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnLaundry.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLaundry.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLaundry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLaundry.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnLaundry.HoverForeColor = System.Drawing.Color.White;
-            this.btnLaundry.HoverImage = null;
-            this.btnLaundry.HoverImageTint = System.Drawing.Color.White;
-            this.btnLaundry.HoverOutline = System.Drawing.Color.Empty;
-            this.btnLaundry.Image = ((System.Drawing.Image)(resources.GetObject("btnLaundry.Image")));
-            this.btnLaundry.ImageAutoCenter = true;
-            this.btnLaundry.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnLaundry.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLaundry.ImageTint = System.Drawing.Color.White;
-            this.btnLaundry.IsToggleButton = false;
-            this.btnLaundry.IsToggled = false;
-            this.btnLaundry.Location = new System.Drawing.Point(1082, 100);
-            this.btnLaundry.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnLaundry.Name = "btnLaundry";
-            this.btnLaundry.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLaundry.NormalForeColor = System.Drawing.Color.White;
-            this.btnLaundry.NormalOutline = System.Drawing.Color.Empty;
-            this.btnLaundry.OutlineThickness = 2F;
-            this.btnLaundry.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLaundry.PressedForeColor = System.Drawing.Color.White;
-            this.btnLaundry.PressedImageTint = System.Drawing.Color.White;
-            this.btnLaundry.PressedOutline = System.Drawing.Color.Empty;
-            this.btnLaundry.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnLaundry.Size = new System.Drawing.Size(44, 39);
-            this.btnLaundry.TabIndex = 18;
-            this.btnLaundry.TextAutoCenter = false;
-            this.btnLaundry.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // btnAddFood
-            // 
-            this.btnAddFood.ButtonText = "";
-            this.btnAddFood.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnAddFood.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddFood.CheckedImageTint = System.Drawing.Color.White;
-            this.btnAddFood.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnAddFood.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddFood.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddFood.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFood.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAddFood.HoverForeColor = System.Drawing.Color.White;
-            this.btnAddFood.HoverImage = null;
-            this.btnAddFood.HoverImageTint = System.Drawing.Color.White;
-            this.btnAddFood.HoverOutline = System.Drawing.Color.Empty;
-            this.btnAddFood.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFood.Image")));
-            this.btnAddFood.ImageAutoCenter = true;
-            this.btnAddFood.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnAddFood.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAddFood.ImageTint = System.Drawing.Color.White;
-            this.btnAddFood.IsToggleButton = false;
-            this.btnAddFood.IsToggled = false;
-            this.btnAddFood.Location = new System.Drawing.Point(974, 100);
-            this.btnAddFood.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAddFood.NormalForeColor = System.Drawing.Color.White;
-            this.btnAddFood.NormalOutline = System.Drawing.Color.Empty;
-            this.btnAddFood.OutlineThickness = 2F;
-            this.btnAddFood.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAddFood.PressedForeColor = System.Drawing.Color.White;
-            this.btnAddFood.PressedImageTint = System.Drawing.Color.White;
-            this.btnAddFood.PressedOutline = System.Drawing.Color.Empty;
-            this.btnAddFood.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnAddFood.Size = new System.Drawing.Size(44, 39);
-            this.btnAddFood.TabIndex = 18;
-            this.btnAddFood.TextAutoCenter = false;
-            this.btnAddFood.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // OrderFood
             // 
@@ -4609,6 +4432,225 @@
             this.sataPictureBox30.TabIndex = 5;
             this.sataPictureBox30.TabStop = false;
             // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.label51.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label51.Location = new System.Drawing.Point(146, 26);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(65, 25);
+            this.label51.TabIndex = 19;
+            this.label51.Text = "<123>";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label50.Location = new System.Drawing.Point(16, 26);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(135, 25);
+            this.label50.TabIndex = 19;
+            this.label50.Text = "Order Number";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label54.ForeColor = System.Drawing.Color.DimGray;
+            this.label54.Location = new System.Drawing.Point(17, 344);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(46, 21);
+            this.label54.TabIndex = 13;
+            this.label54.Text = "Price";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label53.ForeColor = System.Drawing.Color.DimGray;
+            this.label53.Location = new System.Drawing.Point(17, 263);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(72, 21);
+            this.label53.TabIndex = 13;
+            this.label53.Text = "Quantity";
+            // 
+            // btnCancelAddOrder
+            // 
+            this.btnCancelAddOrder.ButtonText = "Cancel";
+            this.btnCancelAddOrder.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCancelAddOrder.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCancelAddOrder.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCancelAddOrder.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCancelAddOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelAddOrder.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCancelAddOrder.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelAddOrder.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCancelAddOrder.HoverForeColor = System.Drawing.Color.White;
+            this.btnCancelAddOrder.HoverImage = null;
+            this.btnCancelAddOrder.HoverImageTint = System.Drawing.Color.White;
+            this.btnCancelAddOrder.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCancelAddOrder.Image = null;
+            this.btnCancelAddOrder.ImageAutoCenter = true;
+            this.btnCancelAddOrder.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCancelAddOrder.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCancelAddOrder.ImageTint = System.Drawing.Color.White;
+            this.btnCancelAddOrder.IsToggleButton = false;
+            this.btnCancelAddOrder.IsToggled = false;
+            this.btnCancelAddOrder.Location = new System.Drawing.Point(21, 511);
+            this.btnCancelAddOrder.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCancelAddOrder.Name = "btnCancelAddOrder";
+            this.btnCancelAddOrder.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancelAddOrder.NormalForeColor = System.Drawing.Color.White;
+            this.btnCancelAddOrder.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCancelAddOrder.OutlineThickness = 2F;
+            this.btnCancelAddOrder.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCancelAddOrder.PressedForeColor = System.Drawing.Color.White;
+            this.btnCancelAddOrder.PressedImageTint = System.Drawing.Color.White;
+            this.btnCancelAddOrder.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCancelAddOrder.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCancelAddOrder.Size = new System.Drawing.Size(163, 39);
+            this.btnCancelAddOrder.TabIndex = 16;
+            this.btnCancelAddOrder.TextAutoCenter = true;
+            this.btnCancelAddOrder.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // btnAddItem
+            // 
+            this.btnAddItem.ButtonText = "Add Item";
+            this.btnAddItem.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnAddItem.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddItem.CheckedImageTint = System.Drawing.Color.White;
+            this.btnAddItem.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnAddItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddItem.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddItem.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAddItem.HoverForeColor = System.Drawing.Color.White;
+            this.btnAddItem.HoverImage = null;
+            this.btnAddItem.HoverImageTint = System.Drawing.Color.White;
+            this.btnAddItem.HoverOutline = System.Drawing.Color.Empty;
+            this.btnAddItem.Image = null;
+            this.btnAddItem.ImageAutoCenter = true;
+            this.btnAddItem.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnAddItem.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAddItem.ImageTint = System.Drawing.Color.White;
+            this.btnAddItem.IsToggleButton = false;
+            this.btnAddItem.IsToggled = false;
+            this.btnAddItem.Location = new System.Drawing.Point(203, 511);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAddItem.NormalForeColor = System.Drawing.Color.White;
+            this.btnAddItem.NormalOutline = System.Drawing.Color.Empty;
+            this.btnAddItem.OutlineThickness = 2F;
+            this.btnAddItem.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAddItem.PressedForeColor = System.Drawing.Color.White;
+            this.btnAddItem.PressedImageTint = System.Drawing.Color.White;
+            this.btnAddItem.PressedOutline = System.Drawing.Color.Empty;
+            this.btnAddItem.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnAddItem.Size = new System.Drawing.Size(163, 39);
+            this.btnAddItem.TabIndex = 16;
+            this.btnAddItem.TextAutoCenter = true;
+            this.btnAddItem.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label52.ForeColor = System.Drawing.Color.DimGray;
+            this.label52.Location = new System.Drawing.Point(17, 182);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(51, 21);
+            this.label52.TabIndex = 13;
+            this.label52.Text = "Stock";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label49.ForeColor = System.Drawing.Color.DimGray;
+            this.label49.Location = new System.Drawing.Point(17, 101);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(91, 21);
+            this.label49.TabIndex = 13;
+            this.label49.Text = "Item Name";
+            // 
+            // txtAddOrderPrice
+            // 
+            this.txtAddOrderPrice.BackColor = System.Drawing.Color.White;
+            this.txtAddOrderPrice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtAddOrderPrice.BorderColor = System.Drawing.Color.Silver;
+            this.txtAddOrderPrice.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtAddOrderPrice.BorderRadius = 3;
+            this.txtAddOrderPrice.BorderSize = 1;
+            this.txtAddOrderPrice.Enabled = false;
+            this.txtAddOrderPrice.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtAddOrderPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtAddOrderPrice.Icon = null;
+            this.txtAddOrderPrice.IconSize = new System.Drawing.Size(20, 20);
+            this.txtAddOrderPrice.Location = new System.Drawing.Point(21, 373);
+            this.txtAddOrderPrice.Multiline = false;
+            this.txtAddOrderPrice.Name = "txtAddOrderPrice";
+            this.txtAddOrderPrice.PasswordChar = false;
+            this.txtAddOrderPrice.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtAddOrderPrice.PlaceholderText = "";
+            this.txtAddOrderPrice.Size = new System.Drawing.Size(345, 37);
+            this.txtAddOrderPrice.TabIndex = 12;
+            this.txtAddOrderPrice.Text = "0";
+            this.txtAddOrderPrice.Texts = "";
+            this.txtAddOrderPrice.UnderlinedStyle = false;
+            // 
+            // txtAddOrderQuantity
+            // 
+            this.txtAddOrderQuantity.BackColor = System.Drawing.Color.White;
+            this.txtAddOrderQuantity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtAddOrderQuantity.BorderColor = System.Drawing.Color.Silver;
+            this.txtAddOrderQuantity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtAddOrderQuantity.BorderRadius = 3;
+            this.txtAddOrderQuantity.BorderSize = 1;
+            this.txtAddOrderQuantity.Enabled = false;
+            this.txtAddOrderQuantity.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtAddOrderQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtAddOrderQuantity.Icon = null;
+            this.txtAddOrderQuantity.IconSize = new System.Drawing.Size(20, 20);
+            this.txtAddOrderQuantity.Location = new System.Drawing.Point(21, 292);
+            this.txtAddOrderQuantity.Multiline = false;
+            this.txtAddOrderQuantity.Name = "txtAddOrderQuantity";
+            this.txtAddOrderQuantity.PasswordChar = false;
+            this.txtAddOrderQuantity.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtAddOrderQuantity.PlaceholderText = "";
+            this.txtAddOrderQuantity.Size = new System.Drawing.Size(345, 37);
+            this.txtAddOrderQuantity.TabIndex = 12;
+            this.txtAddOrderQuantity.Text = "0";
+            this.txtAddOrderQuantity.Texts = "";
+            this.txtAddOrderQuantity.UnderlinedStyle = false;
+            // 
+            // txtAddOrderStock
+            // 
+            this.txtAddOrderStock.BackColor = System.Drawing.Color.White;
+            this.txtAddOrderStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtAddOrderStock.BorderColor = System.Drawing.Color.Silver;
+            this.txtAddOrderStock.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtAddOrderStock.BorderRadius = 3;
+            this.txtAddOrderStock.BorderSize = 1;
+            this.txtAddOrderStock.Enabled = false;
+            this.txtAddOrderStock.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtAddOrderStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtAddOrderStock.Icon = null;
+            this.txtAddOrderStock.IconSize = new System.Drawing.Size(20, 20);
+            this.txtAddOrderStock.Location = new System.Drawing.Point(21, 211);
+            this.txtAddOrderStock.Multiline = false;
+            this.txtAddOrderStock.Name = "txtAddOrderStock";
+            this.txtAddOrderStock.PasswordChar = false;
+            this.txtAddOrderStock.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtAddOrderStock.PlaceholderText = "";
+            this.txtAddOrderStock.Size = new System.Drawing.Size(345, 37);
+            this.txtAddOrderStock.TabIndex = 12;
+            this.txtAddOrderStock.Text = "0";
+            this.txtAddOrderStock.Texts = "";
+            this.txtAddOrderStock.UnderlinedStyle = false;
+            // 
             // txtAddOrderItemName
             // 
             this.txtAddOrderItemName.BackColor = System.Drawing.Color.White;
@@ -4634,9 +4676,196 @@
             this.txtAddOrderItemName.Texts = "";
             this.txtAddOrderItemName.UnderlinedStyle = false;
             // 
+            // btnConfirmOrder
+            // 
+            this.btnConfirmOrder.ButtonText = "";
+            this.btnConfirmOrder.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnConfirmOrder.CheckedForeColor = System.Drawing.Color.White;
+            this.btnConfirmOrder.CheckedImageTint = System.Drawing.Color.White;
+            this.btnConfirmOrder.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnConfirmOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmOrder.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnConfirmOrder.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmOrder.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnConfirmOrder.HoverForeColor = System.Drawing.Color.White;
+            this.btnConfirmOrder.HoverImage = null;
+            this.btnConfirmOrder.HoverImageTint = System.Drawing.Color.White;
+            this.btnConfirmOrder.HoverOutline = System.Drawing.Color.Empty;
+            this.btnConfirmOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmOrder.Image")));
+            this.btnConfirmOrder.ImageAutoCenter = true;
+            this.btnConfirmOrder.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnConfirmOrder.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnConfirmOrder.ImageTint = System.Drawing.Color.White;
+            this.btnConfirmOrder.IsToggleButton = false;
+            this.btnConfirmOrder.IsToggled = false;
+            this.btnConfirmOrder.Location = new System.Drawing.Point(314, 17);
+            this.btnConfirmOrder.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnConfirmOrder.Name = "btnConfirmOrder";
+            this.btnConfirmOrder.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.btnConfirmOrder.NormalForeColor = System.Drawing.Color.White;
+            this.btnConfirmOrder.NormalOutline = System.Drawing.Color.Empty;
+            this.btnConfirmOrder.OutlineThickness = 2F;
+            this.btnConfirmOrder.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnConfirmOrder.PressedForeColor = System.Drawing.Color.White;
+            this.btnConfirmOrder.PressedImageTint = System.Drawing.Color.White;
+            this.btnConfirmOrder.PressedOutline = System.Drawing.Color.Empty;
+            this.btnConfirmOrder.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnConfirmOrder.Size = new System.Drawing.Size(52, 46);
+            this.btnConfirmOrder.TabIndex = 18;
+            this.btnConfirmOrder.TextAutoCenter = false;
+            this.btnConfirmOrder.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // ConfirmOrder
+            // 
+            this.ConfirmOrder.Controls.Add(this.label55);
+            this.ConfirmOrder.Location = new System.Drawing.Point(4, 25);
+            this.ConfirmOrder.Name = "ConfirmOrder";
+            this.ConfirmOrder.Padding = new System.Windows.Forms.Padding(3);
+            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 582);
+            this.ConfirmOrder.TabIndex = 4;
+            this.ConfirmOrder.Text = "ConfirmOrder";
+            this.ConfirmOrder.UseVisualStyleBackColor = true;
+            this.ConfirmOrder.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.ForeColor = System.Drawing.Color.Black;
+            this.label55.Location = new System.Drawing.Point(472, 255);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(197, 25);
+            this.label55.TabIndex = 1;
+            this.label55.Text = "Confirmation Only";
+            // 
+            // OrderList
+            // 
+            this.OrderList.Controls.Add(this.label56);
+            this.OrderList.Location = new System.Drawing.Point(4, 25);
+            this.OrderList.Name = "OrderList";
+            this.OrderList.Padding = new System.Windows.Forms.Padding(3);
+            this.OrderList.Size = new System.Drawing.Size(1194, 582);
+            this.OrderList.TabIndex = 5;
+            this.OrderList.Text = "OrderList";
+            this.OrderList.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.Color.Black;
+            this.label56.Location = new System.Drawing.Point(373, 261);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(438, 25);
+            this.label56.TabIndex = 1;
+            this.label56.Text = "Basta OrderList Pwede rin yung sa laundry";
+            // 
+            // ConfirmLaundry
+            // 
+            this.ConfirmLaundry.Controls.Add(this.btnLComplete);
+            this.ConfirmLaundry.Controls.Add(this.btnLClear);
+            this.ConfirmLaundry.Controls.Add(this.dataGridLaundry);
+            this.ConfirmLaundry.Controls.Add(this.label57);
+            this.ConfirmLaundry.Location = new System.Drawing.Point(4, 25);
+            this.ConfirmLaundry.Name = "ConfirmLaundry";
+            this.ConfirmLaundry.Padding = new System.Windows.Forms.Padding(3);
+            this.ConfirmLaundry.Size = new System.Drawing.Size(1194, 582);
+            this.ConfirmLaundry.TabIndex = 6;
+            this.ConfirmLaundry.Text = "ConfirmLaundry";
+            this.ConfirmLaundry.UseVisualStyleBackColor = true;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.ForeColor = System.Drawing.Color.Black;
+            this.label57.Location = new System.Drawing.Point(361, 202);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(311, 25);
+            this.label57.TabIndex = 1;
+            this.label57.Text = "Laundry Confirmation Service";
+            // 
+            // btnLaundry
+            // 
+            this.btnLaundry.ButtonText = "";
+            this.btnLaundry.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnLaundry.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLaundry.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLaundry.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnLaundry.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLaundry.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLaundry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaundry.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLaundry.HoverForeColor = System.Drawing.Color.White;
+            this.btnLaundry.HoverImage = null;
+            this.btnLaundry.HoverImageTint = System.Drawing.Color.White;
+            this.btnLaundry.HoverOutline = System.Drawing.Color.Empty;
+            this.btnLaundry.Image = ((System.Drawing.Image)(resources.GetObject("btnLaundry.Image")));
+            this.btnLaundry.ImageAutoCenter = true;
+            this.btnLaundry.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnLaundry.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLaundry.ImageTint = System.Drawing.Color.White;
+            this.btnLaundry.IsToggleButton = false;
+            this.btnLaundry.IsToggled = false;
+            this.btnLaundry.Location = new System.Drawing.Point(1082, 100);
+            this.btnLaundry.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnLaundry.Name = "btnLaundry";
+            this.btnLaundry.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLaundry.NormalForeColor = System.Drawing.Color.White;
+            this.btnLaundry.NormalOutline = System.Drawing.Color.Empty;
+            this.btnLaundry.OutlineThickness = 2F;
+            this.btnLaundry.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLaundry.PressedForeColor = System.Drawing.Color.White;
+            this.btnLaundry.PressedImageTint = System.Drawing.Color.White;
+            this.btnLaundry.PressedOutline = System.Drawing.Color.Empty;
+            this.btnLaundry.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnLaundry.Size = new System.Drawing.Size(44, 39);
+            this.btnLaundry.TabIndex = 18;
+            this.btnLaundry.TextAutoCenter = false;
+            this.btnLaundry.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.ButtonText = "";
+            this.btnAddFood.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnAddFood.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddFood.CheckedImageTint = System.Drawing.Color.White;
+            this.btnAddFood.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnAddFood.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFood.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddFood.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFood.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAddFood.HoverForeColor = System.Drawing.Color.White;
+            this.btnAddFood.HoverImage = null;
+            this.btnAddFood.HoverImageTint = System.Drawing.Color.White;
+            this.btnAddFood.HoverOutline = System.Drawing.Color.Empty;
+            this.btnAddFood.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFood.Image")));
+            this.btnAddFood.ImageAutoCenter = true;
+            this.btnAddFood.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnAddFood.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAddFood.ImageTint = System.Drawing.Color.White;
+            this.btnAddFood.IsToggleButton = false;
+            this.btnAddFood.IsToggled = false;
+            this.btnAddFood.Location = new System.Drawing.Point(974, 100);
+            this.btnAddFood.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAddFood.NormalForeColor = System.Drawing.Color.White;
+            this.btnAddFood.NormalOutline = System.Drawing.Color.Empty;
+            this.btnAddFood.OutlineThickness = 2F;
+            this.btnAddFood.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAddFood.PressedForeColor = System.Drawing.Color.White;
+            this.btnAddFood.PressedImageTint = System.Drawing.Color.White;
+            this.btnAddFood.PressedOutline = System.Drawing.Color.Empty;
+            this.btnAddFood.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnAddFood.Size = new System.Drawing.Size(44, 39);
+            this.btnAddFood.TabIndex = 18;
+            this.btnAddFood.TextAutoCenter = false;
+            this.btnAddFood.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // btnOrderList
             // 
-            this.btnOrderList.ButtonText = "View Orders";
+            this.btnOrderList.ButtonText = "Service List";
             this.btnOrderList.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.btnOrderList.CheckedForeColor = System.Drawing.Color.White;
             this.btnOrderList.CheckedImageTint = System.Drawing.Color.White;
@@ -4672,69 +4901,6 @@
             this.btnOrderList.TabIndex = 16;
             this.btnOrderList.TextAutoCenter = true;
             this.btnOrderList.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // dataGridFoodService
-            // 
-            this.dataGridFoodService.AllowUserToAddRows = false;
-            this.dataGridFoodService.AllowUserToDeleteRows = false;
-            this.dataGridFoodService.AllowUserToResizeColumns = false;
-            this.dataGridFoodService.AllowUserToResizeRows = false;
-            this.dataGridFoodService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridFoodService.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridFoodService.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridFoodService.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridFoodService.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFoodService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridFoodService.ColumnHeadersHeight = 33;
-            this.dataGridFoodService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridFoodService.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridFoodService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridFoodService.EnableHeadersVisualStyles = false;
-            this.dataGridFoodService.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridFoodService.Location = new System.Drawing.Point(3, 3);
-            this.dataGridFoodService.MultiSelect = false;
-            this.dataGridFoodService.Name = "dataGridFoodService";
-            this.dataGridFoodService.ReadOnly = true;
-            this.dataGridFoodService.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFoodService.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridFoodService.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridFoodService.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridFoodService.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridFoodService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridFoodService.Size = new System.Drawing.Size(1188, 576);
-            this.dataGridFoodService.TabIndex = 4;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.dataGridFoodService);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1194, 582);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Customer List";
             // 
             // btnFoodSearch
             // 
@@ -4853,308 +5019,196 @@
             this.btnOrderFood.TextAutoCenter = false;
             this.btnOrderFood.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // ConfirmOrder
+            // dataGridLaundry
             // 
-            this.ConfirmOrder.Controls.Add(this.label55);
-            this.ConfirmOrder.Location = new System.Drawing.Point(4, 25);
-            this.ConfirmOrder.Name = "ConfirmOrder";
-            this.ConfirmOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 582);
-            this.ConfirmOrder.TabIndex = 4;
-            this.ConfirmOrder.Text = "ConfirmOrder";
-            this.ConfirmOrder.UseVisualStyleBackColor = true;
-            this.ConfirmOrder.Click += new System.EventHandler(this.tabPage2_Click);
+            this.dataGridLaundry.AllowUserToAddRows = false;
+            this.dataGridLaundry.AllowUserToDeleteRows = false;
+            this.dataGridLaundry.AllowUserToResizeColumns = false;
+            this.dataGridLaundry.AllowUserToResizeRows = false;
+            this.dataGridLaundry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridLaundry.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridLaundry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridLaundry.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridLaundry.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridLaundry.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridLaundry.ColumnHeadersHeight = 33;
+            this.dataGridLaundry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridLaundry.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridLaundry.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridLaundry.EnableHeadersVisualStyles = false;
+            this.dataGridLaundry.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridLaundry.Location = new System.Drawing.Point(3, 3);
+            this.dataGridLaundry.MultiSelect = false;
+            this.dataGridLaundry.Name = "dataGridLaundry";
+            this.dataGridLaundry.ReadOnly = true;
+            this.dataGridLaundry.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridLaundry.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridLaundry.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridLaundry.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridLaundry.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridLaundry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridLaundry.Size = new System.Drawing.Size(1188, 174);
+            this.dataGridLaundry.TabIndex = 5;
             // 
-            // btnConfirmOrder
+            // label9
             // 
-            this.btnConfirmOrder.ButtonText = "";
-            this.btnConfirmOrder.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnConfirmOrder.CheckedForeColor = System.Drawing.Color.White;
-            this.btnConfirmOrder.CheckedImageTint = System.Drawing.Color.White;
-            this.btnConfirmOrder.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnConfirmOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmOrder.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnConfirmOrder.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmOrder.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnConfirmOrder.HoverForeColor = System.Drawing.Color.White;
-            this.btnConfirmOrder.HoverImage = null;
-            this.btnConfirmOrder.HoverImageTint = System.Drawing.Color.White;
-            this.btnConfirmOrder.HoverOutline = System.Drawing.Color.Empty;
-            this.btnConfirmOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmOrder.Image")));
-            this.btnConfirmOrder.ImageAutoCenter = true;
-            this.btnConfirmOrder.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnConfirmOrder.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnConfirmOrder.ImageTint = System.Drawing.Color.White;
-            this.btnConfirmOrder.IsToggleButton = false;
-            this.btnConfirmOrder.IsToggled = false;
-            this.btnConfirmOrder.Location = new System.Drawing.Point(314, 17);
-            this.btnConfirmOrder.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnConfirmOrder.Name = "btnConfirmOrder";
-            this.btnConfirmOrder.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.btnConfirmOrder.NormalForeColor = System.Drawing.Color.White;
-            this.btnConfirmOrder.NormalOutline = System.Drawing.Color.Empty;
-            this.btnConfirmOrder.OutlineThickness = 2F;
-            this.btnConfirmOrder.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnConfirmOrder.PressedForeColor = System.Drawing.Color.White;
-            this.btnConfirmOrder.PressedImageTint = System.Drawing.Color.White;
-            this.btnConfirmOrder.PressedOutline = System.Drawing.Color.Empty;
-            this.btnConfirmOrder.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnConfirmOrder.Size = new System.Drawing.Size(52, 46);
-            this.btnConfirmOrder.TabIndex = 18;
-            this.btnConfirmOrder.TextAutoCenter = false;
-            this.btnConfirmOrder.TextOffset = new System.Drawing.Point(0, 0);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(202, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 25);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "<123>";
             // 
-            // label50
+            // label58
             // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label50.Location = new System.Drawing.Point(16, 26);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(135, 25);
-            this.label50.TabIndex = 19;
-            this.label50.Text = "Order Number";
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label58.Location = new System.Drawing.Point(43, 52);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(154, 25);
+            this.label58.TabIndex = 21;
+            this.label58.Text = "Laundry Number";
             // 
-            // label51
+            // btnConfirmLaundry
             // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.label51.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label51.Location = new System.Drawing.Point(146, 26);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(65, 25);
-            this.label51.TabIndex = 19;
-            this.label51.Text = "<123>";
+            this.btnConfirmLaundry.ButtonText = "";
+            this.btnConfirmLaundry.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnConfirmLaundry.CheckedForeColor = System.Drawing.Color.White;
+            this.btnConfirmLaundry.CheckedImageTint = System.Drawing.Color.White;
+            this.btnConfirmLaundry.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnConfirmLaundry.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmLaundry.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnConfirmLaundry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmLaundry.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnConfirmLaundry.HoverForeColor = System.Drawing.Color.White;
+            this.btnConfirmLaundry.HoverImage = null;
+            this.btnConfirmLaundry.HoverImageTint = System.Drawing.Color.White;
+            this.btnConfirmLaundry.HoverOutline = System.Drawing.Color.Empty;
+            this.btnConfirmLaundry.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmLaundry.Image")));
+            this.btnConfirmLaundry.ImageAutoCenter = true;
+            this.btnConfirmLaundry.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnConfirmLaundry.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnConfirmLaundry.ImageTint = System.Drawing.Color.White;
+            this.btnConfirmLaundry.IsToggleButton = false;
+            this.btnConfirmLaundry.IsToggled = false;
+            this.btnConfirmLaundry.Location = new System.Drawing.Point(334, 42);
+            this.btnConfirmLaundry.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnConfirmLaundry.Name = "btnConfirmLaundry";
+            this.btnConfirmLaundry.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.btnConfirmLaundry.NormalForeColor = System.Drawing.Color.White;
+            this.btnConfirmLaundry.NormalOutline = System.Drawing.Color.Empty;
+            this.btnConfirmLaundry.OutlineThickness = 2F;
+            this.btnConfirmLaundry.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnConfirmLaundry.PressedForeColor = System.Drawing.Color.White;
+            this.btnConfirmLaundry.PressedImageTint = System.Drawing.Color.White;
+            this.btnConfirmLaundry.PressedOutline = System.Drawing.Color.Empty;
+            this.btnConfirmLaundry.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnConfirmLaundry.Size = new System.Drawing.Size(52, 46);
+            this.btnConfirmLaundry.TabIndex = 20;
+            this.btnConfirmLaundry.TextAutoCenter = false;
+            this.btnConfirmLaundry.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // OrderList
+            // btnLClear
             // 
-            this.OrderList.Controls.Add(this.label56);
-            this.OrderList.Location = new System.Drawing.Point(4, 25);
-            this.OrderList.Name = "OrderList";
-            this.OrderList.Padding = new System.Windows.Forms.Padding(3);
-            this.OrderList.Size = new System.Drawing.Size(1194, 582);
-            this.OrderList.TabIndex = 5;
-            this.OrderList.Text = "OrderList";
-            this.OrderList.UseVisualStyleBackColor = true;
+            this.btnLClear.ButtonText = "Clear All";
+            this.btnLClear.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnLClear.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLClear.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLClear.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnLClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLClear.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLClear.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLClear.HoverForeColor = System.Drawing.Color.White;
+            this.btnLClear.HoverImage = null;
+            this.btnLClear.HoverImageTint = System.Drawing.Color.White;
+            this.btnLClear.HoverOutline = System.Drawing.Color.Empty;
+            this.btnLClear.Image = null;
+            this.btnLClear.ImageAutoCenter = true;
+            this.btnLClear.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnLClear.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLClear.ImageTint = System.Drawing.Color.White;
+            this.btnLClear.IsToggleButton = false;
+            this.btnLClear.IsToggled = false;
+            this.btnLClear.Location = new System.Drawing.Point(728, 236);
+            this.btnLClear.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnLClear.Name = "btnLClear";
+            this.btnLClear.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLClear.NormalForeColor = System.Drawing.Color.White;
+            this.btnLClear.NormalOutline = System.Drawing.Color.Empty;
+            this.btnLClear.OutlineThickness = 2F;
+            this.btnLClear.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLClear.PressedForeColor = System.Drawing.Color.White;
+            this.btnLClear.PressedImageTint = System.Drawing.Color.White;
+            this.btnLClear.PressedOutline = System.Drawing.Color.Empty;
+            this.btnLClear.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnLClear.Size = new System.Drawing.Size(155, 39);
+            this.btnLClear.TabIndex = 18;
+            this.btnLClear.TextAutoCenter = true;
+            this.btnLClear.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // label49
+            // btnLComplete
             // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label49.ForeColor = System.Drawing.Color.DimGray;
-            this.label49.Location = new System.Drawing.Point(17, 101);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(91, 21);
-            this.label49.TabIndex = 13;
-            this.label49.Text = "Item Name";
-            // 
-            // txtAddOrderStock
-            // 
-            this.txtAddOrderStock.BackColor = System.Drawing.Color.White;
-            this.txtAddOrderStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtAddOrderStock.BorderColor = System.Drawing.Color.Silver;
-            this.txtAddOrderStock.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtAddOrderStock.BorderRadius = 3;
-            this.txtAddOrderStock.BorderSize = 1;
-            this.txtAddOrderStock.Enabled = false;
-            this.txtAddOrderStock.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtAddOrderStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtAddOrderStock.Icon = null;
-            this.txtAddOrderStock.IconSize = new System.Drawing.Size(20, 20);
-            this.txtAddOrderStock.Location = new System.Drawing.Point(21, 211);
-            this.txtAddOrderStock.Multiline = false;
-            this.txtAddOrderStock.Name = "txtAddOrderStock";
-            this.txtAddOrderStock.PasswordChar = false;
-            this.txtAddOrderStock.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtAddOrderStock.PlaceholderText = "";
-            this.txtAddOrderStock.Size = new System.Drawing.Size(345, 37);
-            this.txtAddOrderStock.TabIndex = 12;
-            this.txtAddOrderStock.Text = "0";
-            this.txtAddOrderStock.Texts = "";
-            this.txtAddOrderStock.UnderlinedStyle = false;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label52.ForeColor = System.Drawing.Color.DimGray;
-            this.label52.Location = new System.Drawing.Point(17, 182);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(51, 21);
-            this.label52.TabIndex = 13;
-            this.label52.Text = "Stock";
-            // 
-            // txtAddOrderQuantity
-            // 
-            this.txtAddOrderQuantity.BackColor = System.Drawing.Color.White;
-            this.txtAddOrderQuantity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtAddOrderQuantity.BorderColor = System.Drawing.Color.Silver;
-            this.txtAddOrderQuantity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtAddOrderQuantity.BorderRadius = 3;
-            this.txtAddOrderQuantity.BorderSize = 1;
-            this.txtAddOrderQuantity.Enabled = false;
-            this.txtAddOrderQuantity.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtAddOrderQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtAddOrderQuantity.Icon = null;
-            this.txtAddOrderQuantity.IconSize = new System.Drawing.Size(20, 20);
-            this.txtAddOrderQuantity.Location = new System.Drawing.Point(21, 292);
-            this.txtAddOrderQuantity.Multiline = false;
-            this.txtAddOrderQuantity.Name = "txtAddOrderQuantity";
-            this.txtAddOrderQuantity.PasswordChar = false;
-            this.txtAddOrderQuantity.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtAddOrderQuantity.PlaceholderText = "";
-            this.txtAddOrderQuantity.Size = new System.Drawing.Size(345, 37);
-            this.txtAddOrderQuantity.TabIndex = 12;
-            this.txtAddOrderQuantity.Text = "0";
-            this.txtAddOrderQuantity.Texts = "";
-            this.txtAddOrderQuantity.UnderlinedStyle = false;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label53.ForeColor = System.Drawing.Color.DimGray;
-            this.label53.Location = new System.Drawing.Point(17, 263);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(72, 21);
-            this.label53.TabIndex = 13;
-            this.label53.Text = "Quantity";
-            // 
-            // txtAddOrderPrice
-            // 
-            this.txtAddOrderPrice.BackColor = System.Drawing.Color.White;
-            this.txtAddOrderPrice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtAddOrderPrice.BorderColor = System.Drawing.Color.Silver;
-            this.txtAddOrderPrice.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtAddOrderPrice.BorderRadius = 3;
-            this.txtAddOrderPrice.BorderSize = 1;
-            this.txtAddOrderPrice.Enabled = false;
-            this.txtAddOrderPrice.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtAddOrderPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtAddOrderPrice.Icon = null;
-            this.txtAddOrderPrice.IconSize = new System.Drawing.Size(20, 20);
-            this.txtAddOrderPrice.Location = new System.Drawing.Point(21, 373);
-            this.txtAddOrderPrice.Multiline = false;
-            this.txtAddOrderPrice.Name = "txtAddOrderPrice";
-            this.txtAddOrderPrice.PasswordChar = false;
-            this.txtAddOrderPrice.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtAddOrderPrice.PlaceholderText = "";
-            this.txtAddOrderPrice.Size = new System.Drawing.Size(345, 37);
-            this.txtAddOrderPrice.TabIndex = 12;
-            this.txtAddOrderPrice.Text = "0";
-            this.txtAddOrderPrice.Texts = "";
-            this.txtAddOrderPrice.UnderlinedStyle = false;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label54.ForeColor = System.Drawing.Color.DimGray;
-            this.label54.Location = new System.Drawing.Point(17, 344);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(46, 21);
-            this.label54.TabIndex = 13;
-            this.label54.Text = "Price";
-            // 
-            // btnAddItem
-            // 
-            this.btnAddItem.ButtonText = "Add Item";
-            this.btnAddItem.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnAddItem.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddItem.CheckedImageTint = System.Drawing.Color.White;
-            this.btnAddItem.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnAddItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddItem.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddItem.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAddItem.HoverForeColor = System.Drawing.Color.White;
-            this.btnAddItem.HoverImage = null;
-            this.btnAddItem.HoverImageTint = System.Drawing.Color.White;
-            this.btnAddItem.HoverOutline = System.Drawing.Color.Empty;
-            this.btnAddItem.Image = null;
-            this.btnAddItem.ImageAutoCenter = true;
-            this.btnAddItem.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnAddItem.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAddItem.ImageTint = System.Drawing.Color.White;
-            this.btnAddItem.IsToggleButton = false;
-            this.btnAddItem.IsToggled = false;
-            this.btnAddItem.Location = new System.Drawing.Point(203, 511);
-            this.btnAddItem.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAddItem.NormalForeColor = System.Drawing.Color.White;
-            this.btnAddItem.NormalOutline = System.Drawing.Color.Empty;
-            this.btnAddItem.OutlineThickness = 2F;
-            this.btnAddItem.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAddItem.PressedForeColor = System.Drawing.Color.White;
-            this.btnAddItem.PressedImageTint = System.Drawing.Color.White;
-            this.btnAddItem.PressedOutline = System.Drawing.Color.Empty;
-            this.btnAddItem.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnAddItem.Size = new System.Drawing.Size(163, 39);
-            this.btnAddItem.TabIndex = 16;
-            this.btnAddItem.TextAutoCenter = true;
-            this.btnAddItem.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // btnCancelAddOrder
-            // 
-            this.btnCancelAddOrder.ButtonText = "Cancel";
-            this.btnCancelAddOrder.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnCancelAddOrder.CheckedForeColor = System.Drawing.Color.White;
-            this.btnCancelAddOrder.CheckedImageTint = System.Drawing.Color.White;
-            this.btnCancelAddOrder.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnCancelAddOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelAddOrder.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCancelAddOrder.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelAddOrder.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnCancelAddOrder.HoverForeColor = System.Drawing.Color.White;
-            this.btnCancelAddOrder.HoverImage = null;
-            this.btnCancelAddOrder.HoverImageTint = System.Drawing.Color.White;
-            this.btnCancelAddOrder.HoverOutline = System.Drawing.Color.Empty;
-            this.btnCancelAddOrder.Image = null;
-            this.btnCancelAddOrder.ImageAutoCenter = true;
-            this.btnCancelAddOrder.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnCancelAddOrder.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnCancelAddOrder.ImageTint = System.Drawing.Color.White;
-            this.btnCancelAddOrder.IsToggleButton = false;
-            this.btnCancelAddOrder.IsToggled = false;
-            this.btnCancelAddOrder.Location = new System.Drawing.Point(21, 511);
-            this.btnCancelAddOrder.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnCancelAddOrder.Name = "btnCancelAddOrder";
-            this.btnCancelAddOrder.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancelAddOrder.NormalForeColor = System.Drawing.Color.White;
-            this.btnCancelAddOrder.NormalOutline = System.Drawing.Color.Empty;
-            this.btnCancelAddOrder.OutlineThickness = 2F;
-            this.btnCancelAddOrder.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancelAddOrder.PressedForeColor = System.Drawing.Color.White;
-            this.btnCancelAddOrder.PressedImageTint = System.Drawing.Color.White;
-            this.btnCancelAddOrder.PressedOutline = System.Drawing.Color.Empty;
-            this.btnCancelAddOrder.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnCancelAddOrder.Size = new System.Drawing.Size(163, 39);
-            this.btnCancelAddOrder.TabIndex = 16;
-            this.btnCancelAddOrder.TextAutoCenter = true;
-            this.btnCancelAddOrder.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.ForeColor = System.Drawing.Color.Black;
-            this.label55.Location = new System.Drawing.Point(472, 255);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(197, 25);
-            this.label55.TabIndex = 1;
-            this.label55.Text = "Confirmation Only";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.ForeColor = System.Drawing.Color.Black;
-            this.label56.Location = new System.Drawing.Point(373, 261);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(438, 25);
-            this.label56.TabIndex = 1;
-            this.label56.Text = "Basta OrderList Pwede rin yung sa laundry";
+            this.btnLComplete.ButtonText = "Complete";
+            this.btnLComplete.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnLComplete.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLComplete.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLComplete.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnLComplete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLComplete.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLComplete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLComplete.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLComplete.HoverForeColor = System.Drawing.Color.White;
+            this.btnLComplete.HoverImage = null;
+            this.btnLComplete.HoverImageTint = System.Drawing.Color.White;
+            this.btnLComplete.HoverOutline = System.Drawing.Color.Empty;
+            this.btnLComplete.Image = null;
+            this.btnLComplete.ImageAutoCenter = true;
+            this.btnLComplete.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnLComplete.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLComplete.ImageTint = System.Drawing.Color.White;
+            this.btnLComplete.IsToggleButton = false;
+            this.btnLComplete.IsToggled = false;
+            this.btnLComplete.Location = new System.Drawing.Point(920, 236);
+            this.btnLComplete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnLComplete.Name = "btnLComplete";
+            this.btnLComplete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLComplete.NormalForeColor = System.Drawing.Color.White;
+            this.btnLComplete.NormalOutline = System.Drawing.Color.Empty;
+            this.btnLComplete.OutlineThickness = 2F;
+            this.btnLComplete.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLComplete.PressedForeColor = System.Drawing.Color.White;
+            this.btnLComplete.PressedImageTint = System.Drawing.Color.White;
+            this.btnLComplete.PressedOutline = System.Drawing.Color.Empty;
+            this.btnLComplete.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnLComplete.Size = new System.Drawing.Size(155, 39);
+            this.btnLComplete.TabIndex = 19;
+            this.btnLComplete.TextAutoCenter = true;
+            this.btnLComplete.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // UCService
             // 
@@ -5180,6 +5234,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).EndInit();
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFoodService)).EndInit();
             this.Food.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -5263,7 +5319,6 @@
             this.sataPanel15.PerformLayout();
             this.panel14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridLaundry)).EndInit();
             this.OrderFood.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
@@ -5319,12 +5374,13 @@
             this.sataPanel31.PerformLayout();
             this.panel32.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridFoodService)).EndInit();
-            this.tabPage1.ResumeLayout(false);
             this.ConfirmOrder.ResumeLayout(false);
             this.ConfirmOrder.PerformLayout();
             this.OrderList.ResumeLayout(false);
             this.OrderList.PerformLayout();
+            this.ConfirmLaundry.ResumeLayout(false);
+            this.ConfirmLaundry.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridLaundry)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5432,8 +5488,6 @@
         private System.Windows.Forms.Label label8;
         private FrameworkTest.SATAButton btnFoodAdd;
         private FrameworkTest.SATAButton btnFoodCancel;
-        private System.Windows.Forms.Label label9;
-        private SATATextBox txtCategory;
         private System.Windows.Forms.TabPage Laundry;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private SATAUiFramework.SATAPanel sataPanel19;
@@ -5468,15 +5522,12 @@
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox14;
         private FrameworkTest.SATAButton btnBillingCancel;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DataGridView dataGridLaundry;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private SATATextBox txtLPrice;
         private SATATextBox txtLQuantity;
         private SATATextBox txtLName;
-        private FrameworkTest.SATAButton btnLClear;
-        private FrameworkTest.SATAButton btnLComplete;
         private FrameworkTest.SATAButton btnLAdd;
         private System.Windows.Forms.TabPage OrderFood;
         private System.Windows.Forms.Panel panel20;
@@ -5576,5 +5627,13 @@
         private FrameworkTest.SATAButton btnAddItem;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TabPage ConfirmLaundry;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.DataGridView dataGridLaundry;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label58;
+        private FrameworkTest.SATAButton btnConfirmLaundry;
+        private FrameworkTest.SATAButton btnLClear;
+        private FrameworkTest.SATAButton btnLComplete;
     }
 }

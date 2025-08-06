@@ -47,8 +47,7 @@
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridBilling = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ReservationBillingForm = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -68,13 +67,19 @@
             this.sataButton1 = new FrameworkTest.SATAButton();
             this.btnServices = new FrameworkTest.SATAButton();
             this.btnCheckIn = new FrameworkTest.SATAButton();
+            this.dataGridBilling = new System.Windows.Forms.DataGridView();
+            this.btnBillingList = new FrameworkTest.SATAButton();
+            this.btnBackRReservationHome = new FrameworkTest.SATAButton();
+            this.MainFormBilling = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.ReservationBillingForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBilling)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.MainFormBilling.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -114,7 +119,7 @@
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(1139, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 16);
+            this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Mark Manalo";
             // 
@@ -126,7 +131,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(1141, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 1;
             this.label4.Text = "Admin";
             // 
@@ -341,7 +346,8 @@
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
-            this.materialTabControl1.Controls.Add(this.tabPage2);
+            this.materialTabControl1.Controls.Add(this.ReservationBillingForm);
+            this.materialTabControl1.Controls.Add(this.MainFormBilling);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 0);
@@ -355,6 +361,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.btnBackRReservationHome);
             this.tabPage1.Controls.Add(this.dataGridBilling);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -363,83 +370,32 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer List";
             // 
-            // dataGridBilling
+            // ReservationBillingForm
             // 
-            this.dataGridBilling.AllowUserToAddRows = false;
-            this.dataGridBilling.AllowUserToDeleteRows = false;
-            this.dataGridBilling.AllowUserToResizeColumns = false;
-            this.dataGridBilling.AllowUserToResizeRows = false;
-            this.dataGridBilling.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridBilling.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridBilling.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridBilling.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridBilling.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridBilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridBilling.ColumnHeadersHeight = 33;
-            this.dataGridBilling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridBilling.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridBilling.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridBilling.EnableHeadersVisualStyles = false;
-            this.dataGridBilling.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridBilling.Location = new System.Drawing.Point(3, 3);
-            this.dataGridBilling.MultiSelect = false;
-            this.dataGridBilling.Name = "dataGridBilling";
-            this.dataGridBilling.ReadOnly = true;
-            this.dataGridBilling.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridBilling.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridBilling.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridBilling.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridBilling.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridBilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridBilling.Size = new System.Drawing.Size(1188, 576);
-            this.dataGridBilling.TabIndex = 3;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.label36);
-            this.tabPage2.Controls.Add(this.cbStatus);
-            this.tabPage2.Controls.Add(this.cbReservationId);
-            this.tabPage2.Controls.Add(this.txtRoomNumber);
-            this.tabPage2.Controls.Add(this.txtRoomType);
-            this.tabPage2.Controls.Add(this.txtTotalAmount);
-            this.tabPage2.Controls.Add(this.txtCusName);
-            this.tabPage2.Controls.Add(this.txtBillingId);
-            this.tabPage2.Controls.Add(this.btnReservationPay);
-            this.tabPage2.Controls.Add(this.btnBillingCancel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Reservation Billing";
+            this.ReservationBillingForm.BackColor = System.Drawing.Color.White;
+            this.ReservationBillingForm.Controls.Add(this.label10);
+            this.ReservationBillingForm.Controls.Add(this.label8);
+            this.ReservationBillingForm.Controls.Add(this.label7);
+            this.ReservationBillingForm.Controls.Add(this.label6);
+            this.ReservationBillingForm.Controls.Add(this.btnBillingList);
+            this.ReservationBillingForm.Controls.Add(this.label2);
+            this.ReservationBillingForm.Controls.Add(this.label1);
+            this.ReservationBillingForm.Controls.Add(this.label36);
+            this.ReservationBillingForm.Controls.Add(this.cbStatus);
+            this.ReservationBillingForm.Controls.Add(this.cbReservationId);
+            this.ReservationBillingForm.Controls.Add(this.txtRoomNumber);
+            this.ReservationBillingForm.Controls.Add(this.txtRoomType);
+            this.ReservationBillingForm.Controls.Add(this.txtTotalAmount);
+            this.ReservationBillingForm.Controls.Add(this.txtCusName);
+            this.ReservationBillingForm.Controls.Add(this.txtBillingId);
+            this.ReservationBillingForm.Controls.Add(this.btnReservationPay);
+            this.ReservationBillingForm.Controls.Add(this.btnBillingCancel);
+            this.ReservationBillingForm.Location = new System.Drawing.Point(4, 25);
+            this.ReservationBillingForm.Name = "ReservationBillingForm";
+            this.ReservationBillingForm.Padding = new System.Windows.Forms.Padding(3);
+            this.ReservationBillingForm.Size = new System.Drawing.Size(1194, 582);
+            this.ReservationBillingForm.TabIndex = 1;
+            this.ReservationBillingForm.Text = "Reservation Billing";
             // 
             // label10
             // 
@@ -859,6 +815,159 @@
             this.btnCheckIn.TextOffset = new System.Drawing.Point(0, 0);
             this.btnCheckIn.Click += new System.EventHandler(this.btnBillingAddNew_Click);
             // 
+            // dataGridBilling
+            // 
+            this.dataGridBilling.AllowUserToAddRows = false;
+            this.dataGridBilling.AllowUserToDeleteRows = false;
+            this.dataGridBilling.AllowUserToResizeColumns = false;
+            this.dataGridBilling.AllowUserToResizeRows = false;
+            this.dataGridBilling.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridBilling.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridBilling.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridBilling.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridBilling.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridBilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridBilling.ColumnHeadersHeight = 33;
+            this.dataGridBilling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridBilling.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridBilling.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridBilling.EnableHeadersVisualStyles = false;
+            this.dataGridBilling.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridBilling.Location = new System.Drawing.Point(3, 3);
+            this.dataGridBilling.MultiSelect = false;
+            this.dataGridBilling.Name = "dataGridBilling";
+            this.dataGridBilling.ReadOnly = true;
+            this.dataGridBilling.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridBilling.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridBilling.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridBilling.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridBilling.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridBilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridBilling.Size = new System.Drawing.Size(1188, 496);
+            this.dataGridBilling.TabIndex = 3;
+            // 
+            // btnBillingList
+            // 
+            this.btnBillingList.ButtonText = "Billing List";
+            this.btnBillingList.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnBillingList.CheckedForeColor = System.Drawing.Color.White;
+            this.btnBillingList.CheckedImageTint = System.Drawing.Color.White;
+            this.btnBillingList.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnBillingList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBillingList.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBillingList.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBillingList.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnBillingList.HoverForeColor = System.Drawing.Color.White;
+            this.btnBillingList.HoverImage = null;
+            this.btnBillingList.HoverImageTint = System.Drawing.Color.White;
+            this.btnBillingList.HoverOutline = System.Drawing.Color.Empty;
+            this.btnBillingList.Image = ((System.Drawing.Image)(resources.GetObject("btnBillingList.Image")));
+            this.btnBillingList.ImageAutoCenter = true;
+            this.btnBillingList.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnBillingList.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnBillingList.ImageTint = System.Drawing.Color.White;
+            this.btnBillingList.IsToggleButton = false;
+            this.btnBillingList.IsToggled = false;
+            this.btnBillingList.Location = new System.Drawing.Point(1046, 25);
+            this.btnBillingList.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnBillingList.Name = "btnBillingList";
+            this.btnBillingList.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBillingList.NormalForeColor = System.Drawing.Color.White;
+            this.btnBillingList.NormalOutline = System.Drawing.Color.Empty;
+            this.btnBillingList.OutlineThickness = 2F;
+            this.btnBillingList.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBillingList.PressedForeColor = System.Drawing.Color.White;
+            this.btnBillingList.PressedImageTint = System.Drawing.Color.White;
+            this.btnBillingList.PressedOutline = System.Drawing.Color.Empty;
+            this.btnBillingList.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnBillingList.Size = new System.Drawing.Size(128, 39);
+            this.btnBillingList.TabIndex = 20;
+            this.btnBillingList.TextAutoCenter = true;
+            this.btnBillingList.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnBillingList.Click += new System.EventHandler(this.btnBillingAddNew_Click);
+            // 
+            // btnBackRReservationHome
+            // 
+            this.btnBackRReservationHome.ButtonText = "Back";
+            this.btnBackRReservationHome.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnBackRReservationHome.CheckedForeColor = System.Drawing.Color.White;
+            this.btnBackRReservationHome.CheckedImageTint = System.Drawing.Color.White;
+            this.btnBackRReservationHome.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnBackRReservationHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackRReservationHome.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBackRReservationHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackRReservationHome.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnBackRReservationHome.HoverForeColor = System.Drawing.Color.White;
+            this.btnBackRReservationHome.HoverImage = null;
+            this.btnBackRReservationHome.HoverImageTint = System.Drawing.Color.White;
+            this.btnBackRReservationHome.HoverOutline = System.Drawing.Color.Empty;
+            this.btnBackRReservationHome.Image = null;
+            this.btnBackRReservationHome.ImageAutoCenter = true;
+            this.btnBackRReservationHome.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnBackRReservationHome.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnBackRReservationHome.ImageTint = System.Drawing.Color.White;
+            this.btnBackRReservationHome.IsToggleButton = false;
+            this.btnBackRReservationHome.IsToggled = false;
+            this.btnBackRReservationHome.Location = new System.Drawing.Point(18, 524);
+            this.btnBackRReservationHome.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnBackRReservationHome.Name = "btnBackRReservationHome";
+            this.btnBackRReservationHome.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBackRReservationHome.NormalForeColor = System.Drawing.Color.White;
+            this.btnBackRReservationHome.NormalOutline = System.Drawing.Color.Empty;
+            this.btnBackRReservationHome.OutlineThickness = 2F;
+            this.btnBackRReservationHome.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBackRReservationHome.PressedForeColor = System.Drawing.Color.White;
+            this.btnBackRReservationHome.PressedImageTint = System.Drawing.Color.White;
+            this.btnBackRReservationHome.PressedOutline = System.Drawing.Color.Empty;
+            this.btnBackRReservationHome.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnBackRReservationHome.Size = new System.Drawing.Size(163, 39);
+            this.btnBackRReservationHome.TabIndex = 16;
+            this.btnBackRReservationHome.TextAutoCenter = true;
+            this.btnBackRReservationHome.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // MainFormBilling
+            // 
+            this.MainFormBilling.Controls.Add(this.label9);
+            this.MainFormBilling.Location = new System.Drawing.Point(4, 25);
+            this.MainFormBilling.Name = "MainFormBilling";
+            this.MainFormBilling.Padding = new System.Windows.Forms.Padding(3);
+            this.MainFormBilling.Size = new System.Drawing.Size(1194, 582);
+            this.MainFormBilling.TabIndex = 2;
+            this.MainFormBilling.Text = "MainTabForBilling";
+            this.MainFormBilling.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(463, 231);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 25);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "MainForm";
+            // 
             // UCBilling
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -882,10 +991,13 @@
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.ReservationBillingForm.ResumeLayout(false);
+            this.ReservationBillingForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBilling)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.MainFormBilling.ResumeLayout(false);
+            this.MainFormBilling.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -906,8 +1018,7 @@
         private FrameworkTest.SATAButton btnCheckIn;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridBilling;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage ReservationBillingForm;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -924,5 +1035,10 @@
         private SATATextBox txtBillingId;
         private FrameworkTest.SATAButton btnReservationPay;
         private FrameworkTest.SATAButton btnBillingCancel;
+        private System.Windows.Forms.DataGridView dataGridBilling;
+        private FrameworkTest.SATAButton btnBillingList;
+        private FrameworkTest.SATAButton btnBackRReservationHome;
+        private System.Windows.Forms.TabPage MainFormBilling;
+        private System.Windows.Forms.Label label9;
     }
 }
