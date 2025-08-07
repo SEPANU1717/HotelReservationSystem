@@ -156,7 +156,9 @@
     <Compile Include="Model\RoomModel.cs" />
     <Compile Include="Model\Service\Food\FoodOrderModel.cs" />
     <Compile Include="Model\Service\Food\FoodStockModel.cs" />
-    <Compile Include="Model\Service\Laundry\LaundryServiceModel.cs" />
+    <Compile Include="Model\Service\Laundry\ConfirmLaundryModel.cs" />
+    <Compile Include="Model\Service\Shared\SharedConfirmServiceModel.cs" />
+    <Compile Include="Model\Service\Shared\SharedAddServiceModel.cs" />
     <Compile Include="Presenter\BillingPresenter.cs" />
     <Compile Include="Presenter\CheckInOutPresenter.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />

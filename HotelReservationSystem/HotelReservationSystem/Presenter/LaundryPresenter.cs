@@ -14,7 +14,7 @@ namespace HotelReservationSystem.Presenter
         private ILaundryView laundryView;
         private ILaundryRepository repository;
         private BindingSource LaundryBindingSource;
-        private IEnumerable<LaundryServiceModel> laundryList;
+        private IEnumerable<SharedAddServiceModel> laundryList;
 
         public LaundryPresenter(ILaundryView laundryView, ILaundryRepository repository)
         {
@@ -81,7 +81,7 @@ namespace HotelReservationSystem.Presenter
         {
             try
             {
-                var laundry = new LaundryServiceModel
+                var laundry = new SharedAddServiceModel
                 {
                     ItemName = laundryView.LaundryName,
                     Quantity = int.Parse(laundryView.Quantity),

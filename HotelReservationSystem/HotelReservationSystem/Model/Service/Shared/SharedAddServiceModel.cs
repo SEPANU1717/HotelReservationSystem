@@ -2,9 +2,8 @@
 
 namespace HotelReservationSystem.Model.Service
 {
-    public class LaundryServiceModel
+    public class SharedAddServiceModel
     {
-        //public int LaundryId { get; set; }
 
         [Required(ErrorMessage = "Item name is required.")]
         [StringLength(100, ErrorMessage = "Item name must be less than 100 characters.")]

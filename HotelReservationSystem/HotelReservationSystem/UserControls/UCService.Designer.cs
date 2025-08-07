@@ -203,6 +203,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.sataPictureBox14 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.btnConfirmLaundry = new FrameworkTest.SATAButton();
             this.btnLAdd = new FrameworkTest.SATAButton();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -303,6 +306,9 @@
             this.OrderList = new System.Windows.Forms.TabPage();
             this.label56 = new System.Windows.Forms.Label();
             this.ConfirmLaundry = new System.Windows.Forms.TabPage();
+            this.btnLComplete = new FrameworkTest.SATAButton();
+            this.btnLClear = new FrameworkTest.SATAButton();
+            this.dataGridLaundry = new System.Windows.Forms.DataGridView();
             this.label57 = new System.Windows.Forms.Label();
             this.btnLaundry = new FrameworkTest.SATAButton();
             this.btnAddFood = new FrameworkTest.SATAButton();
@@ -310,12 +316,6 @@
             this.btnFoodSearch = new FrameworkTest.SATAButton();
             this.btnFoodStock = new FrameworkTest.SATAButton();
             this.btnOrderFood = new FrameworkTest.SATAButton();
-            this.dataGridLaundry = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.btnConfirmLaundry = new FrameworkTest.SATAButton();
-            this.btnLClear = new FrameworkTest.SATAButton();
-            this.btnLComplete = new FrameworkTest.SATAButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -700,10 +700,10 @@
             // Food
             // 
             this.Food.Controls.Add(this.splitContainer1);
-            this.Food.Location = new System.Drawing.Point(4, 25);
+            this.Food.Location = new System.Drawing.Point(4, 22);
             this.Food.Name = "Food";
             this.Food.Padding = new System.Windows.Forms.Padding(3);
-            this.Food.Size = new System.Drawing.Size(1194, 582);
+            this.Food.Size = new System.Drawing.Size(1194, 585);
             this.Food.TabIndex = 1;
             this.Food.Text = "Food";
             this.Food.UseVisualStyleBackColor = true;
@@ -734,7 +734,7 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.sataPanel14);
-            this.splitContainer1.Size = new System.Drawing.Size(1188, 576);
+            this.splitContainer1.Size = new System.Drawing.Size(1188, 579);
             this.splitContainer1.SplitterDistance = 825;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -2954,6 +2954,67 @@
             this.sataPictureBox14.TabIndex = 5;
             this.sataPictureBox14.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(202, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 25);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "<123>";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label58.Location = new System.Drawing.Point(43, 52);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(154, 25);
+            this.label58.TabIndex = 21;
+            this.label58.Text = "Laundry Number";
+            // 
+            // btnConfirmLaundry
+            // 
+            this.btnConfirmLaundry.ButtonText = "";
+            this.btnConfirmLaundry.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnConfirmLaundry.CheckedForeColor = System.Drawing.Color.White;
+            this.btnConfirmLaundry.CheckedImageTint = System.Drawing.Color.White;
+            this.btnConfirmLaundry.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnConfirmLaundry.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmLaundry.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnConfirmLaundry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmLaundry.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnConfirmLaundry.HoverForeColor = System.Drawing.Color.White;
+            this.btnConfirmLaundry.HoverImage = null;
+            this.btnConfirmLaundry.HoverImageTint = System.Drawing.Color.White;
+            this.btnConfirmLaundry.HoverOutline = System.Drawing.Color.Empty;
+            this.btnConfirmLaundry.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmLaundry.Image")));
+            this.btnConfirmLaundry.ImageAutoCenter = true;
+            this.btnConfirmLaundry.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnConfirmLaundry.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnConfirmLaundry.ImageTint = System.Drawing.Color.White;
+            this.btnConfirmLaundry.IsToggleButton = false;
+            this.btnConfirmLaundry.IsToggled = false;
+            this.btnConfirmLaundry.Location = new System.Drawing.Point(334, 42);
+            this.btnConfirmLaundry.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnConfirmLaundry.Name = "btnConfirmLaundry";
+            this.btnConfirmLaundry.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.btnConfirmLaundry.NormalForeColor = System.Drawing.Color.White;
+            this.btnConfirmLaundry.NormalOutline = System.Drawing.Color.Empty;
+            this.btnConfirmLaundry.OutlineThickness = 2F;
+            this.btnConfirmLaundry.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnConfirmLaundry.PressedForeColor = System.Drawing.Color.White;
+            this.btnConfirmLaundry.PressedImageTint = System.Drawing.Color.White;
+            this.btnConfirmLaundry.PressedOutline = System.Drawing.Color.Empty;
+            this.btnConfirmLaundry.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnConfirmLaundry.Size = new System.Drawing.Size(52, 46);
+            this.btnConfirmLaundry.TabIndex = 20;
+            this.btnConfirmLaundry.TextAutoCenter = false;
+            this.btnConfirmLaundry.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // btnLAdd
             // 
             this.btnLAdd.ButtonText = "Add";
@@ -4718,10 +4779,10 @@
             // ConfirmOrder
             // 
             this.ConfirmOrder.Controls.Add(this.label55);
-            this.ConfirmOrder.Location = new System.Drawing.Point(4, 25);
+            this.ConfirmOrder.Location = new System.Drawing.Point(4, 22);
             this.ConfirmOrder.Name = "ConfirmOrder";
             this.ConfirmOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 582);
+            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 585);
             this.ConfirmOrder.TabIndex = 4;
             this.ConfirmOrder.Text = "ConfirmOrder";
             this.ConfirmOrder.UseVisualStyleBackColor = true;
@@ -4773,6 +4834,136 @@
             this.ConfirmLaundry.TabIndex = 6;
             this.ConfirmLaundry.Text = "ConfirmLaundry";
             this.ConfirmLaundry.UseVisualStyleBackColor = true;
+            // 
+            // btnLComplete
+            // 
+            this.btnLComplete.ButtonText = "Complete";
+            this.btnLComplete.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnLComplete.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLComplete.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLComplete.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnLComplete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLComplete.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLComplete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLComplete.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLComplete.HoverForeColor = System.Drawing.Color.White;
+            this.btnLComplete.HoverImage = null;
+            this.btnLComplete.HoverImageTint = System.Drawing.Color.White;
+            this.btnLComplete.HoverOutline = System.Drawing.Color.Empty;
+            this.btnLComplete.Image = null;
+            this.btnLComplete.ImageAutoCenter = true;
+            this.btnLComplete.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnLComplete.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLComplete.ImageTint = System.Drawing.Color.White;
+            this.btnLComplete.IsToggleButton = false;
+            this.btnLComplete.IsToggled = false;
+            this.btnLComplete.Location = new System.Drawing.Point(920, 236);
+            this.btnLComplete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnLComplete.Name = "btnLComplete";
+            this.btnLComplete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLComplete.NormalForeColor = System.Drawing.Color.White;
+            this.btnLComplete.NormalOutline = System.Drawing.Color.Empty;
+            this.btnLComplete.OutlineThickness = 2F;
+            this.btnLComplete.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLComplete.PressedForeColor = System.Drawing.Color.White;
+            this.btnLComplete.PressedImageTint = System.Drawing.Color.White;
+            this.btnLComplete.PressedOutline = System.Drawing.Color.Empty;
+            this.btnLComplete.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnLComplete.Size = new System.Drawing.Size(155, 39);
+            this.btnLComplete.TabIndex = 19;
+            this.btnLComplete.TextAutoCenter = true;
+            this.btnLComplete.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // btnLClear
+            // 
+            this.btnLClear.ButtonText = "Clear All";
+            this.btnLClear.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnLClear.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLClear.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLClear.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnLClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLClear.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLClear.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLClear.HoverForeColor = System.Drawing.Color.White;
+            this.btnLClear.HoverImage = null;
+            this.btnLClear.HoverImageTint = System.Drawing.Color.White;
+            this.btnLClear.HoverOutline = System.Drawing.Color.Empty;
+            this.btnLClear.Image = null;
+            this.btnLClear.ImageAutoCenter = true;
+            this.btnLClear.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnLClear.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLClear.ImageTint = System.Drawing.Color.White;
+            this.btnLClear.IsToggleButton = false;
+            this.btnLClear.IsToggled = false;
+            this.btnLClear.Location = new System.Drawing.Point(728, 236);
+            this.btnLClear.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnLClear.Name = "btnLClear";
+            this.btnLClear.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLClear.NormalForeColor = System.Drawing.Color.White;
+            this.btnLClear.NormalOutline = System.Drawing.Color.Empty;
+            this.btnLClear.OutlineThickness = 2F;
+            this.btnLClear.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnLClear.PressedForeColor = System.Drawing.Color.White;
+            this.btnLClear.PressedImageTint = System.Drawing.Color.White;
+            this.btnLClear.PressedOutline = System.Drawing.Color.Empty;
+            this.btnLClear.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnLClear.Size = new System.Drawing.Size(155, 39);
+            this.btnLClear.TabIndex = 18;
+            this.btnLClear.TextAutoCenter = true;
+            this.btnLClear.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // dataGridLaundry
+            // 
+            this.dataGridLaundry.AllowUserToAddRows = false;
+            this.dataGridLaundry.AllowUserToDeleteRows = false;
+            this.dataGridLaundry.AllowUserToResizeColumns = false;
+            this.dataGridLaundry.AllowUserToResizeRows = false;
+            this.dataGridLaundry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridLaundry.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridLaundry.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridLaundry.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridLaundry.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridLaundry.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridLaundry.ColumnHeadersHeight = 33;
+            this.dataGridLaundry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridLaundry.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridLaundry.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridLaundry.EnableHeadersVisualStyles = false;
+            this.dataGridLaundry.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridLaundry.Location = new System.Drawing.Point(3, 3);
+            this.dataGridLaundry.MultiSelect = false;
+            this.dataGridLaundry.Name = "dataGridLaundry";
+            this.dataGridLaundry.ReadOnly = true;
+            this.dataGridLaundry.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridLaundry.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridLaundry.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridLaundry.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridLaundry.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridLaundry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridLaundry.Size = new System.Drawing.Size(1188, 174);
+            this.dataGridLaundry.TabIndex = 5;
             // 
             // label57
             // 
@@ -5018,197 +5209,6 @@
             this.btnOrderFood.TabIndex = 16;
             this.btnOrderFood.TextAutoCenter = false;
             this.btnOrderFood.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // dataGridLaundry
-            // 
-            this.dataGridLaundry.AllowUserToAddRows = false;
-            this.dataGridLaundry.AllowUserToDeleteRows = false;
-            this.dataGridLaundry.AllowUserToResizeColumns = false;
-            this.dataGridLaundry.AllowUserToResizeRows = false;
-            this.dataGridLaundry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridLaundry.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridLaundry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridLaundry.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridLaundry.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridLaundry.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridLaundry.ColumnHeadersHeight = 33;
-            this.dataGridLaundry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridLaundry.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridLaundry.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridLaundry.EnableHeadersVisualStyles = false;
-            this.dataGridLaundry.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridLaundry.Location = new System.Drawing.Point(3, 3);
-            this.dataGridLaundry.MultiSelect = false;
-            this.dataGridLaundry.Name = "dataGridLaundry";
-            this.dataGridLaundry.ReadOnly = true;
-            this.dataGridLaundry.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridLaundry.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridLaundry.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridLaundry.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridLaundry.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridLaundry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridLaundry.Size = new System.Drawing.Size(1188, 174);
-            this.dataGridLaundry.TabIndex = 5;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(202, 52);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 25);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "<123>";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.label58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label58.Location = new System.Drawing.Point(43, 52);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(154, 25);
-            this.label58.TabIndex = 21;
-            this.label58.Text = "Laundry Number";
-            // 
-            // btnConfirmLaundry
-            // 
-            this.btnConfirmLaundry.ButtonText = "";
-            this.btnConfirmLaundry.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnConfirmLaundry.CheckedForeColor = System.Drawing.Color.White;
-            this.btnConfirmLaundry.CheckedImageTint = System.Drawing.Color.White;
-            this.btnConfirmLaundry.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnConfirmLaundry.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmLaundry.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnConfirmLaundry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmLaundry.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnConfirmLaundry.HoverForeColor = System.Drawing.Color.White;
-            this.btnConfirmLaundry.HoverImage = null;
-            this.btnConfirmLaundry.HoverImageTint = System.Drawing.Color.White;
-            this.btnConfirmLaundry.HoverOutline = System.Drawing.Color.Empty;
-            this.btnConfirmLaundry.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmLaundry.Image")));
-            this.btnConfirmLaundry.ImageAutoCenter = true;
-            this.btnConfirmLaundry.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnConfirmLaundry.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnConfirmLaundry.ImageTint = System.Drawing.Color.White;
-            this.btnConfirmLaundry.IsToggleButton = false;
-            this.btnConfirmLaundry.IsToggled = false;
-            this.btnConfirmLaundry.Location = new System.Drawing.Point(334, 42);
-            this.btnConfirmLaundry.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnConfirmLaundry.Name = "btnConfirmLaundry";
-            this.btnConfirmLaundry.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.btnConfirmLaundry.NormalForeColor = System.Drawing.Color.White;
-            this.btnConfirmLaundry.NormalOutline = System.Drawing.Color.Empty;
-            this.btnConfirmLaundry.OutlineThickness = 2F;
-            this.btnConfirmLaundry.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnConfirmLaundry.PressedForeColor = System.Drawing.Color.White;
-            this.btnConfirmLaundry.PressedImageTint = System.Drawing.Color.White;
-            this.btnConfirmLaundry.PressedOutline = System.Drawing.Color.Empty;
-            this.btnConfirmLaundry.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnConfirmLaundry.Size = new System.Drawing.Size(52, 46);
-            this.btnConfirmLaundry.TabIndex = 20;
-            this.btnConfirmLaundry.TextAutoCenter = false;
-            this.btnConfirmLaundry.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // btnLClear
-            // 
-            this.btnLClear.ButtonText = "Clear All";
-            this.btnLClear.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnLClear.CheckedForeColor = System.Drawing.Color.White;
-            this.btnLClear.CheckedImageTint = System.Drawing.Color.White;
-            this.btnLClear.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnLClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLClear.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLClear.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnLClear.HoverForeColor = System.Drawing.Color.White;
-            this.btnLClear.HoverImage = null;
-            this.btnLClear.HoverImageTint = System.Drawing.Color.White;
-            this.btnLClear.HoverOutline = System.Drawing.Color.Empty;
-            this.btnLClear.Image = null;
-            this.btnLClear.ImageAutoCenter = true;
-            this.btnLClear.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnLClear.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLClear.ImageTint = System.Drawing.Color.White;
-            this.btnLClear.IsToggleButton = false;
-            this.btnLClear.IsToggled = false;
-            this.btnLClear.Location = new System.Drawing.Point(728, 236);
-            this.btnLClear.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnLClear.Name = "btnLClear";
-            this.btnLClear.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLClear.NormalForeColor = System.Drawing.Color.White;
-            this.btnLClear.NormalOutline = System.Drawing.Color.Empty;
-            this.btnLClear.OutlineThickness = 2F;
-            this.btnLClear.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLClear.PressedForeColor = System.Drawing.Color.White;
-            this.btnLClear.PressedImageTint = System.Drawing.Color.White;
-            this.btnLClear.PressedOutline = System.Drawing.Color.Empty;
-            this.btnLClear.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnLClear.Size = new System.Drawing.Size(155, 39);
-            this.btnLClear.TabIndex = 18;
-            this.btnLClear.TextAutoCenter = true;
-            this.btnLClear.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // btnLComplete
-            // 
-            this.btnLComplete.ButtonText = "Complete";
-            this.btnLComplete.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnLComplete.CheckedForeColor = System.Drawing.Color.White;
-            this.btnLComplete.CheckedImageTint = System.Drawing.Color.White;
-            this.btnLComplete.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnLComplete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLComplete.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLComplete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLComplete.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnLComplete.HoverForeColor = System.Drawing.Color.White;
-            this.btnLComplete.HoverImage = null;
-            this.btnLComplete.HoverImageTint = System.Drawing.Color.White;
-            this.btnLComplete.HoverOutline = System.Drawing.Color.Empty;
-            this.btnLComplete.Image = null;
-            this.btnLComplete.ImageAutoCenter = true;
-            this.btnLComplete.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnLComplete.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLComplete.ImageTint = System.Drawing.Color.White;
-            this.btnLComplete.IsToggleButton = false;
-            this.btnLComplete.IsToggled = false;
-            this.btnLComplete.Location = new System.Drawing.Point(920, 236);
-            this.btnLComplete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnLComplete.Name = "btnLComplete";
-            this.btnLComplete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLComplete.NormalForeColor = System.Drawing.Color.White;
-            this.btnLComplete.NormalOutline = System.Drawing.Color.Empty;
-            this.btnLComplete.OutlineThickness = 2F;
-            this.btnLComplete.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnLComplete.PressedForeColor = System.Drawing.Color.White;
-            this.btnLComplete.PressedImageTint = System.Drawing.Color.White;
-            this.btnLComplete.PressedOutline = System.Drawing.Color.Empty;
-            this.btnLComplete.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnLComplete.Size = new System.Drawing.Size(155, 39);
-            this.btnLComplete.TabIndex = 19;
-            this.btnLComplete.TextAutoCenter = true;
-            this.btnLComplete.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // UCService
             // 

@@ -9,8 +9,8 @@ namespace HotelReservationSystem.Interface.Service.Laundry
 {
     public interface ILaundryRepository
     {
-        void Add(LaundryServiceModel laundry);
+        void Add(SharedAddServiceModel laundry);
         void ClearAll();
-        IEnumerable<LaundryServiceModel> GetAll();
+        IEnumerable<SharedAddServiceModel> GetAll();
     }
 }

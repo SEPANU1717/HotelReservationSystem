@@ -10,7 +10,7 @@ namespace HotelReservationSystem.Repositories.Service.Food
     {
         public LaundryRepository(string connectionString) : base(connectionString) { }
 
-        public void Add(LaundryServiceModel laundry)
+        public void Add(SharedAddServiceModel laundry)
         {
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
@@ -28,9 +28,9 @@ namespace HotelReservationSystem.Repositories.Service.Food
             }
         }
 
-        public IEnumerable<LaundryServiceModel> GetAll()
+        public IEnumerable<SharedAddServiceModel> GetAll()
         {
-            var laundryList = new List<LaundryServiceModel>();
+            var laundryList = new List<SharedAddServiceModel>();
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
@@ -42,7 +42,7 @@ namespace HotelReservationSystem.Repositories.Service.Food
                 {
                     while (reader.Read())
                     {
-                        var laundry = new LaundryServiceModel
+                        var laundry = new SharedAddServiceModel
                         {
                             //LaundryId = (int)reader["Id"],
                             ItemName = reader["ItemName"].ToString(),
