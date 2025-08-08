@@ -119,6 +119,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataInitializer\OrderFoodInitializer.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,18 +146,19 @@
     <Compile Include="Interface\Reservation\IReservationView.cs" />
     <Compile Include="Interface\Rooms\IRoomRepository.cs" />
     <Compile Include="Interface\Rooms\IRoomView.cs" />
+    <Compile Include="Interface\Service\Food\IOrderFoodRepository.cs" />
+    <Compile Include="Interface\Service\Food\IOrderFoodView.cs" />
     <Compile Include="Interface\Service\Food\IFoodStockRepository.cs" />
     <Compile Include="Interface\Service\Food\IFoodStockVIew.cs" />
-    <Compile Include="Interface\Service\Laundry\ILaundryRepository.cs" />
+    <Compile Include="Interface\Service\Laundry\IConfirmLaundryView.cs" />
+    <Compile Include="Interface\Service\Laundry\ILaundryServiceRepository.cs" />
     <Compile Include="Interface\Service\Laundry\ILaundryView.cs" />
     <Compile Include="Model\BillingModel.cs" />
     <Compile Include="Model\CheckInOutModel.cs" />
     <Compile Include="Model\CustomerModel.cs" />
     <Compile Include="Model\ReservationModel.cs" />
     <Compile Include="Model\RoomModel.cs" />
-    <Compile Include="Model\Service\Food\FoodOrderModel.cs" />
-    <Compile Include="Model\Service\Food\FoodStockModel.cs" />
-    <Compile Include="Model\Service\Laundry\ConfirmLaundryModel.cs" />
+    <Compile Include="Model\Service\FoodStockModel.cs" />
     <Compile Include="Model\Service\Shared\SharedConfirmServiceModel.cs" />
     <Compile Include="Model\Service\Shared\SharedAddServiceModel.cs" />
     <Compile Include="Presenter\BillingPresenter.cs" />
@@ -165,6 +167,7 @@
     <Compile Include="Presenter\CustomerPresenter.cs" />
     <Compile Include="Presenter\LaundryPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="Presenter\OrderFoodPresenter.cs" />
     <Compile Include="Presenter\ReservationPresenter.cs" />
     <Compile Include="Presenter\RoomPresenter.cs" />
     <Compile Include="Presenter\ServicePresenter.cs" />
@@ -177,7 +180,8 @@
     <Compile Include="Repositories\DasboardRepository.cs" />
     <Compile Include="Repositories\ReservationRepository.cs" />
     <Compile Include="Repositories\RoomRepository.cs" />
-    <Compile Include="Repositories\Service\FoodRepository.cs" />
+    <Compile Include="Repositories\Service\FoodOrderRepository.cs" />
+    <Compile Include="Repositories\Service\FoodStockRepository.cs" />
     <Compile Include="Repositories\Service\LaundryRepository.cs" />
     <Compile Include="UserControls\UCBilling.cs">
       <SubType>UserControl</SubType>

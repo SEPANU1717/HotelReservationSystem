@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using HotelReservationSystem.Interface.Service.Laundry;
 using HotelReservationSystem.Model.Service;
 
 namespace HotelReservationSystem.Repositories.Service.Food
 {
-    public class LaundryRepository : BaseRepository, ILaundryRepository
+    public class LaundryRepository : BaseRepository, ILaundryServiceRepository
     {
         public LaundryRepository(string connectionString) : base(connectionString) { }
 
@@ -20,9 +21,9 @@ namespace HotelReservationSystem.Repositories.Service.Food
                 command.CommandText = @"INSERT INTO LaundryItems (ItemName, Quantity, Price) 
                                       VALUES (@ItemName, @Quantity, @Price)";
 
-                command.Parameters.AddWithValue("@ItemName", laundry.ItemName);
-                command.Parameters.AddWithValue("@Quantity", laundry.Quantity);
-                command.Parameters.AddWithValue("@Price", laundry.Price);
+                command.Parameters.Add("@ItemName", SqlDbType.NVarChar, 100).Value = laundry.ItemName;
+                command.Parameters.Add("@Quantity", SqlDbType.Int).Value = laundry.Quantity;
+                command.Parameters.Add("@Price", SqlDbType.Decimal).Value = laundry.Price;
 
                 command.ExecuteNonQuery();
             }

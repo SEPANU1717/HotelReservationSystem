@@ -7,9 +7,9 @@ using HotelReservationSystem.Model.Service.Food;
 
 namespace HotelReservationSystem.Repositories.Service.Food
 {
-    internal class FoodRepository : BaseRepository, IFoodStockRepository
+    internal class FoodStockRepository : BaseRepository, IFoodStockRepository
     {
-        public FoodRepository(string connectionString) : base(connectionString)
+        public FoodStockRepository(string connectionString) : base(connectionString)
         {
         }
 

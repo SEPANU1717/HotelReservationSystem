@@ -12,11 +12,11 @@ namespace HotelReservationSystem.Presenter
     public class LaundryPresenter
     {
         private ILaundryView laundryView;
-        private ILaundryRepository repository;
+        private ILaundryServiceRepository repository;
         private BindingSource LaundryBindingSource;
         private IEnumerable<SharedAddServiceModel> laundryList;
 
-        public LaundryPresenter(ILaundryView laundryView, ILaundryRepository repository)
+        public LaundryPresenter(ILaundryView laundryView, ILaundryServiceRepository repository)
         {
             LaundryBindingSource = new BindingSource();
             this.laundryView = laundryView;

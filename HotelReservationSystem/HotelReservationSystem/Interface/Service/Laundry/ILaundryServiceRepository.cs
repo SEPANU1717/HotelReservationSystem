@@ -7,7 +7,7 @@ using HotelReservationSystem.Model.Service;
 
 namespace HotelReservationSystem.Interface.Service.Laundry
 {
-    public interface ILaundryRepository
+    public interface ILaundryServiceRepository
     {
         void Add(SharedAddServiceModel laundry);
         void ClearAll();

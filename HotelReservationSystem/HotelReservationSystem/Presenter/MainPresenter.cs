@@ -41,12 +41,14 @@ namespace HotelReservationSystem.Presenter
             {
                 var serviceControl = UCService.GetInstance((Form)mainView);
 
-                var foodRepo = new FoodRepository(sqlConnectionString);
+                var foodRepo = new FoodStockRepository(sqlConnectionString);
                 var foodPresenter = new ServicePresenter(serviceControl, foodRepo);
 
                 var laundryRepo = new LaundryRepository(sqlConnectionString);
                 var laundryPresenter = new LaundryPresenter(serviceControl, laundryRepo);
 
+                var orderRepo = new FoodOrderRepository(sqlConnectionString);
+                var foodOrderPresenter = new OrderFoodPresenter(serviceControl, orderRepo);
                 mainView.LoadUserControl(serviceControl);
             }
             catch (Exception ex)

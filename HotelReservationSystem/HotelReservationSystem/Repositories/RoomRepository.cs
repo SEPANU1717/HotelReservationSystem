@@ -132,9 +132,10 @@ namespace HotelReservationSystem.Repositories.Rooms
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT * FROM Rooms WHERE RoomId = @id OR RoomStatus LIKE @status
+                command.CommandText = @"SELECT * FROM Rooms WHERE RoomId = @id OR RoomStatus LIKE @status OR RoomNumber LIKE @rnumber
                                           ORDER BY RoomId DESC";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = roomId;
+                command.Parameters.Add("@rnumber", SqlDbType.NVarChar).Value = $"%{value}%";
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = $"%{value}%";
                 using (var reader = command.ExecuteReader())
                 {

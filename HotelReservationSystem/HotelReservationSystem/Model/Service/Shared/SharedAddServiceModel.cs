@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotelReservationSystem.Model.Service
 {
     public class SharedAddServiceModel
     {
+        //[Display(Name = "#")]
+        //public int Id { get; set; }
 
         [Required(ErrorMessage = "Item name is required.")]
         [StringLength(100, ErrorMessage = "Item name must be less than 100 characters.")]

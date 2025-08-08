@@ -5,12 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelReservationSystem.Model.Service.Shared
-{
-    public class SharedConfirmServiceModel
-    {
-    using System.ComponentModel.DataAnnotations;
-
     namespace HotelReservationSystem.Model.Service.Shared
     {
         public class SharedConfirmServiceModel
@@ -55,5 +49,3 @@ namespace HotelReservationSystem.Model.Service.Shared
             public decimal GrandTotal => ServiceFee + TotalAmount;
         }
     }
-}
-}

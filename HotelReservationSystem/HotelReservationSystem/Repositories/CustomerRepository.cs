@@ -54,7 +54,7 @@ namespace HotelReservationSystem.Repositories
             }
         }
 
-        //<-----------------------Delete Curstomer--------------------------/>
+        //<-----------------------Delete Curtomer--------------------------/>
         public void Delete(int id)
         {
             using (var connection = new SqlConnection(connectionString))

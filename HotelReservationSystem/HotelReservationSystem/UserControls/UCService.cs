@@ -19,10 +19,11 @@ using HotelReservationSystem.Repositories.Service.Food;
 
 namespace HotelReservationSystem.UserControls
 {
-    public partial class UCService : UserControl, IFoodStockVIew, ILaundryView
+    public partial class UCService : UserControl, IFoodStockVIew, ILaundryView, IOrderFoodView
     {
-        private FoodRepository foodRepo;
+        private FoodStockRepository foodRepo;
         private LaundryRepository laundryRepo;
+        private FoodOrderRepository foodOrder;
 
         public UCService()
         {
@@ -34,8 +35,9 @@ namespace HotelReservationSystem.UserControls
             materialTabControl1.TabPages.Remove(tabPage1);
             materialTabControl1.TabPages.Remove(ConfirmOrder);
             materialTabControl1.TabPages.Remove(ConfirmLaundry);
-            foodRepo = new FoodRepository(DbConfig.GetConnectionString());
+            foodRepo = new FoodStockRepository(DbConfig.GetConnectionString());
             laundryRepo = new  LaundryRepository(DbConfig.GetConnectionString());
+            foodOrder = new FoodOrderRepository(DbConfig.GetConnectionString());
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -240,6 +242,13 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Add(ConfirmLaundry);
             };
+
+            btnOrderFood.Click += delegate
+            {
+                OrderAddEvent?.Invoke(this, EventArgs.Empty);
+            };
+
+
         }
 
         public string FoodId
@@ -298,6 +307,10 @@ namespace HotelReservationSystem.UserControls
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
+        public string ItemName { get => txtAddOrderItemName.Texts; set => txtAddOrderItemName.Texts = value; }
+        public string FoodQuantity { get => txtAddOrderQuantity.Texts; set => txtAddOrderQuantity.Texts = value;
+        }
+        public string FoodPrice { get => txtAddOrderPrice.Texts; set => txtAddOrderPrice.Texts = value; }
 
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
@@ -305,6 +318,11 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler OrderAddEvent;
+        public event EventHandler OrderClearEvent;
+        public event EventHandler OrderCompleteEvent;
+        public event EventHandler OrderCancelEvent;
+
         public void SetLaundryListBindingSource(BindingSource laundryList)
         {
             dataGridLaundry.DataSource = laundryList;
@@ -375,6 +393,88 @@ namespace HotelReservationSystem.UserControls
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void SetOrderListBindingSource(BindingSource orderList)
+        {
+            dataGridFood.DataSource = orderList;
+        }
+
+        public void GetStock()
+        {
+            int stock = foodOrder.GetStock(ItemName);
+            txtAddOrderStock.Texts = stock.ToString();
+        }
+        private void order1_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderSaltedPasta(this);
+            GetStock();
+        }
+
+        private void order2_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderSpicySeafoodNoodles(this);
+            GetStock();
+        }
+
+        private void order3_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderBeefDumpling(this);
+            GetStock();
+        }
+
+        private void order4_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderHealthyNoodles(this);
+            GetStock();
+        }
+
+        private void order5_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderHotFriedRiceWithOmelet(this);
+            GetStock();
+        }
+
+        private void order6_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderSpicyNoodleWithOmelet(this);
+            GetStock();
+        }
+
+        private void order7_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderTropicalBliss(this);
+            GetStock();
+        }
+
+        private void order8_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderSunsetSparkler(this);
+            GetStock();
+        }
+
+        private void order9_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderBerryFizzDelight(this);
+            GetStock();
+        }
+
+        private void order10_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderCherrySplash(this);
+            GetStock();
+        }
+
+        private void order11_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderCitrusCooler(this);
+            GetStock();
+        }
+
+        private void order12_Click(object sender, EventArgs e)
+        {
+            OrderFoodInitializer.OrderMelonMedley(this);
+            GetStock();
         }
     }
 }
