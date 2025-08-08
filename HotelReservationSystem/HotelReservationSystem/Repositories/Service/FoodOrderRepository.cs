@@ -36,7 +36,7 @@ namespace HotelReservationSystem.Repositories.Service.Food
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM OrderFood ORDER BY Id DESC";
+                command.CommandText = "SELECT * FROM OrderFood ORDER BY FoodId DESC";
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -69,8 +69,20 @@ namespace HotelReservationSystem.Repositories.Service.Food
                 return result != null ? Convert.ToInt32(result) : 0;
             }
         }
+        public void DeductStock(string itemName, int quantity)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = @"UPDATE FoodStock SET Stock = Stock - @Quantity WHERE FoodName = @ItemName";
+                command.Parameters.AddWithValue("@Quantity", quantity);
+                command.Parameters.AddWithValue("@ItemName", itemName);
+                command.ExecuteNonQuery();
+            }
+        }
 
-        // Clear only a specific food item
         public void ClearItem(string itemName)
         {
             using (var connection = new SqlConnection(connectionString))

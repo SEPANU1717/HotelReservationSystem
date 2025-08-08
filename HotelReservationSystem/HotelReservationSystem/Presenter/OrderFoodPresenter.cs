@@ -100,7 +100,8 @@ namespace HotelReservationSystem.Presenter
                 };
 
                 repository.Add(foodOrder);
-                LoadAllOrderFoodList(); // Refresh the list
+                repository.DeductStock(itemName, quantity);
+                LoadAllOrderFoodList();
                 CleanViewFields();
                 MessageBox.Show("Food order added successfully!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -118,7 +119,7 @@ namespace HotelReservationSystem.Presenter
         }
 
         private void CleanViewFields()
-        {
+        {   
             orderView.ItemName = "";
             orderView.FoodPrice = "";
             orderView.FoodQuantity = "";

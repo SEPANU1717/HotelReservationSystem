@@ -52,7 +52,7 @@ namespace HotelReservationSystem.Presenter
             {
                 
                     repository.ClearAll();
-                    LoadAllLaundryList(); // Refresh the list
+                    LoadAllLaundryList(); 
                     MessageBox.Show("All laundry items have been deleted successfully.",
                         "Delete Successful",
                         MessageBoxButtons.OK,
@@ -60,16 +60,16 @@ namespace HotelReservationSystem.Presenter
                 
             }
         
-        catch (Exception ex)
-        {
-            MessageBox.Show($"Error deleting laundry items: {ex.Message}",
-                "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting laundry items: {ex.Message}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
-    }
 
-    private void CancelLaundry(object sender, EventArgs e) => CleanViewFields();
+        private void CancelLaundry(object sender, EventArgs e) => CleanViewFields();
 
         private void CompleteLaundry(object sender, EventArgs e)
         {

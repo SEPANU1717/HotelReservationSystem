@@ -304,7 +304,7 @@
             this.txtAddOrderQuantity = new SATATextBox();
             this.txtAddOrderStock = new SATATextBox();
             this.txtAddOrderItemName = new SATATextBox();
-            this.btnConfirmOrder = new FrameworkTest.SATAButton();
+            this.btnBasketOrder = new FrameworkTest.SATAButton();
             this.ConfirmOrder = new System.Windows.Forms.TabPage();
             this.CompleteFood = new FrameworkTest.SATAButton();
             this.clearAllFood = new FrameworkTest.SATAButton();
@@ -708,10 +708,10 @@
             // Food
             // 
             this.Food.Controls.Add(this.splitContainer1);
-            this.Food.Location = new System.Drawing.Point(4, 22);
+            this.Food.Location = new System.Drawing.Point(4, 25);
             this.Food.Name = "Food";
             this.Food.Padding = new System.Windows.Forms.Padding(3);
-            this.Food.Size = new System.Drawing.Size(1194, 585);
+            this.Food.Size = new System.Drawing.Size(1194, 582);
             this.Food.TabIndex = 1;
             this.Food.Text = "Food";
             this.Food.UseVisualStyleBackColor = true;
@@ -742,7 +742,7 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.sataPanel14);
-            this.splitContainer1.Size = new System.Drawing.Size(1188, 579);
+            this.splitContainer1.Size = new System.Drawing.Size(1188, 576);
             this.splitContainer1.SplitterDistance = 825;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -2335,10 +2335,10 @@
             // Laundry
             // 
             this.Laundry.Controls.Add(this.splitContainer2);
-            this.Laundry.Location = new System.Drawing.Point(4, 22);
+            this.Laundry.Location = new System.Drawing.Point(4, 25);
             this.Laundry.Name = "Laundry";
             this.Laundry.Padding = new System.Windows.Forms.Padding(3);
-            this.Laundry.Size = new System.Drawing.Size(1194, 585);
+            this.Laundry.Size = new System.Drawing.Size(1194, 582);
             this.Laundry.TabIndex = 2;
             this.Laundry.Text = "Laundry";
             this.Laundry.UseVisualStyleBackColor = true;
@@ -2373,7 +2373,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.txtLPrice);
             this.splitContainer2.Panel2.Controls.Add(this.txtLQuantity);
             this.splitContainer2.Panel2.Controls.Add(this.txtLName);
-            this.splitContainer2.Size = new System.Drawing.Size(1188, 579);
+            this.splitContainer2.Size = new System.Drawing.Size(1188, 576);
             this.splitContainer2.SplitterDistance = 751;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -3224,7 +3224,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.txtAddOrderQuantity);
             this.splitContainer3.Panel2.Controls.Add(this.txtAddOrderStock);
             this.splitContainer3.Panel2.Controls.Add(this.txtAddOrderItemName);
-            this.splitContainer3.Panel2.Controls.Add(this.btnConfirmOrder);
+            this.splitContainer3.Panel2.Controls.Add(this.btnBasketOrder);
             this.splitContainer3.Size = new System.Drawing.Size(1188, 576);
             this.splitContainer3.SplitterDistance = 797;
             this.splitContainer3.TabIndex = 0;
@@ -4754,44 +4754,44 @@
             this.txtAddOrderItemName.Texts = "";
             this.txtAddOrderItemName.UnderlinedStyle = false;
             // 
-            // btnConfirmOrder
+            // btnBasketOrder
             // 
-            this.btnConfirmOrder.ButtonText = "";
-            this.btnConfirmOrder.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnConfirmOrder.CheckedForeColor = System.Drawing.Color.White;
-            this.btnConfirmOrder.CheckedImageTint = System.Drawing.Color.White;
-            this.btnConfirmOrder.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnConfirmOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmOrder.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnConfirmOrder.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmOrder.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnConfirmOrder.HoverForeColor = System.Drawing.Color.White;
-            this.btnConfirmOrder.HoverImage = null;
-            this.btnConfirmOrder.HoverImageTint = System.Drawing.Color.White;
-            this.btnConfirmOrder.HoverOutline = System.Drawing.Color.Empty;
-            this.btnConfirmOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmOrder.Image")));
-            this.btnConfirmOrder.ImageAutoCenter = true;
-            this.btnConfirmOrder.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnConfirmOrder.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnConfirmOrder.ImageTint = System.Drawing.Color.White;
-            this.btnConfirmOrder.IsToggleButton = false;
-            this.btnConfirmOrder.IsToggled = false;
-            this.btnConfirmOrder.Location = new System.Drawing.Point(314, 17);
-            this.btnConfirmOrder.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnConfirmOrder.Name = "btnConfirmOrder";
-            this.btnConfirmOrder.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.btnConfirmOrder.NormalForeColor = System.Drawing.Color.White;
-            this.btnConfirmOrder.NormalOutline = System.Drawing.Color.Empty;
-            this.btnConfirmOrder.OutlineThickness = 2F;
-            this.btnConfirmOrder.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnConfirmOrder.PressedForeColor = System.Drawing.Color.White;
-            this.btnConfirmOrder.PressedImageTint = System.Drawing.Color.White;
-            this.btnConfirmOrder.PressedOutline = System.Drawing.Color.Empty;
-            this.btnConfirmOrder.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnConfirmOrder.Size = new System.Drawing.Size(52, 46);
-            this.btnConfirmOrder.TabIndex = 18;
-            this.btnConfirmOrder.TextAutoCenter = false;
-            this.btnConfirmOrder.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnBasketOrder.ButtonText = "";
+            this.btnBasketOrder.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnBasketOrder.CheckedForeColor = System.Drawing.Color.White;
+            this.btnBasketOrder.CheckedImageTint = System.Drawing.Color.White;
+            this.btnBasketOrder.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnBasketOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBasketOrder.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBasketOrder.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBasketOrder.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnBasketOrder.HoverForeColor = System.Drawing.Color.White;
+            this.btnBasketOrder.HoverImage = null;
+            this.btnBasketOrder.HoverImageTint = System.Drawing.Color.White;
+            this.btnBasketOrder.HoverOutline = System.Drawing.Color.Empty;
+            this.btnBasketOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnBasketOrder.Image")));
+            this.btnBasketOrder.ImageAutoCenter = true;
+            this.btnBasketOrder.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnBasketOrder.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnBasketOrder.ImageTint = System.Drawing.Color.White;
+            this.btnBasketOrder.IsToggleButton = false;
+            this.btnBasketOrder.IsToggled = false;
+            this.btnBasketOrder.Location = new System.Drawing.Point(314, 17);
+            this.btnBasketOrder.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnBasketOrder.Name = "btnBasketOrder";
+            this.btnBasketOrder.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.btnBasketOrder.NormalForeColor = System.Drawing.Color.White;
+            this.btnBasketOrder.NormalOutline = System.Drawing.Color.Empty;
+            this.btnBasketOrder.OutlineThickness = 2F;
+            this.btnBasketOrder.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBasketOrder.PressedForeColor = System.Drawing.Color.White;
+            this.btnBasketOrder.PressedImageTint = System.Drawing.Color.White;
+            this.btnBasketOrder.PressedOutline = System.Drawing.Color.Empty;
+            this.btnBasketOrder.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnBasketOrder.Size = new System.Drawing.Size(52, 46);
+            this.btnBasketOrder.TabIndex = 18;
+            this.btnBasketOrder.TextAutoCenter = false;
+            this.btnBasketOrder.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // ConfirmOrder
             // 
@@ -4799,10 +4799,10 @@
             this.ConfirmOrder.Controls.Add(this.clearAllFood);
             this.ConfirmOrder.Controls.Add(this.dataGridFood);
             this.ConfirmOrder.Controls.Add(this.label55);
-            this.ConfirmOrder.Location = new System.Drawing.Point(4, 22);
+            this.ConfirmOrder.Location = new System.Drawing.Point(4, 25);
             this.ConfirmOrder.Name = "ConfirmOrder";
             this.ConfirmOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 585);
+            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 582);
             this.ConfirmOrder.TabIndex = 4;
             this.ConfirmOrder.Text = "ConfirmOrder";
             this.ConfirmOrder.UseVisualStyleBackColor = true;
@@ -5763,7 +5763,7 @@
         private FrameworkTest.SATAButton btnFoodStock;
         private FrameworkTest.SATAButton btnOrderFood;
         private System.Windows.Forms.TabPage ConfirmOrder;
-        private FrameworkTest.SATAButton btnConfirmOrder;
+        private FrameworkTest.SATAButton btnBasketOrder;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TabPage OrderList;

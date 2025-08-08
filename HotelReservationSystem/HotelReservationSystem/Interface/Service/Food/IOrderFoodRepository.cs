@@ -13,5 +13,6 @@ namespace HotelReservationSystem.Interface.Service.Food
         void ClearAll();
         IEnumerable<SharedAddServiceModel> GetAll();
         int GetStock(string itemName);
+        void DeductStock(string itemName, int quantity);
     }
 }
