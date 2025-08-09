@@ -17,14 +17,32 @@ namespace HotelReservationSystem.Repositories.Service.Food
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"INSERT INTO OrderFood (ItemName, Quantity, Price) 
-                                        VALUES (@ItemName, @Quantity, @Price)";
 
+                command.CommandText = "SELECT COUNT(*) FROM OrderFood WHERE ItemName = @ItemName";
                 command.Parameters.AddWithValue("@ItemName", food.ItemName);
-                command.Parameters.AddWithValue("@Quantity", food.Quantity);
-                command.Parameters.AddWithValue("@Price", food.Price);
+                int count = (int)command.ExecuteScalar();
 
-                command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    // Update quantity
+                    command.CommandText = "UPDATE OrderFood SET Quantity = Quantity + @Quantity, Price = @Price WHERE ItemName = @ItemName";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@Quantity", food.Quantity);
+                    command.Parameters.AddWithValue("@Price", food.Price);
+                    command.Parameters.AddWithValue("@ItemName", food.ItemName);
+                    command.ExecuteNonQuery();
+                }
+                else
+                {
+                    // Insert new row
+                    command.CommandText = @"INSERT INTO OrderFood (ItemName, Quantity, Price) 
+                                    VALUES (@ItemName, @Quantity, @Price)";
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("@ItemName", food.ItemName);
+                    command.Parameters.AddWithValue("@Quantity", food.Quantity);
+                    command.Parameters.AddWithValue("@Price", food.Price);
+                    command.ExecuteNonQuery();
+                }
             }
         }
 
@@ -96,7 +114,25 @@ namespace HotelReservationSystem.Repositories.Service.Food
             }
         }
 
-        
+        public void RestoreStockForAllOrders()
+        {
+            var orders = GetAll();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                foreach (var order in orders)
+                {
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = @"UPDATE FoodStock SET Stock = Stock + @Quantity WHERE FoodName = @ItemName";
+                        command.Parameters.AddWithValue("@Quantity", order.Quantity);
+                        command.Parameters.AddWithValue("@ItemName", order.ItemName);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
         public void ClearAll()
         {
             using (var connection = new SqlConnection(connectionString))

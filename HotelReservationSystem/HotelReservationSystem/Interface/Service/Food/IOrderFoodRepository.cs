@@ -14,5 +14,6 @@ namespace HotelReservationSystem.Interface.Service.Food
         IEnumerable<SharedAddServiceModel> GetAll();
         int GetStock(string itemName);
         void DeductStock(string itemName, int quantity);
+        void RestoreStockForAllOrders();
     }
 }

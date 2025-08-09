@@ -8,6 +8,7 @@ namespace HotelReservationSystem.Model.Service
         //[Display(Name = "#")]
         //public int Id { get; set; }
 
+        [Display(Name = "Item Name")]
         [Required(ErrorMessage = "Item name is required.")]
         [StringLength(100, ErrorMessage = "Item name must be less than 100 characters.")]
         public string ItemName { get; set; }
@@ -19,7 +20,7 @@ namespace HotelReservationSystem.Model.Service
         [Required(ErrorMessage = "Price is required.")]
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than 0.")]
         public decimal Price { get; set; }
-
+        [Display(Name = "Total Price")]
         public decimal TotalPrice => Quantity * Price;
     }
 }

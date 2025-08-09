@@ -50,6 +50,7 @@ namespace HotelReservationSystem.Presenter
         {
             try
             {
+                repository.RestoreStockForAllOrders();
                 repository.ClearAll();
                 LoadAllOrderFoodList(); 
                 MessageBox.Show("All food orders have been deleted successfully.",
@@ -73,7 +74,23 @@ namespace HotelReservationSystem.Presenter
 
         private void CompleteOrderFood(object sender, EventArgs e)
         {
-            MessageBox.Show("Complete functionality not implemented yet.");
+            try
+            {
+                var orders = repository.GetAll();
+                foreach (var order in orders)
+                {
+                    repository.DeductStock(order.ItemName, order.Quantity);
+                }
+                repository.ClearAll();
+                LoadAllOrderFoodList();
+                MessageBox.Show("Order completed and stock deducted.", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error completing order: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void AddOrderFood(object sender, EventArgs e)
@@ -102,9 +119,8 @@ namespace HotelReservationSystem.Presenter
                 repository.Add(foodOrder);
                 repository.DeductStock(itemName, quantity);
                 LoadAllOrderFoodList();
-                CleanViewFields();
-                MessageBox.Show("Food order added successfully!", "Success",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CleanViewFields(); 
+
             }
             catch (FormatException)
             {

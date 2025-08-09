@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,9 +39,14 @@ namespace HotelReservationSystem.UserControls
             materialTabControl1.TabPages.Remove(tabPage1);
             materialTabControl1.TabPages.Remove(ConfirmOrder);
             materialTabControl1.TabPages.Remove(ConfirmLaundry);
+            materialTabControl1.TabPages.Remove(tabPage2);
             foodRepo = new FoodStockRepository(DbConfig.GetConnectionString());
             laundryRepo = new LaundryRepository(DbConfig.GetConnectionString());
             foodOrder = new FoodOrderRepository(DbConfig.GetConnectionString());
+            UpdateTotalOrderPriceLabel();
+
+            //temporary
+            foodOrder.ClearAll();
 
         }
         #endregion
@@ -249,7 +255,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Add(ConfirmLaundry);
             };
 
-            btnAddItem.Click += delegate
+            btnBasketOrder.Click += delegate
             {
                 OrderAddEvent?.Invoke(this, EventArgs.Empty);
                 txtAddOrderStock.Texts = "";
@@ -257,6 +263,7 @@ namespace HotelReservationSystem.UserControls
             clearAllFood.Click += delegate
             {
                 OrderClearEvent?.Invoke(this, EventArgs.Empty);
+                UpdateTotalOrderPriceLabel();
             };
 
 
@@ -368,18 +375,38 @@ namespace HotelReservationSystem.UserControls
         private void sataButton4_Click(object sender, EventArgs e) => ServiceInitializer.Socks(this);
         private void sataButton3_Click_1(object sender, EventArgs e) => ServiceInitializer.PantsTrouser(this);
         private void sataButton5_Click_1(object sender, EventArgs e) => ServiceInitializer.Sensitive(this);
-        private void order1_Click(object sender, EventArgs e) {OrderFoodInitializer.OrderSaltedPasta(this); GetStock();}
-        private void order2_Click(object sender, EventArgs e){OrderFoodInitializer.OrderSpicySeafoodNoodles(this);GetStock();}
-        private void order3_Click(object sender, EventArgs e){OrderFoodInitializer.OrderBeefDumpling(this);GetStock();}
-        private void order4_Click(object sender, EventArgs e){OrderFoodInitializer.OrderHealthyNoodles(this);GetStock(); }
-        private void order5_Click(object sender, EventArgs e){OrderFoodInitializer.OrderHotFriedRiceWithOmelet(this);GetStock();}
-        private void order6_Click(object sender, EventArgs e){OrderFoodInitializer.OrderSpicyNoodleWithOmelet(this);GetStock();}
-        private void order7_Click(object sender, EventArgs e){OrderFoodInitializer.OrderTropicalBliss(this);GetStock();}
-        private void order8_Click(object sender, EventArgs e){OrderFoodInitializer.OrderSunsetSparkler(this); GetStock();}
-        private void order9_Click(object sender, EventArgs e){OrderFoodInitializer.OrderBerryFizzDelight(this);GetStock(); }
-        private void order10_Click(object sender, EventArgs e){OrderFoodInitializer.OrderCherrySplash(this);GetStock();}
-        private void order11_Click(object sender, EventArgs e){OrderFoodInitializer.OrderCitrusCooler(this);GetStock(); }
-        private void order12_Click(object sender, EventArgs e){OrderFoodInitializer.OrderMelonMedley(this);GetStock(); }
+        private void order1_Click(object sender, EventArgs e) {OrderFoodInitializer.OrderSaltedPasta(this); GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order2_Click(object sender, EventArgs e){OrderFoodInitializer.OrderSpicySeafoodNoodles(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order3_Click(object sender, EventArgs e){OrderFoodInitializer.OrderBeefDumpling(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order4_Click(object sender, EventArgs e){OrderFoodInitializer.OrderHealthyNoodles(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order5_Click(object sender, EventArgs e){OrderFoodInitializer.OrderHotFriedRiceWithOmelet(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order6_Click(object sender, EventArgs e){OrderFoodInitializer.OrderSpicyNoodleWithOmelet(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order7_Click(object sender, EventArgs e){OrderFoodInitializer.OrderTropicalBliss(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order8_Click(object sender, EventArgs e){OrderFoodInitializer.OrderSunsetSparkler(this); GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order9_Click(object sender, EventArgs e){OrderFoodInitializer.OrderBerryFizzDelight(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order10_Click(object sender, EventArgs e){OrderFoodInitializer.OrderCherrySplash(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order11_Click(object sender, EventArgs e){OrderFoodInitializer.OrderCitrusCooler(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order12_Click(object sender, EventArgs e){OrderFoodInitializer.OrderMelonMedley(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
         #endregion
+
+        #region TotalPriceOrder
+        private decimal GetTotalOrderPriceFromDatabase()
+        {
+            var allOrders = foodOrder.GetAll();
+            decimal total = 0;
+            foreach (var order in allOrders)
+            {
+                total += order.Price * order.Quantity;
+            }
+            return total;
+        }
+
+        private void UpdateTotalOrderPriceLabel()
+        {
+            decimal total = GetTotalOrderPriceFromDatabase();
+            var culture = new CultureInfo("en-PH");
+            lblTotalPriceOrder.Text = total.ToString("C", culture);
+        }
+        #endregion TotalPriceOrder
     }
 }
