@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HotelReservationSystem.Model;
+﻿using System.Collections.Generic;
 using HotelReservationSystem.Model;
 
-namespace HotelReservationSystem.Interface
+namespace HotelReservationSystem.Interface.Customer
 {
     public interface ICustomerRepository
     {

@@ -8,10 +8,7 @@ using HotelReservationSystem.Interface.Service.Food;
 using HotelReservationSystem.Interface.Service.Laundry;
 using HotelReservationSystem.Presenter.Billing;
 using HotelReservationSystem.Presenter.Reservation;
-using HotelReservationSystem.Presenter.Rooms;
 using HotelReservationSystem.Repositories;
-using HotelReservationSystem.Repositories.Billing;
-using HotelReservationSystem.Repositories.Rooms;
 using HotelReservationSystem.Repositories.Service.Food;
 using HotelReservationSystem.UserControls;
 

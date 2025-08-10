@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelReservationSystem.Forms;
 using HotelReservationSystem.Interface;
 using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Model;
@@ -23,11 +24,10 @@ namespace HotelReservationSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
 
-
-            ReservationSystem mainForm = new ReservationSystem();
-            new MainPresenter(mainForm, sqlConnectionString);
+            //string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
+            //ReservationSystem mainForm = new ReservationSystem();
+            //new MainPresenter(mainForm, sqlConnectionString);
 
             Application.Run(new Login());
         }

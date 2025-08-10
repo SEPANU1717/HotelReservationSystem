@@ -9,8 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Helper;
+using HotelReservationSystem.Repositories;
 using HotelReservationSystem.Repositories.Dashboard;
-using HotelReservationSystem.Repositories.Rooms;
 
 
 namespace HotelReservationSystem.UserControls

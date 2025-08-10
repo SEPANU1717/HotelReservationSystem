@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HotelReservationSystem.Interface;
-using HotelReservationSystem.Model;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Model;
 using HotelReservationSystem.Presenter.Common;
 
-namespace HotelReservationSystem.Presenter.Rooms
+namespace HotelReservationSystem.Presenter
 {
     public class RoomPresenter
     {
@@ -110,13 +105,13 @@ namespace HotelReservationSystem.Presenter.Rooms
                 var room = (RoomModel)RoomBindingSource.Current;
                 repository.Delete(room.RoomId);
                 roomView.isSuccessful = true;
-                roomView.Message = "Room deleted succesfully";
+                roomView.Message = "Room deleted successfully";
                 LoadAllRoomList();
             }
             catch
             {
                 roomView.isSuccessful = false;
-                roomView.Message = "An error ocurred, could not delete room";
+                roomView.Message = "An error occurred, could not delete room";
             }
         }
 

@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HotelReservationSystem.Interface.Billing;
 using HotelReservationSystem.Model;
-using HotelReservationSystem.Model;
 
-namespace HotelReservationSystem.Repositories.Billing
+namespace HotelReservationSystem.Repositories
 {
     public class BillingRepository : BaseRepository, IBillingRepository
     {

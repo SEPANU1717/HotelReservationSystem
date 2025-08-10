@@ -8,6 +8,7 @@ using HotelReservationSystem.Interface.Reservation;
 using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Model;
 using HotelReservationSystem.Presenter.Common;
+using HotelReservationSystem.Repositories;
 
 namespace HotelReservationSystem.Presenter.Reservation
 {
@@ -118,7 +119,7 @@ namespace HotelReservationSystem.Presenter.Reservation
             reservationView.RoomNumber = reserve.RoomNumber;
 
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
-            var roomRepo = new HotelReservationSystem.Repositories.Rooms.RoomRepository(connectionString);
+            var roomRepo = new RoomRepository(connectionString);
             var room = roomRepo.GetByNumber(reserve.RoomNumber);
             reservationView.Guests = room != null ? room.RoomGuests : "";
 

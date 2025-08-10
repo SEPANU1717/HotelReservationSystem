@@ -12,8 +12,6 @@ using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Billing;
 using HotelReservationSystem.Model;
 using HotelReservationSystem.Repositories;
-using HotelReservationSystem.Repositories.Billing;
-using HotelReservationSystem.Repositories.Rooms;
 
 namespace HotelReservationSystem.UserControls
 {

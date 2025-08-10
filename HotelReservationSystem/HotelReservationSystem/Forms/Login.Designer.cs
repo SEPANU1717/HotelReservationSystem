@@ -1,4 +1,4 @@
-﻿namespace HotelReservationSystem
+﻿namespace HotelReservationSystem.Forms
 {
     partial class Login
     {

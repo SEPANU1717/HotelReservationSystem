@@ -12,7 +12,6 @@ using HotelReservationSystem.DataInitializer;
 using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Repositories;
-using HotelReservationSystem.Repositories.Rooms;
 
 namespace HotelReservationSystem.UserControls
 {

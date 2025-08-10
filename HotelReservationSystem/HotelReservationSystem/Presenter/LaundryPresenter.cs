@@ -73,7 +73,6 @@ namespace HotelReservationSystem.Presenter
 
         private void CompleteLaundry(object sender, EventArgs e)
         {
-            // Implementation needed based on business logic
             MessageBox.Show("Complete functionality not implemented yet.");
         }
 

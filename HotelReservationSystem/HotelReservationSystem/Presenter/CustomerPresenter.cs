@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Interface;
+using HotelReservationSystem.Interface.Customer;
 using HotelReservationSystem.Model;
 using HotelReservationSystem.Presenter.Common;
 
@@ -73,13 +74,13 @@ namespace HotelReservationSystem.Presenter
                 var pet = (CustomerModel)CustomerBindingSource.Current;
                 repository.Delete(pet.CustomerID);
                 customerView.isSuccessful = true;
-                customerView.Message = "Customer deleted succesfully";
+                customerView.Message = "Customer deleted successfully";
                 LoadAllCustomerList();
             }
             catch
             {
                 customerView.isSuccessful = false;
-                customerView.Message = "An error ocurred, could not delete pet";
+                customerView.Message = "An error occurred, could not delete pet";
             }
         }
         private void SaveCustomer(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace HotelReservationSystem
+﻿namespace HotelReservationSystem.Forms
 {
     partial class ReservationSystem
     {
@@ -514,7 +514,6 @@
             this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sataPictureBox1.TabIndex = 2;
             this.sataPictureBox1.TabStop = false;
-            this.sataPictureBox1.Click += new System.EventHandler(this.sataPictureBox1_Click);
             // 
             // label3
             // 
@@ -527,7 +526,6 @@
             this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Mark Manalo";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -540,7 +538,6 @@
             this.label4.Size = new System.Drawing.Size(41, 16);
             this.label4.TabIndex = 1;
             this.label4.Text = "Admin";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 

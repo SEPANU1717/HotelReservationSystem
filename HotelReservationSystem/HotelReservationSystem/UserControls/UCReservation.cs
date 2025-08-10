@@ -10,7 +10,6 @@ using HotelReservationSystem.Interface.Reservation;
 using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Model;
 using HotelReservationSystem.Repositories;
-using HotelReservationSystem.Repositories.Rooms;
 
 namespace HotelReservationSystem.UserControls
 {
