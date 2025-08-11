@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Helper;
 using HotelReservationSystem.Interface.Reservation;
-using HotelReservationSystem.Interface.Rooms;
 using HotelReservationSystem.Model;
 using HotelReservationSystem.Repositories;
 
@@ -15,14 +11,21 @@ namespace HotelReservationSystem.UserControls
 {
     public partial class UCReservation : UserControl, IReservationView
     {
+        #region Fields
+
         private ReservationRepository reserveRepo;
         private RoomRepository roomRepo;
         private CustomerRepository customerRepo;
         private DateTime originalCheckInDate;
         private DateTime originalCheckOutDate;
-
         private List<RoomModel> availableRooms = new List<RoomModel>();
         private string originalRoomNumber;
+        private static UCReservation _instance;
+
+        #endregion
+
+        #region Constructor
+
         public UCReservation()
         {
             InitializeComponent();
@@ -41,12 +44,20 @@ namespace HotelReservationSystem.UserControls
             cbNumber.SelectedIndexChanged += DateOrRoomChanged;
         }
 
+        #endregion
+
+        #region Events
+
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
         public event EventHandler EditEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+
+        #endregion
+
+        #region Event Association
 
         private void AssociateAndraiseViewEvents()
         {
@@ -169,71 +180,27 @@ namespace HotelReservationSystem.UserControls
             };
         }
 
-        public string ReservationId
-        {
-            get => txtReservationId.Texts;
-            set => txtReservationId.Texts = value;
-        }
+        #endregion
 
-        public string Guests
-        {
-            get => txtRoomGuests.Texts;
-            set => txtRoomGuests.Texts = value;
-        }
+        #region Properties
 
-        public DateTime CheckInDate
-        {
-            get => dtCheckIn.Value;
-            set => dtCheckIn.Value = value;
-        }
-
-        public DateTime CheckOutDate
-        {
-            get => dtCheckOut.Value;
-            set => dtCheckOut.Value = value;
-        }
-
-        public string CustomerName
-        {
-            get => cbCusName.SelectedItem as string;
-            set => cbCusName.SelectedItem = value;
-        }
-
-        public string RoomNumber
-        {
-            get => cbNumber.SelectedItem as string;
-            set => cbNumber.SelectedItem = value;
-        }
-
-        public string RoomType
-        {
-            get => cbType.SelectedItem as string;
-            set => cbType.SelectedItem = value;
-        }
-
-        public string TotalPrice
-        {
-            get => txtPrice.Texts;
-            set => txtPrice.Texts = value;
-        }
-
-        public string ReservationStatus
-        {
-            get => cbStatus.SelectedItem as string;
-            set => cbStatus.SelectedItem = value;
-        }
-
-        public string SearchValue
-        {
-            get => txtReservationSearch.Texts;
-            set => txtReservationSearch.Texts = value;
-        }
-
+        public string ReservationId{get => txtReservationId.Texts; set => txtReservationId.Texts = value; }
+        public string Guests{get => txtRoomGuests.Texts; set => txtRoomGuests.Texts = value; }
+        public DateTime CheckInDate{get => dtCheckIn.Value; set => dtCheckIn.Value = value; }
+        public DateTime CheckOutDate {get => dtCheckOut.Value; set => dtCheckOut.Value = value; }
+        public string CustomerName{ get => cbCusName.SelectedItem as string; set => cbCusName.SelectedItem = value; }
+        public string RoomNumber { get => cbNumber.SelectedItem as string; set => cbNumber.SelectedItem = value; }
+        public string RoomType {get => cbType.SelectedItem as string; set => cbType.SelectedItem = value; }
+        public string TotalPrice {get => txtPrice.Texts; set => txtPrice.Texts = value; }
+        public string ReservationStatus {get => cbStatus.SelectedItem as string;  set => cbStatus.SelectedItem = value; }
+        public string SearchValue{ get => txtReservationSearch.Texts; set => txtReservationSearch.Texts = value; }
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
 
-        private static UCReservation _instance;
+        #endregion
+
+        #region Singleton
 
         public static void ResetInstance()
         {
@@ -255,10 +222,56 @@ namespace HotelReservationSystem.UserControls
             return _instance;
         }
 
+        #endregion
+
+        #region Public Methods
+
         public void SetReservationListBindingSource(BindingSource reservationList)
         {
             dataGridReservation.DataSource = reservationList;
         }
+
+        public void LoadReservationForEdit(int reservationId)
+        {
+            var reservation = reserveRepo.GetById(reservationId);
+            if (reservation != null)
+            {
+                txtReservationId.Texts = reservation.ReservationId.ToString();
+                originalRoomNumber = reservation.RoomNumber;
+                if (!cbCusName.Items.Contains(reservation.CustomerName))
+                {
+                    cbCusName.Items.Add(reservation.CustomerName);
+                }
+
+                cbCusName.SelectedItem = reservation.CustomerName;
+
+                CheckInDate = reservation.CheckInDate;
+                CheckOutDate = reservation.CheckOutDate;
+                originalCheckInDate = reservation.CheckInDate;
+                originalCheckOutDate = reservation.CheckOutDate;
+                TotalPrice = reservation.TotalPrice.ToString("0.00");
+                ReservationStatus = reservation.ReservationStatus;
+
+                if (!string.IsNullOrEmpty(reservation.RoomNumber))
+                {
+                    var room = roomRepo.GetByNumber(reservation.RoomNumber);
+                    if (room != null)
+                    {
+                        RoomType = room.RoomType;
+                        RoomNumber = reservation.RoomNumber;
+                        if (cbNumber.SelectedItem == null && !string.IsNullOrEmpty(reservation.RoomNumber))
+                        {
+                            cbNumber.Items.Add(reservation.RoomNumber);
+                            cbNumber.SelectedItem = reservation.RoomNumber;
+                        }
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        #region Private Methods
 
         private void InitializeRoomTypeComboBox()
         {
@@ -358,44 +371,6 @@ namespace HotelReservationSystem.UserControls
             }
         }
 
-        public void LoadReservationForEdit(int reservationId)
-        {
-            var reservation = reserveRepo.GetById(reservationId);
-            if (reservation != null)
-            {
-                txtReservationId.Texts = reservation.ReservationId.ToString();
-                originalRoomNumber = reservation.RoomNumber;
-                if (!cbCusName.Items.Contains(reservation.CustomerName))
-                {
-                    cbCusName.Items.Add(reservation.CustomerName);
-                }
-
-                cbCusName.SelectedItem = reservation.CustomerName;
-
-                CheckInDate = reservation.CheckInDate;
-                CheckOutDate = reservation.CheckOutDate;
-                originalCheckInDate = reservation.CheckInDate;
-                originalCheckOutDate = reservation.CheckOutDate;
-                TotalPrice = reservation.TotalPrice.ToString("0.00");
-                ReservationStatus = reservation.ReservationStatus;
-
-                if (!string.IsNullOrEmpty(reservation.RoomNumber))
-                {
-                    var room = roomRepo.GetByNumber(reservation.RoomNumber);
-                    if (room != null)
-                    {
-                        RoomType = room.RoomType;
-                        RoomNumber = reservation.RoomNumber;
-                        if (cbNumber.SelectedItem == null && !string.IsNullOrEmpty(reservation.RoomNumber))
-                        {
-                            cbNumber.Items.Add(reservation.RoomNumber);
-                            cbNumber.SelectedItem = reservation.RoomNumber;
-                        }
-                    }
-                }
-            }
-        }
+        #endregion
     }
 }
-    
-
