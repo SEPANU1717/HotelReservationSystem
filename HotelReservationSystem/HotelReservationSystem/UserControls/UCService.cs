@@ -27,7 +27,6 @@ namespace HotelReservationSystem.UserControls
         private LaundryRepository laundryRepo;
         private FoodOrderRepository foodOrder;
         #endregion
-
         #region Constructor
         public UCService()
         {
@@ -50,7 +49,6 @@ namespace HotelReservationSystem.UserControls
 
         }
         #endregion
-
         #region Event Association
         private void AssociateAndRaiseViewEvents()
         {
@@ -270,7 +268,6 @@ namespace HotelReservationSystem.UserControls
 
         }
         #endregion
-
         #region Properties
         public string FoodId {get => txtFoodId.Texts;set => txtFoodId.Texts = value;}
         public string FoodName{ get => txtFoodName.Texts;set => txtFoodName.Texts = value;}
@@ -306,14 +303,11 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler OrderCompleteEvent;
         public event EventHandler OrderCancelEvent;
         #endregion
-
         #region DataGrid Binding
         public void SetLaundryListBindingSource(BindingSource laundryList) => dataGridLaundry.DataSource = laundryList;
         public void SetFoodListBindingSource(BindingSource foodList) => dataGridFoodService.DataSource = foodList;
         public void SetOrderListBindingSource(BindingSource orderList) => dataGridFood.DataSource = orderList;
         #endregion
-
-
         #region Singleton
         private static UCService _instance;
 
@@ -337,8 +331,6 @@ namespace HotelReservationSystem.UserControls
             }
         }
         #endregion
-
-
         #region Utility Methods
         private void ClearFoodFields()
         {
@@ -355,7 +347,6 @@ namespace HotelReservationSystem.UserControls
             txtAddOrderStock.Texts = stock.ToString();
         }
         #endregion
-
         #region Event Handlers
 
         private void btnFood1_Click(object sender, EventArgs e) => ServiceInitializer.Food1(this);
@@ -388,7 +379,6 @@ namespace HotelReservationSystem.UserControls
         private void order11_Click(object sender, EventArgs e){OrderFoodInitializer.OrderCitrusCooler(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
         private void order12_Click(object sender, EventArgs e){OrderFoodInitializer.OrderMelonMedley(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
         #endregion
-
         #region TotalPriceOrder
         private decimal GetTotalOrderPriceFromDatabase()
         {

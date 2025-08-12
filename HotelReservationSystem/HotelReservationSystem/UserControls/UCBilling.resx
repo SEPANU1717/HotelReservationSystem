@@ -881,36 +881,38 @@
         FKrT1GIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="sataPictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="sataPictureBox8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAJBJREFUOE/t
-        kjEOQEAUROcICr2jcD6lSyi1EpXWJRxC1OQn+2V9swmLipdMM39nkv27wM/T1AAWogFAT3xRY0uUihw+
-        q9KWCTpkzAAmazqCueAAwOjECOZ0UBBpofVFtDAje7kq6dhonZn45klSl+18U64jZiyS3e34tcI7ooX6
-        mlcVLIzlUKh/KhbJ5tb8CCsnd3FQyYzVSAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABhSURBVDhPY2AYBcMGTGFgYBBF4m9hYGDgQuKTBECG/WdgYMiC8kGGgfheaOqIAgNrGEwhDCAr
+        JNkwQhqu4JHDCQgZiksML8BnKMmGwQAuQ8kyDAZAhiJHEshQsg0bBQMMAFtbLBxmg0xwAAAAAElFTkSu
+        QmCC
 </value>
   </data>
-  <data name="sataPictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="sataPictureBox7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAJBJREFUOE/t
-        kjEOQEAUROcICr2jcD6lSyi1EpXWJRxC1OQn+2V9swmLipdMM39nkv27wM/T1AAWogFAT3xRY0uUihw+
-        q9KWCTpkzAAmazqCueAAwOjECOZ0UBBpofVFtDAje7kq6dhonZn45klSl+18U64jZiyS3e34tcI7ooX6
-        mlcVLIzlUKh/KhbJ5tb8CCsnd3FQyYzVSAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACqSURBVDhPzZExCoNAFEQnRe6QIkV6m1QeIofxfvb2OYKVlUXsU0QWvvCZ3fkqCObBwO6fP8PC
+        AifxMh1CC2AwpfMufkJ3E88XSbzJIVYpk8GLkUqZjNAUhJnQFISZ0BSEmdAUvHng2Vp4BVADuLDBbCn8
+        0G/3vOBZKxxd0cOdO15cWCv0L/OFMicNgwv4niENwxdwaREOcLgpzJMq6tnFE8DXiiYAN174b2Ztw15K
+        1rGwvwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="sataPictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAJBJREFUOE/t
-        kjEOQEAUROcICr2jcD6lSyi1EpXWJRxC1OQn+2V9swmLipdMM39nkv27wM/T1AAWogFAT3xRY0uUihw+
-        q9KWCTpkzAAmazqCueAAwOjECOZ0UBBpofVFtDAje7kq6dhonZn45klSl+18U64jZiyS3e34tcI7ooX6
-        mlcVLIzlUKh/KhbJ5tb8CCsnd3FQyYzVSAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACJSURBVDhPY2AYBTjAfyimGoAZyI0uQSqoQDIMhpejKyIFwAzhYWBgYGdgYPgF5QujKyQGiEA1
+        l6BLUAJgLixClyAXyKKF3yZ0BeSCYDSDqQYyoQauR5cgBiyAagZFDjIAiV1GEyMK6CF50RaabG5QGkm5
+        aGEHwvfRFZEDYIYxokuQC6geu8MIAACCQSvtXU1IXAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="sataPictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAJBJREFUOE/t
-        kjEOQEAUROcICr2jcD6lSyi1EpXWJRxC1OQn+2V9swmLipdMM39nkv27wM/T1AAWogFAT3xRY0uUihw+
-        q9KWCTpkzAAmazqCueAAwOjECOZ0UBBpofVFtDAje7kq6dhonZn45klSl+18U64jZiyS3e34tcI7ooX6
-        mlcVLIzlUKh/KhbJ5tb8CCsnd3FQyYzVSAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAMFJREFUOE/V
+        kzEKAkEMRV9rI3aWCjZq4z28hEfwCFsJ1l7AI3gNb+ENLC20UD5kYBizQ6ZQ8UFINjt5S3ZZ+DKLsgEs
+        s3pgeZL1XO7AGngCW+BqtWTKO+Bi9djqKjrYEiHhpmz2INnvhJ2zXnqQatEkjNAkHAHTItQTc8tNwtrK
+        D8tNwgh/LNQvpneW3tspu/ZiZXO9QjXLD1CLtEFV6N5wCAnPwK1s9iDh3mrNaPaNmbNWNDTrMgQOwDEY
+        OquZz/ECMZp036ZsYyAAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="sataButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

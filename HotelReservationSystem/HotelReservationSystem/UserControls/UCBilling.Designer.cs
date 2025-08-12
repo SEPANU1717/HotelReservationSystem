@@ -38,6 +38,10 @@
             SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,26 +76,27 @@
             this.btnReservationPay = new FrameworkTest.SATAButton();
             this.btnBillingCancel = new FrameworkTest.SATAButton();
             this.MainFormBilling = new System.Windows.Forms.TabPage();
-            this.label9 = new System.Windows.Forms.Label();
-            this.sataButton1 = new FrameworkTest.SATAButton();
-            this.btnServices = new FrameworkTest.SATAButton();
-            this.btnCheckIn = new FrameworkTest.SATAButton();
             this.sataPanel9 = new SATAUiFramework.SATAPanel();
             this.sataPictureBox2 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.lblTotalRoom = new System.Windows.Forms.Label();
-            this.sataPanel2 = new SATAUiFramework.SATAPanel();
+            this.sataButton1 = new FrameworkTest.SATAButton();
+            this.btnServices = new FrameworkTest.SATAButton();
+            this.btnCheckIn = new FrameworkTest.SATAButton();
+            this.sataPanel5 = new SATAUiFramework.SATAPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.sataPanel6 = new SATAUiFramework.SATAPanel();
+            this.sataPictureBox7 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.sataPanel7 = new SATAUiFramework.SATAPanel();
+            this.sataPictureBox8 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.sataPictureBox3 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.sataPanel3 = new SATAUiFramework.SATAPanel();
-            this.sataPictureBox4 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.sataPanel4 = new SATAUiFramework.SATAPanel();
-            this.sataPictureBox5 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.dataGridBiilSample = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -102,12 +107,13 @@
             this.MainFormBilling.SuspendLayout();
             this.sataPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).BeginInit();
-            this.sataPanel2.SuspendLayout();
+            this.sataPanel5.SuspendLayout();
+            this.sataPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox7)).BeginInit();
+            this.sataPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).BeginInit();
-            this.sataPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox4)).BeginInit();
-            this.sataPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBiilSample)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -509,10 +515,10 @@
             this.ReservationBillingForm.Controls.Add(this.txtBillingId);
             this.ReservationBillingForm.Controls.Add(this.btnReservationPay);
             this.ReservationBillingForm.Controls.Add(this.btnBillingCancel);
-            this.ReservationBillingForm.Location = new System.Drawing.Point(4, 22);
+            this.ReservationBillingForm.Location = new System.Drawing.Point(4, 25);
             this.ReservationBillingForm.Name = "ReservationBillingForm";
             this.ReservationBillingForm.Padding = new System.Windows.Forms.Padding(3);
-            this.ReservationBillingForm.Size = new System.Drawing.Size(1194, 585);
+            this.ReservationBillingForm.Size = new System.Drawing.Size(1194, 582);
             this.ReservationBillingForm.TabIndex = 1;
             this.ReservationBillingForm.Text = "Reservation Billing";
             // 
@@ -857,11 +863,12 @@
             // 
             // MainFormBilling
             // 
-            this.MainFormBilling.Controls.Add(this.sataPanel4);
-            this.MainFormBilling.Controls.Add(this.sataPanel3);
-            this.MainFormBilling.Controls.Add(this.sataPanel2);
-            this.MainFormBilling.Controls.Add(this.sataPanel9);
+            this.MainFormBilling.Controls.Add(this.dataGridBiilSample);
+            this.MainFormBilling.Controls.Add(this.sataPanel7);
+            this.MainFormBilling.Controls.Add(this.sataPanel6);
             this.MainFormBilling.Controls.Add(this.label9);
+            this.MainFormBilling.Controls.Add(this.sataPanel5);
+            this.MainFormBilling.Controls.Add(this.sataPanel9);
             this.MainFormBilling.Location = new System.Drawing.Point(4, 25);
             this.MainFormBilling.Name = "MainFormBilling";
             this.MainFormBilling.Padding = new System.Windows.Forms.Padding(3);
@@ -870,16 +877,64 @@
             this.MainFormBilling.Text = "MainTabForBilling";
             this.MainFormBilling.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // sataPanel9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(510, 410);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 25);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "MainForm";
+            this.sataPanel9.BackColor = System.Drawing.Color.White;
+            this.sataPanel9.BackColor2 = System.Drawing.Color.White;
+            this.sataPanel9.BorderColor = System.Drawing.Color.Black;
+            borderRadius5.BottomLeft = 10;
+            borderRadius5.BottomRight = 10;
+            borderRadius5.TopLeft = 10;
+            borderRadius5.TopRight = 10;
+            this.sataPanel9.BorderRadius = borderRadius5;
+            this.sataPanel9.BorderThickness = 0;
+            this.sataPanel9.Controls.Add(this.sataPictureBox2);
+            this.sataPanel9.Controls.Add(this.label12);
+            this.sataPanel9.Controls.Add(this.lblTotalRoom);
+            this.sataPanel9.Location = new System.Drawing.Point(3, 18);
+            this.sataPanel9.Name = "sataPanel9";
+            this.sataPanel9.Size = new System.Drawing.Size(276, 146);
+            this.sataPanel9.TabIndex = 10;
+            // 
+            // sataPictureBox2
+            // 
+            this.sataPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.sataPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox2.BorderColor = System.Drawing.Color.Gray;
+            this.sataPictureBox2.BorderColor2 = System.Drawing.Color.Gray;
+            this.sataPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox2.BorderSize = 1;
+            this.sataPictureBox2.GradientAngle = 50F;
+            this.sataPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox2.Image")));
+            this.sataPictureBox2.Location = new System.Drawing.Point(192, 24);
+            this.sataPictureBox2.Name = "sataPictureBox2";
+            this.sataPictureBox2.Size = new System.Drawing.Size(44, 44);
+            this.sataPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.sataPictureBox2.TabIndex = 8;
+            this.sataPictureBox2.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Gray;
+            this.label12.Location = new System.Drawing.Point(34, 24);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 25);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Total Bills";
+            // 
+            // lblTotalRoom
+            // 
+            this.lblTotalRoom.AutoSize = true;
+            this.lblTotalRoom.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalRoom.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.lblTotalRoom.Location = new System.Drawing.Point(28, 59);
+            this.lblTotalRoom.Name = "lblTotalRoom";
+            this.lblTotalRoom.Size = new System.Drawing.Size(84, 65);
+            this.lblTotalRoom.TabIndex = 1;
+            this.lblTotalRoom.Text = "50";
             // 
             // sataButton1
             // 
@@ -1000,83 +1055,165 @@
             this.btnCheckIn.TextOffset = new System.Drawing.Point(0, 0);
             this.btnCheckIn.Click += new System.EventHandler(this.btnBillingAddNew_Click);
             // 
-            // sataPanel9
+            // sataPanel5
             // 
-            this.sataPanel9.BackColor = System.Drawing.Color.White;
-            this.sataPanel9.BackColor2 = System.Drawing.Color.White;
-            this.sataPanel9.BorderColor = System.Drawing.Color.Black;
-            borderRadius5.BottomLeft = 10;
-            borderRadius5.BottomRight = 10;
-            borderRadius5.TopLeft = 10;
-            borderRadius5.TopRight = 10;
-            this.sataPanel9.BorderRadius = borderRadius5;
-            this.sataPanel9.BorderThickness = 0;
-            this.sataPanel9.Controls.Add(this.sataPictureBox2);
-            this.sataPanel9.Controls.Add(this.label12);
-            this.sataPanel9.Controls.Add(this.lblTotalRoom);
-            this.sataPanel9.Location = new System.Drawing.Point(52, 38);
-            this.sataPanel9.Name = "sataPanel9";
-            this.sataPanel9.Size = new System.Drawing.Size(247, 141);
-            this.sataPanel9.TabIndex = 10;
-            // 
-            // sataPictureBox2
-            // 
-            this.sataPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.sataPictureBox2.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox2.BorderColor = System.Drawing.Color.Gray;
-            this.sataPictureBox2.BorderColor2 = System.Drawing.Color.Gray;
-            this.sataPictureBox2.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox2.BorderSize = 1;
-            this.sataPictureBox2.GradientAngle = 50F;
-            this.sataPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox2.Image")));
-            this.sataPictureBox2.Location = new System.Drawing.Point(157, 67);
-            this.sataPictureBox2.Name = "sataPictureBox2";
-            this.sataPictureBox2.Size = new System.Drawing.Size(44, 44);
-            this.sataPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.sataPictureBox2.TabIndex = 8;
-            this.sataPictureBox2.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Gray;
-            this.label12.Location = new System.Drawing.Point(26, 22);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 25);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Total Bills";
-            // 
-            // lblTotalRoom
-            // 
-            this.lblTotalRoom.AutoSize = true;
-            this.lblTotalRoom.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalRoom.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.lblTotalRoom.Location = new System.Drawing.Point(20, 57);
-            this.lblTotalRoom.Name = "lblTotalRoom";
-            this.lblTotalRoom.Size = new System.Drawing.Size(84, 65);
-            this.lblTotalRoom.TabIndex = 1;
-            this.lblTotalRoom.Text = "50";
-            // 
-            // sataPanel2
-            // 
-            this.sataPanel2.BackColor = System.Drawing.Color.White;
-            this.sataPanel2.BackColor2 = System.Drawing.Color.White;
-            this.sataPanel2.BorderColor = System.Drawing.Color.Black;
+            this.sataPanel5.BackColor = System.Drawing.Color.White;
+            this.sataPanel5.BackColor2 = System.Drawing.Color.White;
+            this.sataPanel5.BorderColor = System.Drawing.Color.Black;
             borderRadius4.BottomLeft = 10;
             borderRadius4.BottomRight = 10;
             borderRadius4.TopLeft = 10;
             borderRadius4.TopRight = 10;
-            this.sataPanel2.BorderRadius = borderRadius4;
-            this.sataPanel2.BorderThickness = 0;
-            this.sataPanel2.Controls.Add(this.sataPictureBox3);
-            this.sataPanel2.Controls.Add(this.label11);
-            this.sataPanel2.Controls.Add(this.label13);
-            this.sataPanel2.Location = new System.Drawing.Point(328, 38);
-            this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(247, 141);
-            this.sataPanel2.TabIndex = 10;
+            this.sataPanel5.BorderRadius = borderRadius4;
+            this.sataPanel5.BorderThickness = 0;
+            this.sataPanel5.Controls.Add(this.sataPictureBox3);
+            this.sataPanel5.Controls.Add(this.label18);
+            this.sataPanel5.Controls.Add(this.label19);
+            this.sataPanel5.Location = new System.Drawing.Point(308, 18);
+            this.sataPanel5.Name = "sataPanel5";
+            this.sataPanel5.Size = new System.Drawing.Size(276, 146);
+            this.sataPanel5.TabIndex = 10;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Gray;
+            this.label18.Location = new System.Drawing.Point(34, 24);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(128, 25);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Total Amount";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label19.Location = new System.Drawing.Point(28, 59);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(84, 65);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "50";
+            // 
+            // sataPanel6
+            // 
+            this.sataPanel6.BackColor = System.Drawing.Color.White;
+            this.sataPanel6.BackColor2 = System.Drawing.Color.White;
+            this.sataPanel6.BorderColor = System.Drawing.Color.Black;
+            borderRadius3.BottomLeft = 10;
+            borderRadius3.BottomRight = 10;
+            borderRadius3.TopLeft = 10;
+            borderRadius3.TopRight = 10;
+            this.sataPanel6.BorderRadius = borderRadius3;
+            this.sataPanel6.BorderThickness = 0;
+            this.sataPanel6.Controls.Add(this.sataPictureBox7);
+            this.sataPanel6.Controls.Add(this.label20);
+            this.sataPanel6.Controls.Add(this.label21);
+            this.sataPanel6.Location = new System.Drawing.Point(613, 18);
+            this.sataPanel6.Name = "sataPanel6";
+            this.sataPanel6.Size = new System.Drawing.Size(276, 146);
+            this.sataPanel6.TabIndex = 10;
+            // 
+            // sataPictureBox7
+            // 
+            this.sataPictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.sataPictureBox7.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox7.BorderColor = System.Drawing.Color.Gray;
+            this.sataPictureBox7.BorderColor2 = System.Drawing.Color.Gray;
+            this.sataPictureBox7.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox7.BorderSize = 1;
+            this.sataPictureBox7.GradientAngle = 50F;
+            this.sataPictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox7.Image")));
+            this.sataPictureBox7.Location = new System.Drawing.Point(192, 24);
+            this.sataPictureBox7.Name = "sataPictureBox7";
+            this.sataPictureBox7.Size = new System.Drawing.Size(44, 44);
+            this.sataPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.sataPictureBox7.TabIndex = 8;
+            this.sataPictureBox7.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Gray;
+            this.label20.Location = new System.Drawing.Point(34, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(120, 25);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Pending Bills";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label21.Location = new System.Drawing.Point(28, 59);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(84, 65);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "50";
+            // 
+            // sataPanel7
+            // 
+            this.sataPanel7.BackColor = System.Drawing.Color.White;
+            this.sataPanel7.BackColor2 = System.Drawing.Color.White;
+            this.sataPanel7.BorderColor = System.Drawing.Color.Black;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.sataPanel7.BorderRadius = borderRadius2;
+            this.sataPanel7.BorderThickness = 0;
+            this.sataPanel7.Controls.Add(this.sataPictureBox8);
+            this.sataPanel7.Controls.Add(this.label22);
+            this.sataPanel7.Controls.Add(this.label23);
+            this.sataPanel7.Location = new System.Drawing.Point(918, 18);
+            this.sataPanel7.Name = "sataPanel7";
+            this.sataPanel7.Size = new System.Drawing.Size(276, 146);
+            this.sataPanel7.TabIndex = 10;
+            // 
+            // sataPictureBox8
+            // 
+            this.sataPictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.sataPictureBox8.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox8.BorderColor = System.Drawing.Color.Gray;
+            this.sataPictureBox8.BorderColor2 = System.Drawing.Color.Gray;
+            this.sataPictureBox8.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox8.BorderSize = 1;
+            this.sataPictureBox8.GradientAngle = 50F;
+            this.sataPictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox8.Image")));
+            this.sataPictureBox8.Location = new System.Drawing.Point(192, 24);
+            this.sataPictureBox8.Name = "sataPictureBox8";
+            this.sataPictureBox8.Size = new System.Drawing.Size(44, 44);
+            this.sataPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.sataPictureBox8.TabIndex = 8;
+            this.sataPictureBox8.TabStop = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Gray;
+            this.label22.Location = new System.Drawing.Point(34, 24);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(87, 25);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Paid Bills";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label23.Location = new System.Drawing.Point(28, 59);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(84, 65);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "50";
             // 
             // sataPictureBox3
             // 
@@ -1088,153 +1225,75 @@
             this.sataPictureBox3.BorderSize = 1;
             this.sataPictureBox3.GradientAngle = 50F;
             this.sataPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox3.Image")));
-            this.sataPictureBox3.Location = new System.Drawing.Point(157, 67);
+            this.sataPictureBox3.Location = new System.Drawing.Point(192, 24);
             this.sataPictureBox3.Name = "sataPictureBox3";
             this.sataPictureBox3.Size = new System.Drawing.Size(44, 44);
             this.sataPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sataPictureBox3.TabIndex = 8;
             this.sataPictureBox3.TabStop = false;
             // 
-            // label11
+            // dataGridBiilSample
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Gray;
-            this.label11.Location = new System.Drawing.Point(26, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(128, 25);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Total Amount";
+            this.dataGridBiilSample.AllowUserToAddRows = false;
+            this.dataGridBiilSample.AllowUserToDeleteRows = false;
+            this.dataGridBiilSample.AllowUserToResizeColumns = false;
+            this.dataGridBiilSample.AllowUserToResizeRows = false;
+            this.dataGridBiilSample.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridBiilSample.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridBiilSample.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridBiilSample.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridBiilSample.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridBiilSample.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridBiilSample.ColumnHeadersHeight = 33;
+            this.dataGridBiilSample.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridBiilSample.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridBiilSample.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridBiilSample.EnableHeadersVisualStyles = false;
+            this.dataGridBiilSample.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridBiilSample.Location = new System.Drawing.Point(3, 216);
+            this.dataGridBiilSample.MultiSelect = false;
+            this.dataGridBiilSample.Name = "dataGridBiilSample";
+            this.dataGridBiilSample.ReadOnly = true;
+            this.dataGridBiilSample.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridBiilSample.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridBiilSample.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridBiilSample.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridBiilSample.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridBiilSample.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridBiilSample.Size = new System.Drawing.Size(1188, 363);
+            this.dataGridBiilSample.TabIndex = 11;
             // 
-            // label13
+            // label9
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(20, 57);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 65);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "50";
-            // 
-            // sataPanel3
-            // 
-            this.sataPanel3.BackColor = System.Drawing.Color.White;
-            this.sataPanel3.BackColor2 = System.Drawing.Color.White;
-            this.sataPanel3.BorderColor = System.Drawing.Color.Black;
-            borderRadius3.BottomLeft = 10;
-            borderRadius3.BottomRight = 10;
-            borderRadius3.TopLeft = 10;
-            borderRadius3.TopRight = 10;
-            this.sataPanel3.BorderRadius = borderRadius3;
-            this.sataPanel3.BorderThickness = 0;
-            this.sataPanel3.Controls.Add(this.sataPictureBox4);
-            this.sataPanel3.Controls.Add(this.label14);
-            this.sataPanel3.Controls.Add(this.label15);
-            this.sataPanel3.Location = new System.Drawing.Point(605, 38);
-            this.sataPanel3.Name = "sataPanel3";
-            this.sataPanel3.Size = new System.Drawing.Size(247, 141);
-            this.sataPanel3.TabIndex = 10;
-            // 
-            // sataPictureBox4
-            // 
-            this.sataPictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.sataPictureBox4.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox4.BorderColor = System.Drawing.Color.Gray;
-            this.sataPictureBox4.BorderColor2 = System.Drawing.Color.Gray;
-            this.sataPictureBox4.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox4.BorderSize = 1;
-            this.sataPictureBox4.GradientAngle = 50F;
-            this.sataPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox4.Image")));
-            this.sataPictureBox4.Location = new System.Drawing.Point(157, 67);
-            this.sataPictureBox4.Name = "sataPictureBox4";
-            this.sataPictureBox4.Size = new System.Drawing.Size(44, 44);
-            this.sataPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.sataPictureBox4.TabIndex = 8;
-            this.sataPictureBox4.TabStop = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Gray;
-            this.label14.Location = new System.Drawing.Point(26, 22);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 25);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Pending Bills";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(20, 57);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 65);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "50";
-            // 
-            // sataPanel4
-            // 
-            this.sataPanel4.BackColor = System.Drawing.Color.White;
-            this.sataPanel4.BackColor2 = System.Drawing.Color.White;
-            this.sataPanel4.BorderColor = System.Drawing.Color.Black;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.sataPanel4.BorderRadius = borderRadius2;
-            this.sataPanel4.BorderThickness = 0;
-            this.sataPanel4.Controls.Add(this.sataPictureBox5);
-            this.sataPanel4.Controls.Add(this.label16);
-            this.sataPanel4.Controls.Add(this.label17);
-            this.sataPanel4.Location = new System.Drawing.Point(884, 38);
-            this.sataPanel4.Name = "sataPanel4";
-            this.sataPanel4.Size = new System.Drawing.Size(247, 141);
-            this.sataPanel4.TabIndex = 10;
-            // 
-            // sataPictureBox5
-            // 
-            this.sataPictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.sataPictureBox5.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox5.BorderColor = System.Drawing.Color.Gray;
-            this.sataPictureBox5.BorderColor2 = System.Drawing.Color.Gray;
-            this.sataPictureBox5.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox5.BorderSize = 1;
-            this.sataPictureBox5.GradientAngle = 50F;
-            this.sataPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox5.Image")));
-            this.sataPictureBox5.Location = new System.Drawing.Point(157, 67);
-            this.sataPictureBox5.Name = "sataPictureBox5";
-            this.sataPictureBox5.Size = new System.Drawing.Size(44, 44);
-            this.sataPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.sataPictureBox5.TabIndex = 8;
-            this.sataPictureBox5.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Gray;
-            this.label16.Location = new System.Drawing.Point(26, 22);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(87, 25);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Paid Bills";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(20, 57);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 65);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "50";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(-1, 202);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(143, 25);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Billing History";
             // 
             // UCBilling
             // 
@@ -1267,15 +1326,16 @@
             this.sataPanel9.ResumeLayout(false);
             this.sataPanel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).EndInit();
-            this.sataPanel2.ResumeLayout(false);
-            this.sataPanel2.PerformLayout();
+            this.sataPanel5.ResumeLayout(false);
+            this.sataPanel5.PerformLayout();
+            this.sataPanel6.ResumeLayout(false);
+            this.sataPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox7)).EndInit();
+            this.sataPanel7.ResumeLayout(false);
+            this.sataPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).EndInit();
-            this.sataPanel3.ResumeLayout(false);
-            this.sataPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox4)).EndInit();
-            this.sataPanel4.ResumeLayout(false);
-            this.sataPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBiilSample)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1319,22 +1379,23 @@
         private FrameworkTest.SATAButton btnBillingList;
         private FrameworkTest.SATAButton btnBackRReservationHome;
         private System.Windows.Forms.TabPage MainFormBilling;
-        private System.Windows.Forms.Label label9;
         private SATAUiFramework.SATAPanel sataPanel9;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblTotalRoom;
-        private SATAUiFramework.SATAPanel sataPanel4;
-        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox5;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private SATAUiFramework.SATAPanel sataPanel3;
-        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox4;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private SATAUiFramework.SATAPanel sataPanel2;
+        private SATAUiFramework.SATAPanel sataPanel7;
+        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox8;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private SATAUiFramework.SATAPanel sataPanel6;
+        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox7;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private SATAUiFramework.SATAPanel sataPanel5;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dataGridBiilSample;
+        private System.Windows.Forms.Label label9;
     }
 }

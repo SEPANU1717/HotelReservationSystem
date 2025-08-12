@@ -59,7 +59,7 @@
             // 
             // sataEllipseControl1
             // 
-            this.sataEllipseControl1.CornerRadius = 36;
+            this.sataEllipseControl1.CornerRadius = 33;
             this.sataEllipseControl1.TargetControl = this;
             // 
             // panel1
