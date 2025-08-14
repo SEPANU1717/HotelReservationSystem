@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.btnLogin = new FrameworkTest.SATAButton();
@@ -100,13 +100,14 @@
             this.sataTextBox3.BorderRadius = 4;
             this.sataTextBox3.BorderSize = 1;
             this.sataTextBox3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox3.Icon = null;
+            this.sataTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox3.Icon = ((System.Drawing.Image)(resources.GetObject("sataTextBox3.Icon")));
             this.sataTextBox3.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox3.Location = new System.Drawing.Point(929, 338);
             this.sataTextBox3.Multiline = false;
             this.sataTextBox3.Name = "sataTextBox3";
             this.sataTextBox3.PasswordChar = false;
-            this.sataTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.sataTextBox3.PlaceholderColor = System.Drawing.Color.Silver;
             this.sataTextBox3.PlaceholderText = "Enter your username";
             this.sataTextBox3.Size = new System.Drawing.Size(406, 48);
             this.sataTextBox3.TabIndex = 1;
@@ -133,13 +134,14 @@
             this.sataTextBox1.BorderRadius = 4;
             this.sataTextBox1.BorderSize = 1;
             this.sataTextBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox1.Icon = null;
+            this.sataTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox1.Icon = ((System.Drawing.Image)(resources.GetObject("sataTextBox1.Icon")));
             this.sataTextBox1.IconSize = new System.Drawing.Size(20, 20);
             this.sataTextBox1.Location = new System.Drawing.Point(929, 407);
             this.sataTextBox1.Multiline = false;
             this.sataTextBox1.Name = "sataTextBox1";
-            this.sataTextBox1.PasswordChar = false;
-            this.sataTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.sataTextBox1.PasswordChar = true;
+            this.sataTextBox1.PlaceholderColor = System.Drawing.Color.Silver;
             this.sataTextBox1.PlaceholderText = "Enter your password";
             this.sataTextBox1.Size = new System.Drawing.Size(406, 48);
             this.sataTextBox1.TabIndex = 2;
@@ -156,9 +158,6 @@
             this.label4.Size = new System.Drawing.Size(108, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Remember me";
-            // 
-            // materialCheckBox1
-            // 
             // 
             // label5
             // 
@@ -189,11 +188,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.IndianRed;
             this.sataPanel1.BackColor2 = System.Drawing.Color.Transparent;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius2;
+            borderRadius4.BottomLeft = 10;
+            borderRadius4.BottomRight = 10;
+            borderRadius4.TopLeft = 10;
+            borderRadius4.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius4;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.pictureBox1);
             this.sataPanel1.Location = new System.Drawing.Point(12, 12);

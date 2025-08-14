@@ -82,7 +82,7 @@ namespace HotelReservationSystem.UserControls
                 if (string.IsNullOrWhiteSpace(CustomerIdType) ||
                     !comboItems.Contains(CustomerIdType))
                 {
-                    MessageBox.Show("Id type is required");
+                    MessageBox.Show(@"Id type is required");
                     return;
                 }
 

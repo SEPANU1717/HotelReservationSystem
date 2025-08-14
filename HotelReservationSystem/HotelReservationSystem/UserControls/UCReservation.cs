@@ -106,7 +106,7 @@ namespace HotelReservationSystem.UserControls
                 }
                 else
                 {
-                    MessageBox.Show("Please select a reservation to edit.");
+                    MessageBox.Show(@"Please select a reservation to edit.");
                 }
             };
 
@@ -175,7 +175,7 @@ namespace HotelReservationSystem.UserControls
                 }
                 else
                 {
-                    MessageBox.Show("Please select a reservation to delete.");
+                    MessageBox.Show(@"Please select a reservation to delete.");
                 }
             };
         }

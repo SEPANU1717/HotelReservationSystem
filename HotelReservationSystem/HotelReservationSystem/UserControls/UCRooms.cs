@@ -44,7 +44,7 @@ namespace HotelReservationSystem.UserControls
             {
                 if (materialTabControl1.SelectedTab == tabPage2)
                 {
-                    MessageBox.Show("You are already in the Add Room menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(@"You are already in the Add Room menu.", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 ClearRoomFields();
@@ -52,24 +52,28 @@ namespace HotelReservationSystem.UserControls
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
-                materialTabControl1.Text = "Add new room";
+                materialTabControl1.Text = @"Add new room";
             };
 
             btnRoomEdit.Click += delegate
             {
                 if (materialTabControl1.SelectedTab == tabPage2)
                 {
-                    MessageBox.Show("You are already in the Edit Room menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(@"You are already in the Edit Room menu.", @"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
-                materialTabControl1.Text = "Edit room";
+                materialTabControl1.Text = @"Edit room";
             };
 
             btnRoomSave.Click += delegate
             {
+                if (txtRoomNumber.Texts is "STD" || txtRoomNumber.Texts is "FML" || txtRoomNumber.Texts is "DLX" ||
+                    txtRoomNumber.Texts is "SGL" || txtRoomNumber.Texts is "ST")
+                {MessageBox.Show(@"Invalid room number"); return;}
+
                 SaveEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessful)
                 {
@@ -90,7 +94,7 @@ namespace HotelReservationSystem.UserControls
 
             btnRoomDelete.Click += delegate
             {
-                var result = MessageBox.Show("Are you sure you want to delete the selected room?", "Warning",
+                var result = MessageBox.Show(@"Are you sure you want to delete the selected room?", @"Warning",
                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
