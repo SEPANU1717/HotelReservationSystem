@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +70,7 @@ namespace HotelReservationSystem.Presenter.Reservation
             }
         }
 
-        private void CancelReserve(object sender, EventArgs e) => CleanviewFields();
+        private void CancelReserve(object sender, EventArgs e) => CleanViewFields();
 
         private void SaveReserve(object sender, EventArgs e)
         {
@@ -114,7 +115,7 @@ namespace HotelReservationSystem.Presenter.Reservation
             reservationView.CustomerName = reserve.CustomerName;
             reservationView.CheckInDate = reserve.CheckInDate;
             reservationView.CheckOutDate = reserve.CheckOutDate;
-            reservationView.TotalPrice = reserve.TotalPrice.ToString();
+            reservationView.TotalPrice = reserve.TotalPrice.ToString(CultureInfo.InvariantCulture);
             reservationView.ReservationStatus = reserve.ReservationStatus;
             reservationView.RoomNumber = reserve.RoomNumber;
 
@@ -139,7 +140,7 @@ namespace HotelReservationSystem.Presenter.Reservation
             ReservationBindingSource.ResetBindings(false);
         }
 
-        private void CleanviewFields()
+        private void CleanViewFields()
         {
             reservationView.ReservationId = "";
             reservationView.CustomerName = "";

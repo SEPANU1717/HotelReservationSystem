@@ -37,11 +37,11 @@ namespace HotelReservationSystem.Presenter
             {
                 laundryList = repository.GetAll();
                 LaundryBindingSource.DataSource = laundryList;
-                LaundryBindingSource.ResetBindings(false);
+                LaundryBindingSource.ResetBindings(false  );
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading laundry data: {ex.Message}", "Database Error",
+                MessageBox.Show($@"Error loading laundry data: {ex.Message}", @"Database Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -53,8 +53,8 @@ namespace HotelReservationSystem.Presenter
                 
                     repository.ClearAll();
                     LoadAllLaundryList(); 
-                    MessageBox.Show("All laundry items have been deleted successfully.",
-                        "Delete Successful",
+                    MessageBox.Show(@"All laundry items have been deleted successfully.",
+                        @"Delete Successful",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 
@@ -62,8 +62,8 @@ namespace HotelReservationSystem.Presenter
         
             catch (Exception ex)
             {
-                MessageBox.Show($"Error deleting laundry items: {ex.Message}",
-                    "Error",
+                MessageBox.Show($@"Error deleting laundry items: {ex.Message}",
+                    @"Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
@@ -88,19 +88,19 @@ namespace HotelReservationSystem.Presenter
                 };
 
                 repository.Add(laundry);
-                LoadAllLaundryList(); // Refresh the list
+                LoadAllLaundryList();
                 CleanViewFields();
-                MessageBox.Show("Laundry item added successfully!", "Success",
+                MessageBox.Show(@"Laundry item added successfully!", @"Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (FormatException)
             {
-                MessageBox.Show("Please enter valid numeric values for quantity and price.", "Input Error",
+                MessageBox.Show(@"Please enter valid numeric values for quantity and price.", "Input Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error adding laundry item: {ex.Message}", "Error",
+                MessageBox.Show($@"Error adding laundry item: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

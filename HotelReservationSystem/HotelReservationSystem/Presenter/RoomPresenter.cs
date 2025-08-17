@@ -40,7 +40,7 @@ namespace HotelReservationSystem.Presenter
             RoomBindingSource.ResetBindings(false);
         }
 
-        private void CancelRoom(object sender, EventArgs e) => CleanviewFields();
+        private void CancelRoom(object sender, EventArgs e) => CleanViewFields();
 
         private void SaveRoom(object sender, EventArgs e)
         {
@@ -85,18 +85,15 @@ namespace HotelReservationSystem.Presenter
             roomView.RoomNumber = room.RoomNumber;
             roomView.RoomType = room.RoomType;
             roomView.RoomStatus = room.RoomStatus;
-            roomView.RoomPrice = room.RoomPrice.ToString();
+            roomView.RoomPrice = room.RoomPrice;
             roomView.RoomDescription = room.RoomDescription;
-            roomView.RoomGuests = room.RoomGuests.ToString();
-            roomView.BedCount = room.BedCount.ToString();
+            roomView.RoomGuests = room.RoomGuests;
+            roomView.BedCount = room.BedCount;
 
             roomView.isEdit = true; 
         }
 
-        private void AddNewRoom(object sender, EventArgs e)
-        {
-            roomView.isEdit = false;
-        }
+        private void AddNewRoom(object sender, EventArgs e) => roomView.isEdit = false;
 
         private void DeleteRoom(object sender, EventArgs e)
         {
@@ -125,7 +122,7 @@ namespace HotelReservationSystem.Presenter
             RoomBindingSource.DataSource = roomList;
             RoomBindingSource.ResetBindings(false);
         }
-        private void CleanviewFields()
+        private void CleanViewFields()
         {
             roomView.RoomId = "0";
             roomView.RoomNumber = "";

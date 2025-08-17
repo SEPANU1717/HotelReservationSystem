@@ -12,7 +12,7 @@ namespace HotelReservationSystem.Forms
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             bool loginSuccess = true;
             if (loginSuccess)
@@ -29,6 +29,5 @@ namespace HotelReservationSystem.Forms
                 MessageBox.Show(@"Invalid login!");
             }
         }
-
     }
 }

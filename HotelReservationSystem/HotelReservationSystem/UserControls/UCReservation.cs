@@ -45,7 +45,6 @@ namespace HotelReservationSystem.UserControls
         }
 
         #endregion
-
         #region Events
 
         public event EventHandler SearchEvent;
@@ -56,7 +55,6 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler CancelEvent;
 
         #endregion
-
         #region Event Association
 
         private void AssociateAndraiseViewEvents()
@@ -181,7 +179,6 @@ namespace HotelReservationSystem.UserControls
         }
 
         #endregion
-
         #region Properties
 
         public string ReservationId{get => txtReservationId.Texts; set => txtReservationId.Texts = value; }
@@ -199,7 +196,6 @@ namespace HotelReservationSystem.UserControls
         public string Message { get; set; }
 
         #endregion
-
         #region Singleton
 
         public static void ResetInstance()
@@ -223,7 +219,6 @@ namespace HotelReservationSystem.UserControls
         }
 
         #endregion
-
         #region Public Methods
 
         public void SetReservationListBindingSource(BindingSource reservationList)
@@ -270,7 +265,6 @@ namespace HotelReservationSystem.UserControls
         }
 
         #endregion
-
         #region Private Methods
 
         private void InitializeRoomTypeComboBox()

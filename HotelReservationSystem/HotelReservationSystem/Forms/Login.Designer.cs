@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.btnLogin = new FrameworkTest.SATAButton();
-            this.sataTextBox3 = new SATATextBox();
+            this.txtUsername = new SATATextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.sataTextBox1 = new SATATextBox();
+            this.txtPassword = new SATATextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -89,30 +89,30 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.TextAutoCenter = true;
             this.btnLogin.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
-            // sataTextBox3
+            // txtUsername
             // 
-            this.sataTextBox3.BackColor = System.Drawing.Color.White;
-            this.sataTextBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox3.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox3.BorderRadius = 4;
-            this.sataTextBox3.BorderSize = 1;
-            this.sataTextBox3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox3.Icon = ((System.Drawing.Image)(resources.GetObject("sataTextBox3.Icon")));
-            this.sataTextBox3.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox3.Location = new System.Drawing.Point(929, 338);
-            this.sataTextBox3.Multiline = false;
-            this.sataTextBox3.Name = "sataTextBox3";
-            this.sataTextBox3.PasswordChar = false;
-            this.sataTextBox3.PlaceholderColor = System.Drawing.Color.Silver;
-            this.sataTextBox3.PlaceholderText = "Enter your username";
-            this.sataTextBox3.Size = new System.Drawing.Size(406, 48);
-            this.sataTextBox3.TabIndex = 1;
-            this.sataTextBox3.Texts = "";
-            this.sataTextBox3.UnderlinedStyle = false;
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtUsername.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtUsername.BorderRadius = 4;
+            this.txtUsername.BorderSize = 1;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtUsername.Icon = ((System.Drawing.Image)(resources.GetObject("txtUsername.Icon")));
+            this.txtUsername.IconSize = new System.Drawing.Size(20, 20);
+            this.txtUsername.Location = new System.Drawing.Point(929, 338);
+            this.txtUsername.Multiline = false;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PasswordChar = false;
+            this.txtUsername.PlaceholderColor = System.Drawing.Color.Silver;
+            this.txtUsername.PlaceholderText = "Enter your username";
+            this.txtUsername.Size = new System.Drawing.Size(406, 48);
+            this.txtUsername.TabIndex = 1;
+            this.txtUsername.Texts = "";
+            this.txtUsername.UnderlinedStyle = false;
             // 
             // label1
             // 
@@ -125,28 +125,29 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Forgot your password?";
             // 
-            // sataTextBox1
+            // txtPassword
             // 
-            this.sataTextBox1.BackColor = System.Drawing.Color.White;
-            this.sataTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox1.BorderRadius = 4;
-            this.sataTextBox1.BorderSize = 1;
-            this.sataTextBox1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox1.Icon = ((System.Drawing.Image)(resources.GetObject("sataTextBox1.Icon")));
-            this.sataTextBox1.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox1.Location = new System.Drawing.Point(929, 407);
-            this.sataTextBox1.Multiline = false;
-            this.sataTextBox1.Name = "sataTextBox1";
-            this.sataTextBox1.PasswordChar = true;
-            this.sataTextBox1.PlaceholderColor = System.Drawing.Color.Silver;
-            this.sataTextBox1.PlaceholderText = "Enter your password";
-            this.sataTextBox1.Size = new System.Drawing.Size(406, 48);
-            this.sataTextBox1.TabIndex = 2;
-            this.sataTextBox1.Texts = "";
-            this.sataTextBox1.UnderlinedStyle = false;
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtPassword.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtPassword.BorderRadius = 4;
+            this.txtPassword.BorderSize = 1;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtPassword.Icon = ((System.Drawing.Image)(resources.GetObject("txtPassword.Icon")));
+            this.txtPassword.IconSize = new System.Drawing.Size(20, 20);
+            this.txtPassword.Location = new System.Drawing.Point(929, 407);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
+            this.txtPassword.Multiline = false;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = true;
+            this.txtPassword.PlaceholderColor = System.Drawing.Color.Silver;
+            this.txtPassword.PlaceholderText = "Enter your password";
+            this.txtPassword.Size = new System.Drawing.Size(406, 48);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Texts = "";
+            this.txtPassword.UnderlinedStyle = false;
             // 
             // label4
             // 
@@ -188,11 +189,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.IndianRed;
             this.sataPanel1.BackColor2 = System.Drawing.Color.Transparent;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius4.BottomLeft = 10;
-            borderRadius4.BottomRight = 10;
-            borderRadius4.TopLeft = 10;
-            borderRadius4.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius4;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius2;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.pictureBox1);
             this.sataPanel1.Location = new System.Drawing.Point(12, 12);
@@ -246,8 +247,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.sataTextBox1);
-            this.Controls.Add(this.sataTextBox3);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnLogin);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -267,9 +268,9 @@
 
         private SATAUiFramework.Controls.SATAEllipseControl sataEllipseControl1;
         private FrameworkTest.SATAButton btnLogin;
-        private SATATextBox sataTextBox3;
+        private SATATextBox txtUsername;
         private System.Windows.Forms.Label label1;
-        private SATATextBox sataTextBox1;
+        private SATATextBox txtPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

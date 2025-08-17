@@ -311,6 +311,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserControls\UCBilling.resx">
       <DependentUpon>UCBilling.cs</DependentUpon>
@@ -390,6 +391,14 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\logout_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png" />
+    <None Include="Resources\manage_accounts_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png" />
+    <None Include="Resources\payment_arrow_down_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png" />
+    <None Include="Resources\room_service_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png" />
+    <None Include="Resources\single_bed_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png" />
+    <None Include="Resources\luggage_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png" />
+    <None Include="Resources\calendar_add_on_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png" />
+    <None Include="Resources\dashboard_2_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
