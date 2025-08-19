@@ -151,7 +151,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnSearch.HoverForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverImage = null;
             this.btnSearch.HoverImageTint = System.Drawing.Color.White;
@@ -252,7 +252,7 @@
             this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnAddNew.HoverForeColor = System.Drawing.Color.White;
             this.btnAddNew.HoverImage = null;
             this.btnAddNew.HoverImageTint = System.Drawing.Color.White;
@@ -291,7 +291,7 @@
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnEdit.HoverForeColor = System.Drawing.Color.White;
             this.btnEdit.HoverImage = null;
             this.btnEdit.HoverImageTint = System.Drawing.Color.White;
@@ -432,10 +432,10 @@
             this.tabPage2.Controls.Add(this.txtLName);
             this.tabPage2.Controls.Add(this.txtFName);
             this.tabPage2.Controls.Add(this.txtCusId);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -454,7 +454,7 @@
             this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.sataPanel2.Location = new System.Drawing.Point(693, 3);
             this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(498, 579);
+            this.sataPanel2.Size = new System.Drawing.Size(498, 576);
             this.sataPanel2.TabIndex = 14;
             // 
             // pictureBox1
@@ -463,7 +463,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(498, 579);
+            this.pictureBox1.Size = new System.Drawing.Size(498, 576);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -601,7 +601,7 @@
             this.btnSave.CheckedOutline = System.Drawing.Color.Transparent;
             this.btnSave.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnSave.HoverForeColor = System.Drawing.Color.White;
             this.btnSave.HoverImage = null;
             this.btnSave.HoverImageTint = System.Drawing.Color.White;
@@ -616,11 +616,11 @@
             this.btnSave.Location = new System.Drawing.Point(458, 471);
             this.btnSave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSave.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
             this.btnSave.NormalForeColor = System.Drawing.Color.White;
             this.btnSave.NormalOutline = System.Drawing.Color.Empty;
             this.btnSave.OutlineThickness = 2F;
-            this.btnSave.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSave.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
             this.btnSave.PressedForeColor = System.Drawing.Color.White;
             this.btnSave.PressedImageTint = System.Drawing.Color.White;
             this.btnSave.PressedOutline = System.Drawing.Color.Empty;

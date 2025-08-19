@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.btnLogin = new FrameworkTest.SATAButton();
             this.txtUsername = new SATATextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new SATATextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cuiCheckbox1 = new CuoreUI.Controls.cuiCheckbox();
             this.sataPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,7 +73,7 @@
             this.btnLogin.ImageTint = System.Drawing.Color.White;
             this.btnLogin.IsToggleButton = false;
             this.btnLogin.IsToggled = false;
-            this.btnLogin.Location = new System.Drawing.Point(929, 533);
+            this.btnLogin.Location = new System.Drawing.Point(929, 520);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
@@ -119,7 +119,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(1173, 469);
+            this.label1.Location = new System.Drawing.Point(1173, 471);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 20);
             this.label1.TabIndex = 4;
@@ -148,17 +148,6 @@
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(952, 469);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Remember me";
             // 
             // label5
             // 
@@ -189,11 +178,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.IndianRed;
             this.sataPanel1.BackColor2 = System.Drawing.Color.Transparent;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius2;
+            borderRadius1.BottomLeft = 10;
+            borderRadius1.BottomRight = 10;
+            borderRadius1.TopLeft = 10;
+            borderRadius1.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius1;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.pictureBox1);
             this.sataPanel1.Location = new System.Drawing.Point(12, 12);
@@ -235,17 +224,41 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // cuiCheckbox1
+            // 
+            this.cuiCheckbox1.Checked = false;
+            this.cuiCheckbox1.CheckedForeground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.cuiCheckbox1.CheckedOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.cuiCheckbox1.CheckedSymbolColor = System.Drawing.Color.White;
+            this.cuiCheckbox1.Content = "Admin";
+            this.cuiCheckbox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiCheckbox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.cuiCheckbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.cuiCheckbox1.Location = new System.Drawing.Point(929, 475);
+            this.cuiCheckbox1.MinimumSize = new System.Drawing.Size(16, 16);
+            this.cuiCheckbox1.Name = "cuiCheckbox1";
+            this.cuiCheckbox1.OutlineStyle = true;
+            this.cuiCheckbox1.OutlineThickness = 1F;
+            this.cuiCheckbox1.Rounding = 5;
+            this.cuiCheckbox1.ShowSymbols = true;
+            this.cuiCheckbox1.Size = new System.Drawing.Size(90, 16);
+            this.cuiCheckbox1.TabIndex = 8;
+            this.cuiCheckbox1.Text = "Admin";
+            this.cuiCheckbox1.UncheckedForeground = System.Drawing.Color.Empty;
+            this.cuiCheckbox1.UncheckedOutlineColor = System.Drawing.Color.Gray;
+            this.cuiCheckbox1.UncheckedSymbolColor = System.Drawing.Color.Empty;
+            // 
             // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1477, 800);
+            this.Controls.Add(this.cuiCheckbox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -271,12 +284,12 @@
         private SATATextBox txtUsername;
         private System.Windows.Forms.Label label1;
         private SATATextBox txtPassword;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private SATAUiFramework.SATAPanel sataPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private CuoreUI.Controls.cuiCheckbox cuiCheckbox1;
     }
 }

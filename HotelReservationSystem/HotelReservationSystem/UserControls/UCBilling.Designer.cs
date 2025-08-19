@@ -190,7 +190,7 @@
             this.btnBillingSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBillingSearch.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBillingSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBillingSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnBillingSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnBillingSearch.HoverForeColor = System.Drawing.Color.White;
             this.btnBillingSearch.HoverImage = null;
             this.btnBillingSearch.HoverImageTint = System.Drawing.Color.White;
@@ -291,7 +291,7 @@
             this.btnBillingAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBillingAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBillingAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBillingAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnBillingAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnBillingAddNew.HoverForeColor = System.Drawing.Color.White;
             this.btnBillingAddNew.HoverImage = null;
             this.btnBillingAddNew.HoverImageTint = System.Drawing.Color.White;
@@ -331,7 +331,7 @@
             this.btnBillingEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBillingEdit.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBillingEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBillingEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnBillingEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnBillingEdit.HoverForeColor = System.Drawing.Color.White;
             this.btnBillingEdit.HoverImage = null;
             this.btnBillingEdit.HoverImageTint = System.Drawing.Color.White;
@@ -414,7 +414,7 @@
             this.btnBackRReservationHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBackRReservationHome.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBackRReservationHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackRReservationHome.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnBackRReservationHome.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnBackRReservationHome.HoverForeColor = System.Drawing.Color.White;
             this.btnBackRReservationHome.HoverImage = null;
             this.btnBackRReservationHome.HoverImageTint = System.Drawing.Color.White;
@@ -576,7 +576,7 @@
             this.btnBillingList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBillingList.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBillingList.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBillingList.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnBillingList.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnBillingList.HoverForeColor = System.Drawing.Color.White;
             this.btnBillingList.HoverImage = null;
             this.btnBillingList.HoverImageTint = System.Drawing.Color.White;
@@ -793,7 +793,7 @@
             this.btnReservationPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservationPay.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReservationPay.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationPay.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReservationPay.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnReservationPay.HoverForeColor = System.Drawing.Color.White;
             this.btnReservationPay.HoverImage = null;
             this.btnReservationPay.HoverImageTint = System.Drawing.Color.White;
@@ -1186,7 +1186,7 @@
             this.sataButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sataButton1.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.sataButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataButton1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.sataButton1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.sataButton1.HoverForeColor = System.Drawing.Color.White;
             this.sataButton1.HoverImage = null;
             this.sataButton1.HoverImageTint = System.Drawing.Color.White;
@@ -1225,7 +1225,7 @@
             this.btnServices.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnServices.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnServices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServices.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnServices.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnServices.HoverForeColor = System.Drawing.Color.White;
             this.btnServices.HoverImage = null;
             this.btnServices.HoverImageTint = System.Drawing.Color.White;
@@ -1265,7 +1265,7 @@
             this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckIn.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckIn.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCheckIn.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnCheckIn.HoverForeColor = System.Drawing.Color.White;
             this.btnCheckIn.HoverImage = null;
             this.btnCheckIn.HoverImageTint = System.Drawing.Color.White;

@@ -154,7 +154,7 @@
             this.btnReservationSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservationSearch.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReservationSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReservationSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnReservationSearch.HoverForeColor = System.Drawing.Color.White;
             this.btnReservationSearch.HoverImage = null;
             this.btnReservationSearch.HoverImageTint = System.Drawing.Color.White;
@@ -255,7 +255,7 @@
             this.btnReservationAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservationAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReservationAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReservationAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnReservationAddNew.HoverForeColor = System.Drawing.Color.White;
             this.btnReservationAddNew.HoverImage = null;
             this.btnReservationAddNew.HoverImageTint = System.Drawing.Color.White;
@@ -294,7 +294,7 @@
             this.btnReservationEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservationEdit.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReservationEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReservationEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnReservationEdit.HoverForeColor = System.Drawing.Color.White;
             this.btnReservationEdit.HoverImage = null;
             this.btnReservationEdit.HoverImageTint = System.Drawing.Color.White;
@@ -494,7 +494,7 @@
             this.btnReservationSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservationSave.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReservationSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReservationSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnReservationSave.HoverForeColor = System.Drawing.Color.White;
             this.btnReservationSave.HoverImage = null;
             this.btnReservationSave.HoverImageTint = System.Drawing.Color.White;

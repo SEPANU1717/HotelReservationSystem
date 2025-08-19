@@ -73,6 +73,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.sataButton1 = new FrameworkTest.SATAButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservation)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.sataPanel1.SuspendLayout();
@@ -93,7 +94,7 @@
             this.btnReservationSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservationSearch.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReservationSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReservationSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnReservationSearch.HoverForeColor = System.Drawing.Color.White;
             this.btnReservationSearch.HoverImage = null;
             this.btnReservationSearch.HoverImageTint = System.Drawing.Color.White;
@@ -194,7 +195,7 @@
             this.btnReservationAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservationAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReservationAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReservationAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnReservationAddNew.HoverForeColor = System.Drawing.Color.White;
             this.btnReservationAddNew.HoverImage = null;
             this.btnReservationAddNew.HoverImageTint = System.Drawing.Color.White;
@@ -206,7 +207,7 @@
             this.btnReservationAddNew.ImageTint = System.Drawing.Color.White;
             this.btnReservationAddNew.IsToggleButton = false;
             this.btnReservationAddNew.IsToggled = false;
-            this.btnReservationAddNew.Location = new System.Drawing.Point(1004, 100);
+            this.btnReservationAddNew.Location = new System.Drawing.Point(950, 100);
             this.btnReservationAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationAddNew.Name = "btnReservationAddNew";
             this.btnReservationAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -233,7 +234,7 @@
             this.btnReservationEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservationEdit.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReservationEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReservationEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnReservationEdit.HoverForeColor = System.Drawing.Color.White;
             this.btnReservationEdit.HoverImage = null;
             this.btnReservationEdit.HoverImageTint = System.Drawing.Color.White;
@@ -380,10 +381,10 @@
             this.tabPage2.Controls.Add(this.dtCheckIn);
             this.tabPage2.Controls.Add(this.btnReservationCancel);
             this.tabPage2.Controls.Add(this.pictureBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -393,7 +394,7 @@
             this.cbNumber.ItemHeight = 23;
             this.cbNumber.Location = new System.Drawing.Point(57, 253);
             this.cbNumber.Name = "cbNumber";
-            this.cbNumber.Size = new System.Drawing.Size(206, 29);
+            this.cbNumber.Size = new System.Drawing.Size(296, 29);
             this.cbNumber.TabIndex = 27;
             this.cbNumber.SelectedIndexChanged += new System.EventHandler(this.cbNumber_SelectedIndexChanged);
             // 
@@ -401,9 +402,9 @@
             // 
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.ItemHeight = 23;
-            this.cbStatus.Location = new System.Drawing.Point(294, 253);
+            this.cbStatus.Location = new System.Drawing.Point(391, 253);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(206, 29);
+            this.cbStatus.Size = new System.Drawing.Size(296, 29);
             this.cbStatus.TabIndex = 27;
             // 
             // cbCusName
@@ -412,16 +413,16 @@
             this.cbCusName.ItemHeight = 23;
             this.cbCusName.Location = new System.Drawing.Point(57, 188);
             this.cbCusName.Name = "cbCusName";
-            this.cbCusName.Size = new System.Drawing.Size(206, 29);
+            this.cbCusName.Size = new System.Drawing.Size(296, 29);
             this.cbCusName.TabIndex = 27;
             // 
             // cbType
             // 
             this.cbType.FormattingEnabled = true;
             this.cbType.ItemHeight = 23;
-            this.cbType.Location = new System.Drawing.Point(294, 188);
+            this.cbType.Location = new System.Drawing.Point(391, 188);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(206, 29);
+            this.cbType.Size = new System.Drawing.Size(296, 29);
             this.cbType.TabIndex = 27;
             // 
             // btnReservationSave
@@ -434,7 +435,7 @@
             this.btnReservationSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservationSave.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnReservationSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReservationSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnReservationSave.HoverForeColor = System.Drawing.Color.White;
             this.btnReservationSave.HoverImage = null;
             this.btnReservationSave.HoverImageTint = System.Drawing.Color.White;
@@ -446,7 +447,7 @@
             this.btnReservationSave.ImageTint = System.Drawing.Color.White;
             this.btnReservationSave.IsToggleButton = false;
             this.btnReservationSave.IsToggled = false;
-            this.btnReservationSave.Location = new System.Drawing.Point(337, 452);
+            this.btnReservationSave.Location = new System.Drawing.Point(499, 455);
             this.btnReservationSave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationSave.Name = "btnReservationSave";
             this.btnReservationSave.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -458,7 +459,7 @@
             this.btnReservationSave.PressedImageTint = System.Drawing.Color.White;
             this.btnReservationSave.PressedOutline = System.Drawing.Color.Empty;
             this.btnReservationSave.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnReservationSave.Size = new System.Drawing.Size(163, 35);
+            this.btnReservationSave.Size = new System.Drawing.Size(188, 35);
             this.btnReservationSave.TabIndex = 26;
             this.btnReservationSave.TextAutoCenter = true;
             this.btnReservationSave.TextOffset = new System.Drawing.Point(0, 0);
@@ -468,7 +469,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(290, 290);
+            this.label8.Location = new System.Drawing.Point(387, 290);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(114, 20);
             this.label8.TabIndex = 25;
@@ -479,7 +480,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(290, 359);
+            this.label9.Location = new System.Drawing.Point(387, 359);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 20);
             this.label9.TabIndex = 25;
@@ -512,7 +513,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(290, 160);
+            this.label10.Location = new System.Drawing.Point(387, 160);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 20);
             this.label10.TabIndex = 25;
@@ -534,7 +535,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(290, 225);
+            this.label2.Location = new System.Drawing.Point(387, 225);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 25;
@@ -581,7 +582,7 @@
             this.txtRoomGuests.PasswordChar = false;
             this.txtRoomGuests.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtRoomGuests.PlaceholderText = "";
-            this.txtRoomGuests.Size = new System.Drawing.Size(206, 35);
+            this.txtRoomGuests.Size = new System.Drawing.Size(296, 35);
             this.txtRoomGuests.TabIndex = 18;
             this.txtRoomGuests.Texts = "";
             this.txtRoomGuests.UnderlinedStyle = false;
@@ -599,13 +600,13 @@
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtPrice.Icon = null;
             this.txtPrice.IconSize = new System.Drawing.Size(20, 20);
-            this.txtPrice.Location = new System.Drawing.Point(294, 387);
+            this.txtPrice.Location = new System.Drawing.Point(391, 387);
             this.txtPrice.Multiline = false;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = false;
             this.txtPrice.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtPrice.PlaceholderText = "";
-            this.txtPrice.Size = new System.Drawing.Size(206, 35);
+            this.txtPrice.Size = new System.Drawing.Size(296, 35);
             this.txtPrice.TabIndex = 20;
             this.txtPrice.Text = "0";
             this.txtPrice.Texts = "";
@@ -630,7 +631,7 @@
             this.txtReservationId.PasswordChar = false;
             this.txtReservationId.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtReservationId.PlaceholderText = "";
-            this.txtReservationId.Size = new System.Drawing.Size(206, 33);
+            this.txtReservationId.Size = new System.Drawing.Size(296, 33);
             this.txtReservationId.TabIndex = 22;
             this.txtReservationId.Text = "0";
             this.txtReservationId.Texts = "";
@@ -641,9 +642,9 @@
             this.dtCheckOut.CalendarTitleForeColor = System.Drawing.Color.Black;
             this.dtCheckOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtCheckOut.Location = new System.Drawing.Point(294, 318);
+            this.dtCheckOut.Location = new System.Drawing.Point(391, 318);
             this.dtCheckOut.Name = "dtCheckOut";
-            this.dtCheckOut.Size = new System.Drawing.Size(206, 33);
+            this.dtCheckOut.Size = new System.Drawing.Size(296, 33);
             this.dtCheckOut.TabIndex = 17;
             // 
             // dtCheckIn
@@ -653,7 +654,7 @@
             this.dtCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtCheckIn.Location = new System.Drawing.Point(57, 318);
             this.dtCheckIn.Name = "dtCheckIn";
-            this.dtCheckIn.Size = new System.Drawing.Size(206, 33);
+            this.dtCheckIn.Size = new System.Drawing.Size(296, 33);
             this.dtCheckIn.TabIndex = 17;
             // 
             // btnReservationCancel
@@ -699,9 +700,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(439, -22);
+            this.pictureBox1.Location = new System.Drawing.Point(741, -11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1028, 630);
+            this.pictureBox1.Size = new System.Drawing.Size(912, 630);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
@@ -781,6 +782,45 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
+            // sataButton1
+            // 
+            this.sataButton1.ButtonText = "";
+            this.sataButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.sataButton1.CheckedImageTint = System.Drawing.Color.White;
+            this.sataButton1.CheckedOutline = System.Drawing.Color.Transparent;
+            this.sataButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sataButton1.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.sataButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataButton1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.sataButton1.HoverForeColor = System.Drawing.Color.White;
+            this.sataButton1.HoverImage = null;
+            this.sataButton1.HoverImageTint = System.Drawing.Color.White;
+            this.sataButton1.HoverOutline = System.Drawing.Color.Empty;
+            this.sataButton1.Image = ((System.Drawing.Image)(resources.GetObject("sataButton1.Image")));
+            this.sataButton1.ImageAutoCenter = true;
+            this.sataButton1.ImageExpand = new System.Drawing.Point(0, 0);
+            this.sataButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.sataButton1.ImageTint = System.Drawing.Color.White;
+            this.sataButton1.IsToggleButton = false;
+            this.sataButton1.IsToggled = false;
+            this.sataButton1.Location = new System.Drawing.Point(1082, 100);
+            this.sataButton1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.sataButton1.Name = "sataButton1";
+            this.sataButton1.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.sataButton1.NormalForeColor = System.Drawing.Color.White;
+            this.sataButton1.NormalOutline = System.Drawing.Color.Empty;
+            this.sataButton1.OutlineThickness = 2F;
+            this.sataButton1.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.sataButton1.PressedForeColor = System.Drawing.Color.White;
+            this.sataButton1.PressedImageTint = System.Drawing.Color.White;
+            this.sataButton1.PressedOutline = System.Drawing.Color.Empty;
+            this.sataButton1.Rounding = new System.Windows.Forms.Padding(5);
+            this.sataButton1.Size = new System.Drawing.Size(44, 39);
+            this.sataButton1.TabIndex = 11;
+            this.sataButton1.TextAutoCenter = false;
+            this.sataButton1.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // UCReservation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -789,6 +829,7 @@
             this.Controls.Add(this.txtReservationSearch);
             this.Controls.Add(this.btnReservationDelete);
             this.Controls.Add(this.btnReservationAddNew);
+            this.Controls.Add(this.sataButton1);
             this.Controls.Add(this.btnReservationEdit);
             this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.panel2);
@@ -850,5 +891,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private FrameworkTest.SATAButton sataButton1;
     }
 }

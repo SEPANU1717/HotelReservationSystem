@@ -430,7 +430,7 @@
             this.btnSave.CheckedOutline = System.Drawing.Color.Transparent;
             this.btnSave.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnSave.HoverForeColor = System.Drawing.Color.White;
             this.btnSave.HoverImage = null;
             this.btnSave.HoverImageTint = System.Drawing.Color.White;
@@ -586,7 +586,7 @@
             this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnAddNew.HoverForeColor = System.Drawing.Color.White;
             this.btnAddNew.HoverImage = null;
             this.btnAddNew.HoverImageTint = System.Drawing.Color.White;
@@ -664,7 +664,7 @@
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnEdit.HoverForeColor = System.Drawing.Color.White;
             this.btnEdit.HoverImage = null;
             this.btnEdit.HoverImageTint = System.Drawing.Color.White;
@@ -703,7 +703,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnSearch.HoverForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverImage = null;
             this.btnSearch.HoverImageTint = System.Drawing.Color.White;

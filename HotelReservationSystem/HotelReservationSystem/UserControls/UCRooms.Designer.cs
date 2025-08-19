@@ -30,6 +30,7 @@
         {
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCRooms));
             SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius5 = new SATAUiFramework.BorderRadius();
@@ -39,7 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             SATAUiFramework.BorderRadius borderRadius7 = new SATAUiFramework.BorderRadius();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCRooms));
             this.btnRoomSearch = new FrameworkTest.SATAButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cboRoomStatus = new SATAComboBox();
@@ -53,35 +53,60 @@
             this.label1 = new System.Windows.Forms.Label();
             this.sataPanel2 = new SATAUiFramework.SATAPanel();
             this.sataPanel7 = new SATAUiFramework.SATAPanel();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.btnSingleRoom = new FrameworkTest.SATAButton();
             this.label35 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.label29 = new System.Windows.Forms.Label();
             this.sataPanel6 = new SATAUiFramework.SATAPanel();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.btnfamilyRoom = new FrameworkTest.SATAButton();
             this.label34 = new System.Windows.Forms.Label();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
             this.sataPanel5 = new SATAUiFramework.SATAPanel();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.btnSuiteRoom = new FrameworkTest.SATAButton();
             this.label33 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
             this.sataPanel4 = new SATAUiFramework.SATAPanel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnDeluxeRoom = new FrameworkTest.SATAButton();
             this.label32 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.sataPanel3 = new SATAUiFramework.SATAPanel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnStandardRoom = new FrameworkTest.SATAButton();
             this.label31 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRoomSave = new FrameworkTest.SATAButton();
             this.txtDescription = new SATATextBox();
             this.txtRoomGuests = new SATATextBox();
@@ -90,6 +115,7 @@
             this.txtRoomType = new SATATextBox();
             this.txtRoomId = new SATATextBox();
             this.txtRoomNumber = new SATATextBox();
+            this.btnRoomCancel = new FrameworkTest.SATAButton();
             this.dataGridRoom = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
@@ -98,70 +124,44 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.txtRoomSearch = new SATATextBox();
             this.btnRoomDelete = new FrameworkTest.SATAButton();
             this.btnRoomAddNew = new FrameworkTest.SATAButton();
             this.btnRefresh = new FrameworkTest.SATAButton();
             this.btnRoomEdit = new FrameworkTest.SATAButton();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btnSingleRoom = new FrameworkTest.SATAButton();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnfamilyRoom = new FrameworkTest.SATAButton();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.btnSuiteRoom = new FrameworkTest.SATAButton();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnDeluxeRoom = new FrameworkTest.SATAButton();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.btnStandardRoom = new FrameworkTest.SATAButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRoomCancel = new FrameworkTest.SATAButton();
-            this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.tabPage2.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             this.sataPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.sataPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.sataPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.sataPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.sataPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRoom)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,7 +175,7 @@
             this.btnRoomSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomSearch.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRoomSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnRoomSearch.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnRoomSearch.HoverForeColor = System.Drawing.Color.White;
             this.btnRoomSearch.HoverImage = null;
             this.btnRoomSearch.HoverImageTint = System.Drawing.Color.White;
@@ -388,6 +388,16 @@
             this.sataPanel7.Size = new System.Drawing.Size(464, 105);
             this.sataPanel7.TabIndex = 0;
             // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
+            this.pictureBox20.Location = new System.Drawing.Point(312, 24);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox20.TabIndex = 2;
+            this.pictureBox20.TabStop = false;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -400,6 +410,17 @@
             this.label15.TabIndex = 1;
             this.label15.Text = "Single Room";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(179, 105);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
+            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -411,6 +432,47 @@
             this.label30.Size = new System.Drawing.Size(51, 12);
             this.label30.TabIndex = 1;
             this.label30.Text = "Queen Bed";
+            // 
+            // btnSingleRoom
+            // 
+            this.btnSingleRoom.ButtonText = "";
+            this.btnSingleRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnSingleRoom.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSingleRoom.CheckedImageTint = System.Drawing.Color.White;
+            this.btnSingleRoom.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnSingleRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSingleRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSingleRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSingleRoom.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSingleRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSingleRoom.HoverForeColor = System.Drawing.Color.White;
+            this.btnSingleRoom.HoverImage = null;
+            this.btnSingleRoom.HoverImageTint = System.Drawing.Color.White;
+            this.btnSingleRoom.HoverOutline = System.Drawing.Color.Empty;
+            this.btnSingleRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnSingleRoom.Image")));
+            this.btnSingleRoom.ImageAutoCenter = true;
+            this.btnSingleRoom.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnSingleRoom.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnSingleRoom.ImageTint = System.Drawing.Color.White;
+            this.btnSingleRoom.IsToggleButton = false;
+            this.btnSingleRoom.IsToggled = false;
+            this.btnSingleRoom.Location = new System.Drawing.Point(410, 49);
+            this.btnSingleRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnSingleRoom.Name = "btnSingleRoom";
+            this.btnSingleRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnSingleRoom.NormalForeColor = System.Drawing.Color.White;
+            this.btnSingleRoom.NormalOutline = System.Drawing.Color.Empty;
+            this.btnSingleRoom.OutlineThickness = 2F;
+            this.btnSingleRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.btnSingleRoom.PressedForeColor = System.Drawing.Color.White;
+            this.btnSingleRoom.PressedImageTint = System.Drawing.Color.White;
+            this.btnSingleRoom.PressedOutline = System.Drawing.Color.Empty;
+            this.btnSingleRoom.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnSingleRoom.Size = new System.Drawing.Size(44, 39);
+            this.btnSingleRoom.TabIndex = 11;
+            this.btnSingleRoom.TextAutoCenter = false;
+            this.btnSingleRoom.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnSingleRoom.Click += new System.EventHandler(this.btnSingleRoom_Click);
             // 
             // label35
             // 
@@ -435,6 +497,26 @@
             this.label28.Size = new System.Drawing.Size(28, 12);
             this.label28.TabIndex = 1;
             this.label28.Text = "25m2";
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
+            this.pictureBox19.Location = new System.Drawing.Point(238, 25);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox19.TabIndex = 2;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
+            this.pictureBox18.Location = new System.Drawing.Point(189, 26);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox18.TabIndex = 2;
+            this.pictureBox18.TabStop = false;
             // 
             // label29
             // 
@@ -474,6 +556,16 @@
             this.sataPanel6.Size = new System.Drawing.Size(464, 105);
             this.sataPanel6.TabIndex = 0;
             // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.pictureBox17.Location = new System.Drawing.Point(312, 24);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 2;
+            this.pictureBox17.TabStop = false;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -485,6 +577,17 @@
             this.label14.Size = new System.Drawing.Size(123, 25);
             this.label14.TabIndex = 1;
             this.label14.Text = "Family Room";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(179, 105);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
             // 
             // label27
             // 
@@ -498,6 +601,47 @@
             this.label27.TabIndex = 1;
             this.label27.Text = "Queen Bed";
             // 
+            // btnfamilyRoom
+            // 
+            this.btnfamilyRoom.ButtonText = "";
+            this.btnfamilyRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnfamilyRoom.CheckedForeColor = System.Drawing.Color.White;
+            this.btnfamilyRoom.CheckedImageTint = System.Drawing.Color.White;
+            this.btnfamilyRoom.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnfamilyRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnfamilyRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnfamilyRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfamilyRoom.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnfamilyRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnfamilyRoom.HoverForeColor = System.Drawing.Color.White;
+            this.btnfamilyRoom.HoverImage = null;
+            this.btnfamilyRoom.HoverImageTint = System.Drawing.Color.White;
+            this.btnfamilyRoom.HoverOutline = System.Drawing.Color.Empty;
+            this.btnfamilyRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnfamilyRoom.Image")));
+            this.btnfamilyRoom.ImageAutoCenter = true;
+            this.btnfamilyRoom.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnfamilyRoom.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnfamilyRoom.ImageTint = System.Drawing.Color.White;
+            this.btnfamilyRoom.IsToggleButton = false;
+            this.btnfamilyRoom.IsToggled = false;
+            this.btnfamilyRoom.Location = new System.Drawing.Point(410, 58);
+            this.btnfamilyRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnfamilyRoom.Name = "btnfamilyRoom";
+            this.btnfamilyRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnfamilyRoom.NormalForeColor = System.Drawing.Color.White;
+            this.btnfamilyRoom.NormalOutline = System.Drawing.Color.Empty;
+            this.btnfamilyRoom.OutlineThickness = 2F;
+            this.btnfamilyRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.btnfamilyRoom.PressedForeColor = System.Drawing.Color.White;
+            this.btnfamilyRoom.PressedImageTint = System.Drawing.Color.White;
+            this.btnfamilyRoom.PressedOutline = System.Drawing.Color.Empty;
+            this.btnfamilyRoom.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnfamilyRoom.Size = new System.Drawing.Size(44, 39);
+            this.btnfamilyRoom.TabIndex = 11;
+            this.btnfamilyRoom.TextAutoCenter = false;
+            this.btnfamilyRoom.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnfamilyRoom.Click += new System.EventHandler(this.btnfamilyRoom_Click);
+            // 
             // label34
             // 
             this.label34.AutoSize = true;
@@ -510,6 +654,16 @@
             this.label34.TabIndex = 1;
             this.label34.Text = "A basic yet comfortable room with essential \r\namenities for a pleasant stay.";
             // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
+            this.pictureBox16.Location = new System.Drawing.Point(238, 25);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox16.TabIndex = 2;
+            this.pictureBox16.TabStop = false;
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -521,6 +675,16 @@
             this.label25.Size = new System.Drawing.Size(40, 12);
             this.label25.TabIndex = 1;
             this.label25.Text = "2 guests";
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
+            this.pictureBox15.Location = new System.Drawing.Point(189, 26);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox15.TabIndex = 2;
+            this.pictureBox15.TabStop = false;
             // 
             // label26
             // 
@@ -560,6 +724,16 @@
             this.sataPanel5.Size = new System.Drawing.Size(464, 105);
             this.sataPanel5.TabIndex = 0;
             // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
+            this.pictureBox14.Location = new System.Drawing.Point(312, 25);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 2;
+            this.pictureBox14.TabStop = false;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -571,6 +745,68 @@
             this.label13.Size = new System.Drawing.Size(110, 25);
             this.label13.TabIndex = 1;
             this.label13.Text = "Suite Room";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(179, 105);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(238, 26);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 2;
+            this.pictureBox13.TabStop = false;
+            // 
+            // btnSuiteRoom
+            // 
+            this.btnSuiteRoom.ButtonText = "";
+            this.btnSuiteRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnSuiteRoom.CheckedForeColor = System.Drawing.Color.White;
+            this.btnSuiteRoom.CheckedImageTint = System.Drawing.Color.White;
+            this.btnSuiteRoom.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnSuiteRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSuiteRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSuiteRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuiteRoom.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSuiteRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSuiteRoom.HoverForeColor = System.Drawing.Color.White;
+            this.btnSuiteRoom.HoverImage = null;
+            this.btnSuiteRoom.HoverImageTint = System.Drawing.Color.White;
+            this.btnSuiteRoom.HoverOutline = System.Drawing.Color.Empty;
+            this.btnSuiteRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnSuiteRoom.Image")));
+            this.btnSuiteRoom.ImageAutoCenter = true;
+            this.btnSuiteRoom.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnSuiteRoom.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnSuiteRoom.ImageTint = System.Drawing.Color.White;
+            this.btnSuiteRoom.IsToggleButton = false;
+            this.btnSuiteRoom.IsToggled = false;
+            this.btnSuiteRoom.Location = new System.Drawing.Point(410, 58);
+            this.btnSuiteRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnSuiteRoom.Name = "btnSuiteRoom";
+            this.btnSuiteRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnSuiteRoom.NormalForeColor = System.Drawing.Color.White;
+            this.btnSuiteRoom.NormalOutline = System.Drawing.Color.Empty;
+            this.btnSuiteRoom.OutlineThickness = 2F;
+            this.btnSuiteRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.btnSuiteRoom.PressedForeColor = System.Drawing.Color.White;
+            this.btnSuiteRoom.PressedImageTint = System.Drawing.Color.White;
+            this.btnSuiteRoom.PressedOutline = System.Drawing.Color.Empty;
+            this.btnSuiteRoom.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnSuiteRoom.Size = new System.Drawing.Size(44, 39);
+            this.btnSuiteRoom.TabIndex = 11;
+            this.btnSuiteRoom.TextAutoCenter = false;
+            this.btnSuiteRoom.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnSuiteRoom.Click += new System.EventHandler(this.btnSuiteRoom_Click);
             // 
             // label33
             // 
@@ -607,6 +843,16 @@
             this.label22.Size = new System.Drawing.Size(28, 12);
             this.label22.TabIndex = 1;
             this.label22.Text = "25m2";
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
+            this.pictureBox12.Location = new System.Drawing.Point(189, 27);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 2;
+            this.pictureBox12.TabStop = false;
             // 
             // label23
             // 
@@ -646,6 +892,16 @@
             this.sataPanel4.Size = new System.Drawing.Size(464, 105);
             this.sataPanel4.TabIndex = 0;
             // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(312, 26);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 2;
+            this.pictureBox11.TabStop = false;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -658,6 +914,68 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Deluxe Room";
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(238, 27);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 2;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(179, 105);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnDeluxeRoom
+            // 
+            this.btnDeluxeRoom.ButtonText = "";
+            this.btnDeluxeRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnDeluxeRoom.CheckedForeColor = System.Drawing.Color.White;
+            this.btnDeluxeRoom.CheckedImageTint = System.Drawing.Color.White;
+            this.btnDeluxeRoom.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnDeluxeRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeluxeRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDeluxeRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeluxeRoom.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDeluxeRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDeluxeRoom.HoverForeColor = System.Drawing.Color.White;
+            this.btnDeluxeRoom.HoverImage = null;
+            this.btnDeluxeRoom.HoverImageTint = System.Drawing.Color.White;
+            this.btnDeluxeRoom.HoverOutline = System.Drawing.Color.Empty;
+            this.btnDeluxeRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnDeluxeRoom.Image")));
+            this.btnDeluxeRoom.ImageAutoCenter = true;
+            this.btnDeluxeRoom.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnDeluxeRoom.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnDeluxeRoom.ImageTint = System.Drawing.Color.White;
+            this.btnDeluxeRoom.IsToggleButton = false;
+            this.btnDeluxeRoom.IsToggled = false;
+            this.btnDeluxeRoom.Location = new System.Drawing.Point(410, 58);
+            this.btnDeluxeRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnDeluxeRoom.Name = "btnDeluxeRoom";
+            this.btnDeluxeRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnDeluxeRoom.NormalForeColor = System.Drawing.Color.White;
+            this.btnDeluxeRoom.NormalOutline = System.Drawing.Color.Empty;
+            this.btnDeluxeRoom.OutlineThickness = 2F;
+            this.btnDeluxeRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.btnDeluxeRoom.PressedForeColor = System.Drawing.Color.White;
+            this.btnDeluxeRoom.PressedImageTint = System.Drawing.Color.White;
+            this.btnDeluxeRoom.PressedOutline = System.Drawing.Color.Empty;
+            this.btnDeluxeRoom.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnDeluxeRoom.Size = new System.Drawing.Size(44, 39);
+            this.btnDeluxeRoom.TabIndex = 11;
+            this.btnDeluxeRoom.TextAutoCenter = false;
+            this.btnDeluxeRoom.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnDeluxeRoom.Click += new System.EventHandler(this.btnDeluxeRoom_Click);
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -669,6 +987,16 @@
             this.label32.Size = new System.Drawing.Size(177, 24);
             this.label32.TabIndex = 1;
             this.label32.Text = "A basic yet comfortable room with essential \r\namenities for a pleasant stay.";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(189, 28);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 2;
+            this.pictureBox9.TabStop = false;
             // 
             // label20
             // 
@@ -732,6 +1060,36 @@
             this.sataPanel3.Size = new System.Drawing.Size(464, 105);
             this.sataPanel3.TabIndex = 0;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(312, 24);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 2;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(238, 25);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 2;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(189, 26);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(19, 13);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 2;
+            this.pictureBox6.TabStop = false;
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -743,6 +1101,47 @@
             this.label18.Size = new System.Drawing.Size(40, 12);
             this.label18.TabIndex = 1;
             this.label18.Text = "2 guests";
+            // 
+            // btnStandardRoom
+            // 
+            this.btnStandardRoom.ButtonText = "";
+            this.btnStandardRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnStandardRoom.CheckedForeColor = System.Drawing.Color.White;
+            this.btnStandardRoom.CheckedImageTint = System.Drawing.Color.White;
+            this.btnStandardRoom.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnStandardRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStandardRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnStandardRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStandardRoom.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnStandardRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnStandardRoom.HoverForeColor = System.Drawing.Color.White;
+            this.btnStandardRoom.HoverImage = null;
+            this.btnStandardRoom.HoverImageTint = System.Drawing.Color.White;
+            this.btnStandardRoom.HoverOutline = System.Drawing.Color.Empty;
+            this.btnStandardRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnStandardRoom.Image")));
+            this.btnStandardRoom.ImageAutoCenter = true;
+            this.btnStandardRoom.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnStandardRoom.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnStandardRoom.ImageTint = System.Drawing.Color.White;
+            this.btnStandardRoom.IsToggleButton = false;
+            this.btnStandardRoom.IsToggled = false;
+            this.btnStandardRoom.Location = new System.Drawing.Point(410, 58);
+            this.btnStandardRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnStandardRoom.Name = "btnStandardRoom";
+            this.btnStandardRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnStandardRoom.NormalForeColor = System.Drawing.Color.White;
+            this.btnStandardRoom.NormalOutline = System.Drawing.Color.Empty;
+            this.btnStandardRoom.OutlineThickness = 2F;
+            this.btnStandardRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.btnStandardRoom.PressedForeColor = System.Drawing.Color.White;
+            this.btnStandardRoom.PressedImageTint = System.Drawing.Color.White;
+            this.btnStandardRoom.PressedOutline = System.Drawing.Color.Empty;
+            this.btnStandardRoom.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnStandardRoom.Size = new System.Drawing.Size(44, 39);
+            this.btnStandardRoom.TabIndex = 11;
+            this.btnStandardRoom.TextAutoCenter = false;
+            this.btnStandardRoom.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnStandardRoom.Click += new System.EventHandler(this.btnStandardRoom_Click);
             // 
             // label31
             // 
@@ -792,6 +1191,17 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "Standard Room";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 105);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnRoomSave
             // 
             this.btnRoomSave.ButtonText = "Save";
@@ -802,7 +1212,7 @@
             this.btnRoomSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomSave.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRoomSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnRoomSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnRoomSave.HoverForeColor = System.Drawing.Color.White;
             this.btnRoomSave.HoverImage = null;
             this.btnRoomSave.HoverImageTint = System.Drawing.Color.White;
@@ -997,6 +1407,45 @@
             this.txtRoomNumber.Texts = "";
             this.txtRoomNumber.UnderlinedStyle = false;
             // 
+            // btnRoomCancel
+            // 
+            this.btnRoomCancel.ButtonText = "Cancel";
+            this.btnRoomCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnRoomCancel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnRoomCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRoomCancel.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnRoomCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRoomCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnRoomCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomCancel.HoverBackground = System.Drawing.Color.White;
+            this.btnRoomCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRoomCancel.HoverImage = null;
+            this.btnRoomCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRoomCancel.HoverOutline = System.Drawing.Color.Empty;
+            this.btnRoomCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnRoomCancel.Image")));
+            this.btnRoomCancel.ImageAutoCenter = true;
+            this.btnRoomCancel.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnRoomCancel.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnRoomCancel.ImageTint = System.Drawing.Color.White;
+            this.btnRoomCancel.IsToggleButton = false;
+            this.btnRoomCancel.IsToggled = false;
+            this.btnRoomCancel.Location = new System.Drawing.Point(37, 24);
+            this.btnRoomCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnRoomCancel.Name = "btnRoomCancel";
+            this.btnRoomCancel.NormalBackground = System.Drawing.Color.Transparent;
+            this.btnRoomCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRoomCancel.NormalOutline = System.Drawing.Color.Empty;
+            this.btnRoomCancel.OutlineThickness = 2F;
+            this.btnRoomCancel.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnRoomCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRoomCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRoomCancel.PressedOutline = System.Drawing.Color.Empty;
+            this.btnRoomCancel.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnRoomCancel.Size = new System.Drawing.Size(115, 35);
+            this.btnRoomCancel.TabIndex = 5;
+            this.btnRoomCancel.TextAutoCenter = true;
+            this.btnRoomCancel.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // dataGridRoom
             // 
             this.dataGridRoom.AllowUserToAddRows = false;
@@ -1140,6 +1589,22 @@
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 12;
             // 
+            // sataPictureBox1
+            // 
+            this.sataPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.sataPictureBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.sataPictureBox1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.sataPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.sataPictureBox1.BorderSize = 1;
+            this.sataPictureBox1.GradientAngle = 50F;
+            this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
+            this.sataPictureBox1.Location = new System.Drawing.Point(1088, 16);
+            this.sataPictureBox1.Name = "sataPictureBox1";
+            this.sataPictureBox1.Size = new System.Drawing.Size(43, 43);
+            this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sataPictureBox1.TabIndex = 2;
+            this.sataPictureBox1.TabStop = false;
+            // 
             // txtRoomSearch
             // 
             this.txtRoomSearch.BackColor = System.Drawing.Color.White;
@@ -1212,7 +1677,7 @@
             this.btnRoomAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRoomAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnRoomAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnRoomAddNew.HoverForeColor = System.Drawing.Color.White;
             this.btnRoomAddNew.HoverImage = null;
             this.btnRoomAddNew.HoverImageTint = System.Drawing.Color.White;
@@ -1251,7 +1716,7 @@
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnRefresh.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnRefresh.HoverForeColor = System.Drawing.Color.White;
             this.btnRefresh.HoverImage = null;
             this.btnRefresh.HoverImageTint = System.Drawing.Color.White;
@@ -1290,7 +1755,7 @@
             this.btnRoomEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomEdit.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRoomEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnRoomEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
             this.btnRoomEdit.HoverForeColor = System.Drawing.Color.White;
             this.btnRoomEdit.HoverImage = null;
             this.btnRoomEdit.HoverImageTint = System.Drawing.Color.White;
@@ -1319,471 +1784,6 @@
             this.btnRoomEdit.TextAutoCenter = false;
             this.btnRoomEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
-            this.pictureBox20.Location = new System.Drawing.Point(312, 24);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox20.TabIndex = 2;
-            this.pictureBox20.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(179, 105);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            // 
-            // btnSingleRoom
-            // 
-            this.btnSingleRoom.ButtonText = "";
-            this.btnSingleRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnSingleRoom.CheckedForeColor = System.Drawing.Color.White;
-            this.btnSingleRoom.CheckedImageTint = System.Drawing.Color.White;
-            this.btnSingleRoom.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnSingleRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSingleRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSingleRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSingleRoom.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSingleRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnSingleRoom.HoverForeColor = System.Drawing.Color.White;
-            this.btnSingleRoom.HoverImage = null;
-            this.btnSingleRoom.HoverImageTint = System.Drawing.Color.White;
-            this.btnSingleRoom.HoverOutline = System.Drawing.Color.Empty;
-            this.btnSingleRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnSingleRoom.Image")));
-            this.btnSingleRoom.ImageAutoCenter = true;
-            this.btnSingleRoom.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnSingleRoom.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnSingleRoom.ImageTint = System.Drawing.Color.White;
-            this.btnSingleRoom.IsToggleButton = false;
-            this.btnSingleRoom.IsToggled = false;
-            this.btnSingleRoom.Location = new System.Drawing.Point(410, 49);
-            this.btnSingleRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnSingleRoom.Name = "btnSingleRoom";
-            this.btnSingleRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.btnSingleRoom.NormalForeColor = System.Drawing.Color.White;
-            this.btnSingleRoom.NormalOutline = System.Drawing.Color.Empty;
-            this.btnSingleRoom.OutlineThickness = 2F;
-            this.btnSingleRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.btnSingleRoom.PressedForeColor = System.Drawing.Color.White;
-            this.btnSingleRoom.PressedImageTint = System.Drawing.Color.White;
-            this.btnSingleRoom.PressedOutline = System.Drawing.Color.Empty;
-            this.btnSingleRoom.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnSingleRoom.Size = new System.Drawing.Size(44, 39);
-            this.btnSingleRoom.TabIndex = 11;
-            this.btnSingleRoom.TextAutoCenter = false;
-            this.btnSingleRoom.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnSingleRoom.Click += new System.EventHandler(this.btnSingleRoom_Click);
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(238, 25);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox19.TabIndex = 2;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(189, 26);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox18.TabIndex = 2;
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(312, 24);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 2;
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(179, 105);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
-            // btnfamilyRoom
-            // 
-            this.btnfamilyRoom.ButtonText = "";
-            this.btnfamilyRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnfamilyRoom.CheckedForeColor = System.Drawing.Color.White;
-            this.btnfamilyRoom.CheckedImageTint = System.Drawing.Color.White;
-            this.btnfamilyRoom.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnfamilyRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnfamilyRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnfamilyRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfamilyRoom.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnfamilyRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnfamilyRoom.HoverForeColor = System.Drawing.Color.White;
-            this.btnfamilyRoom.HoverImage = null;
-            this.btnfamilyRoom.HoverImageTint = System.Drawing.Color.White;
-            this.btnfamilyRoom.HoverOutline = System.Drawing.Color.Empty;
-            this.btnfamilyRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnfamilyRoom.Image")));
-            this.btnfamilyRoom.ImageAutoCenter = true;
-            this.btnfamilyRoom.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnfamilyRoom.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnfamilyRoom.ImageTint = System.Drawing.Color.White;
-            this.btnfamilyRoom.IsToggleButton = false;
-            this.btnfamilyRoom.IsToggled = false;
-            this.btnfamilyRoom.Location = new System.Drawing.Point(410, 58);
-            this.btnfamilyRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnfamilyRoom.Name = "btnfamilyRoom";
-            this.btnfamilyRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.btnfamilyRoom.NormalForeColor = System.Drawing.Color.White;
-            this.btnfamilyRoom.NormalOutline = System.Drawing.Color.Empty;
-            this.btnfamilyRoom.OutlineThickness = 2F;
-            this.btnfamilyRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.btnfamilyRoom.PressedForeColor = System.Drawing.Color.White;
-            this.btnfamilyRoom.PressedImageTint = System.Drawing.Color.White;
-            this.btnfamilyRoom.PressedOutline = System.Drawing.Color.Empty;
-            this.btnfamilyRoom.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnfamilyRoom.Size = new System.Drawing.Size(44, 39);
-            this.btnfamilyRoom.TabIndex = 11;
-            this.btnfamilyRoom.TextAutoCenter = false;
-            this.btnfamilyRoom.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnfamilyRoom.Click += new System.EventHandler(this.btnfamilyRoom_Click);
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(238, 25);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 2;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(189, 26);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox15.TabIndex = 2;
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(312, 25);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 2;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(179, 105);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(238, 26);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 2;
-            this.pictureBox13.TabStop = false;
-            // 
-            // btnSuiteRoom
-            // 
-            this.btnSuiteRoom.ButtonText = "";
-            this.btnSuiteRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnSuiteRoom.CheckedForeColor = System.Drawing.Color.White;
-            this.btnSuiteRoom.CheckedImageTint = System.Drawing.Color.White;
-            this.btnSuiteRoom.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnSuiteRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuiteRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSuiteRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuiteRoom.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSuiteRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnSuiteRoom.HoverForeColor = System.Drawing.Color.White;
-            this.btnSuiteRoom.HoverImage = null;
-            this.btnSuiteRoom.HoverImageTint = System.Drawing.Color.White;
-            this.btnSuiteRoom.HoverOutline = System.Drawing.Color.Empty;
-            this.btnSuiteRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnSuiteRoom.Image")));
-            this.btnSuiteRoom.ImageAutoCenter = true;
-            this.btnSuiteRoom.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnSuiteRoom.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnSuiteRoom.ImageTint = System.Drawing.Color.White;
-            this.btnSuiteRoom.IsToggleButton = false;
-            this.btnSuiteRoom.IsToggled = false;
-            this.btnSuiteRoom.Location = new System.Drawing.Point(410, 58);
-            this.btnSuiteRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnSuiteRoom.Name = "btnSuiteRoom";
-            this.btnSuiteRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.btnSuiteRoom.NormalForeColor = System.Drawing.Color.White;
-            this.btnSuiteRoom.NormalOutline = System.Drawing.Color.Empty;
-            this.btnSuiteRoom.OutlineThickness = 2F;
-            this.btnSuiteRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.btnSuiteRoom.PressedForeColor = System.Drawing.Color.White;
-            this.btnSuiteRoom.PressedImageTint = System.Drawing.Color.White;
-            this.btnSuiteRoom.PressedOutline = System.Drawing.Color.Empty;
-            this.btnSuiteRoom.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnSuiteRoom.Size = new System.Drawing.Size(44, 39);
-            this.btnSuiteRoom.TabIndex = 11;
-            this.btnSuiteRoom.TextAutoCenter = false;
-            this.btnSuiteRoom.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnSuiteRoom.Click += new System.EventHandler(this.btnSuiteRoom_Click);
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(189, 27);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 2;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(312, 26);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 2;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(238, 27);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 2;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(179, 105);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnDeluxeRoom
-            // 
-            this.btnDeluxeRoom.ButtonText = "";
-            this.btnDeluxeRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnDeluxeRoom.CheckedForeColor = System.Drawing.Color.White;
-            this.btnDeluxeRoom.CheckedImageTint = System.Drawing.Color.White;
-            this.btnDeluxeRoom.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnDeluxeRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeluxeRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDeluxeRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeluxeRoom.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDeluxeRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnDeluxeRoom.HoverForeColor = System.Drawing.Color.White;
-            this.btnDeluxeRoom.HoverImage = null;
-            this.btnDeluxeRoom.HoverImageTint = System.Drawing.Color.White;
-            this.btnDeluxeRoom.HoverOutline = System.Drawing.Color.Empty;
-            this.btnDeluxeRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnDeluxeRoom.Image")));
-            this.btnDeluxeRoom.ImageAutoCenter = true;
-            this.btnDeluxeRoom.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnDeluxeRoom.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnDeluxeRoom.ImageTint = System.Drawing.Color.White;
-            this.btnDeluxeRoom.IsToggleButton = false;
-            this.btnDeluxeRoom.IsToggled = false;
-            this.btnDeluxeRoom.Location = new System.Drawing.Point(410, 58);
-            this.btnDeluxeRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnDeluxeRoom.Name = "btnDeluxeRoom";
-            this.btnDeluxeRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.btnDeluxeRoom.NormalForeColor = System.Drawing.Color.White;
-            this.btnDeluxeRoom.NormalOutline = System.Drawing.Color.Empty;
-            this.btnDeluxeRoom.OutlineThickness = 2F;
-            this.btnDeluxeRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.btnDeluxeRoom.PressedForeColor = System.Drawing.Color.White;
-            this.btnDeluxeRoom.PressedImageTint = System.Drawing.Color.White;
-            this.btnDeluxeRoom.PressedOutline = System.Drawing.Color.Empty;
-            this.btnDeluxeRoom.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnDeluxeRoom.Size = new System.Drawing.Size(44, 39);
-            this.btnDeluxeRoom.TabIndex = 11;
-            this.btnDeluxeRoom.TextAutoCenter = false;
-            this.btnDeluxeRoom.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnDeluxeRoom.Click += new System.EventHandler(this.btnDeluxeRoom_Click);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(189, 28);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 2;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(312, 24);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 2;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(238, 25);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 2;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(189, 26);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(19, 13);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
-            // 
-            // btnStandardRoom
-            // 
-            this.btnStandardRoom.ButtonText = "";
-            this.btnStandardRoom.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnStandardRoom.CheckedForeColor = System.Drawing.Color.White;
-            this.btnStandardRoom.CheckedImageTint = System.Drawing.Color.White;
-            this.btnStandardRoom.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnStandardRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStandardRoom.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnStandardRoom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStandardRoom.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnStandardRoom.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnStandardRoom.HoverForeColor = System.Drawing.Color.White;
-            this.btnStandardRoom.HoverImage = null;
-            this.btnStandardRoom.HoverImageTint = System.Drawing.Color.White;
-            this.btnStandardRoom.HoverOutline = System.Drawing.Color.Empty;
-            this.btnStandardRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnStandardRoom.Image")));
-            this.btnStandardRoom.ImageAutoCenter = true;
-            this.btnStandardRoom.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnStandardRoom.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnStandardRoom.ImageTint = System.Drawing.Color.White;
-            this.btnStandardRoom.IsToggleButton = false;
-            this.btnStandardRoom.IsToggled = false;
-            this.btnStandardRoom.Location = new System.Drawing.Point(410, 58);
-            this.btnStandardRoom.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnStandardRoom.Name = "btnStandardRoom";
-            this.btnStandardRoom.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.btnStandardRoom.NormalForeColor = System.Drawing.Color.White;
-            this.btnStandardRoom.NormalOutline = System.Drawing.Color.Empty;
-            this.btnStandardRoom.OutlineThickness = 2F;
-            this.btnStandardRoom.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.btnStandardRoom.PressedForeColor = System.Drawing.Color.White;
-            this.btnStandardRoom.PressedImageTint = System.Drawing.Color.White;
-            this.btnStandardRoom.PressedOutline = System.Drawing.Color.Empty;
-            this.btnStandardRoom.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnStandardRoom.Size = new System.Drawing.Size(44, 39);
-            this.btnStandardRoom.TabIndex = 11;
-            this.btnStandardRoom.TextAutoCenter = false;
-            this.btnStandardRoom.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnStandardRoom.Click += new System.EventHandler(this.btnStandardRoom_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 105);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnRoomCancel
-            // 
-            this.btnRoomCancel.ButtonText = "Cancel";
-            this.btnRoomCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnRoomCancel.CheckedForeColor = System.Drawing.Color.White;
-            this.btnRoomCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRoomCancel.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnRoomCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRoomCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnRoomCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomCancel.HoverBackground = System.Drawing.Color.White;
-            this.btnRoomCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRoomCancel.HoverImage = null;
-            this.btnRoomCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRoomCancel.HoverOutline = System.Drawing.Color.Empty;
-            this.btnRoomCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnRoomCancel.Image")));
-            this.btnRoomCancel.ImageAutoCenter = true;
-            this.btnRoomCancel.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnRoomCancel.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnRoomCancel.ImageTint = System.Drawing.Color.White;
-            this.btnRoomCancel.IsToggleButton = false;
-            this.btnRoomCancel.IsToggled = false;
-            this.btnRoomCancel.Location = new System.Drawing.Point(37, 24);
-            this.btnRoomCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnRoomCancel.Name = "btnRoomCancel";
-            this.btnRoomCancel.NormalBackground = System.Drawing.Color.Transparent;
-            this.btnRoomCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRoomCancel.NormalOutline = System.Drawing.Color.Empty;
-            this.btnRoomCancel.OutlineThickness = 2F;
-            this.btnRoomCancel.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnRoomCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRoomCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnRoomCancel.PressedOutline = System.Drawing.Color.Empty;
-            this.btnRoomCancel.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnRoomCancel.Size = new System.Drawing.Size(115, 35);
-            this.btnRoomCancel.TabIndex = 5;
-            this.btnRoomCancel.TextAutoCenter = true;
-            this.btnRoomCancel.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // sataPictureBox1
-            // 
-            this.sataPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.sataPictureBox1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.sataPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox1.BorderSize = 1;
-            this.sataPictureBox1.GradientAngle = 50F;
-            this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
-            this.sataPictureBox1.Location = new System.Drawing.Point(1088, 16);
-            this.sataPictureBox1.Name = "sataPictureBox1";
-            this.sataPictureBox1.Size = new System.Drawing.Size(43, 43);
-            this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.sataPictureBox1.TabIndex = 2;
-            this.sataPictureBox1.TabStop = false;
-            // 
             // UCRooms
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1805,40 +1805,40 @@
             this.sataPanel2.ResumeLayout(false);
             this.sataPanel7.ResumeLayout(false);
             this.sataPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.sataPanel6.ResumeLayout(false);
             this.sataPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.sataPanel5.ResumeLayout(false);
             this.sataPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.sataPanel4.ResumeLayout(false);
             this.sataPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.sataPanel3.ResumeLayout(false);
             this.sataPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRoom)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
