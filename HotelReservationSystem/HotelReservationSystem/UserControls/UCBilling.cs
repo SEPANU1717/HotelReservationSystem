@@ -169,12 +169,12 @@ namespace HotelReservationSystem.UserControls
 
             //};
 
-            btnBillingList.Click += delegate
-            {
-                materialTabControl1.TabPages.Add(tabPage1);
-                materialTabControl1.TabPages.Remove(ReservationBillingForm);
-                materialTabControl1.TabPages.Remove(MainFormBilling);
-            };
+            //btnBillingList.Click += delegate
+            //{
+            //    materialTabControl1.TabPages.Add(tabPage1);
+            //    materialTabControl1.TabPages.Remove(ReservationBillingForm);
+            //    materialTabControl1.TabPages.Remove(MainFormBilling);
+            //};
 
             btnBillingCancel.Click += delegate
             {
