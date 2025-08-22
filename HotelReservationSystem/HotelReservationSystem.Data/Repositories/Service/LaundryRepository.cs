@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.SqlClient;
 using HotelReservationSystem.Domain.Interface.Service.Laundry;
 using HotelReservationSystem.Domain.Model.Service.Shared;
-using HotelReservationSystem.Model.Service;
 
 namespace HotelReservationSystem.Data.Repositories.Service
 {

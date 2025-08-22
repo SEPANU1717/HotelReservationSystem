@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using HotelReservationSystem.Domain.Interface.Service.Food;
 using HotelReservationSystem.Domain.Model.Service.Shared;
-using HotelReservationSystem.Model.Service;
 
 namespace HotelReservationSystem.Data.Repositories.Service
 {

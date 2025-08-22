@@ -1,21 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CuoreUI.Controls;
 using HotelReservationSystem.Data.Repositories.Service;
 using HotelReservationSystem.DataInitializer;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface.Service.Food;
 using HotelReservationSystem.Domain.Interface.Service.Laundry;
-using HotelReservationSystem.Model.Service;
 
 namespace HotelReservationSystem.UserControls
 {

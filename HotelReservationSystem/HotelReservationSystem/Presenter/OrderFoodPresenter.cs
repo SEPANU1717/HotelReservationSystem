@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Domain.Interface.Service.Food;
 using HotelReservationSystem.Domain.Model.Service.Shared;
-using HotelReservationSystem.Model.Service;
 
 namespace HotelReservationSystem.Presenter
 {

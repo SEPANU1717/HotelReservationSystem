@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using HotelReservationSystem.Domain.Model.Service.Shared;
-using HotelReservationSystem.Model.Service;
-
 namespace HotelReservationSystem.Domain.Interface.Service.Food
 {
     public interface IOrderFoodRepository
