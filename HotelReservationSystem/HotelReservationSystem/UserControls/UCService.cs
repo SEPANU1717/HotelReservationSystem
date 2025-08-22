@@ -10,13 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CuoreUI.Controls;
+using HotelReservationSystem.Data.Repositories.Service;
 using HotelReservationSystem.DataInitializer;
-using HotelReservationSystem.Helper;
-using HotelReservationSystem.Interface.Service.Food;
-using HotelReservationSystem.Interface.Service.Laundry;
+using HotelReservationSystem.DataInitializer.DbInitializer;
+using HotelReservationSystem.Domain.Interface.Service.Food;
+using HotelReservationSystem.Domain.Interface.Service.Laundry;
 using HotelReservationSystem.Model.Service;
-using HotelReservationSystem.Model.Service.Food;
-using HotelReservationSystem.Repositories.Service.Food;
 
 namespace HotelReservationSystem.UserControls
 {

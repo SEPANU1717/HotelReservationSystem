@@ -5,11 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Forms;
-using HotelReservationSystem.Interface;
-using HotelReservationSystem.Interface.Rooms;
-using HotelReservationSystem.Model;
 using HotelReservationSystem.Presenter;
-using HotelReservationSystem.Repositories;
 using HotelReservationSystem.UserControls;
 
 namespace HotelReservationSystem

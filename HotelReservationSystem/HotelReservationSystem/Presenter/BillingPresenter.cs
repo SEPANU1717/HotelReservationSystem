@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelReservationSystem.Interface.Billing;
-using HotelReservationSystem.Model;
+using HotelReservationSystem.Domain.Interface.Billing;
+using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.Presenter.Billing

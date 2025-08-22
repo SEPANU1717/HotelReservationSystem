@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using HotelReservationSystem.Interface.Rooms;
-using HotelReservationSystem.Model;
+using HotelReservationSystem.Domain.Interface.Rooms;
+using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.Presenter

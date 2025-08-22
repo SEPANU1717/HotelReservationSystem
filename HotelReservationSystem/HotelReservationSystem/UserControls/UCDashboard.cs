@@ -8,9 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelReservationSystem.Helper;
-using HotelReservationSystem.Repositories;
-using HotelReservationSystem.Repositories.Dashboard;
+using HotelReservationSystem.Data.Repositories;
+using HotelReservationSystem.DataInitializer.DbInitializer;
 
 
 namespace HotelReservationSystem.UserControls

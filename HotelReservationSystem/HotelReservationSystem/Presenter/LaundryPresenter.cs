@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelReservationSystem.Interface.Service.Laundry;
+using HotelReservationSystem.Domain.Interface.Service.Laundry;
+using HotelReservationSystem.Domain.Model.Service.Shared;
 using HotelReservationSystem.Model.Service;
 
 namespace HotelReservationSystem.Presenter

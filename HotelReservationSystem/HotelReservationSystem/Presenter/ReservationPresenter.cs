@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelReservationSystem.Interface.Reservation;
-using HotelReservationSystem.Interface.Rooms;
-using HotelReservationSystem.Model;
+using HotelReservationSystem.Data.Repositories;
+using HotelReservationSystem.Domain.Interface.Reservation;
+using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
-using HotelReservationSystem.Repositories;
 
 namespace HotelReservationSystem.Presenter.Reservation
 {

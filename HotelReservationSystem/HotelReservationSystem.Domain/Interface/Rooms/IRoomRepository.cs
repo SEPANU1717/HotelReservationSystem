@@ -1,0 +1,16 @@
+﻿using System.Collections.Generic;
+using HotelReservationSystem.Domain.Model;
+
+namespace HotelReservationSystem.Domain.Interface.Rooms
+{
+    public interface IRoomRepository
+    {
+        void Add(RoomModel room);
+        void Edit(RoomModel room);
+        void Delete(int id);
+       
+
+        IEnumerable<RoomModel> GetAll();
+        IEnumerable<RoomModel> GetByValue(string value);
+    }
+}

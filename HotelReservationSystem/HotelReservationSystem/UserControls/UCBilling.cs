@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelReservationSystem.Helper;
-using HotelReservationSystem.Interface.Billing;
-using HotelReservationSystem.Model;
-using HotelReservationSystem.Repositories;
+using HotelReservationSystem.Data.Repositories;
+using HotelReservationSystem.DataInitializer.DbInitializer;
+using HotelReservationSystem.Domain.Interface.Billing;
+using HotelReservationSystem.Domain.Model;
 
 namespace HotelReservationSystem.UserControls
 {

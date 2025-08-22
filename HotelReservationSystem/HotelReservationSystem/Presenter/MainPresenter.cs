@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using HotelReservationSystem.Interface;
-using HotelReservationSystem.Interface.Billing;
-using HotelReservationSystem.Interface.Reservation;
-using HotelReservationSystem.Interface.Rooms;
-using HotelReservationSystem.Interface.Service.Food;
-using HotelReservationSystem.Interface.Service.Laundry;
+using HotelReservationSystem.Data.Repositories;
+using HotelReservationSystem.Data.Repositories.Service;
+using HotelReservationSystem.Domain.Interface;
+using HotelReservationSystem.Domain.Interface.Billing;
+using HotelReservationSystem.Domain.Interface.Customer;
+using HotelReservationSystem.Domain.Interface.Reservation;
+using HotelReservationSystem.Domain.Interface.Rooms;
 using HotelReservationSystem.Presenter.Billing;
 using HotelReservationSystem.Presenter.Reservation;
-using HotelReservationSystem.Repositories;
-using HotelReservationSystem.Repositories.Service.Food;
 using HotelReservationSystem.UserControls;
 
 namespace HotelReservationSystem.Presenter

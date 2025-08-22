@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using HotelReservationSystem.Interface;
+using HotelReservationSystem.Domain.Interface;
 using HotelReservationSystem.UserControls;
 
 namespace HotelReservationSystem.Forms

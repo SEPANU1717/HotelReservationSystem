@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using HotelReservationSystem.Helper;
-using HotelReservationSystem.Interface.Reservation;
-using HotelReservationSystem.Model;
-using HotelReservationSystem.Repositories;
+using HotelReservationSystem.Data.Repositories;
+using HotelReservationSystem.DataInitializer.DbInitializer;
+using HotelReservationSystem.Domain.Interface.Reservation;
+using HotelReservationSystem.Domain.Model;
 
 namespace HotelReservationSystem.UserControls
 {
