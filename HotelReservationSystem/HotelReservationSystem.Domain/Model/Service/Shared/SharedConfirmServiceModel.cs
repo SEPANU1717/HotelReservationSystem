@@ -4,7 +4,8 @@ namespace HotelReservationSystem.Domain.Model.Service.Shared
     {
         public class SharedConfirmServiceModel
         {
-            [Display(Name = "Service ID")]
+        #region Model
+        [Display(Name = "Service ID")]
             public int ServiceId { get; set; }
 
             [Required(ErrorMessage = "Service type is required.")]
@@ -42,5 +43,7 @@ namespace HotelReservationSystem.Domain.Model.Service.Shared
 
             [Display(Name = "Grand Total")]
             public decimal GrandTotal => ServiceFee + TotalAmount;
-        }
+
+        #endregion
     }
+}
