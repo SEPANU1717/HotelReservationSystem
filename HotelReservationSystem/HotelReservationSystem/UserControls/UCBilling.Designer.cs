@@ -603,7 +603,7 @@
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(51, 92);
+            this.label29.Location = new System.Drawing.Point(51, 87);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(221, 25);
             this.label29.TabIndex = 1;
@@ -1279,10 +1279,10 @@
             this.MainFormBilling.Controls.Add(this.label9);
             this.MainFormBilling.Controls.Add(this.sataPanel5);
             this.MainFormBilling.Controls.Add(this.sataPanel9);
-            this.MainFormBilling.Location = new System.Drawing.Point(4, 25);
+            this.MainFormBilling.Location = new System.Drawing.Point(4, 22);
             this.MainFormBilling.Name = "MainFormBilling";
             this.MainFormBilling.Padding = new System.Windows.Forms.Padding(3);
-            this.MainFormBilling.Size = new System.Drawing.Size(1194, 582);
+            this.MainFormBilling.Size = new System.Drawing.Size(1194, 585);
             this.MainFormBilling.TabIndex = 2;
             this.MainFormBilling.Text = "MainTabForBilling";
             this.MainFormBilling.UseVisualStyleBackColor = true;
@@ -1319,7 +1319,7 @@
             this.dataGridBiilSample.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridBiilSample.EnableHeadersVisualStyles = false;
             this.dataGridBiilSample.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridBiilSample.Location = new System.Drawing.Point(3, 216);
+            this.dataGridBiilSample.Location = new System.Drawing.Point(3, 219);
             this.dataGridBiilSample.MultiSelect = false;
             this.dataGridBiilSample.Name = "dataGridBiilSample";
             this.dataGridBiilSample.ReadOnly = true;
