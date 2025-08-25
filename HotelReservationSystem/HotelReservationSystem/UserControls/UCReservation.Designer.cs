@@ -45,9 +45,11 @@
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dtCheckOut = new CuoreUI.Controls.cuiCalendarDatePicker();
+            this.dtCheckIn = new CuoreUI.Controls.cuiCalendarDatePicker();
             this.cbNumber = new MetroFramework.Controls.MetroComboBox();
             this.cbStatus = new MetroFramework.Controls.MetroComboBox();
-            this.cbCusName = new MetroFramework.Controls.MetroComboBox();
+            this.cbCusNames = new MetroFramework.Controls.MetroComboBox();
             this.cbType = new MetroFramework.Controls.MetroComboBox();
             this.btnReservationSave = new FrameworkTest.SATAButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,8 +64,6 @@
             this.txtRoomGuests = new SATATextBox();
             this.txtPrice = new SATATextBox();
             this.txtReservationId = new SATATextBox();
-            this.dtCheckOut = new System.Windows.Forms.DateTimePicker();
-            this.dtCheckIn = new System.Windows.Forms.DateTimePicker();
             this.btnReservationCancel = new FrameworkTest.SATAButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -360,9 +360,11 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.dtCheckOut);
+            this.tabPage2.Controls.Add(this.dtCheckIn);
             this.tabPage2.Controls.Add(this.cbNumber);
             this.tabPage2.Controls.Add(this.cbStatus);
-            this.tabPage2.Controls.Add(this.cbCusName);
+            this.tabPage2.Controls.Add(this.cbCusNames);
             this.tabPage2.Controls.Add(this.cbType);
             this.tabPage2.Controls.Add(this.btnReservationSave);
             this.tabPage2.Controls.Add(this.label8);
@@ -377,16 +379,67 @@
             this.tabPage2.Controls.Add(this.txtRoomGuests);
             this.tabPage2.Controls.Add(this.txtPrice);
             this.tabPage2.Controls.Add(this.txtReservationId);
-            this.tabPage2.Controls.Add(this.dtCheckOut);
-            this.tabPage2.Controls.Add(this.dtCheckIn);
             this.tabPage2.Controls.Add(this.btnReservationCancel);
             this.tabPage2.Controls.Add(this.pictureBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
+            // 
+            // dtCheckOut
+            // 
+            this.dtCheckOut.BackColor = System.Drawing.Color.White;
+            this.dtCheckOut.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtCheckOut.EnableThemeChangeButton = true;
+            this.dtCheckOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCheckOut.ForeColor = System.Drawing.Color.Black;
+            this.dtCheckOut.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckOut.HoverOutline = System.Drawing.Color.White;
+            this.dtCheckOut.Icon = null;
+            this.dtCheckOut.IconTint = System.Drawing.Color.Gray;
+            this.dtCheckOut.Location = new System.Drawing.Point(391, 314);
+            this.dtCheckOut.Margin = new System.Windows.Forms.Padding(4);
+            this.dtCheckOut.Name = "dtCheckOut";
+            this.dtCheckOut.NormalBackground = System.Drawing.Color.White;
+            this.dtCheckOut.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckOut.OutlineThickness = 1.5F;
+            this.dtCheckOut.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
+            this.dtCheckOut.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckOut.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckOut.Rounding = 8;
+            this.dtCheckOut.ShowIcon = true;
+            this.dtCheckOut.Size = new System.Drawing.Size(296, 33);
+            this.dtCheckOut.TabIndex = 91;
+            this.dtCheckOut.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
+            // 
+            // dtCheckIn
+            // 
+            this.dtCheckIn.BackColor = System.Drawing.Color.White;
+            this.dtCheckIn.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtCheckIn.EnableThemeChangeButton = true;
+            this.dtCheckIn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCheckIn.ForeColor = System.Drawing.Color.Black;
+            this.dtCheckIn.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckIn.HoverOutline = System.Drawing.Color.White;
+            this.dtCheckIn.Icon = null;
+            this.dtCheckIn.IconTint = System.Drawing.Color.Gray;
+            this.dtCheckIn.Location = new System.Drawing.Point(57, 318);
+            this.dtCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.dtCheckIn.Name = "dtCheckIn";
+            this.dtCheckIn.NormalBackground = System.Drawing.Color.White;
+            this.dtCheckIn.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckIn.OutlineThickness = 1.5F;
+            this.dtCheckIn.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
+            this.dtCheckIn.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckIn.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckIn.Rounding = 8;
+            this.dtCheckIn.ShowIcon = true;
+            this.dtCheckIn.Size = new System.Drawing.Size(296, 33);
+            this.dtCheckIn.TabIndex = 90;
+            this.dtCheckIn.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
+            this.dtCheckIn.Load += new System.EventHandler(this.dtCheckIn_Load);
             // 
             // cbNumber
             // 
@@ -407,14 +460,14 @@
             this.cbStatus.Size = new System.Drawing.Size(296, 29);
             this.cbStatus.TabIndex = 27;
             // 
-            // cbCusName
+            // cbCusNames
             // 
-            this.cbCusName.FormattingEnabled = true;
-            this.cbCusName.ItemHeight = 23;
-            this.cbCusName.Location = new System.Drawing.Point(57, 188);
-            this.cbCusName.Name = "cbCusName";
-            this.cbCusName.Size = new System.Drawing.Size(296, 29);
-            this.cbCusName.TabIndex = 27;
+            this.cbCusNames.FormattingEnabled = true;
+            this.cbCusNames.ItemHeight = 23;
+            this.cbCusNames.Location = new System.Drawing.Point(57, 188);
+            this.cbCusNames.Name = "cbCusNames";
+            this.cbCusNames.Size = new System.Drawing.Size(296, 29);
+            this.cbCusNames.TabIndex = 27;
             // 
             // cbType
             // 
@@ -447,7 +500,7 @@
             this.btnReservationSave.ImageTint = System.Drawing.Color.White;
             this.btnReservationSave.IsToggleButton = false;
             this.btnReservationSave.IsToggled = false;
-            this.btnReservationSave.Location = new System.Drawing.Point(499, 455);
+            this.btnReservationSave.Location = new System.Drawing.Point(499, 520);
             this.btnReservationSave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationSave.Name = "btnReservationSave";
             this.btnReservationSave.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -636,26 +689,6 @@
             this.txtReservationId.Text = "0";
             this.txtReservationId.Texts = "";
             this.txtReservationId.UnderlinedStyle = false;
-            // 
-            // dtCheckOut
-            // 
-            this.dtCheckOut.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dtCheckOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtCheckOut.Location = new System.Drawing.Point(391, 318);
-            this.dtCheckOut.Name = "dtCheckOut";
-            this.dtCheckOut.Size = new System.Drawing.Size(296, 33);
-            this.dtCheckOut.TabIndex = 17;
-            // 
-            // dtCheckIn
-            // 
-            this.dtCheckIn.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dtCheckIn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtCheckIn.Location = new System.Drawing.Point(57, 318);
-            this.dtCheckIn.Name = "dtCheckIn";
-            this.dtCheckIn.Size = new System.Drawing.Size(296, 33);
-            this.dtCheckIn.TabIndex = 17;
             // 
             // btnReservationCancel
             // 
@@ -870,8 +903,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabPage tabPage2;
         private FrameworkTest.SATAButton btnReservationCancel;
-        private System.Windows.Forms.DateTimePicker dtCheckIn;
-        private System.Windows.Forms.DateTimePicker dtCheckOut;
         private SATATextBox txtRoomGuests;
         private SATATextBox txtPrice;
         private SATATextBox txtReservationId;
@@ -879,7 +910,7 @@
         private FrameworkTest.SATAButton btnReservationSave;
         private MetroFramework.Controls.MetroComboBox cbNumber;
         private MetroFramework.Controls.MetroComboBox cbStatus;
-        private MetroFramework.Controls.MetroComboBox cbCusName;
+        private MetroFramework.Controls.MetroComboBox cbCusNames;
         private MetroFramework.Controls.MetroComboBox cbType;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -892,5 +923,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private FrameworkTest.SATAButton sataButton1;
+        private CuoreUI.Controls.cuiCalendarDatePicker dtCheckOut;
+        private CuoreUI.Controls.cuiCalendarDatePicker dtCheckIn;
     }
 }

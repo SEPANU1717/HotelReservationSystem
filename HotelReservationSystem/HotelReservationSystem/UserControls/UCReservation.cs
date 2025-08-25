@@ -39,8 +39,8 @@ namespace HotelReservationSystem.UserControls
             InitializeRoomStatusComboBox();
             cbNumber.SelectedIndexChanged += cbNumber_SelectedIndexChanged;
             cbType.SelectedIndexChanged += cbType_SelectedIndexChanged;
-            dtCheckIn.ValueChanged += DateOrRoomChanged;
-            dtCheckOut.ValueChanged += DateOrRoomChanged;
+            dtCheckIn.DateChanged += DateOrRoomChanged;
+            dtCheckOut.DateChanged += DateOrRoomChanged;
             cbNumber.SelectedIndexChanged += DateOrRoomChanged;
         }
 
@@ -100,7 +100,7 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.TabPages.Add(tabPage2);
                     materialTabControl1.Text = "Edit room";
                     cbStatus.Enabled = true;
-                    cbCusName.Enabled = false;
+                    cbCusNames.Enabled = false;
                 }
                 else
                 {
@@ -183,9 +183,9 @@ namespace HotelReservationSystem.UserControls
 
         public string ReservationId{get => txtReservationId.Texts; set => txtReservationId.Texts = value; }
         public string Guests{get => txtRoomGuests.Texts; set => txtRoomGuests.Texts = value; }
-        public DateTime CheckInDate{get => dtCheckIn.Value; set => dtCheckIn.Value = value; }
-        public DateTime CheckOutDate {get => dtCheckOut.Value; set => dtCheckOut.Value = value; }
-        public string CustomerName{ get => cbCusName.SelectedItem as string; set => cbCusName.SelectedItem = value; }
+        public DateTime CheckInDate{get => dtCheckIn.Content; set => dtCheckIn.Content = value; }
+        public DateTime CheckOutDate {get => dtCheckOut.Content; set => dtCheckOut.Content = value; }
+        public string CustomerName{ get => cbCusNames.SelectedItem as string; set => cbCusNames.SelectedItem = value; }
         public string RoomNumber { get => cbNumber.SelectedItem as string; set => cbNumber.SelectedItem = value; }
         public string RoomType {get => cbType.SelectedItem as string; set => cbType.SelectedItem = value; }
         public string TotalPrice {get => txtPrice.Texts; set => txtPrice.Texts = value; }
@@ -233,12 +233,12 @@ namespace HotelReservationSystem.UserControls
             {
                 txtReservationId.Texts = reservation.ReservationId.ToString();
                 originalRoomNumber = reservation.RoomNumber;
-                if (!cbCusName.Items.Contains(reservation.CustomerName))
+                if (!cbCusNames.Items.Contains(reservation.CustomerName))
                 {
-                    cbCusName.Items.Add(reservation.CustomerName);
+                    cbCusNames.Items.Add(reservation.CustomerName);
                 }
 
-                cbCusName.SelectedItem = reservation.CustomerName;
+                cbCusNames.SelectedItem = reservation.CustomerName;
 
                 CheckInDate = reservation.CheckInDate;
                 CheckOutDate = reservation.CheckOutDate;
@@ -282,10 +282,10 @@ namespace HotelReservationSystem.UserControls
 
         private void InitializeCustomerComboBox()
         {
-            cbCusName.Items.Clear();
+            cbCusNames.Items.Clear();
             var customerNames = customerRepo.GetCustomerNamesWithoutReservation();
             if (customerNames != null)
-                cbCusName.Items.AddRange(customerNames.ToArray());
+                cbCusNames.Items.AddRange(customerNames.ToArray());
         }
 
         private void cbType_SelectedIndexChanged(object sender, EventArgs e)
@@ -343,7 +343,7 @@ namespace HotelReservationSystem.UserControls
         {
             string selectedNumber = cbNumber.SelectedItem as string;
             var selectedRoom = availableRooms.FirstOrDefault(r => r.RoomNumber == selectedNumber);
-            if (isEdit && dtCheckIn.Value.Date == originalCheckInDate.Date && dtCheckOut.Value.Date == originalCheckOutDate.Date)
+            if (isEdit && dtCheckIn.Content.Date == originalCheckInDate.Date && dtCheckOut.Content.Date == originalCheckOutDate.Date)
             {
                 return;
             }
@@ -353,7 +353,7 @@ namespace HotelReservationSystem.UserControls
                 decimal pricePerNight = 0;
                 decimal.TryParse(selectedRoom.RoomPrice, out pricePerNight);
 
-                int nights = (int)(dtCheckOut.Value.Date - dtCheckIn.Value.Date).TotalDays;
+                int nights = (int)(dtCheckOut.Content.Date - dtCheckIn.Content.Date).TotalDays;
                 if (nights < 1) nights = 1;
 
                 decimal total = pricePerNight * nights;
@@ -366,5 +366,10 @@ namespace HotelReservationSystem.UserControls
         }
 
         #endregion
+
+        private void dtCheckIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

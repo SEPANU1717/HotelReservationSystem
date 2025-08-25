@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCBilling));
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,6 +38,10 @@
             SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius5 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,44 +56,13 @@
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnBackRReservationHome = new FrameworkTest.SATAButton();
-            this.dataGridBilling = new System.Windows.Forms.DataGridView();
             this.ReservationBillingForm = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.cbStatus = new MetroFramework.Controls.MetroComboBox();
             this.cbReservationId = new MetroFramework.Controls.MetroComboBox();
             this.btnBillingCancel = new FrameworkTest.SATAButton();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.sataTextBox11 = new SATATextBox();
-            this.sataTextBox9 = new SATATextBox();
-            this.sataTextBox5 = new SATATextBox();
-            this.txtRoomNumber = new SATATextBox();
-            this.sataTextBox10 = new SATATextBox();
-            this.sataTextBox8 = new SATATextBox();
-            this.sataTextBox4 = new SATATextBox();
             this.txtRoomType = new SATATextBox();
-            this.sataTextBox1 = new SATATextBox();
-            this.txtTotalAmount = new SATATextBox();
-            this.sataTextBox7 = new SATATextBox();
-            this.sataTextBox6 = new SATATextBox();
-            this.sataTextBox3 = new SATATextBox();
-            this.sataTextBox2 = new SATATextBox();
             this.txtCusName = new SATATextBox();
             this.txtBillingId = new SATATextBox();
             this.btnReservationPay = new FrameworkTest.SATAButton();
@@ -118,12 +87,68 @@
             this.lblTotalRoom = new System.Windows.Forms.Label();
             this.sataButton1 = new FrameworkTest.SATAButton();
             this.btnServices = new FrameworkTest.SATAButton();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dataGridBilling = new System.Windows.Forms.DataGridView();
+            this.dtCheckIns = new CuoreUI.Controls.cuiCalendarDatePicker();
+            this.dtCheckOut = new CuoreUI.Controls.cuiCalendarDatePicker();
+            this.sataTextBox13 = new SATATextBox();
+            this.sataTextBox14 = new SATATextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.sataTextBox1 = new SATATextBox();
+            this.sataTextBox2 = new SATATextBox();
+            this.sataTextBox6 = new SATATextBox();
+            this.sataTextBox3 = new SATATextBox();
+            this.sataTextBox5 = new SATATextBox();
+            this.sataTextBox4 = new SATATextBox();
+            this.sataTextBox7 = new SATATextBox();
+            this.sataTextBox8 = new SATATextBox();
+            this.sataTextBox9 = new SATATextBox();
+            this.sataTextBox10 = new SATATextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtRoomNumber = new SATATextBox();
+            this.txtTotalAmount = new SATATextBox();
+            this.sataTextBox16 = new SATATextBox();
+            this.sataTextBox17 = new SATATextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.sataTextBox18 = new SATATextBox();
+            this.sataTextBox19 = new SATATextBox();
+            this.sataTextBox20 = new SATATextBox();
+            this.sataTextBox21 = new SATATextBox();
+            this.sataTextBox11 = new SATATextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridBilling)).BeginInit();
             this.ReservationBillingForm.SuspendLayout();
             this.MainFormBilling.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBiilSample)).BeginInit();
@@ -135,6 +160,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox3)).BeginInit();
             this.sataPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBilling)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -416,6 +446,30 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.label30);
+            this.tabPage1.Controls.Add(this.label28);
+            this.tabPage1.Controls.Add(this.label27);
+            this.tabPage1.Controls.Add(this.label25);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.label26);
+            this.tabPage1.Controls.Add(this.label24);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.sataTextBox10);
+            this.tabPage1.Controls.Add(this.sataTextBox9);
+            this.tabPage1.Controls.Add(this.sataTextBox8);
+            this.tabPage1.Controls.Add(this.sataTextBox7);
+            this.tabPage1.Controls.Add(this.sataTextBox4);
+            this.tabPage1.Controls.Add(this.sataTextBox5);
+            this.tabPage1.Controls.Add(this.sataTextBox3);
+            this.tabPage1.Controls.Add(this.sataTextBox6);
+            this.tabPage1.Controls.Add(this.sataTextBox2);
+            this.tabPage1.Controls.Add(this.sataTextBox1);
             this.tabPage1.Controls.Add(this.btnBackRReservationHome);
             this.tabPage1.Controls.Add(this.dataGridBilling);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -464,100 +518,11 @@
             this.btnBackRReservationHome.TextAutoCenter = true;
             this.btnBackRReservationHome.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // dataGridBilling
-            // 
-            this.dataGridBilling.AllowUserToAddRows = false;
-            this.dataGridBilling.AllowUserToDeleteRows = false;
-            this.dataGridBilling.AllowUserToResizeColumns = false;
-            this.dataGridBilling.AllowUserToResizeRows = false;
-            this.dataGridBilling.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridBilling.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridBilling.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridBilling.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridBilling.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridBilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridBilling.ColumnHeadersHeight = 33;
-            this.dataGridBilling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridBilling.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridBilling.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridBilling.EnableHeadersVisualStyles = false;
-            this.dataGridBilling.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridBilling.Location = new System.Drawing.Point(3, 3);
-            this.dataGridBilling.MultiSelect = false;
-            this.dataGridBilling.Name = "dataGridBilling";
-            this.dataGridBilling.ReadOnly = true;
-            this.dataGridBilling.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridBilling.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridBilling.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridBilling.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridBilling.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridBilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridBilling.Size = new System.Drawing.Size(1188, 496);
-            this.dataGridBilling.TabIndex = 3;
-            // 
             // ReservationBillingForm
             // 
             this.ReservationBillingForm.BackColor = System.Drawing.Color.White;
-            this.ReservationBillingForm.Controls.Add(this.label10);
-            this.ReservationBillingForm.Controls.Add(this.label11);
-            this.ReservationBillingForm.Controls.Add(this.label8);
-            this.ReservationBillingForm.Controls.Add(this.label29);
-            this.ReservationBillingForm.Controls.Add(this.cbStatus);
-            this.ReservationBillingForm.Controls.Add(this.cbReservationId);
             this.ReservationBillingForm.Controls.Add(this.btnBillingCancel);
-            this.ReservationBillingForm.Controls.Add(this.label28);
-            this.ReservationBillingForm.Controls.Add(this.label26);
-            this.ReservationBillingForm.Controls.Add(this.label16);
-            this.ReservationBillingForm.Controls.Add(this.label7);
-            this.ReservationBillingForm.Controls.Add(this.label27);
-            this.ReservationBillingForm.Controls.Add(this.label25);
-            this.ReservationBillingForm.Controls.Add(this.label15);
-            this.ReservationBillingForm.Controls.Add(this.label6);
-            this.ReservationBillingForm.Controls.Add(this.label24);
-            this.ReservationBillingForm.Controls.Add(this.label14);
-            this.ReservationBillingForm.Controls.Add(this.label2);
-            this.ReservationBillingForm.Controls.Add(this.label1);
-            this.ReservationBillingForm.Controls.Add(this.label17);
-            this.ReservationBillingForm.Controls.Add(this.label13);
-            this.ReservationBillingForm.Controls.Add(this.label36);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox11);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox9);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox5);
-            this.ReservationBillingForm.Controls.Add(this.txtRoomNumber);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox10);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox8);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox4);
-            this.ReservationBillingForm.Controls.Add(this.txtRoomType);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox1);
-            this.ReservationBillingForm.Controls.Add(this.txtTotalAmount);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox7);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox6);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox3);
-            this.ReservationBillingForm.Controls.Add(this.sataTextBox2);
-            this.ReservationBillingForm.Controls.Add(this.txtCusName);
-            this.ReservationBillingForm.Controls.Add(this.txtBillingId);
-            this.ReservationBillingForm.Controls.Add(this.btnReservationPay);
+            this.ReservationBillingForm.Controls.Add(this.splitContainer1);
             this.ReservationBillingForm.Location = new System.Drawing.Point(4, 25);
             this.ReservationBillingForm.Name = "ReservationBillingForm";
             this.ReservationBillingForm.Padding = new System.Windows.Forms.Padding(3);
@@ -565,66 +530,33 @@
             this.ReservationBillingForm.TabIndex = 1;
             this.ReservationBillingForm.Text = "Reservation Billing";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(323, 240);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 20);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Payment Status";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(875, 240);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 20);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Total Amount";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(599, 240);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 20);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "Total Amount";
-            // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label29.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(51, 87);
+            this.label29.Location = new System.Drawing.Point(51, 68);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(221, 25);
+            this.label29.Size = new System.Drawing.Size(223, 32);
             this.label29.TabIndex = 1;
-            this.label29.Text = "Reservation Information";
+            this.label29.Text = "Reservation Details";
             // 
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.ItemHeight = 23;
-            this.cbStatus.Location = new System.Drawing.Point(327, 268);
+            this.cbStatus.Location = new System.Drawing.Point(228, 406);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(258, 29);
+            this.cbStatus.Size = new System.Drawing.Size(307, 29);
             this.cbStatus.TabIndex = 35;
             // 
             // cbReservationId
             // 
             this.cbReservationId.FormattingEnabled = true;
             this.cbReservationId.ItemHeight = 23;
-            this.cbReservationId.Location = new System.Drawing.Point(51, 268);
+            this.cbReservationId.Location = new System.Drawing.Point(231, 171);
             this.cbReservationId.Name = "cbReservationId";
-            this.cbReservationId.Size = new System.Drawing.Size(258, 29);
+            this.cbReservationId.Size = new System.Drawing.Size(307, 29);
             this.cbReservationId.TabIndex = 36;
             this.cbReservationId.SelectedIndexChanged += new System.EventHandler(this.cbReservationId_SelectedIndexChanged);
             // 
@@ -667,345 +599,16 @@
             this.btnBillingCancel.TextAutoCenter = true;
             this.btnBillingCancel.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.DimGray;
-            this.label28.Location = new System.Drawing.Point(323, 515);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(110, 20);
-            this.label28.TabIndex = 37;
-            this.label28.Text = "Room Number";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.DimGray;
-            this.label26.Location = new System.Drawing.Point(875, 422);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(110, 20);
-            this.label26.TabIndex = 37;
-            this.label26.Text = "Room Number";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.DimGray;
-            this.label16.Location = new System.Drawing.Point(875, 322);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(110, 20);
-            this.label16.TabIndex = 37;
-            this.label16.Text = "Room Number";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(875, 151);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 20);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "Room Number";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.DimGray;
-            this.label27.Location = new System.Drawing.Point(47, 515);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(85, 20);
-            this.label27.TabIndex = 37;
-            this.label27.Text = "Room Type";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.DimGray;
-            this.label25.Location = new System.Drawing.Point(599, 422);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(85, 20);
-            this.label25.TabIndex = 37;
-            this.label25.Text = "Room Type";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(599, 322);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(85, 20);
-            this.label15.TabIndex = 37;
-            this.label15.Text = "Room Type";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(599, 151);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 20);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Room Type";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.DimGray;
-            this.label24.Location = new System.Drawing.Point(323, 422);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(119, 20);
-            this.label24.TabIndex = 37;
-            this.label24.Text = "Customer Name";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(323, 322);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(119, 20);
-            this.label14.TabIndex = 37;
-            this.label14.Text = "Customer Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(323, 151);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 20);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Customer Name";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(47, 236);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 20);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "Reservation Id";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.DimGray;
-            this.label17.Location = new System.Drawing.Point(47, 422);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(69, 20);
-            this.label17.TabIndex = 37;
-            this.label17.Text = "Billing Id";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(47, 322);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 20);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Billing Id";
-            // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.DimGray;
-            this.label36.Location = new System.Drawing.Point(47, 151);
+            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label36.Location = new System.Drawing.Point(52, 132);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(69, 20);
+            this.label36.Size = new System.Drawing.Size(74, 21);
             this.label36.TabIndex = 37;
             this.label36.Text = "Billing Id";
-            // 
-            // sataTextBox11
-            // 
-            this.sataTextBox11.BackColor = System.Drawing.Color.White;
-            this.sataTextBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox11.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox11.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox11.BorderRadius = 3;
-            this.sataTextBox11.BorderSize = 1;
-            this.sataTextBox11.Enabled = false;
-            this.sataTextBox11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox11.Icon = null;
-            this.sataTextBox11.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox11.Location = new System.Drawing.Point(327, 548);
-            this.sataTextBox11.Multiline = false;
-            this.sataTextBox11.Name = "sataTextBox11";
-            this.sataTextBox11.PasswordChar = false;
-            this.sataTextBox11.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox11.PlaceholderText = "";
-            this.sataTextBox11.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox11.TabIndex = 30;
-            this.sataTextBox11.Text = "0";
-            this.sataTextBox11.Texts = "";
-            this.sataTextBox11.UnderlinedStyle = false;
-            // 
-            // sataTextBox9
-            // 
-            this.sataTextBox9.BackColor = System.Drawing.Color.White;
-            this.sataTextBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox9.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox9.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox9.BorderRadius = 3;
-            this.sataTextBox9.BorderSize = 1;
-            this.sataTextBox9.Enabled = false;
-            this.sataTextBox9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox9.Icon = null;
-            this.sataTextBox9.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox9.Location = new System.Drawing.Point(879, 455);
-            this.sataTextBox9.Multiline = false;
-            this.sataTextBox9.Name = "sataTextBox9";
-            this.sataTextBox9.PasswordChar = false;
-            this.sataTextBox9.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox9.PlaceholderText = "";
-            this.sataTextBox9.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox9.TabIndex = 30;
-            this.sataTextBox9.Text = "0";
-            this.sataTextBox9.Texts = "";
-            this.sataTextBox9.UnderlinedStyle = false;
-            // 
-            // sataTextBox5
-            // 
-            this.sataTextBox5.BackColor = System.Drawing.Color.White;
-            this.sataTextBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox5.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox5.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox5.BorderRadius = 3;
-            this.sataTextBox5.BorderSize = 1;
-            this.sataTextBox5.Enabled = false;
-            this.sataTextBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox5.Icon = null;
-            this.sataTextBox5.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox5.Location = new System.Drawing.Point(879, 355);
-            this.sataTextBox5.Multiline = false;
-            this.sataTextBox5.Name = "sataTextBox5";
-            this.sataTextBox5.PasswordChar = false;
-            this.sataTextBox5.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox5.PlaceholderText = "";
-            this.sataTextBox5.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox5.TabIndex = 30;
-            this.sataTextBox5.Text = "0";
-            this.sataTextBox5.Texts = "";
-            this.sataTextBox5.UnderlinedStyle = false;
-            // 
-            // txtRoomNumber
-            // 
-            this.txtRoomNumber.BackColor = System.Drawing.Color.White;
-            this.txtRoomNumber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtRoomNumber.BorderColor = System.Drawing.Color.Silver;
-            this.txtRoomNumber.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtRoomNumber.BorderRadius = 3;
-            this.txtRoomNumber.BorderSize = 1;
-            this.txtRoomNumber.Enabled = false;
-            this.txtRoomNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtRoomNumber.Icon = null;
-            this.txtRoomNumber.IconSize = new System.Drawing.Size(20, 20);
-            this.txtRoomNumber.Location = new System.Drawing.Point(879, 184);
-            this.txtRoomNumber.Multiline = false;
-            this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.PasswordChar = false;
-            this.txtRoomNumber.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtRoomNumber.PlaceholderText = "";
-            this.txtRoomNumber.Size = new System.Drawing.Size(258, 33);
-            this.txtRoomNumber.TabIndex = 30;
-            this.txtRoomNumber.Text = "0";
-            this.txtRoomNumber.Texts = "";
-            this.txtRoomNumber.UnderlinedStyle = false;
-            // 
-            // sataTextBox10
-            // 
-            this.sataTextBox10.BackColor = System.Drawing.Color.White;
-            this.sataTextBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox10.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox10.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox10.BorderRadius = 3;
-            this.sataTextBox10.BorderSize = 1;
-            this.sataTextBox10.Enabled = false;
-            this.sataTextBox10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox10.Icon = null;
-            this.sataTextBox10.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox10.Location = new System.Drawing.Point(51, 548);
-            this.sataTextBox10.Multiline = false;
-            this.sataTextBox10.Name = "sataTextBox10";
-            this.sataTextBox10.PasswordChar = false;
-            this.sataTextBox10.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox10.PlaceholderText = "";
-            this.sataTextBox10.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox10.TabIndex = 31;
-            this.sataTextBox10.Text = "0";
-            this.sataTextBox10.Texts = "";
-            this.sataTextBox10.UnderlinedStyle = false;
-            // 
-            // sataTextBox8
-            // 
-            this.sataTextBox8.BackColor = System.Drawing.Color.White;
-            this.sataTextBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox8.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox8.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox8.BorderRadius = 3;
-            this.sataTextBox8.BorderSize = 1;
-            this.sataTextBox8.Enabled = false;
-            this.sataTextBox8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox8.Icon = null;
-            this.sataTextBox8.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox8.Location = new System.Drawing.Point(603, 455);
-            this.sataTextBox8.Multiline = false;
-            this.sataTextBox8.Name = "sataTextBox8";
-            this.sataTextBox8.PasswordChar = false;
-            this.sataTextBox8.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox8.PlaceholderText = "";
-            this.sataTextBox8.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox8.TabIndex = 31;
-            this.sataTextBox8.Text = "0";
-            this.sataTextBox8.Texts = "";
-            this.sataTextBox8.UnderlinedStyle = false;
-            // 
-            // sataTextBox4
-            // 
-            this.sataTextBox4.BackColor = System.Drawing.Color.White;
-            this.sataTextBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox4.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox4.BorderRadius = 3;
-            this.sataTextBox4.BorderSize = 1;
-            this.sataTextBox4.Enabled = false;
-            this.sataTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox4.Icon = null;
-            this.sataTextBox4.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox4.Location = new System.Drawing.Point(603, 355);
-            this.sataTextBox4.Multiline = false;
-            this.sataTextBox4.Name = "sataTextBox4";
-            this.sataTextBox4.PasswordChar = false;
-            this.sataTextBox4.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox4.PlaceholderText = "";
-            this.sataTextBox4.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox4.TabIndex = 31;
-            this.sataTextBox4.Text = "0";
-            this.sataTextBox4.Texts = "";
-            this.sataTextBox4.UnderlinedStyle = false;
             // 
             // txtRoomType
             // 
@@ -1020,167 +623,17 @@
             this.txtRoomType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomType.Icon = null;
             this.txtRoomType.IconSize = new System.Drawing.Size(20, 20);
-            this.txtRoomType.Location = new System.Drawing.Point(603, 184);
+            this.txtRoomType.Location = new System.Drawing.Point(231, 311);
             this.txtRoomType.Multiline = false;
             this.txtRoomType.Name = "txtRoomType";
             this.txtRoomType.PasswordChar = false;
             this.txtRoomType.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtRoomType.PlaceholderText = "";
-            this.txtRoomType.Size = new System.Drawing.Size(258, 33);
+            this.txtRoomType.Size = new System.Drawing.Size(307, 33);
             this.txtRoomType.TabIndex = 31;
             this.txtRoomType.Text = "0";
             this.txtRoomType.Texts = "";
             this.txtRoomType.UnderlinedStyle = false;
-            // 
-            // sataTextBox1
-            // 
-            this.sataTextBox1.BackColor = System.Drawing.Color.White;
-            this.sataTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox1.BorderRadius = 3;
-            this.sataTextBox1.BorderSize = 1;
-            this.sataTextBox1.Enabled = false;
-            this.sataTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox1.Icon = null;
-            this.sataTextBox1.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox1.Location = new System.Drawing.Point(879, 268);
-            this.sataTextBox1.Multiline = false;
-            this.sataTextBox1.Name = "sataTextBox1";
-            this.sataTextBox1.PasswordChar = false;
-            this.sataTextBox1.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox1.PlaceholderText = "";
-            this.sataTextBox1.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox1.TabIndex = 32;
-            this.sataTextBox1.Text = "0";
-            this.sataTextBox1.Texts = "";
-            this.sataTextBox1.UnderlinedStyle = false;
-            // 
-            // txtTotalAmount
-            // 
-            this.txtTotalAmount.BackColor = System.Drawing.Color.White;
-            this.txtTotalAmount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtTotalAmount.BorderColor = System.Drawing.Color.Silver;
-            this.txtTotalAmount.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtTotalAmount.BorderRadius = 3;
-            this.txtTotalAmount.BorderSize = 1;
-            this.txtTotalAmount.Enabled = false;
-            this.txtTotalAmount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtTotalAmount.Icon = null;
-            this.txtTotalAmount.IconSize = new System.Drawing.Size(20, 20);
-            this.txtTotalAmount.Location = new System.Drawing.Point(603, 268);
-            this.txtTotalAmount.Multiline = false;
-            this.txtTotalAmount.Name = "txtTotalAmount";
-            this.txtTotalAmount.PasswordChar = false;
-            this.txtTotalAmount.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtTotalAmount.PlaceholderText = "";
-            this.txtTotalAmount.Size = new System.Drawing.Size(258, 33);
-            this.txtTotalAmount.TabIndex = 32;
-            this.txtTotalAmount.Text = "0";
-            this.txtTotalAmount.Texts = "";
-            this.txtTotalAmount.UnderlinedStyle = false;
-            // 
-            // sataTextBox7
-            // 
-            this.sataTextBox7.BackColor = System.Drawing.Color.White;
-            this.sataTextBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox7.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox7.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox7.BorderRadius = 3;
-            this.sataTextBox7.BorderSize = 1;
-            this.sataTextBox7.Enabled = false;
-            this.sataTextBox7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox7.Icon = null;
-            this.sataTextBox7.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox7.Location = new System.Drawing.Point(327, 455);
-            this.sataTextBox7.Multiline = false;
-            this.sataTextBox7.Name = "sataTextBox7";
-            this.sataTextBox7.PasswordChar = false;
-            this.sataTextBox7.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox7.PlaceholderText = "";
-            this.sataTextBox7.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox7.TabIndex = 33;
-            this.sataTextBox7.Text = "0";
-            this.sataTextBox7.Texts = "";
-            this.sataTextBox7.UnderlinedStyle = false;
-            // 
-            // sataTextBox6
-            // 
-            this.sataTextBox6.BackColor = System.Drawing.Color.White;
-            this.sataTextBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox6.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox6.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox6.BorderRadius = 3;
-            this.sataTextBox6.BorderSize = 1;
-            this.sataTextBox6.Enabled = false;
-            this.sataTextBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox6.Icon = null;
-            this.sataTextBox6.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox6.Location = new System.Drawing.Point(51, 455);
-            this.sataTextBox6.Multiline = false;
-            this.sataTextBox6.Name = "sataTextBox6";
-            this.sataTextBox6.PasswordChar = false;
-            this.sataTextBox6.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox6.PlaceholderText = "";
-            this.sataTextBox6.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox6.TabIndex = 34;
-            this.sataTextBox6.Text = "0";
-            this.sataTextBox6.Texts = "";
-            this.sataTextBox6.UnderlinedStyle = false;
-            // 
-            // sataTextBox3
-            // 
-            this.sataTextBox3.BackColor = System.Drawing.Color.White;
-            this.sataTextBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox3.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox3.BorderRadius = 3;
-            this.sataTextBox3.BorderSize = 1;
-            this.sataTextBox3.Enabled = false;
-            this.sataTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox3.Icon = null;
-            this.sataTextBox3.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox3.Location = new System.Drawing.Point(327, 355);
-            this.sataTextBox3.Multiline = false;
-            this.sataTextBox3.Name = "sataTextBox3";
-            this.sataTextBox3.PasswordChar = false;
-            this.sataTextBox3.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox3.PlaceholderText = "";
-            this.sataTextBox3.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox3.TabIndex = 33;
-            this.sataTextBox3.Text = "0";
-            this.sataTextBox3.Texts = "";
-            this.sataTextBox3.UnderlinedStyle = false;
-            // 
-            // sataTextBox2
-            // 
-            this.sataTextBox2.BackColor = System.Drawing.Color.White;
-            this.sataTextBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.sataTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox2.BorderRadius = 3;
-            this.sataTextBox2.BorderSize = 1;
-            this.sataTextBox2.Enabled = false;
-            this.sataTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox2.Icon = null;
-            this.sataTextBox2.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox2.Location = new System.Drawing.Point(51, 355);
-            this.sataTextBox2.Multiline = false;
-            this.sataTextBox2.Name = "sataTextBox2";
-            this.sataTextBox2.PasswordChar = false;
-            this.sataTextBox2.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox2.PlaceholderText = "";
-            this.sataTextBox2.Size = new System.Drawing.Size(258, 33);
-            this.sataTextBox2.TabIndex = 34;
-            this.sataTextBox2.Text = "0";
-            this.sataTextBox2.Texts = "";
-            this.sataTextBox2.UnderlinedStyle = false;
             // 
             // txtCusName
             // 
@@ -1195,13 +648,13 @@
             this.txtCusName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtCusName.Icon = null;
             this.txtCusName.IconSize = new System.Drawing.Size(20, 20);
-            this.txtCusName.Location = new System.Drawing.Point(327, 184);
+            this.txtCusName.Location = new System.Drawing.Point(231, 217);
             this.txtCusName.Multiline = false;
             this.txtCusName.Name = "txtCusName";
             this.txtCusName.PasswordChar = false;
             this.txtCusName.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtCusName.PlaceholderText = "";
-            this.txtCusName.Size = new System.Drawing.Size(258, 33);
+            this.txtCusName.Size = new System.Drawing.Size(307, 33);
             this.txtCusName.TabIndex = 33;
             this.txtCusName.Text = "0";
             this.txtCusName.Texts = "";
@@ -1220,13 +673,13 @@
             this.txtBillingId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtBillingId.Icon = null;
             this.txtBillingId.IconSize = new System.Drawing.Size(20, 20);
-            this.txtBillingId.Location = new System.Drawing.Point(51, 184);
+            this.txtBillingId.Location = new System.Drawing.Point(231, 123);
             this.txtBillingId.Multiline = false;
             this.txtBillingId.Name = "txtBillingId";
             this.txtBillingId.PasswordChar = false;
             this.txtBillingId.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtBillingId.PlaceholderText = "";
-            this.txtBillingId.Size = new System.Drawing.Size(258, 33);
+            this.txtBillingId.Size = new System.Drawing.Size(307, 33);
             this.txtBillingId.TabIndex = 34;
             this.txtBillingId.Text = "0";
             this.txtBillingId.Texts = "";
@@ -1254,7 +707,7 @@
             this.btnReservationPay.ImageTint = System.Drawing.Color.White;
             this.btnReservationPay.IsToggleButton = false;
             this.btnReservationPay.IsToggled = false;
-            this.btnReservationPay.Location = new System.Drawing.Point(975, 551);
+            this.btnReservationPay.Location = new System.Drawing.Point(228, 548);
             this.btnReservationPay.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationPay.Name = "btnReservationPay";
             this.btnReservationPay.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -1266,7 +719,7 @@
             this.btnReservationPay.PressedImageTint = System.Drawing.Color.White;
             this.btnReservationPay.PressedOutline = System.Drawing.Color.Empty;
             this.btnReservationPay.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnReservationPay.Size = new System.Drawing.Size(163, 35);
+            this.btnReservationPay.Size = new System.Drawing.Size(307, 35);
             this.btnReservationPay.TabIndex = 26;
             this.btnReservationPay.TextAutoCenter = true;
             this.btnReservationPay.TextOffset = new System.Drawing.Point(0, 0);
@@ -1279,10 +732,10 @@
             this.MainFormBilling.Controls.Add(this.label9);
             this.MainFormBilling.Controls.Add(this.sataPanel5);
             this.MainFormBilling.Controls.Add(this.sataPanel9);
-            this.MainFormBilling.Location = new System.Drawing.Point(4, 22);
+            this.MainFormBilling.Location = new System.Drawing.Point(4, 25);
             this.MainFormBilling.Name = "MainFormBilling";
             this.MainFormBilling.Padding = new System.Windows.Forms.Padding(3);
-            this.MainFormBilling.Size = new System.Drawing.Size(1194, 585);
+            this.MainFormBilling.Size = new System.Drawing.Size(1194, 582);
             this.MainFormBilling.TabIndex = 2;
             this.MainFormBilling.Text = "MainTabForBilling";
             this.MainFormBilling.UseVisualStyleBackColor = true;
@@ -1319,7 +772,7 @@
             this.dataGridBiilSample.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridBiilSample.EnableHeadersVisualStyles = false;
             this.dataGridBiilSample.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridBiilSample.Location = new System.Drawing.Point(3, 219);
+            this.dataGridBiilSample.Location = new System.Drawing.Point(3, 216);
             this.dataGridBiilSample.MultiSelect = false;
             this.dataGridBiilSample.Name = "dataGridBiilSample";
             this.dataGridBiilSample.ReadOnly = true;
@@ -1665,6 +1118,1042 @@
             this.btnServices.TextOffset = new System.Drawing.Point(0, 0);
             this.btnServices.Click += new System.EventHandler(this.btnBillingAddNew_Click);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dtCheckOut);
+            this.splitContainer1.Panel1.Controls.Add(this.txtRoomNumber);
+            this.splitContainer1.Panel1.Controls.Add(this.dtCheckIns);
+            this.splitContainer1.Panel1.Controls.Add(this.label29);
+            this.splitContainer1.Panel1.Controls.Add(this.cbReservationId);
+            this.splitContainer1.Panel1.Controls.Add(this.sataTextBox14);
+            this.splitContainer1.Panel1.Controls.Add(this.sataTextBox13);
+            this.splitContainer1.Panel1.Controls.Add(this.txtRoomType);
+            this.splitContainer1.Panel1.Controls.Add(this.label40);
+            this.splitContainer1.Panel1.Controls.Add(this.label39);
+            this.splitContainer1.Panel1.Controls.Add(this.label38);
+            this.splitContainer1.Panel1.Controls.Add(this.label37);
+            this.splitContainer1.Panel1.Controls.Add(this.label35);
+            this.splitContainer1.Panel1.Controls.Add(this.label34);
+            this.splitContainer1.Panel1.Controls.Add(this.label33);
+            this.splitContainer1.Panel1.Controls.Add(this.label32);
+            this.splitContainer1.Panel1.Controls.Add(this.label36);
+            this.splitContainer1.Panel1.Controls.Add(this.txtCusName);
+            this.splitContainer1.Panel1.Controls.Add(this.txtBillingId);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
+            this.splitContainer1.Panel2.Controls.Add(this.txtTotalAmount);
+            this.splitContainer1.Panel2.Controls.Add(this.label41);
+            this.splitContainer1.Panel2.Controls.Add(this.btnReservationPay);
+            this.splitContainer1.Panel2.Controls.Add(this.cbStatus);
+            this.splitContainer1.Panel2.Controls.Add(this.sataTextBox16);
+            this.splitContainer1.Panel2.Controls.Add(this.sataTextBox21);
+            this.splitContainer1.Panel2.Controls.Add(this.sataTextBox20);
+            this.splitContainer1.Panel2.Controls.Add(this.sataTextBox17);
+            this.splitContainer1.Panel2.Controls.Add(this.sataTextBox19);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.sataTextBox11);
+            this.splitContainer1.Panel2.Controls.Add(this.sataTextBox18);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Controls.Add(this.label45);
+            this.splitContainer1.Panel2.Controls.Add(this.label6);
+            this.splitContainer1.Panel2.Controls.Add(this.label44);
+            this.splitContainer1.Panel2.Controls.Add(this.label10);
+            this.splitContainer1.Panel2.Controls.Add(this.label43);
+            this.splitContainer1.Panel2.Controls.Add(this.label31);
+            this.splitContainer1.Panel2.Controls.Add(this.label42);
+            this.splitContainer1.Size = new System.Drawing.Size(1188, 576);
+            this.splitContainer1.SplitterDistance = 582;
+            this.splitContainer1.TabIndex = 38;
+            // 
+            // dataGridBilling
+            // 
+            this.dataGridBilling.AllowUserToAddRows = false;
+            this.dataGridBilling.AllowUserToDeleteRows = false;
+            this.dataGridBilling.AllowUserToResizeColumns = false;
+            this.dataGridBilling.AllowUserToResizeRows = false;
+            this.dataGridBilling.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridBilling.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridBilling.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridBilling.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridBilling.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridBilling.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridBilling.ColumnHeadersHeight = 33;
+            this.dataGridBilling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridBilling.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridBilling.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridBilling.EnableHeadersVisualStyles = false;
+            this.dataGridBilling.GridColor = System.Drawing.Color.Gainsboro;
+            this.dataGridBilling.Location = new System.Drawing.Point(3, 3);
+            this.dataGridBilling.MultiSelect = false;
+            this.dataGridBilling.Name = "dataGridBilling";
+            this.dataGridBilling.ReadOnly = true;
+            this.dataGridBilling.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridBilling.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridBilling.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridBilling.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridBilling.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridBilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridBilling.Size = new System.Drawing.Size(1188, 63);
+            this.dataGridBilling.TabIndex = 3;
+            // 
+            // dtCheckIns
+            // 
+            this.dtCheckIns.BackColor = System.Drawing.Color.White;
+            this.dtCheckIns.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtCheckIns.EnableThemeChangeButton = true;
+            this.dtCheckIns.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCheckIns.ForeColor = System.Drawing.Color.Black;
+            this.dtCheckIns.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckIns.HoverOutline = System.Drawing.Color.White;
+            this.dtCheckIns.Icon = null;
+            this.dtCheckIns.IconTint = System.Drawing.Color.Black;
+            this.dtCheckIns.Location = new System.Drawing.Point(231, 358);
+            this.dtCheckIns.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtCheckIns.Name = "dtCheckIns";
+            this.dtCheckIns.NormalBackground = System.Drawing.Color.White;
+            this.dtCheckIns.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckIns.OutlineThickness = 1.5F;
+            this.dtCheckIns.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.TopRight;
+            this.dtCheckIns.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckIns.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckIns.Rounding = 8;
+            this.dtCheckIns.ShowIcon = true;
+            this.dtCheckIns.Size = new System.Drawing.Size(307, 33);
+            this.dtCheckIns.TabIndex = 89;
+            this.dtCheckIns.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
+            // 
+            // dtCheckOut
+            // 
+            this.dtCheckOut.BackColor = System.Drawing.Color.White;
+            this.dtCheckOut.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtCheckOut.EnableThemeChangeButton = true;
+            this.dtCheckOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCheckOut.ForeColor = System.Drawing.Color.Black;
+            this.dtCheckOut.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckOut.HoverOutline = System.Drawing.Color.White;
+            this.dtCheckOut.Icon = null;
+            this.dtCheckOut.IconTint = System.Drawing.Color.Gray;
+            this.dtCheckOut.Location = new System.Drawing.Point(231, 405);
+            this.dtCheckOut.Margin = new System.Windows.Forms.Padding(4);
+            this.dtCheckOut.Name = "dtCheckOut";
+            this.dtCheckOut.NormalBackground = System.Drawing.Color.White;
+            this.dtCheckOut.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckOut.OutlineThickness = 1.5F;
+            this.dtCheckOut.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
+            this.dtCheckOut.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckOut.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtCheckOut.Rounding = 8;
+            this.dtCheckOut.ShowIcon = true;
+            this.dtCheckOut.Size = new System.Drawing.Size(307, 33);
+            this.dtCheckOut.TabIndex = 89;
+            this.dtCheckOut.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
+            // 
+            // sataTextBox13
+            // 
+            this.sataTextBox13.BackColor = System.Drawing.Color.White;
+            this.sataTextBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox13.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox13.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox13.BorderRadius = 3;
+            this.sataTextBox13.BorderSize = 1;
+            this.sataTextBox13.Enabled = false;
+            this.sataTextBox13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox13.Icon = null;
+            this.sataTextBox13.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox13.Location = new System.Drawing.Point(231, 452);
+            this.sataTextBox13.Multiline = false;
+            this.sataTextBox13.Name = "sataTextBox13";
+            this.sataTextBox13.PasswordChar = false;
+            this.sataTextBox13.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox13.PlaceholderText = "";
+            this.sataTextBox13.Size = new System.Drawing.Size(307, 33);
+            this.sataTextBox13.TabIndex = 31;
+            this.sataTextBox13.Text = "0";
+            this.sataTextBox13.Texts = "";
+            this.sataTextBox13.UnderlinedStyle = false;
+            // 
+            // sataTextBox14
+            // 
+            this.sataTextBox14.BackColor = System.Drawing.Color.White;
+            this.sataTextBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox14.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox14.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox14.BorderRadius = 3;
+            this.sataTextBox14.BorderSize = 1;
+            this.sataTextBox14.Enabled = false;
+            this.sataTextBox14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox14.Icon = null;
+            this.sataTextBox14.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox14.Location = new System.Drawing.Point(231, 499);
+            this.sataTextBox14.Multiline = false;
+            this.sataTextBox14.Name = "sataTextBox14";
+            this.sataTextBox14.PasswordChar = false;
+            this.sataTextBox14.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox14.PlaceholderText = "";
+            this.sataTextBox14.Size = new System.Drawing.Size(307, 33);
+            this.sataTextBox14.TabIndex = 31;
+            this.sataTextBox14.Text = "0";
+            this.sataTextBox14.Texts = "";
+            this.sataTextBox14.UnderlinedStyle = false;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label32.Location = new System.Drawing.Point(52, 179);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(116, 21);
+            this.label32.TabIndex = 37;
+            this.label32.Text = "Reservation Id";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label33.Location = new System.Drawing.Point(52, 226);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(99, 21);
+            this.label33.TabIndex = 37;
+            this.label33.Text = "Guest Name";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label34.Location = new System.Drawing.Point(52, 273);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(118, 21);
+            this.label34.TabIndex = 37;
+            this.label34.Text = "Room Number";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label35.Location = new System.Drawing.Point(52, 320);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(93, 21);
+            this.label35.TabIndex = 37;
+            this.label35.Text = "Room Type";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label37.Location = new System.Drawing.Point(52, 367);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(111, 21);
+            this.label37.TabIndex = 37;
+            this.label37.Text = "Check-In Date";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label38.Location = new System.Drawing.Point(52, 414);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(124, 21);
+            this.label38.TabIndex = 37;
+            this.label38.Text = "Check-Out Date";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label39.Location = new System.Drawing.Point(52, 461);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(142, 21);
+            this.label39.TabIndex = 37;
+            this.label39.Text = "Number of Nights";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label40.Location = new System.Drawing.Point(52, 508);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(88, 21);
+            this.label40.TabIndex = 37;
+            this.label40.Text = "Process By";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.Color.Black;
+            this.label41.Location = new System.Drawing.Point(45, 68);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(262, 32);
+            this.label41.TabIndex = 1;
+            this.label41.Text = "Charges and Payments";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label30.ForeColor = System.Drawing.Color.Black;
+            this.label30.Location = new System.Drawing.Point(241, 151);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(221, 25);
+            this.label30.TabIndex = 70;
+            this.label30.Text = "Reservation Information";
+            // 
+            // sataTextBox1
+            // 
+            this.sataTextBox1.BackColor = System.Drawing.Color.White;
+            this.sataTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox1.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox1.BorderRadius = 3;
+            this.sataTextBox1.BorderSize = 1;
+            this.sataTextBox1.Enabled = false;
+            this.sataTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox1.Icon = null;
+            this.sataTextBox1.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox1.Location = new System.Drawing.Point(772, 278);
+            this.sataTextBox1.Multiline = false;
+            this.sataTextBox1.Name = "sataTextBox1";
+            this.sataTextBox1.PasswordChar = false;
+            this.sataTextBox1.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox1.PlaceholderText = "";
+            this.sataTextBox1.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox1.TabIndex = 82;
+            this.sataTextBox1.Text = "0";
+            this.sataTextBox1.Texts = "";
+            this.sataTextBox1.UnderlinedStyle = false;
+            // 
+            // sataTextBox2
+            // 
+            this.sataTextBox2.BackColor = System.Drawing.Color.White;
+            this.sataTextBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox2.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox2.BorderRadius = 3;
+            this.sataTextBox2.BorderSize = 1;
+            this.sataTextBox2.Enabled = false;
+            this.sataTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox2.Icon = null;
+            this.sataTextBox2.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox2.Location = new System.Drawing.Point(233, 346);
+            this.sataTextBox2.Multiline = false;
+            this.sataTextBox2.Name = "sataTextBox2";
+            this.sataTextBox2.PasswordChar = false;
+            this.sataTextBox2.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox2.PlaceholderText = "";
+            this.sataTextBox2.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox2.TabIndex = 75;
+            this.sataTextBox2.Text = "0";
+            this.sataTextBox2.Texts = "";
+            this.sataTextBox2.UnderlinedStyle = false;
+            // 
+            // sataTextBox6
+            // 
+            this.sataTextBox6.BackColor = System.Drawing.Color.White;
+            this.sataTextBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox6.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox6.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox6.BorderRadius = 3;
+            this.sataTextBox6.BorderSize = 1;
+            this.sataTextBox6.Enabled = false;
+            this.sataTextBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox6.Icon = null;
+            this.sataTextBox6.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox6.Location = new System.Drawing.Point(233, 422);
+            this.sataTextBox6.Multiline = false;
+            this.sataTextBox6.Name = "sataTextBox6";
+            this.sataTextBox6.PasswordChar = false;
+            this.sataTextBox6.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox6.PlaceholderText = "";
+            this.sataTextBox6.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox6.TabIndex = 76;
+            this.sataTextBox6.Text = "0";
+            this.sataTextBox6.Texts = "";
+            this.sataTextBox6.UnderlinedStyle = false;
+            // 
+            // sataTextBox3
+            // 
+            this.sataTextBox3.BackColor = System.Drawing.Color.White;
+            this.sataTextBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox3.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox3.BorderRadius = 3;
+            this.sataTextBox3.BorderSize = 1;
+            this.sataTextBox3.Enabled = false;
+            this.sataTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox3.Icon = null;
+            this.sataTextBox3.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox3.Location = new System.Drawing.Point(773, 346);
+            this.sataTextBox3.Multiline = false;
+            this.sataTextBox3.Name = "sataTextBox3";
+            this.sataTextBox3.PasswordChar = false;
+            this.sataTextBox3.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox3.PlaceholderText = "";
+            this.sataTextBox3.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox3.TabIndex = 80;
+            this.sataTextBox3.Text = "0";
+            this.sataTextBox3.Texts = "";
+            this.sataTextBox3.UnderlinedStyle = false;
+            // 
+            // sataTextBox5
+            // 
+            this.sataTextBox5.BackColor = System.Drawing.Color.White;
+            this.sataTextBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox5.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox5.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox5.BorderRadius = 3;
+            this.sataTextBox5.BorderSize = 1;
+            this.sataTextBox5.Enabled = false;
+            this.sataTextBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox5.Icon = null;
+            this.sataTextBox5.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox5.Location = new System.Drawing.Point(233, 497);
+            this.sataTextBox5.Multiline = false;
+            this.sataTextBox5.Name = "sataTextBox5";
+            this.sataTextBox5.PasswordChar = false;
+            this.sataTextBox5.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox5.PlaceholderText = "";
+            this.sataTextBox5.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox5.TabIndex = 77;
+            this.sataTextBox5.Text = "0";
+            this.sataTextBox5.Texts = "";
+            this.sataTextBox5.UnderlinedStyle = false;
+            // 
+            // sataTextBox4
+            // 
+            this.sataTextBox4.BackColor = System.Drawing.Color.White;
+            this.sataTextBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox4.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox4.BorderRadius = 3;
+            this.sataTextBox4.BorderSize = 1;
+            this.sataTextBox4.Enabled = false;
+            this.sataTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox4.Icon = null;
+            this.sataTextBox4.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox4.Location = new System.Drawing.Point(503, 346);
+            this.sataTextBox4.Multiline = false;
+            this.sataTextBox4.Name = "sataTextBox4";
+            this.sataTextBox4.PasswordChar = false;
+            this.sataTextBox4.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox4.PlaceholderText = "";
+            this.sataTextBox4.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox4.TabIndex = 72;
+            this.sataTextBox4.Text = "0";
+            this.sataTextBox4.Texts = "";
+            this.sataTextBox4.UnderlinedStyle = false;
+            // 
+            // sataTextBox7
+            // 
+            this.sataTextBox7.BackColor = System.Drawing.Color.White;
+            this.sataTextBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox7.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox7.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox7.BorderRadius = 3;
+            this.sataTextBox7.BorderSize = 1;
+            this.sataTextBox7.Enabled = false;
+            this.sataTextBox7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox7.Icon = null;
+            this.sataTextBox7.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox7.Location = new System.Drawing.Point(773, 422);
+            this.sataTextBox7.Multiline = false;
+            this.sataTextBox7.Name = "sataTextBox7";
+            this.sataTextBox7.PasswordChar = false;
+            this.sataTextBox7.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox7.PlaceholderText = "";
+            this.sataTextBox7.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox7.TabIndex = 79;
+            this.sataTextBox7.Text = "0";
+            this.sataTextBox7.Texts = "";
+            this.sataTextBox7.UnderlinedStyle = false;
+            // 
+            // sataTextBox8
+            // 
+            this.sataTextBox8.BackColor = System.Drawing.Color.White;
+            this.sataTextBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox8.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox8.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox8.BorderRadius = 3;
+            this.sataTextBox8.BorderSize = 1;
+            this.sataTextBox8.Enabled = false;
+            this.sataTextBox8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox8.Icon = null;
+            this.sataTextBox8.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox8.Location = new System.Drawing.Point(503, 422);
+            this.sataTextBox8.Multiline = false;
+            this.sataTextBox8.Name = "sataTextBox8";
+            this.sataTextBox8.PasswordChar = false;
+            this.sataTextBox8.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox8.PlaceholderText = "";
+            this.sataTextBox8.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox8.TabIndex = 73;
+            this.sataTextBox8.Text = "0";
+            this.sataTextBox8.Texts = "";
+            this.sataTextBox8.UnderlinedStyle = false;
+            // 
+            // sataTextBox9
+            // 
+            this.sataTextBox9.BackColor = System.Drawing.Color.White;
+            this.sataTextBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox9.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox9.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox9.BorderRadius = 3;
+            this.sataTextBox9.BorderSize = 1;
+            this.sataTextBox9.Enabled = false;
+            this.sataTextBox9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox9.Icon = null;
+            this.sataTextBox9.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox9.Location = new System.Drawing.Point(773, 497);
+            this.sataTextBox9.Multiline = false;
+            this.sataTextBox9.Name = "sataTextBox9";
+            this.sataTextBox9.PasswordChar = false;
+            this.sataTextBox9.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox9.PlaceholderText = "";
+            this.sataTextBox9.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox9.TabIndex = 81;
+            this.sataTextBox9.Text = "0";
+            this.sataTextBox9.Texts = "";
+            this.sataTextBox9.UnderlinedStyle = false;
+            // 
+            // sataTextBox10
+            // 
+            this.sataTextBox10.BackColor = System.Drawing.Color.White;
+            this.sataTextBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox10.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox10.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox10.BorderRadius = 3;
+            this.sataTextBox10.BorderSize = 1;
+            this.sataTextBox10.Enabled = false;
+            this.sataTextBox10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox10.Icon = null;
+            this.sataTextBox10.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox10.Location = new System.Drawing.Point(503, 497);
+            this.sataTextBox10.Multiline = false;
+            this.sataTextBox10.Name = "sataTextBox10";
+            this.sataTextBox10.PasswordChar = false;
+            this.sataTextBox10.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox10.PlaceholderText = "";
+            this.sataTextBox10.Size = new System.Drawing.Size(258, 33);
+            this.sataTextBox10.TabIndex = 74;
+            this.sataTextBox10.Text = "0";
+            this.sataTextBox10.Texts = "";
+            this.sataTextBox10.UnderlinedStyle = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(498, 250);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 20);
+            this.label7.TabIndex = 86;
+            this.label7.Text = "Room Number";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DimGray;
+            this.label13.Location = new System.Drawing.Point(499, 318);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 20);
+            this.label13.TabIndex = 83;
+            this.label13.Text = "Room Number";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.DimGray;
+            this.label17.Location = new System.Drawing.Point(499, 394);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(110, 20);
+            this.label17.TabIndex = 84;
+            this.label17.Text = "Room Number";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.DimGray;
+            this.label16.Location = new System.Drawing.Point(499, 469);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(110, 20);
+            this.label16.TabIndex = 85;
+            this.label16.Text = "Room Number";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(228, 250);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 20);
+            this.label8.TabIndex = 90;
+            this.label8.Text = "Total Amount";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DimGray;
+            this.label14.Location = new System.Drawing.Point(229, 318);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(101, 20);
+            this.label14.TabIndex = 89;
+            this.label14.Text = "Total Amount";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.DimGray;
+            this.label24.Location = new System.Drawing.Point(229, 394);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(101, 20);
+            this.label24.TabIndex = 87;
+            this.label24.Text = "Total Amount";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.DimGray;
+            this.label26.Location = new System.Drawing.Point(229, 469);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(101, 20);
+            this.label26.TabIndex = 88;
+            this.label26.Text = "Total Amount";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(767, 250);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 20);
+            this.label11.TabIndex = 91;
+            this.label11.Text = "Total Amount";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.DimGray;
+            this.label15.Location = new System.Drawing.Point(768, 318);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 20);
+            this.label15.TabIndex = 92;
+            this.label15.Text = "Total Amount";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.DimGray;
+            this.label25.Location = new System.Drawing.Point(768, 394);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(101, 20);
+            this.label25.TabIndex = 93;
+            this.label25.Text = "Total Amount";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.DimGray;
+            this.label27.Location = new System.Drawing.Point(768, 469);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(101, 20);
+            this.label27.TabIndex = 94;
+            this.label27.Text = "Total Amount";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.DimGray;
+            this.label28.Location = new System.Drawing.Point(228, 540);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(101, 20);
+            this.label28.TabIndex = 95;
+            this.label28.Text = "Total Amount";
+            // 
+            // txtRoomNumber
+            // 
+            this.txtRoomNumber.BackColor = System.Drawing.Color.White;
+            this.txtRoomNumber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtRoomNumber.BorderColor = System.Drawing.Color.Silver;
+            this.txtRoomNumber.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtRoomNumber.BorderRadius = 3;
+            this.txtRoomNumber.BorderSize = 1;
+            this.txtRoomNumber.Enabled = false;
+            this.txtRoomNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRoomNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtRoomNumber.Icon = null;
+            this.txtRoomNumber.IconSize = new System.Drawing.Size(20, 20);
+            this.txtRoomNumber.Location = new System.Drawing.Point(231, 264);
+            this.txtRoomNumber.Multiline = false;
+            this.txtRoomNumber.Name = "txtRoomNumber";
+            this.txtRoomNumber.PasswordChar = false;
+            this.txtRoomNumber.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtRoomNumber.PlaceholderText = "";
+            this.txtRoomNumber.Size = new System.Drawing.Size(307, 33);
+            this.txtRoomNumber.TabIndex = 79;
+            this.txtRoomNumber.Text = "0";
+            this.txtRoomNumber.Texts = "";
+            this.txtRoomNumber.UnderlinedStyle = false;
+            // 
+            // txtTotalAmount
+            // 
+            this.txtTotalAmount.BackColor = System.Drawing.Color.White;
+            this.txtTotalAmount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtTotalAmount.BorderColor = System.Drawing.Color.Silver;
+            this.txtTotalAmount.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtTotalAmount.BorderRadius = 3;
+            this.txtTotalAmount.BorderSize = 1;
+            this.txtTotalAmount.Enabled = false;
+            this.txtTotalAmount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtTotalAmount.Icon = null;
+            this.txtTotalAmount.IconSize = new System.Drawing.Size(20, 20);
+            this.txtTotalAmount.Location = new System.Drawing.Point(228, 123);
+            this.txtTotalAmount.Multiline = false;
+            this.txtTotalAmount.Name = "txtTotalAmount";
+            this.txtTotalAmount.PasswordChar = false;
+            this.txtTotalAmount.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtTotalAmount.PlaceholderText = "";
+            this.txtTotalAmount.Size = new System.Drawing.Size(307, 33);
+            this.txtTotalAmount.TabIndex = 80;
+            this.txtTotalAmount.Text = "0";
+            this.txtTotalAmount.Texts = "";
+            this.txtTotalAmount.UnderlinedStyle = false;
+            // 
+            // sataTextBox16
+            // 
+            this.sataTextBox16.BackColor = System.Drawing.Color.White;
+            this.sataTextBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox16.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox16.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox16.BorderRadius = 3;
+            this.sataTextBox16.BorderSize = 1;
+            this.sataTextBox16.Enabled = false;
+            this.sataTextBox16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox16.Icon = null;
+            this.sataTextBox16.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox16.Location = new System.Drawing.Point(228, 167);
+            this.sataTextBox16.Multiline = false;
+            this.sataTextBox16.Name = "sataTextBox16";
+            this.sataTextBox16.PasswordChar = false;
+            this.sataTextBox16.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox16.PlaceholderText = "";
+            this.sataTextBox16.Size = new System.Drawing.Size(307, 33);
+            this.sataTextBox16.TabIndex = 34;
+            this.sataTextBox16.Text = "0";
+            this.sataTextBox16.Texts = "";
+            this.sataTextBox16.UnderlinedStyle = false;
+            // 
+            // sataTextBox17
+            // 
+            this.sataTextBox17.BackColor = System.Drawing.Color.White;
+            this.sataTextBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox17.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox17.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox17.BorderRadius = 3;
+            this.sataTextBox17.BorderSize = 1;
+            this.sataTextBox17.Enabled = false;
+            this.sataTextBox17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox17.Icon = null;
+            this.sataTextBox17.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox17.Location = new System.Drawing.Point(228, 214);
+            this.sataTextBox17.Multiline = false;
+            this.sataTextBox17.Name = "sataTextBox17";
+            this.sataTextBox17.PasswordChar = false;
+            this.sataTextBox17.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox17.PlaceholderText = "";
+            this.sataTextBox17.Size = new System.Drawing.Size(307, 33);
+            this.sataTextBox17.TabIndex = 33;
+            this.sataTextBox17.Text = "0";
+            this.sataTextBox17.Texts = "";
+            this.sataTextBox17.UnderlinedStyle = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(49, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 21);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Room Charges";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(49, 176);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 21);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Service Charges";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(49, 223);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 21);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Other Charges";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(49, 270);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(153, 21);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Additional Payment";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label31.Location = new System.Drawing.Point(49, 317);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(160, 21);
+            this.label31.TabIndex = 37;
+            this.label31.Text = "Outstanding Balance";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label42.Location = new System.Drawing.Point(49, 364);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(136, 21);
+            this.label42.TabIndex = 37;
+            this.label42.Text = "Payment Amount";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label43.Location = new System.Drawing.Point(49, 411);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(104, 21);
+            this.label43.TabIndex = 37;
+            this.label43.Text = "Billing Status";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label44.Location = new System.Drawing.Point(49, 458);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(93, 21);
+            this.label44.TabIndex = 37;
+            this.label44.Text = "Grand Total";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.label45.Location = new System.Drawing.Point(49, 505);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(136, 21);
+            this.label45.TabIndex = 37;
+            this.label45.Text = "Payment Method";
+            // 
+            // sataTextBox18
+            // 
+            this.sataTextBox18.BackColor = System.Drawing.Color.White;
+            this.sataTextBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox18.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox18.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox18.BorderRadius = 3;
+            this.sataTextBox18.BorderSize = 1;
+            this.sataTextBox18.Enabled = false;
+            this.sataTextBox18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox18.Icon = null;
+            this.sataTextBox18.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox18.Location = new System.Drawing.Point(228, 308);
+            this.sataTextBox18.Multiline = false;
+            this.sataTextBox18.Name = "sataTextBox18";
+            this.sataTextBox18.PasswordChar = false;
+            this.sataTextBox18.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox18.PlaceholderText = "";
+            this.sataTextBox18.Size = new System.Drawing.Size(307, 33);
+            this.sataTextBox18.TabIndex = 31;
+            this.sataTextBox18.Text = "0";
+            this.sataTextBox18.Texts = "";
+            this.sataTextBox18.UnderlinedStyle = false;
+            // 
+            // sataTextBox19
+            // 
+            this.sataTextBox19.BackColor = System.Drawing.Color.White;
+            this.sataTextBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox19.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox19.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox19.BorderRadius = 3;
+            this.sataTextBox19.BorderSize = 1;
+            this.sataTextBox19.Enabled = false;
+            this.sataTextBox19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox19.Icon = null;
+            this.sataTextBox19.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox19.Location = new System.Drawing.Point(228, 449);
+            this.sataTextBox19.Multiline = false;
+            this.sataTextBox19.Name = "sataTextBox19";
+            this.sataTextBox19.PasswordChar = false;
+            this.sataTextBox19.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox19.PlaceholderText = "";
+            this.sataTextBox19.Size = new System.Drawing.Size(307, 33);
+            this.sataTextBox19.TabIndex = 31;
+            this.sataTextBox19.Text = "0";
+            this.sataTextBox19.Texts = "";
+            this.sataTextBox19.UnderlinedStyle = false;
+            // 
+            // sataTextBox20
+            // 
+            this.sataTextBox20.BackColor = System.Drawing.Color.White;
+            this.sataTextBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox20.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox20.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox20.BorderRadius = 3;
+            this.sataTextBox20.BorderSize = 1;
+            this.sataTextBox20.Enabled = false;
+            this.sataTextBox20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox20.Icon = null;
+            this.sataTextBox20.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox20.Location = new System.Drawing.Point(228, 496);
+            this.sataTextBox20.Multiline = false;
+            this.sataTextBox20.Name = "sataTextBox20";
+            this.sataTextBox20.PasswordChar = false;
+            this.sataTextBox20.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox20.PlaceholderText = "";
+            this.sataTextBox20.Size = new System.Drawing.Size(307, 33);
+            this.sataTextBox20.TabIndex = 31;
+            this.sataTextBox20.Text = "0";
+            this.sataTextBox20.Texts = "";
+            this.sataTextBox20.UnderlinedStyle = false;
+            // 
+            // sataTextBox21
+            // 
+            this.sataTextBox21.BackColor = System.Drawing.Color.White;
+            this.sataTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox21.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox21.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox21.BorderRadius = 3;
+            this.sataTextBox21.BorderSize = 1;
+            this.sataTextBox21.Enabled = false;
+            this.sataTextBox21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox21.Icon = null;
+            this.sataTextBox21.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox21.Location = new System.Drawing.Point(228, 261);
+            this.sataTextBox21.Multiline = false;
+            this.sataTextBox21.Name = "sataTextBox21";
+            this.sataTextBox21.PasswordChar = false;
+            this.sataTextBox21.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox21.PlaceholderText = "";
+            this.sataTextBox21.Size = new System.Drawing.Size(307, 33);
+            this.sataTextBox21.TabIndex = 87;
+            this.sataTextBox21.Text = "0";
+            this.sataTextBox21.Texts = "";
+            this.sataTextBox21.UnderlinedStyle = false;
+            // 
+            // sataTextBox11
+            // 
+            this.sataTextBox11.BackColor = System.Drawing.Color.White;
+            this.sataTextBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox11.BorderColor = System.Drawing.Color.Silver;
+            this.sataTextBox11.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox11.BorderRadius = 3;
+            this.sataTextBox11.BorderSize = 1;
+            this.sataTextBox11.Enabled = false;
+            this.sataTextBox11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox11.Icon = null;
+            this.sataTextBox11.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox11.Location = new System.Drawing.Point(228, 358);
+            this.sataTextBox11.Multiline = false;
+            this.sataTextBox11.Name = "sataTextBox11";
+            this.sataTextBox11.PasswordChar = false;
+            this.sataTextBox11.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox11.PlaceholderText = "";
+            this.sataTextBox11.Size = new System.Drawing.Size(307, 33);
+            this.sataTextBox11.TabIndex = 31;
+            this.sataTextBox11.Text = "0";
+            this.sataTextBox11.Texts = "";
+            this.sataTextBox11.UnderlinedStyle = false;
+            // 
             // UCBilling
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1687,9 +2176,8 @@
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridBilling)).EndInit();
+            this.tabPage1.PerformLayout();
             this.ReservationBillingForm.ResumeLayout(false);
-            this.ReservationBillingForm.PerformLayout();
             this.MainFormBilling.ResumeLayout(false);
             this.MainFormBilling.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBiilSample)).EndInit();
@@ -1705,6 +2193,13 @@
             this.sataPanel9.ResumeLayout(false);
             this.sataPanel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox2)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBilling)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1727,7 +2222,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage ReservationBillingForm;
         private FrameworkTest.SATAButton btnBillingCancel;
-        private System.Windows.Forms.DataGridView dataGridBilling;
         private FrameworkTest.SATAButton btnBackRReservationHome;
         private System.Windows.Forms.TabPage MainFormBilling;
         private SATAUiFramework.SATAPanel sataPanel9;
@@ -1750,42 +2244,69 @@
         private System.Windows.Forms.Label label9;
         private FrameworkTest.SATAButton btnServices;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label8;
         private MetroFramework.Controls.MetroComboBox cbStatus;
         private MetroFramework.Controls.MetroComboBox cbReservationId;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label36;
-        private SATATextBox sataTextBox11;
-        private SATATextBox sataTextBox9;
-        private SATATextBox sataTextBox5;
-        private SATATextBox txtRoomNumber;
-        private SATATextBox sataTextBox10;
-        private SATATextBox sataTextBox8;
-        private SATATextBox sataTextBox4;
         private SATATextBox txtRoomType;
-        private SATATextBox sataTextBox1;
-        private SATATextBox txtTotalAmount;
-        private SATATextBox sataTextBox7;
-        private SATATextBox sataTextBox6;
-        private SATATextBox sataTextBox3;
-        private SATATextBox sataTextBox2;
         private SATATextBox txtCusName;
         private SATATextBox txtBillingId;
         private FrameworkTest.SATAButton btnReservationPay;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.DataGridView dataGridBilling;
+        private CuoreUI.Controls.cuiCalendarDatePicker dtCheckIns;
+        private CuoreUI.Controls.cuiCalendarDatePicker dtCheckOut;
+        private SATATextBox sataTextBox13;
+        private SATATextBox sataTextBox14;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label7;
+        private SATATextBox sataTextBox10;
+        private SATATextBox sataTextBox9;
+        private SATATextBox sataTextBox8;
+        private SATATextBox sataTextBox7;
+        private SATATextBox sataTextBox4;
+        private SATATextBox sataTextBox5;
+        private SATATextBox sataTextBox3;
+        private SATATextBox sataTextBox6;
+        private SATATextBox sataTextBox2;
+        private SATATextBox sataTextBox1;
+        private SATATextBox txtRoomNumber;
+        private SATATextBox txtTotalAmount;
+        private SATATextBox sataTextBox16;
+        private SATATextBox sataTextBox21;
+        private SATATextBox sataTextBox20;
+        private SATATextBox sataTextBox17;
+        private SATATextBox sataTextBox19;
+        private System.Windows.Forms.Label label1;
+        private SATATextBox sataTextBox18;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label42;
+        private SATATextBox sataTextBox11;
     }
 }

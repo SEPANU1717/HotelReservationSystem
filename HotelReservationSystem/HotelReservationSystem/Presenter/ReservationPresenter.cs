@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
 
-namespace HotelReservationSystem.Presenter.Reservation
+namespace HotelReservationSystem.Presenter
 {
     public class ReservationPresenter
     {
