@@ -226,10 +226,10 @@
             this.tabPage2.Controls.Add(this.txtRoomId);
             this.tabPage2.Controls.Add(this.txtRoomNumber);
             this.tabPage2.Controls.Add(this.btnRoomCancel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -359,7 +359,7 @@
             this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.sataPanel2.Location = new System.Drawing.Point(683, 3);
             this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(508, 576);
+            this.sataPanel2.Size = new System.Drawing.Size(508, 579);
             this.sataPanel2.TabIndex = 8;
             // 
             // sataPanel7
@@ -1493,6 +1493,7 @@
             this.dataGridRoom.RowHeadersVisible = false;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridRoom.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridRoom.RowTemplate.Height = 30;
             this.dataGridRoom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridRoom.Size = new System.Drawing.Size(1188, 576);

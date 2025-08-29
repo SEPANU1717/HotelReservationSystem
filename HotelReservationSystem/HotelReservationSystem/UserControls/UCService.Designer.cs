@@ -631,6 +631,7 @@
             this.dataGridFoodService.RowHeadersVisible = false;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridFoodService.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridFoodService.RowTemplate.Height = 30;
             this.dataGridFoodService.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridFoodService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridFoodService.Size = new System.Drawing.Size(1188, 576);

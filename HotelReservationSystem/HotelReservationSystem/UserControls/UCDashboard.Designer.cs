@@ -478,6 +478,7 @@
             this.dataGridReservationDash.RowHeadersVisible = false;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridReservationDash.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridReservationDash.RowTemplate.Height = 30;
             this.dataGridReservationDash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridReservationDash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridReservationDash.Size = new System.Drawing.Size(1188, 389);
@@ -486,10 +487,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridCheckInDash);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 398);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 395);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -541,9 +542,10 @@
             this.dataGridCheckInDash.RowHeadersVisible = false;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridCheckInDash.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridCheckInDash.RowTemplate.Height = 30;
             this.dataGridCheckInDash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridCheckInDash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridCheckInDash.Size = new System.Drawing.Size(1188, 392);
+            this.dataGridCheckInDash.Size = new System.Drawing.Size(1188, 389);
             this.dataGridCheckInDash.TabIndex = 4;
             // 
             // label41

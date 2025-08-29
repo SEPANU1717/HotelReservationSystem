@@ -282,7 +282,7 @@ namespace HotelReservationSystem.UserControls
         public void SetBillingListBindingSource(BindingSource billingList)
         {
             dataGridBilling.DataSource = billingList;
-            dataGridBiilSample.DataSource = billingList;
+           dataGridBiilSample.DataSource = billingList;
         }
 
         private static UCBilling _instance;
