@@ -70,8 +70,8 @@ namespace HotelReservationSystem.Presenter
         {
             try
             {
-                var pet = (CustomerModel)CustomerBindingSource.Current;
-                repository.Delete(pet.CustomerID);
+                var customer = (CustomerModel)CustomerBindingSource.Current;
+                repository.Delete(customer.CustomerID);
                 customerView.isSuccessful = true;
                 customerView.Message = "Customer deleted successfully";
                 LoadAllCustomerList();

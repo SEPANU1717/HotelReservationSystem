@@ -6,6 +6,7 @@ using HotelReservationSystem.DataInitializer;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface.Service.Food;
 using HotelReservationSystem.Domain.Interface.Service.Laundry;
+using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -300,25 +301,12 @@ namespace HotelReservationSystem.UserControls
         #region Singleton
         private static UCService _instance;
 
-        public static UCService GetInstance(Form parentContainer)
-        {
-            if (_instance == null || _instance.IsDisposed || _instance.Parent == null)
-            {
-                _instance = new UCService();
-            }
+        public static UCService GetInstance(Form parentContainer) =>
+            UserControlFactory<UCService>.GetInstance(parentContainer);
 
-            _instance.Dock = DockStyle.Fill;
-            return _instance;
-        }
+        public static void ResetInstance() =>
+            UserControlFactory<UCService>.ResetInstance();
 
-        public static void ResetInstance()
-        {
-            if (_instance != null)
-            {
-                _instance.Dispose();
-                _instance = null;
-            }
-        }
         #endregion
         #region Utility Methods
         private void ClearFoodFields()

@@ -8,7 +8,6 @@ namespace HotelReservationSystem.Forms
 
     public partial class ReservationSystem : Form, IMainView
     {
-
         public ReservationSystem()
         {
             InitializeComponent();

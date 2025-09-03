@@ -5,6 +5,7 @@ using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface.Rooms;
+using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -145,25 +146,11 @@ namespace HotelReservationSystem.UserControls
         #endregion
         #region Singleton
 
-        public static void ResetInstance()
-        {
-            if (_instance != null)
-            {
-                _instance.Dispose();
-                _instance = null;
-            }
-        }
+        public static void ResetInstance() =>
+            UserControlFactory<UCRooms>.ResetInstance();
 
-        public static UCRooms GetInstance(Form parentContainer)
-        {
-            if (_instance == null || _instance.IsDisposed || _instance.Parent == null)
-            {
-                _instance = new UCRooms();
-            }
-
-            _instance.Dock = DockStyle.Fill;
-            return _instance;
-        }
+        public static UCRooms GetInstance(Form parentContainer) =>
+            UserControlFactory<UCRooms>.GetInstance(parentContainer);
 
         #endregion
         #region Methods

@@ -232,6 +232,7 @@
     <Compile Include="Presenter\BillingPresenter.cs" />
     <Compile Include="Presenter\CheckInOutPresenter.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
+    <Compile Include="Presenter\Common\UserControlFactory.cs" />
     <Compile Include="Presenter\CustomerPresenter.cs" />
     <Compile Include="Presenter\LaundryPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />

@@ -12,6 +12,7 @@ using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface.Billing;
 using HotelReservationSystem.Domain.Model;
+using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -285,26 +286,11 @@ namespace HotelReservationSystem.UserControls
            dataGridBiilSample.DataSource = billingList;
         }
 
-        private static UCBilling _instance;
-        public static UCBilling GetInstance(Form parentContainer)
-        {
-            if (_instance == null || _instance.IsDisposed || _instance.Parent == null)
-            {
-                _instance = new UCBilling();
-            }
+        public static UCBilling GetInstance(Form parentContainer) =>
+            UserControlFactory<UCBilling>.GetInstance(parentContainer);
 
-            _instance.Dock = DockStyle.Fill;
-            return _instance;
-        }
-
-        public static void ResetInstance()
-        {
-            if (_instance != null)
-            {
-                _instance.Dispose();
-                _instance = null;
-            }
-        }
+        public static void ResetInstance() => 
+            UserControlFactory<UCBilling>.ResetInstance();
 
         private void InitializeRoomTypeComboBox()
         {

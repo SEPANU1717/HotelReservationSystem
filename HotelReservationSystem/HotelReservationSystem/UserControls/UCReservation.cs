@@ -6,6 +6,7 @@ using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Model;
+using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -198,33 +199,17 @@ namespace HotelReservationSystem.UserControls
         #endregion
         #region Singleton
 
-        public static void ResetInstance()
-        {
-            if (_instance != null)
-            {
-                _instance.Dispose();
-                _instance = null;
-            }
-        }
+        public static void ResetInstance() =>
+            UserControlFactory<UCReservation>.ResetInstance();
 
-        public static UCReservation GetInstance(Form parentContainer)
-        {
-            if (_instance == null || _instance.IsDisposed || _instance.Parent == null)
-            {
-                _instance = new UCReservation();
-            }
-
-            _instance.Dock = DockStyle.Fill;
-            return _instance;
-        }
+        public static UCReservation GetInstance(Form parentContainer) =>
+            UserControlFactory<UCReservation>.GetInstance(parentContainer);
 
         #endregion
         #region Public Methods
 
-        public void SetReservationListBindingSource(BindingSource reservationList)
-        {
+        public void SetReservationListBindingSource(BindingSource reservationList) =>
             dataGridReservation.DataSource = reservationList;
-        }
 
         public void LoadReservationForEdit(int reservationId)
         {

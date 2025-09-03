@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface.Customer;
+using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -147,31 +148,15 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler CancelEvent;
 
         // Methods  
-        public static void ResetInstance()
-        {
-            if (_instance != null)
-            {
-                _instance.Dispose();
-                _instance = null;
-            }
-        }
 
-        public void SetCustomerListBindingSource(BindingSource customerList)
-        {
+        public static UCCustomers GetInstance(Form parentContainer) =>
+            UserControlFactory<UCCustomers>.GetInstance(parentContainer);
+        public static void ResetInstance() =>
+            UserControlFactory < UCCustomers>.ResetInstance();
+
+        public void SetCustomerListBindingSource(BindingSource customerList) =>
             dataGridView1.DataSource = customerList;
-        }
 
-        private static UCCustomers _instance;
-        public static UCCustomers GetInstance(Form parentContainer)
-        {
-            if (_instance == null || _instance.IsDisposed || _instance.Parent == null)
-            {
-                _instance = new UCCustomers();
-            }
-
-            _instance.Dock = DockStyle.Fill;
-            return _instance;
-        }
 
         private void sataComboBox1_Click(object sender, EventArgs e)
         {
