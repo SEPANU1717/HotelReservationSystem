@@ -203,11 +203,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClubDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClubDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataInitializer\OrderFoodInitializer.cs" />
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
@@ -224,22 +219,22 @@
     <Compile Include="DataInitializer\DbInitializer\DbConfig.cs" />
     <Compile Include="DataInitializer\RoomInitializer.cs" />
     <Compile Include="DataInitializer\ServiceInitializer.cs" />
-    <Compile Include="HotelReservationSystemDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HotelReservationSystemDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Presenter\BillingPresenter.cs" />
     <Compile Include="Presenter\CheckInOutPresenter.cs" />
+    <Compile Include="Presenter\Common\LoginSuccessEventArgs.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
     <Compile Include="Presenter\Common\UserControlFactory.cs" />
+    <Compile Include="Presenter\Common\UserInfoDisplay.cs" />
+    <Compile Include="Presenter\Common\UserSession.cs" />
     <Compile Include="Presenter\CustomerPresenter.cs" />
     <Compile Include="Presenter\LaundryPresenter.cs" />
+    <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="Presenter\OrderFoodPresenter.cs" />
     <Compile Include="Presenter\ReservationPresenter.cs" />
     <Compile Include="Presenter\RoomPresenter.cs" />
     <Compile Include="Presenter\ServicePresenter.cs" />
+    <Compile Include="Presenter\UserPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -339,28 +334,6 @@
     <EmbeddedResource Include="UserControls\UCSettings.resx">
       <DependentUpon>UCSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClubDBDataSet.xsc">
-      <DependentUpon>ClubDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ClubDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ClubDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ClubDBDataSet.xss">
-      <DependentUpon>ClubDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HotelReservationSystemDataSet.xsc">
-      <DependentUpon>HotelReservationSystemDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HotelReservationSystemDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HotelReservationSystemDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HotelReservationSystemDataSet.xss">
-      <DependentUpon>HotelReservationSystemDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

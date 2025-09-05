@@ -15,7 +15,6 @@ namespace HotelReservationSystem.UserControls
 
         private List<string> comboItems;
         RoomRepository roomRepo;
-        private static UCRooms _instance;
 
         #endregion
         #region Constructor
@@ -27,6 +26,7 @@ namespace HotelReservationSystem.UserControls
             materialTabControl1.TabPages.Remove(tabPage2);
             InitializeComboBox();
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
         }
 
         #endregion

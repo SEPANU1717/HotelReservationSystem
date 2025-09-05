@@ -44,8 +44,8 @@
             SATAUiFramework.BorderRadius borderRadius5 = new SATAUiFramework.BorderRadius();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBillingSearch = new FrameworkTest.SATAButton();
             this.txtBillingSearch = new SATATextBox();
@@ -147,8 +147,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.sataPictureBox1);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.lblUsername);
+            this.panel2.Controls.Add(this.lblRole);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -172,29 +172,29 @@
             this.sataPictureBox1.TabIndex = 2;
             this.sataPictureBox1.TabStop = false;
             // 
-            // label3
+            // lblUsername
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1139, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Mark Manalo";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.White;
+            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.Black;
+            this.lblUsername.Location = new System.Drawing.Point(1139, 27);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(95, 16);
+            this.lblUsername.TabIndex = 1;
+            this.lblUsername.Text = "Mark Manalo";
             // 
-            // label4
+            // lblRole
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1141, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Admin";
+            this.lblRole.AutoSize = true;
+            this.lblRole.BackColor = System.Drawing.Color.White;
+            this.lblRole.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.ForeColor = System.Drawing.Color.Black;
+            this.lblRole.Location = new System.Drawing.Point(1139, 44);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(41, 16);
+            this.lblRole.TabIndex = 1;
+            this.lblRole.Text = "Admin";
             // 
             // label5
             // 
@@ -528,10 +528,10 @@
             this.ReservationBillingForm.BackColor = System.Drawing.Color.White;
             this.ReservationBillingForm.Controls.Add(this.btnBillingCancel);
             this.ReservationBillingForm.Controls.Add(this.splitContainer1);
-            this.ReservationBillingForm.Location = new System.Drawing.Point(4, 25);
+            this.ReservationBillingForm.Location = new System.Drawing.Point(4, 22);
             this.ReservationBillingForm.Name = "ReservationBillingForm";
             this.ReservationBillingForm.Padding = new System.Windows.Forms.Padding(3);
-            this.ReservationBillingForm.Size = new System.Drawing.Size(1194, 582);
+            this.ReservationBillingForm.Size = new System.Drawing.Size(1194, 585);
             this.ReservationBillingForm.TabIndex = 1;
             this.ReservationBillingForm.Text = "Reservation Billing";
             // 
@@ -625,7 +625,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label43);
             this.splitContainer1.Panel2.Controls.Add(this.label31);
             this.splitContainer1.Panel2.Controls.Add(this.label42);
-            this.splitContainer1.Size = new System.Drawing.Size(1188, 576);
+            this.splitContainer1.Size = new System.Drawing.Size(1188, 579);
             this.splitContainer1.SplitterDistance = 582;
             this.splitContainer1.TabIndex = 38;
             // 
@@ -1317,10 +1317,10 @@
             this.MainFormBilling.Controls.Add(this.label9);
             this.MainFormBilling.Controls.Add(this.sataPanel5);
             this.MainFormBilling.Controls.Add(this.sataPanel9);
-            this.MainFormBilling.Location = new System.Drawing.Point(4, 25);
+            this.MainFormBilling.Location = new System.Drawing.Point(4, 22);
             this.MainFormBilling.Name = "MainFormBilling";
             this.MainFormBilling.Padding = new System.Windows.Forms.Padding(3);
-            this.MainFormBilling.Size = new System.Drawing.Size(1194, 582);
+            this.MainFormBilling.Size = new System.Drawing.Size(1194, 585);
             this.MainFormBilling.TabIndex = 2;
             this.MainFormBilling.Text = "MainTabForBilling";
             this.MainFormBilling.UseVisualStyleBackColor = true;
@@ -1357,7 +1357,7 @@
             this.dataGridBiilSample.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridBiilSample.EnableHeadersVisualStyles = false;
             this.dataGridBiilSample.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridBiilSample.Location = new System.Drawing.Point(3, 216);
+            this.dataGridBiilSample.Location = new System.Drawing.Point(3, 219);
             this.dataGridBiilSample.MultiSelect = false;
             this.dataGridBiilSample.Name = "dataGridBiilSample";
             this.dataGridBiilSample.ReadOnly = true;
@@ -1758,8 +1758,8 @@
 
         private System.Windows.Forms.Panel panel2;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label label5;
         private FrameworkTest.SATAButton btnBillingSearch;
         private SATATextBox txtBillingSearch;
@@ -1834,8 +1834,5 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label42;
         private SATATextBox sataTextBox11;
-        private ClubDBDataSet clubDBDataSet;
-        private System.Windows.Forms.BindingSource clubMembersBindingSource;
-        private ClubDBDataSetTableAdapters.ClubMembersTableAdapter clubMembersTableAdapter;
     }
 }

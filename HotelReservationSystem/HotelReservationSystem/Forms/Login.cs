@@ -1,33 +1,66 @@
 ﻿using System;
 using System.Configuration;
 using System.Windows.Forms;
+using HotelReservationSystem.Domain.Interface;
+using HotelReservationSystem.Infrastructure.Repository;
+using HotelReservationSystem.Infrastructure.Security;
 using HotelReservationSystem.Presenter;
+using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.Forms
 {
-    public partial class Login : Form
+    public partial class Login : Form, ILoginView
     {
+        private LoginPresenter _presenter;
         public Login()
         {
             InitializeComponent();
+            InitializePresenter();
+            AssociateAndRaiseEvents();
         }
 
-        private void btnLogin_Click_1(object sender, EventArgs e)
-        {
-            bool loginSuccess = true;
-            if (loginSuccess)
-            {
-                string sqlConnectionString = ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
+        public string UsernameOrEmail { get => txtUsername.Texts; set => txtUsername.Texts = value; }
+        public string Password { get => txtPassword.Texts; set => txtPassword.Texts = value; }
+        public bool RememberMe { get => false; set { } }
+        public bool isSuccessful { get; set; }
+        public string Message { get; set; }
 
-                var mainView = new ReservationSystem();
-                var presenter = new MainPresenter(mainView, sqlConnectionString);
-                mainView.Show();
-                Hide();
-            }
-            else
+        public event EventHandler LoginEvent;
+        public event EventHandler CancelEvent;
+
+        private void AssociateAndRaiseEvents()
+        {
+            btnLogin.Click += delegate
             {
-                MessageBox.Show(@"Invalid login!");
-            }
+                LoginEvent?.Invoke(this, EventArgs.Empty);
+                if (!isSuccessful)
+                {
+                    MessageBox.Show(Message);
+                }
+            };
+        }
+        private void InitializePresenter()
+        {
+            string connectionString = Properties.Settings.Default.SqlConnectionString;
+            IPasswordHasher passwordHasher = new Pbkdf2PasswordHasher();
+            IUserRepository userRepository = new UserRepository(connectionString, passwordHasher);
+
+            _presenter = new LoginPresenter(this, userRepository, passwordHasher);
+            _presenter.LoginSuccessful += OnLoginSuccessful;
+        }
+
+        private void OnLoginSuccessful(object sender, LoginSuccessEventArgs e)
+        {
+            UserSession.Login(e.User);
+            this.Hide();
+            ReservationSystem reservationSystem = new ReservationSystem();
+            reservationSystem.Show();
+        }
+
+        public void ClearFields()
+        {
+            UsernameOrEmail = string.Empty;
+            Password = string.Empty;
         }
     }
 }

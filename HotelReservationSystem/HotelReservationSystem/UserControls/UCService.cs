@@ -33,6 +33,7 @@ namespace HotelReservationSystem.UserControls
             laundryRepo = new LaundryRepository(DbConfig.GetConnectionString());
             foodOrder = new FoodOrderRepository(DbConfig.GetConnectionString());
             UpdateTotalOrderPriceLabel();
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
 
             //temporary
             foodOrder.ClearAll();
@@ -299,7 +300,6 @@ namespace HotelReservationSystem.UserControls
         public void SetOrderListBindingSource(BindingSource orderList) => dataGridFood.DataSource = orderList;
         #endregion
         #region Singleton
-        private static UCService _instance;
 
         public static UCService GetInstance(Form parentContainer) =>
             UserControlFactory<UCService>.GetInstance(parentContainer);

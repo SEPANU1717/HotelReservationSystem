@@ -21,7 +21,6 @@ namespace HotelReservationSystem.UserControls
         private DateTime originalCheckOutDate;
         private List<RoomModel> availableRooms = new List<RoomModel>();
         private string originalRoomNumber;
-        private static UCReservation _instance;
 
         #endregion
 
@@ -43,6 +42,7 @@ namespace HotelReservationSystem.UserControls
             dtCheckIn.DateChanged += DateOrRoomChanged;
             dtCheckOut.DateChanged += DateOrRoomChanged;
             cbNumber.SelectedIndexChanged += DateOrRoomChanged;
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
         }
 
         #endregion

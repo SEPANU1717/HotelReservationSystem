@@ -7,6 +7,9 @@ using HotelReservationSystem.Domain.Interface.Billing;
 using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Interface.Rooms;
+using HotelReservationSystem.Domain.Model;
+using HotelReservationSystem.Infrastructure.Repository;
+using HotelReservationSystem.Infrastructure.Security;
 using HotelReservationSystem.Presenter.Billing;
 using HotelReservationSystem.UserControls;
 
@@ -16,11 +19,13 @@ namespace HotelReservationSystem.Presenter
     {
         private IMainView mainView;
         private readonly string sqlConnectionString;
+        private readonly IPasswordHasher PasswordHasher;
 
-        public MainPresenter(IMainView mainView, string sqlConnectionString)
+        public MainPresenter(IMainView mainView, string sqlConnectionString, IPasswordHasher passwordHasher, UserModel loggedInUser = null)
         {
             this.mainView = mainView;
             this.sqlConnectionString = sqlConnectionString;
+            this.PasswordHasher = passwordHasher;
 
             // Event subscriptions
             this.mainView.ShowCustomerView += ShowCustomerView;
@@ -28,6 +33,24 @@ namespace HotelReservationSystem.Presenter
             this.mainView.ShowReservationView += ShowReservationView;
             this.mainView.ShowBillingView += ShowBillingView;
             this.mainView.ShowServiceView += ShowServiceView;
+            this.mainView.ShowUserView += ShowUserView;
+        }
+
+        private void ShowUserView(object sender, EventArgs e)
+        {
+            try
+            {
+                var userControl = UCSettings.GetInstance(mainView as Form);
+                var userRepo = new UserRepository(sqlConnectionString, PasswordHasher);
+                var presenter = new UserPresenter(userControl, userRepo, PasswordHasher);
+
+                mainView.LoadUserControl(userControl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading user management: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ShowServiceView(object sender, EventArgs e)

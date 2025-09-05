@@ -121,8 +121,8 @@
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.txtRoomSearch = new SATATextBox();
@@ -226,10 +226,10 @@
             this.tabPage2.Controls.Add(this.txtRoomId);
             this.tabPage2.Controls.Add(this.txtRoomNumber);
             this.tabPage2.Controls.Add(this.btnRoomCancel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -359,7 +359,7 @@
             this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.sataPanel2.Location = new System.Drawing.Point(683, 3);
             this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(508, 579);
+            this.sataPanel2.Size = new System.Drawing.Size(508, 576);
             this.sataPanel2.TabIndex = 8;
             // 
             // sataPanel7
@@ -1553,36 +1553,36 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Rooms";
             // 
-            // label3
+            // lblUsername
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1139, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Mark Manalo";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.White;
+            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.Black;
+            this.lblUsername.Location = new System.Drawing.Point(1139, 27);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(95, 16);
+            this.lblUsername.TabIndex = 1;
+            this.lblUsername.Text = "Mark Manalo";
             // 
-            // label4
+            // lblRole
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1141, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Admin";
+            this.lblRole.AutoSize = true;
+            this.lblRole.BackColor = System.Drawing.Color.White;
+            this.lblRole.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.ForeColor = System.Drawing.Color.Black;
+            this.lblRole.Location = new System.Drawing.Point(1139, 44);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(41, 16);
+            this.lblRole.TabIndex = 1;
+            this.lblRole.Text = "Admin";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.sataPictureBox1);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.lblUsername);
+            this.panel2.Controls.Add(this.lblRole);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -1864,8 +1864,8 @@
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.Label label5;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Panel panel2;
         private SATAUiFramework.SATAPanel sataPanel2;
         private SATATextBox txtDescription;

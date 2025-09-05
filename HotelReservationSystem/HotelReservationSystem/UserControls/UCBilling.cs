@@ -34,6 +34,7 @@ namespace HotelReservationSystem.UserControls
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
             cbReservationId.SelectedIndexChanged += cbReservationId_SelectedIndexChanged;
             InitializeRoomTypeComboBox();
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
 
         }
 

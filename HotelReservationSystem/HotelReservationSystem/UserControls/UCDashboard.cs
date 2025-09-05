@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer.DbInitializer;
+using HotelReservationSystem.Presenter.Common;
 
 
 namespace HotelReservationSystem.UserControls
@@ -21,6 +22,7 @@ namespace HotelReservationSystem.UserControls
         {
             InitializeComponent();
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
         }
 
         private void sataBarChart1_Load(object sender, EventArgs e)

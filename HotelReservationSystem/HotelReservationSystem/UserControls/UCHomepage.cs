@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -15,6 +16,7 @@ namespace HotelReservationSystem.UserControls
         public UCHomepage()
         {
             InitializeComponent();
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
         }
     }
 }

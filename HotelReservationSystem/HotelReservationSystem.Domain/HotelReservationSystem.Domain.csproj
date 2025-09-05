@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\UserDto.cs" />
     <Compile Include="Interface\Billing\IBillingRepository.cs" />
     <Compile Include="Interface\Billing\IBillingView.cs" />
     <Compile Include="Interface\CheckInOut\ICheckInOutRepository.cs" />
@@ -61,15 +62,21 @@
     <Compile Include="Interface\Service\Laundry\IConfirmLaundryView.cs" />
     <Compile Include="Interface\Service\Laundry\ILaundryServiceRepository.cs" />
     <Compile Include="Interface\Service\Laundry\ILaundryView.cs" />
+    <Compile Include="Interface\UserManagement\ILoginView.cs" />
+    <Compile Include="Interface\UserManagement\IUserRepository.cs" />
+    <Compile Include="Interface\UserManagement\IUserView.cs" />
     <Compile Include="Model\BillingModel.cs" />
     <Compile Include="Model\CheckInOutModel.cs" />
     <Compile Include="Model\CustomerModel.cs" />
+    <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\ReservationModel.cs" />
     <Compile Include="Model\RoomModel.cs" />
     <Compile Include="Model\Service\FoodStockModel.cs" />
     <Compile Include="Model\Service\Shared\SharedAddServiceModel.cs" />
     <Compile Include="Model\Service\Shared\SharedConfirmServiceModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

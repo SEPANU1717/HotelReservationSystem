@@ -31,17 +31,15 @@
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
-            this.btnLogin = new FrameworkTest.SATAButton();
             this.txtUsername = new SATATextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new SATATextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cuiCheckbox1 = new CuoreUI.Controls.cuiCheckbox();
+            this.btnLogin = new FrameworkTest.SATAButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.sataPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -51,45 +49,6 @@
             // 
             this.sataEllipseControl1.CornerRadius = 36;
             this.sataEllipseControl1.TargetControl = this;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.ButtonText = "Login";
-            this.btnLogin.CheckedBackground = System.Drawing.Color.DodgerBlue;
-            this.btnLogin.CheckedForeColor = System.Drawing.Color.White;
-            this.btnLogin.CheckedImageTint = System.Drawing.Color.White;
-            this.btnLogin.CheckedOutline = System.Drawing.Color.DodgerBlue;
-            this.btnLogin.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(158)))), ((int)(((byte)(188)))));
-            this.btnLogin.HoverForeColor = System.Drawing.Color.White;
-            this.btnLogin.HoverImage = null;
-            this.btnLogin.HoverImageTint = System.Drawing.Color.White;
-            this.btnLogin.HoverOutline = System.Drawing.Color.Empty;
-            this.btnLogin.Image = null;
-            this.btnLogin.ImageAutoCenter = true;
-            this.btnLogin.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnLogin.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLogin.ImageTint = System.Drawing.Color.White;
-            this.btnLogin.IsToggleButton = false;
-            this.btnLogin.IsToggled = false;
-            this.btnLogin.Location = new System.Drawing.Point(929, 520);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnLogin.NormalForeColor = System.Drawing.Color.White;
-            this.btnLogin.NormalOutline = System.Drawing.Color.Empty;
-            this.btnLogin.OutlineThickness = 2F;
-            this.btnLogin.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnLogin.PressedForeColor = System.Drawing.Color.White;
-            this.btnLogin.PressedImageTint = System.Drawing.Color.White;
-            this.btnLogin.PressedOutline = System.Drawing.Color.Empty;
-            this.btnLogin.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnLogin.Size = new System.Drawing.Size(406, 48);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.TextAutoCenter = true;
-            this.btnLogin.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // txtUsername
             // 
@@ -103,7 +62,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtUsername.Icon = ((System.Drawing.Image)(resources.GetObject("txtUsername.Icon")));
             this.txtUsername.IconSize = new System.Drawing.Size(20, 20);
-            this.txtUsername.Location = new System.Drawing.Point(929, 338);
+            this.txtUsername.Location = new System.Drawing.Point(929, 354);
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = false;
@@ -119,7 +78,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(1173, 471);
+            this.label1.Location = new System.Drawing.Point(1173, 487);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 20);
             this.label1.TabIndex = 4;
@@ -137,7 +96,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtPassword.Icon = ((System.Drawing.Image)(resources.GetObject("txtPassword.Icon")));
             this.txtPassword.IconSize = new System.Drawing.Size(20, 20);
-            this.txtPassword.Location = new System.Drawing.Point(929, 407);
+            this.txtPassword.Location = new System.Drawing.Point(929, 423);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
@@ -148,30 +107,6 @@
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(954, 213);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(357, 65);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Welcome Back";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(944, 281);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(372, 17);
-            this.label6.TabIndex = 3;
-            this.label6.Text = " Enter your username and password to access your account";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // sataPanel1
             // 
@@ -202,28 +137,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(1327, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 32);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Sepanode";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1253, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(103, 78);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
             // cuiCheckbox1
             // 
             this.cuiCheckbox1.Checked = false;
@@ -234,7 +147,7 @@
             this.cuiCheckbox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cuiCheckbox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.cuiCheckbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.cuiCheckbox1.Location = new System.Drawing.Point(929, 475);
+            this.cuiCheckbox1.Location = new System.Drawing.Point(929, 491);
             this.cuiCheckbox1.MinimumSize = new System.Drawing.Size(16, 16);
             this.cuiCheckbox1.Name = "cuiCheckbox1";
             this.cuiCheckbox1.OutlineStyle = true;
@@ -248,21 +161,80 @@
             this.cuiCheckbox1.UncheckedOutlineColor = System.Drawing.Color.Gray;
             this.cuiCheckbox1.UncheckedSymbolColor = System.Drawing.Color.Empty;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.ButtonText = "Login";
+            this.btnLogin.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnLogin.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLogin.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLogin.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnLogin.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnLogin.HoverForeColor = System.Drawing.Color.White;
+            this.btnLogin.HoverImage = null;
+            this.btnLogin.HoverImageTint = System.Drawing.Color.White;
+            this.btnLogin.HoverOutline = System.Drawing.Color.Empty;
+            this.btnLogin.Image = null;
+            this.btnLogin.ImageAutoCenter = true;
+            this.btnLogin.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnLogin.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLogin.ImageTint = System.Drawing.Color.White;
+            this.btnLogin.IsToggleButton = false;
+            this.btnLogin.IsToggled = false;
+            this.btnLogin.Location = new System.Drawing.Point(929, 541);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnLogin.NormalForeColor = System.Drawing.Color.White;
+            this.btnLogin.NormalOutline = System.Drawing.Color.Empty;
+            this.btnLogin.OutlineThickness = 2F;
+            this.btnLogin.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnLogin.PressedForeColor = System.Drawing.Color.White;
+            this.btnLogin.PressedImageTint = System.Drawing.Color.White;
+            this.btnLogin.PressedOutline = System.Drawing.Color.Empty;
+            this.btnLogin.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnLogin.Size = new System.Drawing.Size(406, 47);
+            this.btnLogin.TabIndex = 9;
+            this.btnLogin.TextAutoCenter = true;
+            this.btnLogin.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(992, 192);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(149, 129);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(1106, 230);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(141, 50);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Lodgix";
+            // 
             // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1477, 800);
-            this.Controls.Add(this.cuiCheckbox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.cuiCheckbox1);
             this.Controls.Add(this.sataPanel1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.btnLogin);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
@@ -280,16 +252,14 @@
         #endregion
 
         private SATAUiFramework.Controls.SATAEllipseControl sataEllipseControl1;
-        private FrameworkTest.SATAButton btnLogin;
         private SATATextBox txtUsername;
         private System.Windows.Forms.Label label1;
         private SATATextBox txtPassword;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private SATAUiFramework.SATAPanel sataPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private CuoreUI.Controls.cuiCheckbox cuiCheckbox1;
+        private FrameworkTest.SATAButton btnLogin;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private CuoreUI.Controls.cuiCheckbox cuiCheckbox1;
     }
 }
