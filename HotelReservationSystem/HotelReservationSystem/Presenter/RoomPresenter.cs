@@ -61,12 +61,12 @@ namespace HotelReservationSystem.Presenter
                 if (roomView.isEdit)
                 {
                     repository.Edit(model);
-                    roomView.Message = "Customer edited successfully";
+                    roomView.Message = "Room added successfully";
                 }
                 else
                 {
                     repository.Add(model);
-                    roomView.Message = "Customer added Successfully";
+                    roomView.Message = "Room added Successfully";
                 }
                 roomView.isSuccessful = true;
                 LoadAllRoomList();

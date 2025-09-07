@@ -24,21 +24,14 @@ namespace HotelReservationSystem.Data.Repositories
                 checkCommand.Parameters.Add("@number", SqlDbType.NVarChar).Value = room.RoomNumber;
 
                 int count = (int)checkCommand.ExecuteScalar();
-
                 if (count > 0) throw new Exception($"Room number '{room.RoomNumber}' already exists.");
 
                 insertCommand.Connection = connection;
                 insertCommand.CommandText = @"INSERT INTO Rooms 
-                        (RoomNumber, RoomType, RoomStatus, RoomPrice, BedCount, MaxGuests, RoomDescription)  
-                        VALUES (@number, @type, @status, @price, @bed, @guest, @description)";
+                (RoomNumber, RoomType, RoomStatus, RoomPrice, BedCount, MaxGuests, RoomDescription)  
+                VALUES (@number, @type, @status, @price, @bed, @guest, @description)";
 
-                insertCommand.Parameters.Add("@number", SqlDbType.NVarChar).Value = room.RoomNumber;
-                insertCommand.Parameters.Add("@type", SqlDbType.NVarChar).Value = room.RoomType;
-                insertCommand.Parameters.Add("@status", SqlDbType.NVarChar).Value = room.RoomStatus;
-                insertCommand.Parameters.Add("@price", SqlDbType.Decimal).Value = decimal.Parse(room.RoomPrice);
-                insertCommand.Parameters.Add("@bed", SqlDbType.Int).Value = int.Parse(room.BedCount);
-                insertCommand.Parameters.Add("@guest", SqlDbType.Int).Value = int.Parse(room.RoomGuests);
-                insertCommand.Parameters.Add("@description", SqlDbType.NVarChar).Value = room.RoomDescription ?? (object)DBNull.Value;
+                AddRoomParameters(insertCommand, room);
                 insertCommand.ExecuteNonQuery();
             }
         }
@@ -66,23 +59,17 @@ namespace HotelReservationSystem.Data.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"UPDATE Rooms 
-                        SET RoomNumber = @number,
-                            RoomType = @type,
-                            RoomStatus = @status,
-                            RoomPrice = @price,
-                            BedCount = @bed,
-                            MaxGuests = @guest,
-                            RoomDescription = @description
-                        WHERE RoomId = @id";
+                SET RoomNumber = @number,
+                    RoomType = @type,
+                    RoomStatus = @status,
+                    RoomPrice = @price,
+                    BedCount = @bed,
+                    MaxGuests = @guest,
+                    RoomDescription = @description
+                WHERE RoomId = @id";
 
+                AddRoomParameters(command, room);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = room.RoomId;
-                command.Parameters.Add("@number", SqlDbType.NVarChar).Value = room.RoomNumber;
-                command.Parameters.Add("@type", SqlDbType.NVarChar).Value = room.RoomType;
-                command.Parameters.Add("@status", SqlDbType.NVarChar).Value = room.RoomStatus;
-                command.Parameters.Add("@price", SqlDbType.Decimal).Value = decimal.Parse(room.RoomPrice);
-                command.Parameters.Add("@bed", SqlDbType.Int).Value = int.Parse(room.BedCount);
-                command.Parameters.Add("@guest", SqlDbType.Int).Value = int.Parse(room.RoomGuests);
-                command.Parameters.Add("@description", SqlDbType.NVarChar).Value = room.RoomDescription ?? (object)DBNull.Value;
                 command.ExecuteNonQuery();
             }
         }
@@ -101,16 +88,7 @@ namespace HotelReservationSystem.Data.Repositories
                 {
                     while (reader.Read())
                     {
-                        var roomModel = new RoomModel();
-                        roomModel.RoomId = (int)reader["RoomId"];
-                        roomModel.RoomNumber = reader["RoomNumber"].ToString();
-                        roomModel.RoomType = reader["RoomType"].ToString();
-                        roomModel.RoomStatus = reader["RoomStatus"].ToString();
-                        roomModel.RoomPrice = reader["RoomPrice"].ToString();
-                        roomModel.BedCount = reader["BedCount"].ToString();
-                        roomModel.RoomGuests = reader["MaxGuests"].ToString();
-                        roomModel.RoomDescription = reader["RoomDescription"].ToString();
-                        roomList.Add(roomModel);
+                        roomList.Add(MapRoomFromReader(reader));
                     }
                 }
             }
@@ -128,7 +106,7 @@ namespace HotelReservationSystem.Data.Repositories
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"SELECT * FROM Rooms WHERE RoomId = @id OR RoomStatus LIKE @status OR RoomNumber LIKE @rnumber
-                                          ORDER BY RoomId DESC";
+                                  ORDER BY RoomId DESC";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = roomId;
                 command.Parameters.Add("@rnumber", SqlDbType.NVarChar).Value = $"%{value}%";
                 command.Parameters.Add("@status", SqlDbType.NVarChar).Value = $"%{value}%";
@@ -136,17 +114,7 @@ namespace HotelReservationSystem.Data.Repositories
                 {
                     while (reader.Read())
                     {
-                        roomList.Add(new RoomModel
-                        {
-                            RoomId = Convert.ToInt32(reader["RoomId"]),
-                            RoomNumber = reader["RoomNumber"].ToString(),
-                            RoomType = reader["RoomType"].ToString(),
-                            RoomStatus = reader["RoomStatus"].ToString(),
-                            RoomPrice = reader["RoomPrice"].ToString(),
-                            BedCount = reader["BedCount"].ToString(),
-                            RoomGuests = reader["MaxGuests"].ToString(),
-                            RoomDescription = reader["RoomDescription"].ToString()
-                        });
+                        roomList.Add(MapRoomFromReader(reader));
                     }
                 }
             }
@@ -176,17 +144,7 @@ namespace HotelReservationSystem.Data.Repositories
                 {
                     while (reader.Read())
                     {
-                        list.Add(new RoomModel
-                        {
-                            RoomId = (int)reader["RoomId"],
-                            RoomNumber = reader["RoomNumber"].ToString(),
-                            RoomType = reader["RoomType"].ToString(),
-                            RoomStatus = reader["RoomStatus"].ToString(),
-                            RoomPrice = reader["RoomPrice"].ToString(),
-                            BedCount = reader["BedCount"].ToString(),
-                            RoomGuests = reader["MaxGuests"].ToString(),
-                            RoomDescription = reader["RoomDescription"].ToString()
-                        });
+                        list.Add(MapRoomFromReader(reader));
                     }
                 }
             }
@@ -202,23 +160,9 @@ namespace HotelReservationSystem.Data.Repositories
                 connection.Open();
                 using (var reader = command.ExecuteReader())
                 {
-                    if (reader.Read())
-                    {
-                        return new RoomModel
-                        {
-                            RoomId = Convert.ToInt32(reader["RoomId"]),
-                            RoomNumber = reader["RoomNumber"].ToString(),
-                            RoomType = reader["RoomType"].ToString(),
-                            RoomStatus = reader["RoomStatus"].ToString(),
-                            RoomPrice = reader["RoomPrice"].ToString(),
-                            BedCount = reader["BedCount"].ToString(),
-                            RoomGuests = reader["MaxGuests"].ToString(),
-                            RoomDescription = reader["RoomDescription"].ToString()
-                        };
-                    }
+                    return reader.Read() ? MapRoomFromReader(reader) : null;
                 }
             }
-            return null;
         }
 
         public void SyncRoomStatusesWithReservations(string roomNumber, ReservationRepository reserveRepo)
@@ -250,6 +194,32 @@ namespace HotelReservationSystem.Data.Repositories
                     Edit(room);
                 }
             }
+        }
+
+        private RoomModel MapRoomFromReader(SqlDataReader reader)
+        {
+            return new RoomModel
+            {
+                RoomId = (int)reader["RoomId"],
+                RoomNumber = reader["RoomNumber"].ToString(),
+                RoomType = reader["RoomType"].ToString(),
+                RoomStatus = reader["RoomStatus"].ToString(),
+                RoomPrice = reader["RoomPrice"].ToString(),
+                BedCount = reader["BedCount"].ToString(),
+                RoomGuests = reader["MaxGuests"].ToString(),
+                RoomDescription = reader["RoomDescription"].ToString()
+            };
+        }
+
+        private void AddRoomParameters(SqlCommand command, RoomModel room)
+        {
+            command.Parameters.Add("@number", SqlDbType.NVarChar).Value = room.RoomNumber;
+            command.Parameters.Add("@type", SqlDbType.NVarChar).Value = room.RoomType;
+            command.Parameters.Add("@status", SqlDbType.NVarChar).Value = room.RoomStatus;
+            command.Parameters.Add("@price", SqlDbType.Decimal).Value = decimal.Parse(room.RoomPrice);
+            command.Parameters.Add("@bed", SqlDbType.Int).Value = int.Parse(room.BedCount);
+            command.Parameters.Add("@guest", SqlDbType.Int).Value = int.Parse(room.RoomGuests);
+            command.Parameters.Add("@description", SqlDbType.NVarChar).Value = room.RoomDescription ?? (object)DBNull.Value;
         }
     }
 }
