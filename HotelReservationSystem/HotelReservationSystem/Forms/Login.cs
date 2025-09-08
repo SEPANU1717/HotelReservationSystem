@@ -30,6 +30,9 @@ namespace HotelReservationSystem.Forms
 
         private void AssociateAndRaiseEvents()
         {
+            chkShowPassword.CheckedChanged += delegate
+            { txtPassword.PasswordChar = !chkShowPassword.Checked; };
+
             btnLogin.Click += delegate
             {
                 LoginEvent?.Invoke(this, EventArgs.Empty);
