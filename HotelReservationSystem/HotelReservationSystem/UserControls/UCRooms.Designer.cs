@@ -130,6 +130,7 @@
             this.btnRoomAddNew = new FrameworkTest.SATAButton();
             this.btnRefresh = new FrameworkTest.SATAButton();
             this.btnRoomEdit = new FrameworkTest.SATAButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             this.sataPanel7.SuspendLayout();
@@ -210,6 +211,7 @@
             this.tabPage2.Controls.Add(this.cboRoomStatus);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label2);
@@ -243,7 +245,7 @@
             this.cboRoomStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRoomStatus.Items = null;
             this.cboRoomStatus.Keys = null;
-            this.cboRoomStatus.Location = new System.Drawing.Point(56, 258);
+            this.cboRoomStatus.Location = new System.Drawing.Point(353, 181);
             this.cboRoomStatus.Name = "cboRoomStatus";
             this.cboRoomStatus.SelectedIndex = -1;
             this.cboRoomStatus.Size = new System.Drawing.Size(263, 35);
@@ -257,7 +259,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(341, 302);
+            this.label9.Location = new System.Drawing.Point(60, 297);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 21);
             this.label9.TabIndex = 9;
@@ -268,7 +270,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(341, 229);
+            this.label7.Location = new System.Drawing.Point(60, 223);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 21);
             this.label7.TabIndex = 9;
@@ -279,7 +281,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(52, 378);
+            this.label10.Location = new System.Drawing.Point(60, 372);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(94, 21);
             this.label10.TabIndex = 9;
@@ -290,7 +292,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(52, 302);
+            this.label8.Location = new System.Drawing.Point(349, 223);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 21);
             this.label8.TabIndex = 9;
@@ -301,7 +303,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(341, 158);
+            this.label2.Location = new System.Drawing.Point(60, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 21);
             this.label2.TabIndex = 9;
@@ -312,7 +314,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(52, 229);
+            this.label6.Location = new System.Drawing.Point(349, 152);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 21);
             this.label6.TabIndex = 9;
@@ -323,7 +325,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.DimGray;
-            this.label36.Location = new System.Drawing.Point(52, 87);
+            this.label36.Location = new System.Drawing.Point(60, 81);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(73, 21);
             this.label36.TabIndex = 9;
@@ -334,7 +336,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(52, 158);
+            this.label1.Location = new System.Drawing.Point(349, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 21);
             this.label1.TabIndex = 9;
@@ -1224,7 +1226,7 @@
             this.btnRoomSave.ImageTint = System.Drawing.Color.White;
             this.btnRoomSave.IsToggleButton = false;
             this.btnRoomSave.IsToggled = false;
-            this.btnRoomSave.Location = new System.Drawing.Point(445, 524);
+            this.btnRoomSave.Location = new System.Drawing.Point(453, 524);
             this.btnRoomSave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnRoomSave.Name = "btnRoomSave";
             this.btnRoomSave.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -1253,7 +1255,7 @@
             this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtDescription.Icon = null;
             this.txtDescription.IconSize = new System.Drawing.Size(20, 20);
-            this.txtDescription.Location = new System.Drawing.Point(56, 407);
+            this.txtDescription.Location = new System.Drawing.Point(64, 401);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = false;
@@ -1276,7 +1278,7 @@
             this.txtRoomGuests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomGuests.Icon = null;
             this.txtRoomGuests.IconSize = new System.Drawing.Size(20, 20);
-            this.txtRoomGuests.Location = new System.Drawing.Point(345, 331);
+            this.txtRoomGuests.Location = new System.Drawing.Point(64, 326);
             this.txtRoomGuests.Multiline = false;
             this.txtRoomGuests.Name = "txtRoomGuests";
             this.txtRoomGuests.PasswordChar = false;
@@ -1299,7 +1301,7 @@
             this.txtBedCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtBedCount.Icon = null;
             this.txtBedCount.IconSize = new System.Drawing.Size(20, 20);
-            this.txtBedCount.Location = new System.Drawing.Point(56, 331);
+            this.txtBedCount.Location = new System.Drawing.Point(353, 252);
             this.txtBedCount.Multiline = false;
             this.txtBedCount.Name = "txtBedCount";
             this.txtBedCount.PasswordChar = false;
@@ -1322,7 +1324,7 @@
             this.txtRoomPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomPrice.Icon = null;
             this.txtRoomPrice.IconSize = new System.Drawing.Size(20, 20);
-            this.txtRoomPrice.Location = new System.Drawing.Point(345, 258);
+            this.txtRoomPrice.Location = new System.Drawing.Point(64, 252);
             this.txtRoomPrice.Multiline = false;
             this.txtRoomPrice.Name = "txtRoomPrice";
             this.txtRoomPrice.PasswordChar = false;
@@ -1346,7 +1348,7 @@
             this.txtRoomType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomType.Icon = null;
             this.txtRoomType.IconSize = new System.Drawing.Size(20, 20);
-            this.txtRoomType.Location = new System.Drawing.Point(345, 187);
+            this.txtRoomType.Location = new System.Drawing.Point(64, 181);
             this.txtRoomType.Multiline = false;
             this.txtRoomType.Name = "txtRoomType";
             this.txtRoomType.PasswordChar = false;
@@ -1371,7 +1373,7 @@
             this.txtRoomId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomId.Icon = null;
             this.txtRoomId.IconSize = new System.Drawing.Size(20, 20);
-            this.txtRoomId.Location = new System.Drawing.Point(56, 117);
+            this.txtRoomId.Location = new System.Drawing.Point(64, 111);
             this.txtRoomId.Multiline = false;
             this.txtRoomId.Name = "txtRoomId";
             this.txtRoomId.PasswordChar = false;
@@ -1395,7 +1397,7 @@
             this.txtRoomNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomNumber.Icon = null;
             this.txtRoomNumber.IconSize = new System.Drawing.Size(20, 20);
-            this.txtRoomNumber.Location = new System.Drawing.Point(56, 187);
+            this.txtRoomNumber.Location = new System.Drawing.Point(353, 111);
             this.txtRoomNumber.Multiline = false;
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.PasswordChar = false;
@@ -1417,22 +1419,22 @@
             this.btnRoomCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnRoomCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomCancel.HoverBackground = System.Drawing.Color.White;
+            this.btnRoomCancel.HoverBackground = System.Drawing.Color.Gainsboro;
             this.btnRoomCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnRoomCancel.HoverImage = null;
             this.btnRoomCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnRoomCancel.HoverOutline = System.Drawing.Color.Empty;
-            this.btnRoomCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnRoomCancel.Image")));
+            this.btnRoomCancel.Image = null;
             this.btnRoomCancel.ImageAutoCenter = true;
             this.btnRoomCancel.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnRoomCancel.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnRoomCancel.ImageTint = System.Drawing.Color.White;
             this.btnRoomCancel.IsToggleButton = false;
             this.btnRoomCancel.IsToggled = false;
-            this.btnRoomCancel.Location = new System.Drawing.Point(37, 24);
+            this.btnRoomCancel.Location = new System.Drawing.Point(279, 524);
             this.btnRoomCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnRoomCancel.Name = "btnRoomCancel";
-            this.btnRoomCancel.NormalBackground = System.Drawing.Color.Transparent;
+            this.btnRoomCancel.NormalBackground = System.Drawing.Color.WhiteSmoke;
             this.btnRoomCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnRoomCancel.NormalOutline = System.Drawing.Color.Empty;
             this.btnRoomCancel.OutlineThickness = 2F;
@@ -1441,7 +1443,7 @@
             this.btnRoomCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnRoomCancel.PressedOutline = System.Drawing.Color.Empty;
             this.btnRoomCancel.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnRoomCancel.Size = new System.Drawing.Size(115, 35);
+            this.btnRoomCancel.Size = new System.Drawing.Size(163, 35);
             this.btnRoomCancel.TabIndex = 5;
             this.btnRoomCancel.TextAutoCenter = true;
             this.btnRoomCancel.TextOffset = new System.Drawing.Point(0, 0);
@@ -1785,6 +1787,18 @@
             this.btnRoomEdit.TextAutoCenter = false;
             this.btnRoomEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(59, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(140, 30);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Room Details";
+            // 
             // UCRooms
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1937,5 +1951,6 @@
         private SATATextBox txtRoomId;
         private System.Windows.Forms.Label label36;
         private FrameworkTest.SATAButton btnRefresh;
+        private System.Windows.Forms.Label label3;
     }
 }

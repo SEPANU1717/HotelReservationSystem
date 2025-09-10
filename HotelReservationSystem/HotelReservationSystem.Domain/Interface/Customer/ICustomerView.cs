@@ -7,10 +7,16 @@ namespace HotelReservationSystem.Domain.Interface.Customer
     {
         string CustomerID { get; set; }
         string CustomerFirstName { get; set; }
+        string CustomerMiddleName { get; set; }
         string CustomerLastName { get; set; }
+        DateTime CustomerBirthDate { get; set; }
         string CustomerIdType { get; set; }
         string CustomerContact { get; set; }
         string CustomerAddress { get; set; }
+        string CustomerEmail { get; set; }          
+        string CustomerGender { get; set; }        
+        string CustomerNationality { get; set; }
+        string CustomerNotes { get; set; }
         string SearchValue { get; set; }
         bool isEdit { get; set; }
         bool isSuccessful { get; set; }

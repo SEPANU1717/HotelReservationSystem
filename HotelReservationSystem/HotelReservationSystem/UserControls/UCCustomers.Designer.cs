@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -47,8 +46,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.sataPanel2 = new SATAUiFramework.SATAPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbType = new SATAComboBox();
             this.btnCancel = new FrameworkTest.SATAButton();
             this.label7 = new System.Windows.Forms.Label();
@@ -68,6 +65,19 @@
             this.btnEdit = new FrameworkTest.SATAButton();
             this.btnSearch = new FrameworkTest.SATAButton();
             this.txtSearch = new SATATextBox();
+            this.txtMiddleName = new SATATextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtEmail = new SATATextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbGender = new SATAComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtBirthday = new CuoreUI.Controls.cuiCalendarDatePicker();
+            this.txtNationaity = new SATATextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNotes = new SATATextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -75,8 +85,6 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.sataPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -247,56 +255,39 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.sataPanel2);
+            this.tabPage2.Controls.Add(this.dtBirthday);
+            this.tabPage2.Controls.Add(this.cbGender);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.cbType);
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.btnCancel);
             this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.label36);
             this.tabPage2.Controls.Add(this.btnSave);
+            this.tabPage2.Controls.Add(this.txtNotes);
             this.tabPage2.Controls.Add(this.txtAddress);
+            this.tabPage2.Controls.Add(this.txtEmail);
             this.tabPage2.Controls.Add(this.txtContact);
+            this.tabPage2.Controls.Add(this.txtNationaity);
+            this.tabPage2.Controls.Add(this.txtMiddleName);
             this.tabPage2.Controls.Add(this.txtLName);
             this.tabPage2.Controls.Add(this.txtFName);
             this.tabPage2.Controls.Add(this.txtCusId);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
-            // 
-            // sataPanel2
-            // 
-            this.sataPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
-            this.sataPanel2.BackColor2 = System.Drawing.Color.White;
-            this.sataPanel2.BorderColor = System.Drawing.Color.Black;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.sataPanel2.BorderRadius = borderRadius2;
-            this.sataPanel2.BorderThickness = 0;
-            this.sataPanel2.Controls.Add(this.pictureBox1);
-            this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sataPanel2.Location = new System.Drawing.Point(693, 3);
-            this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(498, 579);
-            this.sataPanel2.TabIndex = 14;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(498, 579);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // cbType
             // 
@@ -308,10 +299,10 @@
             this.cbType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbType.Items = null;
             this.cbType.Keys = null;
-            this.cbType.Location = new System.Drawing.Point(358, 287);
+            this.cbType.Location = new System.Drawing.Point(883, 220);
             this.cbType.Name = "cbType";
             this.cbType.SelectedIndex = -1;
-            this.cbType.Size = new System.Drawing.Size(263, 35);
+            this.cbType.Size = new System.Drawing.Size(262, 35);
             this.cbType.TabIndex = 13;
             this.cbType.Text = "sataComboBox1";
             this.cbType.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
@@ -319,6 +310,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.ButtonText = "Cancel";
             this.btnCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
@@ -327,19 +319,19 @@
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.HoverBackground = System.Drawing.Color.White;
+            this.btnCancel.HoverBackground = System.Drawing.Color.Gainsboro;
             this.btnCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
             this.btnCancel.HoverImage = null;
             this.btnCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
             this.btnCancel.HoverOutline = System.Drawing.Color.Empty;
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.Image = null;
             this.btnCancel.ImageAutoCenter = true;
             this.btnCancel.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnCancel.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnCancel.ImageTint = System.Drawing.Color.White;
             this.btnCancel.IsToggleButton = false;
             this.btnCancel.IsToggled = false;
-            this.btnCancel.Location = new System.Drawing.Point(30, 23);
+            this.btnCancel.Location = new System.Drawing.Point(809, 514);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.NormalBackground = System.Drawing.Color.Transparent;
@@ -351,7 +343,7 @@
             this.btnCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
             this.btnCancel.PressedOutline = System.Drawing.Color.Empty;
             this.btnCancel.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnCancel.Size = new System.Drawing.Size(115, 35);
+            this.btnCancel.Size = new System.Drawing.Size(163, 35);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.TextAutoCenter = true;
             this.btnCancel.TextOffset = new System.Drawing.Point(0, 0);
@@ -359,66 +351,66 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(354, 258);
+            this.label7.Location = new System.Drawing.Point(879, 191);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 21);
+            this.label7.Size = new System.Drawing.Size(60, 20);
             this.label7.TabIndex = 11;
             this.label7.Text = "ID Type";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(43, 334);
+            this.label8.Location = new System.Drawing.Point(599, 279);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 21);
+            this.label8.Size = new System.Drawing.Size(63, 20);
             this.label8.TabIndex = 11;
             this.label8.Text = "Address";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(48, 258);
+            this.label6.Location = new System.Drawing.Point(37, 279);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 21);
+            this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "Contact";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(354, 181);
+            this.label2.Location = new System.Drawing.Point(316, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 21);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Last Name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(48, 181);
+            this.label1.Location = new System.Drawing.Point(597, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 21);
+            this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "First Name";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.label36.ForeColor = System.Drawing.Color.DimGray;
-            this.label36.Location = new System.Drawing.Point(48, 105);
+            this.label36.Location = new System.Drawing.Point(35, 102);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(100, 21);
+            this.label36.Size = new System.Drawing.Size(91, 20);
             this.label36.TabIndex = 10;
             this.label36.Text = "Customer Id";
             // 
@@ -443,7 +435,7 @@
             this.btnSave.ImageTint = System.Drawing.Color.White;
             this.btnSave.IsToggleButton = false;
             this.btnSave.IsToggled = false;
-            this.btnSave.Location = new System.Drawing.Point(458, 471);
+            this.btnSave.Location = new System.Drawing.Point(982, 514);
             this.btnSave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -472,13 +464,13 @@
             this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtAddress.Icon = null;
             this.txtAddress.IconSize = new System.Drawing.Size(20, 20);
-            this.txtAddress.Location = new System.Drawing.Point(47, 363);
-            this.txtAddress.Multiline = true;
+            this.txtAddress.Location = new System.Drawing.Point(603, 308);
+            this.txtAddress.Multiline = false;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = false;
             this.txtAddress.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtAddress.PlaceholderText = "";
-            this.txtAddress.Size = new System.Drawing.Size(574, 82);
+            this.txtAddress.Size = new System.Drawing.Size(543, 35);
             this.txtAddress.TabIndex = 3;
             this.txtAddress.Texts = "";
             this.txtAddress.UnderlinedStyle = false;
@@ -495,13 +487,13 @@
             this.txtContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtContact.Icon = null;
             this.txtContact.IconSize = new System.Drawing.Size(20, 20);
-            this.txtContact.Location = new System.Drawing.Point(52, 287);
+            this.txtContact.Location = new System.Drawing.Point(41, 308);
             this.txtContact.Multiline = false;
             this.txtContact.Name = "txtContact";
             this.txtContact.PasswordChar = false;
             this.txtContact.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtContact.PlaceholderText = "";
-            this.txtContact.Size = new System.Drawing.Size(263, 35);
+            this.txtContact.Size = new System.Drawing.Size(262, 35);
             this.txtContact.TabIndex = 3;
             this.txtContact.Texts = "";
             this.txtContact.UnderlinedStyle = false;
@@ -518,13 +510,13 @@
             this.txtLName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtLName.Icon = null;
             this.txtLName.IconSize = new System.Drawing.Size(20, 20);
-            this.txtLName.Location = new System.Drawing.Point(358, 210);
+            this.txtLName.Location = new System.Drawing.Point(320, 131);
             this.txtLName.Multiline = false;
             this.txtLName.Name = "txtLName";
             this.txtLName.PasswordChar = false;
             this.txtLName.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtLName.PlaceholderText = "";
-            this.txtLName.Size = new System.Drawing.Size(263, 35);
+            this.txtLName.Size = new System.Drawing.Size(262, 35);
             this.txtLName.TabIndex = 3;
             this.txtLName.Texts = "";
             this.txtLName.UnderlinedStyle = false;
@@ -541,13 +533,13 @@
             this.txtFName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtFName.Icon = null;
             this.txtFName.IconSize = new System.Drawing.Size(20, 20);
-            this.txtFName.Location = new System.Drawing.Point(52, 210);
+            this.txtFName.Location = new System.Drawing.Point(601, 131);
             this.txtFName.Multiline = false;
             this.txtFName.Name = "txtFName";
             this.txtFName.PasswordChar = false;
             this.txtFName.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtFName.PlaceholderText = "";
-            this.txtFName.Size = new System.Drawing.Size(263, 35);
+            this.txtFName.Size = new System.Drawing.Size(262, 35);
             this.txtFName.TabIndex = 3;
             this.txtFName.Texts = "";
             this.txtFName.UnderlinedStyle = false;
@@ -565,13 +557,13 @@
             this.txtCusId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtCusId.Icon = null;
             this.txtCusId.IconSize = new System.Drawing.Size(20, 20);
-            this.txtCusId.Location = new System.Drawing.Point(52, 134);
+            this.txtCusId.Location = new System.Drawing.Point(39, 131);
             this.txtCusId.Multiline = false;
             this.txtCusId.Name = "txtCusId";
             this.txtCusId.PasswordChar = false;
             this.txtCusId.PlaceholderColor = System.Drawing.Color.Transparent;
             this.txtCusId.PlaceholderText = "";
-            this.txtCusId.Size = new System.Drawing.Size(263, 35);
+            this.txtCusId.Size = new System.Drawing.Size(262, 35);
             this.txtCusId.TabIndex = 3;
             this.txtCusId.Text = "0";
             this.txtCusId.Texts = "";
@@ -756,6 +748,221 @@
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
             // 
+            // txtMiddleName
+            // 
+            this.txtMiddleName.BackColor = System.Drawing.Color.White;
+            this.txtMiddleName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtMiddleName.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtMiddleName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtMiddleName.BorderRadius = 3;
+            this.txtMiddleName.BorderSize = 1;
+            this.txtMiddleName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtMiddleName.Icon = null;
+            this.txtMiddleName.IconSize = new System.Drawing.Size(20, 20);
+            this.txtMiddleName.Location = new System.Drawing.Point(882, 131);
+            this.txtMiddleName.Multiline = false;
+            this.txtMiddleName.Name = "txtMiddleName";
+            this.txtMiddleName.PasswordChar = false;
+            this.txtMiddleName.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtMiddleName.PlaceholderText = "";
+            this.txtMiddleName.Size = new System.Drawing.Size(262, 35);
+            this.txtMiddleName.TabIndex = 3;
+            this.txtMiddleName.Texts = "";
+            this.txtMiddleName.UnderlinedStyle = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(878, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Middle Name";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtEmail.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtEmail.BorderRadius = 3;
+            this.txtEmail.BorderSize = 1;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtEmail.Icon = null;
+            this.txtEmail.IconSize = new System.Drawing.Size(20, 20);
+            this.txtEmail.Location = new System.Drawing.Point(322, 308);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.Size = new System.Drawing.Size(262, 35);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(318, 279);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 20);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Email";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(36, 191);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 20);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Gender";
+            // 
+            // cbGender
+            // 
+            this.cbGender.BackColor = System.Drawing.Color.Transparent;
+            this.cbGender.BackgroundColor = System.Drawing.Color.White;
+            this.cbGender.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cbGender.BorderThickness = 1;
+            this.cbGender.CornerRadius = 3;
+            this.cbGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGender.Items = null;
+            this.cbGender.Keys = null;
+            this.cbGender.Location = new System.Drawing.Point(40, 220);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.SelectedIndex = -1;
+            this.cbGender.Size = new System.Drawing.Size(262, 35);
+            this.cbGender.TabIndex = 13;
+            this.cbGender.Text = "sataComboBox1";
+            this.cbGender.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cbGender.TextOffset = new System.Windows.Forms.Padding(0);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(316, 191);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 20);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Date of birth";
+            // 
+            // dtBirthday
+            // 
+            this.dtBirthday.BackColor = System.Drawing.Color.White;
+            this.dtBirthday.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtBirthday.EnableThemeChangeButton = true;
+            this.dtBirthday.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtBirthday.ForeColor = System.Drawing.Color.Silver;
+            this.dtBirthday.HoverBackground = System.Drawing.Color.White;
+            this.dtBirthday.HoverOutline = System.Drawing.Color.White;
+            this.dtBirthday.Icon = null;
+            this.dtBirthday.IconTint = System.Drawing.Color.Gray;
+            this.dtBirthday.Location = new System.Drawing.Point(320, 220);
+            this.dtBirthday.Margin = new System.Windows.Forms.Padding(4);
+            this.dtBirthday.Name = "dtBirthday";
+            this.dtBirthday.NormalBackground = System.Drawing.Color.White;
+            this.dtBirthday.NormalOutline = System.Drawing.Color.Gainsboro;
+            this.dtBirthday.OutlineThickness = 1.5F;
+            this.dtBirthday.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
+            this.dtBirthday.PressedBackground = System.Drawing.Color.White;
+            this.dtBirthday.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtBirthday.Rounding = 3;
+            this.dtBirthday.ShowIcon = true;
+            this.dtBirthday.Size = new System.Drawing.Size(263, 35);
+            this.dtBirthday.TabIndex = 92;
+            this.dtBirthday.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
+            // 
+            // txtNationaity
+            // 
+            this.txtNationaity.BackColor = System.Drawing.Color.White;
+            this.txtNationaity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtNationaity.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtNationaity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtNationaity.BorderRadius = 3;
+            this.txtNationaity.BorderSize = 1;
+            this.txtNationaity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNationaity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtNationaity.Icon = null;
+            this.txtNationaity.IconSize = new System.Drawing.Size(20, 20);
+            this.txtNationaity.Location = new System.Drawing.Point(602, 220);
+            this.txtNationaity.Multiline = false;
+            this.txtNationaity.Name = "txtNationaity";
+            this.txtNationaity.PasswordChar = false;
+            this.txtNationaity.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtNationaity.PlaceholderText = "";
+            this.txtNationaity.Size = new System.Drawing.Size(262, 35);
+            this.txtNationaity.TabIndex = 3;
+            this.txtNationaity.Texts = "";
+            this.txtNationaity.UnderlinedStyle = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(598, 191);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 20);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Nationality";
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.BackColor = System.Drawing.Color.White;
+            this.txtNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtNotes.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtNotes.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtNotes.BorderRadius = 3;
+            this.txtNotes.BorderSize = 1;
+            this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtNotes.Icon = null;
+            this.txtNotes.IconSize = new System.Drawing.Size(20, 20);
+            this.txtNotes.Location = new System.Drawing.Point(39, 397);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.PasswordChar = false;
+            this.txtNotes.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtNotes.PlaceholderText = "";
+            this.txtNotes.Size = new System.Drawing.Size(1105, 71);
+            this.txtNotes.TabIndex = 3;
+            this.txtNotes.Texts = "";
+            this.txtNotes.UnderlinedStyle = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.DimGray;
+            this.label12.Location = new System.Drawing.Point(35, 368);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 20);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Notes";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(34, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(176, 30);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Customer Details";
+            // 
             // UCCustomers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -780,8 +987,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.sataPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -817,8 +1022,19 @@
         private System.Windows.Forms.Label label36;
         private FrameworkTest.SATAButton btnCancel;
         private SATAComboBox cbType;
-        private SATAUiFramework.SATAPanel sataPanel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private SATATextBox txtMiddleName;
+        private System.Windows.Forms.Label label4;
+        private SATATextBox txtEmail;
+        private SATAComboBox cbGender;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private CuoreUI.Controls.cuiCalendarDatePicker dtBirthday;
+        private System.Windows.Forms.Label label11;
+        private SATATextBox txtNationaity;
+        private System.Windows.Forms.Label label12;
+        private SATATextBox txtNotes;
+        private System.Windows.Forms.Label label13;
     }
 }

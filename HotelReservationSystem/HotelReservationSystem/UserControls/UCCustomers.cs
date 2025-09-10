@@ -29,7 +29,7 @@ namespace HotelReservationSystem.UserControls
             customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
         }
-
+        
         private List<string> comboItems;
         private void InitializeComboBox()
         {
@@ -40,6 +40,13 @@ namespace HotelReservationSystem.UserControls
                "National ID"
            };
 
+            comboItems = new List<string>()
+            {
+                "Male",
+                "Female",
+                "Not prefer to say"
+            };
+            cbGender.Items = comboItems.ToArray();
             cbType.Items = comboItems.ToArray();
         }
 
@@ -121,24 +128,21 @@ namespace HotelReservationSystem.UserControls
         public string CustomerID { get => txtCusId.Texts; set => txtCusId.Texts = value; }
         public string CustomerFirstName { get => txtFName.Texts; set => txtFName.Texts = value; }
         public string CustomerLastName { get => txtLName.Texts; set => txtLName.Texts = value; }
-        public string CustomerIdType
-        {
-            get => cbType.SelectedItem ?? cbType.Text;
-            set
-            {
-                int index = Array.IndexOf(cbType.Items, value);
-                if (index >= 0)
-                    cbType.SelectedIndex = index;
-                else
-                    cbType.Text = value;
-            }
-        }
+        public string CustomerIdType { get => GetComboBoxValue(cbType); set => SetComboBoxValue(cbType, value); }
         public string CustomerContact { get => txtContact.Texts; set => txtContact.Texts = value; }
         public string CustomerAddress { get => txtAddress.Texts; set => txtAddress.Texts = value; }
         public string SearchValue { get => txtSearch.Texts; set => txtSearch.Texts = value; }
+        public string CustomerMiddleName { get => txtMiddleName.Texts; set => txtMiddleName.Texts = value; }
+        public string CustomerEmail { get => txtEmail.Texts; set => txtEmail.Texts = value; }
+        public string CustomerGender { get => GetComboBoxValue(cbGender); set => SetComboBoxValue(cbGender, value); }
+        public string CustomerNationality { get => txtNationaity.Texts; set => txtNationaity.Texts = value; }
+        public string CustomerNotes { get => txtNotes.Texts; set => txtNotes.Texts = value; }
+        public DateTime CustomerBirthDate { get => dtBirthday.Content; set => dtBirthday.Content = value; }
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
+
+
 
         // Events  
         public event EventHandler SearchEvent;
@@ -150,18 +154,19 @@ namespace HotelReservationSystem.UserControls
 
         // Methods  
 
-        public static UCCustomers GetInstance(Form parentContainer) =>
-            UserControlFactory<UCCustomers>.GetInstance(parentContainer);
-        public static void ResetInstance() =>
-            UserControlFactory < UCCustomers>.ResetInstance();
+        public static UCCustomers GetInstance(Form parentContainer) => UserControlFactory<UCCustomers>.GetInstance(parentContainer);
+        public static void ResetInstance() => UserControlFactory < UCCustomers>.ResetInstance();
+        public void SetCustomerListBindingSource(BindingSource customerList) => dataGridView1.DataSource = customerList;
+        private string GetComboBoxValue(SATAComboBox comboBox) => comboBox.SelectedItem ?? comboBox.Text;
 
-        public void SetCustomerListBindingSource(BindingSource customerList) =>
-            dataGridView1.DataSource = customerList;
-
-
-        private void sataComboBox1_Click(object sender, EventArgs e)
+        private void SetComboBoxValue(SATAComboBox comboBox, string value)
         {
-
+            int index = Array.IndexOf(comboBox.Items, value);
+            if (index >= 0)
+                comboBox.SelectedIndex = index;
+            else
+                comboBox.Text = value;
         }
+
     }
 }
