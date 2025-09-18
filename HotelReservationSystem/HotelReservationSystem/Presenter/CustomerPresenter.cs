@@ -6,6 +6,7 @@ using HotelReservationSystem.Domain.DTOs;
 using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
+using HotelReservationSystem.Presenter.Mapper;
 
 namespace HotelReservationSystem.Presenter
 {
@@ -19,8 +20,8 @@ namespace HotelReservationSystem.Presenter
         public CustomerPresenter(ICustomerView customerView, ICustomerRepository repository)
         {
             CustomerBindingSource = new BindingSource();
-            this.customerView = customerView;
-            this.repository = repository;
+            this.customerView = customerView ?? throw new ArgumentNullException(nameof(customerView)); ;
+            this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
 
             // Subscribe
             this.customerView.SearchEvent += SearchCustomer;
@@ -38,18 +39,7 @@ namespace HotelReservationSystem.Presenter
         private void LoadAllCustomerList()
         {
             customerList = repository.GetAll() ?? Enumerable.Empty<CustomerModel>();
-            var dtoList = customerList.Select(c => new CustomerDto
-            {
-                CustomerID = c.CustomerID,
-                FirstName = c.FirstName,
-                MiddleName = c.MiddleName,
-                LastName = c.LastName,
-                IDType = c.IDType,
-                Contact = c.Contact,
-                Address = c.Address,
-                Email = c.Email,
-                Nationality = c.Nationality,
-            }).ToList();
+            var dtoList = customerList.Select(CustomerMapper.FromCustomerModel).ToList();
 
             CustomerBindingSource.DataSource = dtoList;
             CustomerBindingSource.ResetBindings(false);
@@ -63,7 +53,11 @@ namespace HotelReservationSystem.Presenter
                 ? repository.GetAll()
                 : repository.GetByValue(customerView.SearchValue);
 
-            CustomerBindingSource.DataSource = customerList;
+            var dtoList = (customerList ?? Enumerable.Empty<CustomerModel>())
+                .Select(CustomerMapper.FromCustomerModel)
+                .ToList();
+
+            CustomerBindingSource.DataSource = dtoList;
             CustomerBindingSource.ResetBindings(false);
         }
 
@@ -73,7 +67,7 @@ namespace HotelReservationSystem.Presenter
             var dto = (CustomerDto)CustomerBindingSource.Current;
             var customer = customerList.FirstOrDefault(c => c.CustomerID == dto.CustomerID);
 
-            if (customer == null) return;
+            if (customer is null) return;
 
             customerView.CustomerID = customer.CustomerID.ToString();
             customerView.CustomerFirstName = customer.FirstName;
@@ -108,22 +102,7 @@ namespace HotelReservationSystem.Presenter
         }
         private void SaveCustomer(object sender, EventArgs e)
         {
-            var model = new CustomerModel
-            {
-                CustomerID = int.Parse(customerView.CustomerID),
-                FirstName = customerView.CustomerFirstName,
-                MiddleName = customerView.CustomerMiddleName,
-                LastName = customerView.CustomerLastName,
-                IDType = customerView.CustomerIdType,
-                Contact = customerView.CustomerContact,
-                Address = customerView.CustomerAddress,
-                Email = customerView.CustomerEmail,
-                Gender = customerView.CustomerGender,
-                Nationality = customerView.CustomerNationality,
-                Notes = customerView.CustomerNotes,
-                DateOfBirth = customerView.CustomerBirthDate
-            };
-
+            var model = CustomerMapper.FromCustomerView(customerView);
 
             try
             {
@@ -141,7 +120,7 @@ namespace HotelReservationSystem.Presenter
                 }
                 customerView.isSuccessful = true;
                 LoadAllCustomerList();
-                CleanviewFields();
+                CleanViewFields();
 
             }
             catch(Exception ex) 
@@ -152,9 +131,9 @@ namespace HotelReservationSystem.Presenter
             
             
         }
-        private void CancelAction(object sender, EventArgs e) => CleanviewFields();
+        private void CancelAction(object sender, EventArgs e) => CleanViewFields();
 
-        private void CleanviewFields()
+        private void CleanViewFields()
         {
             customerView.CustomerID = "0";
             customerView.CustomerFirstName = "";

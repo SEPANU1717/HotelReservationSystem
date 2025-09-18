@@ -20,7 +20,7 @@ namespace HotelReservationSystem.Domain.Model
         public string LastName { get; set; }
 
         [DisplayName("Middle Name")]
-        [StringLength(50, MinimumLength = 1, ErrorMessage = "Middle name must be 1–50 characters")]
+        [StringLength(50, ErrorMessage = "Middle name must be 1–50 characters")]
         public string MiddleName { get; set; }
 
         [DisplayName("ID Type")]
@@ -54,5 +54,8 @@ namespace HotelReservationSystem.Domain.Model
         [DisplayName("Notes")]
         [StringLength(200, ErrorMessage = "Notes cannot exceed 200 characters")]
         public string Notes { get; set; }
+
+        [DisplayName("Full Name")]
+        public string FullName => $"{FirstName} {(!string.IsNullOrEmpty(MiddleName) ? MiddleName + " " : "")}{LastName}";
     }
 }

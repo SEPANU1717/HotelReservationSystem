@@ -7,6 +7,7 @@ using HotelReservationSystem.Domain.Interface;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Infrastructure.Security;
 using HotelReservationSystem.Presenter.Common;
+using HotelReservationSystem.Presenter.Mapper;
 
 namespace HotelReservationSystem.Presenter
 {
@@ -39,18 +40,8 @@ namespace HotelReservationSystem.Presenter
         private void LoadAllUserList()
         {
             userList = repository.GetAll() ?? Enumerable.Empty<UserModel>();
-            var dtoList = userList.Select(u => new UserDto
-            {
-                UserId = u.UserId,
-                FullName = u.FullName,
-                Username = u.Username,
-                Email = u.Email,
-                Gender = u.Gender,
-                Role = u.Role,
-                Age = u.Age,
-                IsActive = u.IsActive,
-                CreatedAt = u.CreatedAt
-            }).ToList();
+            var dtoList = userList.Select(UserMapper.FromUserModel).ToList();
+            
 
             UserBindingSource.DataSource = dtoList;
             UserBindingSource.ResetBindings(false);
@@ -93,21 +84,7 @@ namespace HotelReservationSystem.Presenter
 
         private void SaveUser(object sender, EventArgs e)
         {
-            var model = new UserModel
-            {
-                UserId = string.IsNullOrEmpty(userView.UserId) ? 0 : int.Parse(userView.UserId),
-                LastName = userView.LastName?.Trim(),
-                FirstName = userView.FirstName?.Trim(),
-                MiddleName = userView.MiddleName?.Trim(),
-                BirthDate = userView.BirthDate,
-                Username = userView.Username?.Trim(),
-                Password = userView.Password,
-                Email = userView.Email?.Trim(),
-                Gender = userView.Gender,
-                Role = userView.Role,
-                IsActive = userView.IsActive,
-                CreatedAt = DateTime.Now
-            };
+            var model = UserMapper.FromUserView(userView);
 
             try
             {
@@ -208,6 +185,7 @@ namespace HotelReservationSystem.Presenter
                 userView.Gender = user.Gender;
                 userView.Role = user.Role;
                 userView.IsActive = user.IsActive;
+
                 userView.Password = user.Password;
                 userView.isEdit = true;
             }
@@ -233,18 +211,9 @@ namespace HotelReservationSystem.Presenter
                     ? repository.GetAll()
                     : repository.GetByValue(userView.SearchValue);
 
-                var dtoList = (userList ?? Enumerable.Empty<UserModel>()).Select(u => new UserDto
-                {
-                    UserId = u.UserId,
-                    FullName = u.FullName,
-                    Username = u.Username,
-                    Email = u.Email,
-                    Gender = u.Gender,
-                    Role = u.Role,
-                    Age = u.Age,
-                    IsActive = u.IsActive,
-                    CreatedAt = u.CreatedAt
-                }).ToList();
+                var dtoList = (userList ?? Enumerable.Empty<UserModel>())
+                    .Select(UserMapper.FromUserModel)
+                    .ToList();
 
                 UserBindingSource.DataSource = dtoList;
                 UserBindingSource.ResetBindings(false);
