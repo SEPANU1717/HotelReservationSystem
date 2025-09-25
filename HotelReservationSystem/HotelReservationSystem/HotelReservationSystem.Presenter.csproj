@@ -221,6 +221,7 @@
     <Compile Include="DataInitializer\ServiceInitializer.cs" />
     <Compile Include="Presenter\BillingPresenter.cs" />
     <Compile Include="Presenter\CheckInOutPresenter.cs" />
+    <Compile Include="Presenter\Common\FieldsCleaner.cs" />
     <Compile Include="Presenter\Common\LoginSuccessEventArgs.cs" />
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
     <Compile Include="Presenter\Common\UserControlFactory.cs" />
@@ -231,6 +232,7 @@
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="Presenter\Mapper\CustomerMapper.cs" />
+    <Compile Include="Presenter\Mapper\RoomMapper.cs" />
     <Compile Include="Presenter\Mapper\UserMapper.cs" />
     <Compile Include="Presenter\OrderFoodPresenter.cs" />
     <Compile Include="Presenter\ReservationPresenter.cs" />
@@ -280,6 +282,12 @@
     <Compile Include="UserControls\UCHomepage.Designer.cs">
       <DependentUpon>UCHomepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCReservationRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCReservationRoom.Designer.cs">
+      <DependentUpon>UCReservationRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCRooms.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -326,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCReservation.resx">
       <DependentUpon>UCReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCReservationRoom.resx">
+      <DependentUpon>UCReservationRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCRooms.resx">
       <DependentUpon>UCRooms.cs</DependentUpon>

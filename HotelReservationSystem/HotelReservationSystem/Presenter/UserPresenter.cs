@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Domain.DTOs;
 using HotelReservationSystem.Domain.Interface;
+using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Infrastructure.Security;
 using HotelReservationSystem.Presenter.Common;
@@ -41,7 +42,7 @@ namespace HotelReservationSystem.Presenter
         {
             userList = repository.GetAll() ?? Enumerable.Empty<UserModel>();
             var dtoList = userList.Select(UserMapper.FromUserModel).ToList();
-            
+
 
             UserBindingSource.DataSource = dtoList;
             UserBindingSource.ResetBindings(false);
@@ -108,12 +109,13 @@ namespace HotelReservationSystem.Presenter
                             userView.Message = "Password must be at least 6 characters.";
                             return;
                         }
+
                         model.PasswordHash = passwordHasher.HashPassword(model.Password);
                     }
                     else
                     {
                         model.PasswordHash = existingUser.PasswordHash;
-                        model.Password = "lodgixhotel"; 
+                        model.Password = "lodgixhotel";
                     }
 
                     new ModelDataValidation().Validate(model);
@@ -225,19 +227,6 @@ namespace HotelReservationSystem.Presenter
             }
         }
 
-        private void CleanViewFields()
-        {
-            userView.UserId = "";
-            userView.LastName = "";
-            userView.FirstName = "";
-            userView.MiddleName = "";
-            userView.BirthDate = DateTime.Now.AddYears(-20);
-            userView.Username = "";
-            userView.Password = "";
-            userView.Email = "";
-            userView.Gender = "";
-            userView.Role = "";
-            userView.IsActive = true;
-        }
+        private void CleanViewFields() => FieldsCleaner.ClearInputs(userView as Control);
     }
 }

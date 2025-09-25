@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Domain.Interface.Service.Food;
 using HotelReservationSystem.Domain.Model.Service.Shared;
 
@@ -134,11 +135,6 @@ namespace HotelReservationSystem.Presenter
             }
         }
 
-        private void CleanViewFields()
-        {   
-            orderView.ItemName = "";
-            orderView.FoodPrice = "";
-            orderView.FoodQuantity = "";
-        }
+        private void CleanViewFields() => FieldsCleaner.ClearInputs(orderView as Control);
     }
 }

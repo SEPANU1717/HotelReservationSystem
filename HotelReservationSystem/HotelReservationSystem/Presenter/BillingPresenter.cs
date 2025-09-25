@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Domain.Interface.Billing;
+using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
 
@@ -41,7 +42,7 @@ namespace HotelReservationSystem.Presenter.Billing
             BillingBindingSource.ResetBindings(false);
         }
 
-        private void CancelBill(object sender, EventArgs e) => CleanviewFields();
+        private void CancelBill(object sender, EventArgs e) => CleanViewFields();
 
         private void SaveBill(object sender, EventArgs e)
         {
@@ -135,15 +136,6 @@ namespace HotelReservationSystem.Presenter.Billing
             BillingBindingSource.ResetBindings(false);
         }
 
-        private void CleanviewFields()
-        {
-            billingView.BillId = "";
-            billingView.ReservationId = "";
-            billingView.CustomerName = "";
-            billingView.RoomType = "";
-            billingView.RoomNumber = "";
-            billingView.TotalAmount = "";
-            billingView.PaymentStatus = "";
-        }
+        private void CleanViewFields() => FieldsCleaner.ClearInputs(billingView as Control);
     }
 }

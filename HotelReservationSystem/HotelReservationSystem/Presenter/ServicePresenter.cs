@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Domain.Interface.Service.Food;
 using HotelReservationSystem.Domain.Model.Service;
 using HotelReservationSystem.Presenter.Common;
@@ -123,13 +124,6 @@ namespace HotelReservationSystem.Presenter
             FoodStockBindingSource.ResetBindings(false);
         }
 
-        private void CleanViewFields()
-        {
-            foodView.FoodId = "0";
-            foodView.FoodName = "";
-            foodView.Description = "";
-            foodView.Price = "0";
-            foodView.Stock = "0";
-        }
+        private void CleanViewFields() => FieldsCleaner.ClearInputs(foodView as Control);
     }
 }

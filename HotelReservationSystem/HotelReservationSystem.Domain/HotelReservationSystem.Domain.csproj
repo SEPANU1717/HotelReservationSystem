@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\CustomerDto.cs" />
+    <Compile Include="DTOs\DashboardDto.cs" />
     <Compile Include="DTOs\UserDto.cs" />
     <Compile Include="Interface\Billing\IBillingRepository.cs" />
     <Compile Include="Interface\Billing\IBillingView.cs" />

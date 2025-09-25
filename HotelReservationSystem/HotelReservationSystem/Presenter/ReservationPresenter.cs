@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
+using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
@@ -136,17 +137,6 @@ namespace HotelReservationSystem.Presenter
             ReservationBindingSource.ResetBindings(false);
         }
 
-        private void CleanViewFields()
-        {
-            reservationView.ReservationId = "";
-            reservationView.CustomerName = "";
-            reservationView.RoomNumber = "";
-            reservationView.RoomType = "";
-            reservationView.Guests = "";
-            reservationView.CheckInDate = DateTime.Now;
-            reservationView.CheckOutDate = DateTime.Now;
-            reservationView.TotalPrice = "";
-            reservationView.RoomNumber = "";
-        }
+        private void CleanViewFields() => FieldsCleaner.ClearInputs(reservationView as Control);
     }
 }

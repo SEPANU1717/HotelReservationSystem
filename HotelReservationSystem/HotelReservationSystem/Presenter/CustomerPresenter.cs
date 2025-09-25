@@ -133,20 +133,7 @@ namespace HotelReservationSystem.Presenter
         }
         private void CancelAction(object sender, EventArgs e) => CleanViewFields();
 
-        private void CleanViewFields()
-        {
-            customerView.CustomerID = "0";
-            customerView.CustomerFirstName = "";
-            customerView.CustomerMiddleName = "";
-            customerView.CustomerLastName = "";
-            customerView.CustomerIdType = "";
-            customerView.CustomerContact = "";
-            customerView.CustomerAddress = "";
-            customerView.CustomerEmail = "";
-            customerView.CustomerGender = "";
-            customerView.CustomerNationality = "";
-            customerView.CustomerNotes = "";
-            customerView.CustomerBirthDate = DateTime.Now;
-        }
+        private void CleanViewFields() => FieldsCleaner.ClearInputs(customerView as Control);
+        
     }
 }

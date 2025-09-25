@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Domain.Interface.Rooms;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
@@ -122,16 +123,6 @@ namespace HotelReservationSystem.Presenter
             RoomBindingSource.DataSource = roomList;
             RoomBindingSource.ResetBindings(false);
         }
-        private void CleanViewFields()
-        {
-            roomView.RoomId = "0";
-            roomView.RoomNumber = "";
-            roomView.RoomPrice = "0";
-            roomView.RoomStatus = "";
-            roomView.RoomGuests = "";
-            roomView.BedCount = "0";
-            roomView.RoomDescription = "";
-            roomView.RoomType = "";
-        }
+        private void CleanViewFields() => FieldsCleaner.ClearInputs(roomView as Control);
     }
 }
