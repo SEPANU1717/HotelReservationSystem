@@ -42,7 +42,7 @@ namespace HotelReservationSystem.UserControls
             dtCheckIn.DateChanged += DateOrRoomChanged;
             dtCheckOut.DateChanged += DateOrRoomChanged;
             cbNumber.SelectedIndexChanged += DateOrRoomChanged;
-            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
 
         #endregion

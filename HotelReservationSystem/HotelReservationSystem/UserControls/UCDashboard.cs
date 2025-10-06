@@ -22,7 +22,7 @@ namespace HotelReservationSystem.UserControls
         {
             InitializeComponent();
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
-            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
 
         private void sataBarChart1_Load(object sender, EventArgs e)

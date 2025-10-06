@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCService));
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCService));
             SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
             SATAUiFramework.BorderRadius borderRadius5 = new SATAUiFramework.BorderRadius();
@@ -74,11 +74,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.lblService = new System.Windows.Forms.Label();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -347,8 +342,11 @@
             this.txtFoodSearch = new SATATextBox();
             this.btnAddFood = new FrameworkTest.SATAButton();
             this.btnLaundry = new FrameworkTest.SATAButton();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
+            this.lblService = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -470,71 +468,9 @@
             this.ConfirmLaundry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLaundry)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.sataPictureBox1);
-            this.panel2.Controls.Add(this.lblUsername);
-            this.panel2.Controls.Add(this.lblRole);
-            this.panel2.Controls.Add(this.lblService);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1477, 72);
-            this.panel2.TabIndex = 6;
-            // 
-            // sataPictureBox1
-            // 
-            this.sataPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.sataPictureBox1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.sataPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox1.BorderSize = 1;
-            this.sataPictureBox1.GradientAngle = 50F;
-            this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
-            this.sataPictureBox1.Location = new System.Drawing.Point(1088, 16);
-            this.sataPictureBox1.Name = "sataPictureBox1";
-            this.sataPictureBox1.Size = new System.Drawing.Size(43, 43);
-            this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.sataPictureBox1.TabIndex = 2;
-            this.sataPictureBox1.TabStop = false;
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.BackColor = System.Drawing.Color.White;
-            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblUsername.Location = new System.Drawing.Point(1139, 27);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(95, 16);
-            this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "Mark Manalo";
-            // 
-            // lblRole
-            // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.BackColor = System.Drawing.Color.White;
-            this.lblRole.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.ForeColor = System.Drawing.Color.Black;
-            this.lblRole.Location = new System.Drawing.Point(1139, 44);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(41, 16);
-            this.lblRole.TabIndex = 1;
-            this.lblRole.Text = "Admin";
-            // 
-            // lblService
-            // 
-            this.lblService.AutoSize = true;
-            this.lblService.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblService.ForeColor = System.Drawing.Color.Black;
-            this.lblService.Location = new System.Drawing.Point(27, 26);
-            this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(95, 25);
-            this.lblService.TabIndex = 1;
-            this.lblService.Text = "Services";
             // 
             // sataPanel1
             // 
@@ -640,10 +576,10 @@
             // Food
             // 
             this.Food.Controls.Add(this.splitContainer1);
-            this.Food.Location = new System.Drawing.Point(4, 25);
+            this.Food.Location = new System.Drawing.Point(4, 22);
             this.Food.Name = "Food";
             this.Food.Padding = new System.Windows.Forms.Padding(3);
-            this.Food.Size = new System.Drawing.Size(1194, 582);
+            this.Food.Size = new System.Drawing.Size(1194, 585);
             this.Food.TabIndex = 1;
             this.Food.Text = "Food";
             this.Food.UseVisualStyleBackColor = true;
@@ -674,7 +610,7 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.sataPanel14);
-            this.splitContainer1.Size = new System.Drawing.Size(1188, 576);
+            this.splitContainer1.Size = new System.Drawing.Size(1188, 579);
             this.splitContainer1.SplitterDistance = 825;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -2267,10 +2203,10 @@
             // Laundry
             // 
             this.Laundry.Controls.Add(this.splitContainer2);
-            this.Laundry.Location = new System.Drawing.Point(4, 25);
+            this.Laundry.Location = new System.Drawing.Point(4, 22);
             this.Laundry.Name = "Laundry";
             this.Laundry.Padding = new System.Windows.Forms.Padding(3);
-            this.Laundry.Size = new System.Drawing.Size(1194, 582);
+            this.Laundry.Size = new System.Drawing.Size(1194, 585);
             this.Laundry.TabIndex = 2;
             this.Laundry.Text = "Laundry";
             this.Laundry.UseVisualStyleBackColor = true;
@@ -2305,7 +2241,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.txtLPrice);
             this.splitContainer2.Panel2.Controls.Add(this.txtLQuantity);
             this.splitContainer2.Panel2.Controls.Add(this.txtLName);
-            this.splitContainer2.Size = new System.Drawing.Size(1188, 576);
+            this.splitContainer2.Size = new System.Drawing.Size(1188, 579);
             this.splitContainer2.SplitterDistance = 751;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -3102,10 +3038,10 @@
             // OrderFood
             // 
             this.OrderFood.Controls.Add(this.panel20);
-            this.OrderFood.Location = new System.Drawing.Point(4, 25);
+            this.OrderFood.Location = new System.Drawing.Point(4, 22);
             this.OrderFood.Name = "OrderFood";
             this.OrderFood.Padding = new System.Windows.Forms.Padding(3);
-            this.OrderFood.Size = new System.Drawing.Size(1194, 582);
+            this.OrderFood.Size = new System.Drawing.Size(1194, 585);
             this.OrderFood.TabIndex = 3;
             this.OrderFood.Text = "OrderFood";
             this.OrderFood.UseVisualStyleBackColor = true;
@@ -3116,7 +3052,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(3, 3);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1188, 576);
+            this.panel20.Size = new System.Drawing.Size(1188, 579);
             this.panel20.TabIndex = 0;
             // 
             // splitContainer3
@@ -3149,7 +3085,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.panel35);
             this.splitContainer3.Panel2.Controls.Add(this.panel36);
             this.splitContainer3.Panel2.Controls.Add(this.panel34);
-            this.splitContainer3.Size = new System.Drawing.Size(1188, 576);
+            this.splitContainer3.Size = new System.Drawing.Size(1188, 579);
             this.splitContainer3.SplitterDistance = 797;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -4490,7 +4426,7 @@
             // 
             this.panel35.Controls.Add(this.dataGridFood);
             this.panel35.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel35.Location = new System.Drawing.Point(0, 74);
+            this.panel35.Location = new System.Drawing.Point(0, 77);
             this.panel35.Name = "panel35";
             this.panel35.Size = new System.Drawing.Size(387, 333);
             this.panel35.TabIndex = 23;
@@ -4553,7 +4489,7 @@
             this.panel36.Controls.Add(this.label50);
             this.panel36.Controls.Add(this.btnBasketOrder);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel36.Location = new System.Drawing.Point(0, 407);
+            this.panel36.Location = new System.Drawing.Point(0, 410);
             this.panel36.Name = "panel36";
             this.panel36.Size = new System.Drawing.Size(387, 169);
             this.panel36.TabIndex = 24;
@@ -4630,10 +4566,10 @@
             // 
             this.ConfirmOrder.Controls.Add(this.sataPanel32);
             this.ConfirmOrder.Controls.Add(this.label66);
-            this.ConfirmOrder.Location = new System.Drawing.Point(4, 25);
+            this.ConfirmOrder.Location = new System.Drawing.Point(4, 22);
             this.ConfirmOrder.Name = "ConfirmOrder";
             this.ConfirmOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 582);
+            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 585);
             this.ConfirmOrder.TabIndex = 4;
             this.ConfirmOrder.Text = "ConfirmOrder";
             this.ConfirmOrder.UseVisualStyleBackColor = true;
@@ -5062,10 +4998,10 @@
             // OrderList
             // 
             this.OrderList.Controls.Add(this.label56);
-            this.OrderList.Location = new System.Drawing.Point(4, 25);
+            this.OrderList.Location = new System.Drawing.Point(4, 22);
             this.OrderList.Name = "OrderList";
             this.OrderList.Padding = new System.Windows.Forms.Padding(3);
-            this.OrderList.Size = new System.Drawing.Size(1194, 582);
+            this.OrderList.Size = new System.Drawing.Size(1194, 585);
             this.OrderList.TabIndex = 5;
             this.OrderList.Text = "OrderList";
             this.OrderList.UseVisualStyleBackColor = true;
@@ -5086,10 +5022,10 @@
             this.ConfirmLaundry.Controls.Add(this.btnLComplete);
             this.ConfirmLaundry.Controls.Add(this.btnLClear);
             this.ConfirmLaundry.Controls.Add(this.dataGridLaundry);
-            this.ConfirmLaundry.Location = new System.Drawing.Point(4, 25);
+            this.ConfirmLaundry.Location = new System.Drawing.Point(4, 22);
             this.ConfirmLaundry.Name = "ConfirmLaundry";
             this.ConfirmLaundry.Padding = new System.Windows.Forms.Padding(3);
-            this.ConfirmLaundry.Size = new System.Drawing.Size(1194, 582);
+            this.ConfirmLaundry.Size = new System.Drawing.Size(1194, 585);
             this.ConfirmLaundry.TabIndex = 6;
             this.ConfirmLaundry.Text = "ConfirmLaundry";
             this.ConfirmLaundry.UseVisualStyleBackColor = true;
@@ -5221,7 +5157,7 @@
             this.dataGridLaundry.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridLaundry.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridLaundry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridLaundry.Size = new System.Drawing.Size(518, 576);
+            this.dataGridLaundry.Size = new System.Drawing.Size(518, 579);
             this.dataGridLaundry.TabIndex = 5;
             // 
             // tabPage2
@@ -5234,10 +5170,10 @@
             this.tabPage2.Controls.Add(this.txtAddOrderQuantity);
             this.tabPage2.Controls.Add(this.txtAddOrderStock);
             this.tabPage2.Controls.Add(this.txtAddOrderItemName);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -5718,6 +5654,70 @@
             this.btnLaundry.TextAutoCenter = false;
             this.btnLaundry.TextOffset = new System.Drawing.Point(0, 0);
             // 
+            // lblService
+            // 
+            this.lblService.AutoSize = true;
+            this.lblService.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblService.ForeColor = System.Drawing.Color.Black;
+            this.lblService.Location = new System.Drawing.Point(27, 26);
+            this.lblService.Name = "lblService";
+            this.lblService.Size = new System.Drawing.Size(95, 25);
+            this.lblService.TabIndex = 1;
+            this.lblService.Text = "Services";
+            // 
+            // lblRole
+            // 
+            this.lblRole.AutoSize = true;
+            this.lblRole.BackColor = System.Drawing.Color.White;
+            this.lblRole.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.ForeColor = System.Drawing.Color.Black;
+            this.lblRole.Location = new System.Drawing.Point(1139, 44);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(41, 16);
+            this.lblRole.TabIndex = 1;
+            this.lblRole.Text = "Admin";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.White;
+            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.Black;
+            this.lblUsername.Location = new System.Drawing.Point(1139, 27);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(95, 16);
+            this.lblUsername.TabIndex = 1;
+            this.lblUsername.Text = "Mark Manalo";
+            // 
+            // pictureProfile
+            // 
+            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureProfile.BorderSize = 1;
+            this.pictureProfile.GradientAngle = 50F;
+            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
+            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
+            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProfile.TabIndex = 2;
+            this.pictureProfile.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.pictureProfile);
+            this.panel2.Controls.Add(this.lblUsername);
+            this.panel2.Controls.Add(this.lblRole);
+            this.panel2.Controls.Add(this.lblService);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1477, 72);
+            this.panel2.TabIndex = 6;
+            // 
             // UCService
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -5737,9 +5737,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UCService";
             this.Size = new System.Drawing.Size(1477, 800);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).EndInit();
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -5899,17 +5896,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLaundry)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel2;
-        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox1;
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblRole;
-        private System.Windows.Forms.Label lblService;
         private SATATextBox txtFoodSearch;
         private FrameworkTest.SATAButton btnFoodDelete;
         private FrameworkTest.SATAButton btnFoodEdit;
@@ -6178,5 +6172,10 @@
         private SATAUiFramework.SATAPanel sataPanel33;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FrameworkTest.SATAButton btnCancelConfirmation;
+        private System.Windows.Forms.Label lblService;
+        private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.Label lblUsername;
+        private SATAUiFramework.Controls.SATAPictureBox pictureProfile;
+        private System.Windows.Forms.Panel panel2;
     }
 }

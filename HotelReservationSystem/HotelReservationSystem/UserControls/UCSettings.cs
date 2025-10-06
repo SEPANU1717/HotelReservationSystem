@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Domain.Interface;
 using HotelReservationSystem.Presenter.Common;
@@ -21,7 +14,7 @@ namespace HotelReservationSystem.UserControls
             AssociateAndRaiseEvents();
             cbGender.Items.AddRange(new object[] { "Male", "Female", "Other" });
             cbRole.Items.AddRange(new object[] { "Admin", "Staff" });
-            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
 
         private void AssociateAndRaiseEvents()

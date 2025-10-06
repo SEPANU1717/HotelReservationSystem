@@ -26,7 +26,7 @@ namespace HotelReservationSystem.UserControls
             materialTabControl1.TabPages.Remove(tabPage2);
             InitializeComboBox();
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
-            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
 
         #endregion

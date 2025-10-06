@@ -20,8 +20,10 @@ namespace HotelReservationSystem.Presenter.Common
         public static string Username => CurrentUser?.Username ?? string.Empty;
         public static string FullName => CurrentUser?.FullName ?? string.Empty;
         public static string Role => CurrentUser?.Role ?? string.Empty;
+        public static string Gender => CurrentUser?.Gender ?? string.Empty;
         public static bool IsAdmin => Role.Equals("Admin", StringComparison.OrdinalIgnoreCase);
         public static bool IsStaff => Role.Equals("Staff", StringComparison.OrdinalIgnoreCase);
+        public static bool IsFemale => Gender.Equals("Female", StringComparison.OrdinalIgnoreCase);
         public static void Login(UserModel user) => CurrentUser = user;
         public static void Logout() => CurrentUser = null;
     }

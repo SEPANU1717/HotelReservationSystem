@@ -33,7 +33,7 @@ namespace HotelReservationSystem.UserControls
             laundryRepo = new LaundryRepository(DbConfig.GetConnectionString());
             foodOrder = new FoodOrderRepository(DbConfig.GetConnectionString());
             UpdateTotalOrderPriceLabel();
-            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
 
             //temporary
             foodOrder.ClearAll();

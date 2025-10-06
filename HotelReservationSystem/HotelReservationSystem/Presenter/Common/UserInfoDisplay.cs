@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace HotelReservationSystem.Presenter.Common
 {
     public class UserInfoDisplay
     {
-        public static void UpdateUserInfoDisplay(Label usernameLabel, Label roleLabel)
+        private static readonly string DefaultMalePhotoPath = "C:\\LodgixHRS Main\\HotelReservationSystem\\HotelReservationSystem\\Resources\\male.png";
+        private static readonly string DefaultFemalePhotoPath = "C:\\LodgixHRS Main\\HotelReservationSystem\\HotelReservationSystem\\Resources\\female.png";
+
+        public static void UpdateUserInfoDisplay(Label usernameLabel, Label roleLabel, PictureBox profilePicture = null)
         {
             if (usernameLabel != null)
             {
@@ -27,6 +27,35 @@ namespace HotelReservationSystem.Presenter.Common
                     roleLabel.Invoke(setRole);
                 else
                     setRole();
+            }
+
+            if (profilePicture != null)
+            {
+                Action setPhoto = () =>
+                {
+                    try
+                    {
+                        string photoPath = UserSession.IsFemale
+                            ? DefaultFemalePhotoPath
+                            : DefaultMalePhotoPath;
+
+                        using (var img = Image.FromFile(photoPath))
+                        {
+                            profilePicture.Image?.Dispose();
+                            profilePicture.Image = new Bitmap(img);
+                            profilePicture.SizeMode = PictureBoxSizeMode.Zoom;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        profilePicture.Image = null;
+                    }
+                };
+
+                if (profilePicture.InvokeRequired)
+                    profilePicture.Invoke(setPhoto);
+                else
+                    setPhoto();
             }
         }
     }

@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCustomers));
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCustomers));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.sataPictureBox1 = new SATAUiFramework.Controls.SATAPictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,51 +45,52 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dtBirthday = new CuoreUI.Controls.cuiCalendarDatePicker();
+            this.cbGender = new SATAComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.cbType = new SATAComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnCancel = new FrameworkTest.SATAButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.btnSave = new FrameworkTest.SATAButton();
+            this.txtNotes = new SATATextBox();
             this.txtAddress = new SATATextBox();
+            this.txtEmail = new SATATextBox();
             this.txtContact = new SATATextBox();
+            this.txtNationaity = new SATATextBox();
+            this.txtMiddleName = new SATATextBox();
             this.txtLName = new SATATextBox();
             this.txtFName = new SATATextBox();
             this.txtCusId = new SATATextBox();
-            this.btnAddNew = new FrameworkTest.SATAButton();
-            this.btnDelete = new FrameworkTest.SATAButton();
-            this.btnEdit = new FrameworkTest.SATAButton();
             this.btnSearch = new FrameworkTest.SATAButton();
             this.txtSearch = new SATATextBox();
-            this.txtMiddleName = new SATATextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtEmail = new SATATextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbGender = new SATAComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtBirthday = new CuoreUI.Controls.cuiCalendarDatePicker();
-            this.txtNationaity = new SATATextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtNotes = new SATATextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.btnDelete = new FrameworkTest.SATAButton();
+            this.btnAddNew = new FrameworkTest.SATAButton();
+            this.btnEdit = new FrameworkTest.SATAButton();
+            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.sataPictureBox1);
+            this.panel2.Controls.Add(this.pictureProfile);
             this.panel2.Controls.Add(this.lblUsername);
             this.panel2.Controls.Add(this.lblRole);
             this.panel2.Controls.Add(this.label5);
@@ -99,22 +99,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 5;
-            // 
-            // sataPictureBox1
-            // 
-            this.sataPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.sataPictureBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.sataPictureBox1.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.sataPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.sataPictureBox1.BorderSize = 1;
-            this.sataPictureBox1.GradientAngle = 50F;
-            this.sataPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("sataPictureBox1.Image")));
-            this.sataPictureBox1.Location = new System.Drawing.Point(1088, 16);
-            this.sataPictureBox1.Name = "sataPictureBox1";
-            this.sataPictureBox1.Size = new System.Drawing.Size(43, 43);
-            this.sataPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.sataPictureBox1.TabIndex = 2;
-            this.sataPictureBox1.TabStop = false;
             // 
             // lblUsername
             // 
@@ -282,12 +266,80 @@
             this.tabPage2.Controls.Add(this.txtLName);
             this.tabPage2.Controls.Add(this.txtFName);
             this.tabPage2.Controls.Add(this.txtCusId);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
+            // 
+            // dtBirthday
+            // 
+            this.dtBirthday.BackColor = System.Drawing.Color.White;
+            this.dtBirthday.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtBirthday.EnableThemeChangeButton = true;
+            this.dtBirthday.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtBirthday.ForeColor = System.Drawing.Color.Silver;
+            this.dtBirthday.HoverBackground = System.Drawing.Color.White;
+            this.dtBirthday.HoverOutline = System.Drawing.Color.White;
+            this.dtBirthday.Icon = null;
+            this.dtBirthday.IconTint = System.Drawing.Color.Gray;
+            this.dtBirthday.Location = new System.Drawing.Point(320, 220);
+            this.dtBirthday.Margin = new System.Windows.Forms.Padding(4);
+            this.dtBirthday.Name = "dtBirthday";
+            this.dtBirthday.NormalBackground = System.Drawing.Color.White;
+            this.dtBirthday.NormalOutline = System.Drawing.Color.Gainsboro;
+            this.dtBirthday.OutlineThickness = 1.5F;
+            this.dtBirthday.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
+            this.dtBirthday.PressedBackground = System.Drawing.Color.White;
+            this.dtBirthday.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtBirthday.Rounding = 3;
+            this.dtBirthday.ShowIcon = true;
+            this.dtBirthday.Size = new System.Drawing.Size(263, 35);
+            this.dtBirthday.TabIndex = 92;
+            this.dtBirthday.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
+            // 
+            // cbGender
+            // 
+            this.cbGender.BackColor = System.Drawing.Color.Transparent;
+            this.cbGender.BackgroundColor = System.Drawing.Color.White;
+            this.cbGender.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cbGender.BorderThickness = 1;
+            this.cbGender.CornerRadius = 3;
+            this.cbGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGender.Items = null;
+            this.cbGender.Keys = null;
+            this.cbGender.Location = new System.Drawing.Point(40, 220);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.SelectedIndex = -1;
+            this.cbGender.Size = new System.Drawing.Size(262, 35);
+            this.cbGender.TabIndex = 13;
+            this.cbGender.Text = "sataComboBox1";
+            this.cbGender.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cbGender.TextOffset = new System.Windows.Forms.Padding(0);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(316, 191);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 20);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Date of birth";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(34, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(176, 30);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Customer Details";
             // 
             // cbType
             // 
@@ -307,6 +359,17 @@
             this.cbType.Text = "sataComboBox1";
             this.cbType.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.cbType.TextOffset = new System.Windows.Forms.Padding(0);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(36, 191);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 20);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Gender";
             // 
             // btnCancel
             // 
@@ -359,6 +422,17 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "ID Type";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.DimGray;
+            this.label12.Location = new System.Drawing.Point(35, 368);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 20);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Notes";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -370,6 +444,17 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Address";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(318, 279);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 20);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Email";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -380,6 +465,28 @@
             this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "Contact";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(598, 191);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(85, 20);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Nationality";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(878, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Middle Name";
             // 
             // label2
             // 
@@ -452,6 +559,29 @@
             this.btnSave.TextAutoCenter = true;
             this.btnSave.TextOffset = new System.Drawing.Point(0, 0);
             // 
+            // txtNotes
+            // 
+            this.txtNotes.BackColor = System.Drawing.Color.White;
+            this.txtNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtNotes.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtNotes.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtNotes.BorderRadius = 3;
+            this.txtNotes.BorderSize = 1;
+            this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtNotes.Icon = null;
+            this.txtNotes.IconSize = new System.Drawing.Size(20, 20);
+            this.txtNotes.Location = new System.Drawing.Point(39, 397);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.PasswordChar = false;
+            this.txtNotes.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtNotes.PlaceholderText = "";
+            this.txtNotes.Size = new System.Drawing.Size(1105, 71);
+            this.txtNotes.TabIndex = 3;
+            this.txtNotes.Texts = "";
+            this.txtNotes.UnderlinedStyle = false;
+            // 
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.Color.White;
@@ -475,6 +605,29 @@
             this.txtAddress.Texts = "";
             this.txtAddress.UnderlinedStyle = false;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtEmail.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtEmail.BorderRadius = 3;
+            this.txtEmail.BorderSize = 1;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtEmail.Icon = null;
+            this.txtEmail.IconSize = new System.Drawing.Size(20, 20);
+            this.txtEmail.Location = new System.Drawing.Point(322, 308);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.Size = new System.Drawing.Size(262, 35);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = false;
+            // 
             // txtContact
             // 
             this.txtContact.BackColor = System.Drawing.Color.White;
@@ -497,6 +650,52 @@
             this.txtContact.TabIndex = 3;
             this.txtContact.Texts = "";
             this.txtContact.UnderlinedStyle = false;
+            // 
+            // txtNationaity
+            // 
+            this.txtNationaity.BackColor = System.Drawing.Color.White;
+            this.txtNationaity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtNationaity.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtNationaity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtNationaity.BorderRadius = 3;
+            this.txtNationaity.BorderSize = 1;
+            this.txtNationaity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNationaity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtNationaity.Icon = null;
+            this.txtNationaity.IconSize = new System.Drawing.Size(20, 20);
+            this.txtNationaity.Location = new System.Drawing.Point(602, 220);
+            this.txtNationaity.Multiline = false;
+            this.txtNationaity.Name = "txtNationaity";
+            this.txtNationaity.PasswordChar = false;
+            this.txtNationaity.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtNationaity.PlaceholderText = "";
+            this.txtNationaity.Size = new System.Drawing.Size(262, 35);
+            this.txtNationaity.TabIndex = 3;
+            this.txtNationaity.Texts = "";
+            this.txtNationaity.UnderlinedStyle = false;
+            // 
+            // txtMiddleName
+            // 
+            this.txtMiddleName.BackColor = System.Drawing.Color.White;
+            this.txtMiddleName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtMiddleName.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtMiddleName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtMiddleName.BorderRadius = 3;
+            this.txtMiddleName.BorderSize = 1;
+            this.txtMiddleName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtMiddleName.Icon = null;
+            this.txtMiddleName.IconSize = new System.Drawing.Size(20, 20);
+            this.txtMiddleName.Location = new System.Drawing.Point(882, 131);
+            this.txtMiddleName.Multiline = false;
+            this.txtMiddleName.Name = "txtMiddleName";
+            this.txtMiddleName.PasswordChar = false;
+            this.txtMiddleName.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtMiddleName.PlaceholderText = "";
+            this.txtMiddleName.Size = new System.Drawing.Size(262, 35);
+            this.txtMiddleName.TabIndex = 3;
+            this.txtMiddleName.Texts = "";
+            this.txtMiddleName.UnderlinedStyle = false;
             // 
             // txtLName
             // 
@@ -569,123 +768,6 @@
             this.txtCusId.Texts = "";
             this.txtCusId.UnderlinedStyle = false;
             // 
-            // btnAddNew
-            // 
-            this.btnAddNew.ButtonText = "Add New";
-            this.btnAddNew.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnAddNew.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddNew.CheckedImageTint = System.Drawing.Color.White;
-            this.btnAddNew.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.btnAddNew.HoverForeColor = System.Drawing.Color.White;
-            this.btnAddNew.HoverImage = null;
-            this.btnAddNew.HoverImageTint = System.Drawing.Color.White;
-            this.btnAddNew.HoverOutline = System.Drawing.Color.Empty;
-            this.btnAddNew.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNew.Image")));
-            this.btnAddNew.ImageAutoCenter = true;
-            this.btnAddNew.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnAddNew.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAddNew.ImageTint = System.Drawing.Color.White;
-            this.btnAddNew.IsToggleButton = false;
-            this.btnAddNew.IsToggled = false;
-            this.btnAddNew.Location = new System.Drawing.Point(1004, 100);
-            this.btnAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnAddNew.NormalForeColor = System.Drawing.Color.White;
-            this.btnAddNew.NormalOutline = System.Drawing.Color.Empty;
-            this.btnAddNew.OutlineThickness = 2F;
-            this.btnAddNew.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnAddNew.PressedForeColor = System.Drawing.Color.White;
-            this.btnAddNew.PressedImageTint = System.Drawing.Color.White;
-            this.btnAddNew.PressedOutline = System.Drawing.Color.Empty;
-            this.btnAddNew.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnAddNew.Size = new System.Drawing.Size(122, 39);
-            this.btnAddNew.TabIndex = 7;
-            this.btnAddNew.TextAutoCenter = true;
-            this.btnAddNew.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.ButtonText = "";
-            this.btnDelete.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnDelete.CheckedForeColor = System.Drawing.Color.White;
-            this.btnDelete.CheckedImageTint = System.Drawing.Color.White;
-            this.btnDelete.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
-            this.btnDelete.HoverForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverImage = null;
-            this.btnDelete.HoverImageTint = System.Drawing.Color.White;
-            this.btnDelete.HoverOutline = System.Drawing.Color.Empty;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageAutoCenter = true;
-            this.btnDelete.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnDelete.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnDelete.ImageTint = System.Drawing.Color.White;
-            this.btnDelete.IsToggleButton = false;
-            this.btnDelete.IsToggled = false;
-            this.btnDelete.Location = new System.Drawing.Point(1190, 100);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(104)))), ((int)(((byte)(107)))));
-            this.btnDelete.NormalForeColor = System.Drawing.Color.White;
-            this.btnDelete.NormalOutline = System.Drawing.Color.Empty;
-            this.btnDelete.OutlineThickness = 2F;
-            this.btnDelete.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(104)))), ((int)(((byte)(107)))));
-            this.btnDelete.PressedForeColor = System.Drawing.Color.White;
-            this.btnDelete.PressedImageTint = System.Drawing.Color.White;
-            this.btnDelete.PressedOutline = System.Drawing.Color.Empty;
-            this.btnDelete.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnDelete.Size = new System.Drawing.Size(44, 39);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.TextAutoCenter = false;
-            this.btnDelete.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.ButtonText = "";
-            this.btnEdit.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
-            this.btnEdit.CheckedImageTint = System.Drawing.Color.White;
-            this.btnEdit.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.btnEdit.HoverForeColor = System.Drawing.Color.White;
-            this.btnEdit.HoverImage = null;
-            this.btnEdit.HoverImageTint = System.Drawing.Color.White;
-            this.btnEdit.HoverOutline = System.Drawing.Color.Empty;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageAutoCenter = true;
-            this.btnEdit.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnEdit.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnEdit.ImageTint = System.Drawing.Color.White;
-            this.btnEdit.IsToggleButton = false;
-            this.btnEdit.IsToggled = false;
-            this.btnEdit.Location = new System.Drawing.Point(1136, 100);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnEdit.NormalForeColor = System.Drawing.Color.White;
-            this.btnEdit.NormalOutline = System.Drawing.Color.Empty;
-            this.btnEdit.OutlineThickness = 2F;
-            this.btnEdit.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnEdit.PressedForeColor = System.Drawing.Color.White;
-            this.btnEdit.PressedImageTint = System.Drawing.Color.White;
-            this.btnEdit.PressedOutline = System.Drawing.Color.Empty;
-            this.btnEdit.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnEdit.Size = new System.Drawing.Size(44, 39);
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.TextAutoCenter = false;
-            this.btnEdit.TextOffset = new System.Drawing.Point(0, 0);
-            // 
             // btnSearch
             // 
             this.btnSearch.ButtonText = "Search";
@@ -748,220 +830,138 @@
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
             // 
-            // txtMiddleName
+            // btnDelete
             // 
-            this.txtMiddleName.BackColor = System.Drawing.Color.White;
-            this.txtMiddleName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtMiddleName.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtMiddleName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtMiddleName.BorderRadius = 3;
-            this.txtMiddleName.BorderSize = 1;
-            this.txtMiddleName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMiddleName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtMiddleName.Icon = null;
-            this.txtMiddleName.IconSize = new System.Drawing.Size(20, 20);
-            this.txtMiddleName.Location = new System.Drawing.Point(882, 131);
-            this.txtMiddleName.Multiline = false;
-            this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.PasswordChar = false;
-            this.txtMiddleName.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtMiddleName.PlaceholderText = "";
-            this.txtMiddleName.Size = new System.Drawing.Size(262, 35);
-            this.txtMiddleName.TabIndex = 3;
-            this.txtMiddleName.Texts = "";
-            this.txtMiddleName.UnderlinedStyle = false;
+            this.btnDelete.ButtonText = "";
+            this.btnDelete.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnDelete.CheckedForeColor = System.Drawing.Color.White;
+            this.btnDelete.CheckedImageTint = System.Drawing.Color.White;
+            this.btnDelete.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(60)))));
+            this.btnDelete.HoverForeColor = System.Drawing.Color.White;
+            this.btnDelete.HoverImage = null;
+            this.btnDelete.HoverImageTint = System.Drawing.Color.White;
+            this.btnDelete.HoverOutline = System.Drawing.Color.Empty;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAutoCenter = true;
+            this.btnDelete.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnDelete.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnDelete.ImageTint = System.Drawing.Color.White;
+            this.btnDelete.IsToggleButton = false;
+            this.btnDelete.IsToggled = false;
+            this.btnDelete.Location = new System.Drawing.Point(1190, 100);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(104)))), ((int)(((byte)(107)))));
+            this.btnDelete.NormalForeColor = System.Drawing.Color.White;
+            this.btnDelete.NormalOutline = System.Drawing.Color.Empty;
+            this.btnDelete.OutlineThickness = 2F;
+            this.btnDelete.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(104)))), ((int)(((byte)(107)))));
+            this.btnDelete.PressedForeColor = System.Drawing.Color.White;
+            this.btnDelete.PressedImageTint = System.Drawing.Color.White;
+            this.btnDelete.PressedOutline = System.Drawing.Color.Empty;
+            this.btnDelete.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnDelete.Size = new System.Drawing.Size(44, 39);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.TextAutoCenter = false;
+            this.btnDelete.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // label3
+            // btnAddNew
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(878, 102);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Middle Name";
+            this.btnAddNew.ButtonText = "Add New";
+            this.btnAddNew.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnAddNew.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddNew.CheckedImageTint = System.Drawing.Color.White;
+            this.btnAddNew.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnAddNew.HoverForeColor = System.Drawing.Color.White;
+            this.btnAddNew.HoverImage = null;
+            this.btnAddNew.HoverImageTint = System.Drawing.Color.White;
+            this.btnAddNew.HoverOutline = System.Drawing.Color.Empty;
+            this.btnAddNew.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNew.Image")));
+            this.btnAddNew.ImageAutoCenter = true;
+            this.btnAddNew.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnAddNew.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAddNew.ImageTint = System.Drawing.Color.White;
+            this.btnAddNew.IsToggleButton = false;
+            this.btnAddNew.IsToggled = false;
+            this.btnAddNew.Location = new System.Drawing.Point(1004, 100);
+            this.btnAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnAddNew.NormalForeColor = System.Drawing.Color.White;
+            this.btnAddNew.NormalOutline = System.Drawing.Color.Empty;
+            this.btnAddNew.OutlineThickness = 2F;
+            this.btnAddNew.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnAddNew.PressedForeColor = System.Drawing.Color.White;
+            this.btnAddNew.PressedImageTint = System.Drawing.Color.White;
+            this.btnAddNew.PressedOutline = System.Drawing.Color.Empty;
+            this.btnAddNew.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnAddNew.Size = new System.Drawing.Size(122, 39);
+            this.btnAddNew.TabIndex = 7;
+            this.btnAddNew.TextAutoCenter = true;
+            this.btnAddNew.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // txtEmail
+            // btnEdit
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtEmail.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtEmail.BorderRadius = 3;
-            this.txtEmail.BorderSize = 1;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtEmail.Icon = null;
-            this.txtEmail.IconSize = new System.Drawing.Size(20, 20);
-            this.txtEmail.Location = new System.Drawing.Point(322, 308);
-            this.txtEmail.Multiline = false;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = false;
-            this.txtEmail.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtEmail.PlaceholderText = "";
-            this.txtEmail.Size = new System.Drawing.Size(262, 35);
-            this.txtEmail.TabIndex = 3;
-            this.txtEmail.Texts = "";
-            this.txtEmail.UnderlinedStyle = false;
+            this.btnEdit.ButtonText = "";
+            this.btnEdit.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
+            this.btnEdit.CheckedImageTint = System.Drawing.Color.White;
+            this.btnEdit.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnEdit.HoverForeColor = System.Drawing.Color.White;
+            this.btnEdit.HoverImage = null;
+            this.btnEdit.HoverImageTint = System.Drawing.Color.White;
+            this.btnEdit.HoverOutline = System.Drawing.Color.Empty;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.ImageAutoCenter = true;
+            this.btnEdit.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnEdit.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnEdit.ImageTint = System.Drawing.Color.White;
+            this.btnEdit.IsToggleButton = false;
+            this.btnEdit.IsToggled = false;
+            this.btnEdit.Location = new System.Drawing.Point(1136, 100);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnEdit.NormalForeColor = System.Drawing.Color.White;
+            this.btnEdit.NormalOutline = System.Drawing.Color.Empty;
+            this.btnEdit.OutlineThickness = 2F;
+            this.btnEdit.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnEdit.PressedForeColor = System.Drawing.Color.White;
+            this.btnEdit.PressedImageTint = System.Drawing.Color.White;
+            this.btnEdit.PressedOutline = System.Drawing.Color.Empty;
+            this.btnEdit.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnEdit.Size = new System.Drawing.Size(44, 39);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.TextAutoCenter = false;
+            this.btnEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // label4
+            // pictureProfile
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(318, 279);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Email";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(36, 191);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 20);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Gender";
-            // 
-            // cbGender
-            // 
-            this.cbGender.BackColor = System.Drawing.Color.Transparent;
-            this.cbGender.BackgroundColor = System.Drawing.Color.White;
-            this.cbGender.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cbGender.BorderThickness = 1;
-            this.cbGender.CornerRadius = 3;
-            this.cbGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGender.Items = null;
-            this.cbGender.Keys = null;
-            this.cbGender.Location = new System.Drawing.Point(40, 220);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.SelectedIndex = -1;
-            this.cbGender.Size = new System.Drawing.Size(262, 35);
-            this.cbGender.TabIndex = 13;
-            this.cbGender.Text = "sataComboBox1";
-            this.cbGender.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.cbGender.TextOffset = new System.Windows.Forms.Padding(0);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(316, 191);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 20);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Date of birth";
-            // 
-            // dtBirthday
-            // 
-            this.dtBirthday.BackColor = System.Drawing.Color.White;
-            this.dtBirthday.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
-            this.dtBirthday.EnableThemeChangeButton = true;
-            this.dtBirthday.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtBirthday.ForeColor = System.Drawing.Color.Silver;
-            this.dtBirthday.HoverBackground = System.Drawing.Color.White;
-            this.dtBirthday.HoverOutline = System.Drawing.Color.White;
-            this.dtBirthday.Icon = null;
-            this.dtBirthday.IconTint = System.Drawing.Color.Gray;
-            this.dtBirthday.Location = new System.Drawing.Point(320, 220);
-            this.dtBirthday.Margin = new System.Windows.Forms.Padding(4);
-            this.dtBirthday.Name = "dtBirthday";
-            this.dtBirthday.NormalBackground = System.Drawing.Color.White;
-            this.dtBirthday.NormalOutline = System.Drawing.Color.Gainsboro;
-            this.dtBirthday.OutlineThickness = 1.5F;
-            this.dtBirthday.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
-            this.dtBirthday.PressedBackground = System.Drawing.Color.White;
-            this.dtBirthday.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dtBirthday.Rounding = 3;
-            this.dtBirthday.ShowIcon = true;
-            this.dtBirthday.Size = new System.Drawing.Size(263, 35);
-            this.dtBirthday.TabIndex = 92;
-            this.dtBirthday.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
-            // 
-            // txtNationaity
-            // 
-            this.txtNationaity.BackColor = System.Drawing.Color.White;
-            this.txtNationaity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtNationaity.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtNationaity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtNationaity.BorderRadius = 3;
-            this.txtNationaity.BorderSize = 1;
-            this.txtNationaity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNationaity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtNationaity.Icon = null;
-            this.txtNationaity.IconSize = new System.Drawing.Size(20, 20);
-            this.txtNationaity.Location = new System.Drawing.Point(602, 220);
-            this.txtNationaity.Multiline = false;
-            this.txtNationaity.Name = "txtNationaity";
-            this.txtNationaity.PasswordChar = false;
-            this.txtNationaity.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtNationaity.PlaceholderText = "";
-            this.txtNationaity.Size = new System.Drawing.Size(262, 35);
-            this.txtNationaity.TabIndex = 3;
-            this.txtNationaity.Texts = "";
-            this.txtNationaity.UnderlinedStyle = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(598, 191);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(85, 20);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Nationality";
-            // 
-            // txtNotes
-            // 
-            this.txtNotes.BackColor = System.Drawing.Color.White;
-            this.txtNotes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtNotes.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtNotes.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtNotes.BorderRadius = 3;
-            this.txtNotes.BorderSize = 1;
-            this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtNotes.Icon = null;
-            this.txtNotes.IconSize = new System.Drawing.Size(20, 20);
-            this.txtNotes.Location = new System.Drawing.Point(39, 397);
-            this.txtNotes.Multiline = true;
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.PasswordChar = false;
-            this.txtNotes.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtNotes.PlaceholderText = "";
-            this.txtNotes.Size = new System.Drawing.Size(1105, 71);
-            this.txtNotes.TabIndex = 3;
-            this.txtNotes.Texts = "";
-            this.txtNotes.UnderlinedStyle = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(35, 368);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 20);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Notes";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(34, 38);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(176, 30);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Customer Details";
+            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureProfile.BorderSize = 1;
+            this.pictureProfile.GradientAngle = 50F;
+            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
+            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
+            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProfile.TabIndex = 2;
+            this.pictureProfile.TabStop = false;
             // 
             // UCCustomers
             // 
@@ -980,13 +980,13 @@
             this.Size = new System.Drawing.Size(1477, 800);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sataPictureBox1)).EndInit();
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -994,7 +994,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private SATAUiFramework.Controls.SATAPictureBox sataPictureBox1;
+        private SATAUiFramework.Controls.SATAPictureBox pictureProfile;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;

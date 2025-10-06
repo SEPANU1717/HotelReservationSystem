@@ -83,6 +83,16 @@ namespace HotelReservationSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap female {
+            get {
+                object obj = ResourceManager.GetObject("female", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Homepage__14_ {
             get {
                 object obj = ResourceManager.GetObject("Homepage (14)", resourceCulture);
@@ -106,6 +116,16 @@ namespace HotelReservationSystem.Properties {
         internal static System.Drawing.Bitmap luggage_80dp_8094AE_FILL0_wght600_GRAD200_opsz48 {
             get {
                 object obj = ResourceManager.GetObject("luggage_80dp_8094AE_FILL0_wght600_GRAD200_opsz48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap male {
+            get {
+                object obj = ResourceManager.GetObject("male", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

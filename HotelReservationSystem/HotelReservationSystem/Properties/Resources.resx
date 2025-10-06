@@ -136,13 +136,19 @@
   <data name="payment_arrow_down_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\payment_arrow_down_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="male" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="luggage_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\luggage_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Homepage (14)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Homepage (14).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="manage_accounts_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage_accounts_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Homepage (14)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Homepage (14).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="female" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

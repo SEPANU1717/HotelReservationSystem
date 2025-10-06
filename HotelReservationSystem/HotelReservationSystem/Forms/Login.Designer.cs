@@ -198,7 +198,7 @@
             this.txtPassword.PlaceholderColor = System.Drawing.Color.Silver;
             this.txtPassword.PlaceholderText = "Enter your password";
             this.txtPassword.Size = new System.Drawing.Size(471, 43);
-            this.txtPassword.TabIndex = 12;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
             // 
@@ -221,7 +221,7 @@
             this.txtUsername.PlaceholderColor = System.Drawing.Color.Silver;
             this.txtUsername.PlaceholderText = "Enter your username";
             this.txtUsername.Size = new System.Drawing.Size(471, 43);
-            this.txtUsername.TabIndex = 11;
+            this.txtUsername.TabIndex = 0;
             this.txtUsername.Texts = "";
             this.txtUsername.UnderlinedStyle = false;
             // 

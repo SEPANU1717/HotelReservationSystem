@@ -15,7 +15,7 @@ namespace HotelReservationSystem.Forms
         {
             InitializeComponent();
             Load += ReservationSystem_Load;
-            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
         #region LoadUser
 

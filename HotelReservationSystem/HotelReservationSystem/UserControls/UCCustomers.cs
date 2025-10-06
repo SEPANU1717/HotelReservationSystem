@@ -27,7 +27,7 @@ namespace HotelReservationSystem.UserControls
             InitializeComboBox();
             materialTabControl1.TabPages.Remove(tabPage2);
             customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
-            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
         
         private List<string> comboItems;

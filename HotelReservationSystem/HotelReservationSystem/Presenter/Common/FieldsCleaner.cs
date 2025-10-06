@@ -13,8 +13,7 @@ public static class FieldsCleaner
             else if (c is ComboBox cbx) cbx.SelectedIndex = -1;
             else if (c is DateTimePicker dt) dt.Value = DateTime.Now;
 
-            if (c.HasChildren)
-                ClearInputs(c); // recursive
+            if (c.HasChildren) ClearInputs(c);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace HotelReservationSystem.UserControls
         public UCINOUT()
         {
             InitializeComponent();
-            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole);
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
 
         }
     }
