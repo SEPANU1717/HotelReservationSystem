@@ -12,10 +12,13 @@ namespace HotelReservationSystem.UserControls
 {
     public partial class UCService : UserControl, IFoodStockVIew, ILaundryView, IOrderFoodView
     {
+
+
         #region Fields
         private FoodStockRepository foodRepo;
         private LaundryRepository laundryRepo;
         private FoodOrderRepository foodOrder;
+
         #endregion
         #region Constructor
         public UCService()
@@ -35,14 +38,15 @@ namespace HotelReservationSystem.UserControls
             UpdateTotalOrderPriceLabel();
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
 
-            //temporary
             foodOrder.ClearAll();
-
         }
+
+
         #endregion
         #region Event Association
         private void AssociateAndRaiseViewEvents()
         {
+
             btnFoodSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtFoodSearch.KeyDown += (s, e) =>
             {
@@ -209,6 +213,7 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
                 materialTabControl1.TabPages.Remove(ConfirmLaundry);
+
             };
 
             btnBasketOrder.Click += delegate
@@ -253,6 +258,18 @@ namespace HotelReservationSystem.UserControls
             {
                 OrderClearEvent?.Invoke(this, EventArgs.Empty);
                 UpdateTotalOrderPriceLabel();
+            };
+
+            btnOrderFoodCancel.Click += delegate
+            {
+                OrderCancelEvent?.Invoke(this, EventArgs.Empty);
+                UpdateTotalOrderPriceLabel();
+                materialTabControl1.TabPages.Remove(ConfirmOrder);
+                materialTabControl1.TabPages.Remove(Food);
+                materialTabControl1.TabPages.Remove(Laundry);
+                materialTabControl1.TabPages.Remove(tabPage1);
+                materialTabControl1.TabPages.Remove(OrderList);
+                materialTabControl1.TabPages.Remove(OrderFood);
             };
 
 
@@ -375,5 +392,7 @@ namespace HotelReservationSystem.UserControls
             lblTotalPriceOrder.Text = total.ToString("C", culture);
         }
         #endregion TotalPriceOrder
+
+
     }
 }

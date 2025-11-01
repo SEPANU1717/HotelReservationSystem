@@ -4,9 +4,11 @@ using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer.DbInitializer;
+using HotelReservationSystem.Domain.Helper;
 using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
+using static HotelReservationSystem.Domain.Enums.ReservationEnum;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -30,6 +32,8 @@ namespace HotelReservationSystem.UserControls
         {
             InitializeComponent();
             materialTabControl1.TabPages.Remove(tabPage2);
+            cbPaymentStatus.DataSource = Enum.GetValues(typeof(PaymentState));
+            cbPaymentType.DataSource = Enum.GetValues(typeof(PaymentMethod));
             AssociateAndraiseViewEvents();
             customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
             reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
@@ -42,7 +46,11 @@ namespace HotelReservationSystem.UserControls
             dtCheckIn.DateChanged += DateOrRoomChanged;
             dtCheckOut.DateChanged += DateOrRoomChanged;
             cbNumber.SelectedIndexChanged += DateOrRoomChanged;
+            dtCheckIn.Content = DateTime.Now;
+            dtCheckOut.Content = DateTime.Now.AddDays(1);
+            Reload();
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
+            
         }
 
         #endregion
@@ -82,6 +90,7 @@ namespace HotelReservationSystem.UserControls
 
                 cbStatus.SelectedItem = "Pending";
                 cbStatus.Enabled = false;
+                cbCusNames.Enabled = true;
             };
 
             btnReservationEdit.Click += delegate
@@ -182,19 +191,24 @@ namespace HotelReservationSystem.UserControls
         #endregion
         #region Properties
 
-        public string ReservationId{get => txtReservationId.Texts; set => txtReservationId.Texts = value; }
-        public string Guests{get => txtRoomGuests.Texts; set => txtRoomGuests.Texts = value; }
-        public DateTime CheckInDate{get => dtCheckIn.Content; set => dtCheckIn.Content = value; }
-        public DateTime CheckOutDate {get => dtCheckOut.Content; set => dtCheckOut.Content = value; }
-        public string CustomerName{ get => cbCusNames.SelectedItem as string; set => cbCusNames.SelectedItem = value; }
+        public string ReservationId { get => txtReservationId.Texts; set => txtReservationId.Texts = value; }
+        public string Guests { get => txtRoomGuests.Texts; set => txtRoomGuests.Texts = value; }
+        public DateTime CheckInDate { get => dtCheckIn.Content; set => dtCheckIn.Content = value; }
+        public DateTime CheckOutDate { get => dtCheckOut.Content; set => dtCheckOut.Content = value; }
+        public string CustomerName { get => cbCusNames.SelectedItem as string; set => cbCusNames.SelectedItem = value; }
         public string RoomNumber { get => cbNumber.SelectedItem as string; set => cbNumber.SelectedItem = value; }
-        public string RoomType {get => cbType.SelectedItem as string; set => cbType.SelectedItem = value; }
-        public string TotalPrice {get => txtPrice.Texts; set => txtPrice.Texts = value; }
-        public string ReservationStatus {get => cbStatus.SelectedItem as string;  set => cbStatus.SelectedItem = value; }
-        public string SearchValue{ get => txtReservationSearch.Texts; set => txtReservationSearch.Texts = value; }
+        public string RoomType { get => cbType.SelectedItem as string; set => cbType.SelectedItem = value; }
+        public string TotalPrice { get => txtPrice.Texts; set => txtPrice.Texts = value; }
+        public string ReservationStatus { get => cbStatus.SelectedItem as string; set => cbStatus.SelectedItem = value; }
+        public string SearchValue { get => txtReservationSearch.Texts; set => txtReservationSearch.Texts = value; }
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
+        public string DownPayment { get => txtDownPayment.Texts; set => txtDownPayment.Texts = value; }
+        public string AmountPaid { get => txtAmountPaid.Texts; set => txtAmountPaid.Texts = value; }
+        public string PaymentMethod { get => cbPaymentType.SelectedItem as string; set => cbPaymentType.SelectedItem = value; }
+        public PaymentState PaymentStatus { get => (PaymentState)cbPaymentStatus.SelectedItem ; set => cbPaymentStatus.SelectedItem = value; }
+        public string BalanceDue { get => txtBalanceDue.Texts; set => txtBalanceDue.Texts = value; }
 
         #endregion
         #region Singleton
@@ -343,6 +357,10 @@ namespace HotelReservationSystem.UserControls
 
                 decimal total = pricePerNight * nights;
                 txtPrice.Texts = total.ToString("0.00");
+
+                txtDownPayment.Texts = RoomRateHelper.GetAutoDownPayment(total).ToString("0.00");
+
+                txtBalanceDue.Texts = (total - RoomRateHelper.GetAutoDownPayment(total)).ToString("0.00");
             }
             else
             {
@@ -352,6 +370,14 @@ namespace HotelReservationSystem.UserControls
 
         #endregion
 
+        private void Reload()
+        {
+            var customersControl = UCCustomers.GetInstance(this.ParentForm);
+            customersControl.CustomerChanged += (s, e) =>
+            {
+                InitializeCustomerComboBox();
+            };
+        }
         private void dtCheckIn_Load(object sender, EventArgs e)
         {
 

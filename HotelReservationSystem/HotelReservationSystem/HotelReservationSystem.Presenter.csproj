@@ -232,6 +232,7 @@
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="Presenter\Mapper\CustomerMapper.cs" />
+    <Compile Include="Presenter\Mapper\ReservationMapper.cs" />
     <Compile Include="Presenter\Mapper\RoomMapper.cs" />
     <Compile Include="Presenter\Mapper\UserMapper.cs" />
     <Compile Include="Presenter\OrderFoodPresenter.cs" />

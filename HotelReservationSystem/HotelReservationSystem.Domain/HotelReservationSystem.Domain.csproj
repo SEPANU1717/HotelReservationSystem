@@ -45,7 +45,12 @@
   <ItemGroup>
     <Compile Include="DTOs\CustomerDto.cs" />
     <Compile Include="DTOs\DashboardDto.cs" />
+    <Compile Include="DTOs\ReservationDto.cs" />
     <Compile Include="DTOs\UserDto.cs" />
+    <Compile Include="Enums\CustomerEnum.cs" />
+    <Compile Include="Enums\ReservationEnum.cs" />
+    <Compile Include="Enums\UserEnums.cs" />
+    <Compile Include="Helper\RoomRateHelper.cs" />
     <Compile Include="Interface\Billing\IBillingRepository.cs" />
     <Compile Include="Interface\Billing\IBillingView.cs" />
     <Compile Include="Interface\CheckInOut\ICheckInOutRepository.cs" />
@@ -68,7 +73,7 @@
     <Compile Include="Interface\UserManagement\IUserRepository.cs" />
     <Compile Include="Interface\UserManagement\IUserView.cs" />
     <Compile Include="Model\BillingModel.cs" />
-    <Compile Include="Model\CheckInOutModel.cs" />
+    <Compile Include="Model\CheckInOut\CheckInOutModel.cs" />
     <Compile Include="Model\CustomerModel.cs" />
     <Compile Include="Model\LoginModel.cs" />
     <Compile Include="Model\ReservationModel.cs" />

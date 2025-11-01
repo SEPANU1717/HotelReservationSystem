@@ -47,13 +47,20 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dtCheckOut = new CuoreUI.Controls.cuiCalendarDatePicker();
             this.dtCheckIn = new CuoreUI.Controls.cuiCalendarDatePicker();
+            this.cbPaymentStatus = new MetroFramework.Controls.MetroComboBox();
+            this.cbPaymentType = new MetroFramework.Controls.MetroComboBox();
             this.cbNumber = new MetroFramework.Controls.MetroComboBox();
             this.cbStatus = new MetroFramework.Controls.MetroComboBox();
             this.cbCusNames = new MetroFramework.Controls.MetroComboBox();
             this.cbType = new MetroFramework.Controls.MetroComboBox();
             this.btnReservationSave = new FrameworkTest.SATAButton();
             this.label8 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,10 +69,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.txtRoomGuests = new SATATextBox();
+            this.txtBalanceDue = new SATATextBox();
+            this.txtAmountPaid = new SATATextBox();
+            this.txtDownPayment = new SATATextBox();
             this.txtPrice = new SATATextBox();
             this.txtReservationId = new SATATextBox();
-            this.btnReservationCancel = new FrameworkTest.SATAButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
@@ -74,12 +82,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sataButton1 = new FrameworkTest.SATAButton();
+            this.btnReservationCancel = new FrameworkTest.SATAButton();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservation)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -361,15 +370,24 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.btnReservationCancel);
             this.tabPage2.Controls.Add(this.dtCheckOut);
             this.tabPage2.Controls.Add(this.dtCheckIn);
+            this.tabPage2.Controls.Add(this.cbPaymentStatus);
+            this.tabPage2.Controls.Add(this.cbPaymentType);
             this.tabPage2.Controls.Add(this.cbNumber);
             this.tabPage2.Controls.Add(this.cbStatus);
             this.tabPage2.Controls.Add(this.cbCusNames);
             this.tabPage2.Controls.Add(this.cbType);
             this.tabPage2.Controls.Add(this.btnReservationSave);
             this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label10);
@@ -378,14 +396,15 @@
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.label36);
             this.tabPage2.Controls.Add(this.txtRoomGuests);
+            this.tabPage2.Controls.Add(this.txtBalanceDue);
+            this.tabPage2.Controls.Add(this.txtAmountPaid);
+            this.tabPage2.Controls.Add(this.txtDownPayment);
             this.tabPage2.Controls.Add(this.txtPrice);
             this.tabPage2.Controls.Add(this.txtReservationId);
-            this.tabPage2.Controls.Add(this.btnReservationCancel);
-            this.tabPage2.Controls.Add(this.pictureBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -400,7 +419,7 @@
             this.dtCheckOut.HoverOutline = System.Drawing.Color.White;
             this.dtCheckOut.Icon = null;
             this.dtCheckOut.IconTint = System.Drawing.Color.Gray;
-            this.dtCheckOut.Location = new System.Drawing.Point(391, 314);
+            this.dtCheckOut.Location = new System.Drawing.Point(440, 270);
             this.dtCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.dtCheckOut.Name = "dtCheckOut";
             this.dtCheckOut.NormalBackground = System.Drawing.Color.White;
@@ -426,7 +445,7 @@
             this.dtCheckIn.HoverOutline = System.Drawing.Color.White;
             this.dtCheckIn.Icon = null;
             this.dtCheckIn.IconTint = System.Drawing.Color.Gray;
-            this.dtCheckIn.Location = new System.Drawing.Point(57, 318);
+            this.dtCheckIn.Location = new System.Drawing.Point(57, 270);
             this.dtCheckIn.Margin = new System.Windows.Forms.Padding(4);
             this.dtCheckIn.Name = "dtCheckIn";
             this.dtCheckIn.NormalBackground = System.Drawing.Color.White;
@@ -442,11 +461,31 @@
             this.dtCheckIn.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
             this.dtCheckIn.Load += new System.EventHandler(this.dtCheckIn_Load);
             // 
+            // cbPaymentStatus
+            // 
+            this.cbPaymentStatus.FormattingEnabled = true;
+            this.cbPaymentStatus.ItemHeight = 23;
+            this.cbPaymentStatus.Location = new System.Drawing.Point(440, 442);
+            this.cbPaymentStatus.Name = "cbPaymentStatus";
+            this.cbPaymentStatus.Size = new System.Drawing.Size(296, 29);
+            this.cbPaymentStatus.TabIndex = 27;
+            this.cbPaymentStatus.SelectedIndexChanged += new System.EventHandler(this.cbNumber_SelectedIndexChanged);
+            // 
+            // cbPaymentType
+            // 
+            this.cbPaymentType.FormattingEnabled = true;
+            this.cbPaymentType.ItemHeight = 23;
+            this.cbPaymentType.Location = new System.Drawing.Point(823, 274);
+            this.cbPaymentType.Name = "cbPaymentType";
+            this.cbPaymentType.Size = new System.Drawing.Size(296, 29);
+            this.cbPaymentType.TabIndex = 27;
+            this.cbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cbNumber_SelectedIndexChanged);
+            // 
             // cbNumber
             // 
             this.cbNumber.FormattingEnabled = true;
             this.cbNumber.ItemHeight = 23;
-            this.cbNumber.Location = new System.Drawing.Point(57, 253);
+            this.cbNumber.Location = new System.Drawing.Point(57, 196);
             this.cbNumber.Name = "cbNumber";
             this.cbNumber.Size = new System.Drawing.Size(296, 29);
             this.cbNumber.TabIndex = 27;
@@ -456,7 +495,7 @@
             // 
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.ItemHeight = 23;
-            this.cbStatus.Location = new System.Drawing.Point(391, 253);
+            this.cbStatus.Location = new System.Drawing.Point(440, 196);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(296, 29);
             this.cbStatus.TabIndex = 27;
@@ -465,7 +504,7 @@
             // 
             this.cbCusNames.FormattingEnabled = true;
             this.cbCusNames.ItemHeight = 23;
-            this.cbCusNames.Location = new System.Drawing.Point(57, 188);
+            this.cbCusNames.Location = new System.Drawing.Point(440, 126);
             this.cbCusNames.Name = "cbCusNames";
             this.cbCusNames.Size = new System.Drawing.Size(296, 29);
             this.cbCusNames.TabIndex = 27;
@@ -474,7 +513,7 @@
             // 
             this.cbType.FormattingEnabled = true;
             this.cbType.ItemHeight = 23;
-            this.cbType.Location = new System.Drawing.Point(391, 188);
+            this.cbType.Location = new System.Drawing.Point(823, 126);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(296, 29);
             this.cbType.TabIndex = 27;
@@ -501,7 +540,7 @@
             this.btnReservationSave.ImageTint = System.Drawing.Color.White;
             this.btnReservationSave.IsToggleButton = false;
             this.btnReservationSave.IsToggled = false;
-            this.btnReservationSave.Location = new System.Drawing.Point(499, 520);
+            this.btnReservationSave.Location = new System.Drawing.Point(931, 514);
             this.btnReservationSave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationSave.Name = "btnReservationSave";
             this.btnReservationSave.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -523,29 +562,84 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(387, 290);
+            this.label8.Location = new System.Drawing.Point(436, 246);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(114, 20);
             this.label8.TabIndex = 25;
             this.label8.Text = "Check-out Date";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DimGray;
+            this.label13.Location = new System.Drawing.Point(53, 408);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 20);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Balance Due";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DimGray;
+            this.label12.Location = new System.Drawing.Point(819, 322);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(98, 20);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Amount Paid";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(436, 322);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 20);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Down payment";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DimGray;
+            this.label14.Location = new System.Drawing.Point(436, 414);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(114, 20);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Payment Status";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(387, 359);
+            this.label9.Location = new System.Drawing.Point(53, 322);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 20);
             this.label9.TabIndex = 25;
             this.label9.Text = "Total Price/Night";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(819, 246);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 20);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Payment Method";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(53, 290);
+            this.label7.Location = new System.Drawing.Point(53, 242);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(104, 20);
             this.label7.TabIndex = 25;
@@ -556,7 +650,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(53, 225);
+            this.label11.Location = new System.Drawing.Point(53, 168);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(110, 20);
             this.label11.TabIndex = 25;
@@ -567,7 +661,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(387, 160);
+            this.label10.Location = new System.Drawing.Point(819, 98);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 20);
             this.label10.TabIndex = 25;
@@ -578,7 +672,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(53, 359);
+            this.label6.Location = new System.Drawing.Point(819, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 20);
             this.label6.TabIndex = 25;
@@ -589,7 +683,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(387, 225);
+            this.label2.Location = new System.Drawing.Point(436, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 25;
@@ -600,7 +694,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(53, 160);
+            this.label1.Location = new System.Drawing.Point(436, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 25;
@@ -611,7 +705,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.DimGray;
-            this.label36.Location = new System.Drawing.Point(53, 91);
+            this.label36.Location = new System.Drawing.Point(53, 94);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(107, 20);
             this.label36.TabIndex = 25;
@@ -630,7 +724,7 @@
             this.txtRoomGuests.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomGuests.Icon = null;
             this.txtRoomGuests.IconSize = new System.Drawing.Size(20, 20);
-            this.txtRoomGuests.Location = new System.Drawing.Point(57, 387);
+            this.txtRoomGuests.Location = new System.Drawing.Point(823, 196);
             this.txtRoomGuests.Multiline = false;
             this.txtRoomGuests.Name = "txtRoomGuests";
             this.txtRoomGuests.PasswordChar = false;
@@ -641,6 +735,78 @@
             this.txtRoomGuests.Texts = "";
             this.txtRoomGuests.UnderlinedStyle = false;
             // 
+            // txtBalanceDue
+            // 
+            this.txtBalanceDue.BackColor = System.Drawing.Color.White;
+            this.txtBalanceDue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtBalanceDue.BorderColor = System.Drawing.Color.Gray;
+            this.txtBalanceDue.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtBalanceDue.BorderRadius = 3;
+            this.txtBalanceDue.BorderSize = 1;
+            this.txtBalanceDue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalanceDue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtBalanceDue.Icon = null;
+            this.txtBalanceDue.IconSize = new System.Drawing.Size(20, 20);
+            this.txtBalanceDue.Location = new System.Drawing.Point(57, 436);
+            this.txtBalanceDue.Multiline = false;
+            this.txtBalanceDue.Name = "txtBalanceDue";
+            this.txtBalanceDue.PasswordChar = false;
+            this.txtBalanceDue.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtBalanceDue.PlaceholderText = "";
+            this.txtBalanceDue.Size = new System.Drawing.Size(296, 35);
+            this.txtBalanceDue.TabIndex = 20;
+            this.txtBalanceDue.Text = "0";
+            this.txtBalanceDue.Texts = "";
+            this.txtBalanceDue.UnderlinedStyle = false;
+            // 
+            // txtAmountPaid
+            // 
+            this.txtAmountPaid.BackColor = System.Drawing.Color.White;
+            this.txtAmountPaid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtAmountPaid.BorderColor = System.Drawing.Color.Gray;
+            this.txtAmountPaid.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtAmountPaid.BorderRadius = 3;
+            this.txtAmountPaid.BorderSize = 1;
+            this.txtAmountPaid.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmountPaid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtAmountPaid.Icon = null;
+            this.txtAmountPaid.IconSize = new System.Drawing.Size(20, 20);
+            this.txtAmountPaid.Location = new System.Drawing.Point(823, 350);
+            this.txtAmountPaid.Multiline = false;
+            this.txtAmountPaid.Name = "txtAmountPaid";
+            this.txtAmountPaid.PasswordChar = false;
+            this.txtAmountPaid.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtAmountPaid.PlaceholderText = "";
+            this.txtAmountPaid.Size = new System.Drawing.Size(296, 35);
+            this.txtAmountPaid.TabIndex = 20;
+            this.txtAmountPaid.Text = "0";
+            this.txtAmountPaid.Texts = "";
+            this.txtAmountPaid.UnderlinedStyle = false;
+            // 
+            // txtDownPayment
+            // 
+            this.txtDownPayment.BackColor = System.Drawing.Color.White;
+            this.txtDownPayment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtDownPayment.BorderColor = System.Drawing.Color.Gray;
+            this.txtDownPayment.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtDownPayment.BorderRadius = 3;
+            this.txtDownPayment.BorderSize = 1;
+            this.txtDownPayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDownPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtDownPayment.Icon = null;
+            this.txtDownPayment.IconSize = new System.Drawing.Size(20, 20);
+            this.txtDownPayment.Location = new System.Drawing.Point(440, 350);
+            this.txtDownPayment.Multiline = false;
+            this.txtDownPayment.Name = "txtDownPayment";
+            this.txtDownPayment.PasswordChar = false;
+            this.txtDownPayment.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtDownPayment.PlaceholderText = "";
+            this.txtDownPayment.Size = new System.Drawing.Size(296, 35);
+            this.txtDownPayment.TabIndex = 20;
+            this.txtDownPayment.Text = "0";
+            this.txtDownPayment.Texts = "";
+            this.txtDownPayment.UnderlinedStyle = false;
+            // 
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.Color.White;
@@ -649,12 +815,11 @@
             this.txtPrice.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtPrice.BorderRadius = 3;
             this.txtPrice.BorderSize = 1;
-            this.txtPrice.Enabled = false;
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtPrice.Icon = null;
             this.txtPrice.IconSize = new System.Drawing.Size(20, 20);
-            this.txtPrice.Location = new System.Drawing.Point(391, 387);
+            this.txtPrice.Location = new System.Drawing.Point(57, 350);
             this.txtPrice.Multiline = false;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = false;
@@ -679,7 +844,7 @@
             this.txtReservationId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtReservationId.Icon = null;
             this.txtReservationId.IconSize = new System.Drawing.Size(20, 20);
-            this.txtReservationId.Location = new System.Drawing.Point(57, 119);
+            this.txtReservationId.Location = new System.Drawing.Point(57, 122);
             this.txtReservationId.Multiline = false;
             this.txtReservationId.Name = "txtReservationId";
             this.txtReservationId.PasswordChar = false;
@@ -690,56 +855,6 @@
             this.txtReservationId.Text = "0";
             this.txtReservationId.Texts = "";
             this.txtReservationId.UnderlinedStyle = false;
-            // 
-            // btnReservationCancel
-            // 
-            this.btnReservationCancel.ButtonText = "Cancel";
-            this.btnReservationCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnReservationCancel.CheckedForeColor = System.Drawing.Color.White;
-            this.btnReservationCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnReservationCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReservationCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReservationCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationCancel.HoverBackground = System.Drawing.Color.White;
-            this.btnReservationCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.HoverImage = null;
-            this.btnReservationCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.HoverOutline = System.Drawing.Color.Empty;
-            this.btnReservationCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnReservationCancel.Image")));
-            this.btnReservationCancel.ImageAutoCenter = true;
-            this.btnReservationCancel.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnReservationCancel.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnReservationCancel.ImageTint = System.Drawing.Color.White;
-            this.btnReservationCancel.IsToggleButton = false;
-            this.btnReservationCancel.IsToggled = false;
-            this.btnReservationCancel.Location = new System.Drawing.Point(38, 25);
-            this.btnReservationCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnReservationCancel.Name = "btnReservationCancel";
-            this.btnReservationCancel.NormalBackground = System.Drawing.Color.Transparent;
-            this.btnReservationCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.NormalOutline = System.Drawing.Color.Empty;
-            this.btnReservationCancel.OutlineThickness = 2F;
-            this.btnReservationCancel.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnReservationCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.PressedOutline = System.Drawing.Color.Empty;
-            this.btnReservationCancel.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnReservationCancel.Size = new System.Drawing.Size(115, 35);
-            this.btnReservationCancel.TabIndex = 12;
-            this.btnReservationCancel.TextAutoCenter = true;
-            this.btnReservationCancel.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(741, -11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(912, 630);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
             // 
             // contextMenuStrip1
             // 
@@ -855,6 +970,58 @@
             this.sataButton1.TextAutoCenter = false;
             this.sataButton1.TextOffset = new System.Drawing.Point(0, 0);
             // 
+            // btnReservationCancel
+            // 
+            this.btnReservationCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReservationCancel.ButtonText = "Cancel";
+            this.btnReservationCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnReservationCancel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnReservationCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnReservationCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReservationCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnReservationCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservationCancel.HoverBackground = System.Drawing.Color.Gainsboro;
+            this.btnReservationCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.HoverImage = null;
+            this.btnReservationCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.HoverOutline = System.Drawing.Color.Empty;
+            this.btnReservationCancel.Image = null;
+            this.btnReservationCancel.ImageAutoCenter = true;
+            this.btnReservationCancel.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnReservationCancel.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnReservationCancel.ImageTint = System.Drawing.Color.White;
+            this.btnReservationCancel.IsToggleButton = false;
+            this.btnReservationCancel.IsToggled = false;
+            this.btnReservationCancel.Location = new System.Drawing.Point(758, 514);
+            this.btnReservationCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnReservationCancel.Name = "btnReservationCancel";
+            this.btnReservationCancel.NormalBackground = System.Drawing.Color.Transparent;
+            this.btnReservationCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.NormalOutline = System.Drawing.Color.Empty;
+            this.btnReservationCancel.OutlineThickness = 2F;
+            this.btnReservationCancel.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnReservationCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.PressedOutline = System.Drawing.Color.Empty;
+            this.btnReservationCancel.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnReservationCancel.Size = new System.Drawing.Size(163, 35);
+            this.btnReservationCancel.TabIndex = 92;
+            this.btnReservationCancel.TextAutoCenter = true;
+            this.btnReservationCancel.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(52, 31);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(195, 30);
+            this.label15.TabIndex = 93;
+            this.label15.Text = "Reservation Details";
+            // 
             // UCReservation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -877,7 +1044,6 @@
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -903,16 +1069,11 @@
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TabPage tabPage2;
-        private FrameworkTest.SATAButton btnReservationCancel;
         private SATATextBox txtRoomGuests;
         private SATATextBox txtPrice;
         private SATATextBox txtReservationId;
         private System.Windows.Forms.Label label36;
         private FrameworkTest.SATAButton btnReservationSave;
-        private MetroFramework.Controls.MetroComboBox cbNumber;
-        private MetroFramework.Controls.MetroComboBox cbStatus;
-        private MetroFramework.Controls.MetroComboBox cbCusNames;
-        private MetroFramework.Controls.MetroComboBox cbType;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
@@ -921,10 +1082,25 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private FrameworkTest.SATAButton sataButton1;
         private CuoreUI.Controls.cuiCalendarDatePicker dtCheckOut;
         private CuoreUI.Controls.cuiCalendarDatePicker dtCheckIn;
+        private MetroFramework.Controls.MetroComboBox cbNumber;
+        private MetroFramework.Controls.MetroComboBox cbStatus;
+        private MetroFramework.Controls.MetroComboBox cbCusNames;
+        private MetroFramework.Controls.MetroComboBox cbType;
+        private MetroFramework.Controls.MetroComboBox cbPaymentType;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label4;
+        private SATATextBox txtAmountPaid;
+        private SATATextBox txtDownPayment;
+        private System.Windows.Forms.Label label13;
+        private SATATextBox txtBalanceDue;
+        private MetroFramework.Controls.MetroComboBox cbPaymentStatus;
+        private System.Windows.Forms.Label label14;
+        private FrameworkTest.SATAButton btnReservationCancel;
+        private System.Windows.Forms.Label label15;
     }
 }

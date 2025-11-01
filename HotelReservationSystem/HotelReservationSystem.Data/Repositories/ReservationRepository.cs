@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Model;
+using static HotelReservationSystem.Domain.Enums.ReservationEnum;
 
 namespace HotelReservationSystem.Data.Repositories
 {
@@ -18,8 +19,13 @@ namespace HotelReservationSystem.Data.Repositories
             using (var insertCommand = connection.CreateCommand())
             {
                 connection.Open();
-                insertCommand.CommandText = @" INSERT INTO Reservations (CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber) 
-                                               VALUES (@CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber)";
+                insertCommand.CommandText = @"
+                    INSERT INTO Reservations 
+                    (CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber,
+                     DownPayment, AmountPaid, IsDownPaymentPaid, PaymentMethod, PaymentStatus, DownPaymentDate, CreatedAt)
+                    VALUES 
+                    (@CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber,
+                     @DownPayment, @AmountPaid, @IsDownPaymentPaid, @PaymentMethod, @PaymentStatus, @DownPaymentDate, GETDATE())";
 
                 insertCommand.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = reservation.CustomerName;
                 insertCommand.Parameters.Add("@CheckInDate", SqlDbType.DateTime).Value = reservation.CheckInDate;
@@ -27,6 +33,14 @@ namespace HotelReservationSystem.Data.Repositories
                 insertCommand.Parameters.Add("@TotalAmount", SqlDbType.Decimal).Value = reservation.TotalPrice;
                 insertCommand.Parameters.Add("@ReservationStatus", SqlDbType.VarChar).Value = reservation.ReservationStatus;
                 insertCommand.Parameters.Add("@RoomNumber", SqlDbType.VarChar).Value = (object)reservation.RoomNumber ?? DBNull.Value;
+
+                // Payment fields
+                insertCommand.Parameters.Add("@DownPayment", SqlDbType.Decimal).Value = reservation.DownPayment;
+                insertCommand.Parameters.Add("@AmountPaid", SqlDbType.Decimal).Value = reservation.AmountPaid;
+                insertCommand.Parameters.Add("@IsDownPaymentPaid", SqlDbType.Bit).Value = reservation.IsDownPaymentPaid;
+                insertCommand.Parameters.Add("@PaymentMethod", SqlDbType.VarChar).Value = (object)reservation.PaymentMethod ?? DBNull.Value;
+                insertCommand.Parameters.Add("@PaymentStatus", SqlDbType.VarChar).Value = reservation.PaymentStatus.ToString();
+                insertCommand.Parameters.Add("@DownPaymentDate", SqlDbType.DateTime).Value = (object)reservation.DownPaymentDate ?? DBNull.Value;
 
                 insertCommand.ExecuteNonQuery();
             }
@@ -39,9 +53,7 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                command.Connection = connection;
                 command.CommandText = "DELETE FROM Reservations WHERE ReservationId = @id";
-
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.ExecuteNonQuery();
             }
@@ -54,22 +66,34 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                command.Connection = connection;
-                command.CommandText = @"UPDATE Reservations
-                                            SET CustomerName = @CustomerName,
-                                                CheckInDate = @inDate,
-                                                CheckOutDate = @outDate,
-                                                TotalAmount = @amount,
-                                                ReservationStatus = @status,
-                                                RoomNumber = @RoomNumber
-                                            WHERE Reservationid = @reserveId";
+                command.CommandText = @"
+                    UPDATE Reservations
+                    SET CustomerName = @CustomerName,
+                        CheckInDate = @inDate,
+                        CheckOutDate = @outDate,
+                        TotalAmount = @amount,
+                        ReservationStatus = @status,
+                        RoomNumber = @RoomNumber,
+                        DownPayment = @DownPayment,
+                        AmountPaid = @AmountPaid,
+                        IsDownPaymentPaid = @IsDownPaymentPaid,
+                        PaymentMethod = @PaymentMethod,
+                        PaymentStatus = @PaymentStatus,
+                        DownPaymentDate = @DownPaymentDate
+                    WHERE ReservationId = @reserveId";
 
                 command.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = reservation.CustomerName;
                 command.Parameters.Add("@inDate", SqlDbType.DateTime).Value = reservation.CheckInDate;
                 command.Parameters.Add("@outDate", SqlDbType.DateTime).Value = reservation.CheckOutDate;
                 command.Parameters.Add("@amount", SqlDbType.Decimal).Value = reservation.TotalPrice;
-                command.Parameters.Add("@status", SqlDbType.NVarChar, 50).Value = reservation.ReservationStatus;
+                command.Parameters.Add("@status", SqlDbType.VarChar).Value = reservation.ReservationStatus;
                 command.Parameters.Add("@RoomNumber", SqlDbType.VarChar).Value = (object)reservation.RoomNumber ?? DBNull.Value;
+                command.Parameters.Add("@DownPayment", SqlDbType.Decimal).Value = reservation.DownPayment;
+                command.Parameters.Add("@AmountPaid", SqlDbType.Decimal).Value = reservation.AmountPaid;
+                command.Parameters.Add("@IsDownPaymentPaid", SqlDbType.Bit).Value = reservation.IsDownPaymentPaid;
+                command.Parameters.Add("@PaymentMethod", SqlDbType.VarChar).Value = (object)reservation.PaymentMethod ?? DBNull.Value;
+                command.Parameters.Add("@PaymentStatus", SqlDbType.VarChar).Value = reservation.PaymentStatus.ToString();
+                command.Parameters.Add("@DownPaymentDate", SqlDbType.DateTime).Value = (object)reservation.DownPaymentDate ?? DBNull.Value;
                 command.Parameters.Add("@reserveId", SqlDbType.Int).Value = reservation.ReservationId;
 
                 command.ExecuteNonQuery();
@@ -80,31 +104,39 @@ namespace HotelReservationSystem.Data.Repositories
         public IEnumerable<ReservationModel> GetAll()
         {
             var reservationList = new List<ReservationModel>();
+
             using (var connection = new SqlConnection(connectionString))
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                command.Connection = connection;
-                command.CommandText = "SELECT * FROM Reservations order by ReservationId desc";
+                command.CommandText = "SELECT * FROM Reservations ORDER BY ReservationId DESC";
 
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var reservation = new ReservationModel();
-                        reservation.ReservationId = (int)(reader["ReservationId"]);
-                        reservation.CustomerName = reader["CustomerName"].ToString();
-                        reservation.CheckInDate = (DateTime)(reader["CheckInDate"]);
-                        reservation.CheckOutDate = (DateTime)(reader["CheckOutDate"]);
-                        reservation.TotalPrice = Convert.ToDecimal(reader["TotalAmount"]);
-                        reservation.ReservationStatus = reader["ReservationStatus"].ToString();
-                        reservation.CreatedAt = Convert.ToDateTime(reader["CreatedAt"]);
-                        reservation.RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString();
+                        var reservation = new ReservationModel
+                        {
+                            ReservationId = Convert.ToInt32(reader["ReservationId"]),
+                            CustomerName = reader["CustomerName"].ToString(),
+                            CheckInDate = Convert.ToDateTime(reader["CheckInDate"]),
+                            CheckOutDate = Convert.ToDateTime(reader["CheckOutDate"]),
+                            TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
+                            ReservationStatus = reader["ReservationStatus"].ToString(),
+                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
+                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString(),
+                            DownPayment = reader["DownPayment"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["DownPayment"]),
+                            AmountPaid = reader["AmountPaid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AmountPaid"]),
+                            IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
+                            PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
+                            PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending
+                        };
 
                         reservationList.Add(reservation);
                     }
                 }
             }
+
             return reservationList;
         }
 
@@ -119,9 +151,10 @@ namespace HotelReservationSystem.Data.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT * FROM Reservations 
-                                    WHERE ReservationId = @id OR CustomerName LIKE @cid 
-                                    ORDER BY ReservationId DESC";
+                command.CommandText = @"
+                    SELECT * FROM Reservations 
+                    WHERE ReservationId = @id OR CustomerName LIKE @cid 
+                    ORDER BY ReservationId DESC";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = reservationId;
                 command.Parameters.Add("@cid", SqlDbType.VarChar).Value = $"%{value}%";
@@ -130,7 +163,7 @@ namespace HotelReservationSystem.Data.Repositories
                 {
                     while (reader.Read())
                     {
-                        reservationList.Add(new ReservationModel
+                        var reservation = new ReservationModel
                         {
                             ReservationId = Convert.ToInt32(reader["ReservationId"]),
                             CustomerName = reader["CustomerName"].ToString(),
@@ -139,8 +172,15 @@ namespace HotelReservationSystem.Data.Repositories
                             TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
                             ReservationStatus = reader["ReservationStatus"].ToString(),
                             CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
-                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString()
-                        });
+                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString(),
+                            DownPayment = reader["DownPayment"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["DownPayment"]),
+                            AmountPaid = reader["AmountPaid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AmountPaid"]),
+                            IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
+                            PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
+                            PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending
+                        };
+
+                        reservationList.Add(reservation);
                     }
                 }
             }
@@ -159,6 +199,7 @@ namespace HotelReservationSystem.Data.Repositories
             }
         }
 
+        //<-----------------------Get Reservation By Id--------------------------/>
         public ReservationModel GetById(int reservationId)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -181,11 +222,17 @@ namespace HotelReservationSystem.Data.Repositories
                             TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
                             ReservationStatus = reader["ReservationStatus"].ToString(),
                             CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
-                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString()
+                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString(),
+                            DownPayment = reader["DownPayment"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["DownPayment"]),
+                            AmountPaid = reader["AmountPaid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AmountPaid"]),
+                            IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
+                            PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
+                            PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending
                         };
                     }
                 }
             }
+
             return null;
         }
     }

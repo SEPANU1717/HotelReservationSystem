@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using HotelReservationSystem.Domain.Interface;
 using HotelReservationSystem.Presenter.Common;
+using static HotelReservationSystem.Domain.Enums.UserEnums;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -12,8 +13,8 @@ namespace HotelReservationSystem.UserControls
             InitializeComponent();
             materialTabControl1.TabPages.Remove(tabPage2);
             AssociateAndRaiseEvents();
-            cbGender.Items.AddRange(new object[] { "Male", "Female", "Other" });
-            cbRole.Items.AddRange(new object[] { "Admin", "Staff" });
+            cbGender.DataSource = Enum.GetValues(typeof(Gender));
+            cbRole.DataSource = Enum.GetValues(typeof(Role));
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
 
@@ -68,7 +69,7 @@ namespace HotelReservationSystem.UserControls
         public string Email { get => txtEmail.Texts; set => txtEmail.Texts = value; }
         public string Gender { get => cbGender.Text; set => cbGender.Text = value; }
         public string Role { get => cbRole.Text; set => cbRole.Text = value; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get => true; set { } }
         public string SearchValue { get => txtSearch.Texts; set => txtSearch.Texts = value; }
         public bool isEdit { get; set; }
         public bool isSuccessful { get; set; }

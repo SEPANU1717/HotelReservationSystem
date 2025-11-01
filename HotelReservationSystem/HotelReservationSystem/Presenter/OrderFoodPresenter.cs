@@ -16,6 +16,7 @@ namespace HotelReservationSystem.Presenter
         private IOrderFoodRepository repository;
         private BindingSource OrderFoodBindingSource;
         private IEnumerable<SharedAddServiceModel> orderList;
+        private static OrderFoodPresenter _lastPresenterInstance;
 
         public OrderFoodPresenter(IOrderFoodView orderView, IOrderFoodRepository repository)
         {
@@ -23,13 +24,29 @@ namespace HotelReservationSystem.Presenter
             this.orderView = orderView;
             this.repository = repository;
 
+            if (_lastPresenterInstance != null) { _lastPresenterInstance.UnsubscribeFromViewEvents(); }
+            
+            SubscribeToViewEvents();
+            _lastPresenterInstance = this;
+
+            this.orderView.SetOrderListBindingSource(OrderFoodBindingSource);
+            LoadAllOrderFoodList();
+        }
+
+        private void SubscribeToViewEvents()
+        {
             this.orderView.OrderAddEvent += AddOrderFood;
             this.orderView.OrderCompleteEvent += CompleteOrderFood;
             this.orderView.OrderCancelEvent += CancelOrderFood;
             this.orderView.OrderClearEvent += ClearOrderFood;
+        }
 
-            this.orderView.SetOrderListBindingSource(OrderFoodBindingSource);
-            LoadAllOrderFoodList();
+        private void UnsubscribeFromViewEvents()
+        {
+            this.orderView.OrderAddEvent -= AddOrderFood;
+            this.orderView.OrderCompleteEvent -= CompleteOrderFood;
+            this.orderView.OrderCancelEvent -= CancelOrderFood;
+            this.orderView.OrderClearEvent -= ClearOrderFood;
         }
 
         private void LoadAllOrderFoodList()
@@ -116,6 +133,7 @@ namespace HotelReservationSystem.Presenter
                     Quantity = quantity,
                     Price = price
                 };
+
 
                 repository.Add(foodOrder);
                 repository.DeductStock(itemName, quantity);

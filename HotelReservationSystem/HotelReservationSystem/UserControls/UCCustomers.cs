@@ -10,8 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer.DbInitializer;
+using HotelReservationSystem.Domain.Enums;
 using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Presenter.Common;
+using static HotelReservationSystem.Domain.Enums.CustomerEnum;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -24,31 +26,16 @@ namespace HotelReservationSystem.UserControls
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
-            InitializeComboBox();
+            cbType.Items = Enum.GetNames(typeof(IdentificationType));
+            comboItems = cbType.Items.Cast<string>().ToList();
+            cbGender.Items = Enum.GetNames(typeof(Gender));
             materialTabControl1.TabPages.Remove(tabPage2);
             customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
         
         private List<string> comboItems;
-        private void InitializeComboBox()
-        {
-            comboItems = new List<string>()
-           {
-               "Passport",
-               "Driver's License",
-               "National ID"
-           };
 
-            comboItems = new List<string>()
-            {
-                "Male",
-                "Female",
-                "Not prefer to say"
-            };
-            cbGender.Items = comboItems.ToArray();
-            cbType.Items = comboItems.ToArray();
-        }
 
         private void AssociateAndRaiseViewEvents()
         {
@@ -100,6 +87,8 @@ namespace HotelReservationSystem.UserControls
                 {
                     materialTabControl1.TabPages.Remove(tabPage2);
                     materialTabControl1.TabPages.Add(tabPage1);
+                    CustomerAddedSuccessfully?.Invoke(this, EventArgs.Empty);
+                    OnCustomerChanged();
                 }
                 MessageBox.Show(Message);
             };
@@ -120,6 +109,7 @@ namespace HotelReservationSystem.UserControls
                 {
                     DeleteEvent?.Invoke(this, EventArgs.Empty);
                     MessageBox.Show(Message);
+                    OnCustomerChanged();
                 }
             };
         }
@@ -151,6 +141,13 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler CustomerAddedSuccessfully;
+        public event EventHandler CustomerChanged;
+
+        protected void OnCustomerChanged()
+        {
+            CustomerChanged?.Invoke(this, EventArgs.Empty);
+        }
 
         // Methods  
 

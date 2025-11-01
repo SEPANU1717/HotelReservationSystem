@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
+using static HotelReservationSystem.Domain.Enums.ReservationEnum;
 
 namespace HotelReservationSystem.Domain.Interface.Reservation
 {
     public interface IReservationView
     {
-        // Reservation details
         string ReservationId { get; set; }
         string CustomerName { get; set; }
         string RoomNumber { get; set; }
@@ -14,6 +14,11 @@ namespace HotelReservationSystem.Domain.Interface.Reservation
         DateTime CheckInDate { get; set; }
         DateTime CheckOutDate { get; set; }
         string TotalPrice { get; set; }
+        string DownPayment { get; set; }
+        string BalanceDue { get; set; }
+        string AmountPaid { get; set; }
+        string PaymentMethod { get; set; }
+        PaymentState PaymentStatus { get; set; }
         string ReservationStatus { get; set; }
 
         // Search or filter
