@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Domain.DTOs;
 using HotelReservationSystem.Domain.Interface.Customer;
+using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
 using HotelReservationSystem.Presenter.Mapper;
@@ -16,6 +17,7 @@ namespace HotelReservationSystem.Presenter
         private ICustomerRepository repository;
         private BindingSource CustomerBindingSource;
         private IEnumerable<CustomerModel> customerList;
+        private static CustomerPresenter _lastPresenterInstance;
 
         public CustomerPresenter(ICustomerView customerView, ICustomerRepository repository)
         {
@@ -23,19 +25,36 @@ namespace HotelReservationSystem.Presenter
             this.customerView = customerView ?? throw new ArgumentNullException(nameof(customerView)); ;
             this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
 
-            // Subscribe
-            this.customerView.SearchEvent += SearchCustomer;
-            this.customerView.AddNewEvent += AddNewCustomer;
-            this.customerView.EditEvent += EditCustomer;
-            this.customerView.DeleteEvent += DeleteCustomer;
-            this.customerView.SaveEvent += SaveCustomer;
-            this.customerView.CancelEvent += CancelAction;
+            if (_lastPresenterInstance != null)
+                _lastPresenterInstance.UnsubscribeFromViewEvents();
+
+            SubscribeToViewEvents();
+            _lastPresenterInstance = this;
 
             this.customerView.SetCustomerListBindingSource(CustomerBindingSource);
             LoadAllCustomerList();
             this.customerView.Show();
         }
 
+        private void SubscribeToViewEvents()
+        {
+            this.customerView.SearchEvent += SearchCustomer;
+            this.customerView.AddNewEvent += AddNewCustomer;
+            this.customerView.EditEvent += EditCustomer;
+            this.customerView.DeleteEvent += DeleteCustomer;
+            this.customerView.SaveEvent += SaveCustomer;
+            this.customerView.CancelEvent += CancelAction;
+        }
+
+        private void UnsubscribeFromViewEvents()
+        {
+            this.customerView.SearchEvent -= SearchCustomer;
+            this.customerView.AddNewEvent -= AddNewCustomer;
+            this.customerView.EditEvent -= EditCustomer;
+            this.customerView.DeleteEvent -= DeleteCustomer;
+            this.customerView.SaveEvent -= SaveCustomer;
+            this.customerView.CancelEvent -= CancelAction;
+        }
         private void LoadAllCustomerList()
         {
             customerList = repository.GetAll() ?? Enumerable.Empty<CustomerModel>();

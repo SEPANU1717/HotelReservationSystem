@@ -66,9 +66,6 @@
     <Compile Include="Interface\Service\Food\IFoodStockVIew.cs" />
     <Compile Include="Interface\Service\Food\IOrderFoodRepository.cs" />
     <Compile Include="Interface\Service\Food\IOrderFoodView.cs" />
-    <Compile Include="Interface\Service\Laundry\IConfirmLaundryView.cs" />
-    <Compile Include="Interface\Service\Laundry\ILaundryServiceRepository.cs" />
-    <Compile Include="Interface\Service\Laundry\ILaundryView.cs" />
     <Compile Include="Interface\UserManagement\ILoginView.cs" />
     <Compile Include="Interface\UserManagement\IUserRepository.cs" />
     <Compile Include="Interface\UserManagement\IUserView.cs" />

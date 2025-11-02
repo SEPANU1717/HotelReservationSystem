@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer.DbInitializer;
+using HotelReservationSystem.Domain.DTOs;
 using HotelReservationSystem.Domain.Enums;
 using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Presenter.Common;
@@ -21,7 +22,21 @@ namespace HotelReservationSystem.UserControls
     {
 
         CustomerRepository customerRepo;
+        public event EventHandler<CustomerSelectedEventArgs> CustomerSelected;
+
+        public class CustomerSelectedEventArgs : EventArgs
+        {
+            public int CustomerID { get; }
+            public string FullName { get; }
+
+            public CustomerSelectedEventArgs(int customerID, string fullName)
+            {
+                CustomerID = customerID;
+                FullName = fullName;
+            }
+        }
         // Constructor  
+
         public UCCustomers()
         {
             InitializeComponent();
@@ -34,6 +49,7 @@ namespace HotelReservationSystem.UserControls
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
         
+
         private List<string> comboItems;
 
 
@@ -112,6 +128,27 @@ namespace HotelReservationSystem.UserControls
                     OnCustomerChanged();
                 }
             };
+
+            btnCusReservation.Click += (s, e) =>
+            {
+                if (dataGridView1.CurrentRow != null)
+                {
+                    var row = dataGridView1.CurrentRow;
+                    int customerId = Convert.ToInt32(row.Cells["CustomerID"].Value);
+                    string fullName = row.Cells["FullName"].Value.ToString();
+
+                    // Raise the event
+                    CustomerSelected?.Invoke(this, new CustomerSelectedEventArgs(customerId, fullName));
+                }
+                else
+                {
+                    MessageBox.Show("Please select a customer first.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            };
+
+
+
+
         }
 
         // Properties  

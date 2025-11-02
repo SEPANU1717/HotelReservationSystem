@@ -5,18 +5,17 @@ using HotelReservationSystem.Data.Repositories.Service;
 using HotelReservationSystem.DataInitializer;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface.Service.Food;
-using HotelReservationSystem.Domain.Interface.Service.Laundry;
+using HotelReservationSystem.Domain.Model.Service.Shared;
 using HotelReservationSystem.Presenter.Common;
 
 namespace HotelReservationSystem.UserControls
 {
-    public partial class UCService : UserControl, IFoodStockVIew, ILaundryView, IOrderFoodView
+    public partial class UCService : UserControl, IFoodStockVIew, IOrderFoodView
     {
 
 
         #region Fields
         private FoodStockRepository foodRepo;
-        private LaundryRepository laundryRepo;
         private FoodOrderRepository foodOrder;
 
         #endregion
@@ -26,14 +25,10 @@ namespace HotelReservationSystem.UserControls
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             materialTabControl1.TabPages.Remove(Food);
-            materialTabControl1.TabPages.Remove(Laundry);
             materialTabControl1.TabPages.Remove(OrderFood);
             materialTabControl1.TabPages.Remove(tabPage1);
             materialTabControl1.TabPages.Remove(ConfirmOrder);
-            materialTabControl1.TabPages.Remove(ConfirmLaundry);
-            materialTabControl1.TabPages.Remove(tabPage2);
             foodRepo = new FoodStockRepository(DbConfig.GetConnectionString());
-            laundryRepo = new LaundryRepository(DbConfig.GetConnectionString());
             foodOrder = new FoodOrderRepository(DbConfig.GetConnectionString());
             UpdateTotalOrderPriceLabel();
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
@@ -56,7 +51,7 @@ namespace HotelReservationSystem.UserControls
 
             btnAddFood.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == Food || materialTabControl1.SelectedTab == Laundry)
+                if (materialTabControl1.SelectedTab == Food)
                 {
                     MessageBox.Show("You are already in the Add Food menu.", "Warning", MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
@@ -67,19 +62,17 @@ namespace HotelReservationSystem.UserControls
                 txtFoodId.Texts = foodRepo.GetNextFoodId().ToString();
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Add(Food);
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
-                materialTabControl1.TabPages.Remove(ConfirmLaundry);
                 materialTabControl1.SelectedTab = Food;
                 materialTabControl1.Text = "Add new food";
             };
 
             btnFoodEdit.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == Food || materialTabControl1.SelectedTab == Laundry)
+                if (materialTabControl1.SelectedTab == Food)
                 {
                     MessageBox.Show("You are already in the Edit Food menu.", "Warning", MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
@@ -88,12 +81,10 @@ namespace HotelReservationSystem.UserControls
 
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Add(Food);
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
-                materialTabControl1.TabPages.Remove(ConfirmLaundry);
                 materialTabControl1.Text = "Edit food";
             };
 
@@ -105,12 +96,10 @@ namespace HotelReservationSystem.UserControls
                     ClearFoodFields();
                     isEdit = false;
                     materialTabControl1.TabPages.Remove(Food);
-                    materialTabControl1.TabPages.Remove(Laundry);
                     materialTabControl1.TabPages.Add(tabPage1);
                     materialTabControl1.TabPages.Remove(OrderFood);
                     materialTabControl1.TabPages.Remove(ConfirmOrder);
                     materialTabControl1.TabPages.Remove(OrderList);
-                    materialTabControl1.TabPages.Remove(ConfirmLaundry);
                 }
 
                 MessageBox.Show(Message);
@@ -120,17 +109,15 @@ namespace HotelReservationSystem.UserControls
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
                 materialTabControl1.TabPages.Remove(Food);
-                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Add(tabPage1);
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
-                materialTabControl1.TabPages.Remove(ConfirmLaundry);
             };
 
             btnFoodDelete.Click += delegate
             {
-                if (materialTabControl1.SelectedTab == Food || materialTabControl1.SelectedTab == Laundry)
+                if (materialTabControl1.SelectedTab == Food)
                 {
                     MessageBox.Show("Return service table to delete", "Warning", MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
@@ -146,45 +133,8 @@ namespace HotelReservationSystem.UserControls
                     MessageBox.Show(Message);
                 }
             };
-            btnLaundry.Click += delegate
-            {
-                //txtLId.Texts = laundryRepo.GetNextReservationId().ToString();
-                if (materialTabControl1.SelectedTab == Laundry || materialTabControl1.SelectedTab == Food)
-                {
-                    MessageBox.Show("You are already in the Laundry menu.", "Warning", MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    return;
-                }
-
-                materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Remove(Food);
-                materialTabControl1.TabPages.Add(Laundry);
-                materialTabControl1.TabPages.Remove(OrderFood);
-                materialTabControl1.TabPages.Remove(ConfirmOrder);
-                materialTabControl1.TabPages.Remove(OrderList);
-                materialTabControl1.TabPages.Remove(ConfirmLaundry);
-            };
-
-            btnBillingCancel.Click += delegate
-            {
-                CancelEvent?.Invoke(this, EventArgs.Empty);
-                materialTabControl1.TabPages.Add(tabPage1);
-                materialTabControl1.TabPages.Remove(Food);
-                materialTabControl1.TabPages.Remove(Laundry);
-                materialTabControl1.TabPages.Remove(OrderFood);
-                materialTabControl1.TabPages.Remove(ConfirmOrder);
-                materialTabControl1.TabPages.Remove(OrderList);
-                materialTabControl1.TabPages.Remove(ConfirmLaundry);
-            };
-            btnLAdd.Click += delegate { AddEvent?.Invoke(this, EventArgs.Empty); };
 
 
-            btnLComplete.Click += delegate { CompleteEvent?.Invoke(this, EventArgs.Empty); };
-
-            btnLClear.Click += delegate
-            {
-                ClearEvent?.Invoke(this, EventArgs.Empty);
-            };
             btnFoodStock.Click += delegate
             {
                 if (materialTabControl1.SelectedTab == tabPage1)
@@ -196,11 +146,11 @@ namespace HotelReservationSystem.UserControls
 
                 materialTabControl1.TabPages.Add(tabPage1);
                 materialTabControl1.TabPages.Remove(Food);
-                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Remove(OrderFood);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
-                materialTabControl1.TabPages.Remove(ConfirmLaundry);
+
+
 
             };
 
@@ -208,52 +158,23 @@ namespace HotelReservationSystem.UserControls
             {
                 materialTabControl1.TabPages.Add(OrderFood);
                 materialTabControl1.TabPages.Remove(Food);
-                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(OrderList);
-                materialTabControl1.TabPages.Remove(ConfirmLaundry);
 
             };
 
-            btnBasketOrder.Click += delegate
-            {
-                materialTabControl1.TabPages.Add(ConfirmOrder);
-                materialTabControl1.TabPages.Remove(Food);
-                materialTabControl1.TabPages.Remove(Laundry);
-                materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Remove(OrderList);
-                materialTabControl1.TabPages.Remove(OrderFood);
-                materialTabControl1.TabPages.Remove(ConfirmLaundry);
-            };
 
             btnOrderList.Click += delegate
             {
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(Food);
-                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(OrderList);
                 materialTabControl1.TabPages.Remove(OrderFood);
-                materialTabControl1.TabPages.Remove(ConfirmLaundry);
             };
 
-            btnConfirmLaundry.Click += delegate
-            {
-                materialTabControl1.TabPages.Remove(ConfirmOrder);
-                materialTabControl1.TabPages.Remove(Food);
-                materialTabControl1.TabPages.Remove(Laundry);
-                materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Remove(OrderList);
-                materialTabControl1.TabPages.Remove(OrderFood);
-                materialTabControl1.TabPages.Add(ConfirmLaundry);
-            };
 
-            btnBasketOrder.Click += delegate
-            {
-                OrderAddEvent?.Invoke(this, EventArgs.Empty);
-                txtAddOrderStock.Texts = "";
-            };
             clearAllFood.Click += delegate
             {
                 OrderClearEvent?.Invoke(this, EventArgs.Empty);
@@ -266,7 +187,6 @@ namespace HotelReservationSystem.UserControls
                 UpdateTotalOrderPriceLabel();
                 materialTabControl1.TabPages.Remove(ConfirmOrder);
                 materialTabControl1.TabPages.Remove(Food);
-                materialTabControl1.TabPages.Remove(Laundry);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Remove(OrderList);
                 materialTabControl1.TabPages.Remove(OrderFood);
@@ -281,18 +201,15 @@ namespace HotelReservationSystem.UserControls
         public string FoodName{ get => txtFoodName.Texts;set => txtFoodName.Texts = value;}
         public string Description{get => txtDescription.Texts;set => txtDescription.Texts = value;}
         public string LaundryId{get /*=> txtLId.Texts*/;set /*=> txtLId.Texts = value*/;}
-        public string LaundryName { get => txtLName.Texts; set => txtLName.Texts = value; }
-        public string Quantity{get => txtLQuantity.Texts;set => txtLQuantity.Texts = value;}
-        public string LPrice { get => txtLPrice.Texts; set => txtLPrice.Texts = value; }
         public string Price{get => txtFoodPrice.Texts;set => txtFoodPrice.Texts = value;}
         public string Stock{ get => txtStock.Texts;set => txtStock.Texts = value; }
         public string SearchValue{get => txtFoodSearch.Texts; set => txtFoodSearch.Texts = value;  }
-        public string ItemName { get => txtAddOrderItemName.Texts; set => txtAddOrderItemName.Texts = value; }
-        public string FoodQuantity { get => txtAddOrderQuantity.Texts; set => txtAddOrderQuantity.Texts = value; }
-        public string FoodPrice { get => txtAddOrderPrice.Texts; set => txtAddOrderPrice.Texts = value; }
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
+        private SharedAddServiceModel _selectedOrder = new SharedAddServiceModel();
+
+        public SharedAddServiceModel SelectedOrder => _selectedOrder;
 
 
         public event EventHandler AddEvent;
@@ -312,7 +229,6 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler OrderCancelEvent;
         #endregion
         #region DataGrid Binding
-        public void SetLaundryListBindingSource(BindingSource laundryList) => dataGridLaundry.DataSource = laundryList;
         public void SetFoodListBindingSource(BindingSource foodList) => dataGridFoodService.DataSource = foodList;
         public void SetOrderListBindingSource(BindingSource orderList) => dataGridFood.DataSource = orderList;
         #endregion
@@ -328,18 +244,15 @@ namespace HotelReservationSystem.UserControls
         #region Utility Methods
         private void ClearFoodFields()
         {
-            txtFoodId.Texts = "";
-            txtFoodName.Texts = "";
-            txtDescription.Texts = "";
-            txtFoodPrice.Texts = "";
-            txtStock.Texts = "";
+            txtFoodId.Texts = string.Empty;
+            txtFoodName.Texts = string.Empty;
+            txtDescription.Texts = string.Empty;
+            txtFoodPrice.Texts = string.Empty;
+            txtStock.Texts = string.Empty;
         }
 
-        public void GetStock()
-        {
-            int stock = foodOrder.GetStock(ItemName);
-            txtAddOrderStock.Texts = stock.ToString();
-        }
+
+
         #endregion
         #region Event Handlers
 
@@ -355,23 +268,27 @@ namespace HotelReservationSystem.UserControls
         private void btnFood10_Click(object sender, EventArgs e) => ServiceInitializer.Drink10(this);
         private void btnFood11_Click(object sender, EventArgs e) => ServiceInitializer.Drink11(this);
         private void btnFood12_Click(object sender, EventArgs e) => ServiceInitializer.Drink12(this);
-        private void sataButton1_Click(object sender, EventArgs e) => ServiceInitializer.LaundryBlouse(this);
-        private void sataButton2_Click(object sender, EventArgs e) => ServiceInitializer.FormalAttire(this);
-        private void sataButton4_Click(object sender, EventArgs e) => ServiceInitializer.Socks(this);
-        private void sataButton3_Click_1(object sender, EventArgs e) => ServiceInitializer.PantsTrouser(this);
-        private void sataButton5_Click_1(object sender, EventArgs e) => ServiceInitializer.Sensitive(this);
-        private void order1_Click(object sender, EventArgs e) {OrderFoodInitializer.OrderSaltedPasta(this); GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order2_Click(object sender, EventArgs e){OrderFoodInitializer.OrderSpicySeafoodNoodles(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order3_Click(object sender, EventArgs e){OrderFoodInitializer.OrderBeefDumpling(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order4_Click(object sender, EventArgs e){OrderFoodInitializer.OrderHealthyNoodles(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order5_Click(object sender, EventArgs e){OrderFoodInitializer.OrderHotFriedRiceWithOmelet(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order6_Click(object sender, EventArgs e){OrderFoodInitializer.OrderSpicyNoodleWithOmelet(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order7_Click(object sender, EventArgs e){OrderFoodInitializer.OrderTropicalBliss(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order8_Click(object sender, EventArgs e){OrderFoodInitializer.OrderSunsetSparkler(this); GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order9_Click(object sender, EventArgs e){OrderFoodInitializer.OrderBerryFizzDelight(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order10_Click(object sender, EventArgs e){OrderFoodInitializer.OrderCherrySplash(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order11_Click(object sender, EventArgs e){OrderFoodInitializer.OrderCitrusCooler(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
-        private void order12_Click(object sender, EventArgs e){OrderFoodInitializer.OrderMelonMedley(this);GetStock(); OrderAddEvent?.Invoke(this, EventArgs.Empty); UpdateTotalOrderPriceLabel(); }
+        private void order1_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderSaltedPasta);
+        private void order2_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderSpicySeafoodNoodles);
+        private void order3_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderBeefDumpling);
+        private void order4_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderHealthyNoodles);
+        private void order5_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderHotFriedRiceWithOmelet);
+        private void order6_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderSpicyNoodleWithOmelet);
+        private void order7_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderTropicalBliss);
+        private void order8_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderSunsetSparkler);
+        private void order9_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderBerryFizzDelight);
+        private void order10_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderCherrySplash);
+        private void order11_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderCitrusCooler);
+        private void order12_Click(object sender, EventArgs e) => PlaceOrder(OrderFoodInitializer.OrderMelonMedley);
+
+        private void PlaceOrder(Action<SharedAddServiceModel> orderInitializer)
+        {
+            orderInitializer(SelectedOrder);   
+            OrderAddEvent?.Invoke(this, EventArgs.Empty);
+            UpdateTotalOrderPriceLabel();
+        }
+
+
         #endregion
         #region TotalPriceOrder
         private decimal GetTotalOrderPriceFromDatabase()

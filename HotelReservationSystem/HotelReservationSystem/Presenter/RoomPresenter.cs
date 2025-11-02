@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using HotelReservationSystem.Domain.Interface.Customer;
+using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Interface.Rooms;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter.Common;
@@ -14,6 +15,7 @@ namespace HotelReservationSystem.Presenter
         private IRoomRepository repository;
         private BindingSource RoomBindingSource;
         private IEnumerable<RoomModel> roomList;
+        private static RoomPresenter _lastPresenterInstance;
 
         public RoomPresenter(IRoomView roomView, IRoomRepository repository)
         {
@@ -21,17 +23,35 @@ namespace HotelReservationSystem.Presenter
             this.roomView = roomView;
             this.repository = repository;
 
-            // Subscribe
+            if (_lastPresenterInstance != null)
+                _lastPresenterInstance.UnsubscribeFromViewEvents();
+
+            SubscribeToViewEvents();
+            _lastPresenterInstance = this;
+
+            this.roomView.SetRoomListBindingSource(RoomBindingSource);
+            LoadAllRoomList();
+            this.roomView.Show();
+        }
+
+        private void SubscribeToViewEvents()
+        {
             this.roomView.SearchEvent += SearchRoom;
             this.roomView.DeleteEvent += DeleteRoom;
             this.roomView.AddNewEvent += AddNewRoom;
             this.roomView.EditEvent += EditRoom;
             this.roomView.SaveEvent += SaveRoom;
             this.roomView.CancelEvent += CancelRoom;
+        }
 
-            this.roomView.SetRoomListBindingSource(RoomBindingSource);
-            LoadAllRoomList();
-            this.roomView.Show();
+        private void UnsubscribeFromViewEvents()
+        {
+            this.roomView.SearchEvent -= SearchRoom;
+            this.roomView.DeleteEvent -= DeleteRoom;
+            this.roomView.AddNewEvent -= AddNewRoom;
+            this.roomView.EditEvent -= EditRoom;
+            this.roomView.SaveEvent -= SaveRoom;
+            this.roomView.CancelEvent -= CancelRoom;
         }
 
         private void LoadAllRoomList()

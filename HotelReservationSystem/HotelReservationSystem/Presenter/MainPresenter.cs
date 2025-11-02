@@ -34,6 +34,8 @@ namespace HotelReservationSystem.Presenter
             this.mainView.ShowBillingView += ShowBillingView;
             this.mainView.ShowServiceView += ShowServiceView;
             this.mainView.ShowUserView += ShowUserView;
+            this.mainView.ShowCheckInOutView += ShowCheckInOutView;
+
         }
 
         private void ShowUserView(object sender, EventArgs e)
@@ -61,9 +63,6 @@ namespace HotelReservationSystem.Presenter
 
                 var foodRepo = new FoodStockRepository(sqlConnectionString);
                 var foodPresenter = new ServicePresenter(serviceControl, foodRepo);
-
-                var laundryRepo = new LaundryRepository(sqlConnectionString);
-                var laundryPresenter = new LaundryPresenter(serviceControl, laundryRepo);
 
                 var orderRepo = new FoodOrderRepository(sqlConnectionString);
                 var foodOrderPresenter = new OrderFoodPresenter(serviceControl, orderRepo);
@@ -139,5 +138,20 @@ namespace HotelReservationSystem.Presenter
                 throw new InvalidCastException("Unable to cast UCRooms to IRoomView.");
             }
         }
+
+        private void ShowCheckInOutView(object sender, EventArgs e)
+        {
+            try
+            {
+                var checkInOutControl = UCINOUT.GetInstance((Form)mainView);
+                mainView.LoadUserControl(checkInOutControl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading Check-In/Out view: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

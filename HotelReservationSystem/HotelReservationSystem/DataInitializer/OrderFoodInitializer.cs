@@ -1,91 +1,92 @@
-﻿using HotelReservationSystem.UserControls;
+﻿using HotelReservationSystem.Domain.Model.Service.Shared;
+using HotelReservationSystem.UserControls;
 
 namespace HotelReservationSystem.DataInitializer
 {
     public static class OrderFoodInitializer
     {
-        public static void OrderSaltedPasta(UCService orderInstance)
+        public static void OrderSaltedPasta(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Salted Pasta";
-            orderInstance.FoodPrice = "249.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 249.99m;  // decimal with 'm'
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderSpicySeafoodNoodles(UCService orderInstance)
+        public static void OrderSpicySeafoodNoodles(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Spicy Seafood Noodles";
-            orderInstance.FoodPrice = "299.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 299.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderBeefDumpling(UCService orderInstance)
+        public static void OrderBeefDumpling(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Beef Dumpling";
-            orderInstance.FoodPrice = "309.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 309.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderHealthyNoodles(UCService orderInstance)
+        public static void OrderHealthyNoodles(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Healthy Noodles";
-            orderInstance.FoodPrice = "249.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 249.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderHotFriedRiceWithOmelet(UCService orderInstance)
+        public static void OrderHotFriedRiceWithOmelet(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Hot Fried Rice with Omelet";
-            orderInstance.FoodPrice = "259.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 259.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderSpicyNoodleWithOmelet(UCService orderInstance)
+        public static void OrderSpicyNoodleWithOmelet(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Spicy Noodle w/omelet";
-            orderInstance.FoodPrice = "249.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 249.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderTropicalBliss(UCService orderInstance)
+        public static void OrderTropicalBliss(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Tropical Bliss";
-            orderInstance.FoodPrice = "129.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 129.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderSunsetSparkler(UCService orderInstance)
+        public static void OrderSunsetSparkler(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Sunset Sparkler";
-            orderInstance.FoodPrice = "129.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 129.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderBerryFizzDelight(UCService orderInstance)
+        public static void OrderBerryFizzDelight(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Berry Fizz Delight";
-            orderInstance.FoodPrice = "149.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 149.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderCherrySplash(UCService orderInstance)
+        public static void OrderCherrySplash(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Cherry Splash";
-            orderInstance.FoodPrice = "149.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 149.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderCitrusCooler(UCService orderInstance)
+        public static void OrderCitrusCooler(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Citrus Cooler";
-            orderInstance.FoodPrice = "149.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 149.99m;
+            orderInstance.Quantity = 1;
         }
 
-        public static void OrderMelonMedley(UCService orderInstance)
+        public static void OrderMelonMedley(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Melon Medley";
-            orderInstance.FoodPrice = "169.99";
-            orderInstance.FoodQuantity = "1";
+            orderInstance.Price = 169.99m;
+            orderInstance.Quantity = 1;
         }
     }
 }

@@ -235,5 +235,41 @@ namespace HotelReservationSystem.Data.Repositories
 
             return null;
         }
+
+        public ReservationModel GetByCustomerName(string customerName)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                connection.Open();
+                command.CommandText = "SELECT * FROM Reservations WHERE CustomerName = @name";
+                command.Parameters.Add("@name", SqlDbType.VarChar).Value = customerName;
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new ReservationModel
+                        {
+                            ReservationId = Convert.ToInt32(reader["ReservationId"]),
+                            CustomerName = reader["CustomerName"].ToString(),
+                            CheckInDate = Convert.ToDateTime(reader["CheckInDate"]),
+                            CheckOutDate = Convert.ToDateTime(reader["CheckOutDate"]),
+                            TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
+                            ReservationStatus = reader["ReservationStatus"].ToString(),
+                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString(),
+                            DownPayment = reader["DownPayment"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["DownPayment"]),
+                            AmountPaid = reader["AmountPaid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AmountPaid"]),
+                            IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
+                            PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
+                            PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending,
+                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"])
+                        };
+                    }
+                }
+            }
+            return null;
+        }
+
     }
 }

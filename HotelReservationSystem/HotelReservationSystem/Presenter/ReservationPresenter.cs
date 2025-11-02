@@ -10,6 +10,7 @@ using HotelReservationSystem.Presenter.Common;
 using HotelReservationSystem.Presenter.Mapper;
 
 namespace HotelReservationSystem.Presenter
+
 {
     public class ReservationPresenter
     {
@@ -17,26 +18,43 @@ namespace HotelReservationSystem.Presenter
         private readonly IReservationRepository repository;
         private readonly BindingSource ReservationBindingSource;
         private IEnumerable<ReservationModel> reservationList;
+        private static ReservationPresenter _lastPresenterInstance;
 
         public ReservationPresenter(IReservationView reservationView, IReservationRepository repository)
         {
             ReservationBindingSource = new BindingSource();
             this.reservationView = reservationView ?? throw new ArgumentNullException(nameof(reservationView));
             this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            if (_lastPresenterInstance != null)
+                _lastPresenterInstance.UnsubscribeFromViewEvents();
 
-            // Subscribe to events
-            this.reservationView.SearchEvent += SearchReservation;
-            this.reservationView.AddNewEvent += AddNewReservation;
-            this.reservationView.EditEvent += EditReservation;
-            this.reservationView.DeleteEvent += DeleteReservation;
-            this.reservationView.SaveEvent += SaveReservation;
-            this.reservationView.CancelEvent += CancelAction;
+            SubscribeToViewEvents();
+            _lastPresenterInstance = this;
 
             this.reservationView.SetReservationListBindingSource(ReservationBindingSource);
             LoadAllReservationList();
             this.reservationView.Show();
         }
 
+        private void SubscribeToViewEvents()
+        {
+            reservationView.SearchEvent += SearchReservation;
+            reservationView.AddNewEvent += AddNewReservation;
+            reservationView.EditEvent += EditReservation;
+            reservationView.DeleteEvent += DeleteReservation;
+            reservationView.SaveEvent += SaveReservation;
+            reservationView.CancelEvent += CancelAction;
+        }
+
+        private void UnsubscribeFromViewEvents()
+        {
+            reservationView.SearchEvent -= SearchReservation;
+            reservationView.AddNewEvent -= AddNewReservation;
+            reservationView.EditEvent -= EditReservation;
+            reservationView.DeleteEvent -= DeleteReservation;
+            reservationView.SaveEvent -= SaveReservation;
+            reservationView.CancelEvent -= CancelAction;
+        }
         private void LoadAllReservationList()
         {
             reservationList = repository.GetAll() ?? Enumerable.Empty<ReservationModel>();
@@ -61,7 +79,11 @@ namespace HotelReservationSystem.Presenter
             ReservationBindingSource.ResetBindings(false);
         }
 
-        private void AddNewReservation(object sender, EventArgs e) => reservationView.isEdit = false;
+        private void AddNewReservation(object sender, EventArgs e)
+        {
+            reservationView.isEdit = false;
+            LoadAllReservationList();
+        }
 
         private void EditReservation(object sender, EventArgs e)
         {
@@ -121,11 +143,15 @@ namespace HotelReservationSystem.Presenter
                 reservationView.isSuccessful = true;
                 LoadAllReservationList();
                 CleanViewFields();
+                MessageBox.Show(reservationView.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (Exception ex)
             {
                 reservationView.isSuccessful = false;
                 reservationView.Message = ex.Message;
+                MessageBox.Show(reservationView.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 

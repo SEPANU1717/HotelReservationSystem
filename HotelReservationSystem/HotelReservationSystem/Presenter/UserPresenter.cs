@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using HotelReservationSystem.Domain.DTOs;
 using HotelReservationSystem.Domain.Interface;
 using HotelReservationSystem.Domain.Interface.Customer;
+using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Infrastructure.Security;
 using HotelReservationSystem.Presenter.Common;
@@ -20,6 +21,7 @@ namespace HotelReservationSystem.Presenter
         private readonly BindingSource UserBindingSource;
         private IEnumerable<UserModel> userList;
 
+        private static UserPresenter _lastPresenterInstance;
         public UserPresenter(IUserView userView, IUserRepository repository, IPasswordHasher passwordHasher)
         {
             UserBindingSource = new BindingSource();
@@ -27,15 +29,34 @@ namespace HotelReservationSystem.Presenter
             this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
             this.passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher));
 
+            if (_lastPresenterInstance != null)
+                _lastPresenterInstance.UnsubscribeFromViewEvents();
+
+            SubscribeToViewEvents();
+            _lastPresenterInstance = this;
+
+            this.userView.SetUserListBindingSource(UserBindingSource);
+            LoadAllUserList();
+        }
+
+        private void SubscribeToViewEvents()
+        {
             this.userView.SearchEvent += SearchUser;
             this.userView.AddNewEvent += AddNewUser;
             this.userView.EditEvent += EditUser;
             this.userView.SaveEvent += SaveUser;
             this.userView.CancelEvent += CancelUser;
             this.userView.DeleteEvent += DeleteUser;
+        }
 
-            this.userView.SetUserListBindingSource(UserBindingSource);
-            LoadAllUserList();
+        private void UnsubscribeFromViewEvents()
+        {
+            this.userView.SearchEvent -= SearchUser;
+            this.userView.AddNewEvent -= AddNewUser;
+            this.userView.EditEvent -= EditUser;
+            this.userView.SaveEvent -= SaveUser;
+            this.userView.CancelEvent -= CancelUser;
+            this.userView.DeleteEvent -= DeleteUser;
         }
 
         private void LoadAllUserList()

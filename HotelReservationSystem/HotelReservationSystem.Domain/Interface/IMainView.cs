@@ -11,6 +11,7 @@ namespace HotelReservationSystem.Domain.Interface
         event EventHandler ShowBillingView;
         event EventHandler ShowServiceView;
         event EventHandler ShowUserView;
+        event EventHandler ShowCheckInOutView;
 
         void LoadUserControl(UserControl control);
     }

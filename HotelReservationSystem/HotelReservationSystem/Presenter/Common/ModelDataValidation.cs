@@ -1,28 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
-namespace HotelReservationSystem.Presenter.Common
+public class ModelDataValidation
 {
-    public class ModelDataValidation
+    public void Validate(object model)
     {
-        public void Validate(Object model) 
+        var results = new List<ValidationResult>();
+        var context = new ValidationContext(model);
+        bool isValid = Validator.TryValidateObject(model, context, results, true);
+
+        if (!isValid)
         {
-            string errorMessage = string.Empty;
-            List<ValidationResult> results = new List<ValidationResult>();
-            ValidationContext context = new ValidationContext(model);
-            bool isValid = Validator.TryValidateObject(model, context, results, true);
-            if (isValid == false)
-            {
-                foreach (var item in results)
-                {
-                    errorMessage += "- " + item.ErrorMessage + "\n";
-                    throw new Exception(errorMessage);
-                }
-            }
+            string errorMessage = string.Join("\n- ", results.Select(r => r.ErrorMessage));
+            errorMessage = "- " + errorMessage; 
+            throw new Exception(errorMessage);
         }
     }
 }

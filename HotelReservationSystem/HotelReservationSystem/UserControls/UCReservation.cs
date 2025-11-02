@@ -7,6 +7,7 @@ using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Helper;
 using HotelReservationSystem.Domain.Interface.Reservation;
 using HotelReservationSystem.Domain.Model;
+using HotelReservationSystem.Forms;
 using HotelReservationSystem.Presenter.Common;
 using static HotelReservationSystem.Domain.Enums.ReservationEnum;
 
@@ -24,6 +25,10 @@ namespace HotelReservationSystem.UserControls
         private List<RoomModel> availableRooms = new List<RoomModel>();
         private string originalRoomNumber;
 
+        public TabPage ReservationTabPage => tabPage2;
+        public MaterialSkin.Controls.MaterialTabControl ReservationTabControl => materialTabControl1;
+
+
         #endregion
 
         #region Constructor
@@ -38,7 +43,7 @@ namespace HotelReservationSystem.UserControls
             customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
             reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
-            InitializeCustomerComboBox();
+            //InitializeCustomerComboBox();
             InitializeRoomTypeComboBox();
             InitializeRoomStatusComboBox();
             cbNumber.SelectedIndexChanged += cbNumber_SelectedIndexChanged;
@@ -48,7 +53,7 @@ namespace HotelReservationSystem.UserControls
             cbNumber.SelectedIndexChanged += DateOrRoomChanged;
             dtCheckIn.Content = DateTime.Now;
             dtCheckOut.Content = DateTime.Now.AddDays(1);
-            Reload();
+            //Reload();
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
             
         }
@@ -62,6 +67,7 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler ShowCheckInOutView;
 
         #endregion
         #region Event Association
@@ -75,23 +81,23 @@ namespace HotelReservationSystem.UserControls
                     SearchEvent?.Invoke(this, EventArgs.Empty);
             };
 
-            btnReservationAddNew.Click += delegate
-            {
-                if (materialTabControl1.SelectedTab == tabPage2)
-                {
-                    MessageBox.Show("You are already in the Add Reservation menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                txtReservationId.Texts = reserveRepo.GetNextReservationId().ToString();
-                AddNewEvent?.Invoke(this, EventArgs.Empty);
-                materialTabControl1.TabPages.Remove(tabPage1);
-                materialTabControl1.TabPages.Add(tabPage2);
-                materialTabControl1.Text = "Add new room";
+            //btnReservationAddNew.Click += delegate
+            //{
+            //    if (materialTabControl1.SelectedTab == tabPage2)
+            //    {
+            //        MessageBox.Show("You are already in the Add Reservation menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        return;
+            //    }
+            //    txtReservationId.Texts = reserveRepo.GetNextReservationId().ToString();
+            //    AddNewEvent?.Invoke(this, EventArgs.Empty);
+            //    materialTabControl1.TabPages.Remove(tabPage1);
+            //    materialTabControl1.TabPages.Add(tabPage2);
+            //    materialTabControl1.Text = "Add new room";
 
-                cbStatus.SelectedItem = "Pending";
-                cbStatus.Enabled = false;
-                cbCusNames.Enabled = true;
-            };
+            //    cbStatus.SelectedItem = "Pending";
+            //    cbStatus.Enabled = false;
+            //    txtCusName.Enabled = true;
+            //};
 
             btnReservationEdit.Click += delegate
             {
@@ -110,7 +116,7 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.TabPages.Add(tabPage2);
                     materialTabControl1.Text = "Edit room";
                     cbStatus.Enabled = true;
-                    cbCusNames.Enabled = false;
+                    txtCusName.Enabled = false;
                 }
                 else
                 {
@@ -186,16 +192,24 @@ namespace HotelReservationSystem.UserControls
                     MessageBox.Show(@"Please select a reservation to delete.");
                 }
             };
+
+            btnCheckIn.Click += delegate
+            {
+                var mainForm = FindForm() as ReservationSystem;
+                if (mainForm != null) { mainForm.LoadUserControl(new UCINOUT()); }
+                else { MessageBox.Show("Main form not found.", "Error"); }
+            };
         }
 
+
         #endregion
-        #region Properties
+            #region Properties
 
         public string ReservationId { get => txtReservationId.Texts; set => txtReservationId.Texts = value; }
         public string Guests { get => txtRoomGuests.Texts; set => txtRoomGuests.Texts = value; }
         public DateTime CheckInDate { get => dtCheckIn.Content; set => dtCheckIn.Content = value; }
         public DateTime CheckOutDate { get => dtCheckOut.Content; set => dtCheckOut.Content = value; }
-        public string CustomerName { get => cbCusNames.SelectedItem as string; set => cbCusNames.SelectedItem = value; }
+        public string CustomerName { get => txtCusName.Texts; set => txtCusName.Texts = value; }
         public string RoomNumber { get => cbNumber.SelectedItem as string; set => cbNumber.SelectedItem = value; }
         public string RoomType { get => cbType.SelectedItem as string; set => cbType.SelectedItem = value; }
         public string TotalPrice { get => txtPrice.Texts; set => txtPrice.Texts = value; }
@@ -232,12 +246,8 @@ namespace HotelReservationSystem.UserControls
             {
                 txtReservationId.Texts = reservation.ReservationId.ToString();
                 originalRoomNumber = reservation.RoomNumber;
-                if (!cbCusNames.Items.Contains(reservation.CustomerName))
-                {
-                    cbCusNames.Items.Add(reservation.CustomerName);
-                }
 
-                cbCusNames.SelectedItem = reservation.CustomerName;
+                txtCusName.Texts = reservation.CustomerName;
 
                 CheckInDate = reservation.CheckInDate;
                 CheckOutDate = reservation.CheckOutDate;
@@ -279,13 +289,13 @@ namespace HotelReservationSystem.UserControls
             });
         }
 
-        private void InitializeCustomerComboBox()
-        {
-            cbCusNames.Items.Clear();
-            var customerNames = customerRepo.GetCustomerNamesWithoutReservation();
-            if (customerNames != null)
-                cbCusNames.Items.AddRange(customerNames.ToArray());
-        }
+        //private void InitializeCustomerComboBox()
+        //{
+        //    cbCusNames.Items.Clear();
+        //    var customerNames = customerRepo.GetCustomerNamesWithoutReservation();
+        //    if (customerNames != null)
+        //        cbCusNames.Items.AddRange(customerNames.ToArray());
+        //}
 
         private void cbType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -367,17 +377,55 @@ namespace HotelReservationSystem.UserControls
                 txtPrice.Texts = "0.00";
             }
         }
+        public void SetCustomerForReservation(string customerName)
+        {
+            CustomerName = customerName;
+            var reservation = reserveRepo.GetByCustomerName(customerName);
+
+            if (reservation != null)
+            {
+                LoadReservationForEdit(reservation.ReservationId);
+                isEdit = true;
+                cbStatus.Enabled = true;
+                txtCusName.Enabled = false;
+            }
+            else
+            {
+                // Prepare new reservation
+                txtReservationId.Texts = reserveRepo.GetNextReservationId().ToString();
+                isEdit = false;
+                cbStatus.SelectedItem = "Pending";
+                cbStatus.Enabled = false;
+                txtCusName.Enabled = true;
+
+                // Notify presenter we are adding a new reservation
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
+            }
+
+            // Switch to tabPage2
+            if (!materialTabControl1.TabPages.Contains(tabPage2))
+                materialTabControl1.TabPages.Add(tabPage2);
+
+            if (materialTabControl1.TabPages.Contains(tabPage1))
+                materialTabControl1.TabPages.Remove(tabPage1);
+
+            materialTabControl1.SelectedTab = tabPage2;
+            materialTabControl1.Text = "Add new room";
+        }
+
+
+
 
         #endregion
 
-        private void Reload()
-        {
-            var customersControl = UCCustomers.GetInstance(this.ParentForm);
-            customersControl.CustomerChanged += (s, e) =>
-            {
-                InitializeCustomerComboBox();
-            };
-        }
+        //private void Reload()
+        //{
+        //    var customersControl = UCCustomers.GetInstance(this.ParentForm);
+        //    customersControl.CustomerChanged += (s, e) =>
+        //    {
+        //        InitializeCustomerComboBox();
+        //    };
+        //}
         private void dtCheckIn_Load(object sender, EventArgs e)
         {
 

@@ -19,5 +19,11 @@ namespace HotelReservationSystem.UserControls
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
 
         }
+
+        public static void ResetInstance() =>
+            UserControlFactory<UCINOUT>.ResetInstance();
+
+        public static UCINOUT GetInstance(Form parentContainer) =>
+            UserControlFactory<UCINOUT>.GetInstance(parentContainer);
     }
 }

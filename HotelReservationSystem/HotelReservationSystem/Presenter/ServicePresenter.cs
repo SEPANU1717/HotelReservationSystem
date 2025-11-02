@@ -17,6 +17,7 @@ namespace HotelReservationSystem.Presenter
         private IFoodStockRepository repository;
         private BindingSource FoodStockBindingSource;
         private IEnumerable<FoodStockModel> foodList;
+        private static ServicePresenter _lastPresenterInstance;
 
         public ServicePresenter(IFoodStockVIew foodView, IFoodStockRepository repository)
         {
@@ -24,16 +25,35 @@ namespace HotelReservationSystem.Presenter
             this.foodView = foodView;
             this.repository = repository;
 
-            // Subscribe
+            if (_lastPresenterInstance != null)
+                _lastPresenterInstance.UnsubscribeFromViewEvents();
+
+            SubscribeToViewEvents();
+
+            _lastPresenterInstance = this;
+
+            this.foodView.SetFoodListBindingSource(FoodStockBindingSource);
+            LoadAllFoodList();
+        }
+
+        private void SubscribeToViewEvents()
+        {
             this.foodView.SearchEvent += SearchFood;
             this.foodView.DeleteEvent += DeleteFood;
             this.foodView.AddNewEvent += AddNewFood;
             this.foodView.EditEvent += EditFood;
             this.foodView.SaveEvent += SaveFood;
             this.foodView.CancelEvent += CancelFood;
+        }
 
-            this.foodView.SetFoodListBindingSource(FoodStockBindingSource);
-            LoadAllFoodList();
+        private void UnsubscribeFromViewEvents()
+        {
+            this.foodView.SearchEvent -= SearchFood;
+            this.foodView.DeleteEvent -= DeleteFood;
+            this.foodView.AddNewEvent -= AddNewFood;
+            this.foodView.EditEvent -= EditFood;
+            this.foodView.SaveEvent -= SaveFood;
+            this.foodView.CancelEvent -= CancelFood;
         }
 
         private void LoadAllFoodList()

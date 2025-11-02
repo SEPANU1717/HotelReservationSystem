@@ -30,28 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCReservation));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
             this.btnReservationSearch = new FrameworkTest.SATAButton();
             this.txtReservationSearch = new SATATextBox();
             this.btnReservationDelete = new FrameworkTest.SATAButton();
-            this.btnReservationAddNew = new FrameworkTest.SATAButton();
             this.btnReservationEdit = new FrameworkTest.SATAButton();
             this.dataGridReservation = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnReservationCancel = new FrameworkTest.SATAButton();
             this.dtCheckOut = new CuoreUI.Controls.cuiCalendarDatePicker();
             this.dtCheckIn = new CuoreUI.Controls.cuiCalendarDatePicker();
             this.cbPaymentStatus = new MetroFramework.Controls.MetroComboBox();
             this.cbPaymentType = new MetroFramework.Controls.MetroComboBox();
             this.cbNumber = new MetroFramework.Controls.MetroComboBox();
             this.cbStatus = new MetroFramework.Controls.MetroComboBox();
-            this.cbCusNames = new MetroFramework.Controls.MetroComboBox();
             this.cbType = new MetroFramework.Controls.MetroComboBox();
             this.btnReservationSave = new FrameworkTest.SATAButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -82,8 +82,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sataButton1 = new FrameworkTest.SATAButton();
-            this.btnReservationCancel = new FrameworkTest.SATAButton();
-            this.label15 = new System.Windows.Forms.Label();
+            this.btnCheckIn = new FrameworkTest.SATAButton();
+            this.txtCusName = new SATATextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservation)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.sataPanel1.SuspendLayout();
@@ -194,45 +194,6 @@
             this.btnReservationDelete.TextAutoCenter = false;
             this.btnReservationDelete.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // btnReservationAddNew
-            // 
-            this.btnReservationAddNew.ButtonText = "Add New";
-            this.btnReservationAddNew.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnReservationAddNew.CheckedForeColor = System.Drawing.Color.White;
-            this.btnReservationAddNew.CheckedImageTint = System.Drawing.Color.White;
-            this.btnReservationAddNew.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnReservationAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReservationAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReservationAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.btnReservationAddNew.HoverForeColor = System.Drawing.Color.White;
-            this.btnReservationAddNew.HoverImage = null;
-            this.btnReservationAddNew.HoverImageTint = System.Drawing.Color.White;
-            this.btnReservationAddNew.HoverOutline = System.Drawing.Color.Empty;
-            this.btnReservationAddNew.Image = ((System.Drawing.Image)(resources.GetObject("btnReservationAddNew.Image")));
-            this.btnReservationAddNew.ImageAutoCenter = true;
-            this.btnReservationAddNew.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnReservationAddNew.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnReservationAddNew.ImageTint = System.Drawing.Color.White;
-            this.btnReservationAddNew.IsToggleButton = false;
-            this.btnReservationAddNew.IsToggled = false;
-            this.btnReservationAddNew.Location = new System.Drawing.Point(950, 100);
-            this.btnReservationAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnReservationAddNew.Name = "btnReservationAddNew";
-            this.btnReservationAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationAddNew.NormalForeColor = System.Drawing.Color.White;
-            this.btnReservationAddNew.NormalOutline = System.Drawing.Color.Empty;
-            this.btnReservationAddNew.OutlineThickness = 2F;
-            this.btnReservationAddNew.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationAddNew.PressedForeColor = System.Drawing.Color.White;
-            this.btnReservationAddNew.PressedImageTint = System.Drawing.Color.White;
-            this.btnReservationAddNew.PressedOutline = System.Drawing.Color.Empty;
-            this.btnReservationAddNew.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnReservationAddNew.Size = new System.Drawing.Size(122, 39);
-            this.btnReservationAddNew.TabIndex = 14;
-            this.btnReservationAddNew.TextAutoCenter = true;
-            this.btnReservationAddNew.TextOffset = new System.Drawing.Point(0, 0);
-            // 
             // btnReservationEdit
             // 
             this.btnReservationEdit.ButtonText = "";
@@ -283,24 +244,24 @@
             this.dataGridReservation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridReservation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridReservation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridReservation.ColumnHeadersHeight = 33;
             this.dataGridReservation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridReservation.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReservation.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridReservation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridReservation.EnableHeadersVisualStyles = false;
             this.dataGridReservation.GridColor = System.Drawing.Color.Gainsboro;
@@ -309,16 +270,16 @@
             this.dataGridReservation.Name = "dataGridReservation";
             this.dataGridReservation.ReadOnly = true;
             this.dataGridReservation.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservation.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservation.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridReservation.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridReservation.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridReservation.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridReservation.RowTemplate.Height = 30;
             this.dataGridReservation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridReservation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -341,11 +302,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.White;
             this.sataPanel1.BackColor2 = System.Drawing.Color.White;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius1.BottomLeft = 10;
-            borderRadius1.BottomRight = 10;
-            borderRadius1.TopLeft = 10;
-            borderRadius1.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius1;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius2;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 156);
@@ -378,7 +339,6 @@
             this.tabPage2.Controls.Add(this.cbPaymentType);
             this.tabPage2.Controls.Add(this.cbNumber);
             this.tabPage2.Controls.Add(this.cbStatus);
-            this.tabPage2.Controls.Add(this.cbCusNames);
             this.tabPage2.Controls.Add(this.cbType);
             this.tabPage2.Controls.Add(this.btnReservationSave);
             this.tabPage2.Controls.Add(this.label8);
@@ -397,6 +357,7 @@
             this.tabPage2.Controls.Add(this.label36);
             this.tabPage2.Controls.Add(this.txtRoomGuests);
             this.tabPage2.Controls.Add(this.txtBalanceDue);
+            this.tabPage2.Controls.Add(this.txtCusName);
             this.tabPage2.Controls.Add(this.txtAmountPaid);
             this.tabPage2.Controls.Add(this.txtDownPayment);
             this.tabPage2.Controls.Add(this.txtPrice);
@@ -407,6 +368,58 @@
             this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(52, 31);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(195, 30);
+            this.label15.TabIndex = 93;
+            this.label15.Text = "Reservation Details";
+            // 
+            // btnReservationCancel
+            // 
+            this.btnReservationCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReservationCancel.ButtonText = "Cancel";
+            this.btnReservationCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnReservationCancel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnReservationCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnReservationCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReservationCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnReservationCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReservationCancel.HoverBackground = System.Drawing.Color.Gainsboro;
+            this.btnReservationCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.HoverImage = null;
+            this.btnReservationCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.HoverOutline = System.Drawing.Color.Empty;
+            this.btnReservationCancel.Image = null;
+            this.btnReservationCancel.ImageAutoCenter = true;
+            this.btnReservationCancel.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnReservationCancel.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnReservationCancel.ImageTint = System.Drawing.Color.White;
+            this.btnReservationCancel.IsToggleButton = false;
+            this.btnReservationCancel.IsToggled = false;
+            this.btnReservationCancel.Location = new System.Drawing.Point(758, 514);
+            this.btnReservationCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnReservationCancel.Name = "btnReservationCancel";
+            this.btnReservationCancel.NormalBackground = System.Drawing.Color.Transparent;
+            this.btnReservationCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.NormalOutline = System.Drawing.Color.Empty;
+            this.btnReservationCancel.OutlineThickness = 2F;
+            this.btnReservationCancel.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnReservationCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnReservationCancel.PressedOutline = System.Drawing.Color.Empty;
+            this.btnReservationCancel.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnReservationCancel.Size = new System.Drawing.Size(163, 35);
+            this.btnReservationCancel.TabIndex = 92;
+            this.btnReservationCancel.TextAutoCenter = true;
+            this.btnReservationCancel.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // dtCheckOut
             // 
@@ -499,15 +512,6 @@
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(296, 29);
             this.cbStatus.TabIndex = 27;
-            // 
-            // cbCusNames
-            // 
-            this.cbCusNames.FormattingEnabled = true;
-            this.cbCusNames.ItemHeight = 23;
-            this.cbCusNames.Location = new System.Drawing.Point(440, 126);
-            this.cbCusNames.Name = "cbCusNames";
-            this.cbCusNames.Size = new System.Drawing.Size(296, 29);
-            this.cbCusNames.TabIndex = 27;
             // 
             // cbType
             // 
@@ -970,57 +974,68 @@
             this.sataButton1.TextAutoCenter = false;
             this.sataButton1.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // btnReservationCancel
+            // btnCheckIn
             // 
-            this.btnReservationCancel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReservationCancel.ButtonText = "Cancel";
-            this.btnReservationCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnReservationCancel.CheckedForeColor = System.Drawing.Color.White;
-            this.btnReservationCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnReservationCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReservationCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnReservationCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservationCancel.HoverBackground = System.Drawing.Color.Gainsboro;
-            this.btnReservationCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.HoverImage = null;
-            this.btnReservationCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.HoverOutline = System.Drawing.Color.Empty;
-            this.btnReservationCancel.Image = null;
-            this.btnReservationCancel.ImageAutoCenter = true;
-            this.btnReservationCancel.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnReservationCancel.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnReservationCancel.ImageTint = System.Drawing.Color.White;
-            this.btnReservationCancel.IsToggleButton = false;
-            this.btnReservationCancel.IsToggled = false;
-            this.btnReservationCancel.Location = new System.Drawing.Point(758, 514);
-            this.btnReservationCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnReservationCancel.Name = "btnReservationCancel";
-            this.btnReservationCancel.NormalBackground = System.Drawing.Color.Transparent;
-            this.btnReservationCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.NormalOutline = System.Drawing.Color.Empty;
-            this.btnReservationCancel.OutlineThickness = 2F;
-            this.btnReservationCancel.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnReservationCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnReservationCancel.PressedOutline = System.Drawing.Color.Empty;
-            this.btnReservationCancel.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnReservationCancel.Size = new System.Drawing.Size(163, 35);
-            this.btnReservationCancel.TabIndex = 92;
-            this.btnReservationCancel.TextAutoCenter = true;
-            this.btnReservationCancel.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnCheckIn.ButtonText = "Check In";
+            this.btnCheckIn.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCheckIn.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCheckIn.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckIn.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckIn.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnCheckIn.HoverForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.HoverImage = null;
+            this.btnCheckIn.HoverImageTint = System.Drawing.Color.White;
+            this.btnCheckIn.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCheckIn.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckIn.Image")));
+            this.btnCheckIn.ImageAutoCenter = true;
+            this.btnCheckIn.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCheckIn.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCheckIn.ImageTint = System.Drawing.Color.White;
+            this.btnCheckIn.IsToggleButton = false;
+            this.btnCheckIn.IsToggled = false;
+            this.btnCheckIn.Location = new System.Drawing.Point(950, 100);
+            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCheckIn.Name = "btnCheckIn";
+            this.btnCheckIn.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCheckIn.NormalForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCheckIn.OutlineThickness = 2F;
+            this.btnCheckIn.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCheckIn.PressedForeColor = System.Drawing.Color.White;
+            this.btnCheckIn.PressedImageTint = System.Drawing.Color.White;
+            this.btnCheckIn.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCheckIn.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCheckIn.Size = new System.Drawing.Size(122, 39);
+            this.btnCheckIn.TabIndex = 14;
+            this.btnCheckIn.TextAutoCenter = true;
+            this.btnCheckIn.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // label15
+            // txtCusName
             // 
-            this.label15.AutoSize = true;
-            this.label15.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(52, 31);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(195, 30);
-            this.label15.TabIndex = 93;
-            this.label15.Text = "Reservation Details";
+            this.txtCusName.BackColor = System.Drawing.Color.White;
+            this.txtCusName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCusName.BorderColor = System.Drawing.Color.Gray;
+            this.txtCusName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCusName.BorderRadius = 3;
+            this.txtCusName.BorderSize = 1;
+            this.txtCusName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCusName.Icon = null;
+            this.txtCusName.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCusName.Location = new System.Drawing.Point(440, 120);
+            this.txtCusName.Multiline = false;
+            this.txtCusName.Name = "txtCusName";
+            this.txtCusName.PasswordChar = false;
+            this.txtCusName.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCusName.PlaceholderText = "";
+            this.txtCusName.Size = new System.Drawing.Size(296, 35);
+            this.txtCusName.TabIndex = 20;
+            this.txtCusName.Text = "0";
+            this.txtCusName.Texts = "";
+            this.txtCusName.UnderlinedStyle = false;
             // 
             // UCReservation
             // 
@@ -1029,7 +1044,7 @@
             this.Controls.Add(this.btnReservationSearch);
             this.Controls.Add(this.txtReservationSearch);
             this.Controls.Add(this.btnReservationDelete);
-            this.Controls.Add(this.btnReservationAddNew);
+            this.Controls.Add(this.btnCheckIn);
             this.Controls.Add(this.sataButton1);
             this.Controls.Add(this.btnReservationEdit);
             this.Controls.Add(this.sataPanel1);
@@ -1056,7 +1071,6 @@
         private FrameworkTest.SATAButton btnReservationSearch;
         private SATATextBox txtReservationSearch;
         private FrameworkTest.SATAButton btnReservationDelete;
-        private FrameworkTest.SATAButton btnReservationAddNew;
         private FrameworkTest.SATAButton btnReservationEdit;
         private System.Windows.Forms.DataGridView dataGridReservation;
         private System.Windows.Forms.TabPage tabPage1;
@@ -1088,7 +1102,6 @@
         private CuoreUI.Controls.cuiCalendarDatePicker dtCheckIn;
         private MetroFramework.Controls.MetroComboBox cbNumber;
         private MetroFramework.Controls.MetroComboBox cbStatus;
-        private MetroFramework.Controls.MetroComboBox cbCusNames;
         private MetroFramework.Controls.MetroComboBox cbType;
         private MetroFramework.Controls.MetroComboBox cbPaymentType;
         private System.Windows.Forms.Label label3;
@@ -1102,5 +1115,7 @@
         private System.Windows.Forms.Label label14;
         private FrameworkTest.SATAButton btnReservationCancel;
         private System.Windows.Forms.Label label15;
+        private FrameworkTest.SATAButton btnCheckIn;
+        private SATATextBox txtCusName;
     }
 }

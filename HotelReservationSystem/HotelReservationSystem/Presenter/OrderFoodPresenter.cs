@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelReservationSystem.Domain.Interface.Customer;
 using HotelReservationSystem.Domain.Interface.Service.Food;
 using HotelReservationSystem.Domain.Model.Service.Shared;
 
@@ -24,8 +20,8 @@ namespace HotelReservationSystem.Presenter
             this.orderView = orderView;
             this.repository = repository;
 
-            if (_lastPresenterInstance != null) { _lastPresenterInstance.UnsubscribeFromViewEvents(); }
-            
+            if (_lastPresenterInstance != null) _lastPresenterInstance.UnsubscribeFromViewEvents();
+
             SubscribeToViewEvents();
             _lastPresenterInstance = this;
 
@@ -35,7 +31,7 @@ namespace HotelReservationSystem.Presenter
 
         private void SubscribeToViewEvents()
         {
-            this.orderView.OrderAddEvent += AddOrderFood;
+            this.orderView.OrderAddEvent += OnOrderAddEvent;
             this.orderView.OrderCompleteEvent += CompleteOrderFood;
             this.orderView.OrderCancelEvent += CancelOrderFood;
             this.orderView.OrderClearEvent += ClearOrderFood;
@@ -43,7 +39,7 @@ namespace HotelReservationSystem.Presenter
 
         private void UnsubscribeFromViewEvents()
         {
-            this.orderView.OrderAddEvent -= AddOrderFood;
+            this.orderView.OrderAddEvent -= OnOrderAddEvent;
             this.orderView.OrderCompleteEvent -= CompleteOrderFood;
             this.orderView.OrderCancelEvent -= CancelOrderFood;
             this.orderView.OrderClearEvent -= ClearOrderFood;
@@ -70,7 +66,7 @@ namespace HotelReservationSystem.Presenter
             {
                 repository.RestoreStockForAllOrders();
                 repository.ClearAll();
-                LoadAllOrderFoodList(); 
+                LoadAllOrderFoodList();
                 MessageBox.Show("All food orders have been deleted successfully.",
                     "Delete Successful",
                     MessageBoxButtons.OK,
@@ -111,40 +107,34 @@ namespace HotelReservationSystem.Presenter
             }
         }
 
-        private void AddOrderFood(object sender, EventArgs e)
+        private void OnOrderAddEvent(object sender, EventArgs e)
+        {
+            if (orderView.SelectedOrder == null)
+            {
+                MessageBox.Show("No order selected.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            AddOrder(orderView.SelectedOrder);
+        }
+
+        public void AddOrder(SharedAddServiceModel order)
         {
             try
             {
-                string itemName = orderView.ItemName;
-                int quantity = int.Parse(orderView.FoodQuantity);
-                decimal price = decimal.Parse(orderView.FoodPrice);
-
-                int availableStock = repository.GetStock(itemName);
-                if (quantity > availableStock)
+                int availableStock = repository.GetStock(order.ItemName);
+                if (order.Quantity > availableStock)
                 {
                     MessageBox.Show($"Not enough stock. Available: {availableStock}", "Stock Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                var foodOrder = new SharedAddServiceModel
-                {
-                    ItemName = itemName,
-                    Quantity = quantity,
-                    Price = price
-                };
-
-
-                repository.Add(foodOrder);
-                repository.DeductStock(itemName, quantity);
+                repository.Add(order);
+                repository.DeductStock(order.ItemName, order.Quantity);
                 LoadAllOrderFoodList();
-                CleanViewFields(); 
-
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Please enter valid numeric values for quantity and price.", "Input Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CleanViewFields();
             }
             catch (Exception ex)
             {

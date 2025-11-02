@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using HotelReservationSystem.Data.Repositories;
+using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface;
 using HotelReservationSystem.Infrastructure.Security;
 using HotelReservationSystem.Presenter;
@@ -11,11 +13,17 @@ namespace HotelReservationSystem.Forms
 
     public partial class ReservationSystem : Form, IMainView
     {
+        private UCCustomers ucCustomers;
+        private UCReservation ucReservation;
         public ReservationSystem()
         {
             InitializeComponent();
             Load += ReservationSystem_Load;
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
+            ucCustomers = UCCustomers.GetInstance(this);
+            ucCustomers.CustomerSelected += UcCustomers_CustomerSelected;
+            ucReservation = UCReservation.GetInstance(this);
+            LoadUserControl(new UCDashboard());
         }
         #region LoadUser
 
@@ -32,6 +40,22 @@ namespace HotelReservationSystem.Forms
             IPasswordHasher passwordHasher = new Pbkdf2PasswordHasher();
             var presenter = new MainPresenter(this, connectionString, passwordHasher);
         }
+
+        private void UcCustomers_CustomerSelected(object sender, UCCustomers.CustomerSelectedEventArgs e)
+        {
+            var ucReservation = UCReservation.GetInstance(this);
+
+            if (!ucReservation.ReservationTabControl.TabPages.Contains(ucReservation.ReservationTabPage))
+                ucReservation.ReservationTabControl.TabPages.Add(ucReservation.ReservationTabPage);
+
+            ucReservation.ReservationTabControl.SelectedTab = ucReservation.ReservationTabPage;
+            ucReservation.SetCustomerForReservation(e.FullName);
+
+            var presenter = new ReservationPresenter(ucReservation, new ReservationRepository(DbConfig.GetConnectionString()));
+            LoadUserControl(ucReservation);
+        }
+
+
 
         private void sataButton1_Click(object sender, EventArgs e) => LoadUserControl(new UCDashboard());
         private void sataButton2_Click(object sender, EventArgs e) => ShowReservationView?.Invoke(this, EventArgs.Empty);
@@ -51,6 +75,7 @@ namespace HotelReservationSystem.Forms
         public event EventHandler ShowBillingView;
         public event EventHandler ShowServiceView;
         public event EventHandler ShowUserView;
+        public event EventHandler ShowCheckInOutView;
         #endregion
 
         #region LoginCleanUp
@@ -59,7 +84,6 @@ namespace HotelReservationSystem.Forms
             Login login = new Login();
             login.Show();
 
-            // Cleanup
             UCBilling.ResetInstance();
             UCReservation.ResetInstance();
             UCCustomers.ResetInstance();

@@ -16,30 +16,37 @@ namespace HotelReservationSystem.Data.Repositories.Service
         //<-----------------------Add New Stock Food--------------------------/>
         public void Add(FoodStockModel foodStock)
         {
-            using (var connection = new SqlConnection(connectionString))
-            using (var checkCommand = connection.CreateCommand())
-            using (var insertCommand = connection.CreateCommand())
+            string foodNameTrimmed = foodStock.FoodName.Trim();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                checkCommand.CommandText = "SELECT COUNT(*) FROM FoodStock WHERE FoodName = @name";
-                checkCommand.Parameters.Add("@name", SqlDbType.NVarChar).Value = foodStock.FoodName;
 
-                int count = (int)checkCommand.ExecuteScalar();
+                using (var checkCommand = connection.CreateCommand())
+                {
+                    checkCommand.CommandText = "SELECT COUNT(*) FROM FoodStock WHERE UPPER(LTRIM(RTRIM(FoodName))) = UPPER(@name)";
+                    checkCommand.Parameters.Add("@name", SqlDbType.NVarChar).Value = foodNameTrimmed;
 
-                if (count > 0) throw new Exception($"Food '{foodStock.FoodName}' already exists.");
+                    int count = (int)checkCommand.ExecuteScalar();
+                    if (count > 0)
+                        throw new Exception($"Food '{foodNameTrimmed}' already exists.");
+                }
 
-                insertCommand.Connection = connection;
-                insertCommand.CommandText = @"INSERT INTO FoodStock 
-                        (FoodName, Description, Price, Stock)  
-                        VALUES (@name, @desc, @price, @stock)";
+                using (var insertCommand = connection.CreateCommand())
+                {
+                    insertCommand.CommandText = @"INSERT INTO FoodStock 
+                (FoodName, Description, Price, Stock)  
+                VALUES (@name, @desc, @price, @stock)";
+                    insertCommand.Parameters.Add("@name", SqlDbType.NVarChar).Value = foodNameTrimmed;
+                    insertCommand.Parameters.Add("@desc", SqlDbType.NVarChar).Value = foodStock.Description ?? (object)DBNull.Value;
+                    insertCommand.Parameters.Add("@price", SqlDbType.Decimal).Value = foodStock.Price;
+                    insertCommand.Parameters.Add("@stock", SqlDbType.Int).Value = foodStock.Stock;
 
-                insertCommand.Parameters.Add("@name", SqlDbType.NVarChar).Value = foodStock.FoodName;
-                insertCommand.Parameters.Add("@desc", SqlDbType.NVarChar).Value = foodStock.Description ?? (object)DBNull.Value;
-                insertCommand.Parameters.Add("@price", SqlDbType.Decimal).Value = foodStock.Price;
-                insertCommand.Parameters.Add("@stock", SqlDbType.Int).Value = foodStock.Stock;
-                insertCommand.ExecuteNonQuery();
+                    insertCommand.ExecuteNonQuery();
+                }
             }
         }
+
 
         //<-----------------------Delete Food--------------------------/>
         public void Delete(int id)

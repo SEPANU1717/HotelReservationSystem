@@ -78,6 +78,7 @@
             this.btnDelete = new FrameworkTest.SATAButton();
             this.btnAddNew = new FrameworkTest.SATAButton();
             this.btnEdit = new FrameworkTest.SATAButton();
+            this.btnCusReservation = new FrameworkTest.SATAButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -963,6 +964,45 @@
             this.btnEdit.TextAutoCenter = false;
             this.btnEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
+            // btnCusReservation
+            // 
+            this.btnCusReservation.ButtonText = "Create Reservation";
+            this.btnCusReservation.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCusReservation.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCusReservation.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCusReservation.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCusReservation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCusReservation.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCusReservation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCusReservation.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnCusReservation.HoverForeColor = System.Drawing.Color.White;
+            this.btnCusReservation.HoverImage = null;
+            this.btnCusReservation.HoverImageTint = System.Drawing.Color.White;
+            this.btnCusReservation.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCusReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnCusReservation.Image")));
+            this.btnCusReservation.ImageAutoCenter = true;
+            this.btnCusReservation.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCusReservation.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCusReservation.ImageTint = System.Drawing.Color.White;
+            this.btnCusReservation.IsToggleButton = false;
+            this.btnCusReservation.IsToggled = false;
+            this.btnCusReservation.Location = new System.Drawing.Point(804, 100);
+            this.btnCusReservation.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCusReservation.Name = "btnCusReservation";
+            this.btnCusReservation.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCusReservation.NormalForeColor = System.Drawing.Color.White;
+            this.btnCusReservation.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCusReservation.OutlineThickness = 2F;
+            this.btnCusReservation.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCusReservation.PressedForeColor = System.Drawing.Color.White;
+            this.btnCusReservation.PressedImageTint = System.Drawing.Color.White;
+            this.btnCusReservation.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCusReservation.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCusReservation.Size = new System.Drawing.Size(190, 39);
+            this.btnCusReservation.TabIndex = 7;
+            this.btnCusReservation.TextAutoCenter = true;
+            this.btnCusReservation.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // UCCustomers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -970,6 +1010,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnCusReservation);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.sataPanel1);
@@ -1036,5 +1077,6 @@
         private System.Windows.Forms.Label label12;
         private SATATextBox txtNotes;
         private System.Windows.Forms.Label label13;
+        private FrameworkTest.SATAButton btnCusReservation;
     }
 }

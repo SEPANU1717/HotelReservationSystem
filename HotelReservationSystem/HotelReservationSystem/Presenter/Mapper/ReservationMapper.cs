@@ -27,7 +27,8 @@ namespace HotelReservationSystem.Presenter.Mapper
 
         public static ReservationModel FromReservationView(IReservationView view)
         {
-            decimal totalPrice = decimal.Parse(view.TotalPrice);
+            decimal totalPrice = string.IsNullOrEmpty(view.TotalPrice) ? 0 : decimal.Parse(view.TotalPrice);
+
             decimal amountPaid = string.IsNullOrEmpty(view.AmountPaid) ? 0 : decimal.Parse(view.AmountPaid);
             decimal downPayment = string.IsNullOrEmpty(view.DownPayment) ? 0 : decimal.Parse(view.DownPayment);
 
