@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer.DbInitializer;
+using HotelReservationSystem.Presenter;
 using HotelReservationSystem.Presenter.Common;
 
 
@@ -43,8 +44,8 @@ namespace HotelReservationSystem.UserControls
             lblOccuRooms.Text = totalOccupiedRooms.ToString();
             lblTotalGuests.Text = totalGuestToday.ToString();
 
-            
-            var reservations = repository.GetAll().ToList();
+
+            var reservations = ReservationPresenter.GetReservationDtoList().ToList();
             dataGridReservationDash.DataSource = reservations;
         }
 

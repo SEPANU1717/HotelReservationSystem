@@ -207,7 +207,6 @@ namespace HotelReservationSystem.Presenter
                 userView.Email = user.Email;
                 userView.Gender = user.Gender;
                 userView.Role = user.Role;
-                userView.IsActive = user.IsActive;
 
                 userView.Password = user.Password;
                 userView.isEdit = true;

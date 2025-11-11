@@ -49,11 +49,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgUserManagement = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cbRole = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new FrameworkTest.SATAButton();
             this.dpBirthdate = new CuoreUI.Controls.cuiCalendarDatePicker();
             this.UsrInf = new System.Windows.Forms.Label();
-            this.cbGender = new System.Windows.Forms.ComboBox();
-            this.btnCancel = new FrameworkTest.SATAButton();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -70,6 +68,8 @@
             this.label36 = new System.Windows.Forms.Label();
             this.txtEmail = new SATATextBox();
             this.txtPassword = new SATATextBox();
+            this.cbRole = new MetroFramework.Controls.MetroComboBox();
+            this.cbGender = new MetroFramework.Controls.MetroComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -421,11 +421,11 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.cbGender);
             this.tabPage2.Controls.Add(this.cbRole);
+            this.tabPage2.Controls.Add(this.btnCancel);
             this.tabPage2.Controls.Add(this.dpBirthdate);
             this.tabPage2.Controls.Add(this.UsrInf);
-            this.tabPage2.Controls.Add(this.cbGender);
-            this.tabPage2.Controls.Add(this.btnCancel);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label10);
@@ -442,21 +442,52 @@
             this.tabPage2.Controls.Add(this.label36);
             this.tabPage2.Controls.Add(this.txtEmail);
             this.tabPage2.Controls.Add(this.txtPassword);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
-            // cbRole
+            // btnCancel
             // 
-            this.cbRole.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Location = new System.Drawing.Point(434, 372);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(310, 36);
-            this.cbRole.TabIndex = 15;
+            this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.ButtonText = "Cancel";
+            this.btnCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCancel.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.HoverBackground = System.Drawing.Color.Gainsboro;
+            this.btnCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCancel.HoverImage = null;
+            this.btnCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCancel.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCancel.Image = null;
+            this.btnCancel.ImageAutoCenter = true;
+            this.btnCancel.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCancel.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCancel.ImageTint = System.Drawing.Color.White;
+            this.btnCancel.IsToggleButton = false;
+            this.btnCancel.IsToggled = false;
+            this.btnCancel.Location = new System.Drawing.Point(746, 425);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.NormalBackground = System.Drawing.Color.Transparent;
+            this.btnCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCancel.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCancel.OutlineThickness = 2F;
+            this.btnCancel.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCancel.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCancel.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCancel.Size = new System.Drawing.Size(163, 35);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.TextAutoCenter = true;
+            this.btnCancel.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // dpBirthdate
             // 
@@ -468,16 +499,16 @@
             this.dpBirthdate.HoverOutline = System.Drawing.Color.Silver;
             this.dpBirthdate.Icon = ((System.Drawing.Image)(resources.GetObject("dpBirthdate.Icon")));
             this.dpBirthdate.IconTint = System.Drawing.Color.Gray;
-            this.dpBirthdate.Location = new System.Drawing.Point(774, 372);
+            this.dpBirthdate.Location = new System.Drawing.Point(774, 321);
             this.dpBirthdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dpBirthdate.Name = "dpBirthdate";
             this.dpBirthdate.NormalBackground = System.Drawing.Color.White;
-            this.dpBirthdate.NormalOutline = System.Drawing.Color.DimGray;
+            this.dpBirthdate.NormalOutline = System.Drawing.Color.Gainsboro;
             this.dpBirthdate.OutlineThickness = 1.5F;
             this.dpBirthdate.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
             this.dpBirthdate.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dpBirthdate.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dpBirthdate.Rounding = 8;
+            this.dpBirthdate.Rounding = 3;
             this.dpBirthdate.ShowIcon = true;
             this.dpBirthdate.Size = new System.Drawing.Size(308, 36);
             this.dpBirthdate.TabIndex = 17;
@@ -488,66 +519,18 @@
             this.UsrInf.AutoSize = true;
             this.UsrInf.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold);
             this.UsrInf.ForeColor = System.Drawing.Color.Black;
-            this.UsrInf.Location = new System.Drawing.Point(88, 103);
+            this.UsrInf.Location = new System.Drawing.Point(88, 52);
             this.UsrInf.Name = "UsrInf";
-            this.UsrInf.Size = new System.Drawing.Size(205, 32);
+            this.UsrInf.Size = new System.Drawing.Size(199, 32);
             this.UsrInf.TabIndex = 16;
-            this.UsrInf.Text = "User Information:";
-            // 
-            // cbGender
-            // 
-            this.cbGender.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGender.FormattingEnabled = true;
-            this.cbGender.Location = new System.Drawing.Point(94, 372);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(310, 36);
-            this.cbGender.TabIndex = 15;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.ButtonText = "Cancel";
-            this.btnCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
-            this.btnCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.HoverBackground = System.Drawing.Color.White;
-            this.btnCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.HoverImage = null;
-            this.btnCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.HoverOutline = System.Drawing.Color.Empty;
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageAutoCenter = true;
-            this.btnCancel.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnCancel.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnCancel.ImageTint = System.Drawing.Color.White;
-            this.btnCancel.IsToggleButton = false;
-            this.btnCancel.IsToggled = false;
-            this.btnCancel.Location = new System.Drawing.Point(34, 29);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.NormalBackground = System.Drawing.Color.Transparent;
-            this.btnCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.NormalOutline = System.Drawing.Color.Empty;
-            this.btnCancel.OutlineThickness = 2F;
-            this.btnCancel.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCancel.PressedOutline = System.Drawing.Color.Empty;
-            this.btnCancel.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnCancel.Size = new System.Drawing.Size(115, 35);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.TextAutoCenter = true;
-            this.btnCancel.TextOffset = new System.Drawing.Point(0, 0);
+            this.UsrInf.Text = "User Information";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(771, 346);
+            this.label11.Location = new System.Drawing.Point(771, 295);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 21);
             this.label11.TabIndex = 10;
@@ -558,7 +541,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(430, 346);
+            this.label7.Location = new System.Drawing.Point(430, 295);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 21);
             this.label7.TabIndex = 11;
@@ -569,7 +552,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(771, 168);
+            this.label10.Location = new System.Drawing.Point(771, 117);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(109, 21);
             this.label10.TabIndex = 10;
@@ -580,7 +563,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(429, 167);
+            this.label9.Location = new System.Drawing.Point(429, 116);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 21);
             this.label9.TabIndex = 10;
@@ -591,7 +574,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(90, 346);
+            this.label6.Location = new System.Drawing.Point(90, 295);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 21);
             this.label6.TabIndex = 11;
@@ -602,7 +585,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(90, 166);
+            this.label8.Location = new System.Drawing.Point(90, 115);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 21);
             this.label8.TabIndex = 10;
@@ -629,7 +612,7 @@
             this.btnSaveUser.ImageTint = System.Drawing.Color.White;
             this.btnSaveUser.IsToggleButton = false;
             this.btnSaveUser.IsToggled = false;
-            this.btnSaveUser.Location = new System.Drawing.Point(773, 454);
+            this.btnSaveUser.Location = new System.Drawing.Point(919, 425);
             this.btnSaveUser.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnSaveUser.Name = "btnSaveUser";
             this.btnSaveUser.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -641,7 +624,7 @@
             this.btnSaveUser.PressedImageTint = System.Drawing.Color.White;
             this.btnSaveUser.PressedOutline = System.Drawing.Color.Empty;
             this.btnSaveUser.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnSaveUser.Size = new System.Drawing.Size(308, 35);
+            this.btnSaveUser.Size = new System.Drawing.Size(163, 35);
             this.btnSaveUser.TabIndex = 5;
             this.btnSaveUser.TextAutoCenter = true;
             this.btnSaveUser.TextOffset = new System.Drawing.Point(0, 0);
@@ -651,7 +634,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(428, 257);
+            this.label2.Location = new System.Drawing.Point(428, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 21);
             this.label2.TabIndex = 11;
@@ -661,7 +644,7 @@
             // 
             this.txtMiddlename.BackColor = System.Drawing.Color.White;
             this.txtMiddlename.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtMiddlename.BorderColor = System.Drawing.Color.Gray;
+            this.txtMiddlename.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtMiddlename.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtMiddlename.BorderRadius = 3;
             this.txtMiddlename.BorderSize = 1;
@@ -669,7 +652,7 @@
             this.txtMiddlename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtMiddlename.Icon = null;
             this.txtMiddlename.IconSize = new System.Drawing.Size(20, 20);
-            this.txtMiddlename.Location = new System.Drawing.Point(774, 195);
+            this.txtMiddlename.Location = new System.Drawing.Point(774, 144);
             this.txtMiddlename.Multiline = false;
             this.txtMiddlename.Name = "txtMiddlename";
             this.txtMiddlename.PasswordChar = false;
@@ -685,7 +668,7 @@
             // 
             this.txtFirstname.BackColor = System.Drawing.Color.White;
             this.txtFirstname.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtFirstname.BorderColor = System.Drawing.Color.Gray;
+            this.txtFirstname.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtFirstname.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtFirstname.BorderRadius = 3;
             this.txtFirstname.BorderSize = 1;
@@ -693,7 +676,7 @@
             this.txtFirstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtFirstname.Icon = null;
             this.txtFirstname.IconSize = new System.Drawing.Size(20, 20);
-            this.txtFirstname.Location = new System.Drawing.Point(434, 195);
+            this.txtFirstname.Location = new System.Drawing.Point(434, 144);
             this.txtFirstname.Multiline = false;
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.PasswordChar = false;
@@ -710,7 +693,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(770, 256);
+            this.label1.Location = new System.Drawing.Point(770, 205);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 21);
             this.label1.TabIndex = 11;
@@ -720,7 +703,7 @@
             // 
             this.txtLastname.BackColor = System.Drawing.Color.White;
             this.txtLastname.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtLastname.BorderColor = System.Drawing.Color.Gray;
+            this.txtLastname.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtLastname.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtLastname.BorderRadius = 3;
             this.txtLastname.BorderSize = 1;
@@ -728,7 +711,7 @@
             this.txtLastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtLastname.Icon = null;
             this.txtLastname.IconSize = new System.Drawing.Size(20, 20);
-            this.txtLastname.Location = new System.Drawing.Point(94, 195);
+            this.txtLastname.Location = new System.Drawing.Point(94, 144);
             this.txtLastname.Multiline = false;
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.PasswordChar = false;
@@ -744,7 +727,7 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtUsername.BorderColor = System.Drawing.Color.Gray;
+            this.txtUsername.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtUsername.BorderRadius = 3;
             this.txtUsername.BorderSize = 1;
@@ -752,7 +735,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtUsername.Icon = null;
             this.txtUsername.IconSize = new System.Drawing.Size(20, 20);
-            this.txtUsername.Location = new System.Drawing.Point(93, 284);
+            this.txtUsername.Location = new System.Drawing.Point(93, 233);
             this.txtUsername.Multiline = false;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = false;
@@ -769,7 +752,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.DimGray;
-            this.label36.Location = new System.Drawing.Point(89, 255);
+            this.label36.Location = new System.Drawing.Point(89, 204);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(83, 21);
             this.label36.TabIndex = 10;
@@ -779,7 +762,7 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtEmail.BorderColor = System.Drawing.Color.Gray;
+            this.txtEmail.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtEmail.BorderRadius = 3;
             this.txtEmail.BorderSize = 1;
@@ -787,7 +770,7 @@
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtEmail.Icon = null;
             this.txtEmail.IconSize = new System.Drawing.Size(20, 20);
-            this.txtEmail.Location = new System.Drawing.Point(773, 284);
+            this.txtEmail.Location = new System.Drawing.Point(773, 233);
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = false;
@@ -802,7 +785,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtPassword.BorderColor = System.Drawing.Color.Gray;
+            this.txtPassword.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtPassword.BorderRadius = 3;
             this.txtPassword.BorderSize = 1;
@@ -810,7 +793,7 @@
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtPassword.Icon = null;
             this.txtPassword.IconSize = new System.Drawing.Size(20, 20);
-            this.txtPassword.Location = new System.Drawing.Point(433, 284);
+            this.txtPassword.Location = new System.Drawing.Point(433, 233);
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = false;
@@ -820,6 +803,24 @@
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
+            // 
+            // cbRole
+            // 
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.ItemHeight = 23;
+            this.cbRole.Location = new System.Drawing.Point(434, 328);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(309, 29);
+            this.cbRole.TabIndex = 20;
+            // 
+            // cbGender
+            // 
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.ItemHeight = 23;
+            this.cbGender.Location = new System.Drawing.Point(93, 328);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(309, 29);
+            this.cbGender.TabIndex = 20;
             // 
             // UCSettings
             // 
@@ -866,7 +867,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dgUserManagement;
         private System.Windows.Forms.TabPage tabPage2;
-        private FrameworkTest.SATAButton btnCancel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label36;
@@ -874,8 +874,6 @@
         private SATATextBox txtPassword;
         private SATATextBox txtEmail;
         private SATATextBox txtUsername;
-        private System.Windows.Forms.ComboBox cbRole;
-        private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label UsrInf;
@@ -887,5 +885,8 @@
         private SATATextBox txtFirstname;
         private CuoreUI.Controls.cuiCalendarDatePicker dpBirthdate;
         private System.Windows.Forms.Label label11;
+        private FrameworkTest.SATAButton btnCancel;
+        private MetroFramework.Controls.MetroComboBox cbGender;
+        private MetroFramework.Controls.MetroComboBox cbRole;
     }
 }

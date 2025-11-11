@@ -16,7 +16,6 @@ namespace HotelReservationSystem.Infrastructure.Repository
             this.passwordHasher = passwordHasher;
         }
 
-
         public void Add(UserModel user)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -25,9 +24,9 @@ namespace HotelReservationSystem.Infrastructure.Repository
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"INSERT INTO Users (LastName, FirstName, MiddleName, BirthDate, 
-                               Username, PasswordHash, Email, Gender, Role, CreatedAt, IsActive)
+                               Username, PasswordHash, Email, Gender, Role, CreatedAt)
                                VALUES (@LastName, @FirstName, @MiddleName, @BirthDate, 
-                               @Username, @PasswordHash, @Email, @Gender, @Role, @CreatedAt, @IsActive)";
+                               @Username, @PasswordHash, @Email, @Gender, @Role, @CreatedAt)";
 
                 AddUserParameters(command, user);
                 command.ExecuteNonQuery();
@@ -43,7 +42,7 @@ namespace HotelReservationSystem.Infrastructure.Repository
                 command.Connection = connection;
                 command.CommandText = @"UPDATE Users SET LastName = @LastName, FirstName = @FirstName, 
                                MiddleName = @MiddleName, BirthDate = @BirthDate, Username = @Username, 
-                               Email = @Email, Gender = @Gender, Role = @Role, IsActive = @IsActive";
+                               Email = @Email, Gender = @Gender, Role = @Role";
 
                 if (!string.IsNullOrEmpty(user.PasswordHash))
                 {
@@ -80,7 +79,7 @@ namespace HotelReservationSystem.Infrastructure.Repository
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"SELECT UserId, LastName, FirstName, MiddleName, BirthDate, 
-                               Username, PasswordHash, Email, Gender, Role, CreatedAt, IsActive 
+                               Username, PasswordHash, Email, Gender, Role, CreatedAt 
                                FROM Users ORDER BY LastName, FirstName";
 
                 var reader = command.ExecuteReader();
@@ -101,7 +100,7 @@ namespace HotelReservationSystem.Infrastructure.Repository
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"SELECT UserId, LastName, FirstName, MiddleName, BirthDate, 
-                               Username, PasswordHash, Email, Gender, Role, CreatedAt, IsActive 
+                               Username, PasswordHash, Email, Gender, Role, CreatedAt
                                FROM Users 
                                WHERE LastName LIKE @Value OR FirstName LIKE @Value OR 
                                      Username LIKE @Value OR Email LIKE @Value OR Role LIKE @Value
@@ -125,7 +124,7 @@ namespace HotelReservationSystem.Infrastructure.Repository
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"SELECT UserId, LastName, FirstName, MiddleName, BirthDate, 
-                               Username, PasswordHash, Email, Gender, Role, CreatedAt, IsActive 
+                               Username, PasswordHash, Email, Gender, Role, CreatedAt 
                                FROM Users WHERE UserId = @UserId";
                 command.Parameters.AddWithValue("@UserId", id);
 
@@ -138,7 +137,7 @@ namespace HotelReservationSystem.Infrastructure.Repository
         {
             var user = GetByUsernameOrEmail(usernameOrEmail);
             if (user == null) return null;
-            
+
 
             if (!passwordHasher.VerifyPassword(password, user.PasswordHash)) return null;
             return user;
@@ -152,7 +151,7 @@ namespace HotelReservationSystem.Infrastructure.Repository
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = @"SELECT UserId, LastName, FirstName, MiddleName, BirthDate, 
-                                       Username, PasswordHash, Email, Gender, Role, CreatedAt, IsActive 
+                                       Username, PasswordHash, Email, Gender, Role, CreatedAt 
                                        FROM Users WHERE Username = @UsernameOrEmail OR Email = @UsernameOrEmail";
                 command.Parameters.AddWithValue("@UsernameOrEmail", usernameOrEmail);
 
@@ -174,8 +173,7 @@ namespace HotelReservationSystem.Infrastructure.Repository
                 Email = reader["Email"].ToString(),
                 Gender = reader["Gender"].ToString(),
                 Role = reader["Role"].ToString(),
-                CreatedAt = (DateTime)reader["CreatedAt"],
-                IsActive = reader["IsActive"] == DBNull.Value || (bool)reader["IsActive"]
+                CreatedAt = (DateTime)reader["CreatedAt"]
             };
         }
 
@@ -190,7 +188,6 @@ namespace HotelReservationSystem.Infrastructure.Repository
             command.Parameters.AddWithValue("@Gender", user.Gender);
             command.Parameters.AddWithValue("@Role", user.Role);
             command.Parameters.AddWithValue("@CreatedAt", user.CreatedAt);
-            command.Parameters.AddWithValue("@IsActive", user.IsActive);
 
             if (!string.IsNullOrEmpty(user.PasswordHash))
             {

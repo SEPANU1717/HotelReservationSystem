@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using HotelReservationSystem.Domain.Model;
 using static HotelReservationSystem.Domain.Enums.ReservationEnum;
 
 namespace HotelReservationSystem.Domain.Interface.Reservation
 {
     public interface IReservationView
     {
+        // Properties
         string ReservationId { get; set; }
         string CustomerName { get; set; }
         string RoomNumber { get; set; }
@@ -36,10 +39,27 @@ namespace HotelReservationSystem.Domain.Interface.Reservation
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
+        event EventHandler ShowCheckInOutView;
 
-        // Load data to DataGridView
+        // New events for presenter communication
+        event EventHandler<int> LoadReservationForEditEvent;
+        event EventHandler<string> SetCustomerForReservationEvent;
+        event EventHandler<string> RoomTypeChangedEvent;
+
+        // Methods
         void SetReservationListBindingSource(BindingSource reservationList);
         void Show();
 
+        // New methods for view control
+        void LoadAvailableRooms(IEnumerable<RoomModel> rooms);
+        void PopulateEditForm(ReservationModel reservation, RoomModel room);
+        void ShowTab(int tabIndex);
+        void EnableField(string fieldName, bool enabled);
+        void SetOriginalDates(DateTime checkIn, DateTime checkOut);
+        void SetOriginalRoomNumber(string roomNumber);
+        int GetSelectedReservationId();
+        void ClearForm();
+        void ShowSuccessMessage(string message);
+        void ShowErrorMessage(string message);
     }
 }

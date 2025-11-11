@@ -67,9 +67,8 @@ namespace HotelReservationSystem.UserControls
         public string Username { get => txtUsername.Texts; set => txtUsername.Texts = value; }
         public string Password { get => txtPassword.Texts; set => txtPassword.Texts = value; }
         public string Email { get => txtEmail.Texts; set => txtEmail.Texts = value; }
-        public string Gender { get => cbGender.Text; set => cbGender.Text = value; }
-        public string Role { get => cbRole.Text; set => cbRole.Text = value; }
-        public bool IsActive { get => true; set { } }
+        public string Gender { get => cbGender.SelectedItem?.ToString(); set => cbGender.SelectedItem = value; }
+        public string Role { get => cbRole.SelectedItem?.ToString(); set => cbRole.SelectedItem = value; }
         public string SearchValue { get => txtSearch.Texts; set => txtSearch.Texts = value; }
         public bool isEdit { get; set; }
         public bool isSuccessful { get; set; }

@@ -8,7 +8,7 @@ namespace HotelReservationSystem.DataInitializer
         public static void OrderSaltedPasta(SharedAddServiceModel orderInstance)
         {
             orderInstance.ItemName = "Salted Pasta";
-            orderInstance.Price = 249.99m;  // decimal with 'm'
+            orderInstance.Price = 249.99m; 
             orderInstance.Quantity = 1;
         }
 

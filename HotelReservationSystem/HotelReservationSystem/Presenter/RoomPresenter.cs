@@ -42,6 +42,7 @@ namespace HotelReservationSystem.Presenter
             this.roomView.EditEvent += EditRoom;
             this.roomView.SaveEvent += SaveRoom;
             this.roomView.CancelEvent += CancelRoom;
+            this.roomView.FilterEvent += FilterRooms;
         }
 
         private void UnsubscribeFromViewEvents()
@@ -52,6 +53,15 @@ namespace HotelReservationSystem.Presenter
             this.roomView.EditEvent -= EditRoom;
             this.roomView.SaveEvent -= SaveRoom;
             this.roomView.CancelEvent -= CancelRoom;
+            this.roomView.FilterEvent -= FilterRooms;
+        }
+
+        private void FilterRooms(object sender, EventArgs e)
+        {
+            string filter = roomView.StatusFilter;
+            roomList = repository.GetByStatusFilter(filter);
+            RoomBindingSource.DataSource = roomList;
+            RoomBindingSource.ResetBindings(false);
         }
 
         private void LoadAllRoomList()

@@ -131,10 +131,7 @@
             this.btnRoomAddNew = new FrameworkTest.SATAButton();
             this.btnRefresh = new FrameworkTest.SATAButton();
             this.btnRoomEdit = new FrameworkTest.SATAButton();
-            this.dtBirthday = new CuoreUI.Controls.cuiCalendarDatePicker();
-            this.cuiCalendarDatePicker1 = new CuoreUI.Controls.cuiCalendarDatePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
+            this.cbRoomFilter = new System.Windows.Forms.ComboBox();
             this.tabPage2.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             this.sataPanel7.SuspendLayout();
@@ -1263,7 +1260,7 @@
             // 
             this.txtDescription.BackColor = System.Drawing.Color.White;
             this.txtDescription.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtDescription.BorderColor = System.Drawing.Color.Silver;
+            this.txtDescription.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtDescription.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtDescription.BorderRadius = 3;
             this.txtDescription.BorderSize = 1;
@@ -1286,7 +1283,7 @@
             // 
             this.txtRoomGuests.BackColor = System.Drawing.Color.White;
             this.txtRoomGuests.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtRoomGuests.BorderColor = System.Drawing.Color.Silver;
+            this.txtRoomGuests.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtRoomGuests.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomGuests.BorderRadius = 3;
             this.txtRoomGuests.BorderSize = 1;
@@ -1309,7 +1306,7 @@
             // 
             this.txtBedCount.BackColor = System.Drawing.Color.White;
             this.txtBedCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtBedCount.BorderColor = System.Drawing.Color.Silver;
+            this.txtBedCount.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtBedCount.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtBedCount.BorderRadius = 3;
             this.txtBedCount.BorderSize = 1;
@@ -1332,7 +1329,7 @@
             // 
             this.txtRoomPrice.BackColor = System.Drawing.Color.White;
             this.txtRoomPrice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtRoomPrice.BorderColor = System.Drawing.Color.Silver;
+            this.txtRoomPrice.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtRoomPrice.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomPrice.BorderRadius = 3;
             this.txtRoomPrice.BorderSize = 1;
@@ -1356,7 +1353,7 @@
             // 
             this.txtRoomType.BackColor = System.Drawing.Color.White;
             this.txtRoomType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtRoomType.BorderColor = System.Drawing.Color.Silver;
+            this.txtRoomType.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtRoomType.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomType.BorderRadius = 3;
             this.txtRoomType.BorderSize = 1;
@@ -1380,7 +1377,7 @@
             // 
             this.txtRoomId.BackColor = System.Drawing.Color.White;
             this.txtRoomId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtRoomId.BorderColor = System.Drawing.Color.Silver;
+            this.txtRoomId.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtRoomId.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomId.BorderRadius = 3;
             this.txtRoomId.BorderSize = 1;
@@ -1405,7 +1402,7 @@
             // 
             this.txtRoomNumber.BackColor = System.Drawing.Color.White;
             this.txtRoomNumber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtRoomNumber.BorderColor = System.Drawing.Color.Silver;
+            this.txtRoomNumber.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtRoomNumber.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomNumber.BorderRadius = 3;
             this.txtRoomNumber.BorderSize = 1;
@@ -1803,94 +1800,26 @@
             this.btnRoomEdit.TextAutoCenter = false;
             this.btnRoomEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // dtBirthday
+            // cbRoomFilter
             // 
-            this.dtBirthday.BackColor = System.Drawing.Color.White;
-            this.dtBirthday.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
-            this.dtBirthday.EnableThemeChangeButton = true;
-            this.dtBirthday.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtBirthday.ForeColor = System.Drawing.Color.DarkGray;
-            this.dtBirthday.HoverBackground = System.Drawing.Color.White;
-            this.dtBirthday.HoverOutline = System.Drawing.Color.White;
-            this.dtBirthday.Icon = null;
-            this.dtBirthday.IconTint = System.Drawing.Color.Gray;
-            this.dtBirthday.Location = new System.Drawing.Point(810, 100);
-            this.dtBirthday.Margin = new System.Windows.Forms.Padding(4);
-            this.dtBirthday.Name = "dtBirthday";
-            this.dtBirthday.NormalBackground = System.Drawing.Color.White;
-            this.dtBirthday.NormalOutline = System.Drawing.Color.Gainsboro;
-            this.dtBirthday.OutlineThickness = 1.5F;
-            this.dtBirthday.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
-            this.dtBirthday.PressedBackground = System.Drawing.Color.White;
-            this.dtBirthday.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dtBirthday.Rounding = 3;
-            this.dtBirthday.ShowIcon = true;
-            this.dtBirthday.Size = new System.Drawing.Size(131, 39);
-            this.dtBirthday.TabIndex = 93;
-            this.dtBirthday.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
-            // 
-            // cuiCalendarDatePicker1
-            // 
-            this.cuiCalendarDatePicker1.BackColor = System.Drawing.Color.White;
-            this.cuiCalendarDatePicker1.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
-            this.cuiCalendarDatePicker1.EnableThemeChangeButton = true;
-            this.cuiCalendarDatePicker1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cuiCalendarDatePicker1.ForeColor = System.Drawing.Color.DarkGray;
-            this.cuiCalendarDatePicker1.HoverBackground = System.Drawing.Color.White;
-            this.cuiCalendarDatePicker1.HoverOutline = System.Drawing.Color.White;
-            this.cuiCalendarDatePicker1.Icon = null;
-            this.cuiCalendarDatePicker1.IconTint = System.Drawing.Color.Gray;
-            this.cuiCalendarDatePicker1.Location = new System.Drawing.Point(644, 100);
-            this.cuiCalendarDatePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.cuiCalendarDatePicker1.Name = "cuiCalendarDatePicker1";
-            this.cuiCalendarDatePicker1.NormalBackground = System.Drawing.Color.White;
-            this.cuiCalendarDatePicker1.NormalOutline = System.Drawing.Color.Gainsboro;
-            this.cuiCalendarDatePicker1.OutlineThickness = 1.5F;
-            this.cuiCalendarDatePicker1.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
-            this.cuiCalendarDatePicker1.PressedBackground = System.Drawing.Color.White;
-            this.cuiCalendarDatePicker1.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiCalendarDatePicker1.Rounding = 3;
-            this.cuiCalendarDatePicker1.ShowIcon = true;
-            this.cuiCalendarDatePicker1.Size = new System.Drawing.Size(131, 39);
-            this.cuiCalendarDatePicker1.TabIndex = 93;
-            this.cuiCalendarDatePicker1.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(780, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 21);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "to";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.DimGray;
-            this.label37.Location = new System.Drawing.Point(595, 108);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(48, 21);
-            this.label37.TabIndex = 9;
-            this.label37.Text = "From";
+            this.cbRoomFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRoomFilter.FormattingEnabled = true;
+            this.cbRoomFilter.Location = new System.Drawing.Point(734, 107);
+            this.cbRoomFilter.Name = "cbRoomFilter";
+            this.cbRoomFilter.Size = new System.Drawing.Size(201, 29);
+            this.cbRoomFilter.TabIndex = 11;
             // 
             // UCRooms
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.Controls.Add(this.cuiCalendarDatePicker1);
-            this.Controls.Add(this.dtBirthday);
+            this.Controls.Add(this.cbRoomFilter);
             this.Controls.Add(this.btnRoomSearch);
             this.Controls.Add(this.txtRoomSearch);
             this.Controls.Add(this.btnRoomDelete);
             this.Controls.Add(this.btnRoomAddNew);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnRoomEdit);
-            this.Controls.Add(this.label37);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1938,7 +1867,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -2035,9 +1963,6 @@
         private System.Windows.Forms.Label label36;
         private FrameworkTest.SATAButton btnRefresh;
         private System.Windows.Forms.Label label3;
-        private CuoreUI.Controls.cuiCalendarDatePicker dtBirthday;
-        private CuoreUI.Controls.cuiCalendarDatePicker cuiCalendarDatePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.ComboBox cbRoomFilter;
     }
 }

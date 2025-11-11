@@ -19,7 +19,6 @@ namespace HotelReservationSystem.Domain.Interface
         string Email { get; set; }
         string Gender { get; set; }
         string Role { get; set; }
-        bool IsActive { get; set; }
         string SearchValue { get; set; }
         bool isEdit { get; set; }
         bool isSuccessful { get; set; }

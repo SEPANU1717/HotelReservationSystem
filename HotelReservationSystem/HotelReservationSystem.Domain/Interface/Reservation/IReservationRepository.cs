@@ -11,5 +11,9 @@ namespace HotelReservationSystem.Domain.Interface.Reservation
         IEnumerable<ReservationModel> GetAll();
         IEnumerable<ReservationModel> GetByValue(string value);
 
+        // Add these missing methods
+        ReservationModel GetById(int reservationId);
+        ReservationModel GetByCustomerName(string customerName);
+        int GetNextReservationId();
     }
 }

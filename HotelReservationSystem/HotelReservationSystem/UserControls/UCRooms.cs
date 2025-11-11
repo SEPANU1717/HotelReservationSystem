@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.DataInitializer;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface.Rooms;
 using HotelReservationSystem.Presenter.Common;
+using static HotelReservationSystem.Domain.Enums.RoomEnum;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -24,7 +26,8 @@ namespace HotelReservationSystem.UserControls
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             materialTabControl1.TabPages.Remove(tabPage2);
-            InitializeComboBox();
+            cboRoomStatus.Items = Enum.GetNames(typeof(RoomAvailability));
+            cbRoomFilter.DataSource = Enum.GetValues(typeof(RoomStatusFilter));
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
         }
@@ -40,6 +43,7 @@ namespace HotelReservationSystem.UserControls
                 if (e.KeyCode == Keys.Enter)
                     SearchEvent?.Invoke(this, EventArgs.Empty);
             };
+            cbRoomFilter.SelectedIndexChanged += delegate { FilterEvent?.Invoke(this, EventArgs.Empty); };
 
             btnRoomAddNew.Click += delegate
             {
@@ -133,6 +137,13 @@ namespace HotelReservationSystem.UserControls
             }
         }
 
+        public string StatusFilter
+        {
+            get => cbRoomFilter.Text ?? "All";
+            set{cbRoomFilter.Text = cbRoomFilter.Items.Cast<object>().Any(x => x.ToString() == value) ? value : "All";
+}
+        }
+
         #endregion
         #region Events
 
@@ -142,6 +153,7 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler FilterEvent;
 
         #endregion
         #region Singleton
@@ -155,17 +167,7 @@ namespace HotelReservationSystem.UserControls
         #endregion
         #region Methods
 
-        private void InitializeComboBox()
-        {
-            comboItems = new List<string>()
-           {
-               "Available",
-               "Occupied",
-               "Under maintenance"
-           };
 
-            cboRoomStatus.Items = comboItems.ToArray();
-        }
 
         public void SetRoomListBindingSource(BindingSource customerList)
         {

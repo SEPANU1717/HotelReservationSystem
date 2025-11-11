@@ -20,13 +20,14 @@ namespace HotelReservationSystem.Data.Repositories
             {
                 connection.Open();
                 insertCommand.CommandText = @"
-                    INSERT INTO Reservations 
-                    (CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber,
-                     DownPayment, AmountPaid, IsDownPaymentPaid, PaymentMethod, PaymentStatus, DownPaymentDate, CreatedAt)
-                    VALUES 
-                    (@CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber,
-                     @DownPayment, @AmountPaid, @IsDownPaymentPaid, @PaymentMethod, @PaymentStatus, @DownPaymentDate, GETDATE())";
+    INSERT INTO Reservations 
+    (CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber, RoomType,
+     DownPayment, AmountPaid, IsDownPaymentPaid, PaymentMethod, PaymentStatus, DownPaymentDate, CreatedAt)
+    VALUES 
+    (@CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber, @RoomType,
+     @DownPayment, @AmountPaid, @IsDownPaymentPaid, @PaymentMethod, @PaymentStatus, @DownPaymentDate, GETDATE())";
 
+                insertCommand.Parameters.Add("@RoomType", SqlDbType.VarChar).Value = (object)reservation.RoomType ?? DBNull.Value;
                 insertCommand.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = reservation.CustomerName;
                 insertCommand.Parameters.Add("@CheckInDate", SqlDbType.DateTime).Value = reservation.CheckInDate;
                 insertCommand.Parameters.Add("@CheckOutDate", SqlDbType.DateTime).Value = reservation.CheckOutDate;
@@ -67,21 +68,23 @@ namespace HotelReservationSystem.Data.Repositories
             {
                 connection.Open();
                 command.CommandText = @"
-                    UPDATE Reservations
-                    SET CustomerName = @CustomerName,
-                        CheckInDate = @inDate,
-                        CheckOutDate = @outDate,
-                        TotalAmount = @amount,
-                        ReservationStatus = @status,
-                        RoomNumber = @RoomNumber,
-                        DownPayment = @DownPayment,
-                        AmountPaid = @AmountPaid,
-                        IsDownPaymentPaid = @IsDownPaymentPaid,
-                        PaymentMethod = @PaymentMethod,
-                        PaymentStatus = @PaymentStatus,
-                        DownPaymentDate = @DownPaymentDate
-                    WHERE ReservationId = @reserveId";
+    UPDATE Reservations
+    SET CustomerName = @CustomerName,
+        CheckInDate = @inDate,
+        CheckOutDate = @outDate,
+        TotalAmount = @amount,
+        ReservationStatus = @status,
+        RoomNumber = @RoomNumber,
+        RoomType = @RoomType,
+        DownPayment = @DownPayment,
+        AmountPaid = @AmountPaid,
+        IsDownPaymentPaid = @IsDownPaymentPaid,
+        PaymentMethod = @PaymentMethod,
+        PaymentStatus = @PaymentStatus,
+        DownPaymentDate = @DownPaymentDate
+    WHERE ReservationId = @reserveId";
 
+                command.Parameters.Add("@RoomType", SqlDbType.VarChar).Value = (object)reservation.RoomType ?? DBNull.Value;
                 command.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = reservation.CustomerName;
                 command.Parameters.Add("@inDate", SqlDbType.DateTime).Value = reservation.CheckInDate;
                 command.Parameters.Add("@outDate", SqlDbType.DateTime).Value = reservation.CheckOutDate;
@@ -115,24 +118,7 @@ namespace HotelReservationSystem.Data.Repositories
                 {
                     while (reader.Read())
                     {
-                        var reservation = new ReservationModel
-                        {
-                            ReservationId = Convert.ToInt32(reader["ReservationId"]),
-                            CustomerName = reader["CustomerName"].ToString(),
-                            CheckInDate = Convert.ToDateTime(reader["CheckInDate"]),
-                            CheckOutDate = Convert.ToDateTime(reader["CheckOutDate"]),
-                            TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
-                            ReservationStatus = reader["ReservationStatus"].ToString(),
-                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
-                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString(),
-                            DownPayment = reader["DownPayment"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["DownPayment"]),
-                            AmountPaid = reader["AmountPaid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AmountPaid"]),
-                            IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
-                            PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
-                            PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending
-                        };
-
-                        reservationList.Add(reservation);
+                        reservationList.Add(MapReaderToModel(reader));
                     }
                 }
             }
@@ -163,24 +149,7 @@ namespace HotelReservationSystem.Data.Repositories
                 {
                     while (reader.Read())
                     {
-                        var reservation = new ReservationModel
-                        {
-                            ReservationId = Convert.ToInt32(reader["ReservationId"]),
-                            CustomerName = reader["CustomerName"].ToString(),
-                            CheckInDate = Convert.ToDateTime(reader["CheckInDate"]),
-                            CheckOutDate = Convert.ToDateTime(reader["CheckOutDate"]),
-                            TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
-                            ReservationStatus = reader["ReservationStatus"].ToString(),
-                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
-                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString(),
-                            DownPayment = reader["DownPayment"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["DownPayment"]),
-                            AmountPaid = reader["AmountPaid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AmountPaid"]),
-                            IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
-                            PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
-                            PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending
-                        };
-
-                        reservationList.Add(reservation);
+                        reservationList.Add(MapReaderToModel(reader));
                     }
                 }
             }
@@ -213,22 +182,7 @@ namespace HotelReservationSystem.Data.Repositories
                 {
                     if (reader.Read())
                     {
-                        return new ReservationModel
-                        {
-                            ReservationId = Convert.ToInt32(reader["ReservationId"]),
-                            CustomerName = reader["CustomerName"].ToString(),
-                            CheckInDate = Convert.ToDateTime(reader["CheckInDate"]),
-                            CheckOutDate = Convert.ToDateTime(reader["CheckOutDate"]),
-                            TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
-                            ReservationStatus = reader["ReservationStatus"].ToString(),
-                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
-                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString(),
-                            DownPayment = reader["DownPayment"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["DownPayment"]),
-                            AmountPaid = reader["AmountPaid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AmountPaid"]),
-                            IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
-                            PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
-                            PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending
-                        };
+                        return MapReaderToModel(reader);
                     }
                 }
             }
@@ -236,6 +190,7 @@ namespace HotelReservationSystem.Data.Repositories
             return null;
         }
 
+        //<-----------------------Get Reservation By Customer Name--------------------------/>
         public ReservationModel GetByCustomerName(string customerName)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -249,27 +204,34 @@ namespace HotelReservationSystem.Data.Repositories
                 {
                     if (reader.Read())
                     {
-                        return new ReservationModel
-                        {
-                            ReservationId = Convert.ToInt32(reader["ReservationId"]),
-                            CustomerName = reader["CustomerName"].ToString(),
-                            CheckInDate = Convert.ToDateTime(reader["CheckInDate"]),
-                            CheckOutDate = Convert.ToDateTime(reader["CheckOutDate"]),
-                            TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
-                            ReservationStatus = reader["ReservationStatus"].ToString(),
-                            RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString(),
-                            DownPayment = reader["DownPayment"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["DownPayment"]),
-                            AmountPaid = reader["AmountPaid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AmountPaid"]),
-                            IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
-                            PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
-                            PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending,
-                            CreatedAt = Convert.ToDateTime(reader["CreatedAt"])
-                        };
+                        return MapReaderToModel(reader);
                     }
                 }
             }
             return null;
         }
 
+        //<-----------------------Helper Method: Map Reader to Model--------------------------/>
+        private ReservationModel MapReaderToModel(SqlDataReader reader)
+        {
+            return new ReservationModel
+            {
+                ReservationId = Convert.ToInt32(reader["ReservationId"]),
+                CustomerName = reader["CustomerName"].ToString(),
+                CheckInDate = Convert.ToDateTime(reader["CheckInDate"]),
+                CheckOutDate = Convert.ToDateTime(reader["CheckOutDate"]),
+                TotalPrice = Convert.ToDecimal(reader["TotalAmount"]),
+                ReservationStatus = reader["ReservationStatus"].ToString(),
+                CreatedAt = Convert.ToDateTime(reader["CreatedAt"]),
+                RoomNumber = reader["RoomNumber"] == DBNull.Value ? null : reader["RoomNumber"].ToString(),
+                RoomType = reader["RoomType"] == DBNull.Value ? null : reader["RoomType"].ToString(),
+                DownPayment = reader["DownPayment"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["DownPayment"]),
+                AmountPaid = reader["AmountPaid"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["AmountPaid"]),
+                IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
+                PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
+                PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending,
+                DownPaymentDate = reader["DownPaymentDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["DownPaymentDate"])
+            };
+        }
     }
 }

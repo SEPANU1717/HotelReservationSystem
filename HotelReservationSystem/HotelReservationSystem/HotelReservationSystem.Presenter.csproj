@@ -52,7 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CuoreUI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CuoreUI.Winforms.2025.7.18\lib\net472\CuoreUI.dll</HintPath>
+      <HintPath>..\packages\CuoreUI.Winforms.2025.10.18.1\lib\net472\CuoreUI.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
@@ -223,6 +223,9 @@
     <Compile Include="Presenter\CheckInOutPresenter.cs" />
     <Compile Include="Presenter\Common\FieldsCleaner.cs" />
     <Compile Include="Presenter\Common\LoginSuccessEventArgs.cs" />
+    <Compile Include="Presenter\Common\MetroComboBoxGainsboro.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Presenter\Common\ModelDataValidation.cs" />
     <Compile Include="Presenter\Common\UserControlFactory.cs" />
     <Compile Include="Presenter\Common\UserInfoDisplay.cs" />
@@ -230,6 +233,7 @@
     <Compile Include="Presenter\CustomerPresenter.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="Presenter\Mapper\CheckInMapper.cs" />
     <Compile Include="Presenter\Mapper\CustomerMapper.cs" />
     <Compile Include="Presenter\Mapper\ReservationMapper.cs" />
     <Compile Include="Presenter\Mapper\RoomMapper.cs" />
@@ -238,6 +242,7 @@
     <Compile Include="Presenter\ReservationPresenter.cs" />
     <Compile Include="Presenter\RoomPresenter.cs" />
     <Compile Include="Presenter\ServicePresenter.cs" />
+    <Compile Include="Presenter\UCINOUTPresenter.cs" />
     <Compile Include="Presenter\UserPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,11 +257,11 @@
     <Compile Include="UserControls\UCBilling.Designer.cs">
       <DependentUpon>UCBilling.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UCINOUT.cs">
+    <Compile Include="UserControls\UCCheckINOUT.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UCINOUT.Designer.cs">
-      <DependentUpon>UCINOUT.cs</DependentUpon>
+    <Compile Include="UserControls\UCCheckINOUT.Designer.cs">
+      <DependentUpon>UCCheckINOUT.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCReservation.cs">
       <SubType>UserControl</SubType>
@@ -314,6 +319,9 @@
     <EmbeddedResource Include="UserControls\UCBilling.resx">
       <DependentUpon>UCBilling.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCCheckINOUT.resx">
+      <DependentUpon>UCCheckINOUT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCCustomers.resx">
       <DependentUpon>UCCustomers.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,9 +330,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHomepage.resx">
       <DependentUpon>UCHomepage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCINOUT.resx">
-      <DependentUpon>UCINOUT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCReservation.resx">
       <DependentUpon>UCReservation.cs</DependentUpon>

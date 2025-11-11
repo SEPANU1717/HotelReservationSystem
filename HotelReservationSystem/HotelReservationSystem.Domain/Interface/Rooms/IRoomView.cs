@@ -18,7 +18,8 @@ namespace HotelReservationSystem.Domain.Interface.Rooms
          bool isSuccessful { get; set; }
          string Message { get; set; }
 
-
+        string StatusFilter { get; set; }
+        event EventHandler FilterEvent;
         event EventHandler SearchEvent;
         event EventHandler AddNewEvent;
         event EventHandler EditEvent;

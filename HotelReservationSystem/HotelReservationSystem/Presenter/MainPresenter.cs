@@ -143,7 +143,7 @@ namespace HotelReservationSystem.Presenter
         {
             try
             {
-                var checkInOutControl = UCINOUT.GetInstance((Form)mainView);
+                var checkInOutControl = UCCheckINOUT.GetInstance((Form)mainView);
                 mainView.LoadUserControl(checkInOutControl);
             }
             catch (Exception ex)

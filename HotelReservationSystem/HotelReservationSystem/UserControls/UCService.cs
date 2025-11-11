@@ -200,7 +200,6 @@ namespace HotelReservationSystem.UserControls
         public string FoodId {get => txtFoodId.Texts;set => txtFoodId.Texts = value;}
         public string FoodName{ get => txtFoodName.Texts;set => txtFoodName.Texts = value;}
         public string Description{get => txtDescription.Texts;set => txtDescription.Texts = value;}
-        public string LaundryId{get /*=> txtLId.Texts*/;set /*=> txtLId.Texts = value*/;}
         public string Price{get => txtFoodPrice.Texts;set => txtFoodPrice.Texts = value;}
         public string Stock{ get => txtStock.Texts;set => txtStock.Texts = value; }
         public string SearchValue{get => txtFoodSearch.Texts; set => txtFoodSearch.Texts = value;  }

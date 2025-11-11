@@ -57,9 +57,6 @@ namespace HotelReservationSystem.Domain.Model
         [DisplayName("Date Created")]
         public DateTime CreatedAt { get; set; }
 
-        [DisplayName("Is Active")]
-        public bool IsActive { get; set; } = true;
-
         public string PasswordHash { get; set; }
         [DisplayName("Full Name")]
         public string FullName => $"{FirstName} {(!string.IsNullOrEmpty(MiddleName) ? MiddleName + " " : "")}{LastName}";

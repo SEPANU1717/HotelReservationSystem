@@ -46,6 +46,7 @@ namespace HotelReservationSystem.Presenter.Mapper
                 ReservationId = string.IsNullOrEmpty(view.ReservationId) ? 0 : int.Parse(view.ReservationId),
                 CustomerName = view.CustomerName,
                 RoomNumber = view.RoomNumber,
+                RoomType = view.RoomType,
                 CheckInDate = view.CheckInDate,
                 CheckOutDate = view.CheckOutDate,
                 TotalPrice = totalPrice,
@@ -54,6 +55,7 @@ namespace HotelReservationSystem.Presenter.Mapper
                 IsDownPaymentPaid = amountPaid >= downPayment,
                 ReservationStatus = view.ReservationStatus,
                 PaymentStatus = view.PaymentStatus,
+                PaymentMethod = view.PaymentMethod,
                 CreatedAt = DateTime.Now
             };
         }

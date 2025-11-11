@@ -21,7 +21,7 @@ namespace HotelReservationSystem.Domain.Helper
                 default: return 0m;
             }
         }
-        public static decimal GetAutoDownPayment(decimal totalPrice, decimal percentage = 0.3m)
+        public static decimal GetAutoDownPayment(decimal totalPrice, decimal percentage = 0.5m)
         {
             return Math.Round(totalPrice * percentage, 2);
         }

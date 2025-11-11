@@ -23,7 +23,6 @@ namespace HotelReservationSystem.Presenter.Mapper
                 Email = userView.Email?.Trim(),
                 Gender = userView.Gender,
                 Role = userView.Role,
-                IsActive = userView.IsActive,
                 CreatedAt = DateTime.Now
             };
         }
@@ -41,7 +40,6 @@ namespace HotelReservationSystem.Presenter.Mapper
                 Gender = user.Gender,
                 Role = user.Role,
                 Age = DateTime.Now.Year - user.BirthDate.Year - (DateTime.Now.DayOfYear < user.BirthDate.DayOfYear ? 1 : 0),
-                IsActive = user.IsActive,
                 CreatedAt = user.CreatedAt
             };
         }

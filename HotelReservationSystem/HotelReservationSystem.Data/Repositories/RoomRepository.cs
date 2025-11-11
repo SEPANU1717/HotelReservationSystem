@@ -12,7 +12,6 @@ namespace HotelReservationSystem.Data.Repositories
     {
         public RoomRepository(string connectionString) : base(connectionString) { }
 
-        //<-----------------------Add Room--------------------------/>
         public void Add(RoomModel room)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -36,7 +35,6 @@ namespace HotelReservationSystem.Data.Repositories
             }
         }
 
-        //<-----------------------Delete Room--------------------------/>
         public void Delete(int id)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -50,7 +48,6 @@ namespace HotelReservationSystem.Data.Repositories
             }
         }
 
-        //<-----------------------Edit Room--------------------------/>
         public void Edit(RoomModel room)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -74,7 +71,6 @@ namespace HotelReservationSystem.Data.Repositories
             }
         }
 
-        //<-----------------------Get All Room--------------------------/>
         public IEnumerable<RoomModel> GetAll()
         {
             var roomList = new List<RoomModel>();
@@ -95,7 +91,6 @@ namespace HotelReservationSystem.Data.Repositories
             return roomList;
         }
 
-        //<-----------------------Get by Value--------------------------/>
         public IEnumerable<RoomModel> GetByValue(string value)
         {
             var roomList = new List<RoomModel>();
@@ -121,7 +116,6 @@ namespace HotelReservationSystem.Data.Repositories
             return roomList;
         }
 
-        //<-----------------------Get Next Room Id--------------------------/>
         public int GetNextRoomId()
         {
             using (var connection = new SqlConnection(connectionString))
@@ -220,6 +214,36 @@ namespace HotelReservationSystem.Data.Repositories
             command.Parameters.Add("@bed", SqlDbType.Int).Value = int.Parse(room.BedCount);
             command.Parameters.Add("@guest", SqlDbType.Int).Value = int.Parse(room.RoomGuests);
             command.Parameters.Add("@description", SqlDbType.NVarChar).Value = room.RoomDescription ?? (object)DBNull.Value;
+        }
+
+        public IEnumerable<RoomModel> GetByStatusFilter(string statusFilter)
+        {
+            var roomList = new List<RoomModel>();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+
+                if (statusFilter == "All")
+                {
+                    command.CommandText = "SELECT * FROM Rooms ORDER BY RoomId DESC";
+                }
+                else
+                {
+                    command.CommandText = "SELECT * FROM Rooms WHERE RoomStatus = @status ORDER BY RoomId DESC";
+                    command.Parameters.Add("@status", SqlDbType.NVarChar).Value = statusFilter;
+                }
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        roomList.Add(MapRoomFromReader(reader));
+                    }
+                }
+            }
+            return roomList;
         }
     }
 }

@@ -48,6 +48,7 @@
             this.lblRole = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.sataPanel9 = new SATAUiFramework.SATAPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.lblTotalRoom = new System.Windows.Forms.Label();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
@@ -58,7 +59,6 @@
             this.dataGridCheckInDash = new System.Windows.Forms.DataGridView();
             this.label41 = new System.Windows.Forms.Label();
             this.btnAddNew = new FrameworkTest.SATAButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sataPanel2 = new SATAUiFramework.SATAPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,13 +74,13 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservationDash)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInDash)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sataPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.sataPanel3.SuspendLayout();
@@ -171,6 +171,15 @@
             this.sataPanel9.Name = "sataPanel9";
             this.sataPanel9.Size = new System.Drawing.Size(280, 106);
             this.sataPanel9.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(37, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 50);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label12
             // 
@@ -296,7 +305,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 398);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 445);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -351,7 +360,7 @@
             this.dataGridCheckInDash.RowTemplate.Height = 30;
             this.dataGridCheckInDash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridCheckInDash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridCheckInDash.Size = new System.Drawing.Size(1188, 392);
+            this.dataGridCheckInDash.Size = new System.Drawing.Size(1188, 439);
             this.dataGridCheckInDash.TabIndex = 4;
             // 
             // label41
@@ -403,15 +412,6 @@
             this.btnAddNew.TabIndex = 15;
             this.btnAddNew.TextAutoCenter = true;
             this.btnAddNew.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(37, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 50);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // sataPanel2
             // 
@@ -588,13 +588,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.sataPanel9.ResumeLayout(false);
             this.sataPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservationDash)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInDash)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sataPanel2.ResumeLayout(false);
             this.sataPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

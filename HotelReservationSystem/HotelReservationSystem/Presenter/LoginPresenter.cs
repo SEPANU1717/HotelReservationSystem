@@ -58,12 +58,7 @@ namespace HotelReservationSystem.Presenter
                         return;
                     }
 
-                    if (!authenticatedUser.IsActive)
-                    {
-                        loginView.isSuccessful = false;
-                        loginView.Message = "Your account is inactive. Please contact the administrator.";
-                        return;
-                    }
+                    
                     loginView.isSuccessful = true;
                     loginView.Message = "Login successful!";
                     LoginSuccessful?.Invoke(this, new LoginSuccessEventArgs(authenticatedUser));

@@ -10,21 +10,26 @@ using HotelReservationSystem.UserControls;
 
 namespace HotelReservationSystem.Forms
 {
-
     public partial class ReservationSystem : Form, IMainView
     {
         private UCCustomers ucCustomers;
         private UCReservation ucReservation;
+        private ReservationPresenter reservationPresenter;
+
         public ReservationSystem()
         {
             InitializeComponent();
             Load += ReservationSystem_Load;
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
+
             ucCustomers = UCCustomers.GetInstance(this);
             ucCustomers.CustomerSelected += UcCustomers_CustomerSelected;
+
             ucReservation = UCReservation.GetInstance(this);
+
             LoadUserControl(new UCDashboard());
         }
+
         #region LoadUser
 
         public void LoadUserControl(UserControl control)
@@ -44,18 +49,16 @@ namespace HotelReservationSystem.Forms
         private void UcCustomers_CustomerSelected(object sender, UCCustomers.CustomerSelectedEventArgs e)
         {
             var ucReservation = UCReservation.GetInstance(this);
-
-            if (!ucReservation.ReservationTabControl.TabPages.Contains(ucReservation.ReservationTabPage))
-                ucReservation.ReservationTabControl.TabPages.Add(ucReservation.ReservationTabPage);
-
-            ucReservation.ReservationTabControl.SelectedTab = ucReservation.ReservationTabPage;
-            ucReservation.SetCustomerForReservation(e.FullName);
-
-            var presenter = new ReservationPresenter(ucReservation, new ReservationRepository(DbConfig.GetConnectionString()));
+            if (reservationPresenter == null)
+            {
+                reservationPresenter = new ReservationPresenter(
+                    ucReservation,
+                    new ReservationRepository(DbConfig.GetConnectionString())
+                );
+            }
+            ucReservation.TriggerSetCustomerForReservation(e.FullName);
             LoadUserControl(ucReservation);
         }
-
-
 
         private void sataButton1_Click(object sender, EventArgs e) => LoadUserControl(new UCDashboard());
         private void sataButton2_Click(object sender, EventArgs e) => ShowReservationView?.Invoke(this, EventArgs.Empty);
@@ -65,10 +68,12 @@ namespace HotelReservationSystem.Forms
         private void sataButton6_Click(object sender, EventArgs e) => ShowUserView?.Invoke(this, EventArgs.Empty);
         private void pictureBox1_Click(object sender, EventArgs e) => LoadUserControl(new UCHomepage());
         private void sataButton9_Click(object sender, EventArgs e) => ShowServiceView?.Invoke(this, EventArgs.Empty);
-        private void sataButton7_Click(object sender, EventArgs e) => LoadUserControl(new UCINOUT());
+        private void sataButton7_Click(object sender, EventArgs e) => ShowCheckInOutView?.Invoke(this,  EventArgs.Empty);
+
         #endregion
 
         #region EventHandler
+
         public event EventHandler ShowCustomerView;
         public event EventHandler ShowRoomView;
         public event EventHandler ShowReservationView;
@@ -76,13 +81,17 @@ namespace HotelReservationSystem.Forms
         public event EventHandler ShowServiceView;
         public event EventHandler ShowUserView;
         public event EventHandler ShowCheckInOutView;
+
         #endregion
 
         #region LoginCleanUp
+
         private void sataButton8_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             login.Show();
+
+            reservationPresenter = null;
 
             UCBilling.ResetInstance();
             UCReservation.ResetInstance();
@@ -90,12 +99,10 @@ namespace HotelReservationSystem.Forms
             UCRooms.ResetInstance();
             UCService.ResetInstance();
             UCSettings.ResetInstance();
+            UCCheckINOUT.ResetInstance();
             this.Hide();
         }
+
         #endregion
-
-
-
-
     }
 }

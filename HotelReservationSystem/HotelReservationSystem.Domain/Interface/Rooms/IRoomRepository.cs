@@ -8,7 +8,7 @@ namespace HotelReservationSystem.Domain.Interface.Rooms
         void Add(RoomModel room);
         void Edit(RoomModel room);
         void Delete(int id);
-       
+        IEnumerable<RoomModel> GetByStatusFilter(string statusFilter);
 
         IEnumerable<RoomModel> GetAll();
         IEnumerable<RoomModel> GetByValue(string value);
