@@ -68,8 +68,8 @@
             this.label36 = new System.Windows.Forms.Label();
             this.txtEmail = new SATATextBox();
             this.txtPassword = new SATATextBox();
-            this.cbRole = new MetroFramework.Controls.MetroComboBox();
-            this.cbGender = new MetroFramework.Controls.MetroComboBox();
+            this.cbGender = new MetroComboBoxGainsboro();
+            this.cbRole = new MetroComboBoxGainsboro();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -421,8 +421,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.cbGender);
             this.tabPage2.Controls.Add(this.cbRole);
+            this.tabPage2.Controls.Add(this.cbGender);
             this.tabPage2.Controls.Add(this.btnCancel);
             this.tabPage2.Controls.Add(this.dpBirthdate);
             this.tabPage2.Controls.Add(this.UsrInf);
@@ -804,23 +804,23 @@
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
             // 
-            // cbRole
-            // 
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.ItemHeight = 23;
-            this.cbRole.Location = new System.Drawing.Point(434, 328);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(309, 29);
-            this.cbRole.TabIndex = 20;
-            // 
             // cbGender
             // 
             this.cbGender.FormattingEnabled = true;
             this.cbGender.ItemHeight = 23;
-            this.cbGender.Location = new System.Drawing.Point(93, 328);
+            this.cbGender.Location = new System.Drawing.Point(93, 321);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(309, 29);
-            this.cbGender.TabIndex = 20;
+            this.cbGender.Size = new System.Drawing.Size(310, 29);
+            this.cbGender.TabIndex = 143;
+            // 
+            // cbRole
+            // 
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.ItemHeight = 23;
+            this.cbRole.Location = new System.Drawing.Point(434, 321);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(310, 29);
+            this.cbRole.TabIndex = 143;
             // 
             // UCSettings
             // 
@@ -886,7 +886,7 @@
         private CuoreUI.Controls.cuiCalendarDatePicker dpBirthdate;
         private System.Windows.Forms.Label label11;
         private FrameworkTest.SATAButton btnCancel;
-        private MetroFramework.Controls.MetroComboBox cbGender;
-        private MetroFramework.Controls.MetroComboBox cbRole;
+        private MetroComboBoxGainsboro cbRole;
+        private MetroComboBoxGainsboro cbGender;
     }
 }

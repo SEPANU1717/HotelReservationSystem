@@ -45,6 +45,8 @@ namespace HotelReservationSystem.Domain.Interface.Reservation
         event EventHandler<int> LoadReservationForEditEvent;
         event EventHandler<string> SetCustomerForReservationEvent;
         event EventHandler<string> RoomTypeChangedEvent;
+        event EventHandler<string> PaymentTypeChangedEvent; // ADD THIS NEW EVENT
+
 
         // Methods
         void SetReservationListBindingSource(BindingSource reservationList);

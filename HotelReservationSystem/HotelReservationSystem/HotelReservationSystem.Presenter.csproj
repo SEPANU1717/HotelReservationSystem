@@ -405,6 +405,12 @@
   <ItemGroup>
     <None Include="Resources\female.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step_80dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\footprint_80dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -64,6 +64,7 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler<int> LoadReservationForEditEvent;
         public event EventHandler<string> SetCustomerForReservationEvent;
         public event EventHandler<string> RoomTypeChangedEvent;
+        public event EventHandler<string> PaymentTypeChangedEvent;
 
         #endregion
 
@@ -71,6 +72,16 @@ namespace HotelReservationSystem.UserControls
 
         private void AssociateAndRaiseViewEvents()
         {
+
+            cbPaymentStatus.SelectedIndexChanged += delegate
+            {
+                string selectedPaymentType = cbPaymentStatus.SelectedItem?.ToString();
+                if (!string.IsNullOrEmpty(selectedPaymentType))
+                {
+                    PaymentTypeChangedEvent?.Invoke(this, selectedPaymentType);
+                }
+            };
+
             btnReservationSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtReservationSearch.KeyDown += (s, e) =>
             {

@@ -26,17 +26,8 @@ namespace HotelReservationSystem.Domain.DTOs
         [DisplayName("Check-Out Date")]
         public DateTime CheckOutDate { get; set; }
 
-        [DisplayName("Time Arrival")]
-        public DateTime TimeArrival { get; set; }
-
-        [DisplayName("Companions")]
-        public int CompanionCount { get; set; }
-
         [DisplayName("Grand Total")]
         public decimal GrandTotal { get; set; }
-
-        [DisplayName("Amount Paid")]
-        public decimal AmountPaid { get; set; }
 
         [DisplayName("Balance Due")]
         public decimal BalanceDue { get; set; }
@@ -52,8 +43,5 @@ namespace HotelReservationSystem.Domain.DTOs
 
         [DisplayName("Checked Out")]
         public bool IsCheckedOut { get; set; }
-
-        [DisplayName("Actual Check-In")]
-        public DateTime? ActualCheckIn { get; set; }
     }
 }

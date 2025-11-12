@@ -8,6 +8,7 @@ using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.DTOs;
 using HotelReservationSystem.Domain.Helper;
 using HotelReservationSystem.Domain.Interface.CheckInOut;
+using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Domain.Model.CheckInOut;
 using HotelReservationSystem.Presenter.Common;
 using HotelReservationSystem.Presenter.Mapper;
@@ -275,6 +276,57 @@ namespace HotelReservationSystem.Presenter
         #endregion
 
         #region Helper Methods
+
+        public void PopulateFromReservation(ReservationModel reservation)
+        {
+            if (reservation == null) return;
+
+            try
+            {
+                // STEP 1: Load room types FIRST
+                LoadRoomTypes();
+
+                // STEP 2: Use mapper to populate basic fields (this sets RoomType now that items exist)
+                CheckInMapper.ToCheckInView(reservation, checkInView);
+
+                // STEP 3: Load available rooms for the selected type (AFTER room type is set)
+                if (!string.IsNullOrEmpty(reservation.RoomType))
+                {
+                    var availableRooms = roomRepository.GetAvailableRoomsByType(reservation.RoomType).ToList();
+
+                    // Include the current room even if not available
+                    if (!string.IsNullOrEmpty(reservation.RoomNumber))
+                    {
+                        var currentRoom = roomRepository.GetByNumber(reservation.RoomNumber);
+                        if (currentRoom != null && !availableRooms.Any(r => r.RoomNumber == reservation.RoomNumber))
+                        {
+                            availableRooms.Add(currentRoom);
+                        }
+                    }
+
+                    // Load rooms into view
+                    var roomNumbers = availableRooms.Select(r => r.RoomNumber).ToArray();
+                    checkInView.LoadAvailableRooms(roomNumbers);
+
+                    // STEP 4: Now set the room number (AFTER items are loaded)
+                    checkInView.RoomNumber = reservation.RoomNumber;
+                }
+
+                // Override status to CheckedIn for check-in process
+                checkInView.ReservationStatus = "CheckedIn";
+
+                // Mark as edit mode
+                checkInView.isEdit = true;
+
+                // Disable reservation ID and customer name fields
+                checkInView.SetFieldEnabled("ReservationId", false);
+                checkInView.SetFieldEnabled("CustomerName", false);
+            }
+            catch (Exception ex)
+            {
+                checkInView.ShowMessage($"Error populating reservation data: {ex.Message}", "Error");
+            }
+        }
 
         private void UpdatePriceForRoomType(decimal roomPricePerNight)
         {

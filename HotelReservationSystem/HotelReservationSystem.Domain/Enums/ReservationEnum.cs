@@ -17,7 +17,7 @@ namespace HotelReservationSystem.Domain.Enums
                 Single
             }
 
-        public enum PaymentState { Pending, Paid, Partial }
+        public enum PaymentState { Pending, FullPayment, Partial }
         public enum PaymentMethod { Cash, GCash, PayMaya, PayPal }
         public enum RoomStatus
         {

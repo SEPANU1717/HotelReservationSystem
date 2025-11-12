@@ -61,7 +61,6 @@ namespace HotelReservationSystem.Presenter.Mapper
             view.ReservationId = model.ReservationId > 0 ? model.ReservationId.ToString() : string.Empty;
             view.CustomerName = model.CustomerName ?? string.Empty;
             view.RoomType = model.RoomType ?? string.Empty;
-            view.RoomNumber = model.RoomNumber ?? string.Empty;
             view.CheckInDate = model.CheckInDate != default ? model.CheckInDate : DateTime.Now;
             view.CheckOutDate = model.CheckOutDate != default ? model.CheckOutDate : DateTime.Now.AddDays(1);
             view.TimeArrival = model.TimeArrival != default ? model.TimeArrival : DateTime.Now;
@@ -106,16 +105,12 @@ namespace HotelReservationSystem.Presenter.Mapper
                 RoomType = model.RoomType ?? string.Empty,
                 CheckInDate = model.CheckInDate,
                 CheckOutDate = model.CheckOutDate,
-                TimeArrival = model.TimeArrival,
-                CompanionCount = model.CompanionCount,
                 GrandTotal = model.GrandTotal,
-                AmountPaid = model.AmountPaid,
                 BalanceDue = model.BalanceDue,
                 PaymentStatus = model.PaymentStatus.ToString(),
-                ReservationStatus = model.ReservationStatus ?? "Pending",
+                ReservationStatus = model.ReservationStatus ?? string.Empty,
                 IsCheckedIn = model.IsCheckedIn,
-                IsCheckedOut = model.IsCheckedOut,
-                ActualCheckIn = model.ActualCheckIn
+                IsCheckedOut = model.IsCheckedOut
             };
         }
     }

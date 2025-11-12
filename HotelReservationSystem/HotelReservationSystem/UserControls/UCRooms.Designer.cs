@@ -131,7 +131,7 @@
             this.btnRoomAddNew = new FrameworkTest.SATAButton();
             this.btnRefresh = new FrameworkTest.SATAButton();
             this.btnRoomEdit = new FrameworkTest.SATAButton();
-            this.cbRoomFilter = new System.Windows.Forms.ComboBox();
+            this.cbRoomFilter = new MetroComboBoxGainsboro();
             this.tabPage2.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             this.sataPanel7.SuspendLayout();
@@ -229,10 +229,10 @@
             this.tabPage2.Controls.Add(this.txtRoomId);
             this.tabPage2.Controls.Add(this.txtRoomNumber);
             this.tabPage2.Controls.Add(this.btnRoomCancel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -374,7 +374,7 @@
             this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.sataPanel2.Location = new System.Drawing.Point(683, 3);
             this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(508, 576);
+            this.sataPanel2.Size = new System.Drawing.Size(508, 579);
             this.sataPanel2.TabIndex = 8;
             // 
             // sataPanel7
@@ -1802,12 +1802,12 @@
             // 
             // cbRoomFilter
             // 
-            this.cbRoomFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRoomFilter.FormattingEnabled = true;
-            this.cbRoomFilter.Location = new System.Drawing.Point(734, 107);
+            this.cbRoomFilter.ItemHeight = 23;
+            this.cbRoomFilter.Location = new System.Drawing.Point(784, 106);
             this.cbRoomFilter.Name = "cbRoomFilter";
-            this.cbRoomFilter.Size = new System.Drawing.Size(201, 29);
-            this.cbRoomFilter.TabIndex = 11;
+            this.cbRoomFilter.Size = new System.Drawing.Size(158, 29);
+            this.cbRoomFilter.TabIndex = 142;
             // 
             // UCRooms
             // 
@@ -1963,6 +1963,6 @@
         private System.Windows.Forms.Label label36;
         private FrameworkTest.SATAButton btnRefresh;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbRoomFilter;
+        private MetroComboBoxGainsboro cbRoomFilter;
     }
 }

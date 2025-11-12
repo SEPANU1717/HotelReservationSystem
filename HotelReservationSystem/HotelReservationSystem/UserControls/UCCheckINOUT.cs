@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
-using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.Data.Repositories.CheckInOut;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.Interface.CheckInOut;
@@ -16,7 +13,7 @@ namespace HotelReservationSystem.UserControls
     public partial class UCCheckINOUT : UserControl, ICheckInOutView
     {
         private CheckInOutRepository checkInRepo;
-        private ReservationModel initialReservation;
+        private UCINOUTPresenter presenter;
 
         #region Constructor
 
@@ -26,19 +23,18 @@ namespace HotelReservationSystem.UserControls
         {
             InitializeComponent();
             checkInRepo = new CheckInOutRepository(DbConfig.GetConnectionString());
-            initialReservation = reservation;
 
             InitializeComboBoxes();
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
             AssociateAndRaiseViewEvents();
 
             // Initialize presenter AFTER event associations
-            new UCINOUTPresenter(this, checkInRepo, DbConfig.GetConnectionString());
+            presenter = new UCINOUTPresenter(this, checkInRepo, DbConfig.GetConnectionString());
 
-            // Auto-populate if reservation is provided
+            // Auto-populate if reservation is provided - DELEGATE TO PRESENTER
             if (reservation != null)
             {
-                PopulateFromReservation(reservation);
+                presenter.PopulateFromReservation(reservation);
 
                 // Switch to detail tab automatically
                 if (materialTabControl1.TabPages.Count > 1)
@@ -97,82 +93,6 @@ namespace HotelReservationSystem.UserControls
             dtCheckOut.Content = DateTime.Now.AddDays(1);
         }
 
-        private void PopulateFromReservation(ReservationModel reservation)
-        {
-            try
-            {
-                // Populate basic information
-                txtReservationId.Texts = reservation.ReservationId.ToString();
-                txtCusName.Texts = reservation.CustomerName;
-
-                // Set dates
-                dtCheckIn.Content = reservation.CheckInDate;
-                dtCheckOut.Content = reservation.CheckOutDate;
-                dtTimeArrival.Content = reservation.TimeArrival != default
-                    ? reservation.TimeArrival
-                    : DateTime.Now;
-
-                // Set room type first
-                SetComboBoxItem(cbType, reservation.RoomType);
-
-                // Load available rooms for this type
-                if (!string.IsNullOrEmpty(reservation.RoomType))
-                {
-                    var roomRepo = new RoomRepository(DbConfig.GetConnectionString());
-                    var availableRooms = roomRepo.GetAvailableRoomsByType(reservation.RoomType).ToList();
-
-                    // Include the current room even if not available
-                    if (!string.IsNullOrEmpty(reservation.RoomNumber))
-                    {
-                        var currentRoom = roomRepo.GetByNumber(reservation.RoomNumber);
-                        if (currentRoom != null && !availableRooms.Any(r => r.RoomNumber == reservation.RoomNumber))
-                        {
-                            availableRooms.Add(currentRoom);
-                        }
-                    }
-
-                    // Load rooms into combo box
-                    cbRoomNumber.Items.Clear();
-                    foreach (var room in availableRooms)
-                    {
-                        cbRoomNumber.Items.Add(room.RoomNumber);
-                    }
-                }
-
-                // Set room number
-                SetComboBoxItem(cbRoomNumber, reservation.RoomNumber);
-
-                // Set financial information
-                txtPrice.Texts = reservation.TotalPrice.ToString("0.00");
-                txtDownPayment.Texts = reservation.DownPayment.ToString("0.00");
-                txtAmountPaid.Texts = reservation.AmountPaid.ToString("0.00");
-                txtBalanceDue.Texts = reservation.BalanceDue.ToString("0.00");
-
-                // Set payment information
-                SetComboBoxItem(cbPaymentMethod, reservation.PaymentMethod);
-                SetComboBoxItem(cbPaymentStatus, reservation.PaymentStatus.ToString());
-                txtPaymentRef.Texts = reservation.PaymentReference ?? string.Empty;
-
-                // Set reservation status - default to CheckedIn for check-in process
-                SetComboBoxItem(cbStatus, "CheckedIn");
-
-                // Set companion count to 0 initially
-                sataTextBox1txtCompanionCount.Texts = "0";
-
-                // Mark as edit mode
-                isEdit = true;
-
-                // Disable reservation ID and customer name fields
-                txtReservationId.Enabled = false;
-                txtCusName.Enabled = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error populating reservation data: {ex.Message}",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         #endregion
 
         #region Event Association
@@ -212,7 +132,11 @@ namespace HotelReservationSystem.UserControls
             btnReservationSave.Click += delegate
             {
                 SaveEvent?.Invoke(this, EventArgs.Empty);
-                MessageBox.Show(Message);
+
+                if (!string.IsNullOrEmpty(Message))
+                {
+                    MessageBox.Show(Message);
+                }
             };
 
             // Cancel Event
@@ -232,7 +156,11 @@ namespace HotelReservationSystem.UserControls
                     if (result == DialogResult.Yes)
                     {
                         DeleteEvent?.Invoke(this, EventArgs.Empty);
-                        MessageBox.Show(Message);
+
+                        if (!string.IsNullOrEmpty(Message))
+                        {
+                            MessageBox.Show(Message);
+                        }
                     }
                 }
                 else

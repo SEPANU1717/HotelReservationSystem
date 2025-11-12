@@ -57,6 +57,8 @@ namespace HotelReservationSystem.Presenter
             reservationView.SetCustomerForReservationEvent += OnSetCustomerForReservation;
             reservationView.RoomTypeChangedEvent += OnRoomTypeChanged;
             reservationView.ShowCheckInOutView += OnShowCheckInOutView;
+            reservationView.PaymentTypeChangedEvent += OnPaymentTypeChanged; // ADD THIS
+
         }
 
         private void UnsubscribeFromViewEvents()
@@ -71,12 +73,51 @@ namespace HotelReservationSystem.Presenter
             reservationView.SetCustomerForReservationEvent -= OnSetCustomerForReservation;
             reservationView.RoomTypeChangedEvent -= OnRoomTypeChanged;
             reservationView.ShowCheckInOutView -= OnShowCheckInOutView;
+            reservationView.PaymentTypeChangedEvent -= OnPaymentTypeChanged; // ADD THIS
+
         }
 
         #endregion
 
         #region Event Handlers
 
+        private void OnPaymentTypeChanged(object sender, string paymentType)
+        {
+            if (string.IsNullOrEmpty(paymentType)) return;
+
+            try
+            {
+                decimal totalPrice = 0;
+                if (decimal.TryParse(reservationView.TotalPrice, out totalPrice) && totalPrice > 0)
+                {
+                    if (paymentType.Equals("FullPayment", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Full payment - set AmountPaid to TotalPrice
+                        reservationView.AmountPaid = totalPrice.ToString(CultureInfo.InvariantCulture);
+                        reservationView.DownPayment = "0";
+                        reservationView.BalanceDue = "0";
+                    }
+                    else if (paymentType.Equals("Partial", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Partial payment - set to 50% as down payment (or your business rule)
+                        decimal downPayment = Math.Round(totalPrice * 0.5m, 2);
+                        reservationView.DownPayment = downPayment.ToString(CultureInfo.InvariantCulture);
+                        reservationView.AmountPaid = downPayment.ToString(CultureInfo.InvariantCulture);
+
+                        decimal balance = totalPrice - downPayment;
+                        reservationView.BalanceDue = balance.ToString(CultureInfo.InvariantCulture);
+                    }
+                }
+                else
+                {
+                    reservationView.ShowErrorMessage("Please calculate the total price first.");
+                }
+            }
+            catch (Exception ex)
+            {
+                reservationView.ShowErrorMessage($"Error updating payment: {ex.Message}");
+            }
+        }
         private void LoadAllReservationList()
         {
             reservationList = reservationRepository.GetAll() ?? Enumerable.Empty<ReservationModel>();

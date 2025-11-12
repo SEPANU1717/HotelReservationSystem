@@ -83,11 +83,11 @@
             this.sataButton1 = new FrameworkTest.SATAButton();
             this.btnReservationEdit = new FrameworkTest.SATAButton();
             this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
-            this.cbType = new MetroFramework.Controls.MetroComboBox();
-            this.cbNumber = new MetroFramework.Controls.MetroComboBox();
-            this.cbStatus = new MetroFramework.Controls.MetroComboBox();
-            this.cbPaymentType = new MetroFramework.Controls.MetroComboBox();
-            this.cbPaymentStatus = new MetroFramework.Controls.MetroComboBox();
+            this.cbType = new MetroComboBoxGainsboro();
+            this.cbNumber = new MetroComboBoxGainsboro();
+            this.cbStatus = new MetroComboBoxGainsboro();
+            this.cbPaymentStatus = new MetroComboBoxGainsboro();
+            this.cbPaymentType = new MetroComboBoxGainsboro();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservation)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.sataPanel1.SuspendLayout();
@@ -236,9 +236,9 @@
             this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.cbPaymentStatus);
             this.tabPage2.Controls.Add(this.cbPaymentType);
-            this.tabPage2.Controls.Add(this.cbStatus);
-            this.tabPage2.Controls.Add(this.cbNumber);
             this.tabPage2.Controls.Add(this.cbType);
+            this.tabPage2.Controls.Add(this.cbNumber);
+            this.tabPage2.Controls.Add(this.cbStatus);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.txtBalanceDue);
@@ -302,7 +302,7 @@
             // 
             this.txtBalanceDue.BackColor = System.Drawing.Color.White;
             this.txtBalanceDue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtBalanceDue.BorderColor = System.Drawing.Color.Gray;
+            this.txtBalanceDue.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtBalanceDue.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtBalanceDue.BorderRadius = 3;
             this.txtBalanceDue.BorderSize = 1;
@@ -327,7 +327,7 @@
             // 
             this.txtPaymentRef.BackColor = System.Drawing.Color.White;
             this.txtPaymentRef.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtPaymentRef.BorderColor = System.Drawing.Color.Gray;
+            this.txtPaymentRef.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtPaymentRef.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtPaymentRef.BorderRadius = 3;
             this.txtPaymentRef.BorderSize = 1;
@@ -351,7 +351,7 @@
             // 
             this.txtAmountPaid.BackColor = System.Drawing.Color.White;
             this.txtAmountPaid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtAmountPaid.BorderColor = System.Drawing.Color.Gray;
+            this.txtAmountPaid.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtAmountPaid.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtAmountPaid.BorderRadius = 3;
             this.txtAmountPaid.BorderSize = 1;
@@ -408,7 +408,7 @@
             // 
             this.txtDownPayment.BackColor = System.Drawing.Color.White;
             this.txtDownPayment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtDownPayment.BorderColor = System.Drawing.Color.Gray;
+            this.txtDownPayment.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtDownPayment.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtDownPayment.BorderRadius = 3;
             this.txtDownPayment.BorderSize = 1;
@@ -433,7 +433,7 @@
             // 
             this.txtPrice.BackColor = System.Drawing.Color.White;
             this.txtPrice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtPrice.BorderColor = System.Drawing.Color.Gray;
+            this.txtPrice.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtPrice.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtPrice.BorderRadius = 3;
             this.txtPrice.BorderSize = 1;
@@ -592,7 +592,7 @@
             // 
             this.txtCusName.BackColor = System.Drawing.Color.White;
             this.txtCusName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtCusName.BorderColor = System.Drawing.Color.Gray;
+            this.txtCusName.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtCusName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtCusName.BorderRadius = 3;
             this.txtCusName.BorderSize = 1;
@@ -617,7 +617,7 @@
             // 
             this.txtReservationId.BackColor = System.Drawing.Color.White;
             this.txtReservationId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtReservationId.BorderColor = System.Drawing.Color.Gray;
+            this.txtReservationId.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtReservationId.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtReservationId.BorderRadius = 3;
             this.txtReservationId.BorderSize = 1;
@@ -775,7 +775,7 @@
             // 
             this.txtRoomGuests.BackColor = System.Drawing.Color.White;
             this.txtRoomGuests.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtRoomGuests.BorderColor = System.Drawing.Color.Gray;
+            this.txtRoomGuests.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtRoomGuests.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtRoomGuests.BorderRadius = 3;
             this.txtRoomGuests.BorderSize = 1;
@@ -1075,28 +1075,37 @@
             // 
             this.cbType.FormattingEnabled = true;
             this.cbType.ItemHeight = 23;
-            this.cbType.Location = new System.Drawing.Point(214, 200);
+            this.cbType.Location = new System.Drawing.Point(216, 200);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(347, 29);
-            this.cbType.TabIndex = 138;
+            this.cbType.Size = new System.Drawing.Size(345, 29);
+            this.cbType.TabIndex = 141;
             // 
             // cbNumber
             // 
             this.cbNumber.FormattingEnabled = true;
             this.cbNumber.ItemHeight = 23;
-            this.cbNumber.Location = new System.Drawing.Point(214, 240);
+            this.cbNumber.Location = new System.Drawing.Point(216, 240);
             this.cbNumber.Name = "cbNumber";
-            this.cbNumber.Size = new System.Drawing.Size(347, 29);
-            this.cbNumber.TabIndex = 138;
+            this.cbNumber.Size = new System.Drawing.Size(345, 29);
+            this.cbNumber.TabIndex = 142;
             // 
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.ItemHeight = 23;
-            this.cbStatus.Location = new System.Drawing.Point(214, 280);
+            this.cbStatus.Location = new System.Drawing.Point(216, 280);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(347, 29);
-            this.cbStatus.TabIndex = 138;
+            this.cbStatus.Size = new System.Drawing.Size(345, 29);
+            this.cbStatus.TabIndex = 143;
+            // 
+            // cbPaymentStatus
+            // 
+            this.cbPaymentStatus.FormattingEnabled = true;
+            this.cbPaymentStatus.ItemHeight = 23;
+            this.cbPaymentStatus.Location = new System.Drawing.Point(765, 200);
+            this.cbPaymentStatus.Name = "cbPaymentStatus";
+            this.cbPaymentStatus.Size = new System.Drawing.Size(345, 29);
+            this.cbPaymentStatus.TabIndex = 144;
             // 
             // cbPaymentType
             // 
@@ -1104,17 +1113,8 @@
             this.cbPaymentType.ItemHeight = 23;
             this.cbPaymentType.Location = new System.Drawing.Point(765, 112);
             this.cbPaymentType.Name = "cbPaymentType";
-            this.cbPaymentType.Size = new System.Drawing.Size(347, 29);
-            this.cbPaymentType.TabIndex = 138;
-            // 
-            // cbPaymentStatus
-            // 
-            this.cbPaymentStatus.FormattingEnabled = true;
-            this.cbPaymentStatus.ItemHeight = 23;
-            this.cbPaymentStatus.Location = new System.Drawing.Point(765, 198);
-            this.cbPaymentStatus.Name = "cbPaymentStatus";
-            this.cbPaymentStatus.Size = new System.Drawing.Size(347, 29);
-            this.cbPaymentStatus.TabIndex = 138;
+            this.cbPaymentType.Size = new System.Drawing.Size(345, 29);
+            this.cbPaymentType.TabIndex = 145;
             // 
             // UCReservation
             // 
@@ -1195,10 +1195,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label17;
         private SATATextBox txtPaymentRef;
-        private MetroFramework.Controls.MetroComboBox cbPaymentStatus;
-        private MetroFramework.Controls.MetroComboBox cbPaymentType;
-        private MetroFramework.Controls.MetroComboBox cbStatus;
-        private MetroFramework.Controls.MetroComboBox cbNumber;
-        private MetroFramework.Controls.MetroComboBox cbType;
+        private MetroComboBoxGainsboro cbType;
+        private MetroComboBoxGainsboro cbNumber;
+        private MetroComboBoxGainsboro cbStatus;
+        private MetroComboBoxGainsboro cbPaymentStatus;
+        private MetroComboBoxGainsboro cbPaymentType;
     }
 }
