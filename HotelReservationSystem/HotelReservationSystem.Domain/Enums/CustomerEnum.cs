@@ -8,7 +8,7 @@ namespace HotelReservationSystem.Domain.Enums
 {
     public class CustomerEnum
     {
-        public enum IdentificationType { Passport, DriversLicense, NationalID }
+        public enum IdentificationType { Passport, DriversLicense, NationalID, Other }
         public enum Gender { Male, Female, PreferNotToSay }
     }
 }

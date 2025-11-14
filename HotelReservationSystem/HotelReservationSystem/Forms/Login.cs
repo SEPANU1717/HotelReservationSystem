@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Windows.Forms;
 using HotelReservationSystem.Domain.Interface;
+using HotelReservationSystem.Domain.Interface.UserManagement.Email_Service;
 using HotelReservationSystem.Infrastructure.Repository;
 using HotelReservationSystem.Infrastructure.Security;
 using HotelReservationSystem.Presenter;
@@ -41,6 +42,14 @@ namespace HotelReservationSystem.Forms
                     MessageBox.Show(Message);
                 }
             };
+
+            lnkForgotPassword.LinkClicked += (s, e) =>
+            {
+                using (var forgotPasswordForm = new ForgotPasswordForm())
+                {
+                    forgotPasswordForm.ShowDialog(this); // Shows as modal popup
+                }
+            };
         }
         private void InitializePresenter()
         {
@@ -64,6 +73,31 @@ namespace HotelReservationSystem.Forms
         {
             UsernameOrEmail = string.Empty;
             Password = string.Empty;
+        }
+
+        private async void btnTestEmail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var emailService = new SmtpEmailService();
+
+                bool sent = await emailService.SendPasswordResetEmailAsync(
+                    "markmanalo1717@gmail.com",  // Send to yourself for testing
+                    "123456",
+                    "TestUser"
+                );
+
+                MessageBox.Show(
+                    sent ? "✅ Email sent successfully! Check your inbox." : "❌ Failed to send email.",
+                    "Email Test",
+                    MessageBoxButtons.OK,
+                    sent ? MessageBoxIcon.Information : MessageBoxIcon.Error
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Test Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

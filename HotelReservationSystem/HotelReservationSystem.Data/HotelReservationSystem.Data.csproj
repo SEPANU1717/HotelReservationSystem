@@ -82,6 +82,7 @@
     <Compile Include="Repositories\CompanionRepository.cs" />
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\DasboardRepository.cs" />
+    <Compile Include="Repositories\PasswordResetRepository.cs" />
     <Compile Include="Repositories\ReservationRepository.cs" />
     <Compile Include="Repositories\RoomRepository.cs" />
     <Compile Include="Repositories\Service\FoodOrderRepository.cs" />

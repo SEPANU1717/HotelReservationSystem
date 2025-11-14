@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCheckINOUT));
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCheckINOUT));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,6 +44,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridCheckInOut = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cbPaymentStatus = new MetroComboBoxGainsboro();
+            this.cbPaymentMethod = new MetroComboBoxGainsboro();
+            this.cbType = new MetroComboBoxGainsboro();
+            this.cbRoomNumber = new MetroComboBoxGainsboro();
+            this.cbStatus = new MetroComboBoxGainsboro();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -78,43 +82,40 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbCompanionRoomType = new MetroComboBoxGainsboro();
+            this.cbCompanionRoomNumber = new MetroComboBoxGainsboro();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.btnCompanionCancel = new FrameworkTest.SATAButton();
             this.btnCompanioSave = new FrameworkTest.SATAButton();
             this.label21 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.txtCompanionRelationship = new SATATextBox();
             this.txtCompanionEmail = new SATATextBox();
+            this.txtCompanionPricePerNight = new SATATextBox();
+            this.txtCompanionTotalCost = new SATATextBox();
             this.txtCompanionContact = new SATATextBox();
             this.txtCompanionName = new SATATextBox();
             this.txtReservationSearch = new SATATextBox();
             this.btnReservationDelete = new FrameworkTest.SATAButton();
+            this.btnCheckOut = new FrameworkTest.SATAButton();
             this.btnAddCompanion = new FrameworkTest.SATAButton();
             this.btnReservationAddNew = new FrameworkTest.SATAButton();
             this.btnReservationEdit = new FrameworkTest.SATAButton();
-            this.txtCompanionTotalCost = new SATATextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtCompanionPricePerNight = new SATATextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.cbPaymentStatus = new MetroComboBoxGainsboro();
-            this.cbPaymentMethod = new MetroComboBoxGainsboro();
-            this.cbType = new MetroComboBoxGainsboro();
-            this.cbRoomNumber = new MetroComboBoxGainsboro();
-            this.cbStatus = new MetroComboBoxGainsboro();
-            this.cbCompanionRoomType = new MetroComboBoxGainsboro();
-            this.cbCompanionRoomNumber = new MetroComboBoxGainsboro();
+            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInOut)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -129,22 +130,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 7;
-            // 
-            // pictureProfile
-            // 
-            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureProfile.BorderSize = 1;
-            this.pictureProfile.GradientAngle = 50F;
-            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
-            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
-            this.pictureProfile.Name = "pictureProfile";
-            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
-            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureProfile.TabIndex = 2;
-            this.pictureProfile.TabStop = false;
             // 
             // lblUsername
             // 
@@ -363,6 +348,51 @@
             this.tabPage3.Size = new System.Drawing.Size(1194, 582);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Customer Details";
+            // 
+            // cbPaymentStatus
+            // 
+            this.cbPaymentStatus.FormattingEnabled = true;
+            this.cbPaymentStatus.ItemHeight = 23;
+            this.cbPaymentStatus.Location = new System.Drawing.Point(765, 244);
+            this.cbPaymentStatus.Name = "cbPaymentStatus";
+            this.cbPaymentStatus.Size = new System.Drawing.Size(345, 29);
+            this.cbPaymentStatus.TabIndex = 140;
+            // 
+            // cbPaymentMethod
+            // 
+            this.cbPaymentMethod.FormattingEnabled = true;
+            this.cbPaymentMethod.ItemHeight = 23;
+            this.cbPaymentMethod.Location = new System.Drawing.Point(765, 156);
+            this.cbPaymentMethod.Name = "cbPaymentMethod";
+            this.cbPaymentMethod.Size = new System.Drawing.Size(345, 29);
+            this.cbPaymentMethod.TabIndex = 140;
+            // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.ItemHeight = 23;
+            this.cbType.Location = new System.Drawing.Point(216, 200);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(345, 29);
+            this.cbType.TabIndex = 140;
+            // 
+            // cbRoomNumber
+            // 
+            this.cbRoomNumber.FormattingEnabled = true;
+            this.cbRoomNumber.ItemHeight = 23;
+            this.cbRoomNumber.Location = new System.Drawing.Point(216, 240);
+            this.cbRoomNumber.Name = "cbRoomNumber";
+            this.cbRoomNumber.Size = new System.Drawing.Size(345, 29);
+            this.cbRoomNumber.TabIndex = 140;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.ItemHeight = 23;
+            this.cbStatus.Location = new System.Drawing.Point(216, 280);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(345, 29);
+            this.cbStatus.TabIndex = 140;
             // 
             // label18
             // 
@@ -969,6 +999,24 @@
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Customer Details";
             // 
+            // cbCompanionRoomType
+            // 
+            this.cbCompanionRoomType.FormattingEnabled = true;
+            this.cbCompanionRoomType.ItemHeight = 23;
+            this.cbCompanionRoomType.Location = new System.Drawing.Point(752, 152);
+            this.cbCompanionRoomType.Name = "cbCompanionRoomType";
+            this.cbCompanionRoomType.Size = new System.Drawing.Size(345, 29);
+            this.cbCompanionRoomType.TabIndex = 143;
+            // 
+            // cbCompanionRoomNumber
+            // 
+            this.cbCompanionRoomNumber.FormattingEnabled = true;
+            this.cbCompanionRoomNumber.ItemHeight = 23;
+            this.cbCompanionRoomNumber.Location = new System.Drawing.Point(752, 192);
+            this.cbCompanionRoomNumber.Name = "cbCompanionRoomNumber";
+            this.cbCompanionRoomNumber.Size = new System.Drawing.Size(345, 29);
+            this.cbCompanionRoomNumber.TabIndex = 144;
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1093,6 +1141,28 @@
             this.label21.TabIndex = 25;
             this.label21.Text = "Relationship";
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.DimGray;
+            this.label31.Location = new System.Drawing.Point(609, 232);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(88, 20);
+            this.label31.TabIndex = 25;
+            this.label31.Text = "Price/Night";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.DimGray;
+            this.label30.Location = new System.Drawing.Point(609, 278);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(75, 20);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "Total Cost";
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1175,6 +1245,56 @@
             this.txtCompanionEmail.Text = "0";
             this.txtCompanionEmail.Texts = "";
             this.txtCompanionEmail.UnderlinedStyle = false;
+            // 
+            // txtCompanionPricePerNight
+            // 
+            this.txtCompanionPricePerNight.BackColor = System.Drawing.Color.White;
+            this.txtCompanionPricePerNight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCompanionPricePerNight.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtCompanionPricePerNight.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionPricePerNight.BorderRadius = 3;
+            this.txtCompanionPricePerNight.BorderSize = 1;
+            this.txtCompanionPricePerNight.Enabled = false;
+            this.txtCompanionPricePerNight.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanionPricePerNight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionPricePerNight.Icon = null;
+            this.txtCompanionPricePerNight.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCompanionPricePerNight.Location = new System.Drawing.Point(752, 232);
+            this.txtCompanionPricePerNight.Multiline = false;
+            this.txtCompanionPricePerNight.Name = "txtCompanionPricePerNight";
+            this.txtCompanionPricePerNight.PasswordChar = false;
+            this.txtCompanionPricePerNight.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCompanionPricePerNight.PlaceholderText = "";
+            this.txtCompanionPricePerNight.Size = new System.Drawing.Size(345, 35);
+            this.txtCompanionPricePerNight.TabIndex = 20;
+            this.txtCompanionPricePerNight.Text = "0";
+            this.txtCompanionPricePerNight.Texts = "";
+            this.txtCompanionPricePerNight.UnderlinedStyle = false;
+            // 
+            // txtCompanionTotalCost
+            // 
+            this.txtCompanionTotalCost.BackColor = System.Drawing.Color.White;
+            this.txtCompanionTotalCost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCompanionTotalCost.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtCompanionTotalCost.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionTotalCost.BorderRadius = 3;
+            this.txtCompanionTotalCost.BorderSize = 1;
+            this.txtCompanionTotalCost.Enabled = false;
+            this.txtCompanionTotalCost.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanionTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionTotalCost.Icon = null;
+            this.txtCompanionTotalCost.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCompanionTotalCost.Location = new System.Drawing.Point(752, 278);
+            this.txtCompanionTotalCost.Multiline = false;
+            this.txtCompanionTotalCost.Name = "txtCompanionTotalCost";
+            this.txtCompanionTotalCost.PasswordChar = false;
+            this.txtCompanionTotalCost.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCompanionTotalCost.PlaceholderText = "";
+            this.txtCompanionTotalCost.Size = new System.Drawing.Size(345, 35);
+            this.txtCompanionTotalCost.TabIndex = 20;
+            this.txtCompanionTotalCost.Text = "0";
+            this.txtCompanionTotalCost.Texts = "";
+            this.txtCompanionTotalCost.UnderlinedStyle = false;
             // 
             // txtCompanionContact
             // 
@@ -1288,6 +1408,45 @@
             this.btnReservationDelete.TextAutoCenter = false;
             this.btnReservationDelete.TextOffset = new System.Drawing.Point(0, 0);
             // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.ButtonText = "Check-Out";
+            this.btnCheckOut.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCheckOut.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCheckOut.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCheckOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckOut.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckOut.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnCheckOut.HoverForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.HoverImage = null;
+            this.btnCheckOut.HoverImageTint = System.Drawing.Color.White;
+            this.btnCheckOut.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCheckOut.Image = global::HotelReservationSystem.Properties.Resources.payment_arrow_down_100dp_FFFFFF_FILL0_wght500_GRAD_25_opsz48;
+            this.btnCheckOut.ImageAutoCenter = true;
+            this.btnCheckOut.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCheckOut.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCheckOut.ImageTint = System.Drawing.Color.White;
+            this.btnCheckOut.IsToggleButton = false;
+            this.btnCheckOut.IsToggled = false;
+            this.btnCheckOut.Location = new System.Drawing.Point(989, 100);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCheckOut.NormalForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCheckOut.OutlineThickness = 2F;
+            this.btnCheckOut.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCheckOut.PressedForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.PressedImageTint = System.Drawing.Color.White;
+            this.btnCheckOut.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCheckOut.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCheckOut.Size = new System.Drawing.Size(137, 39);
+            this.btnCheckOut.TabIndex = 20;
+            this.btnCheckOut.TextAutoCenter = true;
+            this.btnCheckOut.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // btnAddCompanion
             // 
             this.btnAddCompanion.ButtonText = "Add Companion";
@@ -1310,7 +1469,7 @@
             this.btnAddCompanion.ImageTint = System.Drawing.Color.White;
             this.btnAddCompanion.IsToggleButton = false;
             this.btnAddCompanion.IsToggled = false;
-            this.btnAddCompanion.Location = new System.Drawing.Point(833, 100);
+            this.btnAddCompanion.Location = new System.Drawing.Point(686, 100);
             this.btnAddCompanion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnAddCompanion.Name = "btnAddCompanion";
             this.btnAddCompanion.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -1349,7 +1508,7 @@
             this.btnReservationAddNew.ImageTint = System.Drawing.Color.White;
             this.btnReservationAddNew.IsToggleButton = false;
             this.btnReservationAddNew.IsToggled = false;
-            this.btnReservationAddNew.Location = new System.Drawing.Point(1004, 100);
+            this.btnReservationAddNew.Location = new System.Drawing.Point(857, 100);
             this.btnReservationAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationAddNew.Name = "btnReservationAddNew";
             this.btnReservationAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -1405,140 +1564,21 @@
             this.btnReservationEdit.TextAutoCenter = false;
             this.btnReservationEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // txtCompanionTotalCost
+            // pictureProfile
             // 
-            this.txtCompanionTotalCost.BackColor = System.Drawing.Color.White;
-            this.txtCompanionTotalCost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtCompanionTotalCost.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtCompanionTotalCost.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtCompanionTotalCost.BorderRadius = 3;
-            this.txtCompanionTotalCost.BorderSize = 1;
-            this.txtCompanionTotalCost.Enabled = false;
-            this.txtCompanionTotalCost.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompanionTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtCompanionTotalCost.Icon = null;
-            this.txtCompanionTotalCost.IconSize = new System.Drawing.Size(20, 20);
-            this.txtCompanionTotalCost.Location = new System.Drawing.Point(752, 278);
-            this.txtCompanionTotalCost.Multiline = false;
-            this.txtCompanionTotalCost.Name = "txtCompanionTotalCost";
-            this.txtCompanionTotalCost.PasswordChar = false;
-            this.txtCompanionTotalCost.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtCompanionTotalCost.PlaceholderText = "";
-            this.txtCompanionTotalCost.Size = new System.Drawing.Size(345, 35);
-            this.txtCompanionTotalCost.TabIndex = 20;
-            this.txtCompanionTotalCost.Text = "0";
-            this.txtCompanionTotalCost.Texts = "";
-            this.txtCompanionTotalCost.UnderlinedStyle = false;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.DimGray;
-            this.label30.Location = new System.Drawing.Point(609, 278);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(75, 20);
-            this.label30.TabIndex = 25;
-            this.label30.Text = "Total Cost";
-            // 
-            // txtCompanionPricePerNight
-            // 
-            this.txtCompanionPricePerNight.BackColor = System.Drawing.Color.White;
-            this.txtCompanionPricePerNight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtCompanionPricePerNight.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtCompanionPricePerNight.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtCompanionPricePerNight.BorderRadius = 3;
-            this.txtCompanionPricePerNight.BorderSize = 1;
-            this.txtCompanionPricePerNight.Enabled = false;
-            this.txtCompanionPricePerNight.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompanionPricePerNight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtCompanionPricePerNight.Icon = null;
-            this.txtCompanionPricePerNight.IconSize = new System.Drawing.Size(20, 20);
-            this.txtCompanionPricePerNight.Location = new System.Drawing.Point(752, 232);
-            this.txtCompanionPricePerNight.Multiline = false;
-            this.txtCompanionPricePerNight.Name = "txtCompanionPricePerNight";
-            this.txtCompanionPricePerNight.PasswordChar = false;
-            this.txtCompanionPricePerNight.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtCompanionPricePerNight.PlaceholderText = "";
-            this.txtCompanionPricePerNight.Size = new System.Drawing.Size(345, 35);
-            this.txtCompanionPricePerNight.TabIndex = 20;
-            this.txtCompanionPricePerNight.Text = "0";
-            this.txtCompanionPricePerNight.Texts = "";
-            this.txtCompanionPricePerNight.UnderlinedStyle = false;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.DimGray;
-            this.label31.Location = new System.Drawing.Point(609, 232);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(88, 20);
-            this.label31.TabIndex = 25;
-            this.label31.Text = "Price/Night";
-            // 
-            // cbPaymentStatus
-            // 
-            this.cbPaymentStatus.FormattingEnabled = true;
-            this.cbPaymentStatus.ItemHeight = 23;
-            this.cbPaymentStatus.Location = new System.Drawing.Point(765, 244);
-            this.cbPaymentStatus.Name = "cbPaymentStatus";
-            this.cbPaymentStatus.Size = new System.Drawing.Size(345, 29);
-            this.cbPaymentStatus.TabIndex = 140;
-            // 
-            // cbPaymentMethod
-            // 
-            this.cbPaymentMethod.FormattingEnabled = true;
-            this.cbPaymentMethod.ItemHeight = 23;
-            this.cbPaymentMethod.Location = new System.Drawing.Point(765, 156);
-            this.cbPaymentMethod.Name = "cbPaymentMethod";
-            this.cbPaymentMethod.Size = new System.Drawing.Size(345, 29);
-            this.cbPaymentMethod.TabIndex = 140;
-            // 
-            // cbType
-            // 
-            this.cbType.FormattingEnabled = true;
-            this.cbType.ItemHeight = 23;
-            this.cbType.Location = new System.Drawing.Point(216, 200);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(345, 29);
-            this.cbType.TabIndex = 140;
-            // 
-            // cbRoomNumber
-            // 
-            this.cbRoomNumber.FormattingEnabled = true;
-            this.cbRoomNumber.ItemHeight = 23;
-            this.cbRoomNumber.Location = new System.Drawing.Point(216, 240);
-            this.cbRoomNumber.Name = "cbRoomNumber";
-            this.cbRoomNumber.Size = new System.Drawing.Size(345, 29);
-            this.cbRoomNumber.TabIndex = 140;
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.ItemHeight = 23;
-            this.cbStatus.Location = new System.Drawing.Point(216, 280);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(345, 29);
-            this.cbStatus.TabIndex = 140;
-            // 
-            // cbCompanionRoomType
-            // 
-            this.cbCompanionRoomType.FormattingEnabled = true;
-            this.cbCompanionRoomType.ItemHeight = 23;
-            this.cbCompanionRoomType.Location = new System.Drawing.Point(752, 152);
-            this.cbCompanionRoomType.Name = "cbCompanionRoomType";
-            this.cbCompanionRoomType.Size = new System.Drawing.Size(345, 29);
-            this.cbCompanionRoomType.TabIndex = 143;
-            // 
-            // cbCompanionRoomNumber
-            // 
-            this.cbCompanionRoomNumber.FormattingEnabled = true;
-            this.cbCompanionRoomNumber.ItemHeight = 23;
-            this.cbCompanionRoomNumber.Location = new System.Drawing.Point(752, 192);
-            this.cbCompanionRoomNumber.Name = "cbCompanionRoomNumber";
-            this.cbCompanionRoomNumber.Size = new System.Drawing.Size(345, 29);
-            this.cbCompanionRoomNumber.TabIndex = 144;
+            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureProfile.BorderSize = 1;
+            this.pictureProfile.GradientAngle = 50F;
+            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
+            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
+            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProfile.TabIndex = 2;
+            this.pictureProfile.TabStop = false;
             // 
             // UCCheckINOUT
             // 
@@ -1547,6 +1587,7 @@
             this.Controls.Add(this.btnReservationSearch);
             this.Controls.Add(this.txtReservationSearch);
             this.Controls.Add(this.btnReservationDelete);
+            this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnAddCompanion);
             this.Controls.Add(this.btnReservationAddNew);
             this.Controls.Add(this.btnReservationEdit);
@@ -1557,7 +1598,6 @@
             this.Size = new System.Drawing.Size(1477, 800);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1566,6 +1606,7 @@
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1645,5 +1686,6 @@
         private SATATextBox txtCompanionTotalCost;
         private System.Windows.Forms.Label label31;
         private SATATextBox txtCompanionPricePerNight;
+        private FrameworkTest.SATAButton btnCheckOut;
     }
 }

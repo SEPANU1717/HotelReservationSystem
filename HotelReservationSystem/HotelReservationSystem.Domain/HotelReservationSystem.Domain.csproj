@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -69,6 +70,9 @@
     <Compile Include="Interface\Service\Food\IFoodStockVIew.cs" />
     <Compile Include="Interface\Service\Food\IOrderFoodRepository.cs" />
     <Compile Include="Interface\Service\Food\IOrderFoodView.cs" />
+    <Compile Include="Interface\UserManagement\EmailService\IEmailService.cs" />
+    <Compile Include="Interface\UserManagement\EmailService\IPasswordResetView.cs" />
+    <Compile Include="Interface\UserManagement\EmailService\SmtpEmailService.cs" />
     <Compile Include="Interface\UserManagement\ILoginView.cs" />
     <Compile Include="Interface\UserManagement\IUserRepository.cs" />
     <Compile Include="Interface\UserManagement\IUserView.cs" />
@@ -77,6 +81,8 @@
     <Compile Include="Model\CheckInOut\CompanionModel.cs" />
     <Compile Include="Model\CustomerModel.cs" />
     <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="Model\Security\PasswordResetRequest.cs" />
+    <Compile Include="Model\Security\PasswordResetToken.cs" />
     <Compile Include="Model\ReservationModel.cs" />
     <Compile Include="Model\RoomModel.cs" />
     <Compile Include="Model\Service\FoodStockModel.cs" />

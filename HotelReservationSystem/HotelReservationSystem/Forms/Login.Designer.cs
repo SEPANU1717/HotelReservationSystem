@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
@@ -37,11 +37,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLogin = new FrameworkTest.SATAButton();
             this.chkShowPassword = new CuoreUI.Controls.cuiCheckbox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new SATATextBox();
             this.txtUsername = new SATATextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lnkForgotPassword = new System.Windows.Forms.LinkLabel();
             this.sataPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -57,11 +57,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.IndianRed;
             this.sataPanel1.BackColor2 = System.Drawing.Color.Transparent;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius1.BottomLeft = 10;
-            borderRadius1.BottomRight = 10;
-            borderRadius1.TopLeft = 10;
-            borderRadius1.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius1;
+            borderRadius3.BottomLeft = 10;
+            borderRadius3.BottomRight = 10;
+            borderRadius3.TopLeft = 10;
+            borderRadius3.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius3;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.pictureBox1);
             this.sataPanel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -167,17 +167,6 @@
             this.chkShowPassword.UncheckedOutlineColor = System.Drawing.Color.Gray;
             this.chkShowPassword.UncheckedSymbolColor = System.Drawing.Color.Empty;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(437, 487);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 19);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Forgot your password?";
-            // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.White;
@@ -249,18 +238,30 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Please enter your username or email and password to login";
             // 
+            // lnkForgotPassword
+            // 
+            this.lnkForgotPassword.AutoSize = true;
+            this.lnkForgotPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.lnkForgotPassword.Location = new System.Drawing.Point(439, 489);
+            this.lnkForgotPassword.Name = "lnkForgotPassword";
+            this.lnkForgotPassword.Size = new System.Drawing.Size(149, 17);
+            this.lnkForgotPassword.TabIndex = 18;
+            this.lnkForgotPassword.TabStop = true;
+            this.lnkForgotPassword.Text = "Forgot your password?";
+            // 
             // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1477, 800);
+            this.Controls.Add(this.lnkForgotPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.chkShowPassword);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.sataPanel1);
@@ -287,10 +288,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private FrameworkTest.SATAButton btnLogin;
         private CuoreUI.Controls.cuiCheckbox chkShowPassword;
-        private System.Windows.Forms.Label label1;
         private SATATextBox txtPassword;
         private SATATextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel lnkForgotPassword;
     }
 }
