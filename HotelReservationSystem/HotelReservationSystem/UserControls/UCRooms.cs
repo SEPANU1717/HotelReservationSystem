@@ -109,7 +109,7 @@ namespace HotelReservationSystem.UserControls
                 }
             };
 
-            btnRefresh.Click += (s, e) => SyncRoomStatuses();
+            //btnRefresh.Click += (s, e) => SyncRoomStatuses();
         }
 
         #endregion

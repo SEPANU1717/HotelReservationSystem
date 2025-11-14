@@ -102,7 +102,6 @@ namespace HotelReservationSystem.UserControls
                     LoadReservationForEditEvent?.Invoke(this, reservationId);
                     EditEvent?.Invoke(this, EventArgs.Empty);
                     ShowTab(1);
-                    EnableField("Status", true);
                     EnableField("CustomerName", false);
                 }
                 else
@@ -268,7 +267,6 @@ namespace HotelReservationSystem.UserControls
         {
             switch (fieldName)
             {
-                case "Status": cbStatus.Enabled = enabled; break;
                 case "CustomerName": txtCusName.Enabled = enabled; break;
                 case "RoomType": cbType.Enabled = enabled; break;
                 case "RoomNumber": cbNumber.Enabled = enabled; break;
@@ -331,7 +329,7 @@ namespace HotelReservationSystem.UserControls
         private void InitializeRoomStatusComboBox()
         {
             cbStatus.Items.Clear();
-            cbStatus.Items.AddRange(new[] { "Pending", "Confirmed", "CheckedIn", "CheckedOut", "Cancelled", "Reserved" });
+            cbStatus.Items.AddRange(new[] { "Pending", "CheckedIn", "CheckedOut", "Cancelled/No Show", "Reserved" });
         }
 
         private void OnRoomTypeChanged(object sender, EventArgs e)

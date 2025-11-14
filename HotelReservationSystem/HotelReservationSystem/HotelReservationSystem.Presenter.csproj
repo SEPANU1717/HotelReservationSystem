@@ -230,10 +230,12 @@
     <Compile Include="Presenter\Common\UserControlFactory.cs" />
     <Compile Include="Presenter\Common\UserInfoDisplay.cs" />
     <Compile Include="Presenter\Common\UserSession.cs" />
+    <Compile Include="Presenter\CompanionPresenter.cs" />
     <Compile Include="Presenter\CustomerPresenter.cs" />
     <Compile Include="Presenter\LoginPresenter.cs" />
     <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="Presenter\Mapper\CheckInMapper.cs" />
+    <Compile Include="Presenter\Mapper\CompanionMapper.cs" />
     <Compile Include="Presenter\Mapper\CustomerMapper.cs" />
     <Compile Include="Presenter\Mapper\ReservationMapper.cs" />
     <Compile Include="Presenter\Mapper\RoomMapper.cs" />

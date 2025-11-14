@@ -26,21 +26,14 @@ namespace HotelReservationSystem.UserControls
 
             InitializeComboBoxes();
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
+
+            presenter = new UCINOUTPresenter(this, checkInRepo, DbConfig.GetConnectionString());
             AssociateAndRaiseViewEvents();
 
-            // Initialize presenter AFTER event associations
-            presenter = new UCINOUTPresenter(this, checkInRepo, DbConfig.GetConnectionString());
-
-            // Auto-populate if reservation is provided - DELEGATE TO PRESENTER
             if (reservation != null)
             {
                 presenter.PopulateFromReservation(reservation);
-
-                // Switch to detail tab automatically
-                if (materialTabControl1.TabPages.Count > 1)
-                {
-                    materialTabControl1.SelectedIndex = 1;
-                }
+                ShowTab(2);
             }
         }
 
@@ -50,21 +43,18 @@ namespace HotelReservationSystem.UserControls
 
         private void InitializeComboBoxes()
         {
-            // Payment Status
             cbPaymentStatus.Items.Clear();
             foreach (PaymentState status in Enum.GetValues(typeof(PaymentState)))
             {
                 cbPaymentStatus.Items.Add(status);
             }
 
-            // Payment Method
             cbPaymentMethod.Items.Clear();
             foreach (PaymentMethod method in Enum.GetValues(typeof(PaymentMethod)))
             {
                 cbPaymentMethod.Items.Add(method.ToString());
             }
 
-            // Reservation Status
             cbStatus.Items.Clear();
             cbStatus.Items.AddRange(new string[]
             {
@@ -76,7 +66,6 @@ namespace HotelReservationSystem.UserControls
                 "Reserved"
             });
 
-            // Room Type
             cbType.Items.Clear();
             cbType.Items.AddRange(new string[]
             {
@@ -87,7 +76,6 @@ namespace HotelReservationSystem.UserControls
                 "Single"
             });
 
-            // Set default dates
             dtTimeArrival.Content = DateTime.Now;
             dtCheckIn.Content = DateTime.Now;
             dtCheckOut.Content = DateTime.Now.AddDays(1);
@@ -99,7 +87,6 @@ namespace HotelReservationSystem.UserControls
 
         private void AssociateAndRaiseViewEvents()
         {
-            // Search Event
             btnReservationSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
 
             txtReservationSearch.KeyDown += (s, e) =>
@@ -108,18 +95,30 @@ namespace HotelReservationSystem.UserControls
                     SearchEvent?.Invoke(this, EventArgs.Empty);
             };
 
-            // Add New Event
             btnReservationAddNew.Click += delegate
             {
+                if (materialTabControl1.SelectedTab == tabPage3)
+                {
+                    MessageBox.Show("You are already in the Add Check-In menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
+                ShowTab(2);
             };
 
-            // Edit Event
             btnReservationEdit.Click += delegate
             {
+                if (materialTabControl1.SelectedTab == tabPage3)
+                {
+                    MessageBox.Show("You are already in the Edit Check-In menu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (dataGridCheckInOut.SelectedRows.Count > 0)
                 {
                     EditEvent?.Invoke(this, EventArgs.Empty);
+                    ShowTab(2);
                 }
                 else
                 {
@@ -128,24 +127,27 @@ namespace HotelReservationSystem.UserControls
                 }
             };
 
-            // Save Event
             btnReservationSave.Click += delegate
             {
                 SaveEvent?.Invoke(this, EventArgs.Empty);
 
-                if (!string.IsNullOrEmpty(Message))
+                if (isSuccessful)
                 {
-                    MessageBox.Show(Message);
+                    ShowTab(0);
+                    MessageBox.Show(Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (!string.IsNullOrEmpty(Message))
+                {
+                    MessageBox.Show(Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             };
 
-            // Cancel Event
             btnReservationCancel.Click += delegate
             {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
+                ShowTab(0);
             };
 
-            // Delete Event
             btnReservationDelete.Click += delegate
             {
                 if (dataGridCheckInOut.SelectedRows.Count > 0)
@@ -170,7 +172,6 @@ namespace HotelReservationSystem.UserControls
                 }
             };
 
-            // Room Type Changed Event
             cbType.SelectedIndexChanged += delegate
             {
                 string selectedType = cbType.SelectedItem as string;
@@ -180,7 +181,6 @@ namespace HotelReservationSystem.UserControls
                 }
             };
 
-            // Room Number Changed Event
             cbRoomNumber.SelectedIndexChanged += delegate
             {
                 string selectedNumber = cbRoomNumber.SelectedItem as string;
@@ -188,6 +188,19 @@ namespace HotelReservationSystem.UserControls
                 {
                     RoomNumberChangedEvent?.Invoke(this, selectedNumber);
                 }
+            };
+
+            btnAddCompanion.Click += delegate
+            {
+                if (string.IsNullOrEmpty(txtReservationId.Texts) || txtReservationId.Texts == "0")
+                {
+                    MessageBox.Show("Please save the check-in first before adding companions.",
+                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                AddCompanionEvent?.Invoke(this, EventArgs.Empty);
+
             };
         }
 
@@ -306,8 +319,7 @@ namespace HotelReservationSystem.UserControls
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
-
-        #endregion
+         #endregion
 
         #region Events - Interface Implementation
 
@@ -322,6 +334,7 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler CompanionCancelEvent;
         public event EventHandler<string> RoomTypeChangedEvent;
         public event EventHandler<string> RoomNumberChangedEvent;
+
 
         #endregion
 
@@ -394,6 +407,32 @@ namespace HotelReservationSystem.UserControls
             return 0;
         }
 
+        public void ShowTab(int tabIndex)
+        {
+            materialTabControl1.TabPages.Clear();
+
+            switch (tabIndex)
+            {
+                case 0:
+                    materialTabControl1.TabPages.Add(tabPage1);
+                    materialTabControl1.SelectedTab = tabPage1;
+                    break;
+                case 1:
+                    materialTabControl1.TabPages.Add(tabPage2);
+                    materialTabControl1.SelectedTab = tabPage2;
+                    break;
+                case 2:
+                    materialTabControl1.TabPages.Add(tabPage3);
+                    materialTabControl1.SelectedTab = tabPage3;
+                    break;
+            }
+        }
+
+        public void ClearForm()
+        {
+            FieldsCleaner.ClearInputs(this);
+        }
+
         #endregion
 
         #region Singleton Pattern
@@ -426,6 +465,9 @@ namespace HotelReservationSystem.UserControls
             }
         }
 
+
         #endregion
+
+
     }
 }

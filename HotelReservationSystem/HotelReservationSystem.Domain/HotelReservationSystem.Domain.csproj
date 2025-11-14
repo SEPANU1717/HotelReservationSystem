@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\CheckInDto.cs" />
+    <Compile Include="DTOs\CompanionDto.cs" />
     <Compile Include="DTOs\CustomerDto.cs" />
     <Compile Include="DTOs\DashboardDto.cs" />
     <Compile Include="DTOs\ReservationDto.cs" />

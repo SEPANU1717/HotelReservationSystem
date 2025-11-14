@@ -14,5 +14,6 @@ namespace HotelReservationSystem.Domain.Interface.CheckInOut
         IEnumerable<CheckInOutModel> GetByValue(string value);
         IEnumerable<CheckInOutModel> GetActiveCheckIns();
         int GetNextCheckInId();
+        bool ExistsForReservation(int reservationId);
     }
 }

@@ -41,6 +41,11 @@
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbPaymentStatus = new MetroComboBoxGainsboro();
+            this.cbPaymentType = new MetroComboBoxGainsboro();
+            this.cbType = new MetroComboBoxGainsboro();
+            this.cbNumber = new MetroComboBoxGainsboro();
+            this.cbStatus = new MetroComboBoxGainsboro();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtBalanceDue = new SATATextBox();
@@ -76,18 +81,13 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtReservationSearch = new SATATextBox();
             this.btnReservationDelete = new FrameworkTest.SATAButton();
             this.btnCheckIn = new FrameworkTest.SATAButton();
             this.sataButton1 = new FrameworkTest.SATAButton();
             this.btnReservationEdit = new FrameworkTest.SATAButton();
-            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
-            this.cbType = new MetroComboBoxGainsboro();
-            this.cbNumber = new MetroComboBoxGainsboro();
-            this.cbStatus = new MetroComboBoxGainsboro();
-            this.cbPaymentStatus = new MetroComboBoxGainsboro();
-            this.cbPaymentType = new MetroComboBoxGainsboro();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReservation)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.sataPanel1.SuspendLayout();
@@ -275,6 +275,51 @@
             this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
+            // 
+            // cbPaymentStatus
+            // 
+            this.cbPaymentStatus.FormattingEnabled = true;
+            this.cbPaymentStatus.ItemHeight = 23;
+            this.cbPaymentStatus.Location = new System.Drawing.Point(765, 200);
+            this.cbPaymentStatus.Name = "cbPaymentStatus";
+            this.cbPaymentStatus.Size = new System.Drawing.Size(345, 29);
+            this.cbPaymentStatus.TabIndex = 144;
+            // 
+            // cbPaymentType
+            // 
+            this.cbPaymentType.FormattingEnabled = true;
+            this.cbPaymentType.ItemHeight = 23;
+            this.cbPaymentType.Location = new System.Drawing.Point(765, 112);
+            this.cbPaymentType.Name = "cbPaymentType";
+            this.cbPaymentType.Size = new System.Drawing.Size(345, 29);
+            this.cbPaymentType.TabIndex = 145;
+            // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.ItemHeight = 23;
+            this.cbType.Location = new System.Drawing.Point(216, 200);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(345, 29);
+            this.cbType.TabIndex = 141;
+            // 
+            // cbNumber
+            // 
+            this.cbNumber.FormattingEnabled = true;
+            this.cbNumber.ItemHeight = 23;
+            this.cbNumber.Location = new System.Drawing.Point(216, 240);
+            this.cbNumber.Name = "cbNumber";
+            this.cbNumber.Size = new System.Drawing.Size(345, 29);
+            this.cbNumber.TabIndex = 142;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.ItemHeight = 23;
+            this.cbStatus.Location = new System.Drawing.Point(216, 280);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(345, 29);
+            this.cbStatus.TabIndex = 143;
             // 
             // label17
             // 
@@ -653,7 +698,7 @@
             this.dtTimeArrival.Margin = new System.Windows.Forms.Padding(4);
             this.dtTimeArrival.Name = "dtTimeArrival";
             this.dtTimeArrival.NormalBackground = System.Drawing.Color.White;
-            this.dtTimeArrival.NormalOutline = System.Drawing.Color.Gray;
+            this.dtTimeArrival.NormalOutline = System.Drawing.Color.Gainsboro;
             this.dtTimeArrival.OutlineThickness = 1.5F;
             this.dtTimeArrival.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
             this.dtTimeArrival.PressedBackground = System.Drawing.Color.White;
@@ -690,7 +735,7 @@
             this.dtCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.dtCheckOut.Name = "dtCheckOut";
             this.dtCheckOut.NormalBackground = System.Drawing.Color.White;
-            this.dtCheckOut.NormalOutline = System.Drawing.Color.Gray;
+            this.dtCheckOut.NormalOutline = System.Drawing.Color.Gainsboro;
             this.dtCheckOut.OutlineThickness = 1.5F;
             this.dtCheckOut.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
             this.dtCheckOut.PressedBackground = System.Drawing.Color.White;
@@ -716,7 +761,7 @@
             this.dtCheckIn.Margin = new System.Windows.Forms.Padding(4);
             this.dtCheckIn.Name = "dtCheckIn";
             this.dtCheckIn.NormalBackground = System.Drawing.Color.White;
-            this.dtCheckIn.NormalOutline = System.Drawing.Color.Gray;
+            this.dtCheckIn.NormalOutline = System.Drawing.Color.Gainsboro;
             this.dtCheckIn.OutlineThickness = 1.5F;
             this.dtCheckIn.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
             this.dtCheckIn.PressedBackground = System.Drawing.Color.White;
@@ -870,6 +915,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 12;
+            // 
+            // pictureProfile
+            // 
+            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureProfile.BorderSize = 1;
+            this.pictureProfile.GradientAngle = 50F;
+            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
+            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
+            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProfile.TabIndex = 2;
+            this.pictureProfile.TabStop = false;
             // 
             // contextMenuStrip2
             // 
@@ -1054,67 +1115,6 @@
             this.btnReservationEdit.TabIndex = 11;
             this.btnReservationEdit.TextAutoCenter = false;
             this.btnReservationEdit.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // pictureProfile
-            // 
-            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureProfile.BorderSize = 1;
-            this.pictureProfile.GradientAngle = 50F;
-            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
-            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
-            this.pictureProfile.Name = "pictureProfile";
-            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
-            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureProfile.TabIndex = 2;
-            this.pictureProfile.TabStop = false;
-            // 
-            // cbType
-            // 
-            this.cbType.FormattingEnabled = true;
-            this.cbType.ItemHeight = 23;
-            this.cbType.Location = new System.Drawing.Point(216, 200);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(345, 29);
-            this.cbType.TabIndex = 141;
-            // 
-            // cbNumber
-            // 
-            this.cbNumber.FormattingEnabled = true;
-            this.cbNumber.ItemHeight = 23;
-            this.cbNumber.Location = new System.Drawing.Point(216, 240);
-            this.cbNumber.Name = "cbNumber";
-            this.cbNumber.Size = new System.Drawing.Size(345, 29);
-            this.cbNumber.TabIndex = 142;
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.ItemHeight = 23;
-            this.cbStatus.Location = new System.Drawing.Point(216, 280);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(345, 29);
-            this.cbStatus.TabIndex = 143;
-            // 
-            // cbPaymentStatus
-            // 
-            this.cbPaymentStatus.FormattingEnabled = true;
-            this.cbPaymentStatus.ItemHeight = 23;
-            this.cbPaymentStatus.Location = new System.Drawing.Point(765, 200);
-            this.cbPaymentStatus.Name = "cbPaymentStatus";
-            this.cbPaymentStatus.Size = new System.Drawing.Size(345, 29);
-            this.cbPaymentStatus.TabIndex = 144;
-            // 
-            // cbPaymentType
-            // 
-            this.cbPaymentType.FormattingEnabled = true;
-            this.cbPaymentType.ItemHeight = 23;
-            this.cbPaymentType.Location = new System.Drawing.Point(765, 112);
-            this.cbPaymentType.Name = "cbPaymentType";
-            this.cbPaymentType.Size = new System.Drawing.Size(345, 29);
-            this.cbPaymentType.TabIndex = 145;
             // 
             // UCReservation
             // 

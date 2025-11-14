@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
+using HotelReservationSystem.Data.Repositories.CheckInOut;
 using HotelReservationSystem.Data.Repositories.Service;
 using HotelReservationSystem.Domain.Interface;
 using HotelReservationSystem.Domain.Interface.Billing;
@@ -144,6 +145,9 @@ namespace HotelReservationSystem.Presenter
             try
             {
                 var checkInOutControl = UCCheckINOUT.GetInstance((Form)mainView);
+                var checkInRepo = new CheckInOutRepository(sqlConnectionString);
+                var presenter = new UCINOUTPresenter(checkInOutControl, checkInRepo, sqlConnectionString);
+
                 mainView.LoadUserControl(checkInOutControl);
             }
             catch (Exception ex)

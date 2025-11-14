@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCheckINOUT));
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCheckINOUT));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,24 +77,44 @@
             this.txtRoomGuests = new SATATextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.btnCompanionCancel = new FrameworkTest.SATAButton();
+            this.btnCompanioSave = new FrameworkTest.SATAButton();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtCompanionRelationship = new SATATextBox();
+            this.txtCompanionEmail = new SATATextBox();
+            this.txtCompanionContact = new SATATextBox();
+            this.txtCompanionName = new SATATextBox();
             this.txtReservationSearch = new SATATextBox();
             this.btnReservationDelete = new FrameworkTest.SATAButton();
-            this.sataButton1 = new FrameworkTest.SATAButton();
+            this.btnAddCompanion = new FrameworkTest.SATAButton();
             this.btnReservationAddNew = new FrameworkTest.SATAButton();
             this.btnReservationEdit = new FrameworkTest.SATAButton();
-            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
-            this.cbStatus = new MetroComboBoxGainsboro();
-            this.cbRoomNumber = new MetroComboBoxGainsboro();
-            this.cbType = new MetroComboBoxGainsboro();
-            this.cbPaymentMethod = new MetroComboBoxGainsboro();
+            this.txtCompanionTotalCost = new SATATextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtCompanionPricePerNight = new SATATextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.cbPaymentStatus = new MetroComboBoxGainsboro();
+            this.cbPaymentMethod = new MetroComboBoxGainsboro();
+            this.cbType = new MetroComboBoxGainsboro();
+            this.cbRoomNumber = new MetroComboBoxGainsboro();
+            this.cbStatus = new MetroComboBoxGainsboro();
+            this.cbCompanionRoomType = new MetroComboBoxGainsboro();
+            this.cbCompanionRoomNumber = new MetroComboBoxGainsboro();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInOut)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -108,6 +129,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 7;
+            // 
+            // pictureProfile
+            // 
+            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureProfile.BorderSize = 1;
+            this.pictureProfile.GradientAngle = 50F;
+            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
+            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
+            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProfile.TabIndex = 2;
+            this.pictureProfile.TabStop = false;
             // 
             // lblUsername
             // 
@@ -204,6 +241,7 @@
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage3);
+            this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -902,6 +940,292 @@
             this.label10.TabIndex = 25;
             this.label10.Text = "Room Type";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.cbCompanionRoomType);
+            this.tabPage2.Controls.Add(this.cbCompanionRoomNumber);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.label23);
+            this.tabPage2.Controls.Add(this.label26);
+            this.tabPage2.Controls.Add(this.btnCompanionCancel);
+            this.tabPage2.Controls.Add(this.btnCompanioSave);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.label31);
+            this.tabPage2.Controls.Add(this.label30);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.label27);
+            this.tabPage2.Controls.Add(this.txtCompanionRelationship);
+            this.tabPage2.Controls.Add(this.txtCompanionEmail);
+            this.tabPage2.Controls.Add(this.txtCompanionPricePerNight);
+            this.tabPage2.Controls.Add(this.txtCompanionTotalCost);
+            this.tabPage2.Controls.Add(this.txtCompanionContact);
+            this.tabPage2.Controls.Add(this.txtCompanionName);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Customer Details";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.DimGray;
+            this.label22.Location = new System.Drawing.Point(609, 192);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(110, 20);
+            this.label22.TabIndex = 141;
+            this.label22.Text = "Room Number";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.DimGray;
+            this.label23.Location = new System.Drawing.Point(609, 152);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(85, 20);
+            this.label23.TabIndex = 142;
+            this.label23.Text = "Room Type";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label26.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(70, 78);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(333, 40);
+            this.label26.TabIndex = 93;
+            this.label26.Text = "Companion Information";
+            // 
+            // btnCompanionCancel
+            // 
+            this.btnCompanionCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCompanionCancel.ButtonText = "Cancel";
+            this.btnCompanionCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCompanionCancel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCompanionCancel.CheckedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCompanionCancel.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCompanionCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompanionCancel.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCompanionCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompanionCancel.HoverBackground = System.Drawing.Color.Gainsboro;
+            this.btnCompanionCancel.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCompanionCancel.HoverImage = null;
+            this.btnCompanionCancel.HoverImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCompanionCancel.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCompanionCancel.Image = null;
+            this.btnCompanionCancel.ImageAutoCenter = true;
+            this.btnCompanionCancel.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCompanionCancel.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCompanionCancel.ImageTint = System.Drawing.Color.White;
+            this.btnCompanionCancel.IsToggleButton = false;
+            this.btnCompanionCancel.IsToggled = false;
+            this.btnCompanionCancel.Location = new System.Drawing.Point(749, 541);
+            this.btnCompanionCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCompanionCancel.Name = "btnCompanionCancel";
+            this.btnCompanionCancel.NormalBackground = System.Drawing.Color.Transparent;
+            this.btnCompanionCancel.NormalForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCompanionCancel.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCompanionCancel.OutlineThickness = 2F;
+            this.btnCompanionCancel.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnCompanionCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCompanionCancel.PressedImageTint = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCompanionCancel.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCompanionCancel.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCompanionCancel.Size = new System.Drawing.Size(163, 35);
+            this.btnCompanionCancel.TabIndex = 92;
+            this.btnCompanionCancel.TextAutoCenter = true;
+            this.btnCompanionCancel.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // btnCompanioSave
+            // 
+            this.btnCompanioSave.ButtonText = "Save";
+            this.btnCompanioSave.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCompanioSave.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCompanioSave.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCompanioSave.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCompanioSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompanioSave.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCompanioSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompanioSave.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnCompanioSave.HoverForeColor = System.Drawing.Color.White;
+            this.btnCompanioSave.HoverImage = null;
+            this.btnCompanioSave.HoverImageTint = System.Drawing.Color.White;
+            this.btnCompanioSave.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCompanioSave.Image = null;
+            this.btnCompanioSave.ImageAutoCenter = true;
+            this.btnCompanioSave.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCompanioSave.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCompanioSave.ImageTint = System.Drawing.Color.White;
+            this.btnCompanioSave.IsToggleButton = false;
+            this.btnCompanioSave.IsToggled = false;
+            this.btnCompanioSave.Location = new System.Drawing.Point(922, 541);
+            this.btnCompanioSave.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCompanioSave.Name = "btnCompanioSave";
+            this.btnCompanioSave.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCompanioSave.NormalForeColor = System.Drawing.Color.White;
+            this.btnCompanioSave.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCompanioSave.OutlineThickness = 2F;
+            this.btnCompanioSave.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCompanioSave.PressedForeColor = System.Drawing.Color.White;
+            this.btnCompanioSave.PressedImageTint = System.Drawing.Color.White;
+            this.btnCompanioSave.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCompanioSave.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCompanioSave.Size = new System.Drawing.Size(188, 35);
+            this.btnCompanioSave.TabIndex = 26;
+            this.btnCompanioSave.TextAutoCenter = true;
+            this.btnCompanioSave.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.DimGray;
+            this.label21.Location = new System.Drawing.Point(73, 290);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(93, 20);
+            this.label21.TabIndex = 25;
+            this.label21.Text = "Relationship";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.DimGray;
+            this.label19.Location = new System.Drawing.Point(73, 198);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(122, 20);
+            this.label19.TabIndex = 25;
+            this.label19.Text = "Contact Number";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DimGray;
+            this.label20.Location = new System.Drawing.Point(73, 244);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(104, 20);
+            this.label20.TabIndex = 25;
+            this.label20.Text = "Email Address";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.DimGray;
+            this.label27.Location = new System.Drawing.Point(73, 152);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(133, 20);
+            this.label27.TabIndex = 25;
+            this.label27.Text = "Companion Name";
+            // 
+            // txtCompanionRelationship
+            // 
+            this.txtCompanionRelationship.BackColor = System.Drawing.Color.White;
+            this.txtCompanionRelationship.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCompanionRelationship.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtCompanionRelationship.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionRelationship.BorderRadius = 3;
+            this.txtCompanionRelationship.BorderSize = 1;
+            this.txtCompanionRelationship.Enabled = false;
+            this.txtCompanionRelationship.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanionRelationship.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionRelationship.Icon = null;
+            this.txtCompanionRelationship.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCompanionRelationship.Location = new System.Drawing.Point(216, 290);
+            this.txtCompanionRelationship.Multiline = false;
+            this.txtCompanionRelationship.Name = "txtCompanionRelationship";
+            this.txtCompanionRelationship.PasswordChar = false;
+            this.txtCompanionRelationship.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCompanionRelationship.PlaceholderText = "";
+            this.txtCompanionRelationship.Size = new System.Drawing.Size(345, 35);
+            this.txtCompanionRelationship.TabIndex = 20;
+            this.txtCompanionRelationship.Text = "0";
+            this.txtCompanionRelationship.Texts = "";
+            this.txtCompanionRelationship.UnderlinedStyle = false;
+            // 
+            // txtCompanionEmail
+            // 
+            this.txtCompanionEmail.BackColor = System.Drawing.Color.White;
+            this.txtCompanionEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCompanionEmail.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtCompanionEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionEmail.BorderRadius = 3;
+            this.txtCompanionEmail.BorderSize = 1;
+            this.txtCompanionEmail.Enabled = false;
+            this.txtCompanionEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanionEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionEmail.Icon = null;
+            this.txtCompanionEmail.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCompanionEmail.Location = new System.Drawing.Point(216, 244);
+            this.txtCompanionEmail.Multiline = false;
+            this.txtCompanionEmail.Name = "txtCompanionEmail";
+            this.txtCompanionEmail.PasswordChar = false;
+            this.txtCompanionEmail.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCompanionEmail.PlaceholderText = "";
+            this.txtCompanionEmail.Size = new System.Drawing.Size(345, 35);
+            this.txtCompanionEmail.TabIndex = 20;
+            this.txtCompanionEmail.Text = "0";
+            this.txtCompanionEmail.Texts = "";
+            this.txtCompanionEmail.UnderlinedStyle = false;
+            // 
+            // txtCompanionContact
+            // 
+            this.txtCompanionContact.BackColor = System.Drawing.Color.White;
+            this.txtCompanionContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCompanionContact.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtCompanionContact.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionContact.BorderRadius = 3;
+            this.txtCompanionContact.BorderSize = 1;
+            this.txtCompanionContact.Enabled = false;
+            this.txtCompanionContact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanionContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionContact.Icon = null;
+            this.txtCompanionContact.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCompanionContact.Location = new System.Drawing.Point(216, 198);
+            this.txtCompanionContact.Multiline = false;
+            this.txtCompanionContact.Name = "txtCompanionContact";
+            this.txtCompanionContact.PasswordChar = false;
+            this.txtCompanionContact.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCompanionContact.PlaceholderText = "";
+            this.txtCompanionContact.Size = new System.Drawing.Size(345, 35);
+            this.txtCompanionContact.TabIndex = 20;
+            this.txtCompanionContact.Text = "0";
+            this.txtCompanionContact.Texts = "";
+            this.txtCompanionContact.UnderlinedStyle = false;
+            // 
+            // txtCompanionName
+            // 
+            this.txtCompanionName.BackColor = System.Drawing.Color.White;
+            this.txtCompanionName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCompanionName.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtCompanionName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionName.BorderRadius = 3;
+            this.txtCompanionName.BorderSize = 1;
+            this.txtCompanionName.Enabled = false;
+            this.txtCompanionName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanionName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionName.Icon = null;
+            this.txtCompanionName.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCompanionName.Location = new System.Drawing.Point(216, 152);
+            this.txtCompanionName.Multiline = false;
+            this.txtCompanionName.Name = "txtCompanionName";
+            this.txtCompanionName.PasswordChar = false;
+            this.txtCompanionName.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCompanionName.PlaceholderText = "";
+            this.txtCompanionName.Size = new System.Drawing.Size(345, 35);
+            this.txtCompanionName.TabIndex = 20;
+            this.txtCompanionName.Text = "0";
+            this.txtCompanionName.Texts = "";
+            this.txtCompanionName.UnderlinedStyle = false;
+            // 
             // txtReservationSearch
             // 
             this.txtReservationSearch.BackColor = System.Drawing.Color.White;
@@ -964,44 +1288,44 @@
             this.btnReservationDelete.TextAutoCenter = false;
             this.btnReservationDelete.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // sataButton1
+            // btnAddCompanion
             // 
-            this.sataButton1.ButtonText = "Add Companion";
-            this.sataButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.sataButton1.CheckedImageTint = System.Drawing.Color.White;
-            this.sataButton1.CheckedOutline = System.Drawing.Color.Transparent;
-            this.sataButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sataButton1.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.sataButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataButton1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.sataButton1.HoverForeColor = System.Drawing.Color.White;
-            this.sataButton1.HoverImage = null;
-            this.sataButton1.HoverImageTint = System.Drawing.Color.White;
-            this.sataButton1.HoverOutline = System.Drawing.Color.Empty;
-            this.sataButton1.Image = ((System.Drawing.Image)(resources.GetObject("sataButton1.Image")));
-            this.sataButton1.ImageAutoCenter = true;
-            this.sataButton1.ImageExpand = new System.Drawing.Point(0, 0);
-            this.sataButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.sataButton1.ImageTint = System.Drawing.Color.White;
-            this.sataButton1.IsToggleButton = false;
-            this.sataButton1.IsToggled = false;
-            this.sataButton1.Location = new System.Drawing.Point(833, 100);
-            this.sataButton1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.sataButton1.Name = "sataButton1";
-            this.sataButton1.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.sataButton1.NormalForeColor = System.Drawing.Color.White;
-            this.sataButton1.NormalOutline = System.Drawing.Color.Empty;
-            this.sataButton1.OutlineThickness = 2F;
-            this.sataButton1.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.sataButton1.PressedForeColor = System.Drawing.Color.White;
-            this.sataButton1.PressedImageTint = System.Drawing.Color.White;
-            this.sataButton1.PressedOutline = System.Drawing.Color.Empty;
-            this.sataButton1.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton1.Size = new System.Drawing.Size(161, 39);
-            this.sataButton1.TabIndex = 20;
-            this.sataButton1.TextAutoCenter = true;
-            this.sataButton1.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnAddCompanion.ButtonText = "Add Companion";
+            this.btnAddCompanion.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnAddCompanion.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddCompanion.CheckedImageTint = System.Drawing.Color.White;
+            this.btnAddCompanion.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnAddCompanion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddCompanion.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddCompanion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCompanion.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnAddCompanion.HoverForeColor = System.Drawing.Color.White;
+            this.btnAddCompanion.HoverImage = null;
+            this.btnAddCompanion.HoverImageTint = System.Drawing.Color.White;
+            this.btnAddCompanion.HoverOutline = System.Drawing.Color.Empty;
+            this.btnAddCompanion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCompanion.Image")));
+            this.btnAddCompanion.ImageAutoCenter = true;
+            this.btnAddCompanion.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnAddCompanion.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAddCompanion.ImageTint = System.Drawing.Color.White;
+            this.btnAddCompanion.IsToggleButton = false;
+            this.btnAddCompanion.IsToggled = false;
+            this.btnAddCompanion.Location = new System.Drawing.Point(833, 100);
+            this.btnAddCompanion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnAddCompanion.Name = "btnAddCompanion";
+            this.btnAddCompanion.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnAddCompanion.NormalForeColor = System.Drawing.Color.White;
+            this.btnAddCompanion.NormalOutline = System.Drawing.Color.Empty;
+            this.btnAddCompanion.OutlineThickness = 2F;
+            this.btnAddCompanion.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnAddCompanion.PressedForeColor = System.Drawing.Color.White;
+            this.btnAddCompanion.PressedImageTint = System.Drawing.Color.White;
+            this.btnAddCompanion.PressedOutline = System.Drawing.Color.Empty;
+            this.btnAddCompanion.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnAddCompanion.Size = new System.Drawing.Size(161, 39);
+            this.btnAddCompanion.TabIndex = 20;
+            this.btnAddCompanion.TextAutoCenter = true;
+            this.btnAddCompanion.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // btnReservationAddNew
             // 
@@ -1081,57 +1405,77 @@
             this.btnReservationEdit.TextAutoCenter = false;
             this.btnReservationEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // pictureProfile
+            // txtCompanionTotalCost
             // 
-            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureProfile.BorderSize = 1;
-            this.pictureProfile.GradientAngle = 50F;
-            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
-            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
-            this.pictureProfile.Name = "pictureProfile";
-            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
-            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureProfile.TabIndex = 2;
-            this.pictureProfile.TabStop = false;
+            this.txtCompanionTotalCost.BackColor = System.Drawing.Color.White;
+            this.txtCompanionTotalCost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCompanionTotalCost.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtCompanionTotalCost.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionTotalCost.BorderRadius = 3;
+            this.txtCompanionTotalCost.BorderSize = 1;
+            this.txtCompanionTotalCost.Enabled = false;
+            this.txtCompanionTotalCost.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanionTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionTotalCost.Icon = null;
+            this.txtCompanionTotalCost.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCompanionTotalCost.Location = new System.Drawing.Point(752, 278);
+            this.txtCompanionTotalCost.Multiline = false;
+            this.txtCompanionTotalCost.Name = "txtCompanionTotalCost";
+            this.txtCompanionTotalCost.PasswordChar = false;
+            this.txtCompanionTotalCost.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCompanionTotalCost.PlaceholderText = "";
+            this.txtCompanionTotalCost.Size = new System.Drawing.Size(345, 35);
+            this.txtCompanionTotalCost.TabIndex = 20;
+            this.txtCompanionTotalCost.Text = "0";
+            this.txtCompanionTotalCost.Texts = "";
+            this.txtCompanionTotalCost.UnderlinedStyle = false;
             // 
-            // cbStatus
+            // label30
             // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.ItemHeight = 23;
-            this.cbStatus.Location = new System.Drawing.Point(216, 280);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(345, 29);
-            this.cbStatus.TabIndex = 140;
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.DimGray;
+            this.label30.Location = new System.Drawing.Point(609, 278);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(75, 20);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "Total Cost";
             // 
-            // cbRoomNumber
+            // txtCompanionPricePerNight
             // 
-            this.cbRoomNumber.FormattingEnabled = true;
-            this.cbRoomNumber.ItemHeight = 23;
-            this.cbRoomNumber.Location = new System.Drawing.Point(216, 240);
-            this.cbRoomNumber.Name = "cbRoomNumber";
-            this.cbRoomNumber.Size = new System.Drawing.Size(345, 29);
-            this.cbRoomNumber.TabIndex = 140;
+            this.txtCompanionPricePerNight.BackColor = System.Drawing.Color.White;
+            this.txtCompanionPricePerNight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtCompanionPricePerNight.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtCompanionPricePerNight.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionPricePerNight.BorderRadius = 3;
+            this.txtCompanionPricePerNight.BorderSize = 1;
+            this.txtCompanionPricePerNight.Enabled = false;
+            this.txtCompanionPricePerNight.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanionPricePerNight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtCompanionPricePerNight.Icon = null;
+            this.txtCompanionPricePerNight.IconSize = new System.Drawing.Size(20, 20);
+            this.txtCompanionPricePerNight.Location = new System.Drawing.Point(752, 232);
+            this.txtCompanionPricePerNight.Multiline = false;
+            this.txtCompanionPricePerNight.Name = "txtCompanionPricePerNight";
+            this.txtCompanionPricePerNight.PasswordChar = false;
+            this.txtCompanionPricePerNight.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtCompanionPricePerNight.PlaceholderText = "";
+            this.txtCompanionPricePerNight.Size = new System.Drawing.Size(345, 35);
+            this.txtCompanionPricePerNight.TabIndex = 20;
+            this.txtCompanionPricePerNight.Text = "0";
+            this.txtCompanionPricePerNight.Texts = "";
+            this.txtCompanionPricePerNight.UnderlinedStyle = false;
             // 
-            // cbType
+            // label31
             // 
-            this.cbType.FormattingEnabled = true;
-            this.cbType.ItemHeight = 23;
-            this.cbType.Location = new System.Drawing.Point(216, 200);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(345, 29);
-            this.cbType.TabIndex = 140;
-            // 
-            // cbPaymentMethod
-            // 
-            this.cbPaymentMethod.FormattingEnabled = true;
-            this.cbPaymentMethod.ItemHeight = 23;
-            this.cbPaymentMethod.Location = new System.Drawing.Point(765, 156);
-            this.cbPaymentMethod.Name = "cbPaymentMethod";
-            this.cbPaymentMethod.Size = new System.Drawing.Size(345, 29);
-            this.cbPaymentMethod.TabIndex = 140;
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.DimGray;
+            this.label31.Location = new System.Drawing.Point(609, 232);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(88, 20);
+            this.label31.TabIndex = 25;
+            this.label31.Text = "Price/Night";
             // 
             // cbPaymentStatus
             // 
@@ -1142,6 +1486,60 @@
             this.cbPaymentStatus.Size = new System.Drawing.Size(345, 29);
             this.cbPaymentStatus.TabIndex = 140;
             // 
+            // cbPaymentMethod
+            // 
+            this.cbPaymentMethod.FormattingEnabled = true;
+            this.cbPaymentMethod.ItemHeight = 23;
+            this.cbPaymentMethod.Location = new System.Drawing.Point(765, 156);
+            this.cbPaymentMethod.Name = "cbPaymentMethod";
+            this.cbPaymentMethod.Size = new System.Drawing.Size(345, 29);
+            this.cbPaymentMethod.TabIndex = 140;
+            // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.ItemHeight = 23;
+            this.cbType.Location = new System.Drawing.Point(216, 200);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(345, 29);
+            this.cbType.TabIndex = 140;
+            // 
+            // cbRoomNumber
+            // 
+            this.cbRoomNumber.FormattingEnabled = true;
+            this.cbRoomNumber.ItemHeight = 23;
+            this.cbRoomNumber.Location = new System.Drawing.Point(216, 240);
+            this.cbRoomNumber.Name = "cbRoomNumber";
+            this.cbRoomNumber.Size = new System.Drawing.Size(345, 29);
+            this.cbRoomNumber.TabIndex = 140;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.ItemHeight = 23;
+            this.cbStatus.Location = new System.Drawing.Point(216, 280);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(345, 29);
+            this.cbStatus.TabIndex = 140;
+            // 
+            // cbCompanionRoomType
+            // 
+            this.cbCompanionRoomType.FormattingEnabled = true;
+            this.cbCompanionRoomType.ItemHeight = 23;
+            this.cbCompanionRoomType.Location = new System.Drawing.Point(752, 152);
+            this.cbCompanionRoomType.Name = "cbCompanionRoomType";
+            this.cbCompanionRoomType.Size = new System.Drawing.Size(345, 29);
+            this.cbCompanionRoomType.TabIndex = 143;
+            // 
+            // cbCompanionRoomNumber
+            // 
+            this.cbCompanionRoomNumber.FormattingEnabled = true;
+            this.cbCompanionRoomNumber.ItemHeight = 23;
+            this.cbCompanionRoomNumber.Location = new System.Drawing.Point(752, 192);
+            this.cbCompanionRoomNumber.Name = "cbCompanionRoomNumber";
+            this.cbCompanionRoomNumber.Size = new System.Drawing.Size(345, 29);
+            this.cbCompanionRoomNumber.TabIndex = 144;
+            // 
             // UCCheckINOUT
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1149,7 +1547,7 @@
             this.Controls.Add(this.btnReservationSearch);
             this.Controls.Add(this.txtReservationSearch);
             this.Controls.Add(this.btnReservationDelete);
-            this.Controls.Add(this.sataButton1);
+            this.Controls.Add(this.btnAddCompanion);
             this.Controls.Add(this.btnReservationAddNew);
             this.Controls.Add(this.btnReservationEdit);
             this.Controls.Add(this.sataPanel1);
@@ -1159,13 +1557,15 @@
             this.Size = new System.Drawing.Size(1477, 800);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInOut)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1219,11 +1619,31 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label18;
         private SATATextBox sataTextBox1txtCompanionCount;
-        private FrameworkTest.SATAButton sataButton1;
+        private FrameworkTest.SATAButton btnAddCompanion;
         private MetroComboBoxGainsboro cbPaymentStatus;
         private MetroComboBoxGainsboro cbPaymentMethod;
         private MetroComboBoxGainsboro cbType;
         private MetroComboBoxGainsboro cbRoomNumber;
         private MetroComboBoxGainsboro cbStatus;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label26;
+        private FrameworkTest.SATAButton btnCompanionCancel;
+        private FrameworkTest.SATAButton btnCompanioSave;
+        private System.Windows.Forms.Label label27;
+        private SATATextBox txtCompanionName;
+        private System.Windows.Forms.Label label19;
+        private SATATextBox txtCompanionContact;
+        private MetroComboBoxGainsboro cbCompanionRoomType;
+        private MetroComboBoxGainsboro cbCompanionRoomNumber;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private SATATextBox txtCompanionRelationship;
+        private SATATextBox txtCompanionEmail;
+        private System.Windows.Forms.Label label30;
+        private SATATextBox txtCompanionTotalCost;
+        private System.Windows.Forms.Label label31;
+        private SATATextBox txtCompanionPricePerNight;
     }
 }

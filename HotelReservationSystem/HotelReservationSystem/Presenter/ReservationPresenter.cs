@@ -57,7 +57,7 @@ namespace HotelReservationSystem.Presenter
             reservationView.SetCustomerForReservationEvent += OnSetCustomerForReservation;
             reservationView.RoomTypeChangedEvent += OnRoomTypeChanged;
             reservationView.ShowCheckInOutView += OnShowCheckInOutView;
-            reservationView.PaymentTypeChangedEvent += OnPaymentTypeChanged; // ADD THIS
+            reservationView.PaymentTypeChangedEvent += OnPaymentTypeChanged; 
 
         }
 
@@ -73,7 +73,7 @@ namespace HotelReservationSystem.Presenter
             reservationView.SetCustomerForReservationEvent -= OnSetCustomerForReservation;
             reservationView.RoomTypeChangedEvent -= OnRoomTypeChanged;
             reservationView.ShowCheckInOutView -= OnShowCheckInOutView;
-            reservationView.PaymentTypeChangedEvent -= OnPaymentTypeChanged; // ADD THIS
+            reservationView.PaymentTypeChangedEvent -= OnPaymentTypeChanged;
 
         }
 
@@ -92,14 +92,12 @@ namespace HotelReservationSystem.Presenter
                 {
                     if (paymentType.Equals("FullPayment", StringComparison.OrdinalIgnoreCase))
                     {
-                        // Full payment - set AmountPaid to TotalPrice
                         reservationView.AmountPaid = totalPrice.ToString(CultureInfo.InvariantCulture);
                         reservationView.DownPayment = "0";
                         reservationView.BalanceDue = "0";
                     }
                     else if (paymentType.Equals("Partial", StringComparison.OrdinalIgnoreCase))
                     {
-                        // Partial payment - set to 50% as down payment (or your business rule)
                         decimal downPayment = Math.Round(totalPrice * 0.5m, 2);
                         reservationView.DownPayment = downPayment.ToString(CultureInfo.InvariantCulture);
                         reservationView.AmountPaid = downPayment.ToString(CultureInfo.InvariantCulture);
@@ -154,6 +152,17 @@ namespace HotelReservationSystem.Presenter
             var model = reservationList.FirstOrDefault(r => r.ReservationId == dto.ReservationId);
             if (model == null) return;
 
+            // CHECK IF ALREADY CHECKED IN - PREVENT EDIT
+            if (model.ReservationStatus == "CheckedIn")
+            {
+                reservationView.ShowErrorMessage(
+                    "This reservation has already been checked in.\n\n" +
+                    "Checked-in reservations cannot be modified from the Reservation module.\n" +
+                    "Please use the Check-In/Out module to make changes.");
+                return;
+            }
+
+            // Proceed with normal edit
             reservationView.ReservationId = model.ReservationId.ToString();
             reservationView.CustomerName = model.CustomerName;
             reservationView.RoomNumber = model.RoomNumber;
@@ -168,6 +177,8 @@ namespace HotelReservationSystem.Presenter
             reservationView.PaymentStatus = model.PaymentStatus;
             reservationView.PaymentMethod = model.PaymentMethod;
             reservationView.isEdit = true;
+
+
         }
 
         private void DeleteReservation(object sender, EventArgs e)
@@ -182,6 +193,17 @@ namespace HotelReservationSystem.Presenter
                 }
 
                 var reservation = reservationRepository.GetById(reservationId);
+
+                // CHECK IF ALREADY CHECKED IN - PREVENT DELETE
+                if (reservation != null && reservation.ReservationStatus == "CheckedIn")
+                {
+                    reservationView.ShowErrorMessage(
+                        "This reservation has already been checked in.\n\n" +
+                        "Checked-in reservations cannot be deleted from the Reservation module.\n" +
+                        "Please use the Check-In/Out module to manage this record.");
+                    return;
+                }
+
                 string roomNumber = reservation?.RoomNumber;
 
                 reservationRepository.Delete(reservationId);
@@ -299,7 +321,7 @@ namespace HotelReservationSystem.Presenter
             {
                 reservationView.ReservationId = reservationRepository.GetNextReservationId().ToString();
                 reservationView.isEdit = false;
-                reservationView.ReservationStatus = "Pending";
+                reservationView.ReservationStatus = "Reserved";
                 reservationView.EnableField("Status", false);
                 reservationView.EnableField("CustomerName", true);
                 AddNewReservation(sender, EventArgs.Empty);
@@ -339,6 +361,24 @@ namespace HotelReservationSystem.Presenter
                 {
                     reservationView.ShowErrorMessage("Reservation not found.");
                     return;
+                }
+
+                // CHECK FOR DUPLICATE BEFORE LOADING THE CONTROL
+                var checkInRepo = new Data.Repositories.CheckInOut.CheckInOutRepository(DbConfig.GetConnectionString());
+                if (checkInRepo.ExistsForReservation(reservationId))
+                {
+                    var existingCheckIn = checkInRepo.GetByReservationId(reservationId);
+                    MessageBox.Show(
+                        $"This reservation has already been checked in.\n\n" +
+                        $"Customer: {existingCheckIn.CustomerName}\n" +
+                        $"Room: {existingCheckIn.RoomNumber}\n" +
+                        $"Check-In Date: {existingCheckIn.CheckInDate:MM/dd/yyyy HH:mm}\n" +
+                        $"Status: {existingCheckIn.ReservationStatus}\n\n" +
+                        "Use the Edit function in Check-In/Out to modify the existing check-in.",
+                        "Already Checked In",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    return; // DON'T LOAD THE FORM
                 }
 
                 var mainForm = (reservationView as Control)?.FindForm();

@@ -13,9 +13,30 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
     {
         public CheckInOutRepository(string connectionString) : base(connectionString) { }
 
-        //<-----------------------Add CheckIn--------------------------/>
+        /// <summary>
+        /// Check if check-in already exists for a reservation
+        /// </summary>
+        public bool ExistsForReservation(int reservationId)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                connection.Open();
+                command.CommandText = "SELECT COUNT(*) FROM CheckIns WHERE ReservationId = @id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = reservationId;
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
         public void Add(CheckInOutModel checkIn)
         {
+            // PREVENT DUPLICATES - Validation happens in presenter now
+            if (ExistsForReservation(checkIn.ReservationId))
+            {
+                throw new InvalidOperationException($"A check-in already exists for Reservation ID {checkIn.ReservationId}. Please use Edit instead.");
+            }
+
             using (var connection = new SqlConnection(connectionString))
             using (var command = connection.CreateCommand())
             {
@@ -23,23 +44,20 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
                 command.CommandText = @"
                     INSERT INTO CheckIns 
                     (ReservationId, CustomerName, RoomType, RoomNumber, CheckInDate, CheckOutDate, TimeArrival,
-                     TotalPrice, TotalCompanionCost, DownPayment, AmountPaid, CompanionCount,
+                     TotalPrice, DownPayment, AmountPaid, CompanionCount,
                      PaymentMethod, PaymentReference, PaymentStatus, ReservationStatus,
-                     IsCheckedIn, IsCheckedOut, ActualCheckIn, ActualCheckOut, 
-                     CheckedInBy, CheckedOutBy, CheckInNotes, CheckOutNotes, CreatedAt)
+                     IsCheckedIn, IsCheckedOut, ActualCheckIn, CreatedAt)
                     VALUES 
                     (@ReservationId, @CustomerName, @RoomType, @RoomNumber, @CheckInDate, @CheckOutDate, @TimeArrival,
-                     @TotalPrice, @TotalCompanionCost, @DownPayment, @AmountPaid, @CompanionCount,
+                     @TotalPrice, @DownPayment, @AmountPaid, @CompanionCount,
                      @PaymentMethod, @PaymentReference, @PaymentStatus, @ReservationStatus,
-                     @IsCheckedIn, @IsCheckedOut, @ActualCheckIn, @ActualCheckOut,
-                     @CheckedInBy, @CheckedOutBy, @CheckInNotes, @CheckOutNotes, GETDATE())";
+                     @IsCheckedIn, @IsCheckedOut, @ActualCheckIn, GETDATE())";
 
                 AddCheckInParameters(command, checkIn);
                 command.ExecuteNonQuery();
             }
         }
 
-        //<-----------------------Edit CheckIn--------------------------/>
         public void Edit(CheckInOutModel checkIn)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -55,7 +73,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
                         CheckOutDate = @CheckOutDate,
                         TimeArrival = @TimeArrival,
                         TotalPrice = @TotalPrice,
-                        TotalCompanionCost = @TotalCompanionCost,
                         DownPayment = @DownPayment,
                         AmountPaid = @AmountPaid,
                         CompanionCount = @CompanionCount,
@@ -65,13 +82,7 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
                         ReservationStatus = @ReservationStatus,
                         IsCheckedIn = @IsCheckedIn,
                         IsCheckedOut = @IsCheckedOut,
-                        ActualCheckIn = @ActualCheckIn,
-                        ActualCheckOut = @ActualCheckOut,
-                        CheckedInBy = @CheckedInBy,
-                        CheckedOutBy = @CheckedOutBy,
-                        CheckInNotes = @CheckInNotes,
-                        CheckOutNotes = @CheckOutNotes,
-                        UpdatedAt = GETDATE()
+                        ActualCheckIn = @ActualCheckIn
                     WHERE ReservationId = @ReservationId";
 
                 AddCheckInParameters(command, checkIn);
@@ -79,7 +90,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             }
         }
 
-        //<-----------------------Delete CheckIn--------------------------/>
         public void Delete(int reservationId)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -92,7 +102,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             }
         }
 
-        //<-----------------------Get CheckIn By Id--------------------------/>
         public CheckInOutModel GetById(int checkInId)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -113,7 +122,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             return null;
         }
 
-        //<-----------------------Get CheckIn By Reservation Id--------------------------/>
         public CheckInOutModel GetByReservationId(int reservationId)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -134,7 +142,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             return null;
         }
 
-        //<-----------------------Get All CheckIns--------------------------/>
         public IEnumerable<CheckInOutModel> GetAll()
         {
             var list = new List<CheckInOutModel>();
@@ -155,7 +162,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             return list;
         }
 
-        //<-----------------------Get CheckIns By Value--------------------------/>
         public IEnumerable<CheckInOutModel> GetByValue(string value)
         {
             var list = new List<CheckInOutModel>();
@@ -186,7 +192,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             return list;
         }
 
-        //<-----------------------Get Active CheckIns--------------------------/>
         public IEnumerable<CheckInOutModel> GetActiveCheckIns()
         {
             var list = new List<CheckInOutModel>();
@@ -210,7 +215,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             return list;
         }
 
-        //<-----------------------Get Next CheckIn Id--------------------------/>
         public int GetNextCheckInId()
         {
             using (var connection = new SqlConnection(connectionString))
@@ -221,7 +225,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             }
         }
 
-        //<-----------------------Helper Method: Add Parameters--------------------------/>
         private void AddCheckInParameters(SqlCommand command, CheckInOutModel model)
         {
             command.Parameters.Add("@ReservationId", SqlDbType.Int).Value = model.ReservationId;
@@ -232,7 +235,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             command.Parameters.Add("@CheckOutDate", SqlDbType.DateTime).Value = model.CheckOutDate;
             command.Parameters.Add("@TimeArrival", SqlDbType.DateTime).Value = model.TimeArrival;
             command.Parameters.Add("@TotalPrice", SqlDbType.Decimal).Value = model.TotalPrice;
-            command.Parameters.Add("@TotalCompanionCost", SqlDbType.Decimal).Value = model.TotalCompanionCost;
             command.Parameters.Add("@DownPayment", SqlDbType.Decimal).Value = model.DownPayment;
             command.Parameters.Add("@AmountPaid", SqlDbType.Decimal).Value = model.AmountPaid;
             command.Parameters.Add("@CompanionCount", SqlDbType.Int).Value = model.CompanionCount;
@@ -243,14 +245,8 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
             command.Parameters.Add("@IsCheckedIn", SqlDbType.Bit).Value = model.IsCheckedIn;
             command.Parameters.Add("@IsCheckedOut", SqlDbType.Bit).Value = model.IsCheckedOut;
             command.Parameters.Add("@ActualCheckIn", SqlDbType.DateTime).Value = model.ActualCheckIn ?? (object)DBNull.Value;
-            command.Parameters.Add("@ActualCheckOut", SqlDbType.DateTime).Value = model.ActualCheckOut ?? (object)DBNull.Value;
-            command.Parameters.Add("@CheckedInBy", SqlDbType.VarChar).Value = model.CheckedInBy ?? (object)DBNull.Value;
-            command.Parameters.Add("@CheckedOutBy", SqlDbType.VarChar).Value = model.CheckedOutBy ?? (object)DBNull.Value;
-            command.Parameters.Add("@CheckInNotes", SqlDbType.VarChar).Value = model.CheckInNotes ?? (object)DBNull.Value;
-            command.Parameters.Add("@CheckOutNotes", SqlDbType.VarChar).Value = model.CheckOutNotes ?? (object)DBNull.Value;
         }
 
-        //<-----------------------Helper Method: Map Reader to Model--------------------------/>
         private CheckInOutModel MapReaderToModel(SqlDataReader reader)
         {
             return new CheckInOutModel
@@ -264,7 +260,7 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
                 CheckOutDate = Convert.ToDateTime(reader["CheckOutDate"]),
                 TimeArrival = reader["TimeArrival"] == DBNull.Value ? DateTime.Now : Convert.ToDateTime(reader["TimeArrival"]),
                 TotalPrice = Convert.ToDecimal(reader["TotalPrice"]),
-                TotalCompanionCost = reader["TotalCompanionCost"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["TotalCompanionCost"]),
+                TotalCompanionCost = 0,
                 DownPayment = Convert.ToDecimal(reader["DownPayment"]),
                 AmountPaid = Convert.ToDecimal(reader["AmountPaid"]),
                 CompanionCount = reader["CompanionCount"] == DBNull.Value ? 0 : Convert.ToInt32(reader["CompanionCount"]),
@@ -275,11 +271,11 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
                 IsCheckedIn = Convert.ToBoolean(reader["IsCheckedIn"]),
                 IsCheckedOut = Convert.ToBoolean(reader["IsCheckedOut"]),
                 ActualCheckIn = reader["ActualCheckIn"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["ActualCheckIn"]),
-                ActualCheckOut = reader["ActualCheckOut"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["ActualCheckOut"]),
-                CheckedInBy = reader["CheckedInBy"] == DBNull.Value ? null : reader["CheckedInBy"].ToString(),
-                CheckedOutBy = reader["CheckedOutBy"] == DBNull.Value ? null : reader["CheckedOutBy"].ToString(),
-                CheckInNotes = reader["CheckInNotes"] == DBNull.Value ? null : reader["CheckInNotes"].ToString(),
-                CheckOutNotes = reader["CheckOutNotes"] == DBNull.Value ? null : reader["CheckOutNotes"].ToString(),
+                ActualCheckOut = null,
+                CheckedInBy = null,
+                CheckedOutBy = null,
+                CheckInNotes = null,
+                CheckOutNotes = null,
                 CreatedAt = Convert.ToDateTime(reader["CreatedAt"])
             };
         }

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
@@ -23,15 +23,15 @@ namespace HotelReservationSystem.Presenter
         private readonly RoomRepository roomRepository;
         private readonly ReservationRepository reservationRepository;
         private readonly BindingSource CheckInBindingSource;
-        private System.Collections.Generic.IEnumerable<CheckInOutModel> checkInList;
+        private IEnumerable<CheckInOutModel> checkInList;
         private static UCINOUTPresenter _lastPresenterInstance;
+        private readonly CompanionPresenter companionPresenter;
 
         public UCINOUTPresenter(ICheckInOutView checkInView, CheckInOutRepository repository, string connectionString)
         {
             CheckInBindingSource = new BindingSource();
             this.checkInView = checkInView ?? throw new ArgumentNullException(nameof(checkInView));
             this.checkInRepository = repository ?? throw new ArgumentNullException(nameof(repository));
-
             this.roomRepository = new RoomRepository(connectionString);
             this.reservationRepository = new ReservationRepository(connectionString);
 
@@ -73,20 +73,45 @@ namespace HotelReservationSystem.Presenter
 
         #endregion
 
-        #region Load Data
+        #region Data Loading
 
         private void LoadAllCheckInList()
         {
             checkInList = checkInRepository.GetAll() ?? Enumerable.Empty<CheckInOutModel>();
             var dtoList = checkInList.Select(CheckInMapper.ToCheckInDto).ToList();
-
             CheckInBindingSource.DataSource = dtoList;
             CheckInBindingSource.ResetBindings(false);
         }
 
+        private void LoadRoomTypes()
+        {
+            string[] roomTypes = new string[] { "Standard", "Deluxe", "Suite", "Family", "Single" };
+            checkInView.LoadRoomTypes(roomTypes);
+        }
+
+        private void LoadRoomInformation(CheckInOutModel model)
+        {
+            if (string.IsNullOrEmpty(model.RoomType))
+                return;
+
+            var availableRooms = roomRepository.GetAvailableRoomsByType(model.RoomType).ToList();
+
+            if (!string.IsNullOrEmpty(model.RoomNumber))
+            {
+                var currentRoom = roomRepository.GetByNumber(model.RoomNumber);
+                if (currentRoom != null && !availableRooms.Any(r => r.RoomNumber == model.RoomNumber))
+                {
+                    availableRooms.Add(currentRoom);
+                }
+            }
+
+            var roomNumbers = availableRooms.Select(r => r.RoomNumber).ToArray();
+            checkInView.LoadAvailableRooms(roomNumbers);
+        }
+
         #endregion
 
-        #region Event Handlers
+        #region CRUD Event Handlers
 
         private void SearchCheckIn(object sender, EventArgs e)
         {
@@ -106,10 +131,11 @@ namespace HotelReservationSystem.Presenter
         private void AddNewCheckIn(object sender, EventArgs e)
         {
             checkInView.isEdit = false;
-            checkInView.ReservationStatus = "Pending";
+            checkInView.ReservationStatus = "CheckedIn";
             LoadRoomTypes();
             checkInView.SetFieldEnabled("ReservationId", true);
             checkInView.SetFieldEnabled("CustomerName", true);
+            CleanViewFields();
         }
 
         private void EditCheckIn(object sender, EventArgs e)
@@ -122,12 +148,14 @@ namespace HotelReservationSystem.Presenter
             }
 
             var model = checkInList.FirstOrDefault(c => c.ReservationId == dto.ReservationId);
-            if (model == null) return;
+            if (model == null)
+                return;
+
+            LoadRoomTypes();
 
             checkInView.ReservationId = model.ReservationId.ToString();
             checkInView.CustomerName = model.CustomerName;
             checkInView.RoomType = model.RoomType;
-            checkInView.RoomNumber = model.RoomNumber;
             checkInView.CheckInDate = model.CheckInDate;
             checkInView.CheckOutDate = model.CheckOutDate;
             checkInView.TimeArrival = model.TimeArrival;
@@ -142,42 +170,14 @@ namespace HotelReservationSystem.Presenter
             checkInView.CompanionCount = model.CompanionCount;
 
             LoadRoomInformation(model);
+
+            checkInView.RoomNumber = model.RoomNumber;
+
             checkInView.SetFieldEnabled("ReservationId", false);
             checkInView.SetFieldEnabled("CustomerName", false);
             checkInView.isEdit = true;
-        }
 
-        private void DeleteCheckIn(object sender, EventArgs e)
-        {
-            try
-            {
-                int checkInId = checkInView.GetSelectedReservationId();
-                if (checkInId == 0)
-                {
-                    checkInView.Message = "Please select a check-in to delete.";
-                    checkInView.isSuccessful = false;
-                    return;
-                }
-
-                var checkIn = checkInRepository.GetByReservationId(checkInId);
-                string roomNumber = checkIn?.RoomNumber;
-
-                checkInRepository.Delete(checkInId);
-
-                if (!string.IsNullOrEmpty(roomNumber))
-                {
-                    roomRepository.SyncRoomStatusesWithReservations(roomNumber, reservationRepository);
-                }
-
-                checkInView.isSuccessful = true;
-                checkInView.Message = "Check-in deleted successfully.";
-                LoadAllCheckInList();
-            }
-            catch (Exception ex)
-            {
-                checkInView.isSuccessful = false;
-                checkInView.Message = $"Error: Could not delete check-in. {ex.Message}";
-            }
+            checkInView.ShowTab(1);
         }
 
         private void SaveCheckIn(object sender, EventArgs e)
@@ -201,11 +201,27 @@ namespace HotelReservationSystem.Presenter
                 }
                 else
                 {
+                    if (checkInRepository.ExistsForReservation(model.ReservationId))
+                    {
+                        var existingCheckIn = checkInRepository.GetByReservationId(model.ReservationId);
+                        checkInView.ShowMessage(
+                            $"A check-in already exists for this reservation.\n\n" +
+                            $"Customer: {existingCheckIn.CustomerName}\n" +
+                            $"Room: {existingCheckIn.RoomNumber}\n" +
+                            $"Check-In Date: {existingCheckIn.CheckInDate:MM/dd/yyyy}\n" +
+                            $"Status: {existingCheckIn.ReservationStatus}\n\n" +
+                            "Please use the Edit function to modify the existing check-in.",
+                            "Duplicate Check-In");
+                        checkInView.isSuccessful = false;
+                        return;
+                    }
+
                     checkInRepository.Add(model);
                     checkInView.Message = "Check-in saved successfully!";
                 }
 
                 HandleRoomStatusAfterSave(model);
+                SyncReservationStatus(model);
 
                 checkInView.isSuccessful = true;
                 checkInView.isEdit = false;
@@ -216,6 +232,45 @@ namespace HotelReservationSystem.Presenter
             {
                 checkInView.isSuccessful = false;
                 checkInView.Message = ex.Message;
+            }
+        }
+
+        private void DeleteCheckIn(object sender, EventArgs e)
+        {
+            try
+            {
+                int checkInId = checkInView.GetSelectedReservationId();
+                if (checkInId == 0)
+                {
+                    checkInView.Message = "Please select a check-in to delete.";
+                    checkInView.isSuccessful = false;
+                    return;
+                }
+
+                var checkIn = checkInRepository.GetByReservationId(checkInId);
+                string roomNumber = checkIn?.RoomNumber;
+                int reservationId = checkIn?.ReservationId ?? 0;
+
+                checkInRepository.Delete(checkInId);
+
+                if (!string.IsNullOrEmpty(roomNumber))
+                {
+                    roomRepository.SyncRoomStatusesWithReservations(roomNumber, reservationRepository);
+                }
+
+                if (reservationId > 0)
+                {
+                    RevertReservationStatusAfterDelete(reservationId);
+                }
+
+                checkInView.isSuccessful = true;
+                checkInView.Message = "Check-in deleted successfully.";
+                LoadAllCheckInList();
+            }
+            catch (Exception ex)
+            {
+                checkInView.isSuccessful = false;
+                checkInView.Message = $"Error: Could not delete check-in. {ex.Message}";
             }
         }
 
@@ -230,7 +285,8 @@ namespace HotelReservationSystem.Presenter
 
         private void OnRoomTypeChanged(object sender, string roomType)
         {
-            if (string.IsNullOrEmpty(roomType)) return;
+            if (string.IsNullOrEmpty(roomType))
+                return;
 
             try
             {
@@ -252,7 +308,8 @@ namespace HotelReservationSystem.Presenter
 
         private void OnRoomNumberChanged(object sender, string roomNumber)
         {
-            if (string.IsNullOrEmpty(roomNumber)) return;
+            if (string.IsNullOrEmpty(roomNumber))
+                return;
 
             try
             {
@@ -275,91 +332,47 @@ namespace HotelReservationSystem.Presenter
 
         #endregion
 
-        #region Helper Methods
+        #region Synchronization Methods
 
-        public void PopulateFromReservation(ReservationModel reservation)
+        private void SyncReservationStatus(CheckInOutModel checkInModel)
         {
-            if (reservation == null) return;
-
             try
             {
-                // STEP 1: Load room types FIRST
-                LoadRoomTypes();
+                var reservation = reservationRepository.GetById(checkInModel.ReservationId);
+                if (reservation == null)
+                    return;
 
-                // STEP 2: Use mapper to populate basic fields (this sets RoomType now that items exist)
-                CheckInMapper.ToCheckInView(reservation, checkInView);
+                string newReservationStatus = MapCheckInStatusToReservationStatus(checkInModel.ReservationStatus);
 
-                // STEP 3: Load available rooms for the selected type (AFTER room type is set)
-                if (!string.IsNullOrEmpty(reservation.RoomType))
+                if (reservation.ReservationStatus != newReservationStatus)
                 {
-                    var availableRooms = roomRepository.GetAvailableRoomsByType(reservation.RoomType).ToList();
-
-                    // Include the current room even if not available
-                    if (!string.IsNullOrEmpty(reservation.RoomNumber))
-                    {
-                        var currentRoom = roomRepository.GetByNumber(reservation.RoomNumber);
-                        if (currentRoom != null && !availableRooms.Any(r => r.RoomNumber == reservation.RoomNumber))
-                        {
-                            availableRooms.Add(currentRoom);
-                        }
-                    }
-
-                    // Load rooms into view
-                    var roomNumbers = availableRooms.Select(r => r.RoomNumber).ToArray();
-                    checkInView.LoadAvailableRooms(roomNumbers);
-
-                    // STEP 4: Now set the room number (AFTER items are loaded)
-                    checkInView.RoomNumber = reservation.RoomNumber;
+                    reservation.ReservationStatus = newReservationStatus;
+                    reservationRepository.Edit(reservation);
                 }
-
-                // Override status to CheckedIn for check-in process
-                checkInView.ReservationStatus = "CheckedIn";
-
-                // Mark as edit mode
-                checkInView.isEdit = true;
-
-                // Disable reservation ID and customer name fields
-                checkInView.SetFieldEnabled("ReservationId", false);
-                checkInView.SetFieldEnabled("CustomerName", false);
             }
             catch (Exception ex)
             {
-                checkInView.ShowMessage($"Error populating reservation data: {ex.Message}", "Error");
+                checkInView.ShowMessage($"Warning: Could not sync reservation status: {ex.Message}", "Warning");
             }
         }
 
-        private void UpdatePriceForRoomType(decimal roomPricePerNight)
+        private void RevertReservationStatusAfterDelete(int reservationId)
         {
-            int nights = (checkInView.CheckOutDate - checkInView.CheckInDate).Days;
-            if (nights <= 0) nights = 1;
-
-            decimal newTotalPrice = roomPricePerNight * nights;
-            CheckInMapper.UpdateFinancialFields(checkInView, newTotalPrice);
-        }
-
-        private void LoadRoomTypes()
-        {
-            string[] roomTypes = new string[] { "Standard", "Deluxe", "Suite", "Family", "Single" };
-            checkInView.LoadRoomTypes(roomTypes);
-        }
-
-        private void LoadRoomInformation(CheckInOutModel model)
-        {
-            if (!string.IsNullOrEmpty(model.RoomType))
+            try
             {
-                var availableRooms = roomRepository.GetAvailableRoomsByType(model.RoomType).ToList();
+                var reservation = reservationRepository.GetById(reservationId);
+                if (reservation == null)
+                    return;
 
-                if (!string.IsNullOrEmpty(model.RoomNumber))
+                if (reservation.ReservationStatus == "CheckedIn" || reservation.ReservationStatus == "CheckedOut")
                 {
-                    var currentRoom = roomRepository.GetByNumber(model.RoomNumber);
-                    if (currentRoom != null && !availableRooms.Any(r => r.RoomNumber == model.RoomNumber))
-                    {
-                        availableRooms.Add(currentRoom);
-                    }
+                    reservation.ReservationStatus = "Confirmed";
+                    reservationRepository.Edit(reservation);
                 }
-
-                var roomNumbers = availableRooms.Select(r => r.RoomNumber).ToArray();
-                checkInView.LoadAvailableRooms(roomNumbers);
+            }
+            catch (Exception ex)
+            {
+                checkInView.ShowMessage($"Warning: Could not revert reservation status: {ex.Message}", "Warning");
             }
         }
 
@@ -386,6 +399,73 @@ namespace HotelReservationSystem.Presenter
             }
         }
 
+        #endregion
+
+        #region Helper Methods
+
+        public void PopulateFromReservation(ReservationModel reservation)
+        {
+            if (reservation == null)
+                return;
+
+            try
+            {
+                LoadRoomTypes();
+                CheckInMapper.ToCheckInView(reservation, checkInView);
+
+                if (!string.IsNullOrEmpty(reservation.RoomType))
+                {
+                    var availableRooms = roomRepository.GetAvailableRoomsByType(reservation.RoomType).ToList();
+
+                    if (!string.IsNullOrEmpty(reservation.RoomNumber))
+                    {
+                        var currentRoom = roomRepository.GetByNumber(reservation.RoomNumber);
+                        if (currentRoom != null && !availableRooms.Any(r => r.RoomNumber == reservation.RoomNumber))
+                        {
+                            availableRooms.Add(currentRoom);
+                        }
+                    }
+
+                    var roomNumbers = availableRooms.Select(r => r.RoomNumber).ToArray();
+                    checkInView.LoadAvailableRooms(roomNumbers);
+                    checkInView.RoomNumber = reservation.RoomNumber;
+                }
+
+                checkInView.ReservationStatus = "CheckedIn";
+                checkInView.isEdit = false;
+                checkInView.SetFieldEnabled("ReservationId", false);
+                checkInView.SetFieldEnabled("CustomerName", false);
+            }
+            catch (Exception ex)
+            {
+                checkInView.ShowMessage($"Error populating reservation data: {ex.Message}", "Error");
+            }
+        }
+
+        private void UpdatePriceForRoomType(decimal roomPricePerNight)
+        {
+            int nights = (checkInView.CheckOutDate - checkInView.CheckInDate).Days;
+            if (nights <= 0)
+                nights = 1;
+
+            decimal newTotalPrice = roomPricePerNight * nights;
+            CheckInMapper.UpdateFinancialFields(checkInView, newTotalPrice);
+        }
+
+        private string MapCheckInStatusToReservationStatus(string checkInStatus)
+        {
+            if (Enum.TryParse(checkInStatus, true, out RoomStatus parsed))
+                return parsed.ToString();
+
+            switch (checkInStatus)
+            {
+                case "Pending":
+                    return RoomStatus.Pending.ToString();
+                default:
+                    return RoomStatus.CheckedIn.ToString();
+            }
+        }
+
         private void CleanViewFields()
         {
             FieldsCleaner.ClearInputs(checkInView as Control);
@@ -395,7 +475,7 @@ namespace HotelReservationSystem.Presenter
 
         #region Static Methods
 
-        public static System.Collections.Generic.IEnumerable<CheckInDto> GetCheckInDtoList()
+        public static IEnumerable<CheckInDto> GetCheckInDtoList()
         {
             var repository = new CheckInOutRepository(DbConfig.GetConnectionString());
             var checkInList = repository.GetAll() ?? Enumerable.Empty<CheckInOutModel>();

@@ -74,5 +74,6 @@
     <Build Include="dbo\Tables\Customers.sql" />
     <PostDeploy Include="dbo\Script\Script.PostDeployment1.sql" />
     <Build Include="dbo\Tables\CheckIns.sql" />
+    <Build Include="dbo\Tables\Companions.sql" />
   </ItemGroup>
 </Project>

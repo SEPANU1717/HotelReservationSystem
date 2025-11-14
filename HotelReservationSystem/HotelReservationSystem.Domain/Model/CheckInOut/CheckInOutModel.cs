@@ -94,7 +94,7 @@ namespace HotelReservationSystem.Domain.Model.CheckInOut
         [DisplayName("Date Created")]
         public DateTime CreatedAt { get; set; }
 
-        // Calculated Properties
+        // Calculated Properties - Using expression-bodied members
         [DisplayName("Grand Total")]
         public decimal GrandTotal => TotalPrice + TotalCompanionCost;
 

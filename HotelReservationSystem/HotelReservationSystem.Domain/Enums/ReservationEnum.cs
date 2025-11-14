@@ -22,10 +22,19 @@ namespace HotelReservationSystem.Domain.Enums
         public enum RoomStatus
         {
             Pending,
-            Confirmed,
             CheckedIn,
             CheckedOut,
-            Cancelled
+            Cancelled,
+            Noshow
+        }
+
+        public enum CheckInStatus
+        {
+            Pending,
+            CheckedIn,
+            CheckedOut,
+            Cancelled,
+            NoShow
         }
 
     }

@@ -79,6 +79,7 @@
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\BillingRepository.cs" />
     <Compile Include="Repositories\CheckInOutRepository.cs" />
+    <Compile Include="Repositories\CompanionRepository.cs" />
     <Compile Include="Repositories\CustomerRepository.cs" />
     <Compile Include="Repositories\DasboardRepository.cs" />
     <Compile Include="Repositories\ReservationRepository.cs" />

@@ -25,6 +25,7 @@ namespace HotelReservationSystem.Domain.Interface.CheckInOut
         decimal BalanceDue { get; set; }
         int CompanionCount { get; set; }
 
+
         // Status Properties
         bool isSuccessful { get; set; }
         bool isEdit { get; set; }
@@ -50,5 +51,7 @@ namespace HotelReservationSystem.Domain.Interface.CheckInOut
         void LoadAvailableRooms(string[] roomNumbers);
         void SetFieldEnabled(string fieldName, bool enabled);
         int GetSelectedReservationId();
+        void ShowTab(int tabIndex); // NEW
+        void ClearForm(); // NEW
     }
 }
