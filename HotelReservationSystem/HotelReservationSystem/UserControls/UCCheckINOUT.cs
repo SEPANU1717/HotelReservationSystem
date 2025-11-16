@@ -204,6 +204,40 @@ namespace HotelReservationSystem.UserControls
             {
                 CheckoutEvent?.Invoke(this, EventArgs.Empty);
             };
+
+            btnCheckInPrint.Click += delegate
+            {
+                if (dataGridCheckInOut.SelectedRows.Count > 0)
+                {
+                    try
+                    {
+                        int reservationId = GetSelectedReservationId();
+                        
+                        var checkIn = checkInRepo.GetByReservationId(reservationId);
+                        if (checkIn == null)
+                        {
+                            MessageBox.Show("Check-in record not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        var customerRepo = new HotelReservationSystem.Data.Repositories.CustomerRepository(DbConfig.GetConnectionString());
+                        var customer = customerRepo.GetByCustomerName(checkIn.CustomerName);
+
+                        using (var receiptService = new HotelReservationSystem.Domain.Services.CheckInReceiptPrintService(checkIn, customer))
+                        {
+                            receiptService.ShowWithOptions();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error showing receipt: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a check-in record to print.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            };
         }
 
         #endregion

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCheckINOUT));
-            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -107,6 +107,7 @@
             this.btnCheckOut = new FrameworkTest.SATAButton();
             this.btnReservationAddNew = new FrameworkTest.SATAButton();
             this.btnReservationEdit = new FrameworkTest.SATAButton();
+            this.btnCheckInPrint = new FrameworkTest.SATAButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -225,11 +226,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.White;
             this.sataPanel1.BackColor2 = System.Drawing.Color.White;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius1.BottomLeft = 10;
-            borderRadius1.BottomRight = 10;
-            borderRadius1.TopLeft = 10;
-            borderRadius1.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius1;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius2;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 156);
@@ -275,24 +276,24 @@
             this.dataGridCheckInOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridCheckInOut.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridCheckInOut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCheckInOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCheckInOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridCheckInOut.ColumnHeadersHeight = 33;
             this.dataGridCheckInOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridCheckInOut.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridCheckInOut.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridCheckInOut.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridCheckInOut.EnableHeadersVisualStyles = false;
             this.dataGridCheckInOut.GridColor = System.Drawing.Color.Gainsboro;
@@ -301,16 +302,16 @@
             this.dataGridCheckInOut.Name = "dataGridCheckInOut";
             this.dataGridCheckInOut.ReadOnly = true;
             this.dataGridCheckInOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCheckInOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCheckInOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridCheckInOut.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridCheckInOut.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridCheckInOut.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridCheckInOut.RowTemplate.Height = 30;
             this.dataGridCheckInOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridCheckInOut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1445,7 +1446,7 @@
             this.btnCheckOut.ImageTint = System.Drawing.Color.White;
             this.btnCheckOut.IsToggleButton = false;
             this.btnCheckOut.IsToggled = false;
-            this.btnCheckOut.Location = new System.Drawing.Point(989, 100);
+            this.btnCheckOut.Location = new System.Drawing.Point(935, 100);
             this.btnCheckOut.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -1484,7 +1485,7 @@
             this.btnReservationAddNew.ImageTint = System.Drawing.Color.White;
             this.btnReservationAddNew.IsToggleButton = false;
             this.btnReservationAddNew.IsToggled = false;
-            this.btnReservationAddNew.Location = new System.Drawing.Point(857, 100);
+            this.btnReservationAddNew.Location = new System.Drawing.Point(803, 100);
             this.btnReservationAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnReservationAddNew.Name = "btnReservationAddNew";
             this.btnReservationAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -1540,10 +1541,50 @@
             this.btnReservationEdit.TextAutoCenter = false;
             this.btnReservationEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
+            // btnCheckInPrint
+            // 
+            this.btnCheckInPrint.ButtonText = "";
+            this.btnCheckInPrint.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCheckInPrint.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCheckInPrint.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCheckInPrint.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCheckInPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCheckInPrint.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCheckInPrint.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckInPrint.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnCheckInPrint.HoverForeColor = System.Drawing.Color.White;
+            this.btnCheckInPrint.HoverImage = null;
+            this.btnCheckInPrint.HoverImageTint = System.Drawing.Color.White;
+            this.btnCheckInPrint.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCheckInPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnCheckInPrint.Image")));
+            this.btnCheckInPrint.ImageAutoCenter = true;
+            this.btnCheckInPrint.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCheckInPrint.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCheckInPrint.ImageTint = System.Drawing.Color.White;
+            this.btnCheckInPrint.IsToggleButton = false;
+            this.btnCheckInPrint.IsToggled = false;
+            this.btnCheckInPrint.Location = new System.Drawing.Point(1082, 100);
+            this.btnCheckInPrint.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCheckInPrint.Name = "btnCheckInPrint";
+            this.btnCheckInPrint.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCheckInPrint.NormalForeColor = System.Drawing.Color.White;
+            this.btnCheckInPrint.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCheckInPrint.OutlineThickness = 2F;
+            this.btnCheckInPrint.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCheckInPrint.PressedForeColor = System.Drawing.Color.White;
+            this.btnCheckInPrint.PressedImageTint = System.Drawing.Color.White;
+            this.btnCheckInPrint.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCheckInPrint.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCheckInPrint.Size = new System.Drawing.Size(44, 39);
+            this.btnCheckInPrint.TabIndex = 21;
+            this.btnCheckInPrint.TextAutoCenter = false;
+            this.btnCheckInPrint.TextOffset = new System.Drawing.Point(0, 0);
+            // 
             // UCCheckINOUT
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
+            this.Controls.Add(this.btnCheckInPrint);
             this.Controls.Add(this.btnReservationSearch);
             this.Controls.Add(this.txtReservationSearch);
             this.Controls.Add(this.btnReservationDelete);
@@ -1645,5 +1686,6 @@
         private System.Windows.Forms.Label label31;
         private SATATextBox txtCompanionPricePerNight;
         private FrameworkTest.SATAButton btnCheckOut;
+        private FrameworkTest.SATAButton btnCheckInPrint;
     }
 }

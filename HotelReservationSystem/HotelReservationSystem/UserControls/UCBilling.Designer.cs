@@ -120,7 +120,7 @@
             this.txtReservationId = new SATATextBox();
             this.txtSubtotal = new SATATextBox();
             this.txtBillId = new SATATextBox();
-            this.sataButton1 = new FrameworkTest.SATAButton();
+            this.btnBillPrint = new FrameworkTest.SATAButton();
             this.btnServices = new FrameworkTest.SATAButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
@@ -1624,44 +1624,44 @@
             this.txtBillId.Texts = "";
             this.txtBillId.UnderlinedStyle = false;
             // 
-            // sataButton1
+            // btnBillPrint
             // 
-            this.sataButton1.ButtonText = "";
-            this.sataButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.sataButton1.CheckedImageTint = System.Drawing.Color.White;
-            this.sataButton1.CheckedOutline = System.Drawing.Color.Transparent;
-            this.sataButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sataButton1.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.sataButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataButton1.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.sataButton1.HoverForeColor = System.Drawing.Color.White;
-            this.sataButton1.HoverImage = null;
-            this.sataButton1.HoverImageTint = System.Drawing.Color.White;
-            this.sataButton1.HoverOutline = System.Drawing.Color.Empty;
-            this.sataButton1.Image = ((System.Drawing.Image)(resources.GetObject("sataButton1.Image")));
-            this.sataButton1.ImageAutoCenter = true;
-            this.sataButton1.ImageExpand = new System.Drawing.Point(0, 0);
-            this.sataButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.sataButton1.ImageTint = System.Drawing.Color.White;
-            this.sataButton1.IsToggleButton = false;
-            this.sataButton1.IsToggled = false;
-            this.sataButton1.Location = new System.Drawing.Point(1136, 100);
-            this.sataButton1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.sataButton1.Name = "sataButton1";
-            this.sataButton1.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.sataButton1.NormalForeColor = System.Drawing.Color.White;
-            this.sataButton1.NormalOutline = System.Drawing.Color.Empty;
-            this.sataButton1.OutlineThickness = 2F;
-            this.sataButton1.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.sataButton1.PressedForeColor = System.Drawing.Color.White;
-            this.sataButton1.PressedImageTint = System.Drawing.Color.White;
-            this.sataButton1.PressedOutline = System.Drawing.Color.Empty;
-            this.sataButton1.Rounding = new System.Windows.Forms.Padding(5);
-            this.sataButton1.Size = new System.Drawing.Size(44, 39);
-            this.sataButton1.TabIndex = 18;
-            this.sataButton1.TextAutoCenter = false;
-            this.sataButton1.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnBillPrint.ButtonText = "";
+            this.btnBillPrint.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnBillPrint.CheckedForeColor = System.Drawing.Color.White;
+            this.btnBillPrint.CheckedImageTint = System.Drawing.Color.White;
+            this.btnBillPrint.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnBillPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBillPrint.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnBillPrint.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBillPrint.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnBillPrint.HoverForeColor = System.Drawing.Color.White;
+            this.btnBillPrint.HoverImage = null;
+            this.btnBillPrint.HoverImageTint = System.Drawing.Color.White;
+            this.btnBillPrint.HoverOutline = System.Drawing.Color.Empty;
+            this.btnBillPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnBillPrint.Image")));
+            this.btnBillPrint.ImageAutoCenter = true;
+            this.btnBillPrint.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnBillPrint.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnBillPrint.ImageTint = System.Drawing.Color.White;
+            this.btnBillPrint.IsToggleButton = false;
+            this.btnBillPrint.IsToggled = false;
+            this.btnBillPrint.Location = new System.Drawing.Point(1136, 100);
+            this.btnBillPrint.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnBillPrint.Name = "btnBillPrint";
+            this.btnBillPrint.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnBillPrint.NormalForeColor = System.Drawing.Color.White;
+            this.btnBillPrint.NormalOutline = System.Drawing.Color.Empty;
+            this.btnBillPrint.OutlineThickness = 2F;
+            this.btnBillPrint.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnBillPrint.PressedForeColor = System.Drawing.Color.White;
+            this.btnBillPrint.PressedImageTint = System.Drawing.Color.White;
+            this.btnBillPrint.PressedOutline = System.Drawing.Color.Empty;
+            this.btnBillPrint.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnBillPrint.Size = new System.Drawing.Size(44, 39);
+            this.btnBillPrint.TabIndex = 18;
+            this.btnBillPrint.TextAutoCenter = false;
+            this.btnBillPrint.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // btnServices
             // 
@@ -1711,7 +1711,7 @@
             this.Controls.Add(this.btnDeleteDelete);
             this.Controls.Add(this.btnServices);
             this.Controls.Add(this.btnBillingAddNew);
-            this.Controls.Add(this.sataButton1);
+            this.Controls.Add(this.btnBillPrint);
             this.Controls.Add(this.btnBillingEdit);
             this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.panel2);
@@ -1759,7 +1759,7 @@
         private FrameworkTest.SATAButton btnBillingAddNew;
         private FrameworkTest.SATAButton btnBillingEdit;
         private SATAUiFramework.SATAPanel sataPanel1;
-        private FrameworkTest.SATAButton sataButton1;
+        private FrameworkTest.SATAButton btnBillPrint;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage MainFormBilling;

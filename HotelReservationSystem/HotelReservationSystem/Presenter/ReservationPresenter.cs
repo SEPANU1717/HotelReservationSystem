@@ -340,6 +340,28 @@ namespace HotelReservationSystem.Presenter
                 reservationView.ClearForm();
                 reservationView.ShowTab(0); 
                 reservationView.ShowSuccessMessage(reservationView.Message);
+
+                var confirmResult = MessageBox.Show(
+                    "Reservation saved successfully!\n\nWould you like to view the receipt?",
+                    "Print Receipt",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        var customer = customerRepository.GetByCustomerName(model.CustomerName);
+                        using (var receiptService = new Domain.Services.ReservationReceiptService(model, customer, UserSession.Username))
+                        {
+                            receiptService.ShowReceipt();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        reservationView.ShowErrorMessage($"Receipt preview error: {ex.Message}");
+                    }
+                }
             }
             catch (Exception ex)
             {

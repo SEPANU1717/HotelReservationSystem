@@ -55,6 +55,8 @@ namespace HotelReservationSystem.Presenter.Billing
             this.billingView.DeleteEvent += DeleteBill;
             this.billingView.SaveEvent += SaveBill;
             this.billingView.CancelEvent += CancelBill;
+            this.billingView.PrintInvoiceEvent += PrintInvoice;
+            this.billingView.EmailInvoiceEvent += EmailInvoice;
         }
 
         private void UnsubscribeFromViewEvents()
@@ -65,6 +67,8 @@ namespace HotelReservationSystem.Presenter.Billing
             this.billingView.DeleteEvent -= DeleteBill;
             this.billingView.SaveEvent -= SaveBill;
             this.billingView.CancelEvent -= CancelBill;
+            this.billingView.PrintInvoiceEvent -= PrintInvoice;
+            this.billingView.EmailInvoiceEvent -= EmailInvoice;
         }
         #endregion
 
@@ -428,7 +432,7 @@ namespace HotelReservationSystem.Presenter.Billing
                 }
 
                 var result = MessageBox.Show(
-                    string.Format("Are you sure you want to delete billing for '{0}'?\n\nBill ID: {1}\nReservation ID: {2}\nTotal Amount: ${3:N2}",
+                    string.Format("Are you sure you want to delete billing for '{0}'?\n\nBill ID: {1}\nReservation ID: {2}\nTotal Amount: ₱{3:N2}",
                         billing.CustomerName, billing.BillId, billing.ReservationId, billing.TotalAmount),
                     "Confirm Deletion",
                     MessageBoxButtons.YesNo,
@@ -466,6 +470,142 @@ namespace HotelReservationSystem.Presenter.Billing
                 billingView.ShowGridView();
             }
         }
+
+        private void PrintInvoice(object sender, EventArgs e)
+        {
+            try
+            {
+                int billId = billingView.GetSelectedBillId();
+                if (billId == 0)
+                {
+                    billingView.ShowMessage("Please select a billing record to print.", "No Selection");
+                    return;
+                }
+
+                var billing = repository.GetById(billId);
+                if (billing == null)
+                {
+                    billingView.ShowMessage("Billing record not found.", "Error");
+                    return;
+                }
+
+                var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+                var customer = customerRepo.GetByCustomerName(billing.CustomerName);
+
+                using (var printService = new InvoicePrintServiceWithPDF(billing, customer))
+                {
+                    printService.ShowWithOptions();
+                }
+            }
+            catch (Exception ex)
+            {
+                billingView.ShowMessage($"Error printing invoice: {ex.Message}", "Print Error");
+            }
+        }
+
+        private void EmailInvoice(object sender, EventArgs e)
+        {
+            try
+            {
+                int billId = billingView.GetSelectedBillId();
+                if (billId == 0)
+                {
+                    billingView.ShowMessage("Please select a billing record to email.", "No Selection");
+                    return;
+                }
+
+                var billing = repository.GetById(billId);
+                if (billing == null)
+                {
+                    billingView.ShowMessage("Billing record not found.", "Error");
+                    return;
+                }
+
+                var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+                var customer = customerRepo.GetByCustomerName(billing.CustomerName);
+
+                if (customer == null)
+                {
+                    billingView.ShowMessage($"Customer information not found for '{billing.CustomerName}'.", "Error");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(customer.Email))
+                {
+                    billingView.ShowMessage($"No email address found for customer '{billing.CustomerName}'.", "No Email");
+                    return;
+                }
+
+                var confirmResult = MessageBox.Show(
+                    string.Format(
+                        "Send invoice email to customer?\n\n" +
+                        "Customer: {0}\n" +
+                        "Email: {1}\n" +
+                        "Invoice #: {2}\n" +
+                        "Amount: ₱{3:N2}\n\n" +
+                        "Do you want to proceed?",
+                        customer.FullName,
+                        customer.Email,
+                        billing.BillId,
+                        billing.TotalAmount),
+                    "Confirm Send Invoice",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (confirmResult != DialogResult.Yes)
+                {
+                    return;
+                }
+
+                string tempPath = System.IO.Path.GetTempPath();
+                string fileName = $"Invoice_{billing.BillId}_{DateTime.Now:yyyyMMddHHmmss}.png";
+                string filePath = System.IO.Path.Combine(tempPath, fileName);
+
+                using (var printService = new InvoicePrintService(billing, customer))
+                {
+                    printService.SaveAsPdf(filePath);
+                }
+
+                var emailService = new EmailService();
+
+                if (!emailService.IsConfigured())
+                {
+                    var form = new EmailConfigForm();
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        emailService = new EmailService(
+                            form.SmtpServer,
+                            form.SmtpPort,
+                            form.SenderEmail,
+                            form.SenderPassword,
+                            form.EnableSsl
+                        );
+                    }
+                    else
+                    {
+                        if (System.IO.File.Exists(filePath))
+                        {
+                            try { System.IO.File.Delete(filePath); } catch { }
+                        }
+                        return;
+                    }
+                }
+
+                emailService.SendInvoiceEmail(customer.Email, customer.FullName, filePath, billing.BillId.ToString());
+
+                billingView.ShowMessage($"Invoice successfully sent to {customer.Email}", "Email Sent");
+
+                if (System.IO.File.Exists(filePath))
+                {
+                    try { System.IO.File.Delete(filePath); } catch { }
+                }
+            }
+            catch (Exception ex)
+            {
+                billingView.ShowMessage($"Error emailing invoice: {ex.Message}", "Email Error");
+            }
+        }
+
         #endregion
 
         #region Public Helper Methods
@@ -496,6 +636,7 @@ namespace HotelReservationSystem.Presenter.Billing
                     "Error");
             }
         }
+
         public void PopulateFromCheckout(CheckInOutModel checkIn, decimal damageFee, Action onCompleted)
         {
             try
@@ -545,6 +686,7 @@ namespace HotelReservationSystem.Presenter.Billing
                     "Error");
             }
         }
+
         #endregion
     }
 }

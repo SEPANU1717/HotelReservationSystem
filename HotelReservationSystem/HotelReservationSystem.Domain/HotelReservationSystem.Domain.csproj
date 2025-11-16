@@ -35,6 +35,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -91,7 +92,14 @@
     <Compile Include="Model\Service\Shared\SharedConfirmServiceModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CheckInReceiptPrintService.cs" />
+    <Compile Include="Services\CheckInReceiptService.cs" />
     <Compile Include="Services\CheckOutService.cs" />
+    <Compile Include="Services\EmailService.cs" />
+    <Compile Include="Services\InvoicePrintService.cs" />
+    <Compile Include="Services\InvoicePrintServiceWithPDF.cs" />
+    <Compile Include="Services\ReservationReceiptPrintService.cs" />
+    <Compile Include="Services\ReservationReceiptService.cs" />
     <Compile Include="Validation\DateRangeValidationAttribute.cs" />
     <Compile Include="Validation\DecimalRangeAttribute.cs" />
     <Compile Include="Validation\FutureDateAttribute.cs" />

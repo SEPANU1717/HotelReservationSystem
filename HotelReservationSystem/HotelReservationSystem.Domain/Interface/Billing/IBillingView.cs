@@ -54,6 +54,8 @@ namespace HotelReservationSystem.Domain.Interface.Billing
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
         event EventHandler CheckoutCompletedEvent;
+        event EventHandler PrintInvoiceEvent;
+        event EventHandler EmailInvoiceEvent;
 
         // Methods
         void SetBillingListBindingSource(BindingSource billingList);
@@ -61,5 +63,6 @@ namespace HotelReservationSystem.Domain.Interface.Billing
         void ClearForm();
         void ShowBillingForm();
         void ShowGridView();
+        int GetSelectedBillId();
     }
 }

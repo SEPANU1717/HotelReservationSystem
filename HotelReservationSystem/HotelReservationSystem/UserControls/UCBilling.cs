@@ -93,6 +93,22 @@ namespace HotelReservationSystem.UserControls
             // Cancel
             if (btnBillingCancel != null)
                 btnBillingCancel.Click += delegate { CancelEvent?.Invoke(this, EventArgs.Empty); };
+
+            if (btnBillPrint != null)
+            {
+                btnBillPrint.Click += delegate { PrintInvoiceEvent?.Invoke(this, EventArgs.Empty); };
+            }
+
+            if (dataGridBilling != null)
+            {
+                dataGridBilling.CellDoubleClick += (s, e) =>
+                {
+                    if (e.RowIndex >= 0)
+                    {
+                        EmailInvoiceEvent?.Invoke(this, EventArgs.Empty);
+                    }
+                };
+            }
         }
         #endregion
 
@@ -375,6 +391,9 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
         public event EventHandler CheckoutCompletedEvent;
+        public event EventHandler PrintInvoiceEvent;
+        public event EventHandler EmailInvoiceEvent;
+
         #endregion
 
         #region IBillingView Methods
@@ -432,6 +451,28 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.SelectedTab = tabPage1;
             }
         }
+
+        public int GetSelectedBillId()
+        {
+            if (dataGridBilling == null || dataGridBilling.CurrentRow == null)
+                return 0;
+
+            try
+            {
+                var cellValue = dataGridBilling.CurrentRow.Cells["BillId"].Value;
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int billId))
+                {
+                    return billId;
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+
+            return 0;
+        }
+
         #endregion
 
         #region Helper Methods

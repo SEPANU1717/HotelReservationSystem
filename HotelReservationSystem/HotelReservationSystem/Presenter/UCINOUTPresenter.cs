@@ -12,6 +12,7 @@ using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Domain.Model.CheckInOut;
 using HotelReservationSystem.Presenter.Common;
 using HotelReservationSystem.Presenter.Mapper;
+using HotelReservationSystem.Presenter.Billing;
 using static HotelReservationSystem.Domain.Enums.ReservationEnum;
 
 namespace HotelReservationSystem.Presenter
@@ -146,6 +147,13 @@ namespace HotelReservationSystem.Presenter
             checkInView.SetFieldEnabled("ReservationId", true);
             checkInView.SetFieldEnabled("CustomerName", true);
             CleanViewFields();
+            
+            int nextReservationId = reservationRepository.GetNextReservationId();
+            checkInView.ReservationId = nextReservationId.ToString();
+            
+            checkInView.CheckInDate = DateTime.Now;
+            checkInView.CheckOutDate = DateTime.Now.AddDays(1);
+            checkInView.TimeArrival = DateTime.Now;
         }
 
         private void EditCheckIn(object sender, EventArgs e)
@@ -235,7 +243,12 @@ namespace HotelReservationSystem.Presenter
                     }
 
                     var reservation = reservationRepository.GetById(model.ReservationId);
-                    if (reservation != null && !string.IsNullOrEmpty(reservation.RoomNumber))
+                    
+                    if (reservation == null)
+                    {
+                        CreateWalkInReservation(model);
+                    }
+                    else if (!string.IsNullOrEmpty(reservation.RoomNumber))
                     {
                         oldRoomNumber = reservation.RoomNumber;
                     }
@@ -264,11 +277,69 @@ namespace HotelReservationSystem.Presenter
                 checkInView.isEdit = false;
                 LoadAllCheckInList();
                 CleanViewFields();
+
+                checkInView.ShowMessage(checkInView.Message, "Success");
+
+                var confirmResult = MessageBox.Show(
+                    "Check-in saved successfully!\n\nWould you like to view the receipt?",
+                    "Print Receipt",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+                        var customer = customerRepo.GetByCustomerName(model.CustomerName);
+                        using (var receiptService = new Domain.Services.CheckInReceiptService(model, customer))
+                        {
+                            receiptService.ShowReceipt();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        checkInView.ShowMessage($"Receipt preview error: {ex.Message}", "Error");
+                    }
+                }
             }
             catch (Exception ex)
             {
                 checkInView.isSuccessful = false;
                 checkInView.Message = ex.Message;
+            }
+        }
+
+        private void CreateWalkInReservation(CheckInOutModel checkInModel)
+        {
+            try
+            {
+                var walkInReservation = new ReservationModel
+                {
+                    ReservationId = checkInModel.ReservationId,
+                    CustomerName = checkInModel.CustomerName,
+                    RoomType = checkInModel.RoomType,
+                    RoomNumber = checkInModel.RoomNumber,
+                    CheckInDate = checkInModel.CheckInDate,
+                    CheckOutDate = checkInModel.CheckOutDate,
+                    TimeArrival = checkInModel.TimeArrival,
+                    TotalPrice = checkInModel.TotalPrice,
+                    DownPayment = checkInModel.DownPayment,
+                    AmountPaid = checkInModel.AmountPaid,
+                    IsDownPaymentPaid = checkInModel.AmountPaid >= checkInModel.DownPayment,
+                    PaymentStatus = checkInModel.PaymentStatus,
+                    PaymentMethod = checkInModel.PaymentMethod ?? "Cash",
+                    ReservationStatus = "CheckedIn",
+                    CreatedAt = DateTime.Now
+                };
+
+                reservationRepository.Add(walkInReservation);
+                System.Diagnostics.Debug.WriteLine($"CreateWalkInReservation: Created walk-in reservation {walkInReservation.ReservationId} for {walkInReservation.CustomerName}");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"CreateWalkInReservation ERROR: {ex.Message}");
+                throw new Exception($"Failed to create walk-in reservation: {ex.Message}");
             }
         }
 
@@ -425,7 +496,7 @@ namespace HotelReservationSystem.Presenter
                 if (!validationResult.IsValid && validationResult.HasOutstandingBalance)
                 {
                     bool proceed = checkInView.ShowConfirmation(
-                        string.Format("Guest has an outstanding balance of ${0:N2}.\nYou must settle the remaining balance before completing checkout.\n\nOpen billing form now?",
+                        string.Format("Guest has an outstanding balance of ₱{0:N2}.\nYou must settle the remaining balance before completing checkout.\n\nOpen billing form now?",
                             validationResult.OutstandingAmount),
                         "Outstanding Balance - Partial Payment");
 
@@ -466,10 +537,10 @@ namespace HotelReservationSystem.Presenter
                         checkIn.RoomNumber);
 
                     if (lateFee > 0)
-                        confirmMessage += string.Format("Late Checkout Fee: ${0:N2}\n", lateFee);
+                        confirmMessage += string.Format("Late Checkout Fee: ₱{0:N2}\n", lateFee);
 
                     if (damageFee > 0)
-                        confirmMessage += string.Format("Damage Fee: ${0:N2}\n", damageFee);
+                        confirmMessage += string.Format("Damage Fee: ₱{0:N2}\n", damageFee);
 
                     confirmMessage += "\nProceed to billing to settle these charges?";
 
@@ -482,7 +553,7 @@ namespace HotelReservationSystem.Presenter
                 else
                 {
                     bool confirm = checkInView.ShowConfirmation(
-                        string.Format("Confirm checkout for:\n\nCustomer: {0}\nRoom: {1}\nTotal Paid: ${2:N2}\nBalance: $0.00\n\nComplete checkout now?",
+                        string.Format("Confirm checkout for:\n\nCustomer: {0}\nRoom: {1}\nTotal Paid: ₱{2:N2}\nBalance: ₱0.00\n\nComplete checkout now?",
                             checkIn.CustomerName,
                             checkIn.RoomNumber,
                             checkIn.AmountPaid),
@@ -508,6 +579,21 @@ namespace HotelReservationSystem.Presenter
         {
             try
             {
+                // Auto-create billing record even for full payment
+                var checkOutService = new HotelReservationSystem.Domain.Services.CheckOutService();
+                DateTime actualCheckOut = DateTime.Now;
+                var billing = checkOutService.PrepareBillingForCheckout(checkIn, actualCheckOut, 0m);
+                
+                billing.BilledBy = UserSession.Username;
+                billing.DateBilled = DateTime.Now;
+                
+                // Save billing record to database
+                var billingRepo = new HotelReservationSystem.Data.Repositories.BillingRepository(DbConfig.GetConnectionString());
+                billingRepo.Add(billing);
+                
+                System.Diagnostics.Debug.WriteLine($"Auto-created billing record {billing.BillId} for full payment checkout");
+
+                // Complete checkout process
                 checkInRepository.CheckOut(checkIn.ReservationId, DateTime.Now, UserSession.Username);
 
                 var reservation = reservationRepository.GetById(checkIn.ReservationId);
@@ -526,7 +612,7 @@ namespace HotelReservationSystem.Presenter
 
                 LoadAllCheckInList();
                 checkInView.ShowTab(0);
-                checkInView.ShowMessage("Checkout completed successfully!", "Success");
+                checkInView.ShowMessage("Checkout completed successfully! Billing record created automatically.", "Success");
             }
             catch (Exception ex)
             {

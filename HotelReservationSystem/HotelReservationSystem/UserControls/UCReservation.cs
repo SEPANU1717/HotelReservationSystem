@@ -156,6 +156,44 @@ namespace HotelReservationSystem.UserControls
                     MessageBox.Show("Please select a reservation first.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             };
+
+            btnReservationPrint.Click += delegate
+            {
+                if (dataGridReservation.SelectedRows.Count > 0)
+                {
+                    try
+                    {
+                        int reservationId = Convert.ToInt32(dataGridReservation.SelectedRows[0].Cells["ReservationId"].Value);
+                        
+                        var reservationRepo = new HotelReservationSystem.Data.Repositories.ReservationRepository(
+                            HotelReservationSystem.DataInitializer.DbInitializer.DbConfig.GetConnectionString());
+                        var reservation = reservationRepo.GetById(reservationId);
+                        
+                        if (reservation == null)
+                        {
+                            MessageBox.Show("Reservation not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        var customerRepo = new HotelReservationSystem.Data.Repositories.CustomerRepository(
+                            HotelReservationSystem.DataInitializer.DbInitializer.DbConfig.GetConnectionString());
+                        var customer = customerRepo.GetByCustomerName(reservation.CustomerName);
+
+                        using (var receiptService = new HotelReservationSystem.Domain.Services.ReservationReceiptPrintService(reservation, customer, HotelReservationSystem.Presenter.Common.UserSession.Username))
+                        {
+                            receiptService.ShowWithOptions();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error showing receipt: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a reservation to print.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            };
         }
 
         #endregion

@@ -191,5 +191,32 @@ namespace HotelReservationSystem.Data.Repositories
             }
             return names;
         }
+
+        public CustomerModel GetByCustomerName(string fullName)
+        {
+            if (string.IsNullOrWhiteSpace(fullName))
+                return null;
+
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = @"SELECT TOP 1 * FROM Customers 
+                                       WHERE (FirstName + ' ' + LastName) = @FullName 
+                                       OR (FirstName + ' ' + ISNULL(MiddleName + ' ', '') + LastName) = @FullName
+                                       ORDER BY CustomerID DESC";
+                command.Parameters.AddWithValue("@FullName", fullName);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return MapCustomerFromReader(reader);
+                    }
+                }
+            }
+            return null;
+        }
     }
 }
