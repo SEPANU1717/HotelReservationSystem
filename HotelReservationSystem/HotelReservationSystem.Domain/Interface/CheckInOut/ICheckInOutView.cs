@@ -43,15 +43,19 @@ namespace HotelReservationSystem.Domain.Interface.CheckInOut
         event EventHandler CompanionCancelEvent;
         event EventHandler<string> RoomTypeChangedEvent;
         event EventHandler<string> RoomNumberChangedEvent;
+        event EventHandler PaymentStatusChangedEvent;
+        event EventHandler AmountPaidChangedEvent;
+        event EventHandler CheckoutEvent;
 
-        // Methods
         void SetReservationListBindingSource(BindingSource checkInList);
         void ShowMessage(string message, string title);
         void LoadRoomTypes(string[] roomTypes);
         void LoadAvailableRooms(string[] roomNumbers);
         void SetFieldEnabled(string fieldName, bool enabled);
         int GetSelectedReservationId();
-        void ShowTab(int tabIndex); // NEW
-        void ClearForm(); // NEW
+        void ShowTab(int tabIndex);
+        void ClearForm();
+        bool ShowConfirmation(string message, string title);
+        string PromptForInput(string title, string label, string defaultValue = "0.00");
     }
 }

@@ -29,8 +29,7 @@ namespace HotelReservationSystem.UserControls
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
 
-            
-            // Initialize controls
+           
             InitializeControls();
             AssociateAndRaiseViewEvents();
         }
@@ -418,6 +417,19 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Clear();
                 materialTabControl1.TabPages.Add(ReservationBillingForm);
                 materialTabControl1.SelectedTab = ReservationBillingForm;
+            }
+        }
+
+        public void ShowGridView()
+        {
+            this.Visible = true;
+            this.BringToFront();
+            
+            if (materialTabControl1 != null && tabPage1 != null)
+            {
+                materialTabControl1.TabPages.Clear();
+                materialTabControl1.TabPages.Add(tabPage1);
+                materialTabControl1.SelectedTab = tabPage1;
             }
         }
         #endregion

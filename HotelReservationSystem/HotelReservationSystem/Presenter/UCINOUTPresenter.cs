@@ -57,6 +57,9 @@ namespace HotelReservationSystem.Presenter
             checkInView.CancelEvent += CancelAction;
             checkInView.RoomTypeChangedEvent += OnRoomTypeChanged;
             checkInView.RoomNumberChangedEvent += OnRoomNumberChanged;
+            checkInView.PaymentStatusChangedEvent += OnPaymentStatusChanged;
+            checkInView.AmountPaidChangedEvent += OnAmountPaidChanged;
+            checkInView.CheckoutEvent += OnCheckout;
         }
 
         private void UnsubscribeFromViewEvents()
@@ -69,6 +72,9 @@ namespace HotelReservationSystem.Presenter
             checkInView.CancelEvent -= CancelAction;
             checkInView.RoomTypeChangedEvent -= OnRoomTypeChanged;
             checkInView.RoomNumberChangedEvent -= OnRoomNumberChanged;
+            checkInView.PaymentStatusChangedEvent -= OnPaymentStatusChanged;
+            checkInView.AmountPaidChangedEvent -= OnAmountPaidChanged;
+            checkInView.CheckoutEvent -= OnCheckout;
         }
 
         #endregion
@@ -198,8 +204,16 @@ namespace HotelReservationSystem.Presenter
             {
                 new ModelDataValidation().Validate(model);
 
+                string oldRoomNumber = null;
+                
                 if (checkInView.isEdit)
                 {
+                    var existingCheckIn = checkInRepository.GetByReservationId(model.ReservationId);
+                    if (existingCheckIn != null)
+                    {
+                        oldRoomNumber = existingCheckIn.RoomNumber;
+                    }
+
                     checkInRepository.Edit(model);
                     checkInView.Message = "Check-in updated successfully!";
                 }
@@ -220,12 +234,31 @@ namespace HotelReservationSystem.Presenter
                         return;
                     }
 
+                    var reservation = reservationRepository.GetById(model.ReservationId);
+                    if (reservation != null && !string.IsNullOrEmpty(reservation.RoomNumber))
+                    {
+                        oldRoomNumber = reservation.RoomNumber;
+                    }
+
                     checkInRepository.Add(model);
                     checkInView.Message = "Check-in saved successfully!";
                 }
 
+                if (!string.IsNullOrEmpty(oldRoomNumber) && oldRoomNumber != model.RoomNumber)
+                {
+                    System.Diagnostics.Debug.WriteLine($"SaveCheckIn: Room changed from {oldRoomNumber} to {model.RoomNumber}");
+                    var oldRoom = roomRepository.GetByNumber(oldRoomNumber);
+                    if (oldRoom != null)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"SaveCheckIn: Setting old room {oldRoomNumber} status from {oldRoom.RoomStatus} to Available");
+                        oldRoom.RoomStatus = "Available";
+                        roomRepository.Edit(oldRoom);
+                        System.Diagnostics.Debug.WriteLine($"SaveCheckIn: Old room {oldRoomNumber} updated to Available");
+                    }
+                }
+
                 HandleRoomStatusAfterSave(model);
-                SyncReservationStatus(model);
+                SyncReservationWithCheckIn(model);
 
                 checkInView.isSuccessful = true;
                 checkInView.isEdit = false;
@@ -348,11 +381,205 @@ namespace HotelReservationSystem.Presenter
             }
         }
 
+        private void OnPaymentStatusChanged(object sender, EventArgs e)
+        {
+            string status = checkInView.PaymentStatus;
+            if (status == "FullPayment")
+            {
+                decimal totalPrice = checkInView.TotalPrice;
+                checkInView.AmountPaid = totalPrice;
+                checkInView.BalanceDue = 0;
+            }
+            else
+            {
+                RecalculateBalance();
+            }
+        }
+
+        private void OnAmountPaidChanged(object sender, EventArgs e)
+        {
+            RecalculateBalance();
+        }
+
+        private void OnCheckout(object sender, EventArgs e)
+        {
+            try
+            {
+                int reservationId = checkInView.GetSelectedReservationId();
+                if (reservationId == 0)
+                {
+                    checkInView.ShowMessage("Please select a guest to check out.", "Selection Required");
+                    return;
+                }
+
+                var checkIn = checkInRepository.GetByReservationId(reservationId);
+                if (checkIn == null)
+                {
+                    checkInView.ShowMessage("Check-in record not found.", "Error");
+                    return;
+                }
+
+                var checkOutService = new HotelReservationSystem.Domain.Services.CheckOutService();
+                var validationResult = checkOutService.ValidateCheckout(checkIn);
+
+                if (!validationResult.IsValid && validationResult.HasOutstandingBalance)
+                {
+                    bool proceed = checkInView.ShowConfirmation(
+                        string.Format("Guest has an outstanding balance of ${0:N2}.\nYou must settle the remaining balance before completing checkout.\n\nOpen billing form now?",
+                            validationResult.OutstandingAmount),
+                        "Outstanding Balance - Partial Payment");
+
+                    if (!proceed)
+                        return;
+
+                    NavigateToBilling(checkIn, 0m);
+                    return;
+                }
+                else if (!validationResult.IsValid)
+                {
+                    checkInView.ShowMessage(validationResult.ErrorMessage, "Checkout Validation Failed");
+                    return;
+                }
+
+                DateTime actualCheckOut = DateTime.Now;
+                decimal lateFee = checkOutService.CalculateLateCheckoutFee(checkIn.CheckOutDate, actualCheckOut);
+
+                decimal damageFee = 0m;
+                bool hasDamages = checkInView.ShowConfirmation("Are there any damages to report?", "Damage Assessment");
+                
+                if (hasDamages)
+                {
+                    string damageInput = checkInView.PromptForInput("Damage Fee", "Enter damage fee amount:", "0.00");
+                    if (!string.IsNullOrEmpty(damageInput))
+                    {
+                        decimal.TryParse(damageInput, out damageFee);
+                    }
+                }
+
+                if (lateFee > 0 || damageFee > 0)
+                {
+                    string confirmMessage = string.Format(
+                        "Additional charges detected:\n\n" +
+                        "Customer: {0}\n" +
+                        "Room: {1}\n",
+                        checkIn.CustomerName,
+                        checkIn.RoomNumber);
+
+                    if (lateFee > 0)
+                        confirmMessage += string.Format("Late Checkout Fee: ${0:N2}\n", lateFee);
+
+                    if (damageFee > 0)
+                        confirmMessage += string.Format("Damage Fee: ${0:N2}\n", damageFee);
+
+                    confirmMessage += "\nProceed to billing to settle these charges?";
+
+                    bool confirm = checkInView.ShowConfirmation(confirmMessage, "Additional Charges");
+                    if (!confirm)
+                        return;
+
+                    NavigateToBilling(checkIn, damageFee);
+                }
+                else
+                {
+                    bool confirm = checkInView.ShowConfirmation(
+                        string.Format("Confirm checkout for:\n\nCustomer: {0}\nRoom: {1}\nTotal Paid: ${2:N2}\nBalance: $0.00\n\nComplete checkout now?",
+                            checkIn.CustomerName,
+                            checkIn.RoomNumber,
+                            checkIn.AmountPaid),
+                        "Complete Checkout - Full Payment");
+
+                    if (!confirm)
+                        return;
+
+                    CompleteCheckoutDirectly(checkIn);
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                checkInView.ShowMessage(ex.Message, "Checkout Error");
+            }
+            catch (Exception ex)
+            {
+                checkInView.ShowMessage(string.Format("Error during checkout: {0}", ex.Message), "Checkout Error");
+            }
+        }
+
+        private void CompleteCheckoutDirectly(CheckInOutModel checkIn)
+        {
+            try
+            {
+                checkInRepository.CheckOut(checkIn.ReservationId, DateTime.Now, UserSession.Username);
+
+                var reservation = reservationRepository.GetById(checkIn.ReservationId);
+                if (reservation != null)
+                {
+                    reservation.ReservationStatus = "CheckedOut";
+                    reservationRepository.Edit(reservation);
+                }
+
+                var room = roomRepository.GetByNumber(checkIn.RoomNumber);
+                if (room != null)
+                {
+                    room.RoomStatus = "Available";
+                    roomRepository.Edit(room);
+                }
+
+                LoadAllCheckInList();
+                checkInView.ShowTab(0);
+                checkInView.ShowMessage("Checkout completed successfully!", "Success");
+            }
+            catch (Exception ex)
+            {
+                checkInView.ShowMessage(string.Format("Error completing checkout: {0}", ex.Message), "Checkout Error");
+            }
+        }
+
+        private void NavigateToBilling(CheckInOutModel checkIn, decimal damageFee)
+        {
+            try
+            {
+                var form = (checkInView as Control)?.FindForm();
+                if (form == null)
+                {
+                    checkInView.ShowMessage("Cannot find parent form.", "Error");
+                    return;
+                }
+
+                var billingControl = UserControls.UCBilling.GetInstance(form);
+                var billingRepo = new HotelReservationSystem.Data.Repositories.BillingRepository(
+                    DbConfig.GetConnectionString());
+                var billingPresenter = new HotelReservationSystem.Presenter.Billing.BillingPresenter(
+                    billingControl,
+                    billingRepo);
+
+                billingPresenter.PopulateFromCheckout(checkIn, damageFee, () =>
+                {
+                    LoadAllCheckInList();
+                    checkInView.ShowTab(0);
+                    checkInView.ShowMessage("Checkout completed successfully! Status updated to CheckedOut.", "Success");
+                });
+
+                var mainView = form as HotelReservationSystem.Domain.Interface.IMainView;
+                if (mainView != null)
+                {
+                    mainView.LoadUserControl(billingControl);
+                }
+                else
+                {
+                    checkInView.ShowMessage("Cannot navigate to billing form.", "Error");
+                }
+            }
+            catch (Exception ex)
+            {
+                checkInView.ShowMessage(string.Format("Error navigating to billing: {0}", ex.Message), "Navigation Error");
+            }
+        }
+
         #endregion
 
         #region Synchronization Methods
 
-        private void SyncReservationStatus(CheckInOutModel checkInModel)
+        private void SyncReservationWithCheckIn(CheckInOutModel checkInModel)
         {
             try
             {
@@ -360,17 +587,53 @@ namespace HotelReservationSystem.Presenter
                 if (reservation == null)
                     return;
 
-                string newReservationStatus = MapCheckInStatusToReservationStatus(checkInModel.ReservationStatus);
+                bool needsUpdate = false;
 
+                if (reservation.RoomNumber != checkInModel.RoomNumber)
+                {
+                    reservation.RoomNumber = checkInModel.RoomNumber;
+                    needsUpdate = true;
+                }
+
+                if (reservation.RoomType != checkInModel.RoomType)
+                {
+                    reservation.RoomType = checkInModel.RoomType;
+                    needsUpdate = true;
+                }
+
+                string newReservationStatus = MapCheckInStatusToReservationStatus(checkInModel.ReservationStatus);
                 if (reservation.ReservationStatus != newReservationStatus)
                 {
                     reservation.ReservationStatus = newReservationStatus;
+                    needsUpdate = true;
+                }
+
+                if (reservation.TotalPrice != checkInModel.TotalPrice)
+                {
+                    reservation.TotalPrice = checkInModel.TotalPrice;
+                    needsUpdate = true;
+                }
+
+                if (reservation.AmountPaid != checkInModel.AmountPaid)
+                {
+                    reservation.AmountPaid = checkInModel.AmountPaid;
+                    needsUpdate = true;
+                }
+
+                if (!string.IsNullOrEmpty(checkInModel.PaymentMethod) && reservation.PaymentMethod != checkInModel.PaymentMethod)
+                {
+                    reservation.PaymentMethod = checkInModel.PaymentMethod;
+                    needsUpdate = true;
+                }
+
+                if (needsUpdate)
+                {
                     reservationRepository.Edit(reservation);
                 }
             }
             catch (Exception ex)
             {
-                checkInView.ShowMessage($"Warning: Could not sync reservation status: {ex.Message}", "Warning");
+                checkInView.ShowMessage($"Warning: Could not sync reservation: {ex.Message}", "Warning");
             }
         }
 
@@ -396,24 +659,57 @@ namespace HotelReservationSystem.Presenter
 
         private void HandleRoomStatusAfterSave(CheckInOutModel model)
         {
-            if (string.IsNullOrEmpty(model.RoomNumber))
-                return;
-
-            var room = roomRepository.GetByNumber(model.RoomNumber);
-            if (room == null)
-                return;
-
-            switch (model.ReservationStatus)
+            try
             {
-                case "CheckedIn":
-                    room.RoomStatus = "Occupied";
-                    roomRepository.Edit(room);
-                    break;
+                if (string.IsNullOrEmpty(model.RoomNumber))
+                {
+                    System.Diagnostics.Debug.WriteLine("HandleRoomStatusAfterSave: No room number provided");
+                    return;
+                }
 
-                case "CheckedOut":
-                    room.RoomStatus = "Available";
+                var room = roomRepository.GetByNumber(model.RoomNumber);
+                if (room == null)
+                {
+                    System.Diagnostics.Debug.WriteLine($"HandleRoomStatusAfterSave: Room {model.RoomNumber} not found");
+                    checkInView.ShowMessage($"Warning: Room {model.RoomNumber} not found in database.", "Warning");
+                    return;
+                }
+
+                System.Diagnostics.Debug.WriteLine($"HandleRoomStatusAfterSave: Room {model.RoomNumber} current status: {room.RoomStatus}, Check-in status: {model.ReservationStatus}");
+
+                string targetStatus = null;
+                switch (model.ReservationStatus)
+                {
+                    case "CheckedIn":
+                        targetStatus = "Occupied";
+                        break;
+
+                    case "CheckedOut":
+                        targetStatus = "Available";
+                        break;
+
+                    case "Confirmed":
+                    case "Reserved":
+                        targetStatus = "Reserved";
+                        break;
+                }
+
+                if (targetStatus != null && room.RoomStatus != targetStatus)
+                {
+                    System.Diagnostics.Debug.WriteLine($"HandleRoomStatusAfterSave: Updating room {model.RoomNumber} from {room.RoomStatus} to {targetStatus}");
+                    room.RoomStatus = targetStatus;
                     roomRepository.Edit(room);
-                    break;
+                    System.Diagnostics.Debug.WriteLine($"HandleRoomStatusAfterSave: Room {model.RoomNumber} updated successfully");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine($"HandleRoomStatusAfterSave: Room {model.RoomNumber} already has correct status: {room.RoomStatus}");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"HandleRoomStatusAfterSave ERROR: {ex.Message}");
+                checkInView.ShowMessage($"Warning: Could not update room status: {ex.Message}", "Warning");
             }
         }
 
@@ -472,6 +768,14 @@ namespace HotelReservationSystem.Presenter
 
             decimal newTotalPrice = roomPricePerNight * nights;
             CheckInMapper.UpdateFinancialFields(checkInView, newTotalPrice);
+        }
+
+        private void RecalculateBalance()
+        {
+            decimal totalPrice = checkInView.TotalPrice;
+            decimal amountPaid = checkInView.AmountPaid;
+            decimal balance = totalPrice - amountPaid;
+            checkInView.BalanceDue = balance < 0 ? 0 : balance;
         }
 
         private string MapCheckInStatusToReservationStatus(string checkInStatus)

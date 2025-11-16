@@ -124,6 +124,8 @@ namespace HotelReservationSystem.Presenter.Billing
             billingView.DateBilled = DateTime.Now;
             billingView.BilledBy = UserSession.Username;
             billingView.ClearForm();
+            
+            billingView.ShowBillingForm();
         }
 
         private void EditBill(object sender, EventArgs e)
@@ -180,6 +182,8 @@ namespace HotelReservationSystem.Presenter.Billing
                 billingView.BilledBy = billing.BilledBy;
 
                 billingView.isEdit = true;
+                
+                billingView.ShowBillingForm();
             }
             catch (Exception ex)
             {
@@ -456,6 +460,10 @@ namespace HotelReservationSystem.Presenter.Billing
                 isFromCheckout = false;
                 onCheckoutCompleted?.Invoke();
                 onCheckoutCompleted = null;
+            }
+            else
+            {
+                billingView.ShowGridView();
             }
         }
         #endregion

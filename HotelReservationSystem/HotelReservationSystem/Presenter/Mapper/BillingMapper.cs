@@ -1,17 +1,13 @@
+using System;
+using System.Windows.Forms;
 using HotelReservationSystem.Domain.DTOs;
+using HotelReservationSystem.Domain.Interface.Billing;
 using HotelReservationSystem.Domain.Model;
 
 namespace HotelReservationSystem.Presenter.Mapper
 {
-    /// <summary>
-    /// Mapper class to convert between BillingModel and BillingDto
-    /// Follows DTO pattern for clean data transfer
-    /// </summary>
     public static class BillingMapper
     {
-        /// <summary>
-        /// Convert BillingModel to BillingDto for display purposes
-        /// </summary>
         public static BillingDto ToDto(BillingModel model)
         {
             if (model == null) return null;
@@ -25,49 +21,62 @@ namespace HotelReservationSystem.Presenter.Mapper
                 RoomType = model.RoomType,
                 CheckInDate = model.CheckInDate,
                 CheckOutDate = model.CheckOutDate,
-                ActualCheckOutDate = model.ActualCheckOutDate,
-                RoomCharge = model.RoomCharge.ToString("C2"),
-                LateCheckoutFee = model.LateCheckoutFee.ToString("C2"),
-                DamageFee = model.DamageFee.ToString("C2"),
-                TotalAmount = model.TotalAmount.ToString("C2"),
-                AmountPaidBefore = model.AmountPaidBefore.ToString("C2"),
-                AmountPaidAtCheckout = model.AmountPaidAtCheckout.ToString("C2"),
-                BalanceDue = model.BalanceDue.ToString("C2"),
+                TotalAmount = model.TotalAmount,
                 PaymentStatus = model.PaymentStatus,
                 PaymentMethod = model.PaymentMethod,
                 DateBilled = model.DateBilled,
-                BilledBy = model.BilledBy,
-                NumberOfNights = model.NumberOfNights,
-                IsLateCheckout = model.IsLateCheckout
+                BilledBy = model.BilledBy
             };
         }
 
-        /// <summary>
-        /// Convert BillingDto back to BillingModel (if needed for editing)
-        /// </summary>
-        public static BillingModel ToModel(BillingDto dto)
+        public static BillingModel FromBillingView(IBillingView view)
         {
-            if (dto == null) return null;
+            // Parse numeric inputs safely
+            decimal roomCharge = string.IsNullOrEmpty(view.RoomCharge) ? 0 : decimal.Parse(view.RoomCharge);
+            decimal lateCheckoutFee = string.IsNullOrEmpty(view.LateCheckoutFee) ? 0 : decimal.Parse(view.LateCheckoutFee);
+            decimal damageFee = string.IsNullOrEmpty(view.DamageFee) ? 0 : decimal.Parse(view.DamageFee);
+
+            decimal amountPaidBefore = string.IsNullOrEmpty(view.AmountPaidBefore) ? 0 : decimal.Parse(view.AmountPaidBefore);
+            decimal amountPaidAtCheckout = string.IsNullOrEmpty(view.AmountPaidAtCheckout) ? 0 : decimal.Parse(view.AmountPaidAtCheckout);
+
+            decimal subtotal = roomCharge + lateCheckoutFee + damageFee;
+            decimal totalPaid = amountPaidBefore + amountPaidAtCheckout;
+
+            if (totalPaid > subtotal)
+            {
+                MessageBox.Show("Total paid cannot exceed the total bill amount.",
+                                "Payment Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return null;
+            }
 
             return new BillingModel
             {
-                BillId = dto.BillId,
-                ReservationId = dto.ReservationId,
-                CustomerName = dto.CustomerName,
-                RoomNumber = dto.RoomNumber,
-                RoomType = dto.RoomType,
-                CheckInDate = dto.CheckInDate,
-                CheckOutDate = dto.CheckOutDate,
-                ActualCheckOutDate = dto.ActualCheckOutDate,
-                RoomCharge = decimal.Parse(dto.RoomCharge.Replace("$", "").Replace(",", "")),
-                LateCheckoutFee = decimal.Parse(dto.LateCheckoutFee.Replace("$", "").Replace(",", "")),
-                DamageFee = decimal.Parse(dto.DamageFee.Replace("$", "").Replace(",", "")),
-                AmountPaidBefore = decimal.Parse(dto.AmountPaidBefore.Replace("$", "").Replace(",", "")),
-                AmountPaidAtCheckout = decimal.Parse(dto.AmountPaidAtCheckout.Replace("$", "").Replace(",", "")),
-                PaymentStatus = dto.PaymentStatus,
-                PaymentMethod = dto.PaymentMethod,
-                DateBilled = dto.DateBilled,
-                BilledBy = dto.BilledBy
+                BillId = string.IsNullOrEmpty(view.BillId) ? 0 : int.Parse(view.BillId),
+                ReservationId = string.IsNullOrEmpty(view.ReservationId) ? 0 : int.Parse(view.ReservationId),
+
+                CustomerName = view.CustomerName,
+                RoomType = view.RoomType,
+                RoomNumber = view.RoomNumber,
+
+                CheckInDate = view.CheckInDate,
+                CheckOutDate = view.CheckOutDate,
+                ActualCheckOutDate = view.ActualCheckOutDate,
+
+                RoomCharge = roomCharge,
+                LateCheckoutFee = lateCheckoutFee,
+                DamageFee = damageFee,
+
+                AmountPaidBefore = amountPaidBefore,
+                AmountPaidAtCheckout = amountPaidAtCheckout,
+
+                PaymentStatus = view.PaymentStatus,
+                PaymentMethod = view.PaymentMethod,
+                PaymentReference = view.PaymentReference,
+
+                DateBilled = DateTime.Now,
+                BilledBy = view.BilledBy
             };
         }
     }

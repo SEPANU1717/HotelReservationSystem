@@ -190,9 +190,19 @@ namespace HotelReservationSystem.UserControls
                 }
             };
 
+            cbPaymentStatus.SelectedIndexChanged += delegate
+            {
+                PaymentStatusChangedEvent?.Invoke(this, EventArgs.Empty);
+            };
+
+            txtAmountPaid.TextChanged += delegate
+            {
+                AmountPaidChangedEvent?.Invoke(this, EventArgs.Empty);
+            };
+
             btnCheckOut.Click += delegate
             {
-                PerformCheckout();
+                CheckoutEvent?.Invoke(this, EventArgs.Empty);
             };
         }
 
@@ -326,6 +336,11 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler CompanionCancelEvent;
         public event EventHandler<string> RoomTypeChangedEvent;
         public event EventHandler<string> RoomNumberChangedEvent;
+        public event EventHandler PaymentStatusChangedEvent;
+        public event EventHandler AmountPaidChangedEvent;
+        public event EventHandler CheckInDateChangedEvent;
+        public event EventHandler CheckOutDateChangedEvent;
+        public event EventHandler CheckoutEvent;
 
 
         #endregion
@@ -425,6 +440,39 @@ namespace HotelReservationSystem.UserControls
             FieldsCleaner.ClearInputs(this);
         }
 
+        public bool ShowConfirmation(string message, string title)
+        {
+            return MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+        }
+
+        public string PromptForInput(string title, string label, string defaultValue = "0.00")
+        {
+            using (var inputForm = new Form())
+            {
+                inputForm.Text = title;
+                inputForm.Size = new System.Drawing.Size(300, 150);
+                inputForm.StartPosition = FormStartPosition.CenterParent;
+
+                var labelControl = new Label { Text = label, Left = 10, Top = 20, Width = 260 };
+                var textBox = new TextBox { Text = defaultValue, Left = 10, Top = 50, Width = 260 };
+                var okButton = new Button { Text = "OK", Left = 110, Top = 80, DialogResult = DialogResult.OK };
+                var cancelButton = new Button { Text = "Cancel", Left = 190, Top = 80, DialogResult = DialogResult.Cancel };
+
+                inputForm.Controls.Add(labelControl);
+                inputForm.Controls.Add(textBox);
+                inputForm.Controls.Add(okButton);
+                inputForm.Controls.Add(cancelButton);
+                inputForm.AcceptButton = okButton;
+                inputForm.CancelButton = cancelButton;
+
+                if (inputForm.ShowDialog() == DialogResult.OK)
+                {
+                    return textBox.Text;
+                }
+                return null;
+            }
+        }
+
         #endregion
 
         #region Singleton Pattern
@@ -454,370 +502,6 @@ namespace HotelReservationSystem.UserControls
                     comboBox.SelectedIndex = i;
                     return;
                 }
-            }
-        }
-
-
-        #endregion
-
-        #region Checkout Implementation
-
-        private void PerformCheckout()
-        {
-            try
-            {
-                if (dataGridCheckInOut.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show(
-                        "Please select a guest to check out.",
-                        "Selection Required",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    return;
-                }
-
-                int reservationId = GetSelectedReservationId();
-                if (reservationId == 0)
-                {
-                    MessageBox.Show("Invalid reservation selected.", "Error");
-                    return;
-                }
-
-                var checkIn = checkInRepo.GetByReservationId(reservationId);
-                if (checkIn == null)
-                {
-                    MessageBox.Show("Check-in record not found.", "Error");
-                    return;
-                }
-
-                var checkOutService = new HotelReservationSystem.Domain.Services.CheckOutService();
-                var validationResult = checkOutService.ValidateCheckout(checkIn);
-
-                // Check if there's an outstanding balance - navigate to billing form
-                if (!validationResult.IsValid && validationResult.HasOutstandingBalance)
-                {
-                    var proceed = MessageBox.Show(
-                        string.Format(
-                            "Guest has an outstanding balance of ${0:N2}.\nYou must settle the remaining balance before completing checkout.\n\nOpen billing form now?",
-                            validationResult.OutstandingAmount),
-                        "Outstanding Balance - Partial Payment",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning);
-
-                    if (proceed != DialogResult.Yes)
-                        return;
-
-                    // Navigate to billing FORM to settle balance
-                    NavigateToBillingForm(checkIn, 0m);
-                    return;
-                }
-                else if (!validationResult.IsValid)
-                {
-                    // Other validation failures
-                    MessageBox.Show(
-                        validationResult.ErrorMessage,
-                        "Checkout Validation Failed",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // At this point validation passed - FullPayment, no balance
-                DateTime actualCheckOut = DateTime.Now;
-                decimal lateFee = checkOutService.CalculateLateCheckoutFee(
-                    checkIn.CheckOutDate,
-                    actualCheckOut);
-
-                // Prompt for damage fee
-                decimal damageFee = 0m;
-                var damagePrompt = MessageBox.Show(
-                    "Are there any damages to report?",
-                    "Damage Assessment",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (damagePrompt == DialogResult.Yes)
-                {
-                    using (var inputForm = new Form())
-                    {
-                        inputForm.Text = "Damage Fee";
-                        inputForm.Size = new System.Drawing.Size(300, 150);
-                        inputForm.StartPosition = FormStartPosition.CenterParent;
-
-                        var label = new Label { Text = "Enter damage fee amount:", Left = 10, Top = 20, Width = 260 };
-                        var textBox = new TextBox { Text = "0.00", Left = 10, Top = 50, Width = 260 };
-                        var okButton = new Button { Text = "OK", Left = 110, Top = 80, DialogResult = DialogResult.OK };
-                        var cancelButton = new Button { Text = "Cancel", Left = 190, Top = 80, DialogResult = DialogResult.Cancel };
-
-                        inputForm.Controls.Add(label);
-                        inputForm.Controls.Add(textBox);
-                        inputForm.Controls.Add(okButton);
-                        inputForm.Controls.Add(cancelButton);
-                        inputForm.AcceptButton = okButton;
-                        inputForm.CancelButton = cancelButton;
-
-                        if (inputForm.ShowDialog() == DialogResult.OK)
-                        {
-                            decimal.TryParse(textBox.Text, out damageFee);
-                        }
-                    }
-                }
-
-                // Check if there are late fees or damage fees
-                if (lateFee > 0 || damageFee > 0)
-                {
-                    // Navigate to billing form to show additional charges
-                    string confirmMessage = string.Format(
-                        "Additional charges detected:\n\n" +
-                        "Customer: {0}\n" +
-                        "Room: {1}\n",
-                        checkIn.CustomerName,
-                        checkIn.RoomNumber);
-
-                    if (lateFee > 0)
-                        confirmMessage += string.Format("Late Checkout Fee: ${0:N2}\n", lateFee);
-
-                    if (damageFee > 0)
-                        confirmMessage += string.Format("Damage Fee: ${0:N2}\n", damageFee);
-
-                    confirmMessage += "\nProceed to billing to settle these charges?";
-
-                    var confirm = MessageBox.Show(
-                        confirmMessage,
-                        "Additional Charges",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
-
-                    if (confirm != DialogResult.Yes)
-                        return;
-
-                    NavigateToBillingForm(checkIn, damageFee);
-                }
-                else
-                {
-                    // No additional charges - direct checkout (FullPayment)
-                    var confirm = MessageBox.Show(
-                        string.Format(
-                            "Confirm checkout for:\n\n" +
-                            "Customer: {0}\n" +
-                            "Room: {1}\n" +
-                            "Total Paid: ${2:N2}\n" +
-                            "Balance: $0.00\n\n" +
-                            "Complete checkout now?",
-                            checkIn.CustomerName,
-                            checkIn.RoomNumber,
-                            checkIn.AmountPaid),
-                        "Complete Checkout - Full Payment",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
-
-                    if (confirm != DialogResult.Yes)
-                        return;
-
-                    // Complete checkout directly
-                    CompleteCheckoutDirectly(checkIn);
-                }
-            }
-            catch (InvalidOperationException ex)
-            {
-                MessageBox.Show(
-                    ex.Message,
-                    "Checkout Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    string.Format("Error during checkout: {0}", ex.Message),
-                    "Checkout Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
-
-        private void CompleteCheckoutDirectly(HotelReservationSystem.Domain.Model.CheckInOut.CheckInOutModel checkIn)
-        {
-            try
-            {
-                // 1. Update check-in record (mark as checked out)
-                checkInRepo.CheckOut(
-                    checkIn.ReservationId,
-                    DateTime.Now,
-                    UserSession.Username);
-
-                // 2. Update reservation status
-                var reserveRepo = new HotelReservationSystem.Data.Repositories.ReservationRepository(
-                    HotelReservationSystem.DataInitializer.DbInitializer.DbConfig.GetConnectionString());
-
-                var reservation = reserveRepo.GetById(checkIn.ReservationId);
-                if (reservation != null)
-                {
-                    reservation.ReservationStatus = "CheckedOut";
-                    reserveRepo.Edit(reservation);
-                }
-
-                // 3. Update room status to Available
-                var roomRepo = new HotelReservationSystem.Data.Repositories.RoomRepository(
-                    HotelReservationSystem.DataInitializer.DbInitializer.DbConfig.GetConnectionString());
-
-                var room = roomRepo.GetByNumber(checkIn.RoomNumber);
-                if (room != null)
-                {
-                    room.RoomStatus = "Available";
-                    roomRepo.Edit(room);
-                }
-
-                // Refresh the grid
-                SearchEvent?.Invoke(this, EventArgs.Empty);
-
-                MessageBox.Show(
-                    "Checkout completed successfully!",
-                    "Success",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    string.Format("Error completing checkout: {0}", ex.Message),
-                    "Checkout Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
-
-        private void NavigateToBillingForm(HotelReservationSystem.Domain.Model.CheckInOut.CheckInOutModel checkIn, decimal damageFee)
-        {
-            try
-            {
-                // Get the parent form (ReservationHome)
-                Form parentForm = this.FindForm();
-                if (parentForm == null)
-                {
-                    MessageBox.Show("Cannot find parent form.", "Error");
-                    return;
-                }
-
-                // Get the billing user control instance
-                var billingControl = UCBilling.GetInstance(parentForm);
-
-                // Create billing presenter
-                var billingRepo = new HotelReservationSystem.Data.Repositories.BillingRepository(
-                    HotelReservationSystem.DataInitializer.DbInitializer.DbConfig.GetConnectionString());
-                var billingPresenter = new HotelReservationSystem.Presenter.Billing.BillingPresenter(
-                    billingControl,
-                    billingRepo);
-
-                // Populate billing from checkout with callback
-                billingPresenter.PopulateFromCheckout(checkIn, damageFee, () =>
-                {
-                    // This callback is invoked when billing is saved or cancelled
-                    HandleCheckoutCompleted();
-                });
-
-                // Load the billing control in the parent form
-                var mainView = parentForm as HotelReservationSystem.Domain.Interface.IMainView;
-                if (mainView != null)
-                {
-                    mainView.LoadUserControl(billingControl);
-                }
-                else
-                {
-                    MessageBox.Show("Cannot navigate to billing form.", "Error");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    string.Format("Error navigating to billing: {0}", ex.Message),
-                    "Navigation Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
-
-        private void HandleCheckoutCompleted()
-        {
-            try
-            {
-                // Navigate back to check-in view
-                Form parentForm = this.FindForm();
-                if (parentForm != null)
-                {
-                    var mainView = parentForm as HotelReservationSystem.Domain.Interface.IMainView;
-                    if (mainView != null)
-                    {
-                        // Reload this control to refresh data
-                        var checkInControl = UCCheckINOUT.GetInstance(parentForm);
-                        mainView.LoadUserControl(checkInControl);
-
-                        // IMPORTANT: Trigger the presenter to reload data
-                        // The presenter will refresh when SearchEvent is invoked with empty string
-                        if (checkInControl != null)
-                        {
-                            // Force presenter refresh by triggering search with empty value
-                            checkInControl.SearchValue = string.Empty;
-                            checkInControl.SearchEvent?.Invoke(checkInControl, EventArgs.Empty);
-                        }
-
-                        MessageBox.Show(
-                            "Checkout completed successfully! Status updated to CheckedOut.",
-                            "Success",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    string.Format("Error returning from billing: {0}", ex.Message),
-                    "Navigation Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-        }
-
-        private void BillingControl_CheckoutCompleted(object sender, EventArgs e)
-        {
-            try
-            {
-                // Unsubscribe from event
-                if (sender is UCBilling billingControl)
-                {
-                    billingControl.CheckoutCompletedEvent -= BillingControl_CheckoutCompleted;
-                }
-
-                // Navigate back to check-in view
-                Form parentForm = this.FindForm();
-                if (parentForm != null)
-                {
-                    var mainView = parentForm as HotelReservationSystem.Domain.Interface.IMainView;
-                    if (mainView != null)
-                    {
-                        // Reload this control to refresh data
-                        var checkInControl = UCCheckINOUT.GetInstance(parentForm);
-                        mainView.LoadUserControl(checkInControl);
-                        
-                        // Refresh the grid
-                        SearchEvent?.Invoke(this, EventArgs.Empty);
-                        
-                        MessageBox.Show(
-                            "Checkout completed successfully!",
-                            "Success",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    string.Format("Error returning from billing: {0}", ex.Message),
-                    "Navigation Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
             }
         }
 

@@ -55,7 +55,6 @@
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnBackRReservationHome = new FrameworkTest.SATAButton();
             this.dataGridBilling = new System.Windows.Forms.DataGridView();
             this.MainFormBilling = new System.Windows.Forms.TabPage();
             this.dataGridBiilSample = new System.Windows.Forms.DataGridView();
@@ -420,7 +419,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.btnBackRReservationHome);
             this.tabPage1.Controls.Add(this.dataGridBilling);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -428,45 +426,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1194, 582);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer List";
-            // 
-            // btnBackRReservationHome
-            // 
-            this.btnBackRReservationHome.ButtonText = "Back";
-            this.btnBackRReservationHome.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnBackRReservationHome.CheckedForeColor = System.Drawing.Color.White;
-            this.btnBackRReservationHome.CheckedImageTint = System.Drawing.Color.White;
-            this.btnBackRReservationHome.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnBackRReservationHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBackRReservationHome.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnBackRReservationHome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackRReservationHome.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.btnBackRReservationHome.HoverForeColor = System.Drawing.Color.White;
-            this.btnBackRReservationHome.HoverImage = null;
-            this.btnBackRReservationHome.HoverImageTint = System.Drawing.Color.White;
-            this.btnBackRReservationHome.HoverOutline = System.Drawing.Color.Empty;
-            this.btnBackRReservationHome.Image = null;
-            this.btnBackRReservationHome.ImageAutoCenter = true;
-            this.btnBackRReservationHome.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnBackRReservationHome.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnBackRReservationHome.ImageTint = System.Drawing.Color.White;
-            this.btnBackRReservationHome.IsToggleButton = false;
-            this.btnBackRReservationHome.IsToggled = false;
-            this.btnBackRReservationHome.Location = new System.Drawing.Point(18, 524);
-            this.btnBackRReservationHome.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnBackRReservationHome.Name = "btnBackRReservationHome";
-            this.btnBackRReservationHome.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnBackRReservationHome.NormalForeColor = System.Drawing.Color.White;
-            this.btnBackRReservationHome.NormalOutline = System.Drawing.Color.Empty;
-            this.btnBackRReservationHome.OutlineThickness = 2F;
-            this.btnBackRReservationHome.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnBackRReservationHome.PressedForeColor = System.Drawing.Color.White;
-            this.btnBackRReservationHome.PressedImageTint = System.Drawing.Color.White;
-            this.btnBackRReservationHome.PressedOutline = System.Drawing.Color.Empty;
-            this.btnBackRReservationHome.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnBackRReservationHome.Size = new System.Drawing.Size(163, 39);
-            this.btnBackRReservationHome.TabIndex = 16;
-            this.btnBackRReservationHome.TextAutoCenter = true;
-            this.btnBackRReservationHome.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // dataGridBilling
             // 
@@ -1803,7 +1762,6 @@
         private FrameworkTest.SATAButton sataButton1;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private FrameworkTest.SATAButton btnBackRReservationHome;
         private System.Windows.Forms.TabPage MainFormBilling;
         private SATAUiFramework.SATAPanel sataPanel9;
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox2;

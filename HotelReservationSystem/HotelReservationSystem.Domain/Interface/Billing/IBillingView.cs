@@ -60,5 +60,6 @@ namespace HotelReservationSystem.Domain.Interface.Billing
         void ShowMessage(string message, string title);
         void ClearForm();
         void ShowBillingForm();
+        void ShowGridView();
     }
 }

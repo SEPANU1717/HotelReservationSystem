@@ -360,16 +360,13 @@ namespace HotelReservationSystem.UserControls
         {
             if (isInitializing) return;
             
-            // If dates changed and we have a room type selected, refresh available rooms
-            if (sender == dtCheckIn || sender == dtCheckOut)
+             if (sender == dtCheckIn || sender == dtCheckOut)
             {
                 if (isEdit && dtCheckIn.Content.Date == originalCheckInDate.Date && dtCheckOut.Content.Date == originalCheckOutDate.Date)
                 {
-                    // Dates haven't changed, proceed with normal price calculation
                 }
                 else
                 {
-                    // Dates changed - trigger room type change to refresh available rooms
                     string selectedType = cbType.SelectedItem as string;
                     if (!string.IsNullOrEmpty(selectedType))
                     {
