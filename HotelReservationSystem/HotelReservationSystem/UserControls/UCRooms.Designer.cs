@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius15 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius16 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCRooms));
-            SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius5 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius6 = new SATAUiFramework.BorderRadius();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            SATAUiFramework.BorderRadius borderRadius7 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius17 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius18 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius19 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius20 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            SATAUiFramework.BorderRadius borderRadius21 = new SATAUiFramework.BorderRadius();
             this.btnRoomSearch = new FrameworkTest.SATAButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cboRoomStatus = new SATAComboBox();
@@ -129,9 +129,10 @@
             this.txtRoomSearch = new SATATextBox();
             this.btnRoomDelete = new FrameworkTest.SATAButton();
             this.btnRoomAddNew = new FrameworkTest.SATAButton();
-            this.btnRefresh = new FrameworkTest.SATAButton();
             this.btnRoomEdit = new FrameworkTest.SATAButton();
             this.cbRoomFilter = new MetroComboBoxGainsboro();
+            this.dtFromDate = new CuoreUI.Controls.cuiCalendarDatePicker();
+            this.dtToDate = new CuoreUI.Controls.cuiCalendarDatePicker();
             this.tabPage2.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             this.sataPanel7.SuspendLayout();
@@ -229,10 +230,10 @@
             this.tabPage2.Controls.Add(this.txtRoomId);
             this.tabPage2.Controls.Add(this.txtRoomNumber);
             this.tabPage2.Controls.Add(this.btnRoomCancel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -360,11 +361,11 @@
             this.sataPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(250)))));
             this.sataPanel2.BackColor2 = System.Drawing.Color.White;
             this.sataPanel2.BorderColor = System.Drawing.Color.Black;
-            borderRadius1.BottomLeft = 10;
-            borderRadius1.BottomRight = 10;
-            borderRadius1.TopLeft = 10;
-            borderRadius1.TopRight = 10;
-            this.sataPanel2.BorderRadius = borderRadius1;
+            borderRadius15.BottomLeft = 10;
+            borderRadius15.BottomRight = 10;
+            borderRadius15.TopLeft = 10;
+            borderRadius15.TopRight = 10;
+            this.sataPanel2.BorderRadius = borderRadius15;
             this.sataPanel2.BorderThickness = 0;
             this.sataPanel2.Controls.Add(this.sataPanel7);
             this.sataPanel2.Controls.Add(this.sataPanel6);
@@ -374,7 +375,7 @@
             this.sataPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.sataPanel2.Location = new System.Drawing.Point(683, 3);
             this.sataPanel2.Name = "sataPanel2";
-            this.sataPanel2.Size = new System.Drawing.Size(508, 579);
+            this.sataPanel2.Size = new System.Drawing.Size(508, 576);
             this.sataPanel2.TabIndex = 8;
             // 
             // sataPanel7
@@ -382,11 +383,11 @@
             this.sataPanel7.BackColor = System.Drawing.Color.White;
             this.sataPanel7.BackColor2 = System.Drawing.Color.White;
             this.sataPanel7.BorderColor = System.Drawing.Color.Black;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.sataPanel7.BorderRadius = borderRadius2;
+            borderRadius16.BottomLeft = 10;
+            borderRadius16.BottomRight = 10;
+            borderRadius16.TopLeft = 10;
+            borderRadius16.TopRight = 10;
+            this.sataPanel7.BorderRadius = borderRadius16;
             this.sataPanel7.BorderThickness = 0;
             this.sataPanel7.Controls.Add(this.pictureBox20);
             this.sataPanel7.Controls.Add(this.label15);
@@ -550,11 +551,11 @@
             this.sataPanel6.BackColor = System.Drawing.Color.White;
             this.sataPanel6.BackColor2 = System.Drawing.Color.White;
             this.sataPanel6.BorderColor = System.Drawing.Color.Black;
-            borderRadius3.BottomLeft = 10;
-            borderRadius3.BottomRight = 10;
-            borderRadius3.TopLeft = 10;
-            borderRadius3.TopRight = 10;
-            this.sataPanel6.BorderRadius = borderRadius3;
+            borderRadius17.BottomLeft = 10;
+            borderRadius17.BottomRight = 10;
+            borderRadius17.TopLeft = 10;
+            borderRadius17.TopRight = 10;
+            this.sataPanel6.BorderRadius = borderRadius17;
             this.sataPanel6.BorderThickness = 0;
             this.sataPanel6.Controls.Add(this.pictureBox17);
             this.sataPanel6.Controls.Add(this.label14);
@@ -718,11 +719,11 @@
             this.sataPanel5.BackColor = System.Drawing.Color.White;
             this.sataPanel5.BackColor2 = System.Drawing.Color.White;
             this.sataPanel5.BorderColor = System.Drawing.Color.Black;
-            borderRadius4.BottomLeft = 10;
-            borderRadius4.BottomRight = 10;
-            borderRadius4.TopLeft = 10;
-            borderRadius4.TopRight = 10;
-            this.sataPanel5.BorderRadius = borderRadius4;
+            borderRadius18.BottomLeft = 10;
+            borderRadius18.BottomRight = 10;
+            borderRadius18.TopLeft = 10;
+            borderRadius18.TopRight = 10;
+            this.sataPanel5.BorderRadius = borderRadius18;
             this.sataPanel5.BorderThickness = 0;
             this.sataPanel5.Controls.Add(this.pictureBox14);
             this.sataPanel5.Controls.Add(this.label13);
@@ -886,11 +887,11 @@
             this.sataPanel4.BackColor = System.Drawing.Color.White;
             this.sataPanel4.BackColor2 = System.Drawing.Color.White;
             this.sataPanel4.BorderColor = System.Drawing.Color.Black;
-            borderRadius5.BottomLeft = 10;
-            borderRadius5.BottomRight = 10;
-            borderRadius5.TopLeft = 10;
-            borderRadius5.TopRight = 10;
-            this.sataPanel4.BorderRadius = borderRadius5;
+            borderRadius19.BottomLeft = 10;
+            borderRadius19.BottomRight = 10;
+            borderRadius19.TopLeft = 10;
+            borderRadius19.TopRight = 10;
+            this.sataPanel4.BorderRadius = borderRadius19;
             this.sataPanel4.BorderThickness = 0;
             this.sataPanel4.Controls.Add(this.pictureBox11);
             this.sataPanel4.Controls.Add(this.label12);
@@ -1054,11 +1055,11 @@
             this.sataPanel3.BackColor = System.Drawing.Color.White;
             this.sataPanel3.BackColor2 = System.Drawing.Color.White;
             this.sataPanel3.BorderColor = System.Drawing.Color.Black;
-            borderRadius6.BottomLeft = 10;
-            borderRadius6.BottomRight = 10;
-            borderRadius6.TopLeft = 10;
-            borderRadius6.TopRight = 10;
-            this.sataPanel3.BorderRadius = borderRadius6;
+            borderRadius20.BottomLeft = 10;
+            borderRadius20.BottomRight = 10;
+            borderRadius20.TopLeft = 10;
+            borderRadius20.TopRight = 10;
+            this.sataPanel3.BorderRadius = borderRadius20;
             this.sataPanel3.BorderThickness = 0;
             this.sataPanel3.Controls.Add(this.pictureBox8);
             this.sataPanel3.Controls.Add(this.pictureBox7);
@@ -1472,24 +1473,24 @@
             this.dataGridRoom.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridRoom.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridRoom.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridRoom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridRoom.ColumnHeadersHeight = 33;
             this.dataGridRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridRoom.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridRoom.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridRoom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridRoom.EnableHeadersVisualStyles = false;
             this.dataGridRoom.GridColor = System.Drawing.Color.Gainsboro;
@@ -1498,16 +1499,16 @@
             this.dataGridRoom.Name = "dataGridRoom";
             this.dataGridRoom.ReadOnly = true;
             this.dataGridRoom.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridRoom.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridRoom.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridRoom.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridRoom.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridRoom.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridRoom.RowTemplate.Height = 30;
             this.dataGridRoom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridRoom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1530,11 +1531,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.White;
             this.sataPanel1.BackColor2 = System.Drawing.Color.White;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius7.BottomLeft = 10;
-            borderRadius7.BottomRight = 10;
-            borderRadius7.TopLeft = 10;
-            borderRadius7.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius7;
+            borderRadius21.BottomLeft = 10;
+            borderRadius21.BottomRight = 10;
+            borderRadius21.TopLeft = 10;
+            borderRadius21.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius21;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 156);
@@ -1705,7 +1706,7 @@
             this.btnRoomAddNew.ImageTint = System.Drawing.Color.White;
             this.btnRoomAddNew.IsToggleButton = false;
             this.btnRoomAddNew.IsToggled = false;
-            this.btnRoomAddNew.Location = new System.Drawing.Point(950, 100);
+            this.btnRoomAddNew.Location = new System.Drawing.Point(1004, 100);
             this.btnRoomAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnRoomAddNew.Name = "btnRoomAddNew";
             this.btnRoomAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
@@ -1721,45 +1722,6 @@
             this.btnRoomAddNew.TabIndex = 14;
             this.btnRoomAddNew.TextAutoCenter = true;
             this.btnRoomAddNew.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.ButtonText = "";
-            this.btnRefresh.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnRefresh.CheckedForeColor = System.Drawing.Color.White;
-            this.btnRefresh.CheckedImageTint = System.Drawing.Color.White;
-            this.btnRefresh.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.btnRefresh.HoverForeColor = System.Drawing.Color.White;
-            this.btnRefresh.HoverImage = null;
-            this.btnRefresh.HoverImageTint = System.Drawing.Color.White;
-            this.btnRefresh.HoverOutline = System.Drawing.Color.Empty;
-            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.ImageAutoCenter = true;
-            this.btnRefresh.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnRefresh.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnRefresh.ImageTint = System.Drawing.Color.White;
-            this.btnRefresh.IsToggleButton = false;
-            this.btnRefresh.IsToggled = false;
-            this.btnRefresh.Location = new System.Drawing.Point(1082, 100);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnRefresh.NormalForeColor = System.Drawing.Color.White;
-            this.btnRefresh.NormalOutline = System.Drawing.Color.Empty;
-            this.btnRefresh.OutlineThickness = 2F;
-            this.btnRefresh.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnRefresh.PressedForeColor = System.Drawing.Color.White;
-            this.btnRefresh.PressedImageTint = System.Drawing.Color.White;
-            this.btnRefresh.PressedOutline = System.Drawing.Color.Empty;
-            this.btnRefresh.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnRefresh.Size = new System.Drawing.Size(44, 39);
-            this.btnRefresh.TabIndex = 11;
-            this.btnRefresh.TextAutoCenter = false;
-            this.btnRefresh.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // btnRoomEdit
             // 
@@ -1804,21 +1766,76 @@
             // 
             this.cbRoomFilter.FormattingEnabled = true;
             this.cbRoomFilter.ItemHeight = 23;
-            this.cbRoomFilter.Location = new System.Drawing.Point(784, 106);
+            this.cbRoomFilter.Location = new System.Drawing.Point(853, 100);
             this.cbRoomFilter.Name = "cbRoomFilter";
-            this.cbRoomFilter.Size = new System.Drawing.Size(158, 29);
+            this.cbRoomFilter.Size = new System.Drawing.Size(145, 29);
             this.cbRoomFilter.TabIndex = 142;
+            // 
+            // dtFromDate
+            // 
+            this.dtFromDate.BackColor = System.Drawing.Color.White;
+            this.dtFromDate.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtFromDate.EnableThemeChangeButton = true;
+            this.dtFromDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFromDate.ForeColor = System.Drawing.Color.Silver;
+            this.dtFromDate.HoverBackground = System.Drawing.Color.White;
+            this.dtFromDate.HoverOutline = System.Drawing.Color.White;
+            this.dtFromDate.Icon = null;
+            this.dtFromDate.IconTint = System.Drawing.Color.Gray;
+            this.dtFromDate.Location = new System.Drawing.Point(586, 100);
+            this.dtFromDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtFromDate.Name = "dtFromDate";
+            this.dtFromDate.NormalBackground = System.Drawing.Color.White;
+            this.dtFromDate.NormalOutline = System.Drawing.Color.Gainsboro;
+            this.dtFromDate.OutlineThickness = 1.5F;
+            this.dtFromDate.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
+            this.dtFromDate.PressedBackground = System.Drawing.Color.White;
+            this.dtFromDate.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtFromDate.Rounding = 3;
+            this.dtFromDate.ShowIcon = true;
+            this.dtFromDate.Size = new System.Drawing.Size(118, 39);
+            this.dtFromDate.TabIndex = 143;
+            this.dtFromDate.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
+            this.dtFromDate.Load += new System.EventHandler(this.dtFromDate_Load);
+            // 
+            // dtToDate
+            // 
+            this.dtToDate.BackColor = System.Drawing.Color.White;
+            this.dtToDate.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtToDate.EnableThemeChangeButton = true;
+            this.dtToDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtToDate.ForeColor = System.Drawing.Color.Silver;
+            this.dtToDate.HoverBackground = System.Drawing.Color.White;
+            this.dtToDate.HoverOutline = System.Drawing.Color.White;
+            this.dtToDate.Icon = null;
+            this.dtToDate.IconTint = System.Drawing.Color.Gray;
+            this.dtToDate.Location = new System.Drawing.Point(728, 100);
+            this.dtToDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtToDate.Name = "dtToDate";
+            this.dtToDate.NormalBackground = System.Drawing.Color.White;
+            this.dtToDate.NormalOutline = System.Drawing.Color.Gainsboro;
+            this.dtToDate.OutlineThickness = 1.5F;
+            this.dtToDate.PickerPosition = CuoreUI.Controls.cuiCalendarDatePicker.Position.Bottom;
+            this.dtToDate.PressedBackground = System.Drawing.Color.White;
+            this.dtToDate.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtToDate.Rounding = 3;
+            this.dtToDate.ShowIcon = true;
+            this.dtToDate.Size = new System.Drawing.Size(118, 39);
+            this.dtToDate.TabIndex = 143;
+            this.dtToDate.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
+            this.dtToDate.Load += new System.EventHandler(this.dtToDate_Load);
             // 
             // UCRooms
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.Controls.Add(this.dtToDate);
+            this.Controls.Add(this.dtFromDate);
             this.Controls.Add(this.cbRoomFilter);
             this.Controls.Add(this.btnRoomSearch);
             this.Controls.Add(this.txtRoomSearch);
             this.Controls.Add(this.btnRoomDelete);
             this.Controls.Add(this.btnRoomAddNew);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnRoomEdit);
             this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.panel2);
@@ -1961,8 +1978,9 @@
         private SATAComboBox cboRoomStatus;
         private SATATextBox txtRoomId;
         private System.Windows.Forms.Label label36;
-        private FrameworkTest.SATAButton btnRefresh;
         private System.Windows.Forms.Label label3;
         private MetroComboBoxGainsboro cbRoomFilter;
+        private CuoreUI.Controls.cuiCalendarDatePicker dtFromDate;
+        private CuoreUI.Controls.cuiCalendarDatePicker dtToDate;
     }
 }

@@ -234,8 +234,105 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
+                // Standard model validation (data annotations)
                 new ModelDataValidation().Validate(model);
 
+                // Business Rule Validation
+                
+                // 1. Validate check-in/check-out dates
+                if (model.CheckInDate.Date < DateTime.Today)
+                {
+                    reservationView.ShowErrorMessage("Check-in date cannot be in the past.");
+                    return;
+                }
+
+                if (model.CheckOutDate.Date <= model.CheckInDate.Date)
+                {
+                    reservationView.ShowErrorMessage("Check-out date must be after check-in date.");
+                    return;
+                }
+
+                var nights = (model.CheckOutDate.Date - model.CheckInDate.Date).Days;
+                if (nights < 1)
+                {
+                    reservationView.ShowErrorMessage("Reservation must be for at least 1 night.");
+                    return;
+                }
+
+                if (nights > 365)
+                {
+                    reservationView.ShowErrorMessage("Reservation cannot exceed 365 nights.");
+                    return;
+                }
+
+                // 2. Validate room selection
+                if (string.IsNullOrEmpty(model.RoomNumber))
+                {
+                    reservationView.ShowErrorMessage("Please select a room.");
+                    return;
+                }
+
+                // 3. Validate payment amounts
+                if (model.TotalPrice <= 0)
+                {
+                    reservationView.ShowErrorMessage("Total price must be greater than zero.");
+                    return;
+                }
+
+                if (model.AmountPaid < 0)
+                {
+                    reservationView.ShowErrorMessage("Amount paid cannot be negative.");
+                    return;
+                }
+
+                if (model.AmountPaid > model.TotalPrice)
+                {
+                    reservationView.ShowErrorMessage(
+                        $"Amount paid (${model.AmountPaid:N2}) cannot exceed total price (${model.TotalPrice:N2}).");
+                    return;
+                }
+
+                if (model.DownPayment < 0)
+                {
+                    reservationView.ShowErrorMessage("Down payment cannot be negative.");
+                    return;
+                }
+
+                if (model.DownPayment > model.TotalPrice)
+                {
+                    reservationView.ShowErrorMessage(
+                        $"Down payment (${model.DownPayment:N2}) cannot exceed total price (${model.TotalPrice:N2}).");
+                    return;
+                }
+
+                // 4. Check for overlapping reservations
+                if (!string.IsNullOrEmpty(model.RoomNumber))
+                {
+                    int? excludeReservationId = reservationView.isEdit ? (int?)model.ReservationId : null;
+                    
+                    if (reservationRepository.HasOverlappingReservation(
+                        model.RoomNumber, 
+                        model.CheckInDate, 
+                        model.CheckOutDate, 
+                        excludeReservationId))
+                    {
+                        reservationView.ShowErrorMessage(
+                            $"Room {model.RoomNumber} is already reserved for the selected dates.\n\n" +
+                            $"Check-in: {model.CheckInDate:MM/dd/yyyy}\n" +
+                            $"Check-out: {model.CheckOutDate:MM/dd/yyyy}\n\n" +
+                            "Please select a different room or change the dates.");
+                        return;
+                    }
+                }
+
+                // 5. Validate customer name format
+                if (string.IsNullOrWhiteSpace(model.CustomerName))
+                {
+                    reservationView.ShowErrorMessage("Customer name is required.");
+                    return;
+                }
+
+                // Save the reservation
                 if (reservationView.isEdit)
                 {
                     reservationRepository.Edit(model);
@@ -286,7 +383,12 @@ namespace HotelReservationSystem.Presenter
 
                 if (room != null)
                 {
-                    var availableRooms = roomRepository.GetAvailableRoomsByType(room.RoomType);
+                    // Get available rooms for the date range, excluding current reservation
+                    var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
+                        room.RoomType, 
+                        reservation.CheckInDate, 
+                        reservation.CheckOutDate, 
+                        reservationId);
                     reservationView.LoadAvailableRooms(availableRooms);
                 }
             }
@@ -336,7 +438,24 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
-                var availableRooms = roomRepository.GetAvailableRoomsByType(roomType);
+                // Get check-in and check-out dates from the view
+                DateTime checkInDate = reservationView.CheckInDate;
+                DateTime checkOutDate = reservationView.CheckOutDate;
+                
+                // Get current reservation ID if editing
+                int? excludeReservationId = null;
+                if (reservationView.isEdit && !string.IsNullOrEmpty(reservationView.ReservationId))
+                {
+                    excludeReservationId = int.Parse(reservationView.ReservationId);
+                }
+
+                // Get available rooms for the selected type and date range
+                var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
+                    roomType, 
+                    checkInDate, 
+                    checkOutDate, 
+                    excludeReservationId);
+                
                 reservationView.LoadAvailableRooms(availableRooms);
             }
             catch (Exception ex)
@@ -406,11 +525,44 @@ namespace HotelReservationSystem.Presenter
             if (room == null)
                 return;
 
+            DateTime now = DateTime.Now.Date;
+
             switch (model.ReservationStatus)
             {
                 case "Reserved":
-                    room.RoomStatus = "Reserved";
-                    roomRepository.Edit(room);
+                case "Confirmed":
+                    // Check if the reservation is for today or in the future
+                    if (model.CheckInDate.Date <= now && model.CheckOutDate.Date > now)
+                    {
+                        // Reservation is active for today - mark as Reserved if not checked in
+                        if (room.RoomStatus != "Occupied")
+                        {
+                            room.RoomStatus = "Reserved";
+                            roomRepository.Edit(room);
+                        }
+                    }
+                    else if (model.CheckInDate.Date > now)
+                    {
+                        // Future reservation - check if there are any current active reservations
+                        var allReservations = reservationRepository.GetAll()
+                            .Where(r => r.RoomNumber == model.RoomNumber 
+                                     && r.ReservationStatus != "Cancelled/No Show" 
+                                     && r.ReservationStatus != "CheckedOut"
+                                     && r.CheckInDate.Date <= now 
+                                     && r.CheckOutDate.Date > now)
+                            .ToList();
+                        
+                        if (allReservations.Any())
+                        {
+                            // There's an active reservation, leave the status as is
+                        }
+                        else
+                        {
+                            // No active reservations, mark as available
+                            room.RoomStatus = "Available";
+                            roomRepository.Edit(room);
+                        }
+                    }
                     break;
 
                 case "CheckedIn":
@@ -420,17 +572,33 @@ namespace HotelReservationSystem.Presenter
 
                 case "Cancelled":
                 case "CheckedOut":
-                    room.RoomStatus = "Available";
-                    roomRepository.Edit(room);
-                    break;
-
-                case "Confirmed":
+                    // When cancelling or checking out, check if there are other active reservations
+                    var activeReservations = reservationRepository.GetAll()
+                        .Where(r => r.RoomNumber == model.RoomNumber 
+                                 && r.ReservationId != model.ReservationId
+                                 && r.ReservationStatus != "Cancelled/No Show" 
+                                 && r.ReservationStatus != "CheckedOut"
+                                 && r.CheckInDate.Date <= now 
+                                 && r.CheckOutDate.Date > now)
+                        .ToList();
                     
-                    if (room.RoomStatus != "Reserved")
+                    if (activeReservations.Any())
                     {
-                        room.RoomStatus = "Reserved";
-                        roomRepository.Edit(room);
+                        // There are other active reservations
+                        if (activeReservations.Any(r => r.ReservationStatus == "CheckedIn"))
+                        {
+                            room.RoomStatus = "Occupied";
+                        }
+                        else
+                        {
+                            room.RoomStatus = "Reserved";
+                        }
                     }
+                    else
+                    {
+                        room.RoomStatus = "Available";
+                    }
+                    roomRepository.Edit(room);
                     break;
             }
         }

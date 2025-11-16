@@ -190,16 +190,8 @@ namespace HotelReservationSystem.UserControls
                 }
             };
 
-            btnAddCompanion.Click += delegate
+            btnCheckOut.Click += delegate
             {
-                if (string.IsNullOrEmpty(txtReservationId.Texts) || txtReservationId.Texts == "0")
-                {
-                    MessageBox.Show("Please save the check-in first before adding companions.",
-                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                AddCompanionEvent?.Invoke(this, EventArgs.Empty);
 
             };
         }

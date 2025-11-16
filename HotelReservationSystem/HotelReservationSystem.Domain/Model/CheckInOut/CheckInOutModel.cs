@@ -85,12 +85,6 @@ namespace HotelReservationSystem.Domain.Model.CheckInOut
         [DisplayName("Checked Out By")]
         public string CheckedOutBy { get; set; }
 
-        [DisplayName("Check-In Notes")]
-        public string CheckInNotes { get; set; }
-
-        [DisplayName("Check-Out Notes")]
-        public string CheckOutNotes { get; set; }
-
         [DisplayName("Date Created")]
         public DateTime CreatedAt { get; set; }
 

@@ -93,7 +93,7 @@ namespace HotelReservationSystem.Forms
 
             reservationPresenter = null;
 
-            UCBilling.ResetInstance();
+            //UCBilling.ResetInstance();
             UCReservation.ResetInstance();
             UCCustomers.ResetInstance();
             UCRooms.ResetInstance();

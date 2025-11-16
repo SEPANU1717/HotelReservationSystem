@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using HotelReservationSystem.Domain.Model;
 
 namespace HotelReservationSystem.Domain.Interface.Rooms
@@ -12,5 +13,6 @@ namespace HotelReservationSystem.Domain.Interface.Rooms
 
         IEnumerable<RoomModel> GetAll();
         IEnumerable<RoomModel> GetByValue(string value);
+        IEnumerable<RoomModel> GetAvailableRoomsByTypeAndDateRange(string roomType, DateTime checkInDate, DateTime checkOutDate, int? excludeReservationId = null);
     }
 }

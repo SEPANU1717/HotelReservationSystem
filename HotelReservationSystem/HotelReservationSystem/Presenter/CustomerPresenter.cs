@@ -125,30 +125,78 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
+                // Business Rule Validation - Age Check (18+)
+                if (model.DateOfBirth.HasValue)
+                {
+                    var age = DateTime.Now.Year - model.DateOfBirth.Value.Year;
+                    if (model.DateOfBirth.Value.Date > DateTime.Now.AddYears(-age))
+                    {
+                        age--;
+                    }
+
+                    if (age < 18)
+                    {
+                        customerView.isSuccessful = false;
+                        customerView.Message = $"Customer must be at least 18 years old to make a reservation.\n\n" +
+                                              $"Current age: {age} years old\n" +
+                                              $"Date of birth: {model.DateOfBirth.Value:MM/dd/yyyy}\n\n" +
+                                              "Customers under 18 are not permitted to book rooms.";
+                        MessageBox.Show(customerView.Message, "Age Requirement Not Met", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                // Validate phone number format
+                if (!string.IsNullOrEmpty(model.Contact))
+                {
+                    var digitsOnly = new string(model.Contact.Where(char.IsDigit).ToArray());
+                    if (digitsOnly.Length < 10)
+                    {
+                        customerView.isSuccessful = false;
+                        customerView.Message = "Contact number must contain at least 10 digits.";
+                        MessageBox.Show(customerView.Message, "Invalid Contact Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                // Validate email uniqueness for new customers
+                if (!customerView.isEdit)
+                {
+                    var existingCustomers = repository.GetAll();
+                    if (existingCustomers.Any(c => c.Email.Equals(model.Email, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        customerView.isSuccessful = false;
+                        customerView.Message = $"Email '{model.Email}' is already registered. Please use a different email address.";
+                        MessageBox.Show(customerView.Message, "Duplicate Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                // Standard model validation (data annotations)
                 new ModelDataValidation().Validate(model);
 
                 if (customerView.isEdit)
                 {
                     repository.Edit(model);
-                    customerView.Message = "Customer edited successfully";
+                    customerView.Message = "Customer updated successfully";
                 }
                 else
                 {
                     repository.Add(model);
-                    customerView.Message = "Customer added Successfully";
+                    customerView.Message = "Customer added successfully";
                 }
+                
                 customerView.isSuccessful = true;
                 LoadAllCustomerList();
                 CleanViewFields();
-
+                MessageBox.Show(customerView.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception ex) 
             {
                 customerView.isSuccessful = false;
                 customerView.Message = ex.Message;
+                MessageBox.Show(customerView.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            
         }
         private void CancelAction(object sender, EventArgs e) => CleanViewFields();
 

@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCheckINOUT));
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCheckINOUT));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -104,18 +105,16 @@
             this.txtReservationSearch = new SATATextBox();
             this.btnReservationDelete = new FrameworkTest.SATAButton();
             this.btnCheckOut = new FrameworkTest.SATAButton();
-            this.btnAddCompanion = new FrameworkTest.SATAButton();
             this.btnReservationAddNew = new FrameworkTest.SATAButton();
             this.btnReservationEdit = new FrameworkTest.SATAButton();
-            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInOut)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -130,6 +129,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 7;
+            // 
+            // pictureProfile
+            // 
+            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureProfile.BorderSize = 1;
+            this.pictureProfile.GradientAngle = 50F;
+            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
+            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
+            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProfile.TabIndex = 2;
+            this.pictureProfile.TabStop = false;
             // 
             // lblUsername
             // 
@@ -1447,45 +1462,6 @@
             this.btnCheckOut.TextAutoCenter = true;
             this.btnCheckOut.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // btnAddCompanion
-            // 
-            this.btnAddCompanion.ButtonText = "Add Companion";
-            this.btnAddCompanion.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnAddCompanion.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddCompanion.CheckedImageTint = System.Drawing.Color.White;
-            this.btnAddCompanion.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnAddCompanion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCompanion.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddCompanion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCompanion.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.btnAddCompanion.HoverForeColor = System.Drawing.Color.White;
-            this.btnAddCompanion.HoverImage = null;
-            this.btnAddCompanion.HoverImageTint = System.Drawing.Color.White;
-            this.btnAddCompanion.HoverOutline = System.Drawing.Color.Empty;
-            this.btnAddCompanion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCompanion.Image")));
-            this.btnAddCompanion.ImageAutoCenter = true;
-            this.btnAddCompanion.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnAddCompanion.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAddCompanion.ImageTint = System.Drawing.Color.White;
-            this.btnAddCompanion.IsToggleButton = false;
-            this.btnAddCompanion.IsToggled = false;
-            this.btnAddCompanion.Location = new System.Drawing.Point(686, 100);
-            this.btnAddCompanion.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnAddCompanion.Name = "btnAddCompanion";
-            this.btnAddCompanion.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnAddCompanion.NormalForeColor = System.Drawing.Color.White;
-            this.btnAddCompanion.NormalOutline = System.Drawing.Color.Empty;
-            this.btnAddCompanion.OutlineThickness = 2F;
-            this.btnAddCompanion.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnAddCompanion.PressedForeColor = System.Drawing.Color.White;
-            this.btnAddCompanion.PressedImageTint = System.Drawing.Color.White;
-            this.btnAddCompanion.PressedOutline = System.Drawing.Color.Empty;
-            this.btnAddCompanion.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnAddCompanion.Size = new System.Drawing.Size(161, 39);
-            this.btnAddCompanion.TabIndex = 20;
-            this.btnAddCompanion.TextAutoCenter = true;
-            this.btnAddCompanion.TextOffset = new System.Drawing.Point(0, 0);
-            // 
             // btnReservationAddNew
             // 
             this.btnReservationAddNew.ButtonText = "Walk In";
@@ -1564,22 +1540,6 @@
             this.btnReservationEdit.TextAutoCenter = false;
             this.btnReservationEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // pictureProfile
-            // 
-            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureProfile.BorderSize = 1;
-            this.pictureProfile.GradientAngle = 50F;
-            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
-            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
-            this.pictureProfile.Name = "pictureProfile";
-            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
-            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureProfile.TabIndex = 2;
-            this.pictureProfile.TabStop = false;
-            // 
             // UCCheckINOUT
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1588,7 +1548,6 @@
             this.Controls.Add(this.txtReservationSearch);
             this.Controls.Add(this.btnReservationDelete);
             this.Controls.Add(this.btnCheckOut);
-            this.Controls.Add(this.btnAddCompanion);
             this.Controls.Add(this.btnReservationAddNew);
             this.Controls.Add(this.btnReservationEdit);
             this.Controls.Add(this.sataPanel1);
@@ -1598,6 +1557,7 @@
             this.Size = new System.Drawing.Size(1477, 800);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1606,7 +1566,6 @@
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1660,7 +1619,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label18;
         private SATATextBox sataTextBox1txtCompanionCount;
-        private FrameworkTest.SATAButton btnAddCompanion;
         private MetroComboBoxGainsboro cbPaymentStatus;
         private MetroComboBoxGainsboro cbPaymentMethod;
         private MetroComboBoxGainsboro cbType;

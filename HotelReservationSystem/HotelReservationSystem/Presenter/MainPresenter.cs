@@ -78,17 +78,18 @@ namespace HotelReservationSystem.Presenter
 
         private void ShowBillingView(object sender, EventArgs e)
         {
-            var billingControl = UCBilling.GetInstance((Form)mainView);
-            var billingRepo = new BillingRepository(sqlConnectionString);
-            var presenter = new BillingPresenter(billingControl, billingRepo);
-
-            if (billingControl is IBillingView)
+            try
             {
+                var billingControl = UCBilling.GetInstance((Form)mainView);
+                var billingRepo = new BillingRepository(sqlConnectionString);
+                var presenter = new BillingPresenter(billingControl, billingRepo);
+
                 mainView.LoadUserControl(billingControl);
             }
-            else
+            catch (Exception ex)
             {
-                throw new InvalidCastException("Unable to cast UCBilling to IBillingView.");
+                MessageBox.Show(string.Format("Error loading billing view: {0}", ex.Message),
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

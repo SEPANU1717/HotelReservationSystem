@@ -359,8 +359,24 @@ namespace HotelReservationSystem.UserControls
         private void DateOrRoomChanged(object sender, EventArgs e)
         {
             if (isInitializing) return;
-            if (isEdit && dtCheckIn.Content.Date == originalCheckInDate.Date && dtCheckOut.Content.Date == originalCheckOutDate.Date)
-                return;
+            
+            // If dates changed and we have a room type selected, refresh available rooms
+            if (sender == dtCheckIn || sender == dtCheckOut)
+            {
+                if (isEdit && dtCheckIn.Content.Date == originalCheckInDate.Date && dtCheckOut.Content.Date == originalCheckOutDate.Date)
+                {
+                    // Dates haven't changed, proceed with normal price calculation
+                }
+                else
+                {
+                    // Dates changed - trigger room type change to refresh available rooms
+                    string selectedType = cbType.SelectedItem as string;
+                    if (!string.IsNullOrEmpty(selectedType))
+                    {
+                        RoomTypeChangedEvent?.Invoke(this, selectedType);
+                    }
+                }
+            }
 
             var selectedRoom = availableRooms.FirstOrDefault(r => r.RoomNumber == (cbNumber.SelectedItem as string));
             if (selectedRoom == null)

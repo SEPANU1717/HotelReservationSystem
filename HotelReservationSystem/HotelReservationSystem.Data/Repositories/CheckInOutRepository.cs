@@ -271,13 +271,41 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOut
                 IsCheckedIn = Convert.ToBoolean(reader["IsCheckedIn"]),
                 IsCheckedOut = Convert.ToBoolean(reader["IsCheckedOut"]),
                 ActualCheckIn = reader["ActualCheckIn"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["ActualCheckIn"]),
-                ActualCheckOut = null,
-                CheckedInBy = null,
-                CheckedOutBy = null,
-                CheckInNotes = null,
-                CheckOutNotes = null,
+                ActualCheckOut = reader["ActualCheckOut"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["ActualCheckOut"]),
+                CheckedInBy = reader["CheckedInBy"] == DBNull.Value ? null : reader["CheckedInBy"].ToString(),
+                CheckedOutBy = reader["CheckedOutBy"] == DBNull.Value ? null : reader["CheckedOutBy"].ToString(),
                 CreatedAt = Convert.ToDateTime(reader["CreatedAt"])
             };
+        }
+
+        /// <summary>
+        /// Perform checkout and update the check-in record
+        /// </summary>
+        public void CheckOut(int reservationId, DateTime actualCheckOut, string checkedOutBy)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                connection.Open();
+                command.CommandText = @"
+                    UPDATE CheckIns SET
+                        IsCheckedOut = 1,
+                        ActualCheckOut = @ActualCheckOut,
+                        CheckedOutBy = @CheckedOutBy,
+                        ReservationStatus = 'CheckedOut',
+                        UpdatedAt = GETDATE()
+                    WHERE ReservationId = @ReservationId AND IsCheckedIn = 1 AND IsCheckedOut = 0";
+
+                command.Parameters.Add("@ReservationId", SqlDbType.Int).Value = reservationId;
+                command.Parameters.Add("@ActualCheckOut", SqlDbType.DateTime).Value = actualCheckOut;
+                command.Parameters.Add("@CheckedOutBy", SqlDbType.VarChar).Value = checkedOutBy ?? (object)DBNull.Value;
+
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected == 0)
+                {
+                    throw new InvalidOperationException("Unable to checkout. Guest may not be checked in or already checked out.");
+                }
+            }
         }
     }
 }

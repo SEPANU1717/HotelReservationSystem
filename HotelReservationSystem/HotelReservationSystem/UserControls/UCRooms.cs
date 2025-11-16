@@ -203,5 +203,15 @@ namespace HotelReservationSystem.UserControls
         private void btnSingleRoom_Click(object sender, EventArgs e) => RoomInitializer.SingleRoom(this);
 
         #endregion
+
+        private void dtFromDate_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtToDate_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

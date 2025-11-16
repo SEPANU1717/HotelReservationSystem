@@ -94,7 +94,12 @@ namespace HotelReservationSystem.Presenter
             if (string.IsNullOrEmpty(model.RoomType))
                 return;
 
-            var availableRooms = roomRepository.GetAvailableRoomsByType(model.RoomType).ToList();
+            // Get available rooms for the date range
+            var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
+                model.RoomType, 
+                model.CheckInDate, 
+                model.CheckOutDate,
+                model.ReservationId).ToList();
 
             if (!string.IsNullOrEmpty(model.RoomNumber))
             {
@@ -290,7 +295,24 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
-                var availableRooms = roomRepository.GetAvailableRoomsByType(roomType);
+                // Get check-in and check-out dates
+                DateTime checkInDate = checkInView.CheckInDate;
+                DateTime checkOutDate = checkInView.CheckOutDate;
+                
+                // Get current reservation ID if editing
+                int? excludeReservationId = null;
+                if (checkInView.isEdit)
+                {
+                    excludeReservationId = checkInView.GetSelectedReservationId();
+                    if (excludeReservationId == 0) excludeReservationId = null;
+                }
+
+                // Get available rooms for the selected type and date range
+                var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
+                    roomType, 
+                    checkInDate, 
+                    checkOutDate, 
+                    excludeReservationId);
                 var roomNumbers = availableRooms.Select(r => r.RoomNumber).ToArray();
                 checkInView.LoadAvailableRooms(roomNumbers);
 
@@ -415,7 +437,12 @@ namespace HotelReservationSystem.Presenter
 
                 if (!string.IsNullOrEmpty(reservation.RoomType))
                 {
-                    var availableRooms = roomRepository.GetAvailableRoomsByType(reservation.RoomType).ToList();
+                    // Get available rooms for the date range, excluding current reservation
+                    var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
+                        reservation.RoomType, 
+                        reservation.CheckInDate, 
+                        reservation.CheckOutDate,
+                        reservation.ReservationId).ToList();
 
                     if (!string.IsNullOrEmpty(reservation.RoomNumber))
                     {

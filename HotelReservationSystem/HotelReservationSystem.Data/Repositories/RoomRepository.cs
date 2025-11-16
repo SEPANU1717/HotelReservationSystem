@@ -126,6 +126,50 @@ namespace HotelReservationSystem.Data.Repositories
             }
         }
 
+
+        public IEnumerable<RoomModel> GetAvailableRoomsByTypeAndDateRange(string roomType, DateTime checkInDate, DateTime checkOutDate, int? excludeReservationId = null)
+        {
+            var list = new List<RoomModel>();
+            using (var conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                
+                string query = @"
+                    SELECT r.RoomId, r.RoomNumber, r.RoomType, r.RoomStatus, r.RoomPrice, r.BedCount, r.MaxGuests, r.RoomDescription
+                    FROM Rooms r
+                    WHERE r.RoomType = @type
+                    AND r.RoomNumber NOT IN (
+                        SELECT res.RoomNumber 
+                        FROM Reservations res
+                        WHERE res.RoomNumber IS NOT NULL
+                        AND res.ReservationStatus NOT IN ('Cancelled/No Show', 'CheckedOut')
+                        AND (
+                            -- Check for date overlap
+                            (res.CheckInDate < @checkOutDate AND res.CheckOutDate > @checkInDate)
+                        )
+                        AND (@excludeReservationId IS NULL OR res.ReservationId != @excludeReservationId)
+                    )
+                    ORDER BY r.RoomNumber";
+
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@type", roomType);
+                    cmd.Parameters.AddWithValue("@checkInDate", checkInDate);
+                    cmd.Parameters.AddWithValue("@checkOutDate", checkOutDate);
+                    cmd.Parameters.AddWithValue("@excludeReservationId", (object)excludeReservationId ?? DBNull.Value);
+                    
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(MapRoomFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return list;
+        }
+
         public IEnumerable<RoomModel> GetAvailableRoomsByType(string roomType)
         {
             var list = new List<RoomModel>();
@@ -161,17 +205,46 @@ namespace HotelReservationSystem.Data.Repositories
 
         public void SyncRoomStatusesWithReservations(string roomNumber, ReservationRepository reserveRepo)
         {
-            var now = DateTime.Now;
-            var reservations = reserveRepo.GetAll()
-                .Where(r => r.RoomNumber == roomNumber && r.ReservationStatus == "Reserved")
-                .OrderByDescending(r => r.CheckOutDate)
+            var now = DateTime.Now.Date;
+            
+            // Get all active reservations for this room (not cancelled or checked out)
+            var activeReservations = reserveRepo.GetAll()
+                .Where(r => r.RoomNumber == roomNumber 
+                         && r.ReservationStatus != "Cancelled/No Show" 
+                         && r.ReservationStatus != "CheckedOut")
+                .OrderBy(r => r.CheckInDate)
                 .ToList();
 
             var room = GetByNumber(roomNumber);
             if (room == null) return;
 
-            if (reservations.Count == 0 || reservations[0].CheckOutDate < now)
+            // Check if there's a current active reservation (today falls within check-in and check-out dates)
+            var currentReservation = activeReservations
+                .FirstOrDefault(r => r.CheckInDate.Date <= now && r.CheckOutDate.Date > now);
+
+            if (currentReservation != null)
             {
+                // There's an active reservation for today
+                if (currentReservation.ReservationStatus == "CheckedIn")
+                {
+                    if (room.RoomStatus != "Occupied")
+                    {
+                        room.RoomStatus = "Occupied";
+                        Edit(room);
+                    }
+                }
+                else
+                {
+                    if (room.RoomStatus != "Reserved")
+                    {
+                        room.RoomStatus = "Reserved";
+                        Edit(room);
+                    }
+                }
+            }
+            else if (activeReservations.Any(r => r.CheckInDate.Date > now))
+            {
+                // There are future reservations but no current one - room is available now
                 if (room.RoomStatus != "Available")
                 {
                     room.RoomStatus = "Available";
@@ -180,11 +253,10 @@ namespace HotelReservationSystem.Data.Repositories
             }
             else
             {
-                bool isOccupied = reservations.Any(r => r.CheckInDate <= now && r.CheckOutDate >= now);
-                string newStatus = isOccupied ? "Occupied" : "Reserved";
-                if (room.RoomStatus != newStatus)
+                // No active reservations at all
+                if (room.RoomStatus != "Available")
                 {
-                    room.RoomStatus = newStatus;
+                    room.RoomStatus = "Available";
                     Edit(room);
                 }
             }
@@ -201,7 +273,7 @@ namespace HotelReservationSystem.Data.Repositories
                 RoomPrice = reader["RoomPrice"].ToString(),
                 BedCount = reader["BedCount"].ToString(),
                 RoomGuests = reader["MaxGuests"].ToString(),
-                RoomDescription = reader["RoomDescription"].ToString()
+                RoomDescription = reader["RoomDescription"] == DBNull.Value ? string.Empty : reader["RoomDescription"].ToString()
             };
         }
 

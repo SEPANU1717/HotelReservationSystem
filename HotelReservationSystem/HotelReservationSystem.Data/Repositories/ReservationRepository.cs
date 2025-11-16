@@ -233,5 +233,33 @@ namespace HotelReservationSystem.Data.Repositories
                 DownPaymentDate = reader["DownPaymentDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["DownPaymentDate"])
             };
         }
+
+        //<-----------------------Check for Overlapping Reservations--------------------------/>
+        /// <summary>
+        /// Checks if a room has any overlapping reservations for the given date range
+        /// </summary>
+        public bool HasOverlappingReservation(string roomNumber, DateTime checkInDate, DateTime checkOutDate, int? excludeReservationId = null)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                connection.Open();
+                command.CommandText = @"
+                    SELECT COUNT(*) 
+                    FROM Reservations 
+                    WHERE RoomNumber = @roomNumber
+                    AND ReservationStatus NOT IN ('Cancelled/No Show', 'CheckedOut')
+                    AND (CheckInDate < @checkOutDate AND CheckOutDate > @checkInDate)
+                    AND (@excludeReservationId IS NULL OR ReservationId != @excludeReservationId)";
+
+                command.Parameters.Add("@roomNumber", SqlDbType.VarChar).Value = roomNumber;
+                command.Parameters.Add("@checkInDate", SqlDbType.DateTime).Value = checkInDate;
+                command.Parameters.Add("@checkOutDate", SqlDbType.DateTime).Value = checkOutDate;
+                command.Parameters.Add("@excludeReservationId", SqlDbType.Int).Value = (object)excludeReservationId ?? DBNull.Value;
+
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
     }
 }

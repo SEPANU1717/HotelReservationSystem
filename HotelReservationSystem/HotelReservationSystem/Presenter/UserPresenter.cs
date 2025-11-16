@@ -110,6 +110,30 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
+                // Business Rule Validation - Age Check (18+)
+                var age = DateTime.Now.Year - model.BirthDate.Year;
+                if (model.BirthDate.Date > DateTime.Now.AddYears(-age))
+                {
+                    age--;
+                }
+
+                if (age < 18)
+                {
+                    userView.isSuccessful = false;
+                    userView.Message = $"User must be at least 18 years old to register.\n\nCurrent age: {age} years old\nBirth date: {model.BirthDate:MM/dd/yyyy}";
+                    MessageBox.Show(userView.Message, "Age Requirement Not Met", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validate username format
+                if (!System.Text.RegularExpressions.Regex.IsMatch(model.Username, @"^[a-zA-Z0-9_]+$"))
+                {
+                    userView.isSuccessful = false;
+                    userView.Message = "Username can only contain letters, numbers, and underscores.";
+                    MessageBox.Show(userView.Message, "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (userView.isEdit)
                 {
                     var existingUser = repository.GetById(model.UserId);
@@ -122,12 +146,14 @@ namespace HotelReservationSystem.Presenter
 
                     model.CreatedAt = existingUser.CreatedAt;
 
+                    // Password validation for edit
                     if (!string.IsNullOrEmpty(model.Password))
                     {
                         if (model.Password.Length < 6)
                         {
                             userView.isSuccessful = false;
-                            userView.Message = "Password must be at least 6 characters.";
+                            userView.Message = "Password must be at least 6 characters long.";
+                            MessageBox.Show(userView.Message, "Invalid Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
 
@@ -139,6 +165,7 @@ namespace HotelReservationSystem.Presenter
                         model.Password = "lodgixhotel";
                     }
 
+                    // Standard model validation
                     new ModelDataValidation().Validate(model);
 
                     if (string.IsNullOrEmpty(userView.Password))
@@ -152,16 +179,37 @@ namespace HotelReservationSystem.Presenter
                 }
                 else
                 {
+                    // New user - password is required
                     if (string.IsNullOrEmpty(model.Password))
                     {
                         userView.isSuccessful = false;
                         userView.Message = "Password is required for new users.";
+                        MessageBox.Show(userView.Message, "Password Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    if (model.Password.Length < 6)
+                    {
+                        userView.isSuccessful = false;
+                        userView.Message = "Password must be at least 6 characters long.";
+                        MessageBox.Show(userView.Message, "Invalid Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
                     model.PasswordHash = passwordHasher.HashPassword(model.Password);
 
+                    // Standard model validation
                     new ModelDataValidation().Validate(model);
+
+                    // Check for duplicate username
+                    var allUsers = repository.GetAll();
+                    if (allUsers.Any(u => u.Username.Equals(model.Username, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        userView.isSuccessful = false;
+                        userView.Message = $"Username '{model.Username}' is already taken. Please choose a different username.";
+                        MessageBox.Show(userView.Message, "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
                     repository.Add(model);
                     userView.Message = "User created successfully";
@@ -170,11 +218,13 @@ namespace HotelReservationSystem.Presenter
                 userView.isSuccessful = true;
                 LoadAllUserList();
                 CleanViewFields();
+                MessageBox.Show(userView.Message, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 userView.isSuccessful = false;
                 userView.Message = ex.Message;
+                MessageBox.Show(userView.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

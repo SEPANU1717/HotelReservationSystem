@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using HotelReservationSystem.Domain.Model;
 
 namespace HotelReservationSystem.Domain.Interface.Reservation
@@ -15,5 +16,6 @@ namespace HotelReservationSystem.Domain.Interface.Reservation
         ReservationModel GetById(int reservationId);
         ReservationModel GetByCustomerName(string customerName);
         int GetNextReservationId();
+        bool HasOverlappingReservation(string roomNumber, DateTime checkInDate, DateTime checkOutDate, int? excludeReservationId = null);
     }
 }

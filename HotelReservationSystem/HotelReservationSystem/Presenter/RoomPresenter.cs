@@ -87,22 +87,38 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
+                // Authorization check - Only Admin can add/edit rooms
+                if (!UserSession.IsAdmin)
+                {
+                    MessageBox.Show(
+                        string.Format("{0} cannot {1} rooms. Only administrators can manage room inventory.",
+                            UserSession.Role,
+                            roomView.isEdit ? "edit" : "add"),
+                        "Access Denied",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    roomView.isSuccessful = false;
+                    roomView.Message = "Access denied - Administrator privileges required";
+                    return;
+                }
+
+                // Validation
                 new ModelDataValidation().Validate(model);
 
                 if (roomView.isEdit)
                 {
                     repository.Edit(model);
-                    roomView.Message = "Room added successfully";
+                    roomView.Message = "Room updated successfully";
                 }
                 else
                 {
                     repository.Add(model);
-                    roomView.Message = "Room added Successfully";
+                    roomView.Message = "Room added successfully";
                 }
                 roomView.isSuccessful = true;
                 LoadAllRoomList();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 roomView.isSuccessful = false;
                 roomView.Message = ex.Message;
@@ -111,7 +127,20 @@ namespace HotelReservationSystem.Presenter
 
         private void EditRoom(object sender, EventArgs e)
         {
+            // Authorization check - Only Admin can edit rooms
+            if (!UserSession.IsAdmin)
+            {
+                MessageBox.Show(
+                    string.Format("{0} cannot edit rooms. Only administrators can manage room inventory.", UserSession.Role),
+                    "Access Denied",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             var room = (RoomModel)RoomBindingSource.Current;
+            if (room == null) return;
+
             roomView.RoomId = room.RoomId.ToString();
             roomView.RoomNumber = room.RoomNumber;
             roomView.RoomType = room.RoomType;
@@ -124,17 +153,53 @@ namespace HotelReservationSystem.Presenter
             roomView.isEdit = true; 
         }
 
-        private void AddNewRoom(object sender, EventArgs e) => roomView.isEdit = false;
+        private void AddNewRoom(object sender, EventArgs e)
+        {
+            // Authorization check - Only Admin can add rooms
+            if (!UserSession.IsAdmin)
+            {
+                MessageBox.Show(
+                    string.Format("{0} cannot add rooms. Only administrators can manage room inventory.", UserSession.Role),
+                    "Access Denied",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            roomView.isEdit = false;
+        }
 
         private void DeleteRoom(object sender, EventArgs e)
         {
             try
             {
+                // Authorization check - Only Admin can delete rooms
+                if (!UserSession.IsAdmin)
+                {
+                    MessageBox.Show(
+                        string.Format("{0} cannot delete rooms. Only administrators can manage room inventory.", UserSession.Role),
+                        "Access Denied",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
                 var room = (RoomModel)RoomBindingSource.Current;
-                repository.Delete(room.RoomId);
-                roomView.isSuccessful = true;
-                roomView.Message = "Room deleted successfully";
-                LoadAllRoomList();
+                if (room == null) return;
+
+                var result = MessageBox.Show(
+                    string.Format("Are you sure you want to delete room '{0}'?", room.RoomNumber),
+                    "Confirm Deletion",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    repository.Delete(room.RoomId);
+                    roomView.isSuccessful = true;
+                    roomView.Message = "Room deleted successfully";
+                    LoadAllRoomList();
+                }
             }
             catch
             {
@@ -153,6 +218,7 @@ namespace HotelReservationSystem.Presenter
             RoomBindingSource.DataSource = roomList;
             RoomBindingSource.ResetBindings(false);
         }
+        
         private void CleanViewFields() => FieldsCleaner.ClearInputs(roomView as Control);
     }
 }
