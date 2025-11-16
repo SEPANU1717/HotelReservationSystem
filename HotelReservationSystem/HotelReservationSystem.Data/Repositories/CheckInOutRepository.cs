@@ -7,7 +7,7 @@ using HotelReservationSystem.Domain.Interface.CheckInOut;
 using HotelReservationSystem.Domain.Model.CheckInOut;
 using static HotelReservationSystem.Domain.Enums.ReservationEnum;
 
-namespace HotelReservationSystem.Data.Repositories.CheckInOut
+namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
 {
     public class CheckInOutRepository : BaseRepository, ICheckInOutRepository
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
-using HotelReservationSystem.Data.Repositories.CheckInOut;
+using HotelReservationSystem.Data.Repositories.CheckInOutRepository;
 using HotelReservationSystem.Data.Repositories.Service;
 using HotelReservationSystem.Domain.Interface;
 using HotelReservationSystem.Domain.Interface.Billing;
@@ -28,7 +28,6 @@ namespace HotelReservationSystem.Presenter
             this.sqlConnectionString = sqlConnectionString;
             this.PasswordHasher = passwordHasher;
 
-            // Event subscriptions
             this.mainView.ShowCustomerView += ShowCustomerView;
             this.mainView.ShowRoomView += ShowRoomView;
             this.mainView.ShowReservationView += ShowReservationView;

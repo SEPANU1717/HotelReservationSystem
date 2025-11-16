@@ -15,7 +15,6 @@ namespace HotelReservationSystem.UserControls
         private ReservationRepository reserveRepo;
         private RoomRepository roomRepo;
         
-        // Date pickers (you can replace with your own date controls if needed)
         private DateTimePicker dtCheckInDate;
         private DateTimePicker dtCheckOutDate;
         private DateTimePicker dtActualCheckOut;
@@ -29,6 +28,7 @@ namespace HotelReservationSystem.UserControls
             reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
+
             
             // Initialize controls
             InitializeControls();
@@ -39,19 +39,16 @@ namespace HotelReservationSystem.UserControls
         #region Initialization
         private void InitializeControls()
         {
-            // Initialize date pickers if they don't exist in designer
-            // Set default values
+          
             DateBilled = DateTime.Now;
             ActualCheckOutDate = null;
             
-            // Set default amounts to zero
             RoomCharge = "0.00";
             LateCheckoutFee = "0.00";
             DamageFee = "0.00";
             AmountPaidBefore = "0.00";
             AmountPaidAtCheckout = "0.00";
             
-            // Initialize combo boxes
             if (cbPaymentStatus != null)
             {
                 cbPaymentStatus.Items.Clear();
@@ -162,7 +159,6 @@ namespace HotelReservationSystem.UserControls
                 if (dtCheckInDate != null)
                     return dtCheckInDate.Value;
                     
-                // Parse from text control if date picker not available
                 if (txtCheckInDate != null && DateTime.TryParse(txtCheckInDate.Texts, out DateTime date))
                     return date;
                     
@@ -379,6 +375,7 @@ namespace HotelReservationSystem.UserControls
         public event EventHandler DeleteEvent;
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler CheckoutCompletedEvent;
         #endregion
 
         #region IBillingView Methods
@@ -403,40 +400,25 @@ namespace HotelReservationSystem.UserControls
 
         public void ClearForm()
         {
-            // Clear text fields
-            BillId = string.Empty;
-            ReservationId = string.Empty;
-            CustomerName = string.Empty;
-            RoomType = string.Empty;
-            RoomNumber = string.Empty;
-            
-            // Reset dates
-            CheckInDate = DateTime.Now;
-            CheckOutDate = DateTime.Now.AddDays(1);
-            ActualCheckOutDate = null;
-            
-            // Reset charges
-            RoomCharge = "0.00";
-            LateCheckoutFee = "0.00";
-            DamageFee = "0.00";
-            
-            // Reset payments
-            AmountPaidBefore = "0.00";
-            AmountPaidAtCheckout = "0.00";
-            TotalAmount = "0.00";
-            BalanceDue = "0.00";
-            
-            // Reset combo boxes
-            if (cbPaymentStatus != null) cbPaymentStatus.SelectedIndex = -1;
-            if (cbPaymentMethod != null) cbPaymentMethod.SelectedIndex = -1;
-            
-            PaymentReference = string.Empty;
-            
-            // Reset metadata
+            FieldsCleaner.ClearInputs(this);
+
             DateBilled = DateTime.Now;
             BilledBy = UserSession.Username;
             
             isEdit = false;
+        }
+
+        public void ShowBillingForm()
+        {
+             this.Visible = true;
+            this.BringToFront();
+            
+            if (materialTabControl1 != null && ReservationBillingForm != null)
+            {
+                materialTabControl1.TabPages.Clear();
+                materialTabControl1.TabPages.Add(ReservationBillingForm);
+                materialTabControl1.SelectedTab = ReservationBillingForm;
+            }
         }
         #endregion
 
@@ -445,7 +427,6 @@ namespace HotelReservationSystem.UserControls
         {
             try
             {
-                // Calculate subtotal and total
                 decimal roomCharge = decimal.TryParse(RoomCharge, out decimal rc) ? rc : 0m;
                 decimal lateFee = decimal.TryParse(LateCheckoutFee, out decimal lf) ? lf : 0m;
                 decimal damageFee = decimal.TryParse(DamageFee, out decimal df) ? df : 0m;
@@ -457,7 +438,6 @@ namespace HotelReservationSystem.UserControls
                 
                 TotalAmount = subtotal.ToString("F2");
                 
-                // Calculate balance due
                 decimal paidBefore = decimal.TryParse(AmountPaidBefore, out decimal pb) ? pb : 0m;
                 decimal paidNow = decimal.TryParse(AmountPaidAtCheckout, out decimal pn) ? pn : 0m;
                 
@@ -466,7 +446,7 @@ namespace HotelReservationSystem.UserControls
             }
             catch
             {
-                // Silently fail to avoid UI disruption
+                //wala pa
             }
         }
         #endregion

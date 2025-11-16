@@ -87,7 +87,6 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
-                // Authorization check - Only Admin can add/edit rooms
                 if (!UserSession.IsAdmin)
                 {
                     MessageBox.Show(
@@ -102,7 +101,6 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
-                // Validation
                 new ModelDataValidation().Validate(model);
 
                 if (roomView.isEdit)
@@ -127,7 +125,6 @@ namespace HotelReservationSystem.Presenter
 
         private void EditRoom(object sender, EventArgs e)
         {
-            // Authorization check - Only Admin can edit rooms
             if (!UserSession.IsAdmin)
             {
                 MessageBox.Show(
@@ -155,7 +152,6 @@ namespace HotelReservationSystem.Presenter
 
         private void AddNewRoom(object sender, EventArgs e)
         {
-            // Authorization check - Only Admin can add rooms
             if (!UserSession.IsAdmin)
             {
                 MessageBox.Show(
@@ -173,7 +169,6 @@ namespace HotelReservationSystem.Presenter
         {
             try
             {
-                // Authorization check - Only Admin can delete rooms
                 if (!UserSession.IsAdmin)
                 {
                     MessageBox.Show(

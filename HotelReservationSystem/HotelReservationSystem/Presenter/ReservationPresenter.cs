@@ -152,7 +152,6 @@ namespace HotelReservationSystem.Presenter
             var model = reservationList.FirstOrDefault(r => r.ReservationId == dto.ReservationId);
             if (model == null) return;
 
-            // CHECK IF ALREADY CHECKED IN - PREVENT EDIT
             if (model.ReservationStatus == "CheckedIn")
             {
                 reservationView.ShowErrorMessage(
@@ -162,7 +161,6 @@ namespace HotelReservationSystem.Presenter
                 return;
             }
 
-            // Proceed with normal edit
             reservationView.ReservationId = model.ReservationId.ToString();
             reservationView.CustomerName = model.CustomerName;
             reservationView.RoomNumber = model.RoomNumber;
@@ -194,7 +192,6 @@ namespace HotelReservationSystem.Presenter
 
                 var reservation = reservationRepository.GetById(reservationId);
 
-                // CHECK IF ALREADY CHECKED IN - PREVENT DELETE
                 if (reservation != null && reservation.ReservationStatus == "CheckedIn")
                 {
                     reservationView.ShowErrorMessage(
@@ -234,12 +231,8 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
-                // Standard model validation (data annotations)
                 new ModelDataValidation().Validate(model);
 
-                // Business Rule Validation
-                
-                // 1. Validate check-in/check-out dates
                 if (model.CheckInDate.Date < DateTime.Today)
                 {
                     reservationView.ShowErrorMessage("Check-in date cannot be in the past.");
@@ -265,14 +258,12 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
-                // 2. Validate room selection
                 if (string.IsNullOrEmpty(model.RoomNumber))
                 {
                     reservationView.ShowErrorMessage("Please select a room.");
                     return;
                 }
 
-                // 3. Validate payment amounts
                 if (model.TotalPrice <= 0)
                 {
                     reservationView.ShowErrorMessage("Total price must be greater than zero.");
@@ -305,7 +296,6 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
-                // 4. Check for overlapping reservations
                 if (!string.IsNullOrEmpty(model.RoomNumber))
                 {
                     int? excludeReservationId = reservationView.isEdit ? (int?)model.ReservationId : null;
@@ -325,14 +315,12 @@ namespace HotelReservationSystem.Presenter
                     }
                 }
 
-                // 5. Validate customer name format
                 if (string.IsNullOrWhiteSpace(model.CustomerName))
                 {
                     reservationView.ShowErrorMessage("Customer name is required.");
                     return;
                 }
 
-                // Save the reservation
                 if (reservationView.isEdit)
                 {
                     reservationRepository.Edit(model);
@@ -383,7 +371,6 @@ namespace HotelReservationSystem.Presenter
 
                 if (room != null)
                 {
-                    // Get available rooms for the date range, excluding current reservation
                     var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
                         room.RoomType, 
                         reservation.CheckInDate, 
@@ -438,18 +425,15 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
-                // Get check-in and check-out dates from the view
                 DateTime checkInDate = reservationView.CheckInDate;
                 DateTime checkOutDate = reservationView.CheckOutDate;
                 
-                // Get current reservation ID if editing
                 int? excludeReservationId = null;
                 if (reservationView.isEdit && !string.IsNullOrEmpty(reservationView.ReservationId))
                 {
                     excludeReservationId = int.Parse(reservationView.ReservationId);
                 }
 
-                // Get available rooms for the selected type and date range
                 var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
                     roomType, 
                     checkInDate, 
@@ -482,8 +466,7 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
-                // CHECK FOR DUPLICATE BEFORE LOADING THE CONTROL
-                var checkInRepo = new Data.Repositories.CheckInOut.CheckInOutRepository(DbConfig.GetConnectionString());
+                var checkInRepo = new Data.Repositories.CheckInOutRepository.CheckInOutRepository(DbConfig.GetConnectionString());
                 if (checkInRepo.ExistsForReservation(reservationId))
                 {
                     var existingCheckIn = checkInRepo.GetByReservationId(reservationId);
@@ -531,10 +514,8 @@ namespace HotelReservationSystem.Presenter
             {
                 case "Reserved":
                 case "Confirmed":
-                    // Check if the reservation is for today or in the future
                     if (model.CheckInDate.Date <= now && model.CheckOutDate.Date > now)
                     {
-                        // Reservation is active for today - mark as Reserved if not checked in
                         if (room.RoomStatus != "Occupied")
                         {
                             room.RoomStatus = "Reserved";
@@ -543,7 +524,6 @@ namespace HotelReservationSystem.Presenter
                     }
                     else if (model.CheckInDate.Date > now)
                     {
-                        // Future reservation - check if there are any current active reservations
                         var allReservations = reservationRepository.GetAll()
                             .Where(r => r.RoomNumber == model.RoomNumber 
                                      && r.ReservationStatus != "Cancelled/No Show" 
@@ -554,11 +534,9 @@ namespace HotelReservationSystem.Presenter
                         
                         if (allReservations.Any())
                         {
-                            // There's an active reservation, leave the status as is
                         }
                         else
                         {
-                            // No active reservations, mark as available
                             room.RoomStatus = "Available";
                             roomRepository.Edit(room);
                         }
@@ -572,7 +550,6 @@ namespace HotelReservationSystem.Presenter
 
                 case "Cancelled":
                 case "CheckedOut":
-                    // When cancelling or checking out, check if there are other active reservations
                     var activeReservations = reservationRepository.GetAll()
                         .Where(r => r.RoomNumber == model.RoomNumber 
                                  && r.ReservationId != model.ReservationId
@@ -584,7 +561,6 @@ namespace HotelReservationSystem.Presenter
                     
                     if (activeReservations.Any())
                     {
-                        // There are other active reservations
                         if (activeReservations.Any(r => r.ReservationStatus == "CheckedIn"))
                         {
                             room.RoomStatus = "Occupied";

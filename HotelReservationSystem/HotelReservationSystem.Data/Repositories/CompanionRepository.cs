@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.Domain.Model;
 
-namespace HotelReservationSystem.Data.Repositories.CheckInOut
+namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
 {
     public class CompanionRepository : BaseRepository
     {

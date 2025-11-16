@@ -31,7 +31,7 @@ namespace HotelReservationSystem.Presenter
             _emailService = emailService ?? throw new ArgumentNullException(nameof(emailService));
 
             SubscribeToViewEvents();
-            _view.ShowStep(1); // Start with request step
+            _view.ShowStep(1);
         }
 
         private void SubscribeToViewEvents()
@@ -53,11 +53,9 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
-                // Check if user exists
                 var user = _userRepository.GetByUsernameOrEmail(usernameOrEmail);
                 if (user == null)
                 {
-                    // Don't reveal if user exists for security
                     _view.ShowMessage(
                         "If this account exists, a password reset code has been sent to the registered email.",
                         "Request Sent",
@@ -74,7 +72,6 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
-                // Generate token
                 string token = _resetRepository.GenerateSecureToken();
                 var resetToken = new PasswordResetToken
                 {
@@ -87,7 +84,6 @@ namespace HotelReservationSystem.Presenter
 
                 _resetRepository.SaveToken(resetToken);
 
-                // Send email asynchronously
                 bool emailSent = await _emailService.SendPasswordResetEmailAsync(user.Email, token, user.Username);
 
                 if (emailSent)
@@ -99,7 +95,7 @@ namespace HotelReservationSystem.Presenter
                         MessageBoxIcon.Information);
 
                     _view.UsernameOrEmailVerify = usernameOrEmail;
-                    _view.ShowStep(2); // Move to verification step
+                    _view.ShowStep(2);
                 }
                 else
                 {
@@ -127,7 +123,6 @@ namespace HotelReservationSystem.Presenter
                 string newPassword = _view.NewPassword;
                 string confirmPassword = _view.ConfirmPassword;
 
-                // Validation
                 if (string.IsNullOrEmpty(token) || token.Length != 6)
                 {
                     _view.ShowMessage("Please enter the 6-digit reset code.", "Validation Error", MessageBoxIcon.Warning);
@@ -146,7 +141,6 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
-                // Verify token
                 var validToken = _resetRepository.GetValidToken(usernameOrEmail, token);
                 if (validToken == null)
                 {
@@ -157,7 +151,6 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
-                // Get user and update password
                 var user = _userRepository.GetByUsernameOrEmail(usernameOrEmail);
                 if (user == null)
                 {
@@ -169,7 +162,6 @@ namespace HotelReservationSystem.Presenter
                 user.Password = newPassword;
                 _userRepository.Edit(user);
 
-                // Mark token as used
                 _resetRepository.MarkTokenAsUsed(validToken.TokenId);
 
                 _view.IsSuccessful = true;

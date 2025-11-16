@@ -110,7 +110,6 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
-                // Business Rule Validation - Age Check (18+)
                 var age = DateTime.Now.Year - model.BirthDate.Year;
                 if (model.BirthDate.Date > DateTime.Now.AddYears(-age))
                 {
@@ -125,7 +124,6 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
-                // Validate username format
                 if (!System.Text.RegularExpressions.Regex.IsMatch(model.Username, @"^[a-zA-Z0-9_]+$"))
                 {
                     userView.isSuccessful = false;
@@ -146,7 +144,6 @@ namespace HotelReservationSystem.Presenter
 
                     model.CreatedAt = existingUser.CreatedAt;
 
-                    // Password validation for edit
                     if (!string.IsNullOrEmpty(model.Password))
                     {
                         if (model.Password.Length < 6)
@@ -165,7 +162,6 @@ namespace HotelReservationSystem.Presenter
                         model.Password = "lodgixhotel";
                     }
 
-                    // Standard model validation
                     new ModelDataValidation().Validate(model);
 
                     if (string.IsNullOrEmpty(userView.Password))
@@ -179,7 +175,6 @@ namespace HotelReservationSystem.Presenter
                 }
                 else
                 {
-                    // New user - password is required
                     if (string.IsNullOrEmpty(model.Password))
                     {
                         userView.isSuccessful = false;
@@ -198,10 +193,8 @@ namespace HotelReservationSystem.Presenter
 
                     model.PasswordHash = passwordHasher.HashPassword(model.Password);
 
-                    // Standard model validation
                     new ModelDataValidation().Validate(model);
 
-                    // Check for duplicate username
                     var allUsers = repository.GetAll();
                     if (allUsers.Any(u => u.Username.Equals(model.Username, StringComparison.OrdinalIgnoreCase)))
                     {

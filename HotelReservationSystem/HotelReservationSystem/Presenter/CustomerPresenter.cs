@@ -125,7 +125,6 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
-                // Business Rule Validation - Age Check (18+)
                 if (model.DateOfBirth.HasValue)
                 {
                     var age = DateTime.Now.Year - model.DateOfBirth.Value.Year;
@@ -146,7 +145,6 @@ namespace HotelReservationSystem.Presenter
                     }
                 }
 
-                // Validate phone number format
                 if (!string.IsNullOrEmpty(model.Contact))
                 {
                     var digitsOnly = new string(model.Contact.Where(char.IsDigit).ToArray());
@@ -159,7 +157,6 @@ namespace HotelReservationSystem.Presenter
                     }
                 }
 
-                // Validate email uniqueness for new customers
                 if (!customerView.isEdit)
                 {
                     var existingCustomers = repository.GetAll();
@@ -172,7 +169,6 @@ namespace HotelReservationSystem.Presenter
                     }
                 }
 
-                // Standard model validation (data annotations)
                 new ModelDataValidation().Validate(model);
 
                 if (customerView.isEdit)

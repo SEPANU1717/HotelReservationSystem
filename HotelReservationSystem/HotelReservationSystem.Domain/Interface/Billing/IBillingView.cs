@@ -53,10 +53,12 @@ namespace HotelReservationSystem.Domain.Interface.Billing
         event EventHandler DeleteEvent;
         event EventHandler SaveEvent;
         event EventHandler CancelEvent;
+        event EventHandler CheckoutCompletedEvent;
 
         // Methods
         void SetBillingListBindingSource(BindingSource billingList);
         void ShowMessage(string message, string title);
         void ClearForm();
+        void ShowBillingForm();
     }
 }

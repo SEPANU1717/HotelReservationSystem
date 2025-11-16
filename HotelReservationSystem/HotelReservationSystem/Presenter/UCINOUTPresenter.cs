@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using HotelReservationSystem.Data.Repositories;
-using HotelReservationSystem.Data.Repositories.CheckInOut;
+using HotelReservationSystem.Data.Repositories.CheckInOutRepository;
 using HotelReservationSystem.DataInitializer.DbInitializer;
 using HotelReservationSystem.Domain.DTOs;
 using HotelReservationSystem.Domain.Helper;
@@ -94,7 +94,6 @@ namespace HotelReservationSystem.Presenter
             if (string.IsNullOrEmpty(model.RoomType))
                 return;
 
-            // Get available rooms for the date range
             var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
                 model.RoomType, 
                 model.CheckInDate, 
@@ -295,11 +294,9 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
-                // Get check-in and check-out dates
                 DateTime checkInDate = checkInView.CheckInDate;
                 DateTime checkOutDate = checkInView.CheckOutDate;
                 
-                // Get current reservation ID if editing
                 int? excludeReservationId = null;
                 if (checkInView.isEdit)
                 {
@@ -307,7 +304,6 @@ namespace HotelReservationSystem.Presenter
                     if (excludeReservationId == 0) excludeReservationId = null;
                 }
 
-                // Get available rooms for the selected type and date range
                 var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
                     roomType, 
                     checkInDate, 
@@ -437,7 +433,6 @@ namespace HotelReservationSystem.Presenter
 
                 if (!string.IsNullOrEmpty(reservation.RoomType))
                 {
-                    // Get available rooms for the date range, excluding current reservation
                     var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
                         reservation.RoomType, 
                         reservation.CheckInDate, 
@@ -507,6 +502,11 @@ namespace HotelReservationSystem.Presenter
             var repository = new CheckInOutRepository(DbConfig.GetConnectionString());
             var checkInList = repository.GetAll() ?? Enumerable.Empty<CheckInOutModel>();
             return checkInList.Select(CheckInMapper.ToCheckInDto).ToList();
+        }
+
+        public void RefreshCheckInList()
+        {
+            LoadAllCheckInList();
         }
 
         #endregion
