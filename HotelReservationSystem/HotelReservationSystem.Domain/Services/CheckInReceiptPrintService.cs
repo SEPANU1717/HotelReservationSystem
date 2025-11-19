@@ -138,12 +138,16 @@ namespace HotelReservationSystem.Domain.Services
 
             g.DrawString($"Room Number: {checkIn.RoomNumber}", normalFont, Brushes.Black, leftMargin + 10, yPos);
             g.DrawString($"Room Type: {checkIn.RoomType}", normalFont, Brushes.Black, centerX, yPos);
-            yPos += 18;
+            yPos += 20;
             g.DrawString($"Check-In: {checkIn.CheckInDate:MM/dd/yyyy}", normalFont, Brushes.Black, leftMargin + 10, yPos);
             g.DrawString($"Check-Out: {checkIn.CheckOutDate:MM/dd/yyyy}", normalFont, Brushes.Black, centerX, yPos);
-            yPos += 18;
+            yPos += 20;
             g.DrawString($"Time of Arrival: {checkIn.TimeArrival:HH:mm}", normalFont, Brushes.Black, leftMargin + 10, yPos);
-            g.DrawString($"Companions: {checkIn.CompanionCount}", normalFont, Brushes.Black, centerX, yPos);
+            
+            // Show customer email if available
+            string displayEmail = !string.IsNullOrEmpty(checkIn.CustomerEmail) ? checkIn.CustomerEmail :
+                                 (customer != null ? customer.Email : "N/A");
+            g.DrawString($"Email: {displayEmail}", normalFont, Brushes.Black, centerX, yPos);
             yPos += 30;
 
             using (Brush grayBrush = new SolidBrush(Color.FromArgb(240, 240, 240)))

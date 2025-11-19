@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[CheckIns](
     [TotalPrice]          [decimal](18, 2) NOT NULL DEFAULT(0),
     [DownPayment]         [decimal](18, 2) NOT NULL DEFAULT(0),
     [AmountPaid]          [decimal](18, 2) NOT NULL DEFAULT(0),
-    [CompanionCount]      [int] NOT NULL DEFAULT(0),
+    [CustomerEmail]       [varchar](100) NULL,
     
     -- Payment
     [PaymentMethod]       [varchar](50) NULL,

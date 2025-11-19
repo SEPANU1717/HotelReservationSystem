@@ -20,7 +20,8 @@ namespace HotelReservationSystem.Data.Repositories
                 connection.Open();
                 command.CommandText = @"
                     INSERT INTO Billing (
-                        ReservationId, CustomerName, RoomType, RoomNumber,
+                        ReservationId, CustomerName, CustomerEmail, CustomerContact, CustomerAddress,
+                        RoomType, RoomNumber,
                         CheckInDate, CheckOutDate, ActualCheckOutDate,
                         RoomCharge, LateCheckoutFee, DamageFee,
                         AmountPaidBefore, AmountPaidAtCheckout,
@@ -28,7 +29,8 @@ namespace HotelReservationSystem.Data.Repositories
                         DateBilled, BilledBy
                     )
                     VALUES (
-                        @ReservationId, @CustomerName, @RoomType, @RoomNumber,
+                        @ReservationId, @CustomerName, @CustomerEmail, @CustomerContact, @CustomerAddress,
+                        @RoomType, @RoomNumber,
                         @CheckInDate, @CheckOutDate, @ActualCheckOutDate,
                         @RoomCharge, @LateCheckoutFee, @DamageFee,
                         @AmountPaidBefore, @AmountPaidAtCheckout,
@@ -64,6 +66,9 @@ namespace HotelReservationSystem.Data.Repositories
                 command.CommandText = @"
                     UPDATE Billing SET
                         CustomerName = @CustomerName,
+                        CustomerEmail = @CustomerEmail,
+                        CustomerContact = @CustomerContact,
+                        CustomerAddress = @CustomerAddress,
                         RoomType = @RoomType,
                         RoomNumber = @RoomNumber,
                         CheckInDate = @CheckInDate,
@@ -210,6 +215,9 @@ namespace HotelReservationSystem.Data.Repositories
         {
             command.Parameters.Add("@ReservationId", SqlDbType.Int).Value = billing.ReservationId;
             command.Parameters.Add("@CustomerName", SqlDbType.NVarChar, 100).Value = billing.CustomerName;
+            command.Parameters.Add("@CustomerEmail", SqlDbType.NVarChar, 100).Value = billing.CustomerEmail ?? (object)DBNull.Value;
+            command.Parameters.Add("@CustomerContact", SqlDbType.NVarChar, 50).Value = billing.CustomerContact ?? (object)DBNull.Value;
+            command.Parameters.Add("@CustomerAddress", SqlDbType.NVarChar, 200).Value = billing.CustomerAddress ?? (object)DBNull.Value;
             command.Parameters.Add("@RoomType", SqlDbType.NVarChar, 50).Value = billing.RoomType ?? (object)DBNull.Value;
             command.Parameters.Add("@RoomNumber", SqlDbType.NVarChar, 20).Value = billing.RoomNumber;
             
@@ -242,6 +250,9 @@ namespace HotelReservationSystem.Data.Repositories
                 BillId = Convert.ToInt32(reader["BillId"]),
                 ReservationId = Convert.ToInt32(reader["ReservationId"]),
                 CustomerName = reader["CustomerName"].ToString(),
+                CustomerEmail = reader["CustomerEmail"] == DBNull.Value ? null : reader["CustomerEmail"].ToString(),
+                CustomerContact = reader["CustomerContact"] == DBNull.Value ? null : reader["CustomerContact"].ToString(),
+                CustomerAddress = reader["CustomerAddress"] == DBNull.Value ? null : reader["CustomerAddress"].ToString(),
                 RoomType = reader["RoomType"] == DBNull.Value ? null : reader["RoomType"].ToString(),
                 RoomNumber = reader["RoomNumber"].ToString(),
                 

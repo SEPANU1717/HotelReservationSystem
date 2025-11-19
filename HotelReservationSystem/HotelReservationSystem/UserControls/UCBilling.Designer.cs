@@ -1233,7 +1233,6 @@
             this.txtDamageFee.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtDamageFee.BorderRadius = 3;
             this.txtDamageFee.BorderSize = 1;
-            this.txtDamageFee.Enabled = false;
             this.txtDamageFee.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDamageFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtDamageFee.Icon = null;
@@ -1258,7 +1257,6 @@
             this.txtLateCheckoutFee.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtLateCheckoutFee.BorderRadius = 3;
             this.txtLateCheckoutFee.BorderSize = 1;
-            this.txtLateCheckoutFee.Enabled = false;
             this.txtLateCheckoutFee.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLateCheckoutFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.txtLateCheckoutFee.Icon = null;

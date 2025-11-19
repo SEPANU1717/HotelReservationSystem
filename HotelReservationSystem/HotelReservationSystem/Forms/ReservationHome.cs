@@ -27,6 +27,9 @@ namespace HotelReservationSystem.Forms
 
             ucReservation = UCReservation.GetInstance(this);
 
+            // Apply role-based menu visibility
+            ApplyRoleBasedMenuVisibility();
+
             LoadUserControl(new UCDashboard());
         }
 
@@ -44,6 +47,16 @@ namespace HotelReservationSystem.Forms
             string connectionString = Properties.Settings.Default.SqlConnectionString;
             IPasswordHasher passwordHasher = new Pbkdf2PasswordHasher();
             var presenter = new MainPresenter(this, connectionString, passwordHasher);
+        }
+
+        private void ApplyRoleBasedMenuVisibility()
+        {
+            // Only Admin can see Settings
+            if (!UserSession.IsAdmin)
+            {
+                sataButton6.Visible = false; // Settings button
+                sataButton6.Enabled = false;
+            }
         }
 
         private void UcCustomers_CustomerSelected(object sender, UCCustomers.CustomerSelectedEventArgs e)

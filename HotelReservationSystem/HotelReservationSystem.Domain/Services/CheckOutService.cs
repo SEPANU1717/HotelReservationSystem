@@ -92,6 +92,7 @@ namespace HotelReservationSystem.Domain.Services
             {
                 ReservationId = checkIn.ReservationId,
                 CustomerName = checkIn.CustomerName,
+                CustomerEmail = checkIn.CustomerEmail, // ? COPY EMAIL FROM CHECK-IN
                 RoomType = checkIn.RoomType,
                 RoomNumber = checkIn.RoomNumber,
                 CheckInDate = checkIn.CheckInDate,

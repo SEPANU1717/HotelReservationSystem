@@ -19,6 +19,19 @@ namespace HotelReservationSystem.Domain.Model
         [Display(Name = "Customer Name")] 
         public string CustomerName { get; set; }
         
+        // Customer Details - Preserved for printing even after customer deletion
+        [StringLength(100, ErrorMessage = "Email cannot exceed 100 characters")]
+        [Display(Name = "Customer Email")] 
+        public string CustomerEmail { get; set; }
+        
+        [StringLength(50, ErrorMessage = "Contact cannot exceed 50 characters")]
+        [Display(Name = "Customer Contact")] 
+        public string CustomerContact { get; set; }
+        
+        [StringLength(200, ErrorMessage = "Address cannot exceed 200 characters")]
+        [Display(Name = "Customer Address")] 
+        public string CustomerAddress { get; set; }
+        
         [Required(ErrorMessage = "Room type is required")]
         [Display(Name = "Room Type")] 
         public string RoomType { get; set; }
@@ -50,8 +63,6 @@ namespace HotelReservationSystem.Domain.Model
         [Display(Name = "Damage Fee")]
         public decimal DamageFee { get; set; }
        
-       
-        
         // Calculated Fields
         [Display(Name = "Subtotal")]
         public decimal Subtotal => RoomCharge + LateCheckoutFee + DamageFee;
@@ -69,8 +80,27 @@ namespace HotelReservationSystem.Domain.Model
         [Display(Name = "Total Paid")]
         public decimal TotalPaid => AmountPaidBefore + AmountPaidAtCheckout;
         
+        // Balance Due - Never negative, always 0 or positive
         [Display(Name = "Balance Due")]
-        public decimal BalanceDue => TotalAmount - TotalPaid;
+        public decimal BalanceDue
+        {
+            get
+            {
+                decimal balance = TotalAmount - TotalPaid;
+                return balance < 0 ? 0 : balance;
+            }
+        }
+        
+        // Change Due - Only when overpaid
+        [Display(Name = "Change Due")]
+        public decimal ChangeDue
+        {
+            get
+            {
+                decimal change = TotalPaid - TotalAmount;
+                return change > 0 ? change : 0;
+            }
+        }
         
         [Required(ErrorMessage = "Payment status is required")]
         [Display(Name = "Payment Status")] 
@@ -91,8 +121,6 @@ namespace HotelReservationSystem.Domain.Model
         [DisplayName("Billed By")]
         [StringLength(100, ErrorMessage = "Billed by cannot exceed 100 characters")]
         public string BilledBy { get; set; }
-        
-
         
         [Display(Name = "Number of Nights")]
         public int NumberOfNights => ActualCheckOutDate.HasValue 

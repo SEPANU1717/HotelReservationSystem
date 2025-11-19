@@ -127,16 +127,17 @@ namespace HotelReservationSystem.Presenter
         {
             if (!UserSession.IsAdmin)
             {
-                MessageBox.Show(
-                    string.Format("{0} cannot edit rooms. Only administrators can manage room inventory.", UserSession.Role),
-                    "Access Denied",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
+                // DON'T set isEdit = true, so the view won't open the tab page
+                roomView.isEdit = false;
+                return; // Exit early - error message already shown in view
             }
 
             var room = (RoomModel)RoomBindingSource.Current;
-            if (room == null) return;
+            if (room == null)
+            {
+                roomView.isEdit = false;
+                return;
+            }
 
             roomView.RoomId = room.RoomId.ToString();
             roomView.RoomNumber = room.RoomNumber;
@@ -154,11 +155,7 @@ namespace HotelReservationSystem.Presenter
         {
             if (!UserSession.IsAdmin)
             {
-                MessageBox.Show(
-                    string.Format("{0} cannot add rooms. Only administrators can manage room inventory.", UserSession.Role),
-                    "Access Denied",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                // Error message already shown in view
                 return;
             }
 
@@ -171,11 +168,7 @@ namespace HotelReservationSystem.Presenter
             {
                 if (!UserSession.IsAdmin)
                 {
-                    MessageBox.Show(
-                        string.Format("{0} cannot delete rooms. Only administrators can manage room inventory.", UserSession.Role),
-                        "Access Denied",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                    // Error message already shown in view
                     return;
                 }
 

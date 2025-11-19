@@ -47,9 +47,34 @@ namespace HotelReservationSystem.UserControls
 
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
             AssociateAndRaiseViewEvents();
+            
+            // Apply initial search state
+            UpdateSearchControlsState();
+            
             isInitializing = false;
         }
 
+        #endregion
+        
+        #region Role-Based Restrictions
+        
+        private void UpdateSearchControlsState()
+        {
+            // Enable search when on grid view (tabPage1)
+            // Disable search when on form view (tabPage2)
+            bool isOnGridView = materialTabControl1.SelectedTab == tabPage1;
+            
+            if (txtReservationSearch != null)
+            {
+                txtReservationSearch.Enabled = isOnGridView;
+            }
+            
+            if (btnReservationSearch != null)
+            {
+                btnReservationSearch.Enabled = isOnGridView;
+            }
+        }
+        
         #endregion
 
         #region Events
@@ -299,6 +324,9 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.TabPages.Add(tabPage2);
                 materialTabControl1.SelectedTab = tabPage2;
             }
+            
+            // Update search controls state when tab changes
+            UpdateSearchControlsState();
         }
 
         public void EnableField(string fieldName, bool enabled)

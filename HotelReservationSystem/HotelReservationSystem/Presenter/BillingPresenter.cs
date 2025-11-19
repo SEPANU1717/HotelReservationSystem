@@ -199,11 +199,38 @@ namespace HotelReservationSystem.Presenter.Billing
         {
             try
             {
+                // Get customer details for preservation - but don't rely only on Customers table
+                var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+                var customer = customerRepo.GetByCustomerName(billingView.CustomerName);
+                
+                // ✅ NEW: Get email from check-in if customer doesn't exist (walk-in scenario)
+                string customerEmail = customer?.Email;
+                string customerContact = customer?.Contact;
+                string customerAddress = customer?.Address;
+                
+                // If customer doesn't exist, try to get info from check-in record
+                if (customer == null)
+                {
+                    var checkInRepo = new CheckInOutRepository(DbConfig.GetConnectionString());
+                    if (int.TryParse(billingView.ReservationId, out int resId))
+                    {
+                        var checkIn = checkInRepo.GetByReservationId(resId);
+                        if (checkIn != null)
+                        {
+                            customerEmail = checkIn.CustomerEmail;
+                            // For walk-ins, we don't have contact/address, leave them null
+                        }
+                    }
+                }
+                
                 var model = new BillingModel
                 {
                     BillId = int.TryParse(billingView.BillId, out int billId) ? billId : 0,
-                    ReservationId = int.TryParse(billingView.ReservationId, out int resId) ? resId : 0,
+                    ReservationId = int.TryParse(billingView.ReservationId, out int resId2) ? resId2 : 0,
                     CustomerName = billingView.CustomerName,
+                    CustomerEmail = customerEmail, // ✅ NOW INCLUDES WALK-IN EMAILS
+                    CustomerContact = customerContact,
+                    CustomerAddress = customerAddress,
                     RoomType = billingView.RoomType,
                     RoomNumber = billingView.RoomNumber,
                     CheckInDate = billingView.CheckInDate,
@@ -262,8 +289,17 @@ namespace HotelReservationSystem.Presenter.Billing
                 decimal total = model.RoomCharge + model.LateCheckoutFee + model.DamageFee;
                 decimal totalPaid = model.AmountPaidBefore + model.AmountPaidAtCheckout;
                 decimal balance = total - totalPaid;
+                decimal change = 0m;
 
-                if (balance <= 0)
+                // Handle overpayment - NO CONFIRMATION, just calculate
+                if (totalPaid > total)
+                {
+                    change = totalPaid - total;
+                    balance = 0; // Set balance to 0, not negative
+                    model.PaymentStatus = "Paid";
+                    billingView.PaymentStatus = "Paid";
+                }
+                else if (balance <= 0)
                 {
                     model.PaymentStatus = "Paid";
                     billingView.PaymentStatus = "Paid";
@@ -278,16 +314,28 @@ namespace HotelReservationSystem.Presenter.Billing
                     model.PaymentStatus = string.IsNullOrEmpty(model.PaymentStatus) ? "Pending" : model.PaymentStatus;
                     billingView.PaymentStatus = model.PaymentStatus;
                 }
+                
                 if (billingView.isEdit)
                 {
                     repository.Edit(model);
                     billingView.Message = "Billing record updated successfully!";
+                    
+                    if (change > 0)
+                    {
+                        billingView.Message += string.Format("\n\nChange Due: ₱{0:N2}\nPlease return to customer.", change);
+                    }
                 }
                 else
                 {
                     repository.Add(model);
                     billingView.Message = "Billing record created successfully!";
+                    
+                    if (change > 0)
+                    {
+                        billingView.Message += string.Format("\n\nChange Due: ₱{0:N2}\nPlease return to customer.", change);
+                    }
                 }
+                
                 if (isFromCheckout)
                 {
                     if (balance > 0)
@@ -396,11 +444,108 @@ namespace HotelReservationSystem.Presenter.Billing
                     room.RoomStatus = "Available";
                     roomRepo.Edit(room);
                 }
+                
+                PromptCustomerDeletion(billing.CustomerName);
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(string.Format("Error completing checkout process: {0}", ex.Message));
                 throw;
+            }
+        }
+        
+        private void PromptCustomerDeletion(string customerName)
+        {
+            try
+            {
+                var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+                var customer = customerRepo.GetByCustomerName(customerName);
+                
+                if (customer == null)
+                {
+                    return;
+                }
+                
+                var reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
+                var futureReservations = reserveRepo.GetAll()
+                    .Where(r => r.CustomerName == customerName && 
+                                r.CheckInDate > DateTime.Now && 
+                                r.ReservationStatus != "CheckedOut" && 
+                                r.ReservationStatus != "Cancelled")
+                    .ToList();
+                
+                if (futureReservations.Any())
+                {
+                    MessageBox.Show(
+                        string.Format("Customer '{0}' has {1} upcoming reservation(s).\n\n" +
+                            "Customer information cannot be removed while active reservations exist.\n\n" +
+                            "Future reservations:\n{2}",
+                            customer.FullName,
+                            futureReservations.Count,
+                            string.Join("\n", futureReservations.Select(r => 
+                                $"- {r.CheckInDate:MMM dd, yyyy} to {r.CheckOutDate:MMM dd, yyyy} (Room {r.RoomNumber})"))),
+                        "Cannot Remove Customer",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+                
+                var checkInRepo = new CheckInOutRepository(DbConfig.GetConnectionString());
+                var pastVisits = checkInRepo.GetAll()
+                    .Where(c => c.CustomerName == customerName)
+                    .Count();
+                
+                string visitInfo = pastVisits == 1 
+                    ? "This is a one-time guest."
+                    : string.Format("⚠️ REPEAT GUEST: This customer has visited {0} times.", pastVisits);
+                
+                string recommendation = pastVisits > 1
+                    ? "\n\nRECOMMENDATION: Keep this customer for future bookings."
+                    : "";
+                
+                var result = MessageBox.Show(
+                    string.Format("Checkout completed successfully!\n\n" +
+                        "Would you like to remove the customer information from the Customer module?\n\n" +
+                        "Customer: {0}\n" +
+                        "Email: {1}\n" +
+                        "Contact: {2}\n" +
+                        "Visit History: {3}{4}\n\n" +
+                        "Note: Customer information will be removed from the Customer list, " +
+                        "but all billing, reservation, and check-in records will be preserved " +
+                        "for historical purposes and printing.\n\n" +
+                        "Delete customer from Customer module?",
+                        customer.FullName,
+                        customer.Email ?? "N/A",
+                        customer.Contact ?? "N/A",
+                        visitInfo,
+                        recommendation),
+                    "Remove Customer Information",
+                    MessageBoxButtons.YesNo,
+                    pastVisits > 1 ? MessageBoxIcon.Question : MessageBoxIcon.Information);
+                
+                if (result == DialogResult.Yes)
+                {
+                    customerRepo.Delete(customer.CustomerID);
+                    
+                    MessageBox.Show(
+                        string.Format("Customer '{0}' has been removed from the Customer module.\n\n" +
+                            "All billing and historical records have been preserved.",
+                            customer.FullName),
+                        "Customer Removed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    string.Format("Note: Customer information could not be removed.\n\nReason: {0}\n\n" +
+                        "The customer record may still be in use. " +
+                        "All billing records have been saved successfully.",
+                        ex.Message),
+                    "Customer Deletion Note",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
 
@@ -524,15 +669,46 @@ namespace HotelReservationSystem.Presenter.Billing
                 var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
                 var customer = customerRepo.GetByCustomerName(billing.CustomerName);
 
-                if (customer == null)
+                // ✅ IMPROVED EMAIL PRIORITY LOGIC
+                // Priority 1: Billing record (preserved from checkout)
+                // Priority 2: Customer master record (if exists)
+                // Priority 3: Check-in record (for walk-ins)
+                string customerEmail = billing.CustomerEmail;
+                
+                if (string.IsNullOrEmpty(customerEmail) && customer != null)
                 {
-                    billingView.ShowMessage($"Customer information not found for '{billing.CustomerName}'.", "Error");
-                    return;
+                    customerEmail = customer.Email;
                 }
-
-                if (string.IsNullOrEmpty(customer.Email))
+                
+                // ✅ NEW: Fallback to check-in record for walk-in customers
+                if (string.IsNullOrEmpty(customerEmail))
                 {
-                    billingView.ShowMessage($"No email address found for customer '{billing.CustomerName}'.", "No Email");
+                    try
+                    {
+                        var checkInRepo = new CheckInOutRepository(DbConfig.GetConnectionString());
+                        var checkIn = checkInRepo.GetByReservationId(billing.ReservationId);
+                        if (checkIn != null && !string.IsNullOrEmpty(checkIn.CustomerEmail))
+                        {
+                            customerEmail = checkIn.CustomerEmail;
+                            System.Diagnostics.Debug.WriteLine($"EmailInvoice: Using email from CheckIns table for walk-in customer: {customerEmail}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"EmailInvoice: Error getting email from CheckIns: {ex.Message}");
+                    }
+                }
+                
+                string customerFullName = customer != null ? customer.FullName : billing.CustomerName;
+
+                if (string.IsNullOrEmpty(customerEmail))
+                {
+                    billingView.ShowMessage(
+                        $"No email address found for customer '{billing.CustomerName}'.\n\n" +
+                        "Please ensure the customer has an email address in:\n" +
+                        "- Customer module, or\n" +
+                        "- Check-in record", 
+                        "No Email");
                     return;
                 }
 
@@ -544,8 +720,8 @@ namespace HotelReservationSystem.Presenter.Billing
                         "Invoice #: {2}\n" +
                         "Amount: ₱{3:N2}\n\n" +
                         "Do you want to proceed?",
-                        customer.FullName,
-                        customer.Email,
+                        customerFullName,
+                        customerEmail,
                         billing.BillId,
                         billing.TotalAmount),
                     "Confirm Send Invoice",
@@ -561,9 +737,10 @@ namespace HotelReservationSystem.Presenter.Billing
                 string fileName = $"Invoice_{billing.BillId}_{DateTime.Now:yyyyMMddHHmmss}.png";
                 string filePath = System.IO.Path.Combine(tempPath, fileName);
 
-                using (var printService = new InvoicePrintService(billing, customer))
+                // Use InvoicePrintServiceWithPDF (same as print) for consistent formatting and customer info preservation
+                using (var printService = new InvoicePrintServiceWithPDF(billing, customer))
                 {
-                    printService.SaveAsPdf(filePath);
+                    printService.SaveAsPDF(filePath);
                 }
 
                 var emailService = new EmailService();
@@ -591,9 +768,9 @@ namespace HotelReservationSystem.Presenter.Billing
                     }
                 }
 
-                emailService.SendInvoiceEmail(customer.Email, customer.FullName, filePath, billing.BillId.ToString());
+                emailService.SendInvoiceEmail(customerEmail, customerFullName, filePath, billing.BillId.ToString());
 
-                billingView.ShowMessage($"Invoice successfully sent to {customer.Email}", "Email Sent");
+                billingView.ShowMessage($"Invoice successfully sent to {customerEmail}", "Email Sent");
 
                 if (System.IO.File.Exists(filePath))
                 {

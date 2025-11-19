@@ -75,7 +75,7 @@ namespace HotelReservationSystem.Presenter.Mapper
                 TotalCompanionCost = 0,
                 DownPayment = view.DownPayment,
                 AmountPaid = view.AmountPaid,
-                CompanionCount = view.CompanionCount,
+                CustomerEmail = view.CustomerEmail,
                 PaymentMethod = view.PaymentMethod,
                 PaymentReference = view.PaymentReference,
                 PaymentStatus = Enum.TryParse<PaymentState>(view.PaymentStatus, out var status)
@@ -108,7 +108,7 @@ namespace HotelReservationSystem.Presenter.Mapper
             view.PaymentStatus = model.PaymentStatus.ToString();
             view.PaymentReference = model.PaymentReference ?? string.Empty;
             view.ReservationStatus = !string.IsNullOrEmpty(model.ReservationStatus) ? model.ReservationStatus : "CheckedIn";
-            view.CompanionCount = 0;
+            view.CustomerEmail = string.Empty; // Will be populated from customer lookup if needed
         }
 
         public static void UpdateFinancialFields(ICheckInOutView view, decimal newTotalPrice)

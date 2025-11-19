@@ -154,6 +154,7 @@ namespace HotelReservationSystem.Presenter
             checkInView.CheckInDate = DateTime.Now;
             checkInView.CheckOutDate = DateTime.Now.AddDays(1);
             checkInView.TimeArrival = DateTime.Now;
+            checkInView.CustomerEmail = string.Empty;
         }
 
         private void EditCheckIn(object sender, EventArgs e)
@@ -185,7 +186,7 @@ namespace HotelReservationSystem.Presenter
             checkInView.PaymentReference = model.PaymentReference;
             checkInView.PaymentStatus = model.PaymentStatus.ToString();
             checkInView.ReservationStatus = model.ReservationStatus;
-            checkInView.CompanionCount = model.CompanionCount;
+            checkInView.CustomerEmail = model.CustomerEmail ?? string.Empty;
 
             LoadRoomInformation(model);
 
@@ -579,7 +580,6 @@ namespace HotelReservationSystem.Presenter
         {
             try
             {
-                // Auto-create billing record even for full payment
                 var checkOutService = new HotelReservationSystem.Domain.Services.CheckOutService();
                 DateTime actualCheckOut = DateTime.Now;
                 var billing = checkOutService.PrepareBillingForCheckout(checkIn, actualCheckOut, 0m);
@@ -587,13 +587,11 @@ namespace HotelReservationSystem.Presenter
                 billing.BilledBy = UserSession.Username;
                 billing.DateBilled = DateTime.Now;
                 
-                // Save billing record to database
                 var billingRepo = new HotelReservationSystem.Data.Repositories.BillingRepository(DbConfig.GetConnectionString());
                 billingRepo.Add(billing);
                 
                 System.Diagnostics.Debug.WriteLine($"Auto-created billing record {billing.BillId} for full payment checkout");
 
-                // Complete checkout process
                 checkInRepository.CheckOut(checkIn.ReservationId, DateTime.Now, UserSession.Username);
 
                 var reservation = reservationRepository.GetById(checkIn.ReservationId);
@@ -613,13 +611,108 @@ namespace HotelReservationSystem.Presenter
                 LoadAllCheckInList();
                 checkInView.ShowTab(0);
                 checkInView.ShowMessage("Checkout completed successfully! Billing record created automatically.", "Success");
+                
+                PromptCustomerDeletion(checkIn.CustomerName);
             }
             catch (Exception ex)
             {
                 checkInView.ShowMessage(string.Format("Error completing checkout: {0}", ex.Message), "Checkout Error");
             }
         }
-
+        
+        private void PromptCustomerDeletion(string customerName)
+        {
+            try
+            {
+                var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+                var customer = customerRepo.GetByCustomerName(customerName);
+                
+                if (customer == null)
+                {
+                    return;
+                }
+                
+                var futureReservations = reservationRepository.GetAll()
+                    .Where(r => r.CustomerName == customerName && 
+                                r.CheckInDate > DateTime.Now && 
+                                r.ReservationStatus != "CheckedOut" && 
+                                r.ReservationStatus != "Cancelled")
+                    .ToList();
+                
+                if (futureReservations.Any())
+                {
+                    MessageBox.Show(
+                        string.Format("Customer '{0}' has {1} upcoming reservation(s).\n\n" +
+                            "Customer information cannot be removed while active reservations exist.\n\n" +
+                            "Future reservations:\n{2}",
+                            customer.FullName,
+                            futureReservations.Count,
+                            string.Join("\n", futureReservations.Select(r => 
+                                $"- {r.CheckInDate:MMM dd, yyyy} to {r.CheckOutDate:MMM dd, yyyy} (Room {r.RoomNumber})"))),
+                        "Cannot Remove Customer",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+                
+                var pastVisits = checkInRepository.GetAll()
+                    .Where(c => c.CustomerName == customerName)
+                    .Count();
+                
+                string visitInfo = pastVisits == 1 
+                    ? "This is a one-time guest."
+                    : string.Format("⚠️ REPEAT GUEST: This customer has visited {0} times.", pastVisits);
+                
+                string recommendation = pastVisits > 1
+                    ? "\n\nRECOMMENDATION: Keep this customer for future bookings."
+                    : "";
+                
+                var result = MessageBox.Show(
+                    string.Format("Checkout completed successfully!\n\n" +
+                        "Would you like to remove the customer information from the Customer module?\n\n" +
+                        "Customer: {0}\n" +
+                        "Email: {1}\n" +
+                        "Contact: {2}\n" +
+                        "Visit History: {3}{4}\n\n" +
+                        "Note: Customer information will be removed from the Customer list, " +
+                        "but all billing, reservation, and check-in records will be preserved " +
+                        "for historical purposes and printing.\n\n" +
+                        "Delete customer from Customer module?",
+                        customer.FullName,
+                        customer.Email ?? "N/A",
+                        customer.Contact ?? "N/A",
+                        visitInfo,
+                        recommendation),
+                    "Remove Customer Information",
+                    MessageBoxButtons.YesNo,
+                    pastVisits > 1 ? MessageBoxIcon.Question : MessageBoxIcon.Information);
+                
+                if (result == DialogResult.Yes)
+                {
+                    customerRepo.Delete(customer.CustomerID);
+                    
+                    MessageBox.Show(
+                        string.Format("Customer '{0}' has been removed from the Customer module.\n\n" +
+                            "All billing and historical records have been preserved.",
+                            customer.FullName),
+                        "Customer Removed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    string.Format("Note: Customer information could not be removed.\n\nReason: {0}\n\n" +
+                        "The customer record may still be in use. " +
+                        "All billing records have been saved successfully.",
+                        ex.Message),
+                    "Customer Deletion Note",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+        
         private void NavigateToBilling(CheckInOutModel checkIn, decimal damageFee)
         {
             try
@@ -812,6 +905,14 @@ namespace HotelReservationSystem.Presenter
             {
                 LoadRoomTypes();
                 CheckInMapper.ToCheckInView(reservation, checkInView);
+
+                // Lookup and populate customer email
+                var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+                var customer = customerRepo.GetByCustomerName(reservation.CustomerName);
+                if (customer != null)
+                {
+                    checkInView.CustomerEmail = customer.Email ?? string.Empty;
+                }
 
                 if (!string.IsNullOrEmpty(reservation.RoomType))
                 {

@@ -51,8 +51,9 @@ namespace HotelReservationSystem.Domain.Model.CheckInOut
         [DisplayName("Amount Paid")]
         public decimal AmountPaid { get; set; }
 
-        [DisplayName("Companion Count")]
-        public int CompanionCount { get; set; }
+        [DisplayName("Customer Email")]
+        [StringLength(100, ErrorMessage = "Email cannot exceed 100 characters")]
+        public string CustomerEmail { get; set; }
 
         [DisplayName("Payment Method")]
         public string PaymentMethod { get; set; }

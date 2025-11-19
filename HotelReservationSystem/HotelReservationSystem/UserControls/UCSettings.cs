@@ -16,7 +16,31 @@ namespace HotelReservationSystem.UserControls
             cbGender.DataSource = Enum.GetValues(typeof(Gender));
             cbRole.DataSource = Enum.GetValues(typeof(Role));
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
+            
+            // Apply initial search state
+            UpdateSearchControlsState();
         }
+        
+        #region Role-Based Restrictions
+        
+        private void UpdateSearchControlsState()
+        {
+            // Enable search when on grid view (tabPage1)
+            // Disable search when on form view (tabPage2)
+            bool isOnGridView = materialTabControl1.SelectedTab == tabPage1;
+            
+            if (txtSearch != null)
+            {
+                txtSearch.Enabled = isOnGridView;
+            }
+            
+            if (btnSearch != null)
+            {
+                btnSearch.Enabled = isOnGridView;
+            }
+        }
+        
+        #endregion
 
         private void AssociateAndRaiseEvents()
         {
@@ -25,6 +49,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Add(tabPage2);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
+                
+                // Disable search when entering form view
+                UpdateSearchControlsState();
             };
 
             btnEdit.Click += delegate
@@ -32,6 +59,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Add(tabPage2);
                 materialTabControl1.TabPages.Remove(tabPage1);
                 EditEvent?.Invoke(this, EventArgs.Empty);
+                
+                // Disable search when entering form view
+                UpdateSearchControlsState();
             };
 
             btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
@@ -45,6 +75,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Add(tabPage1);
                 materialTabControl1.TabPages.Remove(tabPage2);
                 CancelEvent?.Invoke(this, EventArgs.Empty);
+                
+                // Re-enable search when returning to grid view
+                UpdateSearchControlsState();
             };
             btnDelete.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };
         }

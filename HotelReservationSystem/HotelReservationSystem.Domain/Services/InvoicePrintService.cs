@@ -131,19 +131,21 @@ namespace HotelReservationSystem.Domain.Services
 
             g.DrawString($"Name: {billing.CustomerName}", normalFont, Brushes.Black, leftMargin + 10, yPos);
             yPos += 20;
-            if (customer != null)
-            {
-                g.DrawString($"Email: {customer.Email}", normalFont, Brushes.Black, leftMargin + 10, yPos);
-                yPos += 20;
-                g.DrawString($"Contact: {customer.Contact}", normalFont, Brushes.Black, leftMargin + 10, yPos);
-                yPos += 20;
-                g.DrawString($"Address: {customer.Address}", normalFont, Brushes.Black, leftMargin + 10, yPos);
-                yPos += 30;
-            }
-            else
-            {
-                yPos += 30;
-            }
+            
+            // Use billing's stored customer information (works even if customer deleted)
+            string email = !string.IsNullOrEmpty(billing.CustomerEmail) ? billing.CustomerEmail : 
+                          (customer != null ? customer.Email : "N/A");
+            string contact = !string.IsNullOrEmpty(billing.CustomerContact) ? billing.CustomerContact : 
+                            (customer != null ? customer.Contact : "N/A");
+            string address = !string.IsNullOrEmpty(billing.CustomerAddress) ? billing.CustomerAddress : 
+                            (customer != null ? customer.Address : "N/A");
+            
+            g.DrawString($"Email: {email}", normalFont, Brushes.Black, leftMargin + 10, yPos);
+            yPos += 20;
+            g.DrawString($"Contact: {contact}", normalFont, Brushes.Black, leftMargin + 10, yPos);
+            yPos += 20;
+            g.DrawString($"Address: {address}", normalFont, Brushes.Black, leftMargin + 10, yPos);
+            yPos += 30;
 
             using (Brush grayBrush = new SolidBrush(Color.FromArgb(240, 240, 240)))
             {

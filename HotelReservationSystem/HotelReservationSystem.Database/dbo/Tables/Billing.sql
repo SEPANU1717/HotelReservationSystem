@@ -1,5 +1,5 @@
 ﻿-- =============================================
--- Billing Table - Simplified Schema v3.0
+-- Billing Table - Simplified Schema v3.1
 -- Hotel Reservation System
 -- =============================================
 -- Description: Stores billing records for guest checkouts
@@ -7,6 +7,7 @@
 --   - Simplified charge model (3 types only)
 --   - Auto-calculated totals
 --   - Payment tracking
+--   - Customer info preservation (for printing)
 --   - Audit trail (BilledBy)
 -- =============================================
 
@@ -17,8 +18,11 @@ CREATE TABLE [dbo].[Billing] (
     -- Reservation Link
     [ReservationId]         INT             NOT NULL,
     
-    -- Guest Information
+    -- Guest Information (Preserved for printing even after customer deletion)
     [CustomerName]          NVARCHAR (100)  NOT NULL,
+    [CustomerEmail]         NVARCHAR (100)  NULL,           -- Customer email (preserved for printing/receipts)
+    [CustomerContact]       NVARCHAR (50)   NULL,           -- Customer phone (preserved for printing/receipts)
+    [CustomerAddress]       NVARCHAR (200)  NULL,           -- Customer address (preserved for printing/receipts)
     [RoomType]              NVARCHAR (50)   NOT NULL,
     [RoomNumber]            NVARCHAR (20)   NOT NULL,
     

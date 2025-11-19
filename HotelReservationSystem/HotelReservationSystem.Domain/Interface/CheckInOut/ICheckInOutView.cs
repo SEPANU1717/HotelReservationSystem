@@ -23,7 +23,7 @@ namespace HotelReservationSystem.Domain.Interface.CheckInOut
         decimal DownPayment { get; set; }
         decimal AmountPaid { get; set; }
         decimal BalanceDue { get; set; }
-        int CompanionCount { get; set; }
+        string CustomerEmail { get; set; }
 
 
         // Status Properties

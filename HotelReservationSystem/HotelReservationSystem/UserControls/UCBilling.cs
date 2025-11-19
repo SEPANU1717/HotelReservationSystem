@@ -27,12 +27,48 @@ namespace HotelReservationSystem.UserControls
             billRepo = new BillingRepository(DbConfig.GetConnectionString());
             reserveRepo = new ReservationRepository(DbConfig.GetConnectionString());
             roomRepo = new RoomRepository(DbConfig.GetConnectionString());
-            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
 
-           
+            this.Load += UCBilling_Load;
+            this.VisibleChanged += UCBilling_VisibleChanged;
+
             InitializeControls();
             AssociateAndRaiseViewEvents();
+            
+            // Apply initial search state
+            UpdateSearchControlsState();
         }
+
+        private void UCBilling_Load(object sender, EventArgs e)
+        {
+            UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
+        }
+
+        private void UCBilling_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
+            }
+        }
+        #endregion
+
+        #region Role-Based Restrictions
+        
+        private void UpdateSearchControlsState()
+        {
+            bool isOnGridView = materialTabControl1.SelectedTab == tabPage1;
+            
+            if (txtBillingSearch != null)
+            {
+                txtBillingSearch.Enabled = isOnGridView;
+            }
+            
+            if (btnBillingSearch != null)
+            {
+                btnBillingSearch.Enabled = isOnGridView;
+            }
+        }
+        
         #endregion
 
         #region Initialization
@@ -57,7 +93,7 @@ namespace HotelReservationSystem.UserControls
             if (cbPaymentMethod != null)
             {
                 cbPaymentMethod.Items.Clear();
-                cbPaymentMethod.Items.AddRange(new object[] { "Cash", "Credit Card", "Debit Card", "Bank Transfer", "Online Payment", "Gcash", "PayMaya" });
+                cbPaymentMethod.Items.AddRange(new object[] { "Cash", "Credit Card", "Debit Card", "Bank Transfer", "Online Payment", "GCash", "PayMaya" });
             }
         }
         
@@ -108,6 +144,12 @@ namespace HotelReservationSystem.UserControls
                         EmailInvoiceEvent?.Invoke(this, EventArgs.Empty);
                     }
                 };
+            }
+            
+            // Add text changed event for amount paid to show change
+            if (txtAmountPaidAtCheckout != null)
+            {
+                txtAmountPaidAtCheckout.TextChanged += delegate { UpdateCalculatedFields(); };
             }
         }
         #endregion
@@ -437,6 +479,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Add(ReservationBillingForm);
                 materialTabControl1.SelectedTab = ReservationBillingForm;
             }
+            
+            // Disable search when entering form view
+            UpdateSearchControlsState();
         }
 
         public void ShowGridView()
@@ -450,6 +495,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Add(tabPage1);
                 materialTabControl1.SelectedTab = tabPage1;
             }
+            
+            // Re-enable search when returning to grid view
+            UpdateSearchControlsState();
         }
 
         public int GetSelectedBillId()
@@ -494,12 +542,33 @@ namespace HotelReservationSystem.UserControls
                 decimal paidBefore = decimal.TryParse(AmountPaidBefore, out decimal pb) ? pb : 0m;
                 decimal paidNow = decimal.TryParse(AmountPaidAtCheckout, out decimal pn) ? pn : 0m;
                 
-                decimal balance = subtotal - (paidBefore + paidNow);
-                BalanceDue = balance.ToString("F2");
+                decimal totalPaid = paidBefore + paidNow;
+                decimal balance = subtotal - totalPaid;
+                
+                // FIX: If balance is negative, show 0 and display change separately
+                if (balance < 0)
+                {
+                    BalanceDue = "0.00";
+                    decimal change = Math.Abs(balance);
+                    
+                    // Show change in a label if available, or in the balance field with "Change:" prefix
+                    if (txtBalanceDue != null)
+                    {
+                        // Optional: Create a label to show change, or show in status
+                        ShowMessage(
+                            string.Format("Customer paid: PHP {0:N2}\nTotal amount: PHP {1:N2}\nChange: PHP {2:N2}", 
+                                totalPaid, subtotal, change),
+                            "Change Due");
+                    }
+                }
+                else
+                {
+                    BalanceDue = balance.ToString("F2");
+                }
             }
             catch
             {
-                //wala pa
+                // Ignore calculation errors
             }
         }
         #endregion

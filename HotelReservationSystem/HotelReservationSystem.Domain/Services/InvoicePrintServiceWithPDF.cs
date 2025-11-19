@@ -88,6 +88,12 @@ namespace HotelReservationSystem.Domain.Services
             float rightMargin = bounds.Right - 40;
             float centerX = (leftMargin + rightMargin) / 2;
 
+            // Calculate if there's change due
+            decimal totalAmount = billing.Subtotal;
+            decimal totalPaid = billing.AmountPaidBefore + billing.AmountPaidAtCheckout;
+            decimal change = totalPaid > totalAmount ? totalPaid - totalAmount : 0m;
+            decimal displayBalance = billing.BalanceDue < 0 ? 0m : billing.BalanceDue;
+
             // System color border - RGB(80, 90, 240)
             using (Pen borderPen = new Pen(Color.FromArgb(80, 90, 240), 3))
             {
@@ -140,19 +146,21 @@ namespace HotelReservationSystem.Domain.Services
 
             g.DrawString(string.Format("Name: {0}", billing.CustomerName), normalFont, Brushes.Black, leftMargin + 10, yPos);
             yPos += 20;
-            if (customer != null)
-            {
-                g.DrawString(string.Format("Email: {0}", customer.Email), normalFont, Brushes.Black, leftMargin + 10, yPos);
-                yPos += 20;
-                g.DrawString(string.Format("Contact: {0}", customer.Contact), normalFont, Brushes.Black, leftMargin + 10, yPos);
-                yPos += 20;
-                g.DrawString(string.Format("Address: {0}", customer.Address), normalFont, Brushes.Black, leftMargin + 10, yPos);
-                yPos += 30;
-            }
-            else
-            {
-                yPos += 30;
-            }
+            
+            // Use billing's stored customer information (works even if customer deleted)
+            string email = !string.IsNullOrEmpty(billing.CustomerEmail) ? billing.CustomerEmail : 
+                          (customer != null ? customer.Email : "N/A");
+            string contact = !string.IsNullOrEmpty(billing.CustomerContact) ? billing.CustomerContact : 
+                            (customer != null ? customer.Contact : "N/A");
+            string address = !string.IsNullOrEmpty(billing.CustomerAddress) ? billing.CustomerAddress : 
+                            (customer != null ? customer.Address : "N/A");
+            
+            g.DrawString(string.Format("Email: {0}", email), normalFont, Brushes.Black, leftMargin + 10, yPos);
+            yPos += 20;
+            g.DrawString(string.Format("Contact: {0}", contact), normalFont, Brushes.Black, leftMargin + 10, yPos);
+            yPos += 20;
+            g.DrawString(string.Format("Address: {0}", address), normalFont, Brushes.Black, leftMargin + 10, yPos);
+            yPos += 30;
 
             using (Brush grayBrush = new SolidBrush(Color.FromArgb(240, 240, 240)))
             {
@@ -221,14 +229,40 @@ namespace HotelReservationSystem.Domain.Services
             g.DrawString(string.Format("PHP {0:N2}", billing.AmountPaidAtCheckout), normalFont, Brushes.Black, rightMargin - 100, yPos, rightFormat);
             yPos += 30;
 
-            // System color for total - RGB(80, 90, 240)
-            using (Brush totalBrush = new SolidBrush(Color.FromArgb(80, 90, 240)))
+            // Show either Balance Due or Change
+            if (displayBalance > 0)
             {
-                g.FillRectangle(totalBrush, leftMargin, yPos, rightMargin - leftMargin, 35);
+                // System color for balance - RGB(80, 90, 240)
+                using (Brush totalBrush = new SolidBrush(Color.FromArgb(80, 90, 240)))
+                {
+                    g.FillRectangle(totalBrush, leftMargin, yPos, rightMargin - leftMargin, 35);
+                }
+                g.DrawString("BALANCE DUE:", new Font("Segoe UI", 12, FontStyle.Bold), Brushes.White, leftMargin + 10, yPos + 8);
+                g.DrawString(string.Format("PHP {0:N2}", displayBalance), new Font("Segoe UI", 12, FontStyle.Bold), Brushes.White, rightMargin - 100, yPos + 8, rightFormat);
+                yPos += 50;
             }
-            g.DrawString("BALANCE DUE:", new Font("Segoe UI", 12, FontStyle.Bold), Brushes.White, leftMargin + 10, yPos + 8);
-            g.DrawString(string.Format("PHP {0:N2}", billing.BalanceDue), new Font("Segoe UI", 12, FontStyle.Bold), Brushes.White, rightMargin - 100, yPos + 8, rightFormat);
-            yPos += 50;
+            else if (change > 0)
+            {
+                // Show change in green
+                using (Brush changeBrush = new SolidBrush(Color.FromArgb(46, 204, 113)))
+                {
+                    g.FillRectangle(changeBrush, leftMargin, yPos, rightMargin - leftMargin, 35);
+                }
+                g.DrawString("CHANGE DUE:", new Font("Segoe UI", 12, FontStyle.Bold), Brushes.White, leftMargin + 10, yPos + 8);
+                g.DrawString(string.Format("PHP {0:N2}", change), new Font("Segoe UI", 12, FontStyle.Bold), Brushes.White, rightMargin - 100, yPos + 8, rightFormat);
+                yPos += 50;
+            }
+            else
+            {
+                // Fully paid, show 0 balance
+                using (Brush totalBrush = new SolidBrush(Color.FromArgb(46, 204, 113)))
+                {
+                    g.FillRectangle(totalBrush, leftMargin, yPos, rightMargin - leftMargin, 35);
+                }
+                g.DrawString("BALANCE DUE:", new Font("Segoe UI", 12, FontStyle.Bold), Brushes.White, leftMargin + 10, yPos + 8);
+                g.DrawString("PHP 0.00", new Font("Segoe UI", 12, FontStyle.Bold), Brushes.White, rightMargin - 100, yPos + 8, rightFormat);
+                yPos += 50;
+            }
 
             using (Brush infoBrush = new SolidBrush(Color.FromArgb(245, 245, 245)))
             {

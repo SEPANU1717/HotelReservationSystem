@@ -29,6 +29,9 @@ namespace HotelReservationSystem.UserControls
 
             presenter = new UCINOUTPresenter(this, checkInRepo, DbConfig.GetConnectionString());
             AssociateAndRaiseViewEvents();
+            
+            // Apply initial role-based restrictions
+            ApplyRoleBasedRestrictions();
 
             if (reservation != null)
             {
@@ -37,6 +40,35 @@ namespace HotelReservationSystem.UserControls
             }
         }
 
+        #endregion
+        
+        #region Role-Based Restrictions
+        
+        private void ApplyRoleBasedRestrictions()
+        {
+            // Only apply restrictions based on current tab
+            // Admin: always enabled
+            // Non-Admin: disabled only when in form view (tab 2 or 3)
+            UpdateSearchControlsState();
+        }
+        
+        private void UpdateSearchControlsState()
+        {
+            // Enable search when on grid view (tabPage1)
+            // Disable search when on form view (tabPage3)
+            bool isOnGridView = materialTabControl1.SelectedTab == tabPage1;
+            
+            if (txtReservationSearch != null)
+            {
+                txtReservationSearch.Enabled = isOnGridView;
+            }
+            
+            if (btnReservationSearch != null)
+            {
+                btnReservationSearch.Enabled = isOnGridView;
+            }
+        }
+        
         #endregion
 
         #region Initialization
@@ -346,10 +378,10 @@ namespace HotelReservationSystem.UserControls
             set => txtBalanceDue.Texts = value.ToString("0.00");
         }
 
-        public int CompanionCount
+        public string CustomerEmail
         {
-            get => int.TryParse(sataTextBox1txtCompanionCount.Texts, out var count) ? count : 0;
-            set => sataTextBox1txtCompanionCount.Texts = value.ToString();
+            get => txtEmail?.Texts ?? string.Empty;
+            set => txtEmail.Texts = value ?? string.Empty;
         }
 
         public bool isSuccessful { get; set; }
@@ -467,6 +499,9 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.SelectedTab = tabPage3;
                     break;
             }
+            
+            // Update search controls state when tab changes
+            UpdateSearchControlsState();
         }
 
         public void ClearForm()

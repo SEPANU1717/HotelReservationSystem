@@ -53,8 +53,32 @@ namespace HotelReservationSystem.UserControls
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
 
             AssociateAndRaiseViewEvents();
+            
+            // Apply initial search state
+            UpdateSearchControlsState();
         }
 
+        #endregion
+        
+        #region Role-Based Restrictions
+        
+        private void UpdateSearchControlsState()
+        {
+            // Enable search when on grid view (tabPage1)
+            // Disable search when on form view (tabPage2)
+            bool isOnGridView = materialTabControl1.SelectedTab == tabPage1;
+            
+            if (txtSearch != null)
+            {
+                txtSearch.Enabled = isOnGridView;
+            }
+            
+            if (btnSearch != null)
+            {
+                btnSearch.Enabled = isOnGridView;
+            }
+        }
+        
         #endregion
 
         #region Event Association
@@ -83,6 +107,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
                 materialTabControl1.Text = "Add new customer";
+                
+                // Disable search when entering form view
+                UpdateSearchControlsState();
             };
 
             btnEdit.Click += delegate
@@ -98,6 +125,9 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 materialTabControl1.TabPages.Add(tabPage2);
                 materialTabControl1.Text = "Edit Customer";
+                
+                // Disable search when entering form view
+                UpdateSearchControlsState();
             };
 
             btnSave.Click += delegate
@@ -116,6 +146,9 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.TabPages.Add(tabPage1);
                     CustomerAddedSuccessfully?.Invoke(this, EventArgs.Empty);
                     OnCustomerChanged();
+                    
+                    // Re-enable search when returning to grid view
+                    UpdateSearchControlsState();
                 }
 
                 MessageBox.Show(Message);
@@ -127,6 +160,9 @@ namespace HotelReservationSystem.UserControls
 
                 materialTabControl1.TabPages.Remove(tabPage2);
                 materialTabControl1.TabPages.Add(tabPage1);
+                
+                // Re-enable search when returning to grid view
+                UpdateSearchControlsState();
             };
 
             btnDelete.Click += delegate

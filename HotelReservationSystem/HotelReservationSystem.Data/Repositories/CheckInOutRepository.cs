@@ -44,12 +44,12 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
                 command.CommandText = @"
                     INSERT INTO CheckIns 
                     (ReservationId, CustomerName, RoomType, RoomNumber, CheckInDate, CheckOutDate, TimeArrival,
-                     TotalPrice, DownPayment, AmountPaid, CompanionCount,
+                     TotalPrice, DownPayment, AmountPaid, CustomerEmail,
                      PaymentMethod, PaymentReference, PaymentStatus, ReservationStatus,
                      IsCheckedIn, IsCheckedOut, ActualCheckIn, CreatedAt)
                     VALUES 
                     (@ReservationId, @CustomerName, @RoomType, @RoomNumber, @CheckInDate, @CheckOutDate, @TimeArrival,
-                     @TotalPrice, @DownPayment, @AmountPaid, @CompanionCount,
+                     @TotalPrice, @DownPayment, @AmountPaid, @CustomerEmail,
                      @PaymentMethod, @PaymentReference, @PaymentStatus, @ReservationStatus,
                      @IsCheckedIn, @IsCheckedOut, @ActualCheckIn, GETDATE())";
 
@@ -75,7 +75,7 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
                         TotalPrice = @TotalPrice,
                         DownPayment = @DownPayment,
                         AmountPaid = @AmountPaid,
-                        CompanionCount = @CompanionCount,
+                        CustomerEmail = @CustomerEmail,
                         PaymentMethod = @PaymentMethod,
                         PaymentReference = @PaymentReference,
                         PaymentStatus = @PaymentStatus,
@@ -237,7 +237,7 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
             command.Parameters.Add("@TotalPrice", SqlDbType.Decimal).Value = model.TotalPrice;
             command.Parameters.Add("@DownPayment", SqlDbType.Decimal).Value = model.DownPayment;
             command.Parameters.Add("@AmountPaid", SqlDbType.Decimal).Value = model.AmountPaid;
-            command.Parameters.Add("@CompanionCount", SqlDbType.Int).Value = model.CompanionCount;
+            command.Parameters.Add("@CustomerEmail", SqlDbType.VarChar, 100).Value = model.CustomerEmail ?? (object)DBNull.Value;
             command.Parameters.Add("@PaymentMethod", SqlDbType.VarChar).Value = model.PaymentMethod ?? (object)DBNull.Value;
             command.Parameters.Add("@PaymentReference", SqlDbType.VarChar).Value = model.PaymentReference ?? (object)DBNull.Value;
             command.Parameters.Add("@PaymentStatus", SqlDbType.VarChar).Value = model.PaymentStatus.ToString();
@@ -263,7 +263,7 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
                 TotalCompanionCost = 0,
                 DownPayment = Convert.ToDecimal(reader["DownPayment"]),
                 AmountPaid = Convert.ToDecimal(reader["AmountPaid"]),
-                CompanionCount = reader["CompanionCount"] == DBNull.Value ? 0 : Convert.ToInt32(reader["CompanionCount"]),
+                CustomerEmail = reader["CustomerEmail"] == DBNull.Value ? null : reader["CustomerEmail"].ToString(),
                 PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
                 PaymentReference = reader["PaymentReference"] == DBNull.Value ? null : reader["PaymentReference"].ToString(),
                 PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending,

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCheckINOUT));
-            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtBalanceDue = new SATATextBox();
-            this.sataTextBox1txtCompanionCount = new SATATextBox();
+            this.txtEmail = new SATATextBox();
             this.txtPaymentRef = new SATATextBox();
             this.txtAmountPaid = new SATATextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -226,11 +226,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.White;
             this.sataPanel1.BackColor2 = System.Drawing.Color.White;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius2.BottomLeft = 10;
-            borderRadius2.BottomRight = 10;
-            borderRadius2.TopLeft = 10;
-            borderRadius2.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius2;
+            borderRadius1.BottomLeft = 10;
+            borderRadius1.BottomRight = 10;
+            borderRadius1.TopLeft = 10;
+            borderRadius1.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius1;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 156);
@@ -276,24 +276,24 @@
             this.dataGridCheckInOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridCheckInOut.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridCheckInOut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCheckInOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCheckInOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridCheckInOut.ColumnHeadersHeight = 33;
             this.dataGridCheckInOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridCheckInOut.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridCheckInOut.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridCheckInOut.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridCheckInOut.EnableHeadersVisualStyles = false;
             this.dataGridCheckInOut.GridColor = System.Drawing.Color.Gainsboro;
@@ -302,16 +302,16 @@
             this.dataGridCheckInOut.Name = "dataGridCheckInOut";
             this.dataGridCheckInOut.ReadOnly = true;
             this.dataGridCheckInOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCheckInOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCheckInOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridCheckInOut.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridCheckInOut.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridCheckInOut.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridCheckInOut.RowTemplate.Height = 30;
             this.dataGridCheckInOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridCheckInOut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -330,7 +330,7 @@
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.txtBalanceDue);
-            this.tabPage3.Controls.Add(this.sataTextBox1txtCompanionCount);
+            this.tabPage3.Controls.Add(this.txtEmail);
             this.tabPage3.Controls.Add(this.txtPaymentRef);
             this.tabPage3.Controls.Add(this.txtAmountPaid);
             this.tabPage3.Controls.Add(this.label13);
@@ -417,9 +417,9 @@
             this.label18.ForeColor = System.Drawing.Color.DimGray;
             this.label18.Location = new System.Drawing.Point(623, 112);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(129, 20);
+            this.label18.Size = new System.Drawing.Size(46, 20);
             this.label18.TabIndex = 136;
-            this.label18.Text = "CompanionCount";
+            this.label18.Text = "Email";
             // 
             // label17
             // 
@@ -468,29 +468,29 @@
             this.txtBalanceDue.Texts = "";
             this.txtBalanceDue.UnderlinedStyle = false;
             // 
-            // sataTextBox1txtCompanionCount
+            // txtEmail
             // 
-            this.sataTextBox1txtCompanionCount.BackColor = System.Drawing.Color.White;
-            this.sataTextBox1txtCompanionCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox1txtCompanionCount.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox1txtCompanionCount.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox1txtCompanionCount.BorderRadius = 3;
-            this.sataTextBox1txtCompanionCount.BorderSize = 1;
-            this.sataTextBox1txtCompanionCount.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox1txtCompanionCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox1txtCompanionCount.Icon = null;
-            this.sataTextBox1txtCompanionCount.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox1txtCompanionCount.Location = new System.Drawing.Point(765, 110);
-            this.sataTextBox1txtCompanionCount.Multiline = false;
-            this.sataTextBox1txtCompanionCount.Name = "sataTextBox1txtCompanionCount";
-            this.sataTextBox1txtCompanionCount.PasswordChar = false;
-            this.sataTextBox1txtCompanionCount.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox1txtCompanionCount.PlaceholderText = "";
-            this.sataTextBox1txtCompanionCount.Size = new System.Drawing.Size(345, 35);
-            this.sataTextBox1txtCompanionCount.TabIndex = 134;
-            this.sataTextBox1txtCompanionCount.Text = "0";
-            this.sataTextBox1txtCompanionCount.Texts = "";
-            this.sataTextBox1txtCompanionCount.UnderlinedStyle = false;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtEmail.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtEmail.BorderRadius = 3;
+            this.txtEmail.BorderSize = 1;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtEmail.Icon = null;
+            this.txtEmail.IconSize = new System.Drawing.Size(20, 20);
+            this.txtEmail.Location = new System.Drawing.Point(765, 110);
+            this.txtEmail.Multiline = false;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = false;
+            this.txtEmail.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.Size = new System.Drawing.Size(345, 35);
+            this.txtEmail.TabIndex = 134;
+            this.txtEmail.Text = "0";
+            this.txtEmail.Texts = "";
+            this.txtEmail.UnderlinedStyle = false;
             // 
             // txtPaymentRef
             // 
@@ -1659,7 +1659,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label18;
-        private SATATextBox sataTextBox1txtCompanionCount;
+        private SATATextBox txtEmail;
         private MetroComboBoxGainsboro cbPaymentStatus;
         private MetroComboBoxGainsboro cbPaymentMethod;
         private MetroComboBoxGainsboro cbType;
