@@ -221,6 +221,9 @@ namespace HotelReservationSystem.Presenter
             {
                 new ModelDataValidation().Validate(model);
 
+                // Ensure balance due is never negative before saving
+                // Remove direct assignment to model.BalanceDue, rely on property logic
+
                 string oldRoomNumber = null;
 
                 if (checkInView.isEdit)
@@ -463,7 +466,6 @@ namespace HotelReservationSystem.Presenter
 
         private void OnPaymentStatusChanged(object sender, EventArgs e)
         {
-            // When user toggles payment status (FullPayment / Partial / Pending)
             ApplyPaymentStatusAdjustments();
         }
 
@@ -493,6 +495,8 @@ namespace HotelReservationSystem.Presenter
                 var checkOutService = new HotelReservationSystem.Domain.Services.CheckOutService();
                 var validationResult = checkOutService.ValidateCheckout(checkIn);
 
+                decimal damageFee = 0m; // single damageFee used for both partial and full flows
+
                 if (!validationResult.IsValid && validationResult.HasOutstandingBalance)
                 {
                     bool proceed = checkInView.ShowConfirmation(
@@ -503,7 +507,18 @@ namespace HotelReservationSystem.Presenter
                     if (!proceed)
                         return;
 
-                    NavigateToBilling(checkIn, 0m);
+                    // Always ask about damages before opening billing, even for partial payments
+                    bool hasDamagesPartial = checkInView.ShowConfirmation("Are there any damages to report?", "Damage Assessment");
+                    if (hasDamagesPartial)
+                    {
+                        string damageInputPartial = checkInView.PromptForInput("Damage Fee", "Enter damage fee amount:", "0.00");
+                        if (!string.IsNullOrEmpty(damageInputPartial))
+                        {
+                            decimal.TryParse(damageInputPartial, out damageFee);
+                        }
+                    }
+
+                    NavigateToBilling(checkIn, damageFee);
                     return;
                 }
                 else if (!validationResult.IsValid)
@@ -514,18 +529,6 @@ namespace HotelReservationSystem.Presenter
 
                 DateTime actualCheckOut = DateTime.Now;
                 decimal lateFee = checkOutService.CalculateLateCheckoutFee(checkIn.CheckOutDate, actualCheckOut);
-
-                decimal damageFee = 0m;
-                bool hasDamages = checkInView.ShowConfirmation("Are there any damages to report?", "Damage Assessment");
-
-                if (hasDamages)
-                {
-                    string damageInput = checkInView.PromptForInput("Damage Fee", "Enter damage fee amount:", "0.00");
-                    if (!string.IsNullOrEmpty(damageInput))
-                    {
-                        decimal.TryParse(damageInput, out damageFee);
-                    }
-                }
 
                 if (lateFee > 0 || damageFee > 0)
                 {
@@ -905,7 +908,6 @@ namespace HotelReservationSystem.Presenter
                 LoadRoomTypes();
                 CheckInMapper.ToCheckInView(reservation, checkInView);
 
-                // Lookup and populate customer email
                 var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
                 var customer = customerRepo.GetByCustomerName(reservation.CustomerName);
                 if (customer != null)
@@ -955,7 +957,6 @@ namespace HotelReservationSystem.Presenter
             decimal newTotalPrice = roomPricePerNight * nights;
             CheckInMapper.UpdateFinancialFields(checkInView, newTotalPrice);
 
-            // Re-apply payment adjustments so amounts reflect current payment status
             ApplyPaymentStatusAdjustments();
         }
 
@@ -964,7 +965,16 @@ namespace HotelReservationSystem.Presenter
             decimal totalPrice = checkInView.TotalPrice;
             decimal amountPaid = checkInView.AmountPaid;
             decimal balance = totalPrice - amountPaid;
-            checkInView.BalanceDue = balance < 0 ? 0 : balance;
+            if (balance < 0)
+            {
+                checkInView.BalanceDue = 0m;
+                decimal change = Math.Abs(balance);
+                checkInView.ShowMessage($"Change to return: ₱{change:N2}", "Overpayment");
+            }
+            else
+            {
+                checkInView.BalanceDue = balance;
+            }
         }
 
         private void ApplyPaymentStatusAdjustments()
@@ -973,7 +983,7 @@ namespace HotelReservationSystem.Presenter
             {
                 string status = checkInView.PaymentStatus ?? string.Empty;
                 decimal total = checkInView.TotalPrice;
-
+                decimal amountPaid = checkInView.AmountPaid;
                 if (status.Equals("FullPayment", StringComparison.OrdinalIgnoreCase))
                 {
                     checkInView.DownPayment = 0m;
@@ -984,8 +994,20 @@ namespace HotelReservationSystem.Presenter
                 {
                     decimal down = Math.Round(total * 0.5m, 2);
                     checkInView.DownPayment = down;
-                    checkInView.AmountPaid = down;
-                    checkInView.BalanceDue = total - down;
+                    // Only set AmountPaid to down if less than down
+                    if (amountPaid < down)
+                        checkInView.AmountPaid = down;
+                    decimal balance = total - checkInView.AmountPaid;
+                    if (balance < 0)
+                    {
+                        checkInView.BalanceDue = 0m;
+                        decimal change = Math.Abs(balance);
+                        checkInView.ShowMessage($"Change to return: ₱{change:N2}", "Overpayment");
+                    }
+                    else
+                    {
+                        checkInView.BalanceDue = balance;
+                    }
                 }
                 else
                 {

@@ -94,6 +94,13 @@ namespace HotelReservationSystem.Domain.Model.CheckInOut
         public decimal GrandTotal => TotalPrice + TotalCompanionCost;
 
         [DisplayName("Balance Due")]
-        public decimal BalanceDue => GrandTotal - AmountPaid;
+        public decimal BalanceDue
+        {
+            get
+            {
+                decimal balance = GrandTotal - AmountPaid;
+                return balance < 0 ? 0 : balance;
+            }
+        }
     }
 }

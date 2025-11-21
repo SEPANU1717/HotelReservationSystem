@@ -57,7 +57,7 @@ namespace HotelReservationSystem.Domain.Model
         public bool IsDownPaymentPaid { get; set; }
         
         [DisplayName("Balance Due")] 
-        public decimal BalanceDue => TotalPrice - AmountPaid;
+        public decimal BalanceDue => (TotalPrice - AmountPaid) < 0 ? 0 : (TotalPrice - AmountPaid);
         
         [DisplayName("Payment Method")]
         [StringLength(50, ErrorMessage = "Payment method cannot exceed 50 characters")]

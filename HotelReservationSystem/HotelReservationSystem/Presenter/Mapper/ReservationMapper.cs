@@ -19,7 +19,8 @@ namespace HotelReservationSystem.Presenter.Mapper
                 CheckOutDate = model.CheckOutDate,
                 TotalPrice = model.TotalPrice,
                 AmountPaid = model.AmountPaid,
-                BalanceDue = model.TotalPrice - model.AmountPaid,
+                // Use model.BalanceDue which already clamps negative values to zero
+                BalanceDue = model.BalanceDue,
                 PaymentStatus = model.PaymentStatus.ToString(),
                 ReservationStatus = model.ReservationStatus
             };
@@ -28,7 +29,6 @@ namespace HotelReservationSystem.Presenter.Mapper
         public static ReservationModel FromReservationView(IReservationView view)
         {
             decimal totalPrice = string.IsNullOrEmpty(view.TotalPrice) ? 0 : decimal.Parse(view.TotalPrice);
-
             decimal amountPaid = string.IsNullOrEmpty(view.AmountPaid) ? 0 : decimal.Parse(view.AmountPaid);
             decimal downPayment = string.IsNullOrEmpty(view.DownPayment) ? 0 : decimal.Parse(view.DownPayment);
 
@@ -39,6 +39,14 @@ namespace HotelReservationSystem.Presenter.Mapper
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 return null;
+            }
+
+            decimal balanceDue = totalPrice - amountPaid;
+            if (balanceDue < 0)
+            {
+                balanceDue = 0;
+                decimal change = Math.Abs(totalPrice - amountPaid);
+                MessageBox.Show($"Change to return: ₱{change:N2}", "Overpayment");
             }
 
             return new ReservationModel

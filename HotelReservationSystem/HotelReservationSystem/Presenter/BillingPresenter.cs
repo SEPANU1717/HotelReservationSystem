@@ -377,19 +377,14 @@ namespace HotelReservationSystem.Presenter.Billing
                 var checkIn = checkInRepo.GetByReservationId(billing.ReservationId);
                 if (checkIn != null)
                 {
-
-                    decimal originalBookingTotal = checkIn.GrandTotal;
-                    decimal additionalCharges = billing.LateCheckoutFee + billing.DamageFee;
-                    
-                    if (additionalCharges == 0)
-                    {
-                        checkIn.AmountPaid = billing.AmountPaidBefore + billing.AmountPaidAtCheckout;
-                    }
+                    // Update check-in AmountPaid to billing totals (covers amount paid before + at checkout)
+                    checkIn.AmountPaid = billing.TotalPaid;
 
                     checkIn.PaymentMethod = billing.PaymentMethod;
                     checkIn.PaymentReference = billing.PaymentReference ?? string.Empty;
 
-                    if (checkIn.AmountPaid >= originalBookingTotal)
+                    // Update payment state based on totals
+                    if (checkIn.AmountPaid >= checkIn.GrandTotal)
                         checkIn.PaymentStatus = HotelReservationSystem.Domain.Enums.ReservationEnum.PaymentState.FullPayment;
                     else if (checkIn.AmountPaid > 0)
                         checkIn.PaymentStatus = HotelReservationSystem.Domain.Enums.ReservationEnum.PaymentState.Partial;
@@ -419,11 +414,8 @@ namespace HotelReservationSystem.Presenter.Billing
                 {
                     reservation.ReservationStatus = "CheckedOut";
                     
-                    decimal additionalCharges = billing.LateCheckoutFee + billing.DamageFee;
-                    if (additionalCharges == 0)
-                    {
-                        reservation.AmountPaid = billing.AmountPaidBefore + billing.AmountPaidAtCheckout;
-                    }
+                    // Always update reservation AmountPaid from billing totals
+                    reservation.AmountPaid = billing.TotalPaid;
                     
                     if (reservation.AmountPaid >= reservation.TotalPrice)
                         reservation.PaymentStatus = ReservationEnum.PaymentState.FullPayment;

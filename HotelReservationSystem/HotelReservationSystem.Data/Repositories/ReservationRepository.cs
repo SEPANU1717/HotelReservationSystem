@@ -19,14 +19,33 @@ namespace HotelReservationSystem.Data.Repositories
             using (var insertCommand = connection.CreateCommand())
             {
                 connection.Open();
-                insertCommand.CommandText = @"
+
+                // If caller provided a ReservationId (walk-in flow), insert with that ID using IDENTITY_INSERT
+                if (reservation.ReservationId > 0)
+                {
+                    insertCommand.CommandText = @"SET IDENTITY_INSERT Reservations ON;
+    INSERT INTO Reservations 
+    (ReservationId, CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber, RoomType,
+     DownPayment, AmountPaid, IsDownPaymentPaid, PaymentMethod, PaymentStatus, DownPaymentDate, CreatedAt)
+    VALUES 
+    (@ReservationId, @CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber, @RoomType,
+     @DownPayment, @AmountPaid, @IsDownPaymentPaid, @PaymentMethod, @PaymentStatus, @DownPaymentDate, GETDATE());
+    SET IDENTITY_INSERT Reservations OFF;";
+
+                    insertCommand.Parameters.Add("@ReservationId", SqlDbType.Int).Value = reservation.ReservationId;
+                }
+                else
+                {
+                    insertCommand.CommandText = @"
     INSERT INTO Reservations 
     (CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber, RoomType,
      DownPayment, AmountPaid, IsDownPaymentPaid, PaymentMethod, PaymentStatus, DownPaymentDate, CreatedAt)
     VALUES 
     (@CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber, @RoomType,
      @DownPayment, @AmountPaid, @IsDownPaymentPaid, @PaymentMethod, @PaymentStatus, @DownPaymentDate, GETDATE())";
+                }
 
+                // Common parameters
                 insertCommand.Parameters.Add("@RoomType", SqlDbType.VarChar).Value = (object)reservation.RoomType ?? DBNull.Value;
                 insertCommand.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = reservation.CustomerName;
                 insertCommand.Parameters.Add("@CheckInDate", SqlDbType.DateTime).Value = reservation.CheckInDate;
