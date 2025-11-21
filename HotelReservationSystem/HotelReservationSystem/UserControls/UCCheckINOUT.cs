@@ -514,6 +514,8 @@ namespace HotelReservationSystem.UserControls
             return MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
         }
 
+
+        //auto form na lang to guys
         public string PromptForInput(string title, string label, string defaultValue = "0.00")
         {
             using (var inputForm = new Form())

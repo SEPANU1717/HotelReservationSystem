@@ -102,8 +102,8 @@ namespace HotelReservationSystem.Presenter
                 return;
 
             var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
-                model.RoomType, 
-                model.CheckInDate, 
+                model.RoomType,
+                model.CheckInDate,
                 model.CheckOutDate,
                 model.ReservationId).ToList();
 
@@ -147,14 +147,22 @@ namespace HotelReservationSystem.Presenter
             checkInView.SetFieldEnabled("ReservationId", true);
             checkInView.SetFieldEnabled("CustomerName", true);
             CleanViewFields();
-            
+
             int nextReservationId = reservationRepository.GetNextReservationId();
             checkInView.ReservationId = nextReservationId.ToString();
-            
+
             checkInView.CheckInDate = DateTime.Now;
             checkInView.CheckOutDate = DateTime.Now.AddDays(1);
             checkInView.TimeArrival = DateTime.Now;
             checkInView.CustomerEmail = string.Empty;
+
+            // sensible defaults
+            checkInView.TotalPrice = 0m;
+            checkInView.DownPayment = 0m;
+            checkInView.AmountPaid = 0m;
+            checkInView.BalanceDue = 0m;
+            checkInView.PaymentStatus = "Pending";
+            checkInView.PaymentMethod = "Cash";
         }
 
         private void EditCheckIn(object sender, EventArgs e)
@@ -214,7 +222,7 @@ namespace HotelReservationSystem.Presenter
                 new ModelDataValidation().Validate(model);
 
                 string oldRoomNumber = null;
-                
+
                 if (checkInView.isEdit)
                 {
                     var existingCheckIn = checkInRepository.GetByReservationId(model.ReservationId);
@@ -244,7 +252,7 @@ namespace HotelReservationSystem.Presenter
                     }
 
                     var reservation = reservationRepository.GetById(model.ReservationId);
-                    
+
                     if (reservation == null)
                     {
                         CreateWalkInReservation(model);
@@ -401,7 +409,7 @@ namespace HotelReservationSystem.Presenter
             {
                 DateTime checkInDate = checkInView.CheckInDate;
                 DateTime checkOutDate = checkInView.CheckOutDate;
-                
+
                 int? excludeReservationId = null;
                 if (checkInView.isEdit)
                 {
@@ -410,9 +418,9 @@ namespace HotelReservationSystem.Presenter
                 }
 
                 var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
-                    roomType, 
-                    checkInDate, 
-                    checkOutDate, 
+                    roomType,
+                    checkInDate,
+                    checkOutDate,
                     excludeReservationId);
                 var roomNumbers = availableRooms.Select(r => r.RoomNumber).ToArray();
                 checkInView.LoadAvailableRooms(roomNumbers);
@@ -455,17 +463,8 @@ namespace HotelReservationSystem.Presenter
 
         private void OnPaymentStatusChanged(object sender, EventArgs e)
         {
-            string status = checkInView.PaymentStatus;
-            if (status == "FullPayment")
-            {
-                decimal totalPrice = checkInView.TotalPrice;
-                checkInView.AmountPaid = totalPrice;
-                checkInView.BalanceDue = 0;
-            }
-            else
-            {
-                RecalculateBalance();
-            }
+            // When user toggles payment status (FullPayment / Partial / Pending)
+            ApplyPaymentStatusAdjustments();
         }
 
         private void OnAmountPaidChanged(object sender, EventArgs e)
@@ -518,7 +517,7 @@ namespace HotelReservationSystem.Presenter
 
                 decimal damageFee = 0m;
                 bool hasDamages = checkInView.ShowConfirmation("Are there any damages to report?", "Damage Assessment");
-                
+
                 if (hasDamages)
                 {
                     string damageInput = checkInView.PromptForInput("Damage Fee", "Enter damage fee amount:", "0.00");
@@ -583,13 +582,13 @@ namespace HotelReservationSystem.Presenter
                 var checkOutService = new HotelReservationSystem.Domain.Services.CheckOutService();
                 DateTime actualCheckOut = DateTime.Now;
                 var billing = checkOutService.PrepareBillingForCheckout(checkIn, actualCheckOut, 0m);
-                
+
                 billing.BilledBy = UserSession.Username;
                 billing.DateBilled = DateTime.Now;
-                
+
                 var billingRepo = new HotelReservationSystem.Data.Repositories.BillingRepository(DbConfig.GetConnectionString());
                 billingRepo.Add(billing);
-                
+
                 System.Diagnostics.Debug.WriteLine($"Auto-created billing record {billing.BillId} for full payment checkout");
 
                 checkInRepository.CheckOut(checkIn.ReservationId, DateTime.Now, UserSession.Username);
@@ -611,7 +610,7 @@ namespace HotelReservationSystem.Presenter
                 LoadAllCheckInList();
                 checkInView.ShowTab(0);
                 checkInView.ShowMessage("Checkout completed successfully! Billing record created automatically.", "Success");
-                
+
                 PromptCustomerDeletion(checkIn.CustomerName);
             }
             catch (Exception ex)
@@ -619,26 +618,26 @@ namespace HotelReservationSystem.Presenter
                 checkInView.ShowMessage(string.Format("Error completing checkout: {0}", ex.Message), "Checkout Error");
             }
         }
-        
+
         private void PromptCustomerDeletion(string customerName)
         {
             try
             {
                 var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
                 var customer = customerRepo.GetByCustomerName(customerName);
-                
+
                 if (customer == null)
                 {
                     return;
                 }
-                
+
                 var futureReservations = reservationRepository.GetAll()
-                    .Where(r => r.CustomerName == customerName && 
-                                r.CheckInDate > DateTime.Now && 
-                                r.ReservationStatus != "CheckedOut" && 
+                    .Where(r => r.CustomerName == customerName &&
+                                r.CheckInDate > DateTime.Now &&
+                                r.ReservationStatus != "CheckedOut" &&
                                 r.ReservationStatus != "Cancelled")
                     .ToList();
-                
+
                 if (futureReservations.Any())
                 {
                     MessageBox.Show(
@@ -647,26 +646,26 @@ namespace HotelReservationSystem.Presenter
                             "Future reservations:\n{2}",
                             customer.FullName,
                             futureReservations.Count,
-                            string.Join("\n", futureReservations.Select(r => 
+                            string.Join("\n", futureReservations.Select(r =>
                                 $"- {r.CheckInDate:MMM dd, yyyy} to {r.CheckOutDate:MMM dd, yyyy} (Room {r.RoomNumber})"))),
                         "Cannot Remove Customer",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                     return;
                 }
-                
+
                 var pastVisits = checkInRepository.GetAll()
                     .Where(c => c.CustomerName == customerName)
                     .Count();
-                
-                string visitInfo = pastVisits == 1 
+
+                string visitInfo = pastVisits == 1
                     ? "This is a one-time guest."
                     : string.Format("⚠️ REPEAT GUEST: This customer has visited {0} times.", pastVisits);
-                
+
                 string recommendation = pastVisits > 1
                     ? "\n\nRECOMMENDATION: Keep this customer for future bookings."
                     : "";
-                
+
                 var result = MessageBox.Show(
                     string.Format("Checkout completed successfully!\n\n" +
                         "Would you like to remove the customer information from the Customer module?\n\n" +
@@ -686,11 +685,11 @@ namespace HotelReservationSystem.Presenter
                     "Remove Customer Information",
                     MessageBoxButtons.YesNo,
                     pastVisits > 1 ? MessageBoxIcon.Question : MessageBoxIcon.Information);
-                
+
                 if (result == DialogResult.Yes)
                 {
                     customerRepo.Delete(customer.CustomerID);
-                    
+
                     MessageBox.Show(
                         string.Format("Customer '{0}' has been removed from the Customer module.\n\n" +
                             "All billing and historical records have been preserved.",
@@ -712,7 +711,7 @@ namespace HotelReservationSystem.Presenter
                     MessageBoxIcon.Information);
             }
         }
-        
+
         private void NavigateToBilling(CheckInOutModel checkIn, decimal damageFee)
         {
             try
@@ -917,8 +916,8 @@ namespace HotelReservationSystem.Presenter
                 if (!string.IsNullOrEmpty(reservation.RoomType))
                 {
                     var availableRooms = roomRepository.GetAvailableRoomsByTypeAndDateRange(
-                        reservation.RoomType, 
-                        reservation.CheckInDate, 
+                        reservation.RoomType,
+                        reservation.CheckInDate,
                         reservation.CheckOutDate,
                         reservation.ReservationId).ToList();
 
@@ -955,6 +954,9 @@ namespace HotelReservationSystem.Presenter
 
             decimal newTotalPrice = roomPricePerNight * nights;
             CheckInMapper.UpdateFinancialFields(checkInView, newTotalPrice);
+
+            // Re-apply payment adjustments so amounts reflect current payment status
+            ApplyPaymentStatusAdjustments();
         }
 
         private void RecalculateBalance()
@@ -963,6 +965,37 @@ namespace HotelReservationSystem.Presenter
             decimal amountPaid = checkInView.AmountPaid;
             decimal balance = totalPrice - amountPaid;
             checkInView.BalanceDue = balance < 0 ? 0 : balance;
+        }
+
+        private void ApplyPaymentStatusAdjustments()
+        {
+            try
+            {
+                string status = checkInView.PaymentStatus ?? string.Empty;
+                decimal total = checkInView.TotalPrice;
+
+                if (status.Equals("FullPayment", StringComparison.OrdinalIgnoreCase))
+                {
+                    checkInView.DownPayment = 0m;
+                    checkInView.AmountPaid = total;
+                    checkInView.BalanceDue = 0m;
+                }
+                else if (status.Equals("Partial", StringComparison.OrdinalIgnoreCase))
+                {
+                    decimal down = Math.Round(total * 0.5m, 2);
+                    checkInView.DownPayment = down;
+                    checkInView.AmountPaid = down;
+                    checkInView.BalanceDue = total - down;
+                }
+                else
+                {
+                    RecalculateBalance();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"ApplyPaymentStatusAdjustments ERROR: {ex.Message}");
+            }
         }
 
         private string MapCheckInStatusToReservationStatus(string checkInStatus)
