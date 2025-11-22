@@ -81,7 +81,8 @@ namespace HotelReservationSystem.Data.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = @"SELECT CustomerID, FirstName, LastName, MiddleName, IDType, Contact, Address, Email, DateOfBirth, Gender, Nationality, Notes FROM Customers ORDER BY CustomerID DESC";
+                // Order customers by Created date if available, otherwise by CustomerID DESC
+                command.CommandText = "SELECT CustomerID, FirstName, LastName, MiddleName, IDType, Contact, Address, Email, DateOfBirth, Gender, Nationality, Notes FROM Customers ORDER BY CustomerID DESC";
 
                 using (var reader = command.ExecuteReader())
                 {

@@ -54,6 +54,7 @@ namespace HotelReservationSystem.Data.Repositories.Service
             {
                 connection.Open();
                 command.Connection = connection;
+                // Newest orders first
                 command.CommandText = "SELECT * FROM OrderFood ORDER BY FoodId DESC";
 
                 using (var reader = command.ExecuteReader())

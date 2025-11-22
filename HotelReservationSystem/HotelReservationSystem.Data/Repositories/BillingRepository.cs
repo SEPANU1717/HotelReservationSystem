@@ -100,6 +100,7 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
+                // Billing listing already ordered by DateBilled DESC (newest first)
                 command.CommandText = "SELECT * FROM Billing ORDER BY DateBilled DESC";
                 using (var reader = command.ExecuteReader())
                 {

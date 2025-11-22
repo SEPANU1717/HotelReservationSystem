@@ -37,12 +37,13 @@ namespace HotelReservationSystem.UserControls
             var totalRooms = repository.GetRoomCount();
             var totalAvailableRooms = repository.GetAvailableRoomCount();
             var totalOccupiedRooms = repository.GetOccupiedRoomCount();
-            var totalGuestToday = repository.GetTotalGuest();
+            var totalReservedRooms = repository.GetReservedRoomCount();
 
             lblTotalRoom.Text = totalRooms.ToString();
             lblAvailRoom.Text = totalAvailableRooms.ToString();
             lblOccuRooms.Text = totalOccupiedRooms.ToString();
-            lblTotalGuests.Text = totalGuestToday.ToString();
+            // Show number of reserved rooms on dashboard instead of total guests
+            lblTotalGuests.Text = totalReservedRooms.ToString();
 
 
             var reservations = ReservationPresenter.GetReservationDtoList().ToList();

@@ -17,7 +17,7 @@ namespace HotelReservationSystem.Data.Repositories
                 {
                     connection.Open();
                     command.Connection = connection;
-                command.CommandText = "SELECT * FROM Reservations WHERE ReservationStatus = 'Reserved' order by ReservationId desc";
+                command.CommandText = "SELECT * FROM Reservations WHERE ReservationStatus = 'Reserved' ORDER BY CreatedAt DESC";
 
                 using (var reader = command.ExecuteReader())
                     {
@@ -96,15 +96,15 @@ namespace HotelReservationSystem.Data.Repositories
             return count;
         }
 
-        //<-----------------------Get Total Guests--------------------------/>
-        public int GetTotalGuest()
+        //<-----------------------Get Reserved Room Count--------------------------/>
+        public int GetReservedRoomCount()
         {
             int count = 0;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT SUM(MaxGuests) FROM Rooms";
+                string query = "SELECT COUNT(*) FROM Reservations WHERE ReservationStatus = 'Reserved'";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     var result = command.ExecuteScalar();

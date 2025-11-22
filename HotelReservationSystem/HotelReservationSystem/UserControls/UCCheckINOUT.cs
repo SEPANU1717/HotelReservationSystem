@@ -375,7 +375,11 @@ namespace HotelReservationSystem.UserControls
         public decimal BalanceDue
         {
             get => decimal.TryParse(txtBalanceDue.Texts, out var balanceDue) ? balanceDue : 0;
-            set => txtBalanceDue.Texts = value.ToString("0.00");
+            set
+            {
+                if (txtBalanceDue != null)
+                    txtBalanceDue.Texts = "0.00";
+            }
         }
 
         public string CustomerEmail
@@ -416,6 +420,7 @@ namespace HotelReservationSystem.UserControls
         public void SetReservationListBindingSource(BindingSource checkInList)
         {
             dataGridCheckInOut.DataSource = checkInList;
+
         }
 
         public void ShowMessage(string message, string title)
@@ -500,7 +505,6 @@ namespace HotelReservationSystem.UserControls
                     break;
             }
             
-            // Update search controls state when tab changes
             UpdateSearchControlsState();
         }
 

@@ -419,17 +419,57 @@ namespace HotelReservationSystem.Presenter
             }
 
             reservationView.CustomerName = customerName;
-            var reservation = reservationRepository.GetByCustomerName(customerName);
 
-            if (reservation != null)
+            // Find the customer's most recent reservation if any
+            var lastReservation = reservationRepository.GetAll()
+                .Where(r => r.CustomerName.Equals(customerName, StringComparison.OrdinalIgnoreCase))
+                .OrderByDescending(r => r.CreatedAt)
+                .FirstOrDefault();
+
+            if (lastReservation != null)
             {
-                OnLoadReservationForEdit(sender, reservation.ReservationId);
+                // If the last reservation is already checked out, ask user whether to create a new one
+                if (string.Equals(lastReservation.ReservationStatus, "CheckedOut", StringComparison.OrdinalIgnoreCase))
+                {
+                    var result = MessageBox.Show(
+                        string.Format("Customer '{0}' has a previous reservation (ID: {1}) that is already checked out.\nDo you want to create a new reservation for this customer?",
+                            customerName, lastReservation.ReservationId),
+                        "Create New Reservation?",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        reservationView.ReservationId = reservationRepository.GetNextReservationId().ToString();
+                        reservationView.isEdit = false;
+                        reservationView.ReservationStatus = "Reserved";
+                        reservationView.EnableField("Status", false);
+                        reservationView.EnableField("CustomerName", true);
+                        AddNewReservation(sender, EventArgs.Empty);
+                        reservationView.ShowTab(1);
+                        return;
+                    }
+                    else
+                    {
+                        // Load last reservation for review/edit
+                        OnLoadReservationForEdit(sender, lastReservation.ReservationId);
+                        reservationView.isEdit = true;
+                        reservationView.EnableField("Status", true);
+                        reservationView.EnableField("CustomerName", false);
+                        reservationView.ShowTab(1);
+                        return;
+                    }
+                }
+
+                // If last reservation exists and is not CheckedOut, load it for edit
+                OnLoadReservationForEdit(sender, lastReservation.ReservationId);
                 reservationView.isEdit = true;
                 reservationView.EnableField("Status", true);
                 reservationView.EnableField("CustomerName", false);
             }
             else
             {
+                // No previous reservation - start new
                 reservationView.ReservationId = reservationRepository.GetNextReservationId().ToString();
                 reservationView.isEdit = false;
                 reservationView.ReservationStatus = "Reserved";

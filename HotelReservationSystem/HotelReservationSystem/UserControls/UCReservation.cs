@@ -395,7 +395,8 @@ namespace HotelReservationSystem.UserControls
         private void InitializeRoomStatusComboBox()
         {
             cbStatus.Items.Clear();
-            cbStatus.Items.AddRange(new[] { "Pending", "CheckedIn", "CheckedOut", "Cancelled/No Show", "Reserved" });
+            // Include WalkIn so walk-in reservations can be recognized/selected in UI if needed
+            cbStatus.Items.AddRange(new[] { "Pending", "CheckedIn", "CheckedOut", "Cancelled/No Show", "Reserved", "WalkIn" });
         }
 
         private void OnRoomTypeChanged(object sender, EventArgs e)

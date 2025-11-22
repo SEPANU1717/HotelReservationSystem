@@ -88,6 +88,16 @@ namespace HotelReservationSystem.Presenter
             var dtoList = checkInList.Select(CheckInMapper.ToCheckInDto).ToList();
             CheckInBindingSource.DataSource = dtoList;
             CheckInBindingSource.ResetBindings(false);
+
+            // Ensure newest items (first in list) are selected and visible in the grid
+            try
+            {
+                if (dtoList != null && dtoList.Count > 0)
+                {
+                    CheckInBindingSource.Position = 0;
+                }
+            }
+            catch { }
         }
 
         private void LoadRoomTypes()
@@ -341,7 +351,8 @@ namespace HotelReservationSystem.Presenter
                     IsDownPaymentPaid = checkInModel.AmountPaid >= checkInModel.DownPayment,
                     PaymentStatus = checkInModel.PaymentStatus,
                     PaymentMethod = checkInModel.PaymentMethod ?? "Cash",
-                    ReservationStatus = "CheckedIn",
+                    // Mark walk-in reservations with a dedicated status so Reservation module can ignore them
+                    ReservationStatus = "WalkIn",
                     CreatedAt = DateTime.Now
                 };
 
@@ -497,6 +508,17 @@ namespace HotelReservationSystem.Presenter
 
                 decimal damageFee = 0m; // single damageFee used for both partial and full flows
 
+                // Always ask about damages before proceeding to billing or completing checkout
+                bool hasDamagesAlways = checkInView.ShowConfirmation("Are there any damages to report?", "Damage Assessment");
+                if (hasDamagesAlways)
+                {
+                    string damageInputAlways = checkInView.PromptForInput("Damage Fee", "Enter damage fee amount:", "0.00");
+                    if (!string.IsNullOrEmpty(damageInputAlways))
+                    {
+                        decimal.TryParse(damageInputAlways, out damageFee);
+                    }
+                }
+
                 if (!validationResult.IsValid && validationResult.HasOutstandingBalance)
                 {
                     bool proceed = checkInView.ShowConfirmation(
@@ -506,17 +528,6 @@ namespace HotelReservationSystem.Presenter
 
                     if (!proceed)
                         return;
-
-                    // Always ask about damages before opening billing, even for partial payments
-                    bool hasDamagesPartial = checkInView.ShowConfirmation("Are there any damages to report?", "Damage Assessment");
-                    if (hasDamagesPartial)
-                    {
-                        string damageInputPartial = checkInView.PromptForInput("Damage Fee", "Enter damage fee amount:", "0.00");
-                        if (!string.IsNullOrEmpty(damageInputPartial))
-                        {
-                            decimal.TryParse(damageInputPartial, out damageFee);
-                        }
-                    }
 
                     NavigateToBilling(checkIn, damageFee);
                     return;
@@ -555,6 +566,20 @@ namespace HotelReservationSystem.Presenter
                 }
                 else
                 {
+                    // If there are any damage fees collected from the prompt above, route to billing
+                    if (damageFee > 0)
+                    {
+                        bool proceedToBillingForDamage = checkInView.ShowConfirmation(
+                            string.Format("Damage fee has been reported: ₱{0:N2}.\nProceed to billing to settle this charge?", damageFee),
+                            "Damage Fee Detected");
+
+                        if (!proceedToBillingForDamage)
+                            return;
+
+                        NavigateToBilling(checkIn, damageFee);
+                        return;
+                    }
+
                     bool confirm = checkInView.ShowConfirmation(
                         string.Format("Confirm checkout for:\n\nCustomer: {0}\nRoom: {1}\nTotal Paid: ₱{2:N2}\nBalance: ₱0.00\n\nComplete checkout now?",
                             checkIn.CustomerName,
@@ -783,7 +808,8 @@ namespace HotelReservationSystem.Presenter
                 }
 
                 string newReservationStatus = MapCheckInStatusToReservationStatus(checkInModel.ReservationStatus);
-                if (reservation.ReservationStatus != newReservationStatus)
+                // Do not overwrite reservations that were created as WalkIn
+                if (reservation.ReservationStatus != "WalkIn" && reservation.ReservationStatus != newReservationStatus)
                 {
                     reservation.ReservationStatus = newReservationStatus;
                     needsUpdate = true;

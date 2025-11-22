@@ -149,7 +149,8 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                command.CommandText = "SELECT * FROM CheckIns ORDER BY CheckInDate DESC";
+                // Order by CreatedAt DESC so newest check-ins appear on top in grids
+                command.CommandText = "SELECT * FROM CheckIns ORDER BY CreatedAt DESC";
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -176,7 +177,7 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
                     WHERE ReservationId = @id 
                        OR CustomerName LIKE @value 
                        OR RoomNumber LIKE @value
-                    ORDER BY CheckInDate DESC";
+                    ORDER BY CreatedAt DESC";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = reservationId;
                 command.Parameters.Add("@value", SqlDbType.VarChar).Value = $"%{value}%";
@@ -202,7 +203,7 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
                 command.CommandText = @"
                     SELECT * FROM CheckIns 
                     WHERE IsCheckedIn = 1 AND IsCheckedOut = 0
-                    ORDER BY CheckInDate DESC";
+                    ORDER BY CreatedAt DESC";
 
                 using (var reader = command.ExecuteReader())
                 {

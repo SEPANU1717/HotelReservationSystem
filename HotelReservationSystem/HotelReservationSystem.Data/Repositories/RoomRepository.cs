@@ -79,6 +79,7 @@ namespace HotelReservationSystem.Data.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
+                // Newest rooms first
                 command.CommandText = "SELECT * FROM Rooms ORDER BY RoomId DESC";
                 using (var reader = command.ExecuteReader())
                 {

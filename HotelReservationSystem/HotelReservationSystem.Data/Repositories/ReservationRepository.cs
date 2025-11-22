@@ -131,7 +131,9 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                command.CommandText = "SELECT * FROM Reservations ORDER BY ReservationId DESC";
+                // Exclude internal WalkIn reservations from reservation listings
+                // Order by CreatedAt DESC so newest reservations appear on top in grids
+                command.CommandText = "SELECT * FROM Reservations WHERE ReservationStatus <> 'WalkIn' ORDER BY CreatedAt DESC";
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -156,10 +158,13 @@ namespace HotelReservationSystem.Data.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
+                // Exclude WalkIn reservations from search results used by Reservation UI
+                // Order by CreatedAt DESC so newest matching reservations appear first
                 command.CommandText = @"
                     SELECT * FROM Reservations 
-                    WHERE ReservationId = @id OR CustomerName LIKE @cid 
-                    ORDER BY ReservationId DESC";
+                    WHERE (ReservationId = @id OR CustomerName LIKE @cid)
+                    AND ReservationStatus <> 'WalkIn'
+                    ORDER BY CreatedAt DESC";
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = reservationId;
                 command.Parameters.Add("@cid", SqlDbType.VarChar).Value = $"%{value}%";
@@ -194,6 +199,7 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
+                // Get reservation by id including WalkIn (used by check-in flow), so do not filter here
                 command.CommandText = "SELECT * FROM Reservations WHERE ReservationId = @id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = reservationId;
 
@@ -216,7 +222,8 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                command.CommandText = "SELECT * FROM Reservations WHERE CustomerName = @name";
+                // Exclude WalkIn when used by Reservation UI; callers needing walk-in should query CheckIns
+                command.CommandText = "SELECT * FROM Reservations WHERE CustomerName = @name AND ReservationStatus <> 'WalkIn'";
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = customerName;
 
                 using (var reader = command.ExecuteReader())

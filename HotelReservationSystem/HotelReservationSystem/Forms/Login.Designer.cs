@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.sataEllipseControl1 = new SATAUiFramework.Controls.SATAEllipseControl();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
@@ -49,7 +49,7 @@
             // 
             // sataEllipseControl1
             // 
-            this.sataEllipseControl1.CornerRadius = 36;
+            this.sataEllipseControl1.CornerRadius = 24;
             this.sataEllipseControl1.TargetControl = this;
             // 
             // sataPanel1
@@ -57,11 +57,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.IndianRed;
             this.sataPanel1.BackColor2 = System.Drawing.Color.Transparent;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius3.BottomLeft = 10;
-            borderRadius3.BottomRight = 10;
-            borderRadius3.TopLeft = 10;
-            borderRadius3.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius3;
+            borderRadius1.BottomLeft = 10;
+            borderRadius1.BottomRight = 10;
+            borderRadius1.TopLeft = 10;
+            borderRadius1.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius1;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.pictureBox1);
             this.sataPanel1.Dock = System.Windows.Forms.DockStyle.Right;

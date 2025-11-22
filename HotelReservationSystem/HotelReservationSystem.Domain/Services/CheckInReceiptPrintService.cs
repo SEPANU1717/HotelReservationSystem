@@ -162,15 +162,15 @@ namespace HotelReservationSystem.Domain.Services
             yPos += 25;
 
             g.DrawString("Total Price:", normalFont, Brushes.Black, leftMargin + 10, yPos);
-            g.DrawString($"?{checkIn.TotalPrice:N2}", boldFont, Brushes.Black, rightMargin - 10, yPos, rightFormat);
+            g.DrawString($"Php {checkIn.TotalPrice:N2}", boldFont, Brushes.Black, rightMargin - 10, yPos, rightFormat);
             yPos += 18;
 
             g.DrawString("Down Payment:", normalFont, Brushes.Black, leftMargin + 10, yPos);
-            g.DrawString($"?{checkIn.DownPayment:N2}", normalFont, Brushes.Black, rightMargin - 10, yPos, rightFormat);
+            g.DrawString($"Php {checkIn.DownPayment:N2}", normalFont, Brushes.Black, rightMargin - 10, yPos, rightFormat);
             yPos += 18;
 
             g.DrawString("Amount Paid:", normalFont, Brushes.Black, leftMargin + 10, yPos);
-            g.DrawString($"?{checkIn.AmountPaid:N2}", normalFont, Brushes.Black, rightMargin - 10, yPos, rightFormat);
+            g.DrawString($"Php {checkIn.AmountPaid:N2}", normalFont, Brushes.Black, rightMargin - 10, yPos, rightFormat);
             yPos += 18;
 
             using (Pen linePen = new Pen(Color.Gray, 1))
@@ -185,7 +185,8 @@ namespace HotelReservationSystem.Domain.Services
             }
             yPos += 5;
             g.DrawString("Balance Due:", new Font("Segoe UI", 11, FontStyle.Bold), Brushes.White, leftMargin + 10, yPos);
-            g.DrawString($"?{checkIn.BalanceDue:N2}", new Font("Segoe UI", 11, FontStyle.Bold), Brushes.White, rightMargin - 10, yPos, rightFormat);
+            // Per requirement: always display 0.00 for balance due on check-in receipts
+            g.DrawString($"Php {0.00:N2}", new Font("Segoe UI", 11, FontStyle.Bold), Brushes.White, rightMargin - 10, yPos, rightFormat);
             yPos += 35;
 
             g.DrawString($"Payment Status: {checkIn.PaymentStatus}", normalFont, Brushes.Black, leftMargin + 10, yPos);
