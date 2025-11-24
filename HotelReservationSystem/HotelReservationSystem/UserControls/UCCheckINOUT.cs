@@ -29,7 +29,7 @@ namespace HotelReservationSystem.UserControls
 
             presenter = new UCINOUTPresenter(this, checkInRepo, DbConfig.GetConnectionString());
             AssociateAndRaiseViewEvents();
-            
+
             // Apply initial role-based restrictions
             ApplyRoleBasedRestrictions();
 
@@ -41,34 +41,31 @@ namespace HotelReservationSystem.UserControls
         }
 
         #endregion
-        
+
         #region Role-Based Restrictions
-        
+
         private void ApplyRoleBasedRestrictions()
         {
-            // Only apply restrictions based on current tab
-            // Admin: always enabled
-            // Non-Admin: disabled only when in form view (tab 2 or 3)
+
             UpdateSearchControlsState();
         }
-        
+
         private void UpdateSearchControlsState()
         {
-            // Enable search when on grid view (tabPage1)
-            // Disable search when on form view (tabPage3)
+
             bool isOnGridView = materialTabControl1.SelectedTab == tabPage1;
-            
+
             if (txtReservationSearch != null)
             {
                 txtReservationSearch.Enabled = isOnGridView;
             }
-            
+
             if (btnReservationSearch != null)
             {
                 btnReservationSearch.Enabled = isOnGridView;
             }
         }
-        
+
         #endregion
 
         #region Initialization
@@ -244,7 +241,7 @@ namespace HotelReservationSystem.UserControls
                     try
                     {
                         int reservationId = GetSelectedReservationId();
-                        
+
                         var checkIn = checkInRepo.GetByReservationId(reservationId);
                         if (checkIn == null)
                         {
@@ -374,11 +371,14 @@ namespace HotelReservationSystem.UserControls
 
         public decimal BalanceDue
         {
-            get => decimal.TryParse(txtBalanceDue.Texts, out var balanceDue) ? balanceDue : 0;
+            get => decimal.TryParse(txtBalanceDue.Texts, out var balance) ? balance : 0;
             set
             {
                 if (txtBalanceDue != null)
-                    txtBalanceDue.Texts = "0.00";
+                {
+                    // Show "0" for zero and two-decimals for non-zero (e.g. "0" or "12.34")
+                    txtBalanceDue.Texts = value == 0m ? "0" : value.ToString("F2");
+                }
             }
         }
 
@@ -391,7 +391,7 @@ namespace HotelReservationSystem.UserControls
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
         public string Message { get; set; }
-         #endregion
+        #endregion
 
         #region Events - Interface Implementation
 
@@ -504,7 +504,7 @@ namespace HotelReservationSystem.UserControls
                     materialTabControl1.SelectedTab = tabPage3;
                     break;
             }
-            
+
             UpdateSearchControlsState();
         }
 
@@ -579,7 +579,6 @@ namespace HotelReservationSystem.UserControls
                 }
             }
         }
-
         #endregion
     }
 }

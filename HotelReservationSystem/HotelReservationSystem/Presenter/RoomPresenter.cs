@@ -127,9 +127,8 @@ namespace HotelReservationSystem.Presenter
         {
             if (!UserSession.IsAdmin)
             {
-                // DON'T set isEdit = true, so the view won't open the tab page
                 roomView.isEdit = false;
-                return; // Exit early - error message already shown in view
+                return; 
             }
 
             var room = (RoomModel)RoomBindingSource.Current;
@@ -155,7 +154,6 @@ namespace HotelReservationSystem.Presenter
         {
             if (!UserSession.IsAdmin)
             {
-                // Error message already shown in view
                 return;
             }
 
@@ -168,7 +166,6 @@ namespace HotelReservationSystem.Presenter
             {
                 if (!UserSession.IsAdmin)
                 {
-                    // Error message already shown in view
                     return;
                 }
 

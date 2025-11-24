@@ -3,9 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HotelReservationSystem.Domain.Validation
 {
-    /// <summary>
-    /// Validation attribute to ensure check-out date is after check-in date
-    /// </summary>
+
     public class DateRangeValidationAttribute : ValidationAttribute
     {
         private readonly string _startDatePropertyName;
@@ -35,13 +33,11 @@ namespace HotelReservationSystem.Domain.Validation
             
             if (startDateValue is DateTime startDate)
             {
-                // Compare only dates, not time components
                 if (endDate.Value.Date <= startDate.Date)
                 {
                     return new ValidationResult("Check-out date must be after check-in date");
                 }
 
-                // Check if the date range is reasonable (not more than 1 year)
                 var daysDifference = (endDate.Value.Date - startDate.Date).TotalDays;
                 if (daysDifference > 365)
                 {

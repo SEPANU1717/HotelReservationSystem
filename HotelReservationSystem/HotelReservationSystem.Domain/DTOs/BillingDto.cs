@@ -26,7 +26,7 @@ namespace HotelReservationSystem.Domain.DTOs
         [DisplayName("Check-Out")]
         public DateTime CheckOutDate { get; set; }
 
-        [DisplayName("Total Amount")]
+        [DisplayName("Total Amount (Php)")]
         public decimal TotalAmount { get; set; }
 
         [DisplayName("Status")]

@@ -341,6 +341,9 @@ namespace HotelReservationSystem.Presenter
                 reservationView.ShowTab(0); 
                 reservationView.ShowSuccessMessage(reservationView.Message);
 
+                // retrieve customer now so we can email even if the user declines to view the preview
+                var customer = customerRepository.GetByCustomerName(model.CustomerName);
+
                 var confirmResult = MessageBox.Show(
                     "Reservation saved successfully!\n\nWould you like to view the receipt?",
                     "Print Receipt",
@@ -351,10 +354,9 @@ namespace HotelReservationSystem.Presenter
                 {
                     try
                     {
-                        var customer = customerRepository.GetByCustomerName(model.CustomerName);
-                        using (var receiptService = new Domain.Services.ReservationReceiptService(model, customer, UserSession.Username))
+                        using (var receiptService = new Domain.Services.ReservationReceiptPrintService(model, customer, UserSession.Username))
                         {
-                            receiptService.ShowReceipt();
+                            receiptService.ShowWithOptions();
                         }
                     }
                     catch (Exception ex)
@@ -362,12 +364,106 @@ namespace HotelReservationSystem.Presenter
                         reservationView.ShowErrorMessage($"Receipt preview error: {ex.Message}");
                     }
                 }
+
+                // Offer to email the reservation receipt regardless of preview choice
+                var emailResult = MessageBox.Show(
+                    "Would you like to email this reservation receipt to the customer?",
+                    "Email Receipt",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (emailResult == DialogResult.Yes)
+                {
+                    EmailReservationReceipt(model, customer);
+                }
             }
             catch (Exception ex)
             {
                 reservationView.isSuccessful = false;
                 reservationView.Message = ex.Message;
                 reservationView.ShowErrorMessage(reservationView.Message);
+            }
+        }
+
+        private void EmailReservationReceipt(ReservationModel model, CustomerModel customer)
+        {
+            try
+            {
+                string customerEmail = customer != null ? customer.Email : null;
+                string customerFullName = customer != null ? customer.FullName : model.CustomerName;
+
+                if (string.IsNullOrEmpty(customerEmail))
+                {
+                    reservationView.ShowErrorMessage(
+                        $"No email address found for customer '{model.CustomerName}'.\n\n" +
+                        "Please ensure the customer has an email address in the Customer module.");
+                    return;
+                }
+
+                var confirmResult = MessageBox.Show(
+                    $"Send reservation receipt to:\n\n" +
+                    $"Customer: {customerFullName}\n" +
+                    $"Email: {customerEmail}\n" +
+                    $"Reservation #: {model.ReservationId}\n\n" +
+                    "Proceed?",
+                    "Confirm Email Send",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (confirmResult != DialogResult.Yes)
+                    return;
+
+                // Save receipt to temp file
+                string tempPath = System.IO.Path.GetTempPath();
+                string fileName = $"ReservationReceipt_{model.ReservationId}_{DateTime.Now:yyyyMMddHHmmss}.png";
+                string filePath = System.IO.Path.Combine(tempPath, fileName);
+
+                using (var receiptService = new Domain.Services.ReservationReceiptPrintService(model, customer, UserSession.Username))
+                {
+                    receiptService.SaveAsImage(filePath);
+                }
+
+                var emailService = new Domain.Services.EmailService();
+
+                // Check if email is configured, prompt for config if not
+                if (!emailService.IsConfigured())
+                {
+                    var configForm = new Presenter.Billing.EmailConfigForm();
+                    if (configForm.ShowDialog() == DialogResult.OK)
+                    {
+                        emailService = new Domain.Services.EmailService(
+                            configForm.SmtpServer,
+                            configForm.SmtpPort,
+                            configForm.SenderEmail,
+                            configForm.SenderPassword,
+                            configForm.EnableSsl
+                        );
+                    }
+                    else
+                    {
+                        // User cancelled config, cleanup temp file
+                        if (System.IO.File.Exists(filePath))
+                        {
+                            try { System.IO.File.Delete(filePath); } catch { }
+                        }
+                        return;
+                    }
+                }
+
+                // Send email with reservation receipt attached
+                emailService.SendReservationReceiptEmail(customerEmail, customerFullName, filePath, model.ReservationId.ToString());
+
+                MessageBox.Show($"Reservation receipt successfully sent to {customerEmail}", "Email Sent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Cleanup temp file
+                if (System.IO.File.Exists(filePath))
+                {
+                    try { System.IO.File.Delete(filePath); } catch { }
+                }
+            }
+            catch (Exception ex)
+            {
+                reservationView.ShowErrorMessage($"Error emailing receipt: {ex.Message}");
             }
         }
 

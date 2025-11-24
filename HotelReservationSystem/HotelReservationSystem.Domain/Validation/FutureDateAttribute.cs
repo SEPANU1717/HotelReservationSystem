@@ -3,9 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HotelReservationSystem.Domain.Validation
 {
-    /// <summary>
-    /// Validation attribute to ensure a date is not in the past
-    /// </summary>
+
     public class FutureDateAttribute : ValidationAttribute
     {
         private readonly bool _allowToday;
@@ -22,7 +20,7 @@ namespace HotelReservationSystem.Domain.Validation
         {
             if (value == null)
             {
-                return ValidationResult.Success; // Let Required attribute handle null values
+                return ValidationResult.Success;
             }
 
             if (value is DateTime dateValue)

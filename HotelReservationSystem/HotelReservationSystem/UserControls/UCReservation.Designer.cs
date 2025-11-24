@@ -269,10 +269,10 @@
             this.tabPage2.Controls.Add(this.txtRoomGuests);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -686,7 +686,7 @@
             // dtTimeArrival
             // 
             this.dtTimeArrival.BackColor = System.Drawing.Color.White;
-            this.dtTimeArrival.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtTimeArrival.Content = new System.DateTime(2025, 11, 24, 0, 0, 0, 0);
             this.dtTimeArrival.EnableThemeChangeButton = true;
             this.dtTimeArrival.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtTimeArrival.ForeColor = System.Drawing.Color.Silver;

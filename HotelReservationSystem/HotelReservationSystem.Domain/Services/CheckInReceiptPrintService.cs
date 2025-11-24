@@ -206,6 +206,34 @@ namespace HotelReservationSystem.Domain.Services
             g.DrawString($"Checked in by: {checkIn.CheckedInBy ?? "System"}", smallFont, Brushes.Gray, centerX, yPos, centerFormat);
         }
 
+        // Export check-in receipt to PNG image for emailing
+        public string SaveAsImage(string filePath)
+        {
+            try
+            {
+                using (Bitmap bmp = new Bitmap(850, 1100))
+                {
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    {
+                        g.Clear(Color.White);
+                        DrawReceipt(g, new Rectangle(0, 0, 850, 1100));
+                    }
+
+                    var dir = Path.GetDirectoryName(filePath);
+                    if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+                        Directory.CreateDirectory(dir);
+
+                    bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+                }
+
+                return filePath;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Failed to save check-in receipt image: {ex.Message}", ex);
+            }
+        }
+
         public void Dispose()
         {
             Dispose(true);

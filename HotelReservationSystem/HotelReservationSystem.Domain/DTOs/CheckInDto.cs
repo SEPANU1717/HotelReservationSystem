@@ -26,10 +26,10 @@ namespace HotelReservationSystem.Domain.DTOs
         [DisplayName("Check-Out Date")]
         public DateTime CheckOutDate { get; set; }
 
-        [DisplayName("Grand Total")]
+        [DisplayName("Grand Total (Php)")]
         public decimal GrandTotal { get; set; }
 
-        [DisplayName("Balance Due")]
+        [DisplayName("Balance Due (Php)")]
         public decimal BalanceDue { get; set; }
 
         [DisplayName("Payment Status")]

@@ -21,7 +21,7 @@ namespace HotelReservationSystem.Domain.Validation
         {
             if (value == null)
             {
-                return ValidationResult.Success; // Let Required attribute handle null values
+                return ValidationResult.Success; 
             }
 
             if (value is decimal decimalValue)

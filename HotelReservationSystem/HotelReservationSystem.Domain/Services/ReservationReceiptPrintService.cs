@@ -51,6 +51,34 @@ namespace HotelReservationSystem.Domain.Services
             previewDialog.ShowDialog();
         }
 
+        // Export reservation receipt to PNG image for emailing
+        public string SaveAsImage(string filePath)
+        {
+            try
+            {
+                using (Bitmap bmp = new Bitmap(850, 1100))
+                {
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    {
+                        g.Clear(Color.White);
+                        DrawReceipt(g, new Rectangle(0, 0, 850, 1100));
+                    }
+
+                    var dir = Path.GetDirectoryName(filePath);
+                    if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+                        Directory.CreateDirectory(dir);
+
+                    bmp.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+                }
+
+                return filePath;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Failed to save reservation receipt image: {ex.Message}", ex);
+            }
+        }
+
         private void PrintPage(object sender, PrintPageEventArgs e)
         {
             DrawReceipt(e.Graphics, e.MarginBounds);

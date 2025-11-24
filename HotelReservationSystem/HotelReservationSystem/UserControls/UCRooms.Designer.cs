@@ -130,9 +130,9 @@
             this.btnRoomDelete = new FrameworkTest.SATAButton();
             this.btnRoomAddNew = new FrameworkTest.SATAButton();
             this.btnRoomEdit = new FrameworkTest.SATAButton();
-            this.cbRoomFilter = new MetroComboBoxGainsboro();
             this.dtFromDate = new CuoreUI.Controls.cuiCalendarDatePicker();
             this.dtToDate = new CuoreUI.Controls.cuiCalendarDatePicker();
+            this.cbRoomFilter = new MetroComboBoxGainsboro();
             this.tabPage2.SuspendLayout();
             this.sataPanel2.SuspendLayout();
             this.sataPanel7.SuspendLayout();
@@ -1762,15 +1762,6 @@
             this.btnRoomEdit.TextAutoCenter = false;
             this.btnRoomEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // cbRoomFilter
-            // 
-            this.cbRoomFilter.FormattingEnabled = true;
-            this.cbRoomFilter.ItemHeight = 23;
-            this.cbRoomFilter.Location = new System.Drawing.Point(853, 100);
-            this.cbRoomFilter.Name = "cbRoomFilter";
-            this.cbRoomFilter.Size = new System.Drawing.Size(145, 29);
-            this.cbRoomFilter.TabIndex = 142;
-            // 
             // dtFromDate
             // 
             this.dtFromDate.BackColor = System.Drawing.Color.White;
@@ -1824,6 +1815,15 @@
             this.dtToDate.TabIndex = 143;
             this.dtToDate.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
             this.dtToDate.Load += new System.EventHandler(this.dtToDate_Load);
+            // 
+            // cbRoomFilter
+            // 
+            this.cbRoomFilter.FormattingEnabled = true;
+            this.cbRoomFilter.ItemHeight = 23;
+            this.cbRoomFilter.Location = new System.Drawing.Point(853, 100);
+            this.cbRoomFilter.Name = "cbRoomFilter";
+            this.cbRoomFilter.Size = new System.Drawing.Size(145, 29);
+            this.cbRoomFilter.TabIndex = 142;
             // 
             // UCRooms
             // 

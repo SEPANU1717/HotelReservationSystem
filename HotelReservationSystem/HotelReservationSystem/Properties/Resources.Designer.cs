@@ -19,7 +19,7 @@ namespace HotelReservationSystem.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -83,6 +83,16 @@ namespace HotelReservationSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap event_available_80dp_343434_FILL0_wght600_GRAD0_opsz48 {
+            get {
+                object obj = ResourceManager.GetObject("event_available_80dp_343434_FILL0_wght600_GRAD0_opsz48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap female {
             get {
                 object obj = ResourceManager.GetObject("female", resourceCulture);
@@ -106,6 +116,16 @@ namespace HotelReservationSystem.Properties {
         internal static System.Drawing.Bitmap Homepage__14_ {
             get {
                 object obj = ResourceManager.GetObject("Homepage (14)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap house_80dp_343434_FILL0_wght600_GRAD0_opsz48 {
+            get {
+                object obj = ResourceManager.GetObject("house_80dp_343434_FILL0_wght600_GRAD0_opsz48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +166,26 @@ namespace HotelReservationSystem.Properties {
         internal static System.Drawing.Bitmap manage_accounts_80dp_8094AE_FILL0_wght600_GRAD200_opsz48 {
             get {
                 object obj = ResourceManager.GetObject("manage_accounts_80dp_8094AE_FILL0_wght600_GRAD200_opsz48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48 {
+            get {
+                object obj = ResourceManager.GetObject("meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48 {
+            get {
+                object obj = ResourceManager.GetObject("no_meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

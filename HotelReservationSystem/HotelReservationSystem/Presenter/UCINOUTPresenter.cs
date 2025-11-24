@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.IO;
 using HotelReservationSystem.Data.Repositories;
 using HotelReservationSystem.Data.Repositories.CheckInOutRepository;
 using HotelReservationSystem.DataInitializer.DbInitializer;
@@ -302,6 +303,10 @@ namespace HotelReservationSystem.Presenter
 
                 checkInView.ShowMessage(checkInView.Message, "Success");
 
+                // Retrieve customer info early so we can email even if user skips preview
+                var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+                var customer = customerRepo.GetByCustomerName(model.CustomerName);
+
                 var confirmResult = MessageBox.Show(
                     "Check-in saved successfully!\n\nWould you like to view the receipt?",
                     "Print Receipt",
@@ -312,17 +317,27 @@ namespace HotelReservationSystem.Presenter
                 {
                     try
                     {
-                        var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
-                        var customer = customerRepo.GetByCustomerName(model.CustomerName);
-                        using (var receiptService = new Domain.Services.CheckInReceiptService(model, customer))
+                        using (var receiptService = new Domain.Services.CheckInReceiptPrintService(model, customer))
                         {
-                            receiptService.ShowReceipt();
+                            receiptService.ShowWithOptions();
                         }
                     }
                     catch (Exception ex)
                     {
                         checkInView.ShowMessage($"Receipt preview error: {ex.Message}", "Error");
                     }
+                }
+
+                // Offer to email the check-in receipt regardless of whether the user viewed the preview
+                var emailResult = MessageBox.Show(
+                    "Would you like to email this check-in receipt to the customer?",
+                    "Email Receipt",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (emailResult == DialogResult.Yes)
+                {
+                    EmailCheckInReceipt(model);
                 }
             }
             catch (Exception ex)
@@ -1020,7 +1035,6 @@ namespace HotelReservationSystem.Presenter
                 {
                     decimal down = Math.Round(total * 0.5m, 2);
                     checkInView.DownPayment = down;
-                    // Only set AmountPaid to down if less than down
                     if (amountPaid < down)
                         checkInView.AmountPaid = down;
                     decimal balance = total - checkInView.AmountPaid;
@@ -1079,6 +1093,86 @@ namespace HotelReservationSystem.Presenter
         public void RefreshCheckInList()
         {
             LoadAllCheckInList();
+        }
+
+        #endregion
+
+        #region Email Helpers
+
+        private void EmailCheckInReceipt(CheckInOutModel model)
+        {
+            try
+            {
+                var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
+                var customer = customerRepo.GetByCustomerName(model.CustomerName);
+                string customerEmail = customer?.Email ?? checkInView.CustomerEmail;
+                string customerName = customer?.FullName ?? model.CustomerName;
+
+                if (string.IsNullOrEmpty(customerEmail))
+                {
+                    checkInView.ShowMessage($"No email address found for customer '{model.CustomerName}'.\n\nPlease ensure the customer has an email address in the Customer module.", "No Email");
+                    return;
+                }
+
+                var confirm = MessageBox.Show(
+                    $"Send check-in receipt to:\n\nCustomer: {customerName}\nEmail: {customerEmail}\nReservation #: {model.ReservationId}\n\nProceed?",
+                    "Confirm Email Send",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (confirm != DialogResult.Yes) return;
+
+                // Save receipt to temp file
+                string tempPath = System.IO.Path.GetTempPath();
+                string fileName = $"CheckInReceipt_{model.ReservationId}_{DateTime.Now:yyyyMMddHHmmss}.png";
+                string filePath = System.IO.Path.Combine(tempPath, fileName);
+
+                using (var receiptService = new Domain.Services.CheckInReceiptPrintService(model, customer))
+                {
+                    receiptService.SaveAsImage(filePath);
+                }
+
+                // Ask user if they also want to save a local copy
+                var saveCopy = MessageBox.Show("Do you want to save a local copy of the receipt before emailing?", "Save Copy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (saveCopy == DialogResult.Yes)
+                {
+                    using (SaveFileDialog saveDialog = new SaveFileDialog())
+                    {
+                        saveDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg";
+                        saveDialog.FileName = fileName;
+                        saveDialog.DefaultExt = "png";
+                        if (saveDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            File.Copy(filePath, saveDialog.FileName, true);
+                        }
+                    }
+                }
+
+                var emailService = new Domain.Services.EmailService();
+                if (!emailService.IsConfigured())
+                {
+                    var form = new Presenter.Billing.EmailConfigForm();
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        emailService = new Domain.Services.EmailService(form.SmtpServer, form.SmtpPort, form.SenderEmail, form.SenderPassword, form.EnableSsl);
+                    }
+                    else
+                    {
+                        if (File.Exists(filePath)) try { File.Delete(filePath); } catch { }
+                        return;
+                    }
+                }
+
+                emailService.SendCheckInReceiptEmail(customerEmail, customerName, filePath, model.ReservationId.ToString());
+
+                MessageBox.Show($"Check-in receipt successfully sent to {customerEmail}", "Email Sent", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (File.Exists(filePath)) try { File.Delete(filePath); } catch { }
+            }
+            catch (Exception ex)
+            {
+                checkInView.ShowMessage($"Error emailing check-in receipt: {ex.Message}", "Email Error");
+            }
         }
 
         #endregion
