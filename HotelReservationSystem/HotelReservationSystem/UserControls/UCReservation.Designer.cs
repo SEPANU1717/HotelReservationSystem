@@ -716,14 +716,14 @@
             this.label16.ForeColor = System.Drawing.Color.DimGray;
             this.label16.Location = new System.Drawing.Point(73, 463);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(110, 20);
+            this.label16.Size = new System.Drawing.Size(109, 20);
             this.label16.TabIndex = 126;
-            this.label16.Text = "Time of Arrival";
+            this.label16.Text = "Date of Arrival";
             // 
             // dtCheckOut
             // 
             this.dtCheckOut.BackColor = System.Drawing.Color.White;
-            this.dtCheckOut.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtCheckOut.Content = new System.DateTime(2025, 11, 26, 0, 0, 0, 0);
             this.dtCheckOut.EnableThemeChangeButton = true;
             this.dtCheckOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtCheckOut.ForeColor = System.Drawing.Color.Silver;
@@ -749,7 +749,7 @@
             // dtCheckIn
             // 
             this.dtCheckIn.BackColor = System.Drawing.Color.White;
-            this.dtCheckIn.Content = new System.DateTime(2025, 8, 25, 0, 0, 0, 0);
+            this.dtCheckIn.Content = new System.DateTime(2025, 11, 26, 0, 0, 0, 0);
             this.dtCheckIn.EnableThemeChangeButton = true;
             this.dtCheckIn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtCheckIn.ForeColor = System.Drawing.Color.Silver;
@@ -954,7 +954,7 @@
             this.txtReservationSearch.Name = "txtReservationSearch";
             this.txtReservationSearch.PasswordChar = false;
             this.txtReservationSearch.PlaceholderColor = System.Drawing.Color.LightGray;
-            this.txtReservationSearch.PlaceholderText = "Search Customer";
+            this.txtReservationSearch.PlaceholderText = "Search for Id or Lastname";
             this.txtReservationSearch.Size = new System.Drawing.Size(374, 39);
             this.txtReservationSearch.TabIndex = 8;
             this.txtReservationSearch.Texts = "";

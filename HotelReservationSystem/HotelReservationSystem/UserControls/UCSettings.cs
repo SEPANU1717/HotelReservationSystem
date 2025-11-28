@@ -17,7 +17,6 @@ namespace HotelReservationSystem.UserControls
             cbRole.DataSource = Enum.GetValues(typeof(Role));
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
             
-            // Apply initial search state
             UpdateSearchControlsState();
         }
         
@@ -50,7 +49,6 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
                 
-                // Disable search when entering form view
                 UpdateSearchControlsState();
             };
 
@@ -60,7 +58,6 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage1);
                 EditEvent?.Invoke(this, EventArgs.Empty);
                 
-                // Disable search when entering form view
                 UpdateSearchControlsState();
             };
 
@@ -76,7 +73,6 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Remove(tabPage2);
                 CancelEvent?.Invoke(this, EventArgs.Empty);
                 
-                // Re-enable search when returning to grid view
                 UpdateSearchControlsState();
             };
             btnDelete.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };

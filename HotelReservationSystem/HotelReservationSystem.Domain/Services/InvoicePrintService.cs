@@ -79,7 +79,6 @@ namespace HotelReservationSystem.Domain.Services
             float rightMargin = bounds.Right - 40;
             float centerX = (leftMargin + rightMargin) / 2;
 
-            // System color border - RGB(80, 90, 240)
             using (Pen borderPen = new Pen(Color.FromArgb(80, 90, 240), 3))
             {
                 g.DrawRectangle(borderPen, bounds.Left + 10, bounds.Top + 10, bounds.Width - 20, bounds.Height - 20);
@@ -88,7 +87,6 @@ namespace HotelReservationSystem.Domain.Services
             StringFormat centerFormat = new StringFormat { Alignment = StringAlignment.Center };
             StringFormat rightFormat = new StringFormat { Alignment = StringAlignment.Far };
 
-            // System color brush for title
             using (Brush titleBrush = new SolidBrush(Color.FromArgb(80, 90, 240)))
             {
                 g.DrawString("LODGIX", titleFont, titleBrush, centerX, yPos, centerFormat);
@@ -97,14 +95,12 @@ namespace HotelReservationSystem.Domain.Services
             g.DrawString("Hotel Reservation System", normalFont, Brushes.Gray, centerX, yPos, centerFormat);
             yPos += 40;
 
-            // System color line
             using (Pen linePen = new Pen(Color.FromArgb(80, 90, 240), 2))
             {
                 g.DrawLine(linePen, leftMargin, yPos, rightMargin, yPos);
             }
             yPos += 20;
 
-            // System color for INVOICE header
             using (Brush headerBrush = new SolidBrush(Color.FromArgb(80, 90, 240)))
             {
                 g.DrawString("INVOICE", headerFont, headerBrush, centerX, yPos, centerFormat);
@@ -132,7 +128,6 @@ namespace HotelReservationSystem.Domain.Services
             g.DrawString($"Name: {billing.CustomerName}", normalFont, Brushes.Black, leftMargin + 10, yPos);
             yPos += 20;
             
-            // Use billing's stored customer information (works even if customer deleted)
             string email = !string.IsNullOrEmpty(billing.CustomerEmail) ? billing.CustomerEmail : 
                           (customer != null ? customer.Email : "N/A");
             string contact = !string.IsNullOrEmpty(billing.CustomerContact) ? billing.CustomerContact : 
@@ -167,7 +162,6 @@ namespace HotelReservationSystem.Domain.Services
             g.DrawString($"Nights: {billing.NumberOfNights}", normalFont, Brushes.Black, leftMargin + 10, yPos);
             yPos += 40;
 
-            // System color for table header - RGB(101, 118, 255)
             using (Brush tableBrush = new SolidBrush(Color.FromArgb(101, 118, 255)))
             {
                 g.FillRectangle(tableBrush, leftMargin, yPos, rightMargin - leftMargin, 30);
@@ -214,7 +208,6 @@ namespace HotelReservationSystem.Domain.Services
             g.DrawString($"PHP {billing.AmountPaidAtCheckout:N2}", normalFont, Brushes.Black, rightMargin - 100, yPos, rightFormat);
             yPos += 30;
 
-            // System color for total - RGB(80, 90, 240)
             using (Brush totalBrush = new SolidBrush(Color.FromArgb(80, 90, 240)))
             {
                 g.FillRectangle(totalBrush, leftMargin, yPos, rightMargin - leftMargin, 35);

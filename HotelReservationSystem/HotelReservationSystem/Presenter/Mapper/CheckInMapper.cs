@@ -108,7 +108,7 @@ namespace HotelReservationSystem.Presenter.Mapper
             view.PaymentStatus = model.PaymentStatus.ToString();
             view.PaymentReference = model.PaymentReference ?? string.Empty;
             view.ReservationStatus = !string.IsNullOrEmpty(model.ReservationStatus) ? model.ReservationStatus : "CheckedIn";
-            view.CustomerEmail = string.Empty; // Will be populated from customer lookup if needed
+            view.CustomerEmail = string.Empty; 
         }
 
         public static void UpdateFinancialFields(ICheckInOutView view, decimal newTotalPrice)

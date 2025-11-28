@@ -4,17 +4,13 @@ using HotelReservationSystem.Domain.Model.CheckInOut;
 
 namespace HotelReservationSystem.Domain.Services
 {
-    /// <summary>
-    /// Service class to handle checkout validations and billing preparation
-    /// </summary>
+
     public class CheckOutService
     {
         private const decimal LATE_CHECKOUT_FEE_PER_HOUR = 50.00m;
         private const int LATE_CHECKOUT_GRACE_PERIOD_MINUTES = 30;
         
-        /// <summary>
-        /// Calculate late checkout fees based on scheduled and actual checkout times
-        /// </summary>
+
         public decimal CalculateLateCheckoutFee(DateTime scheduledCheckOut, DateTime actualCheckOut)
         {
             if (actualCheckOut <= scheduledCheckOut)
@@ -22,23 +18,17 @@ namespace HotelReservationSystem.Domain.Services
                 
             var lateTime = actualCheckOut - scheduledCheckOut;
             
-            // Grace period - first 30 minutes free
             if (lateTime.TotalMinutes <= LATE_CHECKOUT_GRACE_PERIOD_MINUTES)
                 return 0m;
                 
-            // Calculate hours (round up partial hours)
             int lateHours = (int)Math.Ceiling(lateTime.TotalHours);
             return lateHours * LATE_CHECKOUT_FEE_PER_HOUR;
         }
-        
-        /// <summary>
-        /// Validate if checkout can proceed
-        /// </summary>
+
         public CheckOutValidationResult ValidateCheckout(CheckInOutModel checkIn)
         {
             var result = new CheckOutValidationResult { IsValid = true };
             
-            // Check if already checked out
             if (checkIn.IsCheckedOut)
             {
                 result.IsValid = false;
@@ -46,7 +36,6 @@ namespace HotelReservationSystem.Domain.Services
                 return result;
             }
             
-            // Check if checked in
             if (!checkIn.IsCheckedIn)
             {
                 result.IsValid = false;
@@ -54,7 +43,6 @@ namespace HotelReservationSystem.Domain.Services
                 return result;
             }
             
-            // Check for outstanding balance ? CRITICAL
             decimal balanceDue = checkIn.BalanceDue;
             if (balanceDue > 0)
             {
@@ -65,7 +53,6 @@ namespace HotelReservationSystem.Domain.Services
                 return result;
             }
             
-            // Check if checkout date is reasonable (not before check-in)
             var today = DateTime.Now.Date;
             if (today < checkIn.CheckInDate.Date)
             {
@@ -77,10 +64,7 @@ namespace HotelReservationSystem.Domain.Services
             result.Message = "Validation successful. Ready to checkout.";
             return result;
         }
-        
-        /// <summary>
-        /// Prepare billing information for checkout
-        /// </summary>
+
         public BillingModel PrepareBillingForCheckout(
             CheckInOutModel checkIn, 
             DateTime actualCheckOutDate,
@@ -92,7 +76,7 @@ namespace HotelReservationSystem.Domain.Services
             {
                 ReservationId = checkIn.ReservationId,
                 CustomerName = checkIn.CustomerName,
-                CustomerEmail = checkIn.CustomerEmail, // ? COPY EMAIL FROM CHECK-IN
+                CustomerEmail = checkIn.CustomerEmail,
                 RoomType = checkIn.RoomType,
                 RoomNumber = checkIn.RoomNumber,
                 CheckInDate = checkIn.CheckInDate,
@@ -102,7 +86,7 @@ namespace HotelReservationSystem.Domain.Services
                 LateCheckoutFee = lateCheckoutFee,
                 DamageFee = damageFee,
                 AmountPaidBefore = checkIn.AmountPaid,
-                AmountPaidAtCheckout = 0m,  // To be filled at checkout
+                AmountPaidAtCheckout = 0m,  
                 PaymentStatus = checkIn.BalanceDue == 0 ? "Paid" : "Pending",
                 PaymentMethod = checkIn.PaymentMethod,
                 PaymentReference = checkIn.PaymentReference,
@@ -112,10 +96,7 @@ namespace HotelReservationSystem.Domain.Services
             return billing;
         }
     }
-    
-    /// <summary>
-    /// Result of checkout validation
-    /// </summary>
+
     public class CheckOutValidationResult
     {
         public bool IsValid { get; set; }

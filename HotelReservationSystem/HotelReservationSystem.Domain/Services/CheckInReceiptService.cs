@@ -57,7 +57,6 @@ namespace HotelReservationSystem.Domain.Services
             float rightMargin = bounds.Right - 40;
             float centerX = (leftMargin + rightMargin) / 2;
 
-            // System color border - RGB(80, 90, 240)
             using (Pen borderPen = new Pen(Color.FromArgb(80, 90, 240), 3))
             {
                 g.DrawRectangle(borderPen, bounds.Left + 10, bounds.Top + 10, bounds.Width - 20, bounds.Height - 20);
@@ -66,7 +65,6 @@ namespace HotelReservationSystem.Domain.Services
             StringFormat centerFormat = new StringFormat { Alignment = StringAlignment.Center };
             StringFormat rightFormat = new StringFormat { Alignment = StringAlignment.Far };
 
-            // System color for title
             using (Brush titleBrush = new SolidBrush(Color.FromArgb(80, 90, 240)))
             {
                 g.DrawString("LODGIX", titleFont, titleBrush, centerX, yPos, centerFormat);
@@ -75,14 +73,12 @@ namespace HotelReservationSystem.Domain.Services
             g.DrawString("Hotel Reservation System", normalFont, Brushes.Gray, centerX, yPos, centerFormat);
             yPos += 30;
 
-            // System color line
             using (Pen linePen = new Pen(Color.FromArgb(80, 90, 240), 2))
             {
                 g.DrawLine(linePen, leftMargin, yPos, rightMargin, yPos);
             }
             yPos += 15;
 
-            // System color for header
             using (Brush headerBrush = new SolidBrush(Color.FromArgb(80, 90, 240)))
             {
                 g.DrawString("CHECK-IN RECEIPT", headerFont, headerBrush, centerX, yPos, centerFormat);
@@ -139,7 +135,6 @@ namespace HotelReservationSystem.Domain.Services
             yPos += 18;
             g.DrawString($"Time of Arrival: {checkIn.TimeArrival:HH:mm}", normalFont, Brushes.Black, leftMargin + 10, yPos);
             
-            // Show customer email if available
             string displayEmail = !string.IsNullOrEmpty(checkIn.CustomerEmail) ? checkIn.CustomerEmail :
                                  (customer != null ? customer.Email : "N/A");
             g.DrawString($"Email: {displayEmail}", normalFont, Brushes.Black, centerX, yPos);
@@ -174,7 +169,6 @@ namespace HotelReservationSystem.Domain.Services
             }
             yPos += 8;
 
-            // System color for balance highlight - RGB(101, 118, 255)
             using (Brush highlightBrush = new SolidBrush(Color.FromArgb(101, 118, 255)))
             {
                 g.FillRectangle(highlightBrush, leftMargin, yPos, rightMargin - leftMargin, 28);

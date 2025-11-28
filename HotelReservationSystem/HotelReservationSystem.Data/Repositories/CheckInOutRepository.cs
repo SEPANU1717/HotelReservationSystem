@@ -13,9 +13,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
     {
         public CheckInOutRepository(string connectionString) : base(connectionString) { }
 
-        /// <summary>
-        /// Check if check-in already exists for a reservation
-        /// </summary>
         public bool ExistsForReservation(int reservationId)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -31,7 +28,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
 
         public void Add(CheckInOutModel checkIn)
         {
-            // PREVENT DUPLICATES - Validation happens in presenter now
             if (ExistsForReservation(checkIn.ReservationId))
             {
                 throw new InvalidOperationException($"A check-in already exists for Reservation ID {checkIn.ReservationId}. Please use Edit instead.");
@@ -149,7 +145,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                // Order by CreatedAt DESC so newest check-ins appear on top in grids
                 command.CommandText = "SELECT * FROM CheckIns ORDER BY CreatedAt DESC";
 
                 using (var reader = command.ExecuteReader())
@@ -279,9 +274,6 @@ namespace HotelReservationSystem.Data.Repositories.CheckInOutRepository
             };
         }
 
-        /// <summary>
-        /// Perform checkout and update the check-in record
-        /// </summary>
         public void CheckOut(int reservationId, DateTime actualCheckOut, string checkedOutBy)
         {
             using (var connection = new SqlConnection(connectionString))

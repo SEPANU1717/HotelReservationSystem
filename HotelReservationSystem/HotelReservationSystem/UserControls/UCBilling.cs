@@ -34,7 +34,6 @@ namespace HotelReservationSystem.UserControls
             InitializeControls();
             AssociateAndRaiseViewEvents();
             
-            // Apply initial search state
             UpdateSearchControlsState();
         }
 
@@ -99,7 +98,6 @@ namespace HotelReservationSystem.UserControls
         
         private void AssociateAndRaiseViewEvents()
         {
-            // Search
             if (btnBillingSearch != null)
                 btnBillingSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             
@@ -110,23 +108,18 @@ namespace HotelReservationSystem.UserControls
                         SearchEvent?.Invoke(this, EventArgs.Empty);
                 };
             
-            // Add New
             if (btnBillingAddNew != null)
                 btnBillingAddNew.Click += delegate { AddNewEvent?.Invoke(this, EventArgs.Empty); };
             
-            // Edit
             if (btnBillingEdit != null)
                 btnBillingEdit.Click += delegate { EditEvent?.Invoke(this, EventArgs.Empty); };
             
-            // Delete
             if (btnDeleteDelete != null)
                 btnDeleteDelete.Click += delegate { DeleteEvent?.Invoke(this, EventArgs.Empty); };
             
-            // Save
             if (btnBillingSave != null)
                 btnBillingSave.Click += delegate { SaveEvent?.Invoke(this, EventArgs.Empty); };
             
-            // Cancel
             if (btnBillingCancel != null)
                 btnBillingCancel.Click += delegate { CancelEvent?.Invoke(this, EventArgs.Empty); };
 
@@ -146,7 +139,6 @@ namespace HotelReservationSystem.UserControls
                 };
             }
             
-            // Add text changed event for amount paid to show change
             if (txtAmountPaidAtCheckout != null)
             {
                 txtAmountPaidAtCheckout.TextChanged += delegate { UpdateCalculatedFields(); };
@@ -480,7 +472,6 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.SelectedTab = ReservationBillingForm;
             }
             
-            // Disable search when entering form view
             UpdateSearchControlsState();
         }
 
@@ -496,7 +487,6 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.SelectedTab = tabPage1;
             }
             
-            // Re-enable search when returning to grid view
             UpdateSearchControlsState();
         }
 
@@ -545,16 +535,13 @@ namespace HotelReservationSystem.UserControls
                 decimal totalPaid = paidBefore + paidNow;
                 decimal balance = subtotal - totalPaid;
                 
-                // FIX: If balance is negative, show 0 and display change separately
                 if (balance < 0)
                 {
                     BalanceDue = "0.00";
                     decimal change = Math.Abs(balance);
                     
-                    // Show change in a label if available, or in the balance field with "Change:" prefix
                     if (txtBalanceDue != null)
                     {
-                        // Optional: Create a label to show change, or show in status
                         ShowMessage(
                             string.Format("Customer paid: PHP {0:N2}\nTotal amount: PHP {1:N2}\nChange: PHP {2:N2}", 
                                 totalPaid, subtotal, change),
@@ -568,7 +555,7 @@ namespace HotelReservationSystem.UserControls
             }
             catch
             {
-                // Ignore calculation errors
+               
             }
         }
         #endregion

@@ -162,61 +162,84 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.sataPanel20 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox11 = new SATATextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.sataPictureBox19 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.order12 = new FrameworkTest.SATAButton();
             this.sataPanel21 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox10 = new SATATextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.sataPictureBox20 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.order9 = new FrameworkTest.SATAButton();
             this.sataPanel22 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox5 = new SATATextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
+            this.order6 = new FrameworkTest.SATAButton();
             this.panel23 = new System.Windows.Forms.Panel();
             this.sataPictureBox21 = new SATAUiFramework.Controls.SATAPictureBox();
             this.sataPanel23 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox2 = new SATATextBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.order3 = new FrameworkTest.SATAButton();
             this.label31 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.sataPictureBox22 = new SATAUiFramework.Controls.SATAPictureBox();
             this.sataPanel24 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox8 = new SATATextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
             this.sataPictureBox23 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.order11 = new FrameworkTest.SATAButton();
             this.sataPanel25 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox9 = new SATATextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
             this.sataPictureBox24 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.order8 = new FrameworkTest.SATAButton();
             this.sataPanel26 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox4 = new SATATextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
+            this.order5 = new FrameworkTest.SATAButton();
             this.panel27 = new System.Windows.Forms.Panel();
             this.sataPictureBox25 = new SATAUiFramework.Controls.SATAPictureBox();
             this.sataPanel27 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox1 = new SATATextBox();
+            this.order2 = new FrameworkTest.SATAButton();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
             this.sataPictureBox26 = new SATAUiFramework.Controls.SATAPictureBox();
             this.sataPanel28 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox7 = new SATATextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
             this.sataPictureBox27 = new SATAUiFramework.Controls.SATAPictureBox();
+            this.order10 = new FrameworkTest.SATAButton();
             this.sataPanel29 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox6 = new SATATextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
+            this.order7 = new FrameworkTest.SATAButton();
             this.panel30 = new System.Windows.Forms.Panel();
             this.sataPictureBox28 = new SATAUiFramework.Controls.SATAPictureBox();
             this.sataPanel30 = new SATAUiFramework.SATAPanel();
+            this.sataTextBox3 = new SATATextBox();
             this.label45 = new System.Windows.Forms.Label();
+            this.order4 = new FrameworkTest.SATAButton();
             this.label46 = new System.Windows.Forms.Label();
             this.panel31 = new System.Windows.Forms.Panel();
             this.sataPictureBox29 = new SATAUiFramework.Controls.SATAPictureBox();
             this.sataPanel31 = new SATAUiFramework.SATAPanel();
+            this.txtLastname = new SATATextBox();
             this.order1 = new FrameworkTest.SATAButton();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
@@ -270,29 +293,6 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtLastname = new SATATextBox();
-            this.sataTextBox1 = new SATATextBox();
-            this.order2 = new FrameworkTest.SATAButton();
-            this.order3 = new FrameworkTest.SATAButton();
-            this.sataTextBox2 = new SATATextBox();
-            this.order4 = new FrameworkTest.SATAButton();
-            this.sataTextBox3 = new SATATextBox();
-            this.order5 = new FrameworkTest.SATAButton();
-            this.sataTextBox4 = new SATATextBox();
-            this.order6 = new FrameworkTest.SATAButton();
-            this.sataTextBox5 = new SATATextBox();
-            this.order7 = new FrameworkTest.SATAButton();
-            this.sataTextBox6 = new SATATextBox();
-            this.order10 = new FrameworkTest.SATAButton();
-            this.sataTextBox7 = new SATATextBox();
-            this.order11 = new FrameworkTest.SATAButton();
-            this.sataTextBox8 = new SATATextBox();
-            this.order8 = new FrameworkTest.SATAButton();
-            this.sataTextBox9 = new SATATextBox();
-            this.order9 = new FrameworkTest.SATAButton();
-            this.sataTextBox10 = new SATATextBox();
-            this.order12 = new FrameworkTest.SATAButton();
-            this.sataTextBox11 = new SATATextBox();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -2123,10 +2123,10 @@
             // OrderFood
             // 
             this.OrderFood.Controls.Add(this.panel20);
-            this.OrderFood.Location = new System.Drawing.Point(4, 25);
+            this.OrderFood.Location = new System.Drawing.Point(4, 22);
             this.OrderFood.Name = "OrderFood";
             this.OrderFood.Padding = new System.Windows.Forms.Padding(3);
-            this.OrderFood.Size = new System.Drawing.Size(1194, 582);
+            this.OrderFood.Size = new System.Drawing.Size(1194, 585);
             this.OrderFood.TabIndex = 3;
             this.OrderFood.Text = "OrderFood";
             this.OrderFood.UseVisualStyleBackColor = true;
@@ -2137,7 +2137,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(3, 3);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1188, 576);
+            this.panel20.Size = new System.Drawing.Size(1188, 579);
             this.panel20.TabIndex = 0;
             // 
             // splitContainer3
@@ -2170,7 +2170,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.panel35);
             this.splitContainer3.Panel2.Controls.Add(this.panel36);
             this.splitContainer3.Panel2.Controls.Add(this.panel34);
-            this.splitContainer3.Size = new System.Drawing.Size(1188, 576);
+            this.splitContainer3.Size = new System.Drawing.Size(1188, 579);
             this.splitContainer3.SplitterDistance = 797;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -2194,6 +2194,30 @@
             this.sataPanel20.Name = "sataPanel20";
             this.sataPanel20.Size = new System.Drawing.Size(243, 119);
             this.sataPanel20.TabIndex = 1;
+            // 
+            // sataTextBox11
+            // 
+            this.sataTextBox11.BackColor = System.Drawing.Color.White;
+            this.sataTextBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox11.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox11.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox11.BorderRadius = 3;
+            this.sataTextBox11.BorderSize = 1;
+            this.sataTextBox11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox11.Icon = null;
+            this.sataTextBox11.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox11.Location = new System.Drawing.Point(121, 77);
+            this.sataTextBox11.Multiline = false;
+            this.sataTextBox11.Name = "sataTextBox11";
+            this.sataTextBox11.PasswordChar = false;
+            this.sataTextBox11.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox11.PlaceholderText = "";
+            this.sataTextBox11.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox11.TabIndex = 13;
+            this.sataTextBox11.Text = "0";
+            this.sataTextBox11.Texts = "";
+            this.sataTextBox11.UnderlinedStyle = false;
             // 
             // label24
             // 
@@ -2241,6 +2265,47 @@
             this.sataPictureBox19.TabIndex = 5;
             this.sataPictureBox19.TabStop = false;
             // 
+            // order12
+            // 
+            this.order12.ButtonText = "";
+            this.order12.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order12.CheckedForeColor = System.Drawing.Color.White;
+            this.order12.CheckedImageTint = System.Drawing.Color.White;
+            this.order12.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order12.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order12.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order12.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order12.HoverForeColor = System.Drawing.Color.White;
+            this.order12.HoverImage = null;
+            this.order12.HoverImageTint = System.Drawing.Color.White;
+            this.order12.HoverOutline = System.Drawing.Color.Empty;
+            this.order12.Image = ((System.Drawing.Image)(resources.GetObject("order12.Image")));
+            this.order12.ImageAutoCenter = true;
+            this.order12.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order12.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order12.ImageTint = System.Drawing.Color.White;
+            this.order12.IsToggleButton = false;
+            this.order12.IsToggled = false;
+            this.order12.Location = new System.Drawing.Point(194, 77);
+            this.order12.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order12.Name = "order12";
+            this.order12.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order12.NormalForeColor = System.Drawing.Color.White;
+            this.order12.NormalOutline = System.Drawing.Color.Empty;
+            this.order12.OutlineThickness = 2F;
+            this.order12.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order12.PressedForeColor = System.Drawing.Color.White;
+            this.order12.PressedImageTint = System.Drawing.Color.White;
+            this.order12.PressedOutline = System.Drawing.Color.Empty;
+            this.order12.Rounding = new System.Windows.Forms.Padding(5);
+            this.order12.Size = new System.Drawing.Size(40, 33);
+            this.order12.TabIndex = 12;
+            this.order12.TextAutoCenter = false;
+            this.order12.TextOffset = new System.Drawing.Point(0, 0);
+            this.order12.Click += new System.EventHandler(this.order12_Click);
+            // 
             // sataPanel21
             // 
             this.sataPanel21.BackColor = System.Drawing.Color.White;
@@ -2261,6 +2326,30 @@
             this.sataPanel21.Name = "sataPanel21";
             this.sataPanel21.Size = new System.Drawing.Size(243, 119);
             this.sataPanel21.TabIndex = 2;
+            // 
+            // sataTextBox10
+            // 
+            this.sataTextBox10.BackColor = System.Drawing.Color.White;
+            this.sataTextBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox10.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox10.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox10.BorderRadius = 3;
+            this.sataTextBox10.BorderSize = 1;
+            this.sataTextBox10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox10.Icon = null;
+            this.sataTextBox10.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox10.Location = new System.Drawing.Point(121, 74);
+            this.sataTextBox10.Multiline = false;
+            this.sataTextBox10.Name = "sataTextBox10";
+            this.sataTextBox10.PasswordChar = false;
+            this.sataTextBox10.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox10.PlaceholderText = "";
+            this.sataTextBox10.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox10.TabIndex = 13;
+            this.sataTextBox10.Text = "0";
+            this.sataTextBox10.Texts = "";
+            this.sataTextBox10.UnderlinedStyle = false;
             // 
             // label26
             // 
@@ -2308,6 +2397,47 @@
             this.sataPictureBox20.TabIndex = 5;
             this.sataPictureBox20.TabStop = false;
             // 
+            // order9
+            // 
+            this.order9.ButtonText = "";
+            this.order9.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order9.CheckedForeColor = System.Drawing.Color.White;
+            this.order9.CheckedImageTint = System.Drawing.Color.White;
+            this.order9.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order9.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order9.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order9.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order9.HoverForeColor = System.Drawing.Color.White;
+            this.order9.HoverImage = null;
+            this.order9.HoverImageTint = System.Drawing.Color.White;
+            this.order9.HoverOutline = System.Drawing.Color.Empty;
+            this.order9.Image = ((System.Drawing.Image)(resources.GetObject("order9.Image")));
+            this.order9.ImageAutoCenter = true;
+            this.order9.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order9.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order9.ImageTint = System.Drawing.Color.White;
+            this.order9.IsToggleButton = false;
+            this.order9.IsToggled = false;
+            this.order9.Location = new System.Drawing.Point(194, 74);
+            this.order9.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order9.Name = "order9";
+            this.order9.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order9.NormalForeColor = System.Drawing.Color.White;
+            this.order9.NormalOutline = System.Drawing.Color.Empty;
+            this.order9.OutlineThickness = 2F;
+            this.order9.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order9.PressedForeColor = System.Drawing.Color.White;
+            this.order9.PressedImageTint = System.Drawing.Color.White;
+            this.order9.PressedOutline = System.Drawing.Color.Empty;
+            this.order9.Rounding = new System.Windows.Forms.Padding(5);
+            this.order9.Size = new System.Drawing.Size(40, 33);
+            this.order9.TabIndex = 12;
+            this.order9.TextAutoCenter = false;
+            this.order9.TextOffset = new System.Drawing.Point(0, 0);
+            this.order9.Click += new System.EventHandler(this.order9_Click);
+            // 
             // sataPanel22
             // 
             this.sataPanel22.BackColor = System.Drawing.Color.White;
@@ -2329,6 +2459,30 @@
             this.sataPanel22.Size = new System.Drawing.Size(243, 119);
             this.sataPanel22.TabIndex = 3;
             // 
+            // sataTextBox5
+            // 
+            this.sataTextBox5.BackColor = System.Drawing.Color.White;
+            this.sataTextBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox5.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox5.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox5.BorderRadius = 3;
+            this.sataTextBox5.BorderSize = 1;
+            this.sataTextBox5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox5.Icon = null;
+            this.sataTextBox5.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox5.Location = new System.Drawing.Point(121, 79);
+            this.sataTextBox5.Multiline = false;
+            this.sataTextBox5.Name = "sataTextBox5";
+            this.sataTextBox5.PasswordChar = false;
+            this.sataTextBox5.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox5.PlaceholderText = "";
+            this.sataTextBox5.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox5.TabIndex = 13;
+            this.sataTextBox5.Text = "0";
+            this.sataTextBox5.Texts = "";
+            this.sataTextBox5.UnderlinedStyle = false;
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
@@ -2348,6 +2502,47 @@
             this.label29.Size = new System.Drawing.Size(115, 26);
             this.label29.TabIndex = 1;
             this.label29.Text = "Spicy instant noodle\r\nwith special omelette\r\n";
+            // 
+            // order6
+            // 
+            this.order6.ButtonText = "";
+            this.order6.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order6.CheckedForeColor = System.Drawing.Color.White;
+            this.order6.CheckedImageTint = System.Drawing.Color.White;
+            this.order6.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order6.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order6.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order6.HoverForeColor = System.Drawing.Color.White;
+            this.order6.HoverImage = null;
+            this.order6.HoverImageTint = System.Drawing.Color.White;
+            this.order6.HoverOutline = System.Drawing.Color.Empty;
+            this.order6.Image = ((System.Drawing.Image)(resources.GetObject("order6.Image")));
+            this.order6.ImageAutoCenter = true;
+            this.order6.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order6.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order6.ImageTint = System.Drawing.Color.White;
+            this.order6.IsToggleButton = false;
+            this.order6.IsToggled = false;
+            this.order6.Location = new System.Drawing.Point(194, 79);
+            this.order6.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order6.Name = "order6";
+            this.order6.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order6.NormalForeColor = System.Drawing.Color.White;
+            this.order6.NormalOutline = System.Drawing.Color.Empty;
+            this.order6.OutlineThickness = 2F;
+            this.order6.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order6.PressedForeColor = System.Drawing.Color.White;
+            this.order6.PressedImageTint = System.Drawing.Color.White;
+            this.order6.PressedOutline = System.Drawing.Color.Empty;
+            this.order6.Rounding = new System.Windows.Forms.Padding(5);
+            this.order6.Size = new System.Drawing.Size(40, 33);
+            this.order6.TabIndex = 12;
+            this.order6.TextAutoCenter = false;
+            this.order6.TextOffset = new System.Drawing.Point(0, 0);
+            this.order6.Click += new System.EventHandler(this.order6_Click);
             // 
             // panel23
             // 
@@ -2396,6 +2591,30 @@
             this.sataPanel23.Size = new System.Drawing.Size(243, 119);
             this.sataPanel23.TabIndex = 4;
             // 
+            // sataTextBox2
+            // 
+            this.sataTextBox2.BackColor = System.Drawing.Color.White;
+            this.sataTextBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox2.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox2.BorderRadius = 3;
+            this.sataTextBox2.BorderSize = 1;
+            this.sataTextBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox2.Icon = null;
+            this.sataTextBox2.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox2.Location = new System.Drawing.Point(121, 79);
+            this.sataTextBox2.Multiline = false;
+            this.sataTextBox2.Name = "sataTextBox2";
+            this.sataTextBox2.PasswordChar = false;
+            this.sataTextBox2.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox2.PlaceholderText = "";
+            this.sataTextBox2.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox2.TabIndex = 13;
+            this.sataTextBox2.Text = "0";
+            this.sataTextBox2.Texts = "";
+            this.sataTextBox2.UnderlinedStyle = false;
+            // 
             // label30
             // 
             this.label30.AutoSize = true;
@@ -2405,6 +2624,47 @@
             this.label30.Size = new System.Drawing.Size(73, 21);
             this.label30.TabIndex = 1;
             this.label30.Text = "₱ 309.99";
+            // 
+            // order3
+            // 
+            this.order3.ButtonText = "";
+            this.order3.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order3.CheckedForeColor = System.Drawing.Color.White;
+            this.order3.CheckedImageTint = System.Drawing.Color.White;
+            this.order3.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order3.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order3.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order3.HoverForeColor = System.Drawing.Color.White;
+            this.order3.HoverImage = null;
+            this.order3.HoverImageTint = System.Drawing.Color.White;
+            this.order3.HoverOutline = System.Drawing.Color.Empty;
+            this.order3.Image = ((System.Drawing.Image)(resources.GetObject("order3.Image")));
+            this.order3.ImageAutoCenter = true;
+            this.order3.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order3.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order3.ImageTint = System.Drawing.Color.White;
+            this.order3.IsToggleButton = false;
+            this.order3.IsToggled = false;
+            this.order3.Location = new System.Drawing.Point(194, 79);
+            this.order3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order3.Name = "order3";
+            this.order3.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order3.NormalForeColor = System.Drawing.Color.White;
+            this.order3.NormalOutline = System.Drawing.Color.Empty;
+            this.order3.OutlineThickness = 2F;
+            this.order3.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order3.PressedForeColor = System.Drawing.Color.White;
+            this.order3.PressedImageTint = System.Drawing.Color.White;
+            this.order3.PressedOutline = System.Drawing.Color.Empty;
+            this.order3.Rounding = new System.Windows.Forms.Padding(5);
+            this.order3.Size = new System.Drawing.Size(40, 33);
+            this.order3.TabIndex = 12;
+            this.order3.TextAutoCenter = false;
+            this.order3.TextOffset = new System.Drawing.Point(0, 0);
+            this.order3.Click += new System.EventHandler(this.order3_Click);
             // 
             // label31
             // 
@@ -2463,6 +2723,30 @@
             this.sataPanel24.Size = new System.Drawing.Size(243, 119);
             this.sataPanel24.TabIndex = 5;
             // 
+            // sataTextBox8
+            // 
+            this.sataTextBox8.BackColor = System.Drawing.Color.White;
+            this.sataTextBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox8.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox8.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox8.BorderRadius = 3;
+            this.sataTextBox8.BorderSize = 1;
+            this.sataTextBox8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox8.Icon = null;
+            this.sataTextBox8.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox8.Location = new System.Drawing.Point(121, 77);
+            this.sataTextBox8.Multiline = false;
+            this.sataTextBox8.Name = "sataTextBox8";
+            this.sataTextBox8.PasswordChar = false;
+            this.sataTextBox8.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox8.PlaceholderText = "";
+            this.sataTextBox8.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox8.TabIndex = 13;
+            this.sataTextBox8.Text = "0";
+            this.sataTextBox8.Texts = "";
+            this.sataTextBox8.UnderlinedStyle = false;
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -2509,6 +2793,47 @@
             this.sataPictureBox23.TabIndex = 5;
             this.sataPictureBox23.TabStop = false;
             // 
+            // order11
+            // 
+            this.order11.ButtonText = "";
+            this.order11.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order11.CheckedForeColor = System.Drawing.Color.White;
+            this.order11.CheckedImageTint = System.Drawing.Color.White;
+            this.order11.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order11.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order11.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order11.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order11.HoverForeColor = System.Drawing.Color.White;
+            this.order11.HoverImage = null;
+            this.order11.HoverImageTint = System.Drawing.Color.White;
+            this.order11.HoverOutline = System.Drawing.Color.Empty;
+            this.order11.Image = ((System.Drawing.Image)(resources.GetObject("order11.Image")));
+            this.order11.ImageAutoCenter = true;
+            this.order11.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order11.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order11.ImageTint = System.Drawing.Color.White;
+            this.order11.IsToggleButton = false;
+            this.order11.IsToggled = false;
+            this.order11.Location = new System.Drawing.Point(194, 77);
+            this.order11.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order11.Name = "order11";
+            this.order11.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order11.NormalForeColor = System.Drawing.Color.White;
+            this.order11.NormalOutline = System.Drawing.Color.Empty;
+            this.order11.OutlineThickness = 2F;
+            this.order11.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order11.PressedForeColor = System.Drawing.Color.White;
+            this.order11.PressedImageTint = System.Drawing.Color.White;
+            this.order11.PressedOutline = System.Drawing.Color.Empty;
+            this.order11.Rounding = new System.Windows.Forms.Padding(5);
+            this.order11.Size = new System.Drawing.Size(40, 33);
+            this.order11.TabIndex = 12;
+            this.order11.TextAutoCenter = false;
+            this.order11.TextOffset = new System.Drawing.Point(0, 0);
+            this.order11.Click += new System.EventHandler(this.order11_Click);
+            // 
             // sataPanel25
             // 
             this.sataPanel25.BackColor = System.Drawing.Color.White;
@@ -2529,6 +2854,30 @@
             this.sataPanel25.Name = "sataPanel25";
             this.sataPanel25.Size = new System.Drawing.Size(243, 119);
             this.sataPanel25.TabIndex = 6;
+            // 
+            // sataTextBox9
+            // 
+            this.sataTextBox9.BackColor = System.Drawing.Color.White;
+            this.sataTextBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox9.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox9.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox9.BorderRadius = 3;
+            this.sataTextBox9.BorderSize = 1;
+            this.sataTextBox9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox9.Icon = null;
+            this.sataTextBox9.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox9.Location = new System.Drawing.Point(121, 76);
+            this.sataTextBox9.Multiline = false;
+            this.sataTextBox9.Name = "sataTextBox9";
+            this.sataTextBox9.PasswordChar = false;
+            this.sataTextBox9.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox9.PlaceholderText = "";
+            this.sataTextBox9.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox9.TabIndex = 13;
+            this.sataTextBox9.Text = "0";
+            this.sataTextBox9.Texts = "";
+            this.sataTextBox9.UnderlinedStyle = false;
             // 
             // label34
             // 
@@ -2576,6 +2925,47 @@
             this.sataPictureBox24.TabIndex = 5;
             this.sataPictureBox24.TabStop = false;
             // 
+            // order8
+            // 
+            this.order8.ButtonText = "";
+            this.order8.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order8.CheckedForeColor = System.Drawing.Color.White;
+            this.order8.CheckedImageTint = System.Drawing.Color.White;
+            this.order8.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order8.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order8.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order8.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order8.HoverForeColor = System.Drawing.Color.White;
+            this.order8.HoverImage = null;
+            this.order8.HoverImageTint = System.Drawing.Color.White;
+            this.order8.HoverOutline = System.Drawing.Color.Empty;
+            this.order8.Image = ((System.Drawing.Image)(resources.GetObject("order8.Image")));
+            this.order8.ImageAutoCenter = true;
+            this.order8.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order8.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order8.ImageTint = System.Drawing.Color.White;
+            this.order8.IsToggleButton = false;
+            this.order8.IsToggled = false;
+            this.order8.Location = new System.Drawing.Point(194, 76);
+            this.order8.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order8.Name = "order8";
+            this.order8.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order8.NormalForeColor = System.Drawing.Color.White;
+            this.order8.NormalOutline = System.Drawing.Color.Empty;
+            this.order8.OutlineThickness = 2F;
+            this.order8.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order8.PressedForeColor = System.Drawing.Color.White;
+            this.order8.PressedImageTint = System.Drawing.Color.White;
+            this.order8.PressedOutline = System.Drawing.Color.Empty;
+            this.order8.Rounding = new System.Windows.Forms.Padding(5);
+            this.order8.Size = new System.Drawing.Size(40, 33);
+            this.order8.TabIndex = 12;
+            this.order8.TextAutoCenter = false;
+            this.order8.TextOffset = new System.Drawing.Point(0, 0);
+            this.order8.Click += new System.EventHandler(this.order8_Click);
+            // 
             // sataPanel26
             // 
             this.sataPanel26.BackColor = System.Drawing.Color.White;
@@ -2597,6 +2987,30 @@
             this.sataPanel26.Size = new System.Drawing.Size(243, 119);
             this.sataPanel26.TabIndex = 7;
             // 
+            // sataTextBox4
+            // 
+            this.sataTextBox4.BackColor = System.Drawing.Color.White;
+            this.sataTextBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox4.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox4.BorderRadius = 3;
+            this.sataTextBox4.BorderSize = 1;
+            this.sataTextBox4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox4.Icon = null;
+            this.sataTextBox4.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox4.Location = new System.Drawing.Point(121, 77);
+            this.sataTextBox4.Multiline = false;
+            this.sataTextBox4.Name = "sataTextBox4";
+            this.sataTextBox4.PasswordChar = false;
+            this.sataTextBox4.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox4.PlaceholderText = "";
+            this.sataTextBox4.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox4.TabIndex = 13;
+            this.sataTextBox4.Text = "0";
+            this.sataTextBox4.Texts = "";
+            this.sataTextBox4.UnderlinedStyle = false;
+            // 
             // label37
             // 
             this.label37.AutoSize = true;
@@ -2616,6 +3030,47 @@
             this.label38.Size = new System.Drawing.Size(103, 26);
             this.label38.TabIndex = 1;
             this.label38.Text = "Hot spicy fried rice\r\nwith omelet\r\n";
+            // 
+            // order5
+            // 
+            this.order5.ButtonText = "";
+            this.order5.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order5.CheckedForeColor = System.Drawing.Color.White;
+            this.order5.CheckedImageTint = System.Drawing.Color.White;
+            this.order5.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order5.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order5.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order5.HoverForeColor = System.Drawing.Color.White;
+            this.order5.HoverImage = null;
+            this.order5.HoverImageTint = System.Drawing.Color.White;
+            this.order5.HoverOutline = System.Drawing.Color.Empty;
+            this.order5.Image = ((System.Drawing.Image)(resources.GetObject("order5.Image")));
+            this.order5.ImageAutoCenter = true;
+            this.order5.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order5.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order5.ImageTint = System.Drawing.Color.White;
+            this.order5.IsToggleButton = false;
+            this.order5.IsToggled = false;
+            this.order5.Location = new System.Drawing.Point(194, 77);
+            this.order5.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order5.Name = "order5";
+            this.order5.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order5.NormalForeColor = System.Drawing.Color.White;
+            this.order5.NormalOutline = System.Drawing.Color.Empty;
+            this.order5.OutlineThickness = 2F;
+            this.order5.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order5.PressedForeColor = System.Drawing.Color.White;
+            this.order5.PressedImageTint = System.Drawing.Color.White;
+            this.order5.PressedOutline = System.Drawing.Color.Empty;
+            this.order5.Rounding = new System.Windows.Forms.Padding(5);
+            this.order5.Size = new System.Drawing.Size(40, 33);
+            this.order5.TabIndex = 12;
+            this.order5.TextAutoCenter = false;
+            this.order5.TextOffset = new System.Drawing.Point(0, 0);
+            this.order5.Click += new System.EventHandler(this.order5_Click);
             // 
             // panel27
             // 
@@ -2663,6 +3118,71 @@
             this.sataPanel27.Name = "sataPanel27";
             this.sataPanel27.Size = new System.Drawing.Size(243, 119);
             this.sataPanel27.TabIndex = 8;
+            // 
+            // sataTextBox1
+            // 
+            this.sataTextBox1.BackColor = System.Drawing.Color.White;
+            this.sataTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox1.BorderRadius = 3;
+            this.sataTextBox1.BorderSize = 1;
+            this.sataTextBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox1.Icon = null;
+            this.sataTextBox1.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox1.Location = new System.Drawing.Point(121, 79);
+            this.sataTextBox1.Multiline = false;
+            this.sataTextBox1.Name = "sataTextBox1";
+            this.sataTextBox1.PasswordChar = false;
+            this.sataTextBox1.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox1.PlaceholderText = "";
+            this.sataTextBox1.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox1.TabIndex = 13;
+            this.sataTextBox1.Text = "0";
+            this.sataTextBox1.Texts = "";
+            this.sataTextBox1.UnderlinedStyle = false;
+            // 
+            // order2
+            // 
+            this.order2.ButtonText = "";
+            this.order2.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order2.CheckedForeColor = System.Drawing.Color.White;
+            this.order2.CheckedImageTint = System.Drawing.Color.White;
+            this.order2.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order2.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order2.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order2.HoverForeColor = System.Drawing.Color.White;
+            this.order2.HoverImage = null;
+            this.order2.HoverImageTint = System.Drawing.Color.White;
+            this.order2.HoverOutline = System.Drawing.Color.Empty;
+            this.order2.Image = ((System.Drawing.Image)(resources.GetObject("order2.Image")));
+            this.order2.ImageAutoCenter = true;
+            this.order2.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order2.ImageTint = System.Drawing.Color.White;
+            this.order2.IsToggleButton = false;
+            this.order2.IsToggled = false;
+            this.order2.Location = new System.Drawing.Point(194, 79);
+            this.order2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order2.Name = "order2";
+            this.order2.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order2.NormalForeColor = System.Drawing.Color.White;
+            this.order2.NormalOutline = System.Drawing.Color.Empty;
+            this.order2.OutlineThickness = 2F;
+            this.order2.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order2.PressedForeColor = System.Drawing.Color.White;
+            this.order2.PressedImageTint = System.Drawing.Color.White;
+            this.order2.PressedOutline = System.Drawing.Color.Empty;
+            this.order2.Rounding = new System.Windows.Forms.Padding(5);
+            this.order2.Size = new System.Drawing.Size(40, 33);
+            this.order2.TabIndex = 12;
+            this.order2.TextAutoCenter = false;
+            this.order2.TextOffset = new System.Drawing.Point(0, 0);
+            this.order2.Click += new System.EventHandler(this.order2_Click);
             // 
             // label39
             // 
@@ -2731,6 +3251,30 @@
             this.sataPanel28.Size = new System.Drawing.Size(243, 119);
             this.sataPanel28.TabIndex = 9;
             // 
+            // sataTextBox7
+            // 
+            this.sataTextBox7.BackColor = System.Drawing.Color.White;
+            this.sataTextBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox7.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox7.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox7.BorderRadius = 3;
+            this.sataTextBox7.BorderSize = 1;
+            this.sataTextBox7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox7.Icon = null;
+            this.sataTextBox7.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox7.Location = new System.Drawing.Point(120, 79);
+            this.sataTextBox7.Multiline = false;
+            this.sataTextBox7.Name = "sataTextBox7";
+            this.sataTextBox7.PasswordChar = false;
+            this.sataTextBox7.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox7.PlaceholderText = "";
+            this.sataTextBox7.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox7.TabIndex = 13;
+            this.sataTextBox7.Text = "0";
+            this.sataTextBox7.Texts = "";
+            this.sataTextBox7.UnderlinedStyle = false;
+            // 
             // label41
             // 
             this.label41.AutoSize = true;
@@ -2777,6 +3321,47 @@
             this.sataPictureBox27.TabIndex = 5;
             this.sataPictureBox27.TabStop = false;
             // 
+            // order10
+            // 
+            this.order10.ButtonText = "";
+            this.order10.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order10.CheckedForeColor = System.Drawing.Color.White;
+            this.order10.CheckedImageTint = System.Drawing.Color.White;
+            this.order10.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order10.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order10.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order10.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order10.HoverForeColor = System.Drawing.Color.White;
+            this.order10.HoverImage = null;
+            this.order10.HoverImageTint = System.Drawing.Color.White;
+            this.order10.HoverOutline = System.Drawing.Color.Empty;
+            this.order10.Image = ((System.Drawing.Image)(resources.GetObject("order10.Image")));
+            this.order10.ImageAutoCenter = true;
+            this.order10.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order10.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order10.ImageTint = System.Drawing.Color.White;
+            this.order10.IsToggleButton = false;
+            this.order10.IsToggled = false;
+            this.order10.Location = new System.Drawing.Point(193, 79);
+            this.order10.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order10.Name = "order10";
+            this.order10.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order10.NormalForeColor = System.Drawing.Color.White;
+            this.order10.NormalOutline = System.Drawing.Color.Empty;
+            this.order10.OutlineThickness = 2F;
+            this.order10.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order10.PressedForeColor = System.Drawing.Color.White;
+            this.order10.PressedImageTint = System.Drawing.Color.White;
+            this.order10.PressedOutline = System.Drawing.Color.Empty;
+            this.order10.Rounding = new System.Windows.Forms.Padding(5);
+            this.order10.Size = new System.Drawing.Size(40, 33);
+            this.order10.TabIndex = 12;
+            this.order10.TextAutoCenter = false;
+            this.order10.TextOffset = new System.Drawing.Point(0, 0);
+            this.order10.Click += new System.EventHandler(this.order10_Click);
+            // 
             // sataPanel29
             // 
             this.sataPanel29.BackColor = System.Drawing.Color.White;
@@ -2798,6 +3383,30 @@
             this.sataPanel29.Size = new System.Drawing.Size(243, 119);
             this.sataPanel29.TabIndex = 10;
             // 
+            // sataTextBox6
+            // 
+            this.sataTextBox6.BackColor = System.Drawing.Color.White;
+            this.sataTextBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox6.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox6.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox6.BorderRadius = 3;
+            this.sataTextBox6.BorderSize = 1;
+            this.sataTextBox6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox6.Icon = null;
+            this.sataTextBox6.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox6.Location = new System.Drawing.Point(120, 76);
+            this.sataTextBox6.Multiline = false;
+            this.sataTextBox6.Name = "sataTextBox6";
+            this.sataTextBox6.PasswordChar = false;
+            this.sataTextBox6.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox6.PlaceholderText = "";
+            this.sataTextBox6.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox6.TabIndex = 13;
+            this.sataTextBox6.Text = "0";
+            this.sataTextBox6.Texts = "";
+            this.sataTextBox6.UnderlinedStyle = false;
+            // 
             // label43
             // 
             this.label43.AutoSize = true;
@@ -2817,6 +3426,47 @@
             this.label44.Size = new System.Drawing.Size(73, 13);
             this.label44.TabIndex = 1;
             this.label44.Text = "Tropical Bliss";
+            // 
+            // order7
+            // 
+            this.order7.ButtonText = "";
+            this.order7.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order7.CheckedForeColor = System.Drawing.Color.White;
+            this.order7.CheckedImageTint = System.Drawing.Color.White;
+            this.order7.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order7.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order7.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order7.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order7.HoverForeColor = System.Drawing.Color.White;
+            this.order7.HoverImage = null;
+            this.order7.HoverImageTint = System.Drawing.Color.White;
+            this.order7.HoverOutline = System.Drawing.Color.Empty;
+            this.order7.Image = ((System.Drawing.Image)(resources.GetObject("order7.Image")));
+            this.order7.ImageAutoCenter = true;
+            this.order7.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order7.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order7.ImageTint = System.Drawing.Color.White;
+            this.order7.IsToggleButton = false;
+            this.order7.IsToggled = false;
+            this.order7.Location = new System.Drawing.Point(193, 76);
+            this.order7.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order7.Name = "order7";
+            this.order7.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order7.NormalForeColor = System.Drawing.Color.White;
+            this.order7.NormalOutline = System.Drawing.Color.Empty;
+            this.order7.OutlineThickness = 2F;
+            this.order7.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order7.PressedForeColor = System.Drawing.Color.White;
+            this.order7.PressedImageTint = System.Drawing.Color.White;
+            this.order7.PressedOutline = System.Drawing.Color.Empty;
+            this.order7.Rounding = new System.Windows.Forms.Padding(5);
+            this.order7.Size = new System.Drawing.Size(40, 33);
+            this.order7.TabIndex = 12;
+            this.order7.TextAutoCenter = false;
+            this.order7.TextOffset = new System.Drawing.Point(0, 0);
+            this.order7.Click += new System.EventHandler(this.order7_Click);
             // 
             // panel30
             // 
@@ -2865,6 +3515,30 @@
             this.sataPanel30.Size = new System.Drawing.Size(243, 119);
             this.sataPanel30.TabIndex = 11;
             // 
+            // sataTextBox3
+            // 
+            this.sataTextBox3.BackColor = System.Drawing.Color.White;
+            this.sataTextBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.sataTextBox3.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sataTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox3.BorderRadius = 3;
+            this.sataTextBox3.BorderSize = 1;
+            this.sataTextBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sataTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.sataTextBox3.Icon = null;
+            this.sataTextBox3.IconSize = new System.Drawing.Size(20, 20);
+            this.sataTextBox3.Location = new System.Drawing.Point(120, 79);
+            this.sataTextBox3.Multiline = false;
+            this.sataTextBox3.Name = "sataTextBox3";
+            this.sataTextBox3.PasswordChar = false;
+            this.sataTextBox3.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.sataTextBox3.PlaceholderText = "";
+            this.sataTextBox3.Size = new System.Drawing.Size(65, 31);
+            this.sataTextBox3.TabIndex = 13;
+            this.sataTextBox3.Text = "0";
+            this.sataTextBox3.Texts = "";
+            this.sataTextBox3.UnderlinedStyle = false;
+            // 
             // label45
             // 
             this.label45.AutoSize = true;
@@ -2874,6 +3548,47 @@
             this.label45.Size = new System.Drawing.Size(73, 21);
             this.label45.TabIndex = 1;
             this.label45.Text = "₱ 249.99";
+            // 
+            // order4
+            // 
+            this.order4.ButtonText = "";
+            this.order4.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.order4.CheckedForeColor = System.Drawing.Color.White;
+            this.order4.CheckedImageTint = System.Drawing.Color.White;
+            this.order4.CheckedOutline = System.Drawing.Color.Transparent;
+            this.order4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.order4.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.order4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.order4.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.order4.HoverForeColor = System.Drawing.Color.White;
+            this.order4.HoverImage = null;
+            this.order4.HoverImageTint = System.Drawing.Color.White;
+            this.order4.HoverOutline = System.Drawing.Color.Empty;
+            this.order4.Image = ((System.Drawing.Image)(resources.GetObject("order4.Image")));
+            this.order4.ImageAutoCenter = true;
+            this.order4.ImageExpand = new System.Drawing.Point(0, 0);
+            this.order4.ImageOffset = new System.Drawing.Point(0, 0);
+            this.order4.ImageTint = System.Drawing.Color.White;
+            this.order4.IsToggleButton = false;
+            this.order4.IsToggled = false;
+            this.order4.Location = new System.Drawing.Point(193, 79);
+            this.order4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.order4.Name = "order4";
+            this.order4.NormalBackground = System.Drawing.Color.WhiteSmoke;
+            this.order4.NormalForeColor = System.Drawing.Color.White;
+            this.order4.NormalOutline = System.Drawing.Color.Empty;
+            this.order4.OutlineThickness = 2F;
+            this.order4.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            this.order4.PressedForeColor = System.Drawing.Color.White;
+            this.order4.PressedImageTint = System.Drawing.Color.White;
+            this.order4.PressedOutline = System.Drawing.Color.Empty;
+            this.order4.Rounding = new System.Windows.Forms.Padding(5);
+            this.order4.Size = new System.Drawing.Size(40, 33);
+            this.order4.TabIndex = 12;
+            this.order4.TextAutoCenter = false;
+            this.order4.TextOffset = new System.Drawing.Point(0, 0);
+            this.order4.Click += new System.EventHandler(this.order4_Click);
             // 
             // label46
             // 
@@ -2931,6 +3646,30 @@
             this.sataPanel31.Name = "sataPanel31";
             this.sataPanel31.Size = new System.Drawing.Size(243, 119);
             this.sataPanel31.TabIndex = 12;
+            // 
+            // txtLastname
+            // 
+            this.txtLastname.BackColor = System.Drawing.Color.White;
+            this.txtLastname.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtLastname.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtLastname.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtLastname.BorderRadius = 3;
+            this.txtLastname.BorderSize = 1;
+            this.txtLastname.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.txtLastname.Icon = null;
+            this.txtLastname.IconSize = new System.Drawing.Size(20, 20);
+            this.txtLastname.Location = new System.Drawing.Point(120, 79);
+            this.txtLastname.Multiline = false;
+            this.txtLastname.Name = "txtLastname";
+            this.txtLastname.PasswordChar = false;
+            this.txtLastname.PlaceholderColor = System.Drawing.Color.Transparent;
+            this.txtLastname.PlaceholderText = "";
+            this.txtLastname.Size = new System.Drawing.Size(65, 31);
+            this.txtLastname.TabIndex = 13;
+            this.txtLastname.Text = "0";
+            this.txtLastname.Texts = "";
+            this.txtLastname.UnderlinedStyle = false;
             // 
             // order1
             // 
@@ -3072,7 +3811,7 @@
             // 
             this.panel35.Controls.Add(this.dataGridFood);
             this.panel35.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel35.Location = new System.Drawing.Point(0, 74);
+            this.panel35.Location = new System.Drawing.Point(0, 77);
             this.panel35.Name = "panel35";
             this.panel35.Size = new System.Drawing.Size(387, 333);
             this.panel35.TabIndex = 23;
@@ -3136,7 +3875,7 @@
             this.panel36.Controls.Add(this.label50);
             this.panel36.Controls.Add(this.btnBasketOrder);
             this.panel36.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel36.Location = new System.Drawing.Point(0, 407);
+            this.panel36.Location = new System.Drawing.Point(0, 410);
             this.panel36.Name = "panel36";
             this.panel36.Size = new System.Drawing.Size(387, 169);
             this.panel36.TabIndex = 24;
@@ -3252,10 +3991,10 @@
             // 
             this.ConfirmOrder.Controls.Add(this.sataPanel32);
             this.ConfirmOrder.Controls.Add(this.label66);
-            this.ConfirmOrder.Location = new System.Drawing.Point(4, 25);
+            this.ConfirmOrder.Location = new System.Drawing.Point(4, 22);
             this.ConfirmOrder.Name = "ConfirmOrder";
             this.ConfirmOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 582);
+            this.ConfirmOrder.Size = new System.Drawing.Size(1194, 585);
             this.ConfirmOrder.TabIndex = 4;
             this.ConfirmOrder.Text = "ConfirmOrder";
             this.ConfirmOrder.UseVisualStyleBackColor = true;
@@ -4062,745 +4801,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 6;
-            // 
-            // txtLastname
-            // 
-            this.txtLastname.BackColor = System.Drawing.Color.White;
-            this.txtLastname.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtLastname.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtLastname.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtLastname.BorderRadius = 3;
-            this.txtLastname.BorderSize = 1;
-            this.txtLastname.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.txtLastname.Icon = null;
-            this.txtLastname.IconSize = new System.Drawing.Size(20, 20);
-            this.txtLastname.Location = new System.Drawing.Point(120, 79);
-            this.txtLastname.Multiline = false;
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.PasswordChar = false;
-            this.txtLastname.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.txtLastname.PlaceholderText = "";
-            this.txtLastname.Size = new System.Drawing.Size(65, 31);
-            this.txtLastname.TabIndex = 13;
-            this.txtLastname.Text = "0";
-            this.txtLastname.Texts = "";
-            this.txtLastname.UnderlinedStyle = false;
-            // 
-            // sataTextBox1
-            // 
-            this.sataTextBox1.BackColor = System.Drawing.Color.White;
-            this.sataTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox1.BorderRadius = 3;
-            this.sataTextBox1.BorderSize = 1;
-            this.sataTextBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox1.Icon = null;
-            this.sataTextBox1.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox1.Location = new System.Drawing.Point(121, 79);
-            this.sataTextBox1.Multiline = false;
-            this.sataTextBox1.Name = "sataTextBox1";
-            this.sataTextBox1.PasswordChar = false;
-            this.sataTextBox1.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox1.PlaceholderText = "";
-            this.sataTextBox1.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox1.TabIndex = 13;
-            this.sataTextBox1.Text = "0";
-            this.sataTextBox1.Texts = "";
-            this.sataTextBox1.UnderlinedStyle = false;
-            // 
-            // order2
-            // 
-            this.order2.ButtonText = "";
-            this.order2.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order2.CheckedForeColor = System.Drawing.Color.White;
-            this.order2.CheckedImageTint = System.Drawing.Color.White;
-            this.order2.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order2.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order2.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order2.HoverForeColor = System.Drawing.Color.White;
-            this.order2.HoverImage = null;
-            this.order2.HoverImageTint = System.Drawing.Color.White;
-            this.order2.HoverOutline = System.Drawing.Color.Empty;
-            this.order2.Image = ((System.Drawing.Image)(resources.GetObject("order2.Image")));
-            this.order2.ImageAutoCenter = true;
-            this.order2.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order2.ImageTint = System.Drawing.Color.White;
-            this.order2.IsToggleButton = false;
-            this.order2.IsToggled = false;
-            this.order2.Location = new System.Drawing.Point(194, 79);
-            this.order2.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order2.Name = "order2";
-            this.order2.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order2.NormalForeColor = System.Drawing.Color.White;
-            this.order2.NormalOutline = System.Drawing.Color.Empty;
-            this.order2.OutlineThickness = 2F;
-            this.order2.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order2.PressedForeColor = System.Drawing.Color.White;
-            this.order2.PressedImageTint = System.Drawing.Color.White;
-            this.order2.PressedOutline = System.Drawing.Color.Empty;
-            this.order2.Rounding = new System.Windows.Forms.Padding(5);
-            this.order2.Size = new System.Drawing.Size(40, 33);
-            this.order2.TabIndex = 12;
-            this.order2.TextAutoCenter = false;
-            this.order2.TextOffset = new System.Drawing.Point(0, 0);
-            this.order2.Click += new System.EventHandler(this.order2_Click);
-            // 
-            // order3
-            // 
-            this.order3.ButtonText = "";
-            this.order3.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order3.CheckedForeColor = System.Drawing.Color.White;
-            this.order3.CheckedImageTint = System.Drawing.Color.White;
-            this.order3.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order3.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order3.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order3.HoverForeColor = System.Drawing.Color.White;
-            this.order3.HoverImage = null;
-            this.order3.HoverImageTint = System.Drawing.Color.White;
-            this.order3.HoverOutline = System.Drawing.Color.Empty;
-            this.order3.Image = ((System.Drawing.Image)(resources.GetObject("order3.Image")));
-            this.order3.ImageAutoCenter = true;
-            this.order3.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order3.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order3.ImageTint = System.Drawing.Color.White;
-            this.order3.IsToggleButton = false;
-            this.order3.IsToggled = false;
-            this.order3.Location = new System.Drawing.Point(194, 79);
-            this.order3.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order3.Name = "order3";
-            this.order3.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order3.NormalForeColor = System.Drawing.Color.White;
-            this.order3.NormalOutline = System.Drawing.Color.Empty;
-            this.order3.OutlineThickness = 2F;
-            this.order3.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order3.PressedForeColor = System.Drawing.Color.White;
-            this.order3.PressedImageTint = System.Drawing.Color.White;
-            this.order3.PressedOutline = System.Drawing.Color.Empty;
-            this.order3.Rounding = new System.Windows.Forms.Padding(5);
-            this.order3.Size = new System.Drawing.Size(40, 33);
-            this.order3.TabIndex = 12;
-            this.order3.TextAutoCenter = false;
-            this.order3.TextOffset = new System.Drawing.Point(0, 0);
-            this.order3.Click += new System.EventHandler(this.order3_Click);
-            // 
-            // sataTextBox2
-            // 
-            this.sataTextBox2.BackColor = System.Drawing.Color.White;
-            this.sataTextBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox2.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox2.BorderRadius = 3;
-            this.sataTextBox2.BorderSize = 1;
-            this.sataTextBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox2.Icon = null;
-            this.sataTextBox2.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox2.Location = new System.Drawing.Point(121, 79);
-            this.sataTextBox2.Multiline = false;
-            this.sataTextBox2.Name = "sataTextBox2";
-            this.sataTextBox2.PasswordChar = false;
-            this.sataTextBox2.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox2.PlaceholderText = "";
-            this.sataTextBox2.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox2.TabIndex = 13;
-            this.sataTextBox2.Text = "0";
-            this.sataTextBox2.Texts = "";
-            this.sataTextBox2.UnderlinedStyle = false;
-            // 
-            // order4
-            // 
-            this.order4.ButtonText = "";
-            this.order4.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order4.CheckedForeColor = System.Drawing.Color.White;
-            this.order4.CheckedImageTint = System.Drawing.Color.White;
-            this.order4.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order4.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order4.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order4.HoverForeColor = System.Drawing.Color.White;
-            this.order4.HoverImage = null;
-            this.order4.HoverImageTint = System.Drawing.Color.White;
-            this.order4.HoverOutline = System.Drawing.Color.Empty;
-            this.order4.Image = ((System.Drawing.Image)(resources.GetObject("order4.Image")));
-            this.order4.ImageAutoCenter = true;
-            this.order4.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order4.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order4.ImageTint = System.Drawing.Color.White;
-            this.order4.IsToggleButton = false;
-            this.order4.IsToggled = false;
-            this.order4.Location = new System.Drawing.Point(193, 79);
-            this.order4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order4.Name = "order4";
-            this.order4.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order4.NormalForeColor = System.Drawing.Color.White;
-            this.order4.NormalOutline = System.Drawing.Color.Empty;
-            this.order4.OutlineThickness = 2F;
-            this.order4.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order4.PressedForeColor = System.Drawing.Color.White;
-            this.order4.PressedImageTint = System.Drawing.Color.White;
-            this.order4.PressedOutline = System.Drawing.Color.Empty;
-            this.order4.Rounding = new System.Windows.Forms.Padding(5);
-            this.order4.Size = new System.Drawing.Size(40, 33);
-            this.order4.TabIndex = 12;
-            this.order4.TextAutoCenter = false;
-            this.order4.TextOffset = new System.Drawing.Point(0, 0);
-            this.order4.Click += new System.EventHandler(this.order4_Click);
-            // 
-            // sataTextBox3
-            // 
-            this.sataTextBox3.BackColor = System.Drawing.Color.White;
-            this.sataTextBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox3.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox3.BorderRadius = 3;
-            this.sataTextBox3.BorderSize = 1;
-            this.sataTextBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox3.Icon = null;
-            this.sataTextBox3.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox3.Location = new System.Drawing.Point(120, 79);
-            this.sataTextBox3.Multiline = false;
-            this.sataTextBox3.Name = "sataTextBox3";
-            this.sataTextBox3.PasswordChar = false;
-            this.sataTextBox3.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox3.PlaceholderText = "";
-            this.sataTextBox3.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox3.TabIndex = 13;
-            this.sataTextBox3.Text = "0";
-            this.sataTextBox3.Texts = "";
-            this.sataTextBox3.UnderlinedStyle = false;
-            // 
-            // order5
-            // 
-            this.order5.ButtonText = "";
-            this.order5.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order5.CheckedForeColor = System.Drawing.Color.White;
-            this.order5.CheckedImageTint = System.Drawing.Color.White;
-            this.order5.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order5.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order5.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order5.HoverForeColor = System.Drawing.Color.White;
-            this.order5.HoverImage = null;
-            this.order5.HoverImageTint = System.Drawing.Color.White;
-            this.order5.HoverOutline = System.Drawing.Color.Empty;
-            this.order5.Image = ((System.Drawing.Image)(resources.GetObject("order5.Image")));
-            this.order5.ImageAutoCenter = true;
-            this.order5.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order5.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order5.ImageTint = System.Drawing.Color.White;
-            this.order5.IsToggleButton = false;
-            this.order5.IsToggled = false;
-            this.order5.Location = new System.Drawing.Point(194, 77);
-            this.order5.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order5.Name = "order5";
-            this.order5.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order5.NormalForeColor = System.Drawing.Color.White;
-            this.order5.NormalOutline = System.Drawing.Color.Empty;
-            this.order5.OutlineThickness = 2F;
-            this.order5.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order5.PressedForeColor = System.Drawing.Color.White;
-            this.order5.PressedImageTint = System.Drawing.Color.White;
-            this.order5.PressedOutline = System.Drawing.Color.Empty;
-            this.order5.Rounding = new System.Windows.Forms.Padding(5);
-            this.order5.Size = new System.Drawing.Size(40, 33);
-            this.order5.TabIndex = 12;
-            this.order5.TextAutoCenter = false;
-            this.order5.TextOffset = new System.Drawing.Point(0, 0);
-            this.order5.Click += new System.EventHandler(this.order5_Click);
-            // 
-            // sataTextBox4
-            // 
-            this.sataTextBox4.BackColor = System.Drawing.Color.White;
-            this.sataTextBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox4.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox4.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox4.BorderRadius = 3;
-            this.sataTextBox4.BorderSize = 1;
-            this.sataTextBox4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox4.Icon = null;
-            this.sataTextBox4.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox4.Location = new System.Drawing.Point(121, 77);
-            this.sataTextBox4.Multiline = false;
-            this.sataTextBox4.Name = "sataTextBox4";
-            this.sataTextBox4.PasswordChar = false;
-            this.sataTextBox4.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox4.PlaceholderText = "";
-            this.sataTextBox4.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox4.TabIndex = 13;
-            this.sataTextBox4.Text = "0";
-            this.sataTextBox4.Texts = "";
-            this.sataTextBox4.UnderlinedStyle = false;
-            // 
-            // order6
-            // 
-            this.order6.ButtonText = "";
-            this.order6.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order6.CheckedForeColor = System.Drawing.Color.White;
-            this.order6.CheckedImageTint = System.Drawing.Color.White;
-            this.order6.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order6.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order6.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order6.HoverForeColor = System.Drawing.Color.White;
-            this.order6.HoverImage = null;
-            this.order6.HoverImageTint = System.Drawing.Color.White;
-            this.order6.HoverOutline = System.Drawing.Color.Empty;
-            this.order6.Image = ((System.Drawing.Image)(resources.GetObject("order6.Image")));
-            this.order6.ImageAutoCenter = true;
-            this.order6.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order6.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order6.ImageTint = System.Drawing.Color.White;
-            this.order6.IsToggleButton = false;
-            this.order6.IsToggled = false;
-            this.order6.Location = new System.Drawing.Point(194, 79);
-            this.order6.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order6.Name = "order6";
-            this.order6.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order6.NormalForeColor = System.Drawing.Color.White;
-            this.order6.NormalOutline = System.Drawing.Color.Empty;
-            this.order6.OutlineThickness = 2F;
-            this.order6.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order6.PressedForeColor = System.Drawing.Color.White;
-            this.order6.PressedImageTint = System.Drawing.Color.White;
-            this.order6.PressedOutline = System.Drawing.Color.Empty;
-            this.order6.Rounding = new System.Windows.Forms.Padding(5);
-            this.order6.Size = new System.Drawing.Size(40, 33);
-            this.order6.TabIndex = 12;
-            this.order6.TextAutoCenter = false;
-            this.order6.TextOffset = new System.Drawing.Point(0, 0);
-            this.order6.Click += new System.EventHandler(this.order6_Click);
-            // 
-            // sataTextBox5
-            // 
-            this.sataTextBox5.BackColor = System.Drawing.Color.White;
-            this.sataTextBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox5.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox5.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox5.BorderRadius = 3;
-            this.sataTextBox5.BorderSize = 1;
-            this.sataTextBox5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox5.Icon = null;
-            this.sataTextBox5.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox5.Location = new System.Drawing.Point(121, 79);
-            this.sataTextBox5.Multiline = false;
-            this.sataTextBox5.Name = "sataTextBox5";
-            this.sataTextBox5.PasswordChar = false;
-            this.sataTextBox5.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox5.PlaceholderText = "";
-            this.sataTextBox5.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox5.TabIndex = 13;
-            this.sataTextBox5.Text = "0";
-            this.sataTextBox5.Texts = "";
-            this.sataTextBox5.UnderlinedStyle = false;
-            // 
-            // order7
-            // 
-            this.order7.ButtonText = "";
-            this.order7.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order7.CheckedForeColor = System.Drawing.Color.White;
-            this.order7.CheckedImageTint = System.Drawing.Color.White;
-            this.order7.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order7.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order7.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order7.HoverForeColor = System.Drawing.Color.White;
-            this.order7.HoverImage = null;
-            this.order7.HoverImageTint = System.Drawing.Color.White;
-            this.order7.HoverOutline = System.Drawing.Color.Empty;
-            this.order7.Image = ((System.Drawing.Image)(resources.GetObject("order7.Image")));
-            this.order7.ImageAutoCenter = true;
-            this.order7.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order7.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order7.ImageTint = System.Drawing.Color.White;
-            this.order7.IsToggleButton = false;
-            this.order7.IsToggled = false;
-            this.order7.Location = new System.Drawing.Point(193, 76);
-            this.order7.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order7.Name = "order7";
-            this.order7.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order7.NormalForeColor = System.Drawing.Color.White;
-            this.order7.NormalOutline = System.Drawing.Color.Empty;
-            this.order7.OutlineThickness = 2F;
-            this.order7.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order7.PressedForeColor = System.Drawing.Color.White;
-            this.order7.PressedImageTint = System.Drawing.Color.White;
-            this.order7.PressedOutline = System.Drawing.Color.Empty;
-            this.order7.Rounding = new System.Windows.Forms.Padding(5);
-            this.order7.Size = new System.Drawing.Size(40, 33);
-            this.order7.TabIndex = 12;
-            this.order7.TextAutoCenter = false;
-            this.order7.TextOffset = new System.Drawing.Point(0, 0);
-            this.order7.Click += new System.EventHandler(this.order7_Click);
-            // 
-            // sataTextBox6
-            // 
-            this.sataTextBox6.BackColor = System.Drawing.Color.White;
-            this.sataTextBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox6.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox6.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox6.BorderRadius = 3;
-            this.sataTextBox6.BorderSize = 1;
-            this.sataTextBox6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox6.Icon = null;
-            this.sataTextBox6.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox6.Location = new System.Drawing.Point(120, 76);
-            this.sataTextBox6.Multiline = false;
-            this.sataTextBox6.Name = "sataTextBox6";
-            this.sataTextBox6.PasswordChar = false;
-            this.sataTextBox6.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox6.PlaceholderText = "";
-            this.sataTextBox6.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox6.TabIndex = 13;
-            this.sataTextBox6.Text = "0";
-            this.sataTextBox6.Texts = "";
-            this.sataTextBox6.UnderlinedStyle = false;
-            // 
-            // order10
-            // 
-            this.order10.ButtonText = "";
-            this.order10.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order10.CheckedForeColor = System.Drawing.Color.White;
-            this.order10.CheckedImageTint = System.Drawing.Color.White;
-            this.order10.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order10.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order10.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order10.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order10.HoverForeColor = System.Drawing.Color.White;
-            this.order10.HoverImage = null;
-            this.order10.HoverImageTint = System.Drawing.Color.White;
-            this.order10.HoverOutline = System.Drawing.Color.Empty;
-            this.order10.Image = ((System.Drawing.Image)(resources.GetObject("order10.Image")));
-            this.order10.ImageAutoCenter = true;
-            this.order10.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order10.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order10.ImageTint = System.Drawing.Color.White;
-            this.order10.IsToggleButton = false;
-            this.order10.IsToggled = false;
-            this.order10.Location = new System.Drawing.Point(193, 79);
-            this.order10.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order10.Name = "order10";
-            this.order10.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order10.NormalForeColor = System.Drawing.Color.White;
-            this.order10.NormalOutline = System.Drawing.Color.Empty;
-            this.order10.OutlineThickness = 2F;
-            this.order10.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order10.PressedForeColor = System.Drawing.Color.White;
-            this.order10.PressedImageTint = System.Drawing.Color.White;
-            this.order10.PressedOutline = System.Drawing.Color.Empty;
-            this.order10.Rounding = new System.Windows.Forms.Padding(5);
-            this.order10.Size = new System.Drawing.Size(40, 33);
-            this.order10.TabIndex = 12;
-            this.order10.TextAutoCenter = false;
-            this.order10.TextOffset = new System.Drawing.Point(0, 0);
-            this.order10.Click += new System.EventHandler(this.order10_Click);
-            // 
-            // sataTextBox7
-            // 
-            this.sataTextBox7.BackColor = System.Drawing.Color.White;
-            this.sataTextBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox7.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox7.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox7.BorderRadius = 3;
-            this.sataTextBox7.BorderSize = 1;
-            this.sataTextBox7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox7.Icon = null;
-            this.sataTextBox7.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox7.Location = new System.Drawing.Point(120, 79);
-            this.sataTextBox7.Multiline = false;
-            this.sataTextBox7.Name = "sataTextBox7";
-            this.sataTextBox7.PasswordChar = false;
-            this.sataTextBox7.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox7.PlaceholderText = "";
-            this.sataTextBox7.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox7.TabIndex = 13;
-            this.sataTextBox7.Text = "0";
-            this.sataTextBox7.Texts = "";
-            this.sataTextBox7.UnderlinedStyle = false;
-            // 
-            // order11
-            // 
-            this.order11.ButtonText = "";
-            this.order11.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order11.CheckedForeColor = System.Drawing.Color.White;
-            this.order11.CheckedImageTint = System.Drawing.Color.White;
-            this.order11.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order11.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order11.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order11.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order11.HoverForeColor = System.Drawing.Color.White;
-            this.order11.HoverImage = null;
-            this.order11.HoverImageTint = System.Drawing.Color.White;
-            this.order11.HoverOutline = System.Drawing.Color.Empty;
-            this.order11.Image = ((System.Drawing.Image)(resources.GetObject("order11.Image")));
-            this.order11.ImageAutoCenter = true;
-            this.order11.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order11.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order11.ImageTint = System.Drawing.Color.White;
-            this.order11.IsToggleButton = false;
-            this.order11.IsToggled = false;
-            this.order11.Location = new System.Drawing.Point(194, 77);
-            this.order11.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order11.Name = "order11";
-            this.order11.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order11.NormalForeColor = System.Drawing.Color.White;
-            this.order11.NormalOutline = System.Drawing.Color.Empty;
-            this.order11.OutlineThickness = 2F;
-            this.order11.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order11.PressedForeColor = System.Drawing.Color.White;
-            this.order11.PressedImageTint = System.Drawing.Color.White;
-            this.order11.PressedOutline = System.Drawing.Color.Empty;
-            this.order11.Rounding = new System.Windows.Forms.Padding(5);
-            this.order11.Size = new System.Drawing.Size(40, 33);
-            this.order11.TabIndex = 12;
-            this.order11.TextAutoCenter = false;
-            this.order11.TextOffset = new System.Drawing.Point(0, 0);
-            this.order11.Click += new System.EventHandler(this.order11_Click);
-            // 
-            // sataTextBox8
-            // 
-            this.sataTextBox8.BackColor = System.Drawing.Color.White;
-            this.sataTextBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox8.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox8.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox8.BorderRadius = 3;
-            this.sataTextBox8.BorderSize = 1;
-            this.sataTextBox8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox8.Icon = null;
-            this.sataTextBox8.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox8.Location = new System.Drawing.Point(121, 77);
-            this.sataTextBox8.Multiline = false;
-            this.sataTextBox8.Name = "sataTextBox8";
-            this.sataTextBox8.PasswordChar = false;
-            this.sataTextBox8.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox8.PlaceholderText = "";
-            this.sataTextBox8.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox8.TabIndex = 13;
-            this.sataTextBox8.Text = "0";
-            this.sataTextBox8.Texts = "";
-            this.sataTextBox8.UnderlinedStyle = false;
-            // 
-            // order8
-            // 
-            this.order8.ButtonText = "";
-            this.order8.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order8.CheckedForeColor = System.Drawing.Color.White;
-            this.order8.CheckedImageTint = System.Drawing.Color.White;
-            this.order8.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order8.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order8.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order8.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order8.HoverForeColor = System.Drawing.Color.White;
-            this.order8.HoverImage = null;
-            this.order8.HoverImageTint = System.Drawing.Color.White;
-            this.order8.HoverOutline = System.Drawing.Color.Empty;
-            this.order8.Image = ((System.Drawing.Image)(resources.GetObject("order8.Image")));
-            this.order8.ImageAutoCenter = true;
-            this.order8.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order8.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order8.ImageTint = System.Drawing.Color.White;
-            this.order8.IsToggleButton = false;
-            this.order8.IsToggled = false;
-            this.order8.Location = new System.Drawing.Point(194, 76);
-            this.order8.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order8.Name = "order8";
-            this.order8.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order8.NormalForeColor = System.Drawing.Color.White;
-            this.order8.NormalOutline = System.Drawing.Color.Empty;
-            this.order8.OutlineThickness = 2F;
-            this.order8.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order8.PressedForeColor = System.Drawing.Color.White;
-            this.order8.PressedImageTint = System.Drawing.Color.White;
-            this.order8.PressedOutline = System.Drawing.Color.Empty;
-            this.order8.Rounding = new System.Windows.Forms.Padding(5);
-            this.order8.Size = new System.Drawing.Size(40, 33);
-            this.order8.TabIndex = 12;
-            this.order8.TextAutoCenter = false;
-            this.order8.TextOffset = new System.Drawing.Point(0, 0);
-            this.order8.Click += new System.EventHandler(this.order8_Click);
-            // 
-            // sataTextBox9
-            // 
-            this.sataTextBox9.BackColor = System.Drawing.Color.White;
-            this.sataTextBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox9.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox9.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox9.BorderRadius = 3;
-            this.sataTextBox9.BorderSize = 1;
-            this.sataTextBox9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox9.Icon = null;
-            this.sataTextBox9.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox9.Location = new System.Drawing.Point(121, 76);
-            this.sataTextBox9.Multiline = false;
-            this.sataTextBox9.Name = "sataTextBox9";
-            this.sataTextBox9.PasswordChar = false;
-            this.sataTextBox9.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox9.PlaceholderText = "";
-            this.sataTextBox9.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox9.TabIndex = 13;
-            this.sataTextBox9.Text = "0";
-            this.sataTextBox9.Texts = "";
-            this.sataTextBox9.UnderlinedStyle = false;
-            // 
-            // order9
-            // 
-            this.order9.ButtonText = "";
-            this.order9.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order9.CheckedForeColor = System.Drawing.Color.White;
-            this.order9.CheckedImageTint = System.Drawing.Color.White;
-            this.order9.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order9.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order9.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order9.HoverForeColor = System.Drawing.Color.White;
-            this.order9.HoverImage = null;
-            this.order9.HoverImageTint = System.Drawing.Color.White;
-            this.order9.HoverOutline = System.Drawing.Color.Empty;
-            this.order9.Image = ((System.Drawing.Image)(resources.GetObject("order9.Image")));
-            this.order9.ImageAutoCenter = true;
-            this.order9.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order9.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order9.ImageTint = System.Drawing.Color.White;
-            this.order9.IsToggleButton = false;
-            this.order9.IsToggled = false;
-            this.order9.Location = new System.Drawing.Point(194, 74);
-            this.order9.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order9.Name = "order9";
-            this.order9.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order9.NormalForeColor = System.Drawing.Color.White;
-            this.order9.NormalOutline = System.Drawing.Color.Empty;
-            this.order9.OutlineThickness = 2F;
-            this.order9.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order9.PressedForeColor = System.Drawing.Color.White;
-            this.order9.PressedImageTint = System.Drawing.Color.White;
-            this.order9.PressedOutline = System.Drawing.Color.Empty;
-            this.order9.Rounding = new System.Windows.Forms.Padding(5);
-            this.order9.Size = new System.Drawing.Size(40, 33);
-            this.order9.TabIndex = 12;
-            this.order9.TextAutoCenter = false;
-            this.order9.TextOffset = new System.Drawing.Point(0, 0);
-            this.order9.Click += new System.EventHandler(this.order9_Click);
-            // 
-            // sataTextBox10
-            // 
-            this.sataTextBox10.BackColor = System.Drawing.Color.White;
-            this.sataTextBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox10.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox10.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox10.BorderRadius = 3;
-            this.sataTextBox10.BorderSize = 1;
-            this.sataTextBox10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox10.Icon = null;
-            this.sataTextBox10.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox10.Location = new System.Drawing.Point(121, 74);
-            this.sataTextBox10.Multiline = false;
-            this.sataTextBox10.Name = "sataTextBox10";
-            this.sataTextBox10.PasswordChar = false;
-            this.sataTextBox10.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox10.PlaceholderText = "";
-            this.sataTextBox10.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox10.TabIndex = 13;
-            this.sataTextBox10.Text = "0";
-            this.sataTextBox10.Texts = "";
-            this.sataTextBox10.UnderlinedStyle = false;
-            // 
-            // order12
-            // 
-            this.order12.ButtonText = "";
-            this.order12.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.order12.CheckedForeColor = System.Drawing.Color.White;
-            this.order12.CheckedImageTint = System.Drawing.Color.White;
-            this.order12.CheckedOutline = System.Drawing.Color.Transparent;
-            this.order12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.order12.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.order12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order12.ForeColor = System.Drawing.Color.Gainsboro;
-            this.order12.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.order12.HoverForeColor = System.Drawing.Color.White;
-            this.order12.HoverImage = null;
-            this.order12.HoverImageTint = System.Drawing.Color.White;
-            this.order12.HoverOutline = System.Drawing.Color.Empty;
-            this.order12.Image = ((System.Drawing.Image)(resources.GetObject("order12.Image")));
-            this.order12.ImageAutoCenter = true;
-            this.order12.ImageExpand = new System.Drawing.Point(0, 0);
-            this.order12.ImageOffset = new System.Drawing.Point(0, 0);
-            this.order12.ImageTint = System.Drawing.Color.White;
-            this.order12.IsToggleButton = false;
-            this.order12.IsToggled = false;
-            this.order12.Location = new System.Drawing.Point(194, 77);
-            this.order12.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.order12.Name = "order12";
-            this.order12.NormalBackground = System.Drawing.Color.WhiteSmoke;
-            this.order12.NormalForeColor = System.Drawing.Color.White;
-            this.order12.NormalOutline = System.Drawing.Color.Empty;
-            this.order12.OutlineThickness = 2F;
-            this.order12.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.order12.PressedForeColor = System.Drawing.Color.White;
-            this.order12.PressedImageTint = System.Drawing.Color.White;
-            this.order12.PressedOutline = System.Drawing.Color.Empty;
-            this.order12.Rounding = new System.Windows.Forms.Padding(5);
-            this.order12.Size = new System.Drawing.Size(40, 33);
-            this.order12.TabIndex = 12;
-            this.order12.TextAutoCenter = false;
-            this.order12.TextOffset = new System.Drawing.Point(0, 0);
-            this.order12.Click += new System.EventHandler(this.order12_Click);
-            // 
-            // sataTextBox11
-            // 
-            this.sataTextBox11.BackColor = System.Drawing.Color.White;
-            this.sataTextBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sataTextBox11.BorderColor = System.Drawing.Color.Gainsboro;
-            this.sataTextBox11.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox11.BorderRadius = 3;
-            this.sataTextBox11.BorderSize = 1;
-            this.sataTextBox11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sataTextBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.sataTextBox11.Icon = null;
-            this.sataTextBox11.IconSize = new System.Drawing.Size(20, 20);
-            this.sataTextBox11.Location = new System.Drawing.Point(121, 77);
-            this.sataTextBox11.Multiline = false;
-            this.sataTextBox11.Name = "sataTextBox11";
-            this.sataTextBox11.PasswordChar = false;
-            this.sataTextBox11.PlaceholderColor = System.Drawing.Color.Transparent;
-            this.sataTextBox11.PlaceholderText = "";
-            this.sataTextBox11.Size = new System.Drawing.Size(65, 31);
-            this.sataTextBox11.TabIndex = 13;
-            this.sataTextBox11.Text = "0";
-            this.sataTextBox11.Texts = "";
-            this.sataTextBox11.UnderlinedStyle = false;
             // 
             // UCService
             // 

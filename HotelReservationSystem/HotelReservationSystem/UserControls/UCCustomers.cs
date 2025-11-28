@@ -54,7 +54,6 @@ namespace HotelReservationSystem.UserControls
 
             AssociateAndRaiseViewEvents();
             
-            // Apply initial search state
             UpdateSearchControlsState();
         }
 
@@ -64,8 +63,6 @@ namespace HotelReservationSystem.UserControls
         
         private void UpdateSearchControlsState()
         {
-            // Enable search when on grid view (tabPage1)
-            // Disable search when on form view (tabPage2)
             bool isOnGridView = materialTabControl1.SelectedTab == tabPage1;
             
             if (txtSearch != null)
@@ -108,7 +105,6 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Add(tabPage2);
                 materialTabControl1.Text = "Add new customer";
                 
-                // Disable search when entering form view
                 UpdateSearchControlsState();
             };
 
@@ -126,7 +122,6 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.TabPages.Add(tabPage2);
                 materialTabControl1.Text = "Edit Customer";
                 
-                // Disable search when entering form view
                 UpdateSearchControlsState();
             };
 
@@ -147,7 +142,6 @@ namespace HotelReservationSystem.UserControls
                     CustomerAddedSuccessfully?.Invoke(this, EventArgs.Empty);
                     OnCustomerChanged();
                     
-                    // Re-enable search when returning to grid view
                     UpdateSearchControlsState();
                 }
 

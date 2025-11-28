@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="event_available_80dp_343434_FILL0_wght600_GRAD0_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\event_available_80dp_343434_FILL0_wght600_GRAD0_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="room_service_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\room_service_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="no_meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\no_meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dashboard_2_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard_2_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,6 +142,9 @@
   <data name="Homepage (14)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Homepage (14).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="no_meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no_meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="female" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,22 +157,25 @@
   <data name="house_80dp_343434_FILL0_wght600_GRAD0_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\house_80dp_343434_FILL0_wght600_GRAD0_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="payment_arrow_down_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\payment_arrow_down_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logout_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="single_bed_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\single_bed_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="room_preferences_80dp_FFFFFF_FILL0_wght600_GRAD0_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\room_preferences_80dp_FFFFFF_FILL0_wght600_GRAD0_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="manage_accounts_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manage_accounts_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="payment_arrow_down_80dp_8094AE_FILL0_wght600_GRAD200_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\payment_arrow_down_80dp_8094AE_FILL0_wght600_GRAD200_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="payment_arrow_down_100dp_FFFFFF_FILL0_wght500_GRAD-25_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\payment_arrow_down_100dp_FFFFFF_FILL0_wght500_GRAD-25_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="event_available_80dp_343434_FILL0_wght600_GRAD0_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\event_available_80dp_343434_FILL0_wght600_GRAD0_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="event_upcoming_80dp_FFFFFF_FILL0_wght600_GRAD0_opsz48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\event_upcoming_80dp_FFFFFF_FILL0_wght600_GRAD0_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -100,7 +100,6 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                // Billing listing already ordered by DateBilled DESC (newest first)
                 command.CommandText = "SELECT * FROM Billing ORDER BY DateBilled DESC";
                 using (var reader = command.ExecuteReader())
                 {
@@ -222,24 +221,20 @@ namespace HotelReservationSystem.Data.Repositories
             command.Parameters.Add("@RoomType", SqlDbType.NVarChar, 50).Value = billing.RoomType ?? (object)DBNull.Value;
             command.Parameters.Add("@RoomNumber", SqlDbType.NVarChar, 20).Value = billing.RoomNumber;
             
-            // Dates
             command.Parameters.Add("@CheckInDate", SqlDbType.DateTime).Value = billing.CheckInDate;
             command.Parameters.Add("@CheckOutDate", SqlDbType.DateTime).Value = billing.CheckOutDate;
             command.Parameters.Add("@ActualCheckOutDate", SqlDbType.DateTime).Value = billing.ActualCheckOutDate ?? (object)DBNull.Value;
             
-            // Charges - Simplified
             command.Parameters.Add("@RoomCharge", SqlDbType.Decimal).Value = billing.RoomCharge;
             command.Parameters.Add("@LateCheckoutFee", SqlDbType.Decimal).Value = billing.LateCheckoutFee;
             command.Parameters.Add("@DamageFee", SqlDbType.Decimal).Value = billing.DamageFee;
             
-            // Payment
             command.Parameters.Add("@AmountPaidBefore", SqlDbType.Decimal).Value = billing.AmountPaidBefore;
             command.Parameters.Add("@AmountPaidAtCheckout", SqlDbType.Decimal).Value = billing.AmountPaidAtCheckout;
             command.Parameters.Add("@PaymentStatus", SqlDbType.NVarChar, 20).Value = billing.PaymentStatus ?? (object)DBNull.Value;
             command.Parameters.Add("@PaymentMethod", SqlDbType.NVarChar, 50).Value = billing.PaymentMethod ?? (object)DBNull.Value;
             command.Parameters.Add("@PaymentReference", SqlDbType.NVarChar, 100).Value = billing.PaymentReference ?? (object)DBNull.Value;
             
-            // Billing Info
             command.Parameters.Add("@DateBilled", SqlDbType.DateTime).Value = billing.DateBilled;
             command.Parameters.Add("@BilledBy", SqlDbType.NVarChar, 100).Value = billing.BilledBy ?? (object)DBNull.Value;
         }
@@ -257,24 +252,20 @@ namespace HotelReservationSystem.Data.Repositories
                 RoomType = reader["RoomType"] == DBNull.Value ? null : reader["RoomType"].ToString(),
                 RoomNumber = reader["RoomNumber"].ToString(),
                 
-                // Dates
                 CheckInDate = reader["CheckInDate"] == DBNull.Value ? DateTime.Now : Convert.ToDateTime(reader["CheckInDate"]),
                 CheckOutDate = reader["CheckOutDate"] == DBNull.Value ? DateTime.Now : Convert.ToDateTime(reader["CheckOutDate"]),
                 ActualCheckOutDate = reader["ActualCheckOutDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["ActualCheckOutDate"]),
                 
-                // Charges - Simplified
                 RoomCharge = reader["RoomCharge"] == DBNull.Value ? 0m : Convert.ToDecimal(reader["RoomCharge"]),
                 LateCheckoutFee = reader["LateCheckoutFee"] == DBNull.Value ? 0m : Convert.ToDecimal(reader["LateCheckoutFee"]),
                 DamageFee = reader["DamageFee"] == DBNull.Value ? 0m : Convert.ToDecimal(reader["DamageFee"]),
                 
-                // Payment
                 AmountPaidBefore = reader["AmountPaidBefore"] == DBNull.Value ? 0m : Convert.ToDecimal(reader["AmountPaidBefore"]),
                 AmountPaidAtCheckout = reader["AmountPaidAtCheckout"] == DBNull.Value ? 0m : Convert.ToDecimal(reader["AmountPaidAtCheckout"]),
                 PaymentStatus = reader["PaymentStatus"] == DBNull.Value ? null : reader["PaymentStatus"].ToString(),
                 PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
                 PaymentReference = reader["PaymentReference"] == DBNull.Value ? null : reader["PaymentReference"].ToString(),
                 
-                // Billing Info
                 DateBilled = Convert.ToDateTime(reader["DateBilled"]),
                 BilledBy = reader["BilledBy"] == DBNull.Value ? null : reader["BilledBy"].ToString()
             };

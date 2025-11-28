@@ -42,7 +42,6 @@ namespace HotelReservationSystem.UserControls
             lblTotalRoom.Text = totalRooms.ToString();
             lblAvailRoom.Text = totalAvailableRooms.ToString();
             lblOccuRooms.Text = totalOccupiedRooms.ToString();
-            // Show number of reserved rooms on dashboard instead of total guests
             lblTotalGuests.Text = totalReservedRooms.ToString();
 
 

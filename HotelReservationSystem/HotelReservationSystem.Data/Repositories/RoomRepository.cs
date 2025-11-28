@@ -79,7 +79,6 @@ namespace HotelReservationSystem.Data.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                // Newest rooms first
                 command.CommandText = "SELECT * FROM Rooms ORDER BY RoomId DESC";
                 using (var reader = command.ExecuteReader())
                 {
@@ -208,7 +207,6 @@ namespace HotelReservationSystem.Data.Repositories
         {
             var now = DateTime.Now.Date;
             
-            // Get all active reservations for this room (not cancelled or checked out)
             var activeReservations = reserveRepo.GetAll()
                 .Where(r => r.RoomNumber == roomNumber 
                          && r.ReservationStatus != "Cancelled/No Show" 
@@ -219,13 +217,11 @@ namespace HotelReservationSystem.Data.Repositories
             var room = GetByNumber(roomNumber);
             if (room == null) return;
 
-            // Check if there's a current active reservation (today falls within check-in and check-out dates)
             var currentReservation = activeReservations
                 .FirstOrDefault(r => r.CheckInDate.Date <= now && r.CheckOutDate.Date > now);
 
             if (currentReservation != null)
             {
-                // There's an active reservation for today
                 if (currentReservation.ReservationStatus == "CheckedIn")
                 {
                     if (room.RoomStatus != "Occupied")
@@ -245,7 +241,6 @@ namespace HotelReservationSystem.Data.Repositories
             }
             else if (activeReservations.Any(r => r.CheckInDate.Date > now))
             {
-                // There are future reservations but no current one - room is available now
                 if (room.RoomStatus != "Available")
                 {
                     room.RoomStatus = "Available";
@@ -254,7 +249,6 @@ namespace HotelReservationSystem.Data.Repositories
             }
             else
             {
-                // No active reservations at all
                 if (room.RoomStatus != "Available")
                 {
                     room.RoomStatus = "Available";

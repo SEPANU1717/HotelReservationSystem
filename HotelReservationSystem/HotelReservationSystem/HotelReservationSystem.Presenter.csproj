@@ -229,6 +229,9 @@
     <Compile Include="Presenter\Billing\EmailConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presenter\Billing\EmailConfigForm.Designer.cs">
+      <DependentUpon>EmailConfigForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presenter\Common\FieldsCleaner.cs" />
     <Compile Include="Presenter\Common\LoginSuccessEventArgs.cs" />
     <Compile Include="Presenter\Common\MetroComboBoxGainsboro.cs">
@@ -441,6 +444,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\event_available_80dp_343434_FILL0_wght600_GRAD0_opsz48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room_preferences_80dp_FFFFFF_FILL0_wght600_GRAD0_opsz48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event_upcoming_80dp_FFFFFF_FILL0_wght600_GRAD0_opsz48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

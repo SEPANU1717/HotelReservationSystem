@@ -71,7 +71,11 @@ namespace HotelReservationSystem.Presenter
             RoomBindingSource.ResetBindings(false);
         }
 
-        private void CancelRoom(object sender, EventArgs e) => CleanViewFields();
+        private void CancelRoom(object sender, EventArgs e)
+        {
+            CleanViewFields();
+            LoadAllRoomList();
+        }
 
         private void SaveRoom(object sender, EventArgs e)
         {

@@ -19,6 +19,7 @@ namespace HotelReservationSystem.UserControls
         private List<RoomModel> availableRooms = new List<RoomModel>();
         private string originalRoomNumber;
         private bool isInitializing;
+        private string _paymentReference;
 
         public TabPage ReservationTabPage => tabPage2;
         public MaterialSkin.Controls.MaterialTabControl ReservationTabControl => materialTabControl1;
@@ -48,7 +49,6 @@ namespace HotelReservationSystem.UserControls
             UserInfoDisplay.UpdateUserInfoDisplay(lblUsername, lblRole, pictureProfile);
             AssociateAndRaiseViewEvents();
             
-            // Apply initial search state
             UpdateSearchControlsState();
             
             isInitializing = false;
@@ -60,8 +60,6 @@ namespace HotelReservationSystem.UserControls
         
         private void UpdateSearchControlsState()
         {
-            // Enable search when on grid view (tabPage1)
-            // Disable search when on form view (tabPage2)
             bool isOnGridView = materialTabControl1.SelectedTab == tabPage1;
             
             if (txtReservationSearch != null)
@@ -104,6 +102,16 @@ namespace HotelReservationSystem.UserControls
                 if (!string.IsNullOrEmpty(selectedPaymentType))
                 {
                     PaymentTypeChangedEvent?.Invoke(this, selectedPaymentType);
+                }
+            };
+
+            cbPaymentType.SelectedIndexChanged += delegate
+            {
+                string method = cbPaymentType.SelectedItem?.ToString();
+                if (!string.IsNullOrEmpty(method) && method.Equals("Cash", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Clear UI and backing field
+                    PaymentReference = string.Empty;
                 }
             };
 
@@ -238,6 +246,16 @@ namespace HotelReservationSystem.UserControls
         public string DownPayment { get => txtDownPayment.Texts; set => txtDownPayment.Texts = value ?? "0.00"; }
         public string AmountPaid { get => txtAmountPaid.Texts; set => txtAmountPaid.Texts = value ?? "0.00"; }
         public string PaymentMethod { get => cbPaymentType.SelectedItem?.ToString(); set => SetComboBoxItem(cbPaymentType, value, true); }
+        public string PaymentReference
+        {
+            get => txtPaymentRef?.Texts ?? _paymentReference ?? string.Empty;
+            set
+            {
+                if (txtPaymentRef != null)
+                    txtPaymentRef.Texts = value ?? string.Empty;
+                _paymentReference = value ?? string.Empty;
+            }
+        }
         public string BalanceDue { get => txtBalanceDue.Texts; set => txtBalanceDue.Texts = value ?? "0.00"; }
         public bool isSuccessful { get; set; }
         public bool isEdit { get; set; }
@@ -293,16 +311,24 @@ namespace HotelReservationSystem.UserControls
             AmountPaid = reservation.AmountPaid.ToString("0.00");
             BalanceDue = (reservation.TotalPrice - reservation.AmountPaid).ToString("0.00");
             ReservationStatus = reservation.ReservationStatus;
+
             PaymentStatus = reservation.PaymentStatus;
             PaymentMethod = reservation.PaymentMethod;
+            PaymentReference = reservation.PaymentReference ?? string.Empty;
 
-            if (room != null && !string.IsNullOrEmpty(reservation.RoomNumber))
+            if (!string.IsNullOrEmpty(reservation.RoomNumber))
             {
-                RoomType = room.RoomType;
+                if (room != null)
+                {
+                    RoomType = room.RoomType;
+                    Guests = room.RoomGuests;
+                }
+
                 if (!cbNumber.Items.Contains(reservation.RoomNumber))
+                {
                     cbNumber.Items.Add(reservation.RoomNumber);
+                }
                 RoomNumber = reservation.RoomNumber;
-                Guests = room.RoomGuests;
             }
         }
 
@@ -325,7 +351,6 @@ namespace HotelReservationSystem.UserControls
                 materialTabControl1.SelectedTab = tabPage2;
             }
             
-            // Update search controls state when tab changes
             UpdateSearchControlsState();
         }
 
@@ -395,7 +420,6 @@ namespace HotelReservationSystem.UserControls
         private void InitializeRoomStatusComboBox()
         {
             cbStatus.Items.Clear();
-            // Include WalkIn so walk-in reservations can be recognized/selected in UI if needed
             cbStatus.Items.AddRange(new[] { "Pending", "CheckedIn", "CheckedOut", "Cancelled/No Show", "Reserved", "WalkIn" });
         }
 

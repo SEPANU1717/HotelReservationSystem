@@ -51,7 +51,6 @@ namespace HotelReservationSystem.Domain.Services
             previewDialog.ShowDialog();
         }
 
-        // Export reservation receipt to PNG image for emailing
         public string SaveAsImage(string filePath)
         {
             try
@@ -217,6 +216,12 @@ namespace HotelReservationSystem.Domain.Services
             g.DrawString($"Payment Method: {reservation.PaymentMethod ?? "N/A"}", normalFont, Brushes.Black, leftMargin + 10, yPos);
             yPos += 35;
 
+            if (!string.IsNullOrEmpty(reservation.PaymentReference))
+            {
+                g.DrawString($"Reference: {reservation.PaymentReference}", smallFont, Brushes.Gray, leftMargin + 10, yPos);
+                yPos += 18;
+            }
+
             using (Brush footerBrush = new SolidBrush(Color.FromArgb(80, 90, 240)))
             {
                 g.DrawString("Thank you for choosing Lodgix Hotel!", normalFont, footerBrush, centerX, yPos, centerFormat);
@@ -250,7 +255,6 @@ namespace HotelReservationSystem.Domain.Services
         }
     }
 
-    // Custom form with Print, Save PDF, and Close options
     public class ReservationReceiptOptionsForm : Form
     {
         private PictureBox pictureBox;

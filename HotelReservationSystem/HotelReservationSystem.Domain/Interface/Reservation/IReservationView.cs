@@ -8,7 +8,6 @@ namespace HotelReservationSystem.Domain.Interface.Reservation
 {
     public interface IReservationView
     {
-        // Properties
         string ReservationId { get; set; }
         string CustomerName { get; set; }
         string RoomNumber { get; set; }
@@ -21,18 +20,13 @@ namespace HotelReservationSystem.Domain.Interface.Reservation
         string BalanceDue { get; set; }
         string AmountPaid { get; set; }
         string PaymentMethod { get; set; }
+        string PaymentReference { get; set; }
         PaymentState PaymentStatus { get; set; }
         string ReservationStatus { get; set; }
-
-        // Search or filter
         string SearchValue { get; set; }
-
-        // Flags
         bool isEdit { get; set; }
         bool isSuccessful { get; set; }
         string Message { get; set; }
-
-        // Events for CRUD
         event EventHandler SearchEvent;
         event EventHandler AddNewEvent;
         event EventHandler EditEvent;
@@ -41,18 +35,15 @@ namespace HotelReservationSystem.Domain.Interface.Reservation
         event EventHandler CancelEvent;
         event EventHandler ShowCheckInOutView;
 
-        // New events for presenter communication
         event EventHandler<int> LoadReservationForEditEvent;
         event EventHandler<string> SetCustomerForReservationEvent;
         event EventHandler<string> RoomTypeChangedEvent;
-        event EventHandler<string> PaymentTypeChangedEvent; // ADD THIS NEW EVENT
+        event EventHandler<string> PaymentTypeChangedEvent; 
 
 
-        // Methods
         void SetReservationListBindingSource(BindingSource reservationList);
         void Show();
 
-        // New methods for view control
         void LoadAvailableRooms(IEnumerable<RoomModel> rooms);
         void PopulateEditForm(ReservationModel reservation, RoomModel room);
         void ShowTab(int tabIndex);

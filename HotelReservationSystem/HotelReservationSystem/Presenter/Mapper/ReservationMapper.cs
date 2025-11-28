@@ -19,7 +19,6 @@ namespace HotelReservationSystem.Presenter.Mapper
                 CheckOutDate = model.CheckOutDate,
                 TotalPrice = model.TotalPrice,
                 AmountPaid = model.AmountPaid,
-                // Use model.BalanceDue which already clamps negative values to zero
                 BalanceDue = model.BalanceDue,
                 PaymentStatus = model.PaymentStatus.ToString(),
                 ReservationStatus = model.ReservationStatus
@@ -49,6 +48,20 @@ namespace HotelReservationSystem.Presenter.Mapper
                 MessageBox.Show($"Change to return: ₱{change:N2}", "Overpayment");
             }
 
+            string paymentReference = null;
+            try
+            {
+                var prop = view.GetType().GetProperty("PaymentReference");
+                if (prop != null)
+                {
+                    var val = prop.GetValue(view);
+                    paymentReference = val != null ? val.ToString() : null;
+                }
+            }
+            catch
+            {
+            }
+
             return new ReservationModel
             {
                 ReservationId = string.IsNullOrEmpty(view.ReservationId) ? 0 : int.Parse(view.ReservationId),
@@ -64,6 +77,7 @@ namespace HotelReservationSystem.Presenter.Mapper
                 ReservationStatus = view.ReservationStatus,
                 PaymentStatus = view.PaymentStatus,
                 PaymentMethod = view.PaymentMethod,
+                PaymentReference = paymentReference,
                 CreatedAt = DateTime.Now
             };
         }

@@ -20,16 +20,15 @@ namespace HotelReservationSystem.Data.Repositories
             {
                 connection.Open();
 
-                // If caller provided a ReservationId (walk-in flow), insert with that ID using IDENTITY_INSERT
                 if (reservation.ReservationId > 0)
                 {
                     insertCommand.CommandText = @"SET IDENTITY_INSERT Reservations ON;
     INSERT INTO Reservations 
     (ReservationId, CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber, RoomType,
-     DownPayment, AmountPaid, IsDownPaymentPaid, PaymentMethod, PaymentStatus, DownPaymentDate, CreatedAt)
+     DownPayment, AmountPaid, IsDownPaymentPaid, PaymentMethod, PaymentStatus, DownPaymentDate, PaymentReference, CreatedAt)
     VALUES 
     (@ReservationId, @CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber, @RoomType,
-     @DownPayment, @AmountPaid, @IsDownPaymentPaid, @PaymentMethod, @PaymentStatus, @DownPaymentDate, GETDATE());
+     @DownPayment, @AmountPaid, @IsDownPaymentPaid, @PaymentMethod, @PaymentStatus, @DownPaymentDate, @PaymentReference, GETDATE());
     SET IDENTITY_INSERT Reservations OFF;";
 
                     insertCommand.Parameters.Add("@ReservationId", SqlDbType.Int).Value = reservation.ReservationId;
@@ -39,13 +38,12 @@ namespace HotelReservationSystem.Data.Repositories
                     insertCommand.CommandText = @"
     INSERT INTO Reservations 
     (CustomerName, CheckInDate, CheckOutDate, TotalAmount, ReservationStatus, RoomNumber, RoomType,
-     DownPayment, AmountPaid, IsDownPaymentPaid, PaymentMethod, PaymentStatus, DownPaymentDate, CreatedAt)
+     DownPayment, AmountPaid, IsDownPaymentPaid, PaymentMethod, PaymentStatus, DownPaymentDate, PaymentReference, CreatedAt)
     VALUES 
     (@CustomerName, @CheckInDate, @CheckOutDate, @TotalAmount, @ReservationStatus, @RoomNumber, @RoomType,
-     @DownPayment, @AmountPaid, @IsDownPaymentPaid, @PaymentMethod, @PaymentStatus, @DownPaymentDate, GETDATE())";
+     @DownPayment, @AmountPaid, @IsDownPaymentPaid, @PaymentMethod, @PaymentStatus, @DownPaymentDate, @PaymentReference, GETDATE())";
                 }
 
-                // Common parameters
                 insertCommand.Parameters.Add("@RoomType", SqlDbType.VarChar).Value = (object)reservation.RoomType ?? DBNull.Value;
                 insertCommand.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = reservation.CustomerName;
                 insertCommand.Parameters.Add("@CheckInDate", SqlDbType.DateTime).Value = reservation.CheckInDate;
@@ -54,13 +52,14 @@ namespace HotelReservationSystem.Data.Repositories
                 insertCommand.Parameters.Add("@ReservationStatus", SqlDbType.VarChar).Value = reservation.ReservationStatus;
                 insertCommand.Parameters.Add("@RoomNumber", SqlDbType.VarChar).Value = (object)reservation.RoomNumber ?? DBNull.Value;
 
-                // Payment fields
                 insertCommand.Parameters.Add("@DownPayment", SqlDbType.Decimal).Value = reservation.DownPayment;
                 insertCommand.Parameters.Add("@AmountPaid", SqlDbType.Decimal).Value = reservation.AmountPaid;
                 insertCommand.Parameters.Add("@IsDownPaymentPaid", SqlDbType.Bit).Value = reservation.IsDownPaymentPaid;
                 insertCommand.Parameters.Add("@PaymentMethod", SqlDbType.VarChar).Value = (object)reservation.PaymentMethod ?? DBNull.Value;
                 insertCommand.Parameters.Add("@PaymentStatus", SqlDbType.VarChar).Value = reservation.PaymentStatus.ToString();
                 insertCommand.Parameters.Add("@DownPaymentDate", SqlDbType.DateTime).Value = (object)reservation.DownPaymentDate ?? DBNull.Value;
+              
+                insertCommand.Parameters.Add("@PaymentReference", SqlDbType.NVarChar, 100).Value = (object)reservation.PaymentReference ?? DBNull.Value;
 
                 insertCommand.ExecuteNonQuery();
             }
@@ -100,7 +99,8 @@ namespace HotelReservationSystem.Data.Repositories
         IsDownPaymentPaid = @IsDownPaymentPaid,
         PaymentMethod = @PaymentMethod,
         PaymentStatus = @PaymentStatus,
-        DownPaymentDate = @DownPaymentDate
+        DownPaymentDate = @DownPaymentDate,
+        PaymentReference = @PaymentReference
     WHERE ReservationId = @reserveId";
 
                 command.Parameters.Add("@RoomType", SqlDbType.VarChar).Value = (object)reservation.RoomType ?? DBNull.Value;
@@ -116,6 +116,7 @@ namespace HotelReservationSystem.Data.Repositories
                 command.Parameters.Add("@PaymentMethod", SqlDbType.VarChar).Value = (object)reservation.PaymentMethod ?? DBNull.Value;
                 command.Parameters.Add("@PaymentStatus", SqlDbType.VarChar).Value = reservation.PaymentStatus.ToString();
                 command.Parameters.Add("@DownPaymentDate", SqlDbType.DateTime).Value = (object)reservation.DownPaymentDate ?? DBNull.Value;
+                command.Parameters.Add("@PaymentReference", SqlDbType.NVarChar, 100).Value = (object)reservation.PaymentReference ?? DBNull.Value;
                 command.Parameters.Add("@reserveId", SqlDbType.Int).Value = reservation.ReservationId;
 
                 command.ExecuteNonQuery();
@@ -131,8 +132,6 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                // Exclude internal WalkIn reservations from reservation listings
-                // Order by CreatedAt DESC so newest reservations appear on top in grids
                 command.CommandText = "SELECT * FROM Reservations WHERE ReservationStatus <> 'WalkIn' ORDER BY CreatedAt DESC";
 
                 using (var reader = command.ExecuteReader())
@@ -158,8 +157,7 @@ namespace HotelReservationSystem.Data.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                // Exclude WalkIn reservations from search results used by Reservation UI
-                // Order by CreatedAt DESC so newest matching reservations appear first
+
                 command.CommandText = @"
                     SELECT * FROM Reservations 
                     WHERE (ReservationId = @id OR CustomerName LIKE @cid)
@@ -199,7 +197,6 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                // Get reservation by id including WalkIn (used by check-in flow), so do not filter here
                 command.CommandText = "SELECT * FROM Reservations WHERE ReservationId = @id";
                 command.Parameters.Add("@id", SqlDbType.Int).Value = reservationId;
 
@@ -222,7 +219,6 @@ namespace HotelReservationSystem.Data.Repositories
             using (var command = connection.CreateCommand())
             {
                 connection.Open();
-                // Exclude WalkIn when used by Reservation UI; callers needing walk-in should query CheckIns
                 command.CommandText = "SELECT * FROM Reservations WHERE CustomerName = @name AND ReservationStatus <> 'WalkIn'";
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = customerName;
 
@@ -256,14 +252,14 @@ namespace HotelReservationSystem.Data.Repositories
                 IsDownPaymentPaid = reader["IsDownPaymentPaid"] != DBNull.Value && Convert.ToBoolean(reader["IsDownPaymentPaid"]),
                 PaymentMethod = reader["PaymentMethod"] == DBNull.Value ? null : reader["PaymentMethod"].ToString(),
                 PaymentStatus = Enum.TryParse(reader["PaymentStatus"]?.ToString(), out PaymentState status) ? status : PaymentState.Pending,
-                DownPaymentDate = reader["DownPaymentDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["DownPaymentDate"])
+                DownPaymentDate = reader["DownPaymentDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["DownPaymentDate"]),
+                // Read PaymentReference if present
+                PaymentReference = reader["PaymentReference"] == DBNull.Value ? null : reader["PaymentReference"].ToString()
             };
         }
 
         //<-----------------------Check for Overlapping Reservations--------------------------/>
-        /// <summary>
-        /// Checks if a room has any overlapping reservations for the given date range
-        /// </summary>
+
         public bool HasOverlappingReservation(string roomNumber, DateTime checkInDate, DateTime checkOutDate, int? excludeReservationId = null)
         {
             using (var connection = new SqlConnection(connectionString))

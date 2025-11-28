@@ -82,7 +82,7 @@ namespace HotelReservationSystem.Forms
                 var emailService = new SmtpEmailService();
 
                 bool sent = await emailService.SendPasswordResetEmailAsync(
-                    "markmanalo1717@gmail.com",  // Send to yourself for testing
+                    "markmanalo1717@gmail.com",  
                     "123456",
                     "TestUser"
                 );

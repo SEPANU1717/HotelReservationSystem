@@ -87,28 +87,38 @@ namespace HotelReservationSystem.Presenter
 
             try
             {
-                decimal totalPrice = 0;
-                if (decimal.TryParse(reservationView.TotalPrice, out totalPrice) && totalPrice > 0)
-                {
-                    if (paymentType.Equals("FullPayment", StringComparison.OrdinalIgnoreCase))
-                    {
-                        reservationView.AmountPaid = totalPrice.ToString(CultureInfo.InvariantCulture);
-                        reservationView.DownPayment = "0";
-                        reservationView.BalanceDue = "0";
-                    }
-                    else if (paymentType.Equals("Partial", StringComparison.OrdinalIgnoreCase))
-                    {
-                        decimal downPayment = Math.Round(totalPrice * 0.5m, 2);
-                        reservationView.DownPayment = downPayment.ToString(CultureInfo.InvariantCulture);
-                        reservationView.AmountPaid = downPayment.ToString(CultureInfo.InvariantCulture);
+                decimal totalPrice = 0m;
+                decimal.TryParse(reservationView.TotalPrice, out totalPrice);
 
-                        decimal balance = totalPrice - downPayment;
-                        reservationView.BalanceDue = balance.ToString(CultureInfo.InvariantCulture);
-                    }
-                }
-                else
+                decimal currentPaid = 0m;
+                decimal.TryParse(reservationView.AmountPaid, out currentPaid);
+
+                if (totalPrice <= 0)
                 {
                     reservationView.ShowErrorMessage("Please calculate the total price first.");
+                    return;
+                }
+
+                if (paymentType.Equals("FullPayment", StringComparison.OrdinalIgnoreCase))
+                {
+                    decimal remaining = totalPrice - currentPaid;
+                    if (remaining < 0) remaining = 0m;
+                    reservationView.DownPayment = "0";
+                    reservationView.AmountPaid = (currentPaid + remaining).ToString(CultureInfo.InvariantCulture);
+                    reservationView.BalanceDue = "0";
+                }
+                else if (paymentType.Equals("Partial", StringComparison.OrdinalIgnoreCase))
+                {
+                    decimal downPayment = Math.Round(totalPrice * 0.5m, 2);
+                    reservationView.DownPayment = downPayment.ToString(CultureInfo.InvariantCulture);
+
+                    if (currentPaid < downPayment)
+                        reservationView.AmountPaid = downPayment.ToString(CultureInfo.InvariantCulture);
+
+                    decimal newAmountPaid = 0m;
+                    decimal.TryParse(reservationView.AmountPaid, out newAmountPaid);
+                    decimal balance = totalPrice - newAmountPaid;
+                    reservationView.BalanceDue = balance.ToString(CultureInfo.InvariantCulture);
                 }
             }
             catch (Exception ex)
@@ -174,6 +184,7 @@ namespace HotelReservationSystem.Presenter
             reservationView.ReservationStatus = model.ReservationStatus;
             reservationView.PaymentStatus = model.PaymentStatus;
             reservationView.PaymentMethod = model.PaymentMethod;
+            reservationView.PaymentReference = model.PaymentReference;
             reservationView.isEdit = true;
 
 
@@ -321,6 +332,16 @@ namespace HotelReservationSystem.Presenter
                     return;
                 }
 
+                if (!string.IsNullOrWhiteSpace(model.PaymentMethod) &&
+                    !model.PaymentMethod.Equals("Cash", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (string.IsNullOrWhiteSpace(model.PaymentReference))
+                    {
+                        reservationView.ShowErrorMessage("Payment reference is required for electronic payments.");
+                        return;
+                    }
+                }
+
                 if (reservationView.isEdit)
                 {
                     reservationRepository.Edit(model);
@@ -341,7 +362,6 @@ namespace HotelReservationSystem.Presenter
                 reservationView.ShowTab(0); 
                 reservationView.ShowSuccessMessage(reservationView.Message);
 
-                // retrieve customer now so we can email even if the user declines to view the preview
                 var customer = customerRepository.GetByCustomerName(model.CustomerName);
 
                 var confirmResult = MessageBox.Show(
@@ -365,7 +385,6 @@ namespace HotelReservationSystem.Presenter
                     }
                 }
 
-                // Offer to email the reservation receipt regardless of preview choice
                 var emailResult = MessageBox.Show(
                     "Would you like to email this reservation receipt to the customer?",
                     "Email Receipt",
@@ -413,7 +432,6 @@ namespace HotelReservationSystem.Presenter
                 if (confirmResult != DialogResult.Yes)
                     return;
 
-                // Save receipt to temp file
                 string tempPath = System.IO.Path.GetTempPath();
                 string fileName = $"ReservationReceipt_{model.ReservationId}_{DateTime.Now:yyyyMMddHHmmss}.png";
                 string filePath = System.IO.Path.Combine(tempPath, fileName);
@@ -425,7 +443,6 @@ namespace HotelReservationSystem.Presenter
 
                 var emailService = new Domain.Services.EmailService();
 
-                // Check if email is configured, prompt for config if not
                 if (!emailService.IsConfigured())
                 {
                     var configForm = new Presenter.Billing.EmailConfigForm();
@@ -441,7 +458,6 @@ namespace HotelReservationSystem.Presenter
                     }
                     else
                     {
-                        // User cancelled config, cleanup temp file
                         if (System.IO.File.Exists(filePath))
                         {
                             try { System.IO.File.Delete(filePath); } catch { }
@@ -450,12 +466,10 @@ namespace HotelReservationSystem.Presenter
                     }
                 }
 
-                // Send email with reservation receipt attached
                 emailService.SendReservationReceiptEmail(customerEmail, customerFullName, filePath, model.ReservationId.ToString());
 
                 MessageBox.Show($"Reservation receipt successfully sent to {customerEmail}", "Email Sent", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Cleanup temp file
                 if (System.IO.File.Exists(filePath))
                 {
                     try { System.IO.File.Delete(filePath); } catch { }

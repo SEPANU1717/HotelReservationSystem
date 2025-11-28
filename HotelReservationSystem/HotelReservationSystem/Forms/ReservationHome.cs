@@ -27,7 +27,6 @@ namespace HotelReservationSystem.Forms
 
             ucReservation = UCReservation.GetInstance(this);
 
-            // Apply role-based menu visibility
             ApplyRoleBasedMenuVisibility();
 
             LoadUserControl(new UCDashboard());
@@ -51,10 +50,9 @@ namespace HotelReservationSystem.Forms
 
         private void ApplyRoleBasedMenuVisibility()
         {
-            // Only Admin can see Settings
             if (!UserSession.IsAdmin)
             {
-                sataButton6.Visible = false; // Settings button
+                sataButton6.Visible = false; 
                 sataButton6.Enabled = false;
             }
         }
@@ -80,7 +78,7 @@ namespace HotelReservationSystem.Forms
         private void sataButton5_Click(object sender, EventArgs e) => ShowBillingView?.Invoke(this, EventArgs.Empty);
         private void sataButton6_Click(object sender, EventArgs e) => ShowUserView?.Invoke(this, EventArgs.Empty);
         private void pictureBox1_Click(object sender, EventArgs e) => LoadUserControl(new UCHomepage());
-        private void sataButton9_Click(object sender, EventArgs e) => ShowServiceView?.Invoke(this, EventArgs.Empty);
+        //private void sataButton9_Click(object sender, EventArgs e) => ShowServiceView?.Invoke(this, EventArgs.Empty);
         private void sataButton7_Click(object sender, EventArgs e) => ShowCheckInOutView?.Invoke(this,  EventArgs.Empty);
 
         #endregion
@@ -106,7 +104,7 @@ namespace HotelReservationSystem.Forms
 
             reservationPresenter = null;
 
-            //UCBilling.ResetInstance();
+            UCBilling.ResetInstance();
             UCReservation.ResetInstance();
             UCCustomers.ResetInstance();
             UCRooms.ResetInstance();

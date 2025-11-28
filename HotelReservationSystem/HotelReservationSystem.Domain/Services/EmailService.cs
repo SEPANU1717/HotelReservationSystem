@@ -194,7 +194,6 @@ namespace HotelReservationSystem.Domain.Services
             }
         }
 
-        // Send a check-in receipt email with attachment
         public void SendCheckInReceiptEmail(string recipientEmail, string recipientName, string receiptFilePath, string reservationId)
         {
             if (string.IsNullOrEmpty(senderEmail) || string.IsNullOrEmpty(senderPassword))

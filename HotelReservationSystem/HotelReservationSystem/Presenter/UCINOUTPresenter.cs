@@ -28,6 +28,8 @@ namespace HotelReservationSystem.Presenter
         private IEnumerable<CheckInOutModel> checkInList;
         private static UCINOUTPresenter _lastPresenterInstance;
         private readonly CompanionPresenter companionPresenter;
+        private decimal _existingAmountPaid = 0m;
+        private bool _amountPaidIsDelta = false;
 
         public UCINOUTPresenter(ICheckInOutView checkInView, CheckInOutRepository repository, string connectionString)
         {
@@ -90,7 +92,6 @@ namespace HotelReservationSystem.Presenter
             CheckInBindingSource.DataSource = dtoList;
             CheckInBindingSource.ResetBindings(false);
 
-            // Ensure newest items (first in list) are selected and visible in the grid
             try
             {
                 if (dtoList != null && dtoList.Count > 0)
@@ -232,8 +233,6 @@ namespace HotelReservationSystem.Presenter
             {
                 new ModelDataValidation().Validate(model);
 
-                // Ensure balance due is never negative before saving
-                // Remove direct assignment to model.BalanceDue, rely on property logic
 
                 string oldRoomNumber = null;
 
@@ -245,8 +244,16 @@ namespace HotelReservationSystem.Presenter
                         oldRoomNumber = existingCheckIn.RoomNumber;
                     }
 
+                    if (_amountPaidIsDelta)
+                    {
+                        model.AmountPaid = _existingAmountPaid + checkInView.AmountPaid;
+                    }
+
                     checkInRepository.Edit(model);
                     checkInView.Message = "Check-in updated successfully!";
+
+                    _existingAmountPaid = model.AmountPaid;
+                    _amountPaidIsDelta = false;
                 }
                 else
                 {
@@ -276,8 +283,16 @@ namespace HotelReservationSystem.Presenter
                         oldRoomNumber = reservation.RoomNumber;
                     }
 
+                    if (_amountPaidIsDelta)
+                    {
+                        model.AmountPaid = _existingAmountPaid + checkInView.AmountPaid;
+                    }
+
                     checkInRepository.Add(model);
                     checkInView.Message = "Check-in saved successfully!";
+
+                    _existingAmountPaid = model.AmountPaid;
+                    _amountPaidIsDelta = false;
                 }
 
                 if (!string.IsNullOrEmpty(oldRoomNumber) && oldRoomNumber != model.RoomNumber)
@@ -303,7 +318,6 @@ namespace HotelReservationSystem.Presenter
 
                 checkInView.ShowMessage(checkInView.Message, "Success");
 
-                // Retrieve customer info early so we can email even if user skips preview
                 var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
                 var customer = customerRepo.GetByCustomerName(model.CustomerName);
 
@@ -328,7 +342,6 @@ namespace HotelReservationSystem.Presenter
                     }
                 }
 
-                // Offer to email the check-in receipt regardless of whether the user viewed the preview
                 var emailResult = MessageBox.Show(
                     "Would you like to email this check-in receipt to the customer?",
                     "Email Receipt",
@@ -366,7 +379,7 @@ namespace HotelReservationSystem.Presenter
                     IsDownPaymentPaid = checkInModel.AmountPaid >= checkInModel.DownPayment,
                     PaymentStatus = checkInModel.PaymentStatus,
                     PaymentMethod = checkInModel.PaymentMethod ?? "Cash",
-                    // Mark walk-in reservations with a dedicated status so Reservation module can ignore them
+                    PaymentReference = checkInModel.PaymentReference,
                     ReservationStatus = "WalkIn",
                     CreatedAt = DateTime.Now
                 };
@@ -521,9 +534,8 @@ namespace HotelReservationSystem.Presenter
                 var checkOutService = new HotelReservationSystem.Domain.Services.CheckOutService();
                 var validationResult = checkOutService.ValidateCheckout(checkIn);
 
-                decimal damageFee = 0m; // single damageFee used for both partial and full flows
+                decimal damageFee = 0m; 
 
-                // Always ask about damages before proceeding to billing or completing checkout
                 bool hasDamagesAlways = checkInView.ShowConfirmation("Are there any damages to report?", "Damage Assessment");
                 if (hasDamagesAlways)
                 {
@@ -581,7 +593,6 @@ namespace HotelReservationSystem.Presenter
                 }
                 else
                 {
-                    // If there are any damage fees collected from the prompt above, route to billing
                     if (damageFee > 0)
                     {
                         bool proceedToBillingForDamage = checkInView.ShowConfirmation(
@@ -823,7 +834,6 @@ namespace HotelReservationSystem.Presenter
                 }
 
                 string newReservationStatus = MapCheckInStatusToReservationStatus(checkInModel.ReservationStatus);
-                // Do not overwrite reservations that were created as WalkIn
                 if (reservation.ReservationStatus != "WalkIn" && reservation.ReservationStatus != newReservationStatus)
                 {
                     reservation.ReservationStatus = newReservationStatus;
@@ -842,9 +852,15 @@ namespace HotelReservationSystem.Presenter
                     needsUpdate = true;
                 }
 
-                if (!string.IsNullOrEmpty(checkInModel.PaymentMethod) && reservation.PaymentMethod != checkInModel.PaymentMethod)
+                if (reservation.PaymentStatus != checkInModel.PaymentStatus)
                 {
-                    reservation.PaymentMethod = checkInModel.PaymentMethod;
+                    reservation.PaymentStatus = checkInModel.PaymentStatus;
+                    needsUpdate = true;
+                }
+
+                if ((reservation.PaymentReference ?? string.Empty) != (checkInModel.PaymentReference ?? string.Empty))
+                {
+                    reservation.PaymentReference = checkInModel.PaymentReference;
                     needsUpdate = true;
                 }
 
@@ -948,6 +964,8 @@ namespace HotelReservationSystem.Presenter
             {
                 LoadRoomTypes();
                 CheckInMapper.ToCheckInView(reservation, checkInView);
+                _existingAmountPaid = reservation.AmountPaid;
+                _amountPaidIsDelta = false;
 
                 var customerRepo = new CustomerRepository(DbConfig.GetConnectionString());
                 var customer = customerRepo.GetByCustomerName(reservation.CustomerName);
@@ -1005,16 +1023,29 @@ namespace HotelReservationSystem.Presenter
         {
             decimal totalPrice = checkInView.TotalPrice;
             decimal amountPaid = checkInView.AmountPaid;
-            decimal balance = totalPrice - amountPaid;
+            decimal effectivePaid = _amountPaidIsDelta ? (_existingAmountPaid + amountPaid) : amountPaid;
+            decimal balance = totalPrice - effectivePaid;
             if (balance < 0)
             {
                 checkInView.BalanceDue = 0m;
                 decimal change = Math.Abs(balance);
-                checkInView.ShowMessage($"Change to return: ₱{change:N2}", "Overpayment");
+                checkInView.ShowMessage($"Change to return: ?{change:N2}", "Overpayment");
             }
             else
             {
                 checkInView.BalanceDue = balance;
+                if (balance == 0m && effectivePaid > 0m)
+                {
+                    checkInView.PaymentStatus = "FullPayment";
+                }
+                else if (effectivePaid > 0m)
+                {
+                    checkInView.PaymentStatus = "Partial";
+                }
+                else
+                {
+                    checkInView.PaymentStatus = "Pending";
+                }
             }
         }
 
@@ -1028,15 +1059,19 @@ namespace HotelReservationSystem.Presenter
                 if (status.Equals("FullPayment", StringComparison.OrdinalIgnoreCase))
                 {
                     checkInView.DownPayment = 0m;
-                    checkInView.AmountPaid = total;
+                    decimal remaining = total - _existingAmountPaid;
+                    if (remaining < 0) remaining = 0m;
+                    checkInView.AmountPaid = remaining; 
+                    _amountPaidIsDelta = true;
                     checkInView.BalanceDue = 0m;
                 }
                 else if (status.Equals("Partial", StringComparison.OrdinalIgnoreCase))
                 {
                     decimal down = Math.Round(total * 0.5m, 2);
                     checkInView.DownPayment = down;
-                    if (amountPaid < down)
+                    if (!_amountPaidIsDelta && amountPaid < down)
                         checkInView.AmountPaid = down;
+                    _amountPaidIsDelta = false;
                     decimal balance = total - checkInView.AmountPaid;
                     if (balance < 0)
                     {
@@ -1122,7 +1157,6 @@ namespace HotelReservationSystem.Presenter
 
                 if (confirm != DialogResult.Yes) return;
 
-                // Save receipt to temp file
                 string tempPath = System.IO.Path.GetTempPath();
                 string fileName = $"CheckInReceipt_{model.ReservationId}_{DateTime.Now:yyyyMMddHHmmss}.png";
                 string filePath = System.IO.Path.Combine(tempPath, fileName);
@@ -1132,7 +1166,6 @@ namespace HotelReservationSystem.Presenter
                     receiptService.SaveAsImage(filePath);
                 }
 
-                // Ask user if they also want to save a local copy
                 var saveCopy = MessageBox.Show("Do you want to save a local copy of the receipt before emailing?", "Save Copy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (saveCopy == DialogResult.Yes)
                 {

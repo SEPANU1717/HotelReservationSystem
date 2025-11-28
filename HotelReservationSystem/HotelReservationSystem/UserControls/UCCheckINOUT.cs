@@ -7,6 +7,7 @@ using HotelReservationSystem.Domain.Model;
 using HotelReservationSystem.Presenter;
 using HotelReservationSystem.Presenter.Common;
 using static HotelReservationSystem.Domain.Enums.ReservationEnum;
+using HotelReservationSystem.Data.Repositories;
 
 namespace HotelReservationSystem.UserControls
 {
@@ -30,7 +31,6 @@ namespace HotelReservationSystem.UserControls
             presenter = new UCINOUTPresenter(this, checkInRepo, DbConfig.GetConnectionString());
             AssociateAndRaiseViewEvents();
 
-            // Apply initial role-based restrictions
             ApplyRoleBasedRestrictions();
 
             if (reservation != null)
@@ -122,6 +122,33 @@ namespace HotelReservationSystem.UserControls
             {
                 if (e.KeyCode == Keys.Enter)
                     SearchEvent?.Invoke(this, EventArgs.Empty);
+            };
+
+            txtReservationId.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode != Keys.Enter) return;
+
+                if (int.TryParse(txtReservationId.Texts, out int resId) && resId > 0)
+                {
+                    try
+                    {
+                        var reservationRepo = new ReservationRepository(DbConfig.GetConnectionString());
+                        var reservation = reservationRepo.GetById(resId);
+                        if (reservation != null)
+                        {
+                            presenter.PopulateFromReservation(reservation);
+                            ShowTab(2);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Reservation {resId} not found.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error loading reservation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             };
 
             btnReservationAddNew.Click += delegate
@@ -376,7 +403,6 @@ namespace HotelReservationSystem.UserControls
             {
                 if (txtBalanceDue != null)
                 {
-                    // Show "0" for zero and two-decimals for non-zero (e.g. "0" or "12.34")
                     txtBalanceDue.Texts = value == 0m ? "0" : value.ToString("F2");
                 }
             }

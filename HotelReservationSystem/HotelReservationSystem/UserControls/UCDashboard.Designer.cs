@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SATAUiFramework.BorderRadius borderRadius6 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius7 = new SATAUiFramework.BorderRadius();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            SATAUiFramework.BorderRadius borderRadius8 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius9 = new SATAUiFramework.BorderRadius();
-            SATAUiFramework.BorderRadius borderRadius10 = new SATAUiFramework.BorderRadius();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCDashboard));
+            SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius2 = new SATAUiFramework.BorderRadius();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            SATAUiFramework.BorderRadius borderRadius3 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius4 = new SATAUiFramework.BorderRadius();
+            SATAUiFramework.BorderRadius borderRadius5 = new SATAUiFramework.BorderRadius();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.sataPanel9 = new SATAUiFramework.SATAPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.lblTotalRoom = new System.Windows.Forms.Label();
             this.sataPanel1 = new SATAUiFramework.SATAPanel();
@@ -57,22 +59,21 @@
             this.dataGridCheckInDash = new System.Windows.Forms.DataGridView();
             this.label41 = new System.Windows.Forms.Label();
             this.sataPanel2 = new SATAUiFramework.SATAPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAvailRoom = new System.Windows.Forms.Label();
             this.sataPanel3 = new SATAUiFramework.SATAPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblOccuRooms = new System.Windows.Forms.Label();
             this.sataPanel4 = new SATAUiFramework.SATAPanel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotalGuests = new System.Windows.Forms.Label();
-            this.btnAddNew = new FrameworkTest.SATAButton();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,13 +81,11 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInDash)).BeginInit();
             this.sataPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.sataPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.sataPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -101,6 +100,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 5;
+            // 
+            // pictureProfile
+            // 
+            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureProfile.BorderSize = 1;
+            this.pictureProfile.GradientAngle = 50F;
+            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
+            this.pictureProfile.Location = new System.Drawing.Point(1090, 16);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
+            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProfile.TabIndex = 2;
+            this.pictureProfile.TabStop = false;
             // 
             // lblUsername
             // 
@@ -142,11 +157,11 @@
             this.sataPanel9.BackColor = System.Drawing.Color.White;
             this.sataPanel9.BackColor2 = System.Drawing.Color.White;
             this.sataPanel9.BorderColor = System.Drawing.Color.Black;
-            borderRadius6.BottomLeft = 10;
-            borderRadius6.BottomRight = 10;
-            borderRadius6.TopLeft = 10;
-            borderRadius6.TopRight = 10;
-            this.sataPanel9.BorderRadius = borderRadius6;
+            borderRadius1.BottomLeft = 10;
+            borderRadius1.BottomRight = 10;
+            borderRadius1.TopLeft = 10;
+            borderRadius1.TopRight = 10;
+            this.sataPanel9.BorderRadius = borderRadius1;
             this.sataPanel9.BorderThickness = 0;
             this.sataPanel9.Controls.Add(this.pictureBox1);
             this.sataPanel9.Controls.Add(this.label12);
@@ -155,6 +170,16 @@
             this.sataPanel9.Name = "sataPanel9";
             this.sataPanel9.Size = new System.Drawing.Size(280, 106);
             this.sataPanel9.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelReservationSystem.Properties.Resources.house_80dp_343434_FILL0_wght600_GRAD0_opsz48;
+            this.pictureBox1.Location = new System.Drawing.Point(37, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label12
             // 
@@ -184,11 +209,11 @@
             this.sataPanel1.BackColor = System.Drawing.Color.White;
             this.sataPanel1.BackColor2 = System.Drawing.Color.White;
             this.sataPanel1.BorderColor = System.Drawing.Color.Black;
-            borderRadius7.BottomLeft = 10;
-            borderRadius7.BottomRight = 10;
-            borderRadius7.TopLeft = 10;
-            borderRadius7.TopRight = 10;
-            this.sataPanel1.BorderRadius = borderRadius7;
+            borderRadius2.BottomLeft = 10;
+            borderRadius2.BottomRight = 10;
+            borderRadius2.TopLeft = 10;
+            borderRadius2.TopRight = 10;
+            this.sataPanel1.BorderRadius = borderRadius2;
             this.sataPanel1.BorderThickness = 0;
             this.sataPanel1.Controls.Add(this.materialTabControl1);
             this.sataPanel1.Location = new System.Drawing.Point(32, 300);
@@ -232,24 +257,24 @@
             this.dataGridReservationDash.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridReservationDash.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridReservationDash.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservationDash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservationDash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridReservationDash.ColumnHeadersHeight = 33;
             this.dataGridReservationDash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridReservationDash.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReservationDash.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridReservationDash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridReservationDash.EnableHeadersVisualStyles = false;
             this.dataGridReservationDash.GridColor = System.Drawing.Color.Gainsboro;
@@ -258,16 +283,16 @@
             this.dataGridReservationDash.Name = "dataGridReservationDash";
             this.dataGridReservationDash.ReadOnly = true;
             this.dataGridReservationDash.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridReservationDash.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridReservationDash.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridReservationDash.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridReservationDash.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridReservationDash.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridReservationDash.RowTemplate.Height = 30;
             this.dataGridReservationDash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridReservationDash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -296,24 +321,24 @@
             this.dataGridCheckInDash.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridCheckInDash.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridCheckInDash.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCheckInDash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCheckInDash.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridCheckInDash.ColumnHeadersHeight = 33;
             this.dataGridCheckInDash.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridCheckInDash.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridCheckInDash.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridCheckInDash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridCheckInDash.EnableHeadersVisualStyles = false;
             this.dataGridCheckInDash.GridColor = System.Drawing.Color.Gainsboro;
@@ -322,16 +347,16 @@
             this.dataGridCheckInDash.Name = "dataGridCheckInDash";
             this.dataGridCheckInDash.ReadOnly = true;
             this.dataGridCheckInDash.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridCheckInDash.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridCheckInDash.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridCheckInDash.RowHeadersVisible = false;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridCheckInDash.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridCheckInDash.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridCheckInDash.RowTemplate.Height = 30;
             this.dataGridCheckInDash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridCheckInDash.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -341,24 +366,24 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.label41.Location = new System.Drawing.Point(27, 257);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(195, 30);
+            this.label41.Size = new System.Drawing.Size(260, 25);
             this.label41.TabIndex = 1;
-            this.label41.Text = "Recent Reservation";
+            this.label41.Text = "Recent Reservation/Check-In";
             // 
             // sataPanel2
             // 
             this.sataPanel2.BackColor = System.Drawing.Color.White;
             this.sataPanel2.BackColor2 = System.Drawing.Color.White;
             this.sataPanel2.BorderColor = System.Drawing.Color.Black;
-            borderRadius8.BottomLeft = 10;
-            borderRadius8.BottomRight = 10;
-            borderRadius8.TopLeft = 10;
-            borderRadius8.TopRight = 10;
-            this.sataPanel2.BorderRadius = borderRadius8;
+            borderRadius3.BottomLeft = 10;
+            borderRadius3.BottomRight = 10;
+            borderRadius3.TopLeft = 10;
+            borderRadius3.TopRight = 10;
+            this.sataPanel2.BorderRadius = borderRadius3;
             this.sataPanel2.BorderThickness = 0;
             this.sataPanel2.Controls.Add(this.pictureBox2);
             this.sataPanel2.Controls.Add(this.label1);
@@ -367,6 +392,16 @@
             this.sataPanel2.Name = "sataPanel2";
             this.sataPanel2.Size = new System.Drawing.Size(280, 106);
             this.sataPanel2.TabIndex = 6;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HotelReservationSystem.Properties.Resources.meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48;
+            this.pictureBox2.Location = new System.Drawing.Point(37, 31);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(65, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -396,11 +431,11 @@
             this.sataPanel3.BackColor = System.Drawing.Color.White;
             this.sataPanel3.BackColor2 = System.Drawing.Color.White;
             this.sataPanel3.BorderColor = System.Drawing.Color.Black;
-            borderRadius9.BottomLeft = 10;
-            borderRadius9.BottomRight = 10;
-            borderRadius9.TopLeft = 10;
-            borderRadius9.TopRight = 10;
-            this.sataPanel3.BorderRadius = borderRadius9;
+            borderRadius4.BottomLeft = 10;
+            borderRadius4.BottomRight = 10;
+            borderRadius4.TopLeft = 10;
+            borderRadius4.TopRight = 10;
+            this.sataPanel3.BorderRadius = borderRadius4;
             this.sataPanel3.BorderThickness = 0;
             this.sataPanel3.Controls.Add(this.pictureBox3);
             this.sataPanel3.Controls.Add(this.label3);
@@ -409,6 +444,16 @@
             this.sataPanel3.Name = "sataPanel3";
             this.sataPanel3.Size = new System.Drawing.Size(280, 106);
             this.sataPanel3.TabIndex = 6;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::HotelReservationSystem.Properties.Resources.no_meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48;
+            this.pictureBox3.Location = new System.Drawing.Point(37, 31);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(65, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // label3
             // 
@@ -438,11 +483,11 @@
             this.sataPanel4.BackColor = System.Drawing.Color.White;
             this.sataPanel4.BackColor2 = System.Drawing.Color.White;
             this.sataPanel4.BorderColor = System.Drawing.Color.Black;
-            borderRadius10.BottomLeft = 10;
-            borderRadius10.BottomRight = 10;
-            borderRadius10.TopLeft = 10;
-            borderRadius10.TopRight = 10;
-            this.sataPanel4.BorderRadius = borderRadius10;
+            borderRadius5.BottomLeft = 10;
+            borderRadius5.BottomRight = 10;
+            borderRadius5.TopLeft = 10;
+            borderRadius5.TopRight = 10;
+            this.sataPanel4.BorderRadius = borderRadius5;
             this.sataPanel4.BorderThickness = 0;
             this.sataPanel4.Controls.Add(this.pictureBox4);
             this.sataPanel4.Controls.Add(this.label6);
@@ -451,6 +496,16 @@
             this.sataPanel4.Name = "sataPanel4";
             this.sataPanel4.Size = new System.Drawing.Size(280, 106);
             this.sataPanel4.TabIndex = 6;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::HotelReservationSystem.Properties.Resources.event_available_80dp_343434_FILL0_wght600_GRAD0_opsz48;
+            this.pictureBox4.Location = new System.Drawing.Point(37, 31);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(65, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
             // 
             // label6
             // 
@@ -475,106 +530,10 @@
             this.lblTotalGuests.TabIndex = 1;
             this.lblTotalGuests.Text = "50";
             // 
-            // btnAddNew
-            // 
-            this.btnAddNew.ButtonText = "All Status";
-            this.btnAddNew.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnAddNew.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAddNew.CheckedImageTint = System.Drawing.Color.White;
-            this.btnAddNew.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNew.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.btnAddNew.HoverForeColor = System.Drawing.Color.White;
-            this.btnAddNew.HoverImage = null;
-            this.btnAddNew.HoverImageTint = System.Drawing.Color.White;
-            this.btnAddNew.HoverOutline = System.Drawing.Color.Transparent;
-            this.btnAddNew.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNew.Image")));
-            this.btnAddNew.ImageAutoCenter = true;
-            this.btnAddNew.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnAddNew.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAddNew.ImageTint = System.Drawing.Color.White;
-            this.btnAddNew.IsToggleButton = false;
-            this.btnAddNew.IsToggled = false;
-            this.btnAddNew.Location = new System.Drawing.Point(1105, 243);
-            this.btnAddNew.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnAddNew.NormalForeColor = System.Drawing.Color.White;
-            this.btnAddNew.NormalOutline = System.Drawing.Color.Empty;
-            this.btnAddNew.OutlineThickness = 2F;
-            this.btnAddNew.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnAddNew.PressedForeColor = System.Drawing.Color.White;
-            this.btnAddNew.PressedImageTint = System.Drawing.Color.White;
-            this.btnAddNew.PressedOutline = System.Drawing.Color.Empty;
-            this.btnAddNew.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnAddNew.Size = new System.Drawing.Size(129, 39);
-            this.btnAddNew.TabIndex = 15;
-            this.btnAddNew.TextAutoCenter = true;
-            this.btnAddNew.TextOffset = new System.Drawing.Point(0, 0);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::HotelReservationSystem.Properties.Resources.event_available_80dp_343434_FILL0_wght600_GRAD0_opsz48;
-            this.pictureBox4.Location = new System.Drawing.Point(37, 31);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(65, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::HotelReservationSystem.Properties.Resources.no_meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48;
-            this.pictureBox3.Location = new System.Drawing.Point(37, 31);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(65, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HotelReservationSystem.Properties.Resources.meeting_room_80dp_343434_FILL0_wght600_GRAD0_opsz48;
-            this.pictureBox2.Location = new System.Drawing.Point(37, 31);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HotelReservationSystem.Properties.Resources.house_80dp_343434_FILL0_wght600_GRAD0_opsz48;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureProfile
-            // 
-            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureProfile.BorderSize = 1;
-            this.pictureProfile.GradientAngle = 50F;
-            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
-            this.pictureProfile.Location = new System.Drawing.Point(1090, 16);
-            this.pictureProfile.Name = "pictureProfile";
-            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
-            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureProfile.TabIndex = 2;
-            this.pictureProfile.TabStop = false;
-            // 
             // UCDashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.sataPanel1);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.sataPanel4);
@@ -589,8 +548,10 @@
             this.Load += new System.EventHandler(this.UCDashboard_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.sataPanel9.ResumeLayout(false);
             this.sataPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -599,15 +560,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCheckInDash)).EndInit();
             this.sataPanel2.ResumeLayout(false);
             this.sataPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.sataPanel3.ResumeLayout(false);
             this.sataPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.sataPanel4.ResumeLayout(false);
             this.sataPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,7 +587,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridReservationDash;
         private System.Windows.Forms.Label label41;
-        private FrameworkTest.SATAButton btnAddNew;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridCheckInDash;
         private System.Windows.Forms.PictureBox pictureBox1;

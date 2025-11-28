@@ -19,7 +19,6 @@ namespace HotelReservationSystem.Domain.Model
         [Display(Name = "Customer Name")] 
         public string CustomerName { get; set; }
         
-        // Customer Details - Preserved for printing even after customer deletion
         [StringLength(100, ErrorMessage = "Email cannot exceed 100 characters")]
         [Display(Name = "Customer Email")] 
         public string CustomerEmail { get; set; }
@@ -49,7 +48,6 @@ namespace HotelReservationSystem.Domain.Model
         [Display(Name = "Actual Check-Out Date")]
         public DateTime? ActualCheckOutDate { get; set; }
         
-        // Room Charges
         [Required(ErrorMessage = "Room charge is required")]
         [DecimalRange(0, 1000000, ErrorMessage = "Room charge must be between $0 and $1,000,000")]
         [Display(Name = "Room Charge")]
@@ -63,14 +61,12 @@ namespace HotelReservationSystem.Domain.Model
         [Display(Name = "Damage Fee")]
         public decimal DamageFee { get; set; }
        
-        // Calculated Fields
         [Display(Name = "Subtotal")]
         public decimal Subtotal => RoomCharge + LateCheckoutFee + DamageFee;
         
         [Display(Name = "Total Amount")]
         public decimal TotalAmount => Subtotal;
         
-        // Payment Information
         [Display(Name = "Amount Paid Before")]
         public decimal AmountPaidBefore { get; set; }
         
@@ -80,7 +76,6 @@ namespace HotelReservationSystem.Domain.Model
         [Display(Name = "Total Paid")]
         public decimal TotalPaid => AmountPaidBefore + AmountPaidAtCheckout;
         
-        // Balance Due - Never negative, always 0 or positive
         [Display(Name = "Balance Due")]
         public decimal BalanceDue
         {
@@ -91,7 +86,6 @@ namespace HotelReservationSystem.Domain.Model
             }
         }
         
-        // Change Due - Only when overpaid
         [Display(Name = "Change Due")]
         public decimal ChangeDue
         {
@@ -114,7 +108,6 @@ namespace HotelReservationSystem.Domain.Model
         [Display(Name = "Payment Reference")]
         public string PaymentReference { get; set; }
         
-        // Billing Information
         [DisplayName("Date Billed")] 
         public DateTime DateBilled { get; set; } = DateTime.Now;
         

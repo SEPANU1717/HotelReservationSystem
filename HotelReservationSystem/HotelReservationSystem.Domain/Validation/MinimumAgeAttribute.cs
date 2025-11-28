@@ -3,9 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HotelReservationSystem.Domain.Validation
 {
-    /// <summary>
-    /// Validation attribute to ensure a person meets minimum age requirement
-    /// </summary>
+
     public class MinimumAgeAttribute : ValidationAttribute
     {
         private readonly int _minimumAge;
@@ -28,7 +26,6 @@ namespace HotelReservationSystem.Domain.Validation
                 var today = DateTime.Today;
                 var age = today.Year - dateOfBirth.Year;
                 
-                // Adjust age if birthday hasn't occurred yet this year
                 if (dateOfBirth.Date > today.AddYears(-age))
                 {
                     age--;

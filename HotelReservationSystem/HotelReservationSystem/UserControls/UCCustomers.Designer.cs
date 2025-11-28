@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCustomers));
             SATAUiFramework.BorderRadius borderRadius1 = new SATAUiFramework.BorderRadius();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCustomers));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,16 +75,17 @@
             this.btnSearch = new FrameworkTest.SATAButton();
             this.txtSearch = new SATATextBox();
             this.btnDelete = new FrameworkTest.SATAButton();
+            this.btnCusReservation = new FrameworkTest.SATAButton();
             this.btnAddNew = new FrameworkTest.SATAButton();
             this.btnEdit = new FrameworkTest.SATAButton();
-            this.btnCusReservation = new FrameworkTest.SATAButton();
+            this.pictureProfile = new SATAUiFramework.Controls.SATAPictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -100,22 +100,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1477, 72);
             this.panel2.TabIndex = 5;
-            // 
-            // pictureProfile
-            // 
-            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
-            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
-            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pictureProfile.BorderSize = 1;
-            this.pictureProfile.GradientAngle = 50F;
-            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
-            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
-            this.pictureProfile.Name = "pictureProfile";
-            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
-            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureProfile.TabIndex = 2;
-            this.pictureProfile.TabStop = false;
             // 
             // lblUsername
             // 
@@ -283,10 +267,10 @@
             this.tabPage2.Controls.Add(this.txtLName);
             this.tabPage2.Controls.Add(this.txtFName);
             this.tabPage2.Controls.Add(this.txtCusId);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1194, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1194, 585);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
             // 
@@ -841,7 +825,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.LightGray;
-            this.txtSearch.PlaceholderText = "Search Customer";
+            this.txtSearch.PlaceholderText = "Search Customer Lastname";
             this.txtSearch.Size = new System.Drawing.Size(374, 39);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Texts = "";
@@ -885,6 +869,45 @@
             this.btnDelete.TabIndex = 4;
             this.btnDelete.TextAutoCenter = false;
             this.btnDelete.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // btnCusReservation
+            // 
+            this.btnCusReservation.ButtonText = "Create Reservation";
+            this.btnCusReservation.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
+            this.btnCusReservation.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCusReservation.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCusReservation.CheckedOutline = System.Drawing.Color.Transparent;
+            this.btnCusReservation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCusReservation.CustomDialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCusReservation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCusReservation.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
+            this.btnCusReservation.HoverForeColor = System.Drawing.Color.White;
+            this.btnCusReservation.HoverImage = null;
+            this.btnCusReservation.HoverImageTint = System.Drawing.Color.White;
+            this.btnCusReservation.HoverOutline = System.Drawing.Color.Empty;
+            this.btnCusReservation.Image = global::HotelReservationSystem.Properties.Resources.event_upcoming_80dp_FFFFFF_FILL0_wght600_GRAD0_opsz48;
+            this.btnCusReservation.ImageAutoCenter = true;
+            this.btnCusReservation.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCusReservation.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCusReservation.ImageTint = System.Drawing.Color.White;
+            this.btnCusReservation.IsToggleButton = false;
+            this.btnCusReservation.IsToggled = false;
+            this.btnCusReservation.Location = new System.Drawing.Point(804, 100);
+            this.btnCusReservation.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCusReservation.Name = "btnCusReservation";
+            this.btnCusReservation.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCusReservation.NormalForeColor = System.Drawing.Color.White;
+            this.btnCusReservation.NormalOutline = System.Drawing.Color.Empty;
+            this.btnCusReservation.OutlineThickness = 2F;
+            this.btnCusReservation.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
+            this.btnCusReservation.PressedForeColor = System.Drawing.Color.White;
+            this.btnCusReservation.PressedImageTint = System.Drawing.Color.White;
+            this.btnCusReservation.PressedOutline = System.Drawing.Color.Empty;
+            this.btnCusReservation.Rounding = new System.Windows.Forms.Padding(5);
+            this.btnCusReservation.Size = new System.Drawing.Size(190, 39);
+            this.btnCusReservation.TabIndex = 7;
+            this.btnCusReservation.TextAutoCenter = true;
+            this.btnCusReservation.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // btnAddNew
             // 
@@ -964,44 +987,21 @@
             this.btnEdit.TextAutoCenter = false;
             this.btnEdit.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // btnCusReservation
+            // pictureProfile
             // 
-            this.btnCusReservation.ButtonText = "Create Reservation";
-            this.btnCusReservation.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnCusReservation.CheckedForeColor = System.Drawing.Color.White;
-            this.btnCusReservation.CheckedImageTint = System.Drawing.Color.White;
-            this.btnCusReservation.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnCusReservation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCusReservation.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCusReservation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCusReservation.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.btnCusReservation.HoverForeColor = System.Drawing.Color.White;
-            this.btnCusReservation.HoverImage = null;
-            this.btnCusReservation.HoverImageTint = System.Drawing.Color.White;
-            this.btnCusReservation.HoverOutline = System.Drawing.Color.Empty;
-            this.btnCusReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnCusReservation.Image")));
-            this.btnCusReservation.ImageAutoCenter = true;
-            this.btnCusReservation.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnCusReservation.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnCusReservation.ImageTint = System.Drawing.Color.White;
-            this.btnCusReservation.IsToggleButton = false;
-            this.btnCusReservation.IsToggled = false;
-            this.btnCusReservation.Location = new System.Drawing.Point(804, 100);
-            this.btnCusReservation.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnCusReservation.Name = "btnCusReservation";
-            this.btnCusReservation.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnCusReservation.NormalForeColor = System.Drawing.Color.White;
-            this.btnCusReservation.NormalOutline = System.Drawing.Color.Empty;
-            this.btnCusReservation.OutlineThickness = 2F;
-            this.btnCusReservation.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnCusReservation.PressedForeColor = System.Drawing.Color.White;
-            this.btnCusReservation.PressedImageTint = System.Drawing.Color.White;
-            this.btnCusReservation.PressedOutline = System.Drawing.Color.Empty;
-            this.btnCusReservation.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnCusReservation.Size = new System.Drawing.Size(190, 39);
-            this.btnCusReservation.TabIndex = 7;
-            this.btnCusReservation.TextAutoCenter = true;
-            this.btnCusReservation.TextOffset = new System.Drawing.Point(0, 0);
+            this.pictureProfile.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pictureProfile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(79)))), ((int)(((byte)(165)))));
+            this.pictureProfile.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(68)))), ((int)(((byte)(142)))));
+            this.pictureProfile.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pictureProfile.BorderSize = 1;
+            this.pictureProfile.GradientAngle = 50F;
+            this.pictureProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureProfile.Image")));
+            this.pictureProfile.Location = new System.Drawing.Point(1088, 16);
+            this.pictureProfile.Name = "pictureProfile";
+            this.pictureProfile.Size = new System.Drawing.Size(43, 43);
+            this.pictureProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureProfile.TabIndex = 2;
+            this.pictureProfile.TabStop = false;
             // 
             // UCCustomers
             // 
@@ -1021,13 +1021,13 @@
             this.Size = new System.Drawing.Size(1477, 800);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.sataPanel1.ResumeLayout(false);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).EndInit();
             this.ResumeLayout(false);
 
         }

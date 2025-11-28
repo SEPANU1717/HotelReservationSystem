@@ -49,6 +49,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgUserManagement = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbRole = new MetroComboBoxGainsboro();
+            this.cbGender = new MetroComboBoxGainsboro();
             this.btnCancel = new FrameworkTest.SATAButton();
             this.dpBirthdate = new CuoreUI.Controls.cuiCalendarDatePicker();
             this.UsrInf = new System.Windows.Forms.Label();
@@ -68,8 +70,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.txtEmail = new SATATextBox();
             this.txtPassword = new SATATextBox();
-            this.cbGender = new MetroComboBoxGainsboro();
-            this.cbRole = new MetroComboBoxGainsboro();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -139,9 +139,9 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(27, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 25);
+            this.label5.Size = new System.Drawing.Size(200, 25);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Settings";
+            this.label5.Text = "User Management";
             // 
             // btnSearch
             // 
@@ -199,7 +199,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.LightGray;
-            this.txtSearch.PlaceholderText = "Search Customer";
+            this.txtSearch.PlaceholderText = "Search Username";
             this.txtSearch.Size = new System.Drawing.Size(374, 39);
             this.txtSearch.TabIndex = 8;
             this.txtSearch.Texts = "";
@@ -448,6 +448,24 @@
             this.tabPage2.Size = new System.Drawing.Size(1194, 582);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customer Details";
+            // 
+            // cbRole
+            // 
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.ItemHeight = 23;
+            this.cbRole.Location = new System.Drawing.Point(434, 321);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(310, 29);
+            this.cbRole.TabIndex = 143;
+            // 
+            // cbGender
+            // 
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.ItemHeight = 23;
+            this.cbGender.Location = new System.Drawing.Point(93, 321);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(310, 29);
+            this.cbGender.TabIndex = 143;
             // 
             // btnCancel
             // 
@@ -803,24 +821,6 @@
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
-            // 
-            // cbGender
-            // 
-            this.cbGender.FormattingEnabled = true;
-            this.cbGender.ItemHeight = 23;
-            this.cbGender.Location = new System.Drawing.Point(93, 321);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(310, 29);
-            this.cbGender.TabIndex = 143;
-            // 
-            // cbRole
-            // 
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.ItemHeight = 23;
-            this.cbRole.Location = new System.Drawing.Point(434, 321);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(310, 29);
-            this.cbRole.TabIndex = 143;
             // 
             // UCSettings
             // 

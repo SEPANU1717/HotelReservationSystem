@@ -214,9 +214,6 @@ namespace HotelReservationSystem.Forms
 
         #region Private Helper Methods
 
-        /// <summary>
-        /// ✅ Hides tab headers and removes gray border
-        /// </summary>
         private void HideTabHeaders()
         {
             // Hide tab headers completely
@@ -231,17 +228,13 @@ namespace HotelReservationSystem.Forms
             // ✅ Set background to match form
             tabControl1.BackColor = Color.White;
 
-            // Subscribe to DrawItem to prevent any drawing
             tabControl1.DrawItem += TabControl1_DrawItem;
         }
 
-        /// <summary>
-        /// ✅ Custom draw handler - prevents border rendering
-        /// </summary>
+
         private void TabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
-            // Don't draw anything - this effectively removes the border
-            // The TabPages (panelRequestReset & panelVerifyReset) will handle their own rendering
+            
         }
 
         private void txtResetToken_TextChanged(object sender, EventArgs e)

@@ -3,9 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HotelReservationSystem.Domain.Validation
 {
-    /// <summary>
-    /// Validation attribute to ensure a decimal value is within a specific range
-    /// </summary>
+
     public class DecimalRangeAttribute : ValidationAttribute
     {
         private readonly decimal _minimum;

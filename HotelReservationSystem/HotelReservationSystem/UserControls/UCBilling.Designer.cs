@@ -121,7 +121,6 @@
             this.txtSubtotal = new SATATextBox();
             this.txtBillId = new SATATextBox();
             this.btnBillPrint = new FrameworkTest.SATAButton();
-            this.btnServices = new FrameworkTest.SATAButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfile)).BeginInit();
             this.sataPanel1.SuspendLayout();
@@ -261,7 +260,7 @@
             this.txtBillingSearch.Name = "txtBillingSearch";
             this.txtBillingSearch.PasswordChar = false;
             this.txtBillingSearch.PlaceholderColor = System.Drawing.Color.LightGray;
-            this.txtBillingSearch.PlaceholderText = "Search Customer";
+            this.txtBillingSearch.PlaceholderText = "Search for Bill Id or Lastname";
             this.txtBillingSearch.Size = new System.Drawing.Size(374, 39);
             this.txtBillingSearch.TabIndex = 15;
             this.txtBillingSearch.Texts = "";
@@ -1661,45 +1660,6 @@
             this.btnBillPrint.TextAutoCenter = false;
             this.btnBillPrint.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // btnServices
-            // 
-            this.btnServices.ButtonText = "Filter";
-            this.btnServices.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
-            this.btnServices.CheckedForeColor = System.Drawing.Color.White;
-            this.btnServices.CheckedImageTint = System.Drawing.Color.White;
-            this.btnServices.CheckedOutline = System.Drawing.Color.Transparent;
-            this.btnServices.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnServices.CustomDialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnServices.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServices.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(90)))), ((int)(((byte)(240)))));
-            this.btnServices.HoverForeColor = System.Drawing.Color.White;
-            this.btnServices.HoverImage = null;
-            this.btnServices.HoverImageTint = System.Drawing.Color.White;
-            this.btnServices.HoverOutline = System.Drawing.Color.Empty;
-            this.btnServices.Image = null;
-            this.btnServices.ImageAutoCenter = true;
-            this.btnServices.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnServices.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnServices.ImageTint = System.Drawing.Color.White;
-            this.btnServices.IsToggleButton = false;
-            this.btnServices.IsToggled = false;
-            this.btnServices.Location = new System.Drawing.Point(818, 100);
-            this.btnServices.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnServices.Name = "btnServices";
-            this.btnServices.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnServices.NormalForeColor = System.Drawing.Color.White;
-            this.btnServices.NormalOutline = System.Drawing.Color.Empty;
-            this.btnServices.OutlineThickness = 2F;
-            this.btnServices.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(118)))), ((int)(((byte)(255)))));
-            this.btnServices.PressedForeColor = System.Drawing.Color.White;
-            this.btnServices.PressedImageTint = System.Drawing.Color.White;
-            this.btnServices.PressedOutline = System.Drawing.Color.Empty;
-            this.btnServices.Rounding = new System.Windows.Forms.Padding(5);
-            this.btnServices.Size = new System.Drawing.Size(122, 39);
-            this.btnServices.TabIndex = 20;
-            this.btnServices.TextAutoCenter = true;
-            this.btnServices.TextOffset = new System.Drawing.Point(0, 0);
-            // 
             // UCBilling
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1707,7 +1667,6 @@
             this.Controls.Add(this.btnBillingSearch);
             this.Controls.Add(this.txtBillingSearch);
             this.Controls.Add(this.btnDeleteDelete);
-            this.Controls.Add(this.btnServices);
             this.Controls.Add(this.btnBillingAddNew);
             this.Controls.Add(this.btnBillPrint);
             this.Controls.Add(this.btnBillingEdit);
@@ -1779,7 +1738,6 @@
         private SATAUiFramework.Controls.SATAPictureBox sataPictureBox3;
         private System.Windows.Forms.DataGridView dataGridBiilSample;
         private System.Windows.Forms.Label label9;
-        private FrameworkTest.SATAButton btnServices;
         private System.Windows.Forms.DataGridView dataGridBilling;
         private System.Windows.Forms.TabPage ReservationBillingForm;
         private System.Windows.Forms.Label label24;

@@ -52,7 +52,6 @@ namespace HotelReservationSystem.UserControls
                 btnRoomAddNew.Enabled = false;
                 btnRoomEdit.Enabled = false;
                 btnRoomDelete.Enabled = false;
-                
                 btnStandardRoom.Enabled = false;
                 btnDeluxeRoom.Enabled = false;
                 btnSuiteRoom.Enabled = false;
@@ -128,6 +127,8 @@ namespace HotelReservationSystem.UserControls
             {
                 if (!UserSession.IsAdmin)
                 {
+                   
+
                     MessageBox.Show(
                         $"{UserSession.Role} cannot edit rooms. Only administrators can manage room inventory.",
                         "Access Denied",

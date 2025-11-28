@@ -25,7 +25,7 @@ namespace HotelReservationSystem
             //ReservationSystem mainForm = new ReservationSystem();
             //new MainPresenter(mainForm, sqlConnectionString);
 
-            Application.Run(new ReservationSystem());
+            Application.Run(new Login());
         }
     }
 }

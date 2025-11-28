@@ -31,7 +31,6 @@ namespace HotelReservationSystem.Presenter.Mapper
 
         public static BillingModel FromBillingView(IBillingView view)
         {
-            // Parse numeric inputs safely
             decimal roomCharge = string.IsNullOrEmpty(view.RoomCharge) ? 0 : decimal.Parse(view.RoomCharge);
             decimal lateCheckoutFee = string.IsNullOrEmpty(view.LateCheckoutFee) ? 0 : decimal.Parse(view.LateCheckoutFee);
             decimal damageFee = string.IsNullOrEmpty(view.DamageFee) ? 0 : decimal.Parse(view.DamageFee);

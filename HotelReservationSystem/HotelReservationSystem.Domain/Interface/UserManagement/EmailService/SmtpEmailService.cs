@@ -95,7 +95,7 @@ namespace HotelReservationSystem.Domain.Interface.UserManagement.Email_Service
                 {
                     smtpClient.Credentials = new NetworkCredential(_fromEmail, _fromPassword);
                     smtpClient.EnableSsl = _enableSsl;
-                    smtpClient.Timeout = 30000; // 30 seconds
+                    smtpClient.Timeout = 30000; 
 
                     using (var mailMessage = new MailMessage())
                     {
